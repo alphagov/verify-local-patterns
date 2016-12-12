@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_pattern.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        <span class="strapline">Service pattern for</span>
+        Apply for a resident's parking permit
+      </h1>
+
+      <p>
+         This page is for local councils. It outlines a common pattern used for delivering resident's parking permits services effectively. <a href="/">Read more about service patterns.</a>
+      </p>
+
+      <h2 class="heading-medium">What is the user need?</h2>
+      <p>
+        Residents need a place to park their car near their house. These services keep parkings spaces for these residents, by making it illegal to park in a given area without a permit.
+      </p>
+
+      <!-- <h2 class="heading-medium">Eligibility requirements</h2>
+      <ul>
+        <li>
+          The user must be a resident in the area they want to park in.
+        </li>
+        <li>
+          The user must be the registered keeper of the vehicle the permit is assigned to.
+        </li>
+        <li>
+          The user must pay a fee to support the delivery cost of the service. This fee varies across councils.
+        </li>
+      </ul> -->
+
+      <h2 class="heading-medium">What do councils need from users to deliver the service?</h2>
+      <ul>
+        <li>
+          Proof that the user lives in the area
+        </li>
+        <li>
+          Proof that the user is the registered keeper of the vehicle
+        </li>
+        <li>
+          Payment (This is to support the cost of the service and will vary across council)
+        </li>
+      </ul>
+
+      <h2 class="heading-medium">What is the user journey?</h2>
+      <p>
+        At a high level, these are the steps users should need to go through.
+      </p>
+      <h3 class="heading-small">1. Awareness</h3>
+      <p>
+        Users need to find out about the parking permits service before they need to park their car. There are a number of ways users could find out about the service.
+      </p>
+      <ul class="list list-bullet">
+        <li>
+          Information from their solicitor when they buy their house
+        </li>
+        <li>
+          Information from the council when they sign up for council tax
+        </li>
+        <li>
+          Signage in the street
+        </li>
+      </ul>
+
+      <h3 class="heading-small">2. Routing</h3>
+      <p>
+        Once the user has found out they need a permit, they need to get to the right council's website to apply. Users might start by typing 'parking permit' into a search engine, or they might start on the council where they think they need a permit. The parking permits page on GOV.UK will send them to the right council's website once they enter their postcode. To make sure they are in the right place, councils should also have a page which sends them to the right council's website if they are in the wrong place.
+      </p>
+      <p>
+        <a href="https://github.com/alphagov/ier-frontend">Download the code for the 'parking permits postcode checker'.</a>
+      </p>
+
+      <h3 class="heading-small">3. Council start page</h3>
+      <p>
+        Now the user is in the right place, the page on the council's website should communicate:
+      </p>
+      <ul class="list list-bullet">
+        <li>
+          Where the permit they are applying for will allow them to park
+        </li>
+        <li>
+          How much the permit will cost
+        </li>
+        <li>
+          That they will need to prove where they live and that they are the registered keeper of their vehicle
+        </li>
+        <li>
+          How long the process usually takes
+        </li>
+      </ul>
+      <a href="/service-patterns/parking-permit/example-service/start-page">See the example council start page</a>
+
+      <h3 class="heading-small">4. Prove you are a resident</h3>
+      <p>
+        Using GOV.UK Verify, the user can securely prove their identity and their address.
+      </p>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
