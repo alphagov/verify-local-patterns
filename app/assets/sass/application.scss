@@ -28,3 +28,18 @@ $path: "/public/images/";
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+h1 span.strapline {
+    font-family: "nta",Arial,sans-serif;
+    font-size: 20px;
+    line-height: 1.1111111111;
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+    margin-bottom: 5px;
+    color: #6f777b;
+  @media (min-width: 641px) {
+    font-size: 27px;
+    line-height: 1.1111111111;
+  }
+}
