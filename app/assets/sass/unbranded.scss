@@ -28,3 +28,23 @@ $toolkit-font-stack: $helvetica-regular;
     background: $white;
   }
 }
+
+header{
+  background-color: #9cc162;
+  padding: 1em;
+  font-size: 1.6em;
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  img{
+    width: 2em;
+    vertical-align: middle;
+    margin-right: .5em;
+  }
+}
+
+body{
+  background-color: beige;
+  height: 100vh;
+}

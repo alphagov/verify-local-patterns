@@ -1,0 +1,37 @@
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<header>
+  <div class="container">
+    <img src="{{ asset_path }}images/tree.svg" />
+    Argleton County Council
+  </div>
+</header>
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Apply for a resident's parking permit in Argleton</h1>
+
+  <p>
+    To park in Argleton City centre, you'll need a resident's parking permit. This will allow you to park anywhere within the <a href="https://www.theguardian.com/technology/2009/nov/03/google">boundaries of the city</a>.
+  </p>
+  <p>
+    Resident's permits cost £60 each. Each resident is allowed one permit.
+  </p>
+  <p>
+    To apply, you'll need to prove that you live in Argleton using GOV.UK Verify, and provide your V5 certificate to prove that you are the registered keeper of the vehicle you want a permit for.
+  </p>
+  <p>
+    The process of applying online takes about 10 minutes if you've never used GOV.UK Verify before. If you have, it should take about 5 minutes.
+  </p>
+
+  <a class="button button-start" href="#" role="button">Start now</a>
+
+</main>
+
+{% endblock %}
