@@ -13,41 +13,28 @@
 
       <h1 class="heading-xlarge">
         <span class="strapline">Service pattern for</span>
-        Apply for a resident's parking permit
+        Apply online for a resident's parking permit
       </h1>
 
       <p>
-         This page is for local councils. It outlines a common pattern used for delivering resident's parking permits services effectively. <a href="/">Read more about service patterns.</a>
+         This page is for people who work in local authorities. It outlines a common pattern used for delivering resident's parking permits services effectively. <a href="/">Read more about service patterns.</a>
       </p>
 
       <h2 class="heading-medium">What is the user need?</h2>
       <p>
-        Residents need a place to park their car near their house. These services keep parkings spaces for these residents, by making it illegal to park in a given area without a permit.
+        Residents need a place to park their car near their house. Parking permit services makes sure that parking spaces are only occupied by residents by making it illegal to park in a given area without a permit.
       </p>
 
-      <!-- <h2 class="heading-medium">Eligibility requirements</h2>
-      <ul>
-        <li>
-          The user must be a resident in the area they want to park in.
-        </li>
-        <li>
-          The user must be the registered keeper of the vehicle the permit is assigned to.
-        </li>
-        <li>
-          The user must pay a fee to support the delivery cost of the service. This fee varies across councils.
-        </li>
-      </ul> -->
-
       <h2 class="heading-medium">What do councils need from users to deliver the service?</h2>
-      <ul>
+      <ul class="list list-bullet">
         <li>
-          Proof that the user lives in the area
+          proof that the user lives in the area
         </li>
         <li>
-          Proof that the user is the registered keeper of the vehicle
+          the registration number of the vehicle to be permitted
         </li>
         <li>
-          Payment (This is to support the cost of the service and will vary across council)
+          payment (This is to support the cost of the service and will vary across council)
         </li>
       </ul>
 
@@ -61,22 +48,27 @@
       </p>
       <ul class="list list-bullet">
         <li>
-          Information from their solicitor when they buy their house
+          information from their solicitor when they buy their house
         </li>
         <li>
-          Information from the council when they sign up for council tax
+          information from the council when they sign up for council tax
         </li>
         <li>
-          Signage in the street
+          signage in the street
         </li>
       </ul>
-
+      <p>
+        Local authorities should make sure the right information is being provided through these channels.
+      </p>
       <h3 class="heading-small">2. Finding the right council</h3>
       <p>
-        Once the user has found out they need a permit, they need to get to the right council's website to apply. Users might start by typing 'parking permit' into a search engine, or they might start on the council where they think they need a permit. The parking permits page on GOV.UK will send them to the right council's website once they enter their postcode. To make sure they are in the right place, councils should also have a page which sends them to the right council's website if they are in the wrong place.
+        Once the user has found out they need a permit, they need to get to the right council's website to apply. Users might start by typing 'parking permit' into a search engine, or they might start on the council where they think they need a permit.
       </p>
       <p>
-        <a href="https://github.com/alphagov/ier-frontend">Download the code for the 'parking permits postcode checker'.</a>
+        The parking permits page on GOV.UK will send them to the right council's website once they enter their postcode. To make sure they are in the right place, councils should have a similar page which sends them to the right council's website if they are in the wrong place.
+      </p>
+      <p>
+        Councils can provide this functionality easily by using <a href="#">the open source component for the 'parking permits postcode checker'.</a> (Source code link in progress)
       </p>
 
       <h3 class="heading-small">3. Council start page</h3>
@@ -85,16 +77,25 @@
       </p>
       <ul class="list list-bullet">
         <li>
-          Where the permit they are applying for will allow them to park
+          the different types of permit the user can apply for (if applicable)
         </li>
         <li>
-          How much the permit will cost
+          where the permit they are applying for will allow them to park
         </li>
         <li>
-          That they will need to prove where they live and that they are the registered keeper of their vehicle
+          at what time the permit they are applying for will allow them to park
         </li>
         <li>
-          How long the process usually takes
+          how much the permit will cost
+        </li>
+        <li>
+          how long the permit is valid for
+        </li>
+        <li>
+          that they will need to prove where they live (using GOV.UK Verify)
+        </li>
+        <li>
+          how long the process usually takes
         </li>
       </ul>
       <a href="/service-patterns/parking-permit/example-service/start-page">See the example council start page</a>
@@ -104,35 +105,73 @@
         Using GOV.UK Verify, the user can securely prove their identity and their address.
       </p>
       <p>
-        At this point the council should check whether or not the person already has a parking permit. For some councils this may affect the price, for others it might mean the user can not have a parking permit.
+        At this point the council should check whether or not the person or the household already has a parking permit. For some councils this may affect the price, for others it might mean the user can not have another permit.
+      </p>
+      <a href="#">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
+      <h3 class="heading-small">5. Confirm address</h3>
+      <p>
+        GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address.
+      </p>
+      <p>
+        At this point the council should check whether or the user lives in the eligible area, and then show a message to the user confirming they are eligible.
+      </p>
+      <ul class="list list-bullet">
+        <li>
+          <a href="#">See the example page which says the user is eligible</a>
+        </li>
+        <li>
+          <a href="#">See the example page which says the user is not eligible</a>
+        </li>
+      </ul>
+
+      <h3 class="heading-small">6. Pay</h3>
+      <p>
+        The fee will vary based on the fee calculation rules determined by each individual council.
+      </p>
+      <p>
+        <a href="service-patterns/common/payment">See the example page of accepting payments.</a>
+      </p>
+      <p>
+        Councils can accept payment via a number of channels, including checks, bank transfers or online payments. <a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/search?q=payment&lot=saas">Councils can find a supplier on the Digital Marketplace.</a></p>
+      <p>
+        In the future, councils will be able to accept payments using <a href="https://www.gov.uk/government/publications/govuk-pay/govuk-pay">GOV.UK Pay</a>.
       </p>
 
-      <h3 class="heading-small">5. Prove you are the registered keeper of the vehicle</h3>
+      <h3 class="heading-small">7. Receive permit confirmation</h3>
       <p>
-        The user needs to scan in, or send a copy of, their V5 document.
+        After payment, the user needs to receive a confirmation of payment and an acknowledgement that their application has been successful. They should also receive information about how the permit will be enforced (See step 8).
       </p>
 
-      <h3 class="heading-small">5. Pay</h3>
       <p>
-        The fee will vary based on the council.
+        The service should ask the user how they would like to receive this confirmation of payment, offering the choice of email, letter, and text. <a href="service-patterns/common/confirmation-choice">See the example page on how to do this.</a>
       </p>
       <p>
-        In the future, councils will be able to accept payments using GOV.UK Pay.
-      </p>
-
-      <h3 class="heading-small">6. Receive permit confirmation</h3>
-      <p>
-        After payment, the user should receive a confirmation of payment which also acts as a confirmation of payment.
-      </p>
-      <p>
-        In the future, councils will be able to send this confirmation using GOV.UK Notify.
+        In the future, councils will be able to send this confirmation using <a href="https://www.gov.uk/government/publications/govuk-notify/govuk-notify">GOV.UK Notify</a>.
       </p>
 
-      <h3 class="heading-small">7. Checking permits</h3>
+      <h3 class="heading-small">8. Checking permits</h3>
       <p>
         It's better for users and cheaper for government if the permits are issued electronically. Wardens check the permits by entering number plates into a database.
       </p>
-
+      <p>
+        Councils who haven't yet moved over to an electronic permit system, should have a plan in place to move over. </p>
+      </p>
+      <p>In the meantime, councils should mention in the payment receipt
+      </p>
+      <ul class="list list-bullet">
+        <li>
+          how long they will need to wait for a permit to be posted to them
+        </li>
+        <li>
+          where they can pick up their permit from to get it faster
+        </li>
+        <li>
+          that they can print a temporary permit themselves while they wait for a permanent one
+        </li>
+      </ul>
+      <p>
+        This information should also be communicated on the council's start page at the beginning of the user journey.
+      </p>
 
     </div>
   </div>
