@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_argleton.html" %}
 
 {% block page_title %}
   GOV.UK prototype kit
@@ -17,8 +17,8 @@
 	   <h1 class="heading-xlarge">Pay by cash using PayPoint</h1>
 			<div class="paypoint information">
 				<p> You can pay by cash at any store showing the PayPoint sign. There are over 27,000 in the UK. </p>
-				<img src="/public/images/paypoint-logo.png">				
-				
+				<img src="/public/images/paypoint-logo.png">
+
 				<details class="find-paypoint-location">
 					<summary aria-controls="details-content-0" tabindex="0">
 					<span class="summary"> Find your nearest PayPoint store </span>
@@ -34,8 +34,8 @@
 
 	    	<h2 class="heading-paypoint">How to use PayPoint</h2>
 
-				<p> We will generate a unique barcode for your payment. You then take this barcode to a PayPoint store.</p> 
-				<p>The shopkeeper will scan the barcode from your phone or a print-out and you can then make your payment. </p> 
+				<p> We will generate a unique barcode for your payment. You then take this barcode to a PayPoint store.</p>
+				<p>The shopkeeper will scan the barcode from your phone or a print-out and you can then make your payment. </p>
 			</div>
 		<div class="form-group">
 			<label class="form-label-bold" for="full-name">
@@ -46,13 +46,13 @@
 		</div>
 	    <div class="column-third">
 
-			<div class="payment-summary-small">
+			<!-- <div class="payment-summary-small">
 				<h2>Payment summary</h2>
 
 			      <p class="payment-info">Benefit debt repayment to DWP</p>
 			       <h3>Amount to pay:</h3>
 			       <p class="payment-amount">£187.00</p>
-			</div>
+			</div> -->
 		</div>
 
 	</div>
@@ -73,4 +73,3 @@
 </main>
 
 {% endblock %}
-
