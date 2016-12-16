@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- <div class="back">
+		<a href="javascript:history.back()">&#9664; Back</a>
+	</div> -->
+<div class="grid-row review-details">
+	  <h1 class="heading-large">Confirm your payment</h1>
+	  <div class="check-details">
+
+	  	<table>
+		    <tbody>		      
+		      <tr>
+		        <td>Card number:</td>
+		        <td class="table-info">************7470</td>
+		      </tr>
+		      <tr>
+		       <td>Expiry date:</td>
+		        <td class="table-info">{{exp-month}}/{{exp-year}}</td>
+		      </tr>
+		      <tr>
+		        <td>Name on card:</td>
+		        <td class="table-info">{{full-name}}</td>
+		      </tr>
+		      <tr>
+		        <td>Billing address:</td>
+		        <td class="table-info">{{building-and-street}} {{town-or-city}}, {{postcode}}</td>
+		      </tr>
+		       <tr>
+		        <td>Email address:</td>
+		        <td class="table-info">{{email-address}}</td>
+		      </tr>
+		      <tr>
+		        <td>Payment of:</td>
+		        <td class="table-info">Tax your vehicle – 12 months from 30 April 2016 to 30 April 2017</td>
+		      </tr>
+		      <tr>
+		        <td>Amount to pay:</td>
+		        <td class="table-info">£145.00</td>
+		      </tr>
+		    </tbody>
+  		</table>	
+		</div>
+</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="form-group">
+		 			<a href="success"><button class="button">Confirm payment</button></a>
+		 		</div>
+		 		<div class="back">
+				<a href="#">Cancel payment</a>
+			</div>
+		 </div>
+	 </div>
+
+
+</main>
+
+{% endblock %}

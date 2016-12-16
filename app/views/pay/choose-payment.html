@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="back">
+		<a href="javascript:history.back()">&#9664; Back</a>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+		  <h1 class="heading-large">Select how you want to pay</h1>
+	  	<form class="radio-nav">
+				<div class="form-group">
+					
+					<label id="label-debitcard" class="block-label" for="radio-debitcard">
+					    <input id="radio-debitcard" type="radio" name="radio-group" value="enter-card">
+					    Credit or Debit card
+					</label>
+					
+					<!-- <label id="label-creditcard" class="block-label" for="radio-creditcard">
+					    <input id="radio-creditcard" type="radio" name="radio-group" value="benefit-credit-card-payment">
+					    Credit card – 2% fee
+					</label> -->
+					
+					<label id="label-directdebit" class="block-label" for="radio-directdebit">
+					    <input id="radio-directdebit" type="radio" name="radio-group" value="direct-debit-payment">
+					    Direct debit
+				  	</label>
+					
+			  	<label id="label-paypal" class="block-label" for="radio-paypal">
+				    <input id="radio-paypal" type="radio" name="radio-group" value="paypal-payment">
+				    PayPal
+			  	</label>
+				
+<!-- 			  	<label id="label-cash" class="block-label" for="radio-cash">
+				    <input id="radio-cash" type="radio" name="radio-group" value="cash-payment">
+				    Cash – at your local store
+					</label> -->
+			
+					<div class="form-group">
+				 		<button class="button">Continue</button>
+				 	</div>
+			 	</div>
+			</form>
+		</div>
+	  <div class="column-third">
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+		<div class="payment-confirmed">
+			<h1><img src="/public/images/tick-icon.png">Your payment has been successful</h1>
+			 <h3>Reference number:</h3>
+			 <p>43236WPGV</p>
+		</div>
+
+		<div class="grid-row review-details">
+			<p>We will email you a receipt shortly.</p>
+			<h3 class="heading-medium">Payment summary</h3>
+			<table>
+			    <tbody>
+			      <tr>
+			        <td>Payment of:</td>
+			        <td class="table-info">Tax your vehicle – 12 months from 30 April 2016 to 30 April 2017</td>
+			      </tr>
+			      <tr>
+			        <td>Amount paid:</td>
+			        <td class="table-info">£145.00</td>
+			      </tr>
+			    </tbody>
+
+			  </table>
+		</div>
+
+	<div class="finish-and-return">
+		<div class="form-group">
+	 		<a href="/"><button class="button">Finished</button></a>
+	 	</div>
+	</div>
+
+</main>
+
+{% endblock %}
+
