@@ -107,6 +107,16 @@ table{
   }
 }
 
+.form-group{
+  background: beige;
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+
+.form-group .panel-border-narrow{
+  margin-left: 16px;
+}
+
 .form-group.form-group-price{
   display: block;
   float: none;
