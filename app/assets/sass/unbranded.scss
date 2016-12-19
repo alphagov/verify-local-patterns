@@ -60,6 +60,11 @@ body{
   min-height: 100vh;
 }
 
+//having to be annoyingly specific here to override the radio button styles
+.unbranded .block-label.selection-button-radio:before {
+  background: #fafafa;
+}
+
 input.form-control, textarea.form-control{
   background: #fafafa;
   margin-bottom: 9px;
