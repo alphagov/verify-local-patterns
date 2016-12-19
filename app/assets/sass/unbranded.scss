@@ -29,6 +29,11 @@ $toolkit-font-stack: $helvetica-regular;
   }
 }
 
+// possibly should be in govuk styles
+.grid-row{
+  display: initial;
+}
+
 //argleton styles
 .argleton-name-extra{
   display: none;
