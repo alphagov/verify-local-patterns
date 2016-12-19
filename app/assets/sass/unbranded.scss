@@ -29,6 +29,10 @@ $toolkit-font-stack: $helvetica-regular;
   }
 }
 
+.unbranded .button-start{
+  padding-bottom: 0.5em;
+}
+
 // possibly should be in govuk styles
 .grid-row{
   display: initial;
