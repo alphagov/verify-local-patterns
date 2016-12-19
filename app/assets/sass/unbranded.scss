@@ -29,6 +29,7 @@ $toolkit-font-stack: $helvetica-regular;
   }
 }
 
+//argleton styles
 header{
   background-color: #9cc162;
   padding: 1em;
@@ -46,5 +47,56 @@ header{
 
 body{
   background-color: beige;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+input.form-control, textarea.form-control{
+  background: #fafafa;
+  margin-bottom: 9px;
+}
+
+//payment styles
+
+.card-images{
+  img{
+    height: 39px;
+  }
+}
+
+.card-image{
+  height: 60px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+table{
+  margin-bottom: 30px;
+}
+
+.payment-summary {
+  border: 10px solid #DEE0E2;
+  background-color: #F8F8F8;
+  padding: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  h2{
+    font-size: 27px;
+    font-weight: 700;
+    padding-bottom: 15px;
+  }
+}
+
+.form-group.form-group-price{
+  display: block;
+  float: none;
+  width: 75px;
+}
+
+.form-group.form-group-product-name{
+  display: block;
+  width: 350px;
+}
+
+p.accepted-copy-2 {
+    margin-bottom: 0;
 }
