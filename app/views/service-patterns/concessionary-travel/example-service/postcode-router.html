@@ -1,0 +1,58 @@
+{% extends "layout_argleton.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <h1 class="heading-xlarge">Apply for a resident's parking permit</h1>
+
+    <div class="article-container group">
+
+
+        <div class="content-block">
+            <div class="inner">
+
+                <section class="intro">
+                    <div class="get-started-intro">
+                        <p>To get a parking permit, first make sure you're applying for a parking permit from the right council.</p>
+
+                    </div>
+                </section>
+                <div class="panel panel-border-wide postcode-search-form" data-module="track-submit" data-track-category="postcodeSearch:local_transaction" data-track-action="postcodeSearchStarted">
+
+
+                    <form method="post" id="local-locator-form" class="find-location-for-service">
+                        <fieldset>
+                            <legend class="visuallyhidden">Postcode lookup</legend>
+
+                            <div class="ask_location">
+                                <label class="instruction" for="postcode">Enter a postcode</label>
+                                <p>For example SW1A 2AA</p>
+                                <input class="postcode" id="postcode" name="postcode" type="text" aria-invalid="false" value="">
+                                <a class="button" href="postcode-router-success">Find</a>
+                                <p>
+                                    <a target="_blank" id="postcode-finder-link" rel="external" href="http://www.royalmail.com/find-a-postcode">Find a postcode on Royal Mail's postcode finder</a>
+                                </p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <section class="more">
+                    <h3 class="heading-small">What you need to know</h3>
+                    <ul>
+                        <li>Postcode lookup available for England and Wales only</li>
+                    </ul>
+
+                    <div class="more">
+
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+{% endblock %}
