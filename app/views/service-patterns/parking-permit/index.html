@@ -116,18 +116,21 @@
         GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address.
       </p>
       <a href="parking-permit/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
+      <h4 class="heading-small">5a. Does the user live in the area?</h4>
       <p>
         At this point the council should check whether or the user lives in the eligible area, and then show a message to the user confirming they are eligible. This is done by checking the user's address against a council held database of parking permit zones.
       </p>
       <p>
         <a href="parking-permit/example-service/not-eligible">See the example page which says the user is not eligible because of their address</a>
       </p>
+      <h4 class="heading-small">5b. Does the user or the user's address already have a permit?</h4>
       <p>
         Some councils have limits on the number of people who can get a permit, or number of permits allowed per address. At the same time as check addresss eligibility (from the point of view of the user), the council should check whether or not there are any permits currently assigned to the person or their address and issue an ineligible message if applicable.
       </p>
       <p>
         <a href="#">See the example page which says the user is not eligible because they have exceeded the number of permits allowed</a> (page coming soon)
       </p>
+      <h4 class="heading-small">5c. Is the user the only resident?</h4>
       <p>
         If the address has exceeded the number of permits allowed, but the user has not, then the council should ask the user if they are the only resident. If the user answers no, the council should tell the user that the other residents at their address have used their permit allowance.
       </p>
@@ -139,12 +142,14 @@
           <a href="#">See the example page which says another resident may have used your address' permit allowance</a> (page coming soon)
         </li>
       </ul>
+      <h4 class="heading-small">5d. Did the user recently move in?</h4>
       <p>
         If the user is the only resident, but there are permits assigned to somebody else at the address, the council should ask if the user has moved in since the time the old permit was bought.
       </p>
       <p>
         <a href="#">See the example page which asks the user if they have recently moved</a> (page in progress)
       </p>
+      <h4 class="heading-small">5e. Cancelling old permits and next steps</h4>
       <p>
         If they have recently moved in, the council should assume the permits belong to a previous resident. Notify the user that the old permits will be cancelled after a grace period of 30 days and a letter will be sent to the old permit holder to reverse the process.
       </p>
