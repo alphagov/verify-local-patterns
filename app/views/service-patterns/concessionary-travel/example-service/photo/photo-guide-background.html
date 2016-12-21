@@ -1,0 +1,67 @@
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for an older person's bus pass in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 4 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
+
+  <h2 class="heading-medium">Find a plain background</h2>
+
+  <p>
+    You need to stand in front of a completely plain background. It should be a light grey or cream colour.
+  </p>
+  <p>
+    Don’t stand in front of a tiled or patterned wall.
+  </p>
+  <p>
+    Make sure there aren’t any objects in view, like a light switch or plant.
+  </p>
+  <div class="guidance-photos" aria-hidden="true">
+        <ul>
+            <li>
+                <img src="{{ asset_path }}images/image-m2-plain.jpg" alt="">
+                <div class="result" style="height: 57px;">
+                    <p class="approved">Approved</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ asset_path }}images/image-m2-textured-background.jpg" alt="">
+                <div class="result" style="height: 57px;">
+                    <p class="failed">Textured background</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ asset_path }}images/image-m2-object-in-background.jpg" alt="">
+                <div class="result" style="height: 57px;">
+                    <p class="failed">Object in background</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-camera" role="button">Previous</a>
+      </li>
+    </ul>
+    <li class="button-guide button-guide-previous">
+      <a class="button" href="photo-guide-background" role="button">Next</a>
+    </li>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}

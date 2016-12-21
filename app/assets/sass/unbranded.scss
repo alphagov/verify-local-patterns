@@ -188,3 +188,28 @@ p.accepted-copy-2 {
     margin-left: 1em;
   }
 }
+
+
+
+.guidance-photos{
+  display: inline-block;
+  ul{
+    margin-left: -8px;
+    li {
+      position: relative;
+      box-sizing: border-box;
+      float: left;
+      min-width: 120px;
+      max-width: 172px;
+      margin-bottom: 1.05263em;
+      padding-left: 8px;
+      @media (min-width: 769px) {
+          max-width: 188px;
+      }
+    }
+  }
+  img{
+    width: 100%;
+    vertical-align: bottom;
+  }
+}
