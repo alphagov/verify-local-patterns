@@ -135,3 +135,39 @@ table{
 p.accepted-copy-2 {
     margin-bottom: 0;
 }
+
+// photo guide styles
+
+.back-link{
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 15px;
+  padding-left: 14px;
+  border-bottom: #0b0c0c 1px solid;
+  color: #0b0c0c;
+  text-decoration: none;
+  background: url(../images/back-caret.svg) no-repeat 1px 0;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  &:link{
+    color: #000;
+  }
+  @media (min-width: 641px){
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.photo-guide .marker {
+  color: #6f777b;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  @media (min-width: 641px){
+      font-size: 16px;
+      line-height: 1.25;
+  }
+}
