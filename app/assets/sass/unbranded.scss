@@ -38,6 +38,15 @@ $toolkit-font-stack: $helvetica-regular;
   display: initial;
 }
 
+li{
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+
+.svg{
+  width: 100%;
+}
+
 //argleton styles
 .argleton-name-extra{
   display: none;
@@ -169,5 +178,12 @@ p.accepted-copy-2 {
   @media (min-width: 641px){
       font-size: 16px;
       line-height: 1.25;
+  }
+}
+
+.guide-nav li{
+  @media(min-width:640px){
+    float: left;
+    margin-left: 1em;
   }
 }
