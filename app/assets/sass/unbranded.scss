@@ -38,6 +38,9 @@ $toolkit-font-stack: $helvetica-regular;
   display: initial;
 }
 
+main img {
+    max-width: 100%;
+}
 
 .svg{
   width: 100%;
