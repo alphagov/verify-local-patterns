@@ -1,0 +1,60 @@
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for an older person's bus pass in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 9 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
+
+  <h2 class="heading-medium">Take off any headwear</h2>
+
+  <div class="text">
+          <p>You must be able to see your whole face in the photo. Tie your hair back if you need to.</p>
+      </div>
+      <div class="guidance-photos" aria-hidden="true">
+              <ul>
+                  <li>
+                      <img src="{{asset_path}}images/image-f1-plain.jpg" alt="">
+                      <div class="result" style="height: 57px;">
+                          <p class="approved">Approved</p>
+                      </div>
+                  </li>
+                  <li>
+                      <img src="{{asset_path}}images/image-f1-hair-over-eye.jpg" alt="">
+                      <div class="result" style="height: 57px;">
+                          <p class="failed">Keep hair away from eyes</p>
+                      </div>
+                  </li>
+                  <li>
+                      <img src="{{asset_path}}images/image-f2-headscarf-covering-eye.jpg" alt="">
+                      <div class="result" style="height: 57px;">
+                          <p class="failed">Avoid covering face</p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-lighting" role="button">Previous</a>
+      </li>
+    </ul>
+    <li class="button-guide button-guide-previous">
+      <a class="button" href="photo-guide-face-clear" role="button">Next</a>
+    </li>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}
