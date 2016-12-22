@@ -1,0 +1,46 @@
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for an older person's bus pass in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 5 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
+
+  <h2 class="heading-medium">Stand in the right position</h2>
+
+  <div class="grid-row">
+    <p>
+      You need to stand about 1.5 metres away from the person taking your photo and half a metre from the wall.
+    </p>
+  </div>
+
+  <div class="grid-row">
+      <div class="column-two-thirds distance-diagram">
+          <img src="{{asset_path}}images/diagram-distance.svg" type="image/svg+xml" class="svg" />
+      </div>
+  </div>
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-get-help" role="button">Previous</a>
+      </li>
+    </ul>
+    <li class="button-guide button-guide-previous">
+      <a class="button" href="photo-guide-distance" role="button">Next</a>
+    </li>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}
