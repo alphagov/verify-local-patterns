@@ -38,10 +38,6 @@ $toolkit-font-stack: $helvetica-regular;
   display: initial;
 }
 
-li{
-  list-style-type: none;
-  margin-bottom: 1em;
-}
 
 .svg{
   width: 100%;
@@ -183,13 +179,13 @@ p.accepted-copy-2 {
 }
 
 .guide-nav li{
+  list-style-type: none;
+  margin-bottom: 1em;
   @media(min-width:640px){
     float: left;
     margin-left: 1em;
   }
 }
-
-
 
 .guidance-photos{
   display: inline-block;
