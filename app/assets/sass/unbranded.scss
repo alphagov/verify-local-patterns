@@ -212,4 +212,49 @@ p.accepted-copy-2 {
     width: 100%;
     vertical-align: bottom;
   }
+  .result {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 85%;
+    height: 57px;
+    background: #fff;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #0b0c0c;
+    @media (min-width: 641px){
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+    .approved, .failed {
+      position: absolute;
+      top: 50%;
+      box-sizing: border-box;
+      width: 100%;
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      margin: 0;
+      padding: 8px 28px 5px 8px;
+      background-repeat: no-repeat;
+      background-position: right 7px center;
+      background-size: 18px;
+      @media (min-width: 641px){
+        padding-top: 11px;
+        padding-right: 34px;
+        padding-bottom: 8px;
+        background-size: 22px;
+      }
+    }
+    .approved {
+      background-image: url(/public/images/photo/icon-thick-tick.svg);
+    }
+    .failed {
+        background-image: url(/public/images/photo/icon-thick-cross.svg);
+    }
+  }
 }
