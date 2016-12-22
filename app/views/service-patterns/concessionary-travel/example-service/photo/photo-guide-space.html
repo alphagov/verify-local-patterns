@@ -1,0 +1,47 @@
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for an older person's bus pass in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 6 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
+
+  <h2 class="heading-medium">Check the space around your head and shoulders</h2>
+
+  <div class="grid-row">
+    <p>
+      Make sure there’s enough room around your head and shoulders. The person taking the photo may have to move if there’s not.
+    </p>
+    <p>
+      Don’t worry about cropping the photo – we’ll do that for you when you submit your application.
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <img src="{{asset_path}}images/too-close-photo.png" />
+  </div>
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-background" role="button">Previous</a>
+      </li>
+    </ul>
+    <li class="button-guide button-guide-previous">
+      <a class="button" href="photo-guide-space" role="button">Next</a>
+    </li>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}
