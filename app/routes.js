@@ -27,4 +27,17 @@ router.get('/pay/choose-payment', function (req, res) {
 
 });
 
+router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'skip') {
+    res.redirect('upload')
+  } else if (answer === 'shop') {
+    res.redirect('photo-shop')
+  } else {
+    res.render('service-patterns/concessionary-travel/example-service/photo/photo-guide')
+  }
+})
+
 module.exports = router

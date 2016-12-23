@@ -12,31 +12,33 @@
 
   <h2 class="heading-medium">How would you like to take your photo?</h2>
 
-  <form>
+  <form action="photo-guide" method="get" class="form">
   <div class="form-group">
     <fieldset>
 
       <legend class="visually-hidden">How would you like to take your photo?</legend>
 
       <label class="block-label selection-button-radio" for="radio-1">
-        <input id="radio-1" type="radio" name="radio-group" value="Show me how to do it myself">
+        <input id="radio-1" type="radio" name="answer" value="guide">
         Show me how to do it myself
       </label>
       <label class="block-label selection-button-radio" for="radio-2">
-        <input id="radio-2" type="radio" name="radio-group" value="Show me how to get it from a shop">
+        <input id="radio-2" type="radio" name="answer" value="shop">
         Show me how to get it from a shop
       </label>
       <p class="form-block">or</p>
       <label class="block-label selection-button-radio" for="radio-3">
-        <input id="radio-3" type="radio" name="radio-group" value="I already have a digital photo">
+        <input id="radio-3" type="radio" name="answer" value="skip">
         I already have a digital photo
       </label>
 
     </fieldset>
   </div>
+  <div class="form-group">
+    <input type="submit" class="button" value="Continue">
+  </div>
 </form>
 
-  <a class="button" href="#" role="button">Next</a>
 
 </main>
 
