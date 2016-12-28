@@ -1,0 +1,35 @@
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for a resident's parking permit in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Enter car registration number</h1>
+
+  <p>
+    Enter the registration number of the vehicle you wish to get a permit for.
+  </p>
+
+  <div>
+      <form method="post">
+          <fieldset>
+              <legend class="visuallyhidden">Enter vehicle registration number</legend>
+
+              <div class="ask_location">
+                  <label class="instruction" for="postcode">Enter vehicle registration number</label>
+                  <input class="reg-number" id="reg-number" name="reg-number" type="text" aria-invalid="false" value="">
+              </div>
+          </fieldset>
+      </form>
+  </div>
+
+  <a class="button" role="button" href="/pay/choose-payment">Next</a>
+
+
+</main>
+
+{% endblock %}
