@@ -1,8 +1,13 @@
+# Verify Local Patterns
+
+This is a prototype of some content that will be included in the [GOV.UK Service Manual](https://gov.uk/service-manual) about the best practice for councils to deliver two services - parking permits and concessionary travel. The repo also includes a working prototype of both services which follows the guidance, as deliver by the fictional council of Argleton.
+
+I'm currently using the GitHub project board to manage tasks and iterations.
+
+
+Here follows the docs ported over from the prototype kit.
+
 # GOV.UK Prototype kit
-
-## News
-
-**Upgrading from version 1 to 2:** the latest version of the kit (2.0.0 and later) is not compatible with previous versions. If you update your old prototypes you'll need to [convert them as well](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit).
 
 ## About the prototype kit
 
