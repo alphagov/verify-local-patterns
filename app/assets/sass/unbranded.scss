@@ -88,6 +88,22 @@ input.form-control, textarea.form-control{
   margin-bottom: 9px;
 }
 
+// argleton header
+
+header{
+  padding-top: 0px;
+  .container{
+    padding-top: 9px;
+  }
+}
+
+.contact-link{
+  text-align: right;
+  font-size: .75em;
+  padding-bottom: .33em;
+}
+
+
 //payment styles
 
 .card-images{
