@@ -55,24 +55,6 @@ main img {
   }
 }
 
-header{
-  background-color: #9cc162;
-  padding: 6px 15px 0px;
-  @media(min-width: 420px){
-    padding: 10px 15px;
-  }
-  font-size: 1.6em;
-  .container{
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  img{
-    width: 2em;
-    vertical-align: middle;
-    margin-right: .5em;
-  }
-}
-
 body{
   background-color: beige;
   min-height: 100vh;
@@ -94,6 +76,22 @@ header{
   padding-top: 0px;
   .container{
     padding-top: 9px;
+  }
+}
+
+header{
+  background-color: #9cc162;
+  padding: 0px 15px 0px;
+  font-size: 1.6em;
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  img{
+    width: 2em;
+    vertical-align: middle;
+    margin-right: .5em;
   }
 }
 
