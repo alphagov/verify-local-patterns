@@ -117,9 +117,15 @@
       </p>
       <a href="parking-permit/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
       <p>
-        If the user says the address returned is not correct, they should then be asked to enter their current address and warned that they must enter false information.
+        If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and warned that they must enter false information.
       </p>
       <a href="parking-permit/example-service/incorrect-address">See the example page asking users to enter their current address</a>
+      <p>
+        If the permit is physical, councils will get extra confidence in the address by mailing the permit to the address given. Councils should mention they'll be using the address for this purpose on the confirmation page.
+      </p>
+      <p>
+        If the permit is digital and councils want extra confidence of eligibility, they can issue a temporary permit for at least 3 months. After this time, the user's identity provider should have the new address and the user can reapply.
+      </p>
       <h4 class="heading-small">5a. Does the user live in the area?</h4>
       <p>
         At this point the council should check whether or the user lives in the eligible area, and then show a message to the user confirming they are eligible. This is done by checking the user's address against a council held database of parking permit zones.
