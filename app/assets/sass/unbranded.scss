@@ -23,6 +23,9 @@ $toolkit-font-stack: $helvetica-regular;
   }
 
   // Remove GOV.UK footer styles
+  main{
+    min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
+  }
   #footer {
     border: 0;
     background: $white;
