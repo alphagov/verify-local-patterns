@@ -1,0 +1,55 @@
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for a resident's parking permit in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Confirm address</h1>
+
+  <p>
+    We've received these details from GOV.UK Verify:
+  </p>
+  <div class="panel panel-border-wide">
+    <p>
+      John Smith<br />
+      1A Argleton High Street<br />
+      Argleton<br />
+      ARG1 4HP<br />
+    </p>
+  </div>
+  <p>
+    We'll use this address to send you your bus pass and check you're applying through the right council.
+  </p>
+
+  <p>
+    Is this your current address?
+  </p>
+  <form action="eligible" method="get" class="form">
+    <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visually-hidden">Is this your name and address?</legend>
+
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="answer" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="answer" value="No">
+          No
+        </label>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input class="button" type="submit" value="Next">
+    </div>
+  </form>
+
+</main>
+
+{% endblock %}
