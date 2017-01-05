@@ -108,10 +108,42 @@
         Using GOV.UK Verify, the user can securely prove their identity and their address.
       </p>
       <p>
-        At this point the council should check whether or not the person or the household already has a parking permit. For some councils this may affect the price, for others it might mean the user can not have another permit.
+        The interactions between GOV.UK and the council's website are as follows
       </p>
+      <ul class="list list-bullet">
+        <li>
+          Council service creates authentication request SAML
+        </li>
+        <li>
+          Council service records authentication request ID in its session store
+        </li>
+        <li>
+          Matching service receives matching request
+        </li>
+        <li>
+          Matching service responds 'no match'
+        </li>
+        <li>
+          (Here if we were matching, the service would interact with a data store, but for new applications this is not needed.)
+        </li>
+        <li>
+          Matching service receives `unknown user account creation` and responds 'success'
+        </li>
+        <li>
+          Council service receives assertion with name and address
+        </li>
+        <li>
+          Service SAML session store checks request ID to make sure it's the right request
+        </li>
+        <li>
+          Council service receives user details
+        </li>
+      </ul>
       <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
       <h3 class="heading-small">5. Confirm address and eligibility</h3>
+      <p>
+        When the council receives the user's identity back from GOV.UK Verify, they should check whether or not the person or the household already has a parking permit. For some councils this may affect the price, for others it might mean the user can not have another permit.
+      </p>
       <p>
         GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address.
       </p>
