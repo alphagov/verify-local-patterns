@@ -14,6 +14,8 @@ CSS for the Argleton prototype are found in `app/assets/sass/unbranded.scss`.
 
 HTML for the services are found in `app/views/service-patterns/`[service-name]`/example-service`.
 
+To change where a user goes when they click options such as radio buttons, you'll need to edit `app/routes.js`. Read more about that in [the prototype kit docs](https://govuk-prototype-kit.herokuapp.com/docs/creating-routes).
+
 ---
 
 Here follows the docs ported over from the prototype kit.

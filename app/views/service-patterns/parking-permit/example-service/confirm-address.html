@@ -24,26 +24,25 @@
   <p>
     Is this your current address?
   </p>
-  <form>
+  <form action="eligible" method="get" class="form">
     <div class="form-group">
       <fieldset class="inline">
 
         <legend class="visually-hidden">Is this your name and address?</legend>
 
         <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+          <input id="radio-inline-1" type="radio" name="answer" value="Yes">
           Yes
         </label>
         <label class="block-label selection-button-radio" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+          <input id="radio-inline-2" type="radio" name="answer" value="No">
           No
         </label>
 
       </fieldset>
     </div>
     <div class="form-group">
-      <!-- <input class="button" type="submit" value="Next"> -->
-      <a href="eligible" class="button">Next</a>
+      <input class="button" type="submit" value="Next">
     </div>
   </form>
 

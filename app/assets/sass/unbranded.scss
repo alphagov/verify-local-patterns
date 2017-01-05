@@ -32,10 +32,12 @@ $toolkit-font-stack: $helvetica-regular;
     padding: 1em;
     text-align: center;
   }
-}
-
-.unbranded .button-start{
-  padding-bottom: 0.5em;
+  .notice{
+    margin: 1em 0 2em;
+  }
+  .button-start{
+    padding-bottom: 0.5em;
+  }
 }
 
 // possibly should be in govuk styles
