@@ -117,18 +117,35 @@
         Using GOV.UK Verify, the user can securely prove their identity, address and age.
       </p>
       <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-bus-pass-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
+
+      <h3 class="heading-small">6. Confirm your address and eligibility</h3>
       <p>
-        When the user returns from the Verify process, the council should check that they live in the area the council serves and that they are old enough for a bus pass. They should then direct the user to a page confirming whether or not they are eligible. This page can also ask the user to confirm they want the council to send the bus pass to the address they've received through GOV.UK Verify.
+        GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address. This page can also ask the user to confirm they want the council to send the bus pass to the address they've received through GOV.UK Verify.
+      </p>
+      <a href="parking-permit/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
+      <!-- #todo: make a version of this page for con travel -->
+      <p>
+        If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and warned that they must not enter false information.
+      </p>
+      <a href="parking-permit/example-service/incorrect-address">See the example page asking users to enter their current address</a>
+      <!-- #todo: make a version of this page for con travel -->
+      <p>
+        Once the user has confirmed their address, the council should check that the given address is in the area the council serves. If the address is not in the area, the council should tell them they are not eligible in this area.
+      </p>
+      <a href="concessionary-travel/example-service/not-eligible-address">See the page telling the user they are not eligible because of their address</a>
+      <p>
+       If their address is eligible, then they should then ask them to confirm their date of birth. If users do not recognise the date of birth, they have probably not verified successfully and should contact the council to apply for their pass offline.
+      </p>
+      <a href="concessionary-travel/example-service/confirm-dob">See the page telling the user to confirm their date of birth</a> (page in progress)
+      <p>
+       At this point the councils should check their age, then tell the user whether or not they are eligible.
       </p>
       <ul class="list list-bullet">
-        <li>
-          <a href="concessionary-travel/example-service/eligible">See the page telling the user they are eligible</a>
-        </li>
         <li>
           <a href="concessionary-travel/example-service/not-eligible-age">See the page telling the user they are not eligible because of their age</a>
         </li>
         <li>
-          <a href="concessionary-travel/example-service/not-eligible-address">See the page telling the user they are not eligible because of their address</a>
+          <a href="concessionary-travel/example-service/eligible">See the page telling the user they are eligible</a>
         </li>
       </ul>
 
