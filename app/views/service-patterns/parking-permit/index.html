@@ -112,31 +112,31 @@
       </p>
       <ul class="list list-bullet">
         <li>
-          Council service creates authentication request SAML
+          Council service creates authentication request <a href="https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language">SAML</a> and records authentication request ID in its session store
         </li>
         <li>
-          Council service records authentication request ID in its session store
+          User goes through Verify process
         </li>
         <li>
-          Matching service receives matching request
+          GOV.UK Verify matching service receives matching request
         </li>
         <li>
-          Matching service responds 'no match'
+          GOV.UK Verify matching service responds 'no match'
         </li>
         <li>
           (Here if we were matching, the service would interact with a data store, but for new applications this is not needed.)
         </li>
         <li>
-          Matching service receives `unknown user account creation` and responds 'success'
+          GOV.UK Verify matching service receives `unknown user account creation` and responds 'success'
         </li>
         <li>
-          Council service receives assertion with name and address
+          Council service back end receives assertion with name and address
         </li>
         <li>
-          Service SAML session store checks request ID to make sure it's the right request
+          Council service's SAML session store checks request ID to make sure it's the right request
         </li>
         <li>
-          Council service receives user details
+          Council service's front end receives user details
         </li>
       </ul>
       <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
