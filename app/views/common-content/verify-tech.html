@@ -1,0 +1,32 @@
+<p>
+  The interactions between GOV.UK and the council's website are as follows
+</p>
+<ul class="list list-bullet">
+  <li>
+    Council service creates authentication request <a href="https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language">SAML</a> and records authentication request ID in its session store
+  </li>
+  <li>
+    User goes through Verify process
+  </li>
+  <li>
+    GOV.UK Verify matching service receives matching request
+  </li>
+  <li>
+    GOV.UK Verify matching service responds 'no match'
+  </li>
+  <li>
+    (Here if we were matching, the service would interact with a data store, but for new applications this is not needed.)
+  </li>
+  <li>
+    GOV.UK Verify matching service receives `unknown user account creation` and responds 'success'
+  </li>
+  <li>
+    Council service back end receives assertion with name and address
+  </li>
+  <li>
+    Council service's SAML session store checks request ID to make sure it's the right request
+  </li>
+  <li>
+    Council service's front end receives user details
+  </li>
+</ul>
