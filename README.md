@@ -10,7 +10,7 @@ I'm currently using the GitHub project board to manage tasks and iterations.
 
 ## Argleton
 
-CSS for the Argleton prototype are found in `app/assets/sass/unbranded.scss`.
+CSS for Argleton prototype are found in `app/assets/sass/unbranded.scss`.
 
 HTML for the services are found in `app/views/service-patterns/`[service-name]`/example-service`.
 
