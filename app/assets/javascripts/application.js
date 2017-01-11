@@ -25,4 +25,15 @@ $(document).ready(function () {
   // to toggle hidden content
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
+
+  // code for verify give permission page, should probably be moved elsewhere so doesn't load on every page
+
+  $('button').click(function(){
+    var checked = $('#confirm_allow_verify').prop('checked');
+    if(checked){
+      window.location.href = "http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton";
+    }else{
+      $('.error-summary').removeClass('hidden');
+    }
+  });
 })

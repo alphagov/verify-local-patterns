@@ -58,6 +58,10 @@ label.block-label{
   padding: 16px 20px 25px 70px;
 }
 
+.hidden{
+  display: none;
+}
+
 //checkbox position
 .js-enabled .block-label.selection-button-checkbox::before{
   top: 20px;
