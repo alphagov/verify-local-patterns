@@ -54,14 +54,25 @@ main img {
   margin-bottom: 2em;
 }
 
-label.block-label{
+//radio button position
+label.block-label.selection-button-radio, label.block-label.selection-button-radio-selected{
+  padding-left: 53px;
+}
+
+//circle
+.js-enabled .block-label.selection-button-radio::before{
+  top: 10px;
+  left: 7px;
+}
+//dot
+.js-enabled .block-label.selection-button-radio::after{
+  top: 19px;
+  left: 16px;
+}
+
+label.block-label.selection-button-checkbox{
   padding: 16px 20px 25px 70px;
 }
-
-.hidden{
-  display: none;
-}
-
 //checkbox position
 .js-enabled .block-label.selection-button-checkbox::before{
   top: 20px;
@@ -74,6 +85,10 @@ label.block-label{
   left: 24px;
 }
 
+// for toggling display
+.hidden{
+  display: none;
+}
 
 //argleton styles
 .argleton-name-extra{
