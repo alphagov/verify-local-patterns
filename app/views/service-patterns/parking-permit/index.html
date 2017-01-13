@@ -105,13 +105,8 @@
       <a href="parking-permit/example-service/start-page">See the example service start page</a>
 
       <h3 class="heading-small">4. Prove you are a resident</h3>
-      <p>
-        The government standard for identity verification is <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify">GOV.UK Verify</a>. Using GOV.UK Verify, the user can securely prove their identity and their address.
-      </p>
-      <p>
-        Councils should offer an alternative to GOV.UK Verify as the service is not yet available to all UK citizens. This alternative could be an offline service.
-      </p>
-      <a href="parking-permit/example-service/prove-identity">See the example council page for telling users about proviing their identity</a>
+      {% include 'common-content/proving-identity.html' %}
+      <a href="parking-permit/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
       <p>
         At this point the council should check whether or not the person or the household already has a parking permit. For some councils this may affect the price, for others it might mean the user can not have another permit.
       </p>
