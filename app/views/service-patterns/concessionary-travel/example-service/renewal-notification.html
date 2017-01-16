@@ -8,7 +8,7 @@
 
 <main id="content" role="main">
 
-<h1 class="heading-medium">
+<h1 class="heading-xlarge">
   How would you like to receive your renewal notification?
 </h1>
 
@@ -36,10 +36,24 @@
         <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
       </div>
 
-      <label class="block-label selection-button-radio" for="billing-address">
-        <input id="billing-address" type="radio" name="radio-contact-group" value="No">
+
+
+
+      <label class="block-label selection-button-radio" data-target="billing-address" for="contact-billing-address">
+        <input id="contact-billing-address" type="radio" name="radio-contact-group" value="No">
         Letter (sent to billing address)
       </label>
+<div class="panel panel-border-narrow js-hidden" id="billing-address">
+        <label class="form-label" for="contact-letter-message"></label>
+          <fieldset> 
+          <p>
+        John Smith<br />
+        1A Argleton High Street<br />
+        Argleton<br />
+        ARG1 4HP<br />
+      </p>
+        </div>
+
 
       <label class="block-label selection-button-radio" data-target="contact-by-letter" for="example-contact-by-letter">
         <input id="example-contact-by-letter" type="radio" name="radio-contact-group" value="No">
@@ -77,5 +91,7 @@
     <a href="finished" class="button">Continue</a>
   </div>
 </form>
+
+</main>
 
 {% endblock %}
