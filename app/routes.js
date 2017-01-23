@@ -73,4 +73,14 @@ router.get('/service-patterns/concessionary-travel/example-service/eligible', fu
   }
 })
 
+router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
+  req.session.skip_verify = true
+
+  res.render('service-patterns/concessionary-travel/example-service/add-poa')
+})
+
+router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
+  res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
+})
+
 module.exports = router
