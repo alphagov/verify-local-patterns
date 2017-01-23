@@ -2,6 +2,7 @@
 
 <main id="content" role="main">
 
+
     <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
 
     <h2 class="heading-medium">Your photo uploaded successfully</h2>
@@ -13,7 +14,7 @@
     </p>
     <div class="panel panel-border-wide">
       <p>
-        John Smith<br />
+        {% if skip_verify == true %}Kay Dale{% else %}John Smith{% endif %}<br />
         1A Argleton High Street<br />
         Argleton<br />
         ARG1 4HP<br />
