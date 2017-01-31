@@ -1,0 +1,60 @@
+
+{% extends "layout_argleton.html" %}
+
+{% block page_title %}
+  Argleton County Council - Apply for a resident's parking permit in Argleton
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<div class="back">
+    <a href="javascript:history.back()">&#9664; Back</a>
+  </div>
+  <h1 class="heading-large">Contact details</h1>
+<p> We will only contact you in regards to your application for a parking permit.</p>
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">How do you want to be contacted?</legend>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        Email
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+        <label class="form-label" for="contact-email">Email address</label>
+        <input class="form-control" name="contact-email" type="text" id="contact-email">
+      </div>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-phone" for="example-contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        Phone
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+        <label class="form-label" for="contact-phone">Phone number</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+      </div>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
+        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+        Text message
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+        <label class="form-label" for="contact-text-message">Mobile phone number</label>
+        <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+      </div>
+
+    </fieldset>
+  </div>
+</form>
+
+<div>
+  
+   <a class="button" role="button" href="/pay/choose-payment">Next</a>
+</div>
+
+</main>
+
+{% endblock %}
