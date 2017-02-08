@@ -1,48 +1,67 @@
 {% extends "layout.html" %}
+
+{% set pageTitle = "Apply for a resident's parking permit" %}
 {% block page_title %}
-    Service pattern for Apply for a resident's parking permit in Argleton
+  {{
+    pageTitle
+  }}
 {% endblock %}
 {% block content %}
 
-    <main id="content" role="main">
-        {% include "includes/phase_banner_pattern.html" %}
-        <div class="grid-row">
-            <div class="column-two-thirds">
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  {% include "includes/toolkit_breadcrumbs.html" %}
 
-                <h1 class="heading-xlarge">
-                    <span class="strapline">Service pattern for</span>
-                    Apply online for a resident's parking permit
-                </h1>
+  <h1 class="heading-xlarge">
+    <span class="strapline">Service pattern for</span>
+    {{ pageTitle }}
+  </h1>
 
-                <p>
-                    This page is for people who work in local authorities. It outlines a common pattern used for delivering resident's parking permits services effectively.
-                    <a href="/">Read more about service patterns.</a>
-                </p>
+  {% include "includes/index_metadata.html" %}
 
-                <h2 class="heading-medium">What is the user need?</h2>
-                <p>
-                    Residents need a place to park their car near their home. Parking permit services make sure that parking spaces are only occupied by residents by making it illegal to park in a given area without a permit.
-                </p>
-                <p>We recommend that local authorities provide the parking permit service using a user centric approach.</p>
+  <div class="grid-row" data-module="highlight-active-section-heading">
+    <div class="column-third">
 
-                <h2 class="heading-medium">What do councils need from users to deliver the service?</h2>
-                <p>Depending on local authority needs, the user may be asked to provide a combination of:</p>
-                <ul class="list list-bullet">
-                    <li>
-                        proof that the user lives in the area
-                    </li>
-                    <li>
-                        the registration number of the vehicle to be permitted
-                    </li>
-                    <li>
-                        payment (this is to support the cost of the service and will vary across councils and potentially within service, depending on the type of vehicle, engine size, parking zone and others)
-                    </li>
-                </ul>
+      <!--  Page contents -->
+      <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+        <h2 class="heading-small page-contents__title">Page contents:</h2>
+        <ul class="page-contents__list">
+            <li><a href="#user-need">What is the user need?</a></li>
+            <li><a href="#council-need">What do councils need?</a></li>
+            <li><a href="#user-journey">What is the user journey?</a></li>
+        </ul>
+      </div>
 
-                <h2 class="heading-medium">What is the user journey?</h2>
-                <p>
-                    At a high level, these are the steps users should need to go through.
-                </p>
+    </div>
+    <div class="column-two-thirds">
+      <p>
+         This page is for people who work in local authorities. It outlines a common pattern used for delivering resident's parking permits services effectively. <a href="/">Read more about service patterns.</a>
+      </p>
+
+      <h2 class="heading-medium" id="user-need">What is the user need?</h2>
+      <p>
+        Residents need a place to park their car near their home. Parking permit services make sure that parking spaces are only occupied by residents by making it illegal to park in a given area without a permit.
+      </p>
+      <p>We recommend that local authorities provide the parking permit service using a user centric approach.</p>
+
+      <h2 class="heading-medium" id="council-need">What do councils need from users to deliver the service?</h2>
+      <p>Depending on local authority needs, the user may be asked to provide a combination of:</p>
+      <ul class="list list-bullet">
+        <li>
+          proof that the user lives in the area
+        </li>
+        <li>
+          the registration number of the vehicle to be permitted
+        </li>
+        <li>
+          payment (this is to support the cost of the service and will vary across councils and potentially within service, depending on the type of vehicle, engine size, parking zone and others)
+        </li>
+      </ul>
+
+      <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
+      <p>
+        At a high level, these are the steps users should need to go through.
+      </p>
 
                 <ol class="list list-number">
                     <li>

@@ -48,3 +48,51 @@ h1 span.strapline {
   list-style-type: lower-alpha;
   padding-left: 15px;
 }
+
+.metadata {
+  font-size: 12px;
+  line-height: 1.25;
+  margin-bottom: 2em;
+  @media (min-width: 641px) {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+  dt {
+    float: left;
+    clear: left;
+    width: auto;
+    min-width: 120px;
+    @media (min-width: 641px) {
+      padding-right: 10px;
+    }
+  }
+}
+
+.page-contents__list li {
+  font-size: 14px;
+  line-height: 1.14286;
+  list-style-type: none;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  padding-right: 15px;
+  &:before {
+    content: "–";
+    float: left;
+    display: block;
+    width: 15px;
+    margin-left: -15px;
+  }
+  @media (min-width: 641px){
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.page-contents__list a {
+    text-decoration: none;
+    letter-spacing: 0.022em;
+}
+
+.page-contents__list .active {
+    letter-spacing: 0;
+    font-weight: bold;
+}

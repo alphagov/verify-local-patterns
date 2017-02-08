@@ -1,18 +1,38 @@
 {% extends "layout.html" %}
+
+{% set pageTitle = "Apply for an older person's concessionary travel pass" %}
 {% block page_title %}
-    Service pattern for Apply online for a older person's concessionary travel pass
+  {{
+    pageTitle
+  }}
 {% endblock %}
 {% block content %}
 
-    <main id="content" role="main">
-        {% include "includes/phase_banner_pattern.html" %}
-        <div class="grid-row">
-            <div class="column-two-thirds">
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  {% include "includes/toolkit_breadcrumbs.html" %}
 
-                <h1 class="heading-xlarge">
-                    <span class="strapline">Service pattern for</span>
-                    Apply online for a older person's concessionary travel pass
-                </h1>
+  <h1 class="heading-xlarge">
+    <span class="strapline">Service pattern for</span>
+    {{ pageTitle }}
+  </h1>
+
+  {% include "includes/index_metadata.html" %}
+
+  <div class="grid-row" data-module="highlight-active-section-heading">
+    <div class="column-third">
+      <!--  Page contents -->
+      <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+        <h2 class="heading-small page-contents__title">Page contents:</h2>
+        <ul class="page-contents__list">
+            <li><a href="#user-need">What is the user need?</a></li>
+            <li><a href="#council-need">What do councils need?</a></li>
+            <li><a href="#user-journey">What is the user journey?</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="column-two-thirds">
 
                 <p>
                     This page is for people who work in local authorities. It outlines a common pattern used for delivering older person's concessionary travel services effectively.
@@ -32,7 +52,7 @@
                     about this scheme.
                 </p>
 
-                <h2 class="heading-medium">What is the user need?</h2>
+                <h2 class="heading-medium" id="user-need">What is the user need?</h2>
                 <p>
                     As someone who is eligible to travel for free
                     <br>
@@ -41,7 +61,7 @@
                     So that I am able to travel for free
                 </p>
 
-                <h2 class="heading-medium">What do councils need from users to deliver the service?</h2>
+                <h2 class="heading-medium" id="council-need">What do councils need from users to deliver the service?</h2>
                 <ul class="list list-bullet">
                     <li>
                         proof that the user lives in the area
@@ -54,7 +74,7 @@
                     </li>
                 </ul>
 
-                <h2 class="heading-medium">What is the user journey?</h2>
+                <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
                 <p>
                     At a high level, these are the steps users should go through.
                 </p>
@@ -263,5 +283,4 @@
             <!-- col two thirds -->
         </div>
     </main>
-
 {% endblock %}
