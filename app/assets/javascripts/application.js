@@ -41,7 +41,7 @@ $(document).ready(function () {
     $('button').click(function(){
       var checked = $('#confirm_allow_verify').prop('checked');
       if(checked){
-        window.location.href = "http://govuk-verify.herokuapp.com/intro?requestId=apply-for-bus-pass-argleton";
+        window.location.href = "http://govuk-verify.herokuapp.com/intro?requestId=concessionary-travel-argleton";
       }else{
         $('.error-summary').removeClass('hidden');
       }

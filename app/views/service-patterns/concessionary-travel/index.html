@@ -122,12 +122,12 @@
             </ul>
             <a href="concessionary-travel/example-service/start-page">See the example service start page</a>
 
-            <h3 class="heading-small">5. Prove you are a resident and are old enough to apply</h3> {% include 'common-content/proving-identity.html' %}
-            <a href="concessionary-travel/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
-            <p>
-                Using GOV.UK Verify, the user can securely prove their identity, address and age.
-            </p>
-            <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-bus-pass-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
+            <h3 class="heading-small">5. Prove you are a resident and are old enough to apply</h3>
+
+            {% set serviceString = 'concessionary-travel' %}
+
+            {% include 'common-content/proving-identity.html' %}
+
 
             <h3 class="heading-small">6. If a user fails to Verify</h3>
 

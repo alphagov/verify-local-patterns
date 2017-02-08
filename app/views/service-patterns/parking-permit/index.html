@@ -108,14 +108,9 @@
 
             <h3 class="heading-small">4a. Prove you are a resident</h3>
 
-            {% include 'common-content/proving-identity.html' %}
+            {% set serviceString = 'parking-permit' %}
 
-            <p>
-              <a href="parking-permit/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
-            </p>
-            <p>
-              <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
-            </p>
+            {% include 'common-content/proving-identity.html' %}
 
             <h3 class="heading-small">4b. If a user fails to verify</h3>
             <p>GOV.UK Verify can not currently successfully verify the identity of 100% of the population. If a user does not get successfully verified, the council should provide another way for the user to access the digital service, possibly by the user scanning in documents to prove their address.</p>
