@@ -45,8 +45,6 @@ h1 span.strapline {
 }
 
 .metadata {
-  font-weight: 400;
-  text-transform: none;
   font-size: 12px;
   line-height: 1.25;
   margin-bottom: 2em;
@@ -62,5 +60,29 @@ h1 span.strapline {
     @media (min-width: 641px) {
       padding-right: 10px;
     }
-  }  
+  }
+}
+
+.page-contents__list li {
+  font-size: 14px;
+  line-height: 1.14286;
+  list-style-type: none;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  padding-right: 15px;
+  &:before {
+    content: "–";
+    float: left;
+    display: block;
+    width: 15px;
+    margin-left: -15px;
+  }
+  @media (min-width: 641px){
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.page-contents__list a {
+    text-decoration: none;
+    letter-spacing: 0.022em;
 }
