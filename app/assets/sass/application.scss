@@ -43,3 +43,24 @@ h1 span.strapline {
     line-height: 1.1111111111;
   }
 }
+
+.metadata {
+  font-weight: 400;
+  text-transform: none;
+  font-size: 12px;
+  line-height: 1.25;
+  margin-bottom: 2em;
+  @media (min-width: 641px) {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+  dt {
+    float: left;
+    clear: left;
+    width: auto;
+    min-width: 120px;
+    @media (min-width: 641px) {
+      padding-right: 10px;
+    }
+  }  
+}
