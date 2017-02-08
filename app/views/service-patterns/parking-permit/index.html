@@ -106,11 +106,33 @@
             </ul>
             <a href="parking-permit/example-service/start-page">See the example service start page</a>
 
-            <h3 class="heading-small">4. Prove you are a resident</h3> {% include 'common-content/proving-identity.html' %}
-            <a href="parking-permit/example-service/prove-identity">See the example council page for telling users about proving their identity</a><br>
+            <h3 class="heading-small">4a. Prove you are a resident</h3>
 
-            <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)<br>
+            {% include 'common-content/proving-identity.html' %}
 
+            <p>
+              <a href="parking-permit/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
+            </p>
+            <p>
+              <a href="http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
+            </p>
+
+            <h3 class="heading-small">4b. If a user fails to verify</h3>
+            <p>GOV.UK Verify can not currently successfully verify the identity of 100% of the population. If a user does not get successfully verified, the council should provide another way for the user to access the digital service, possibly by the user scanning in documents to prove their address.</p>
+            <p>
+              The council should also tell the user about any non-digital ways of accessing the service, for example:
+            </p>
+            <ul class="list list-bullet">
+                <li> A paper form to print, complete and return to the council</li>
+                <li>A phone number to call to do the application over the phone</li>
+                <li>A place (such as a council office or library) that the user can come and get help completing the application process</li>
+            </ul>
+            <p>
+              <a href="parking-permit/example-service/add-address">See the example council page the user should see if they fail to verify</a>
+            </p>
+            <p>
+              <a href="parking-permit/example-service/add-address">See the example council page for asking a user to scan in documents to prove their address</a>
+            </p>
             <h3 class="heading-small">5. Confirm address and eligibility</h3>
             <p>
                 GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address.
@@ -131,24 +153,14 @@
                 If the permit is digital and councils want extra confidence of eligibility, they can issue a temporary permit for a shorter time period, for example 3 months. After this time, the user's identity provider should have the new address and the user can reapply.
             </p>
 
-            <h3 class="heading-small">6. If a user fails to Verify</h3>
-
-            <p>If a user fails to verify the council should provide other ways for the use to apply. These other ways could include:</p>
-            <ul class="list list-bullet">
-                <li>A way to <a href="parking-permit/example-service/add-address">continue</a> in the digital channel</li>
-                <li> A paper form to download, complete and return to the council</li>
-                <li>A phone number to call to do the application over the phone</li>
-                <li>A place the user can come and get help completing the application process</li>
-            </ul>
-
-            <h4 class="heading-small">7a. Does the user live in the area?</h4>
+            <h4 class="heading-small">6a. Does the user live in the area?</h4>
             <p>
                 At this point the council should check whether or the user lives in the eligible area, and then show a message to the user confirming they are eligible. This is done by checking the user's address against a council held database of parking permit zones.
             </p>
             <p>
                 <a href="parking-permit/example-service/not-eligible-address">See the example page which says the user is not eligible because of their address</a>
             </p>
-            <h4 class="heading-small">7b. Does the user or the user's address already have a permit?</h4>
+            <h4 class="heading-small">6b. Does the user or the user's address already have a permit?</h4>
             <p>
                 Some councils have limits on the number of people who can get a permit, or number of permits allowed per address. At the same time as check addresss eligibility (from the point of view of the user), the council should check whether or not there are any
                 permits currently assigned to the person or their address and issue an ineligible message if applicable.
@@ -157,7 +169,7 @@
                 <a href="parking-permit/example-service/not-eligible-permits-exceeded">See the example page which says the user is not eligible because they have exceeded the number of permits allowed</a>
             </p>
 
-            <h4 class="heading-small">7c. Is the user eligible for multiple permits?</h4>
+            <h4 class="heading-small">6c. Is the user eligible for multiple permits?</h4>
             <p>
                 If the user is elibible for multiple permits, for example visitors permits, the council should ask which type of permit the user would like to apply for.
             </p>
@@ -165,7 +177,7 @@
                 <a href="parking-permit/example-service/eligible-for-many">See the example page asks the user to select which permit they wish to apply for.</a>
             </p>
 
-            <h3 class="heading-small">8. Enter vehicle details</h3>
+            <h3 class="heading-small">7. Enter vehicle details</h3>
             <p>
                 The council should now ask the user to enter the registration number of the car they wish to pay a permit for.
             </p>
@@ -175,7 +187,7 @@
             <p>
                 <a href="parking-permit/example-service/enter-reg">See the example page of asking for a registration number</a>
             </p>
-            <h3 class="heading-small">9. Pay</h3>
+            <h3 class="heading-small">8. Pay</h3>
             <p>
                 The fee will vary based on the fee calculation rules determined by each individual council. In some cases the permit can be issued free of charge, for example, if the resident is the first member of the household to apply.
             </p>
@@ -188,7 +200,7 @@
                 In the future, councils will be able to accept payments using <a href="https://www.gov.uk/government/publications/govuk-pay/govuk-pay">GOV.UK Pay</a>.
             </p>
 
-            <h3 class="heading-small">10. Receive permit confirmation</h3>
+            <h3 class="heading-small">9. Receive permit confirmation</h3>
             <p>
                 After payment, the user needs to receive a confirmation of payment and an acknowledgement that their application has been successful. They should also receive information about how the permit will be enforced (See step 8). If the payment cannot be accepted
                 or if the application fails for some reason (i.e. times out) the user should be shown an on-screen message that specifies the next steps a user should take to continue with the application.
