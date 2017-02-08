@@ -1,38 +1,40 @@
 {% extends "layout.html" %}
-
 {% set pageTitle = "Apply for an older person's concessionary travel pass" %}
 {% block page_title %}
-  {{
-    pageTitle
-  }}
+    {{ pageTitle }}
 {% endblock %}
 {% block content %}
 
-<main id="content" role="main">
-  {% include "includes/phase_banner_alpha.html" %}
-  {% include "includes/toolkit_breadcrumbs.html" %}
+    <main id="content" role="main">
+        {% include "includes/phase_banner_alpha.html" %}
+        {% include "includes/toolkit_breadcrumbs.html" %}
 
-  <h1 class="heading-xlarge">
-    <span class="strapline">Service pattern for</span>
-    {{ pageTitle }}
-  </h1>
+        <h1 class="heading-xlarge">
+            <span class="strapline">Service pattern for</span>
+            {{ pageTitle }}
+        </h1>
+        {% include "includes/index_metadata.html" %}
 
-  {% include "includes/index_metadata.html" %}
+        <div class="grid-row" data-module="highlight-active-section-heading">
+            <div class="column-third">
+                <!--  Page contents -->
+                <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+                    <h2 class="heading-small page-contents__title">Page contents:</h2>
+                    <ul class="page-contents__list">
+                        <li>
+                            <a href="#user-need">What is the user need?</a>
+                        </li>
+                        <li>
+                            <a href="#council-need">What do councils need?</a>
+                        </li>
+                        <li>
+                            <a href="#user-journey">What is the user journey?</a>
+                        </li>
+                    </ul>
+                </div>
 
-  <div class="grid-row" data-module="highlight-active-section-heading">
-    <div class="column-third">
-      <!--  Page contents -->
-      <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
-        <h2 class="heading-small page-contents__title">Page contents:</h2>
-        <ul class="page-contents__list">
-            <li><a href="#user-need">What is the user need?</a></li>
-            <li><a href="#council-need">What do councils need?</a></li>
-            <li><a href="#user-journey">What is the user journey?</a></li>
-        </ul>
-      </div>
-
-    </div>
-    <div class="column-two-thirds">
+            </div>
+            <div class="column-two-thirds">
 
                 <p>
                     This page is for people who work in local authorities. It outlines a common pattern used for delivering older person's concessionary travel services effectively.
@@ -169,15 +171,13 @@
                         <a href="concessionary-travel/example-service/start-page">See the example service start page</a>
                     </li>
                     <li>
-                      <ol class="list list-letter">
-                        <li>
-                          <h3 class="heading-small">Prove you are a resident and are old enough to apply</h3>
-
-                          {% set serviceString = 'concessionary-travel' %}
-
-                          {% include 'common-content/proving-identity.html' %}
-                        </li>
-                      </ol>
+                        <ol class="list list-letter">
+                            <li>
+                                <h3 class="heading-small">Prove you are a resident and are old enough to apply</h3>
+                                {% set serviceString = 'concessionary-travel' %}
+                                {% include 'common-content/proving-identity.html' %}
+                            </li>
+                        </ol>
                     </li>
                     <li>
 
@@ -226,57 +226,57 @@
                         </p>
                     </li>
                     <li>
-                      <h3 class="heading-small">Sending the bus pass to the user</h3>
+                        <h3 class="heading-small">Sending the bus pass to the user</h3>
 
-                      <p>
-                          Once the user has uploaded their photograph, the council should tell the user their application is complete and reiterate when they can expect to receive their bus pass and that they will be posting it to the address they previously confirmed.
-                      </p>
-                      <p>
-                          The accompanying letter should also provide information on how, when and where the bus pass can be used, and what to do in case of a lost or stolen pass.
-                      </p>
-                      <p>
-                          <a href="concessionary-travel/example-service/photo/success">See the example page telling the user when they can expect to receive their pass</a>
-                      </p>
+                        <p>
+                            Once the user has uploaded their photograph, the council should tell the user their application is complete and reiterate when they can expect to receive their bus pass and that they will be posting it to the address they previously confirmed.
+                        </p>
+                        <p>
+                            The accompanying letter should also provide information on how, when and where the bus pass can be used, and what to do in case of a lost or stolen pass.
+                        </p>
+                        <p>
+                            <a href="concessionary-travel/example-service/photo/success">See the example page telling the user when they can expect to receive their pass</a>
+                        </p>
                     </li>
                     <li>
-                      <h3 class="heading-small">Contacting users</h3>
-                      <p>
-                          You may want to capture users contact details so they can be contacted if things go wrong with their application, or for renewal reminders.
-                      </p>
-                      <p>
-                          You should allow users to select their prefered contact method and only contact them in this way in future.
-                      </p>
+                        <h3 class="heading-small">Contacting users</h3>
+                        <p>
+                            You may want to capture users contact details so they can be contacted if things go wrong with their application, or for renewal reminders.
+                        </p>
+                        <p>
+                            You should allow users to select their prefered contact method and only contact them in this way in future.
+                        </p>
 
-                      <p>
-                          <a href="concessionary-travel/example-service/add_contact_details">See the example page asking users to provide their prefered contact details.</a>
-                      </p>
-                  </li>
-                  <li>
-                      <h3 class="heading-small">Use bus pass</h3>
-                      <p>
-                          Bus passes are a physical plastic card that users can use on any bus in England. They either have to show it to the driver or scan on a reader when they get onto the bus.
-                      </p>
-                      <p>
-                          In London, the pass is an Oyster card which the user scans on a reader.
-                      </p>
+                        <p>
+                            <a href="concessionary-travel/example-service/add_contact_details">See the example page asking users to provide their prefered contact details.</a>
+                        </p>
                     </li>
                     <li>
-                      <h3 class="heading-small">Renewals</h3>
-                      <p>
-                          To reduce the possibility of fraud, bus passes have expiry dates which must be no more than 5 years from the date of issue. (Specification 1.31 from the
-                          <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/3621/travelconcession.pdf">Department for Transport guidance</a>.)
-                      </p>
-                      <p>
-                          Councils should send a notification to the user's preferred channel when their bus pass is about to expire.
-                      </p>
-                      <p>
-                          In the future, councils will be able to send this reminder using
-                          <a href="https://www.gov.uk/government/publications/govuk-notify/govuk-notify">GOV.UK Notify</a>.
-                      </p>
-                      <p>
-                          <a href="#">See the example notification letter to remind users to renew their pass</a>
-                          (page in progress)
-                      </p>
+                        <h3 class="heading-small">Use bus pass</h3>
+                        <p>
+                            Bus passes are a physical plastic card that users can use on any bus in England. They either have to show it to the driver or scan on a reader when they get onto the bus.
+                        </p>
+                        <p>
+                            In London, the pass is an Oyster card which the user scans on a reader.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Renewals</h3>
+                        <p>
+                            To reduce the possibility of fraud, bus passes have expiry dates which must be no more than 5 years from the date of issue. (Specification 1.31 from the
+                            <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/3621/travelconcession.pdf">Department for Transport guidance</a>.)
+                        </p>
+                        <p>
+                            Councils should send a notification to the user's preferred channel when their bus pass is about to expire.
+                        </p>
+                        <p>
+                            In the future, councils will be able to send this reminder using
+                            <a href="https://www.gov.uk/government/publications/govuk-notify/govuk-notify">GOV.UK Notify</a>.
+                        </p>
+                        <p>
+                            <a href="#">See the example notification letter to remind users to renew their pass</a>
+                            (page in progress)
+                        </p>
                     </li>
                 </ol>
             </div>
