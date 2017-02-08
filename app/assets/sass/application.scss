@@ -86,3 +86,8 @@ h1 span.strapline {
     text-decoration: none;
     letter-spacing: 0.022em;
 }
+
+.page-contents__list .active {
+    letter-spacing: 0;
+    font-weight: bold;
+}
