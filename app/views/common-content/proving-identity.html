@@ -1,12 +1,34 @@
-<p>
-  The government standard for identity verification is <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify">GOV.UK Verify</a>. Using GOV.UK Verify, the user can securely prove their identity. The service can also recieve the user's address and date of birth from GOV.UK Verify.
-</p>
-<p>
-  Councils should offer an alternative to GOV.UK Verify as the service is not yet available to all UK citizens. This alternative could be an offline service.
-</p>
-<p>
-  <a href="{{ serviceString }}/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
-</p>
-<p>
-    <a href="http://govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
-</p>
+  <p>
+    The government standard for identity verification is <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify">GOV.UK Verify</a>. Using GOV.UK Verify, the user can securely prove their identity. The service can also recieve the user's address and date of birth from GOV.UK Verify.
+  </p>
+  <p>
+    Councils should offer an alternative to GOV.UK Verify as the service is not yet available to all UK citizens. This alternative could be an offline service.
+  </p>
+  <p>
+    <a href="{{ serviceString }}/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
+  </p>
+  <p>
+      <a href="http://govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
+  </p>
+
+</li>
+<li>
+    <h3 class="heading-small">If a user fails to verify</h3>
+
+    <p>GOV.UK Verify can not currently successfully verify the identity of 100% of the population. If a user does not get successfully verified, the council should provide another way for the user to access the digital service, possibly by the user
+        scanning in documents to prove their address.</p>
+    <p>
+        The council should also tell the user about any non-digital ways of accessing the service, for example:
+    </p>
+    <ul class="list list-bullet">
+        <li>
+            A paper form to print, complete and return to the council</li>
+        <li>A phone number to call to do the application over the phone</li>
+        <li>A place (such as a council office or library) that the user can come and get help completing the application process</li>
+    </ul>
+    <p>
+        <a href="{{ serviceString }}/example-service/add-address">See the example council page the user should see if they fail to verify</a>
+    </p>
+    <p>
+        <a href="{{ serviceString }}/example-service/add-address">See the example council page for asking a user to scan in documents to prove their address</a>
+    </p>
