@@ -13,12 +13,22 @@
 
 </li>
 <li>
-    <h3 class="heading-small">If a user fails to verify</h3>
+    <h3 class="heading-small">If GOV.UK Verify can not verify the user's identity</h3>
 
-    <p>GOV.UK Verify can not currently successfully verify the identity of 100% of the population. If a user does not get successfully verified, the council should provide another way for the user to access the digital service, possibly by the user
-        scanning in documents to prove their address.</p>
+    <p>Some users may not have the documents or credit records that GOV.UK Verify needs to prove their identity.</p>
+
+    <ul class="list list-bullet">
+      <li>
+        GOV.UK Verify asks users questions to work out if they are likely to be verified, and if it looks like they won't be, they are shown the "<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-argleton&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page.
+      </li>
+      <li>
+        A very small proportion of users will go through past these questions, but still not be able to verify their identity. These users will see a similar "<a href="">failed to verify</a>" page.
+      </li>
+    </ul>
     <p>
-        The council should also tell the user about any non-digital ways of accessing the service, for example:
+      Both these pages should link to the council's "non-verify route" - The same alternative route linked to from the "Prove Identity" page. In other words, if a user fails to verify for any reason, GOV.UK Verify should link them to the alternative digital service, which may involve manually scanning in documents for example.</p>
+    <p>
+      GOV.UK Verify should also tell the user about any non-digital ways of accessing the service, for example:
     </p>
     <ul class="list list-bullet">
         <li>
@@ -26,6 +36,9 @@
         <li>A phone number to call to do the application over the phone</li>
         <li>A place (such as a council office or library) that the user can come and get help completing the application process</li>
     </ul>
+    <p>
+      Councils will provide details of the above alternative ways to access the service when integrating with GOV.UK Verify.
+    </p>
     <p>
         <a href="{{ serviceString }}/example-service/add-address">See the example council page the user should see if they fail to verify</a>
     </p>
