@@ -29,7 +29,7 @@
       Both these pages should link to the alternative ways to access the service described in sub-section c below.
     </p>
     <p>
-        <a href="{{ serviceString }}/example-service/add-address">See the example council page the user should see if they fail to verify</a>
+        <a href="{{ serviceString }}/example-service/verification-failed">See the example council page the user should see if they fail to verify</a>
     </p>
 
   </li>
@@ -40,12 +40,12 @@
       Alternative ways to access the service need to be shown to the user on the "<a href="/service-patterns/{{ serviceString }}/example-service/prove-identity">proving identity</a>" page, the "<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-argleton&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page, and the "<a href="https://govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-argleton&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2"> verification failed</a>" page.
     </p>
     <p>
-      In the alternative online route, users will need to prove their address {{"and age" if age}} by scanning in documents.
+      In the alternative online route, users will need to prove their address {{"and age" if age}} by scanning in documents. This will require manual checks by councils.
     </p>
     <p>
-        <a href="{{ serviceString }}/example-service/add-address">See the example council page for asking a user to scan in documents to prove their address</a>
+        <a href="{{ serviceString }}/example-service/add-poa">See the example council page for asking a user to scan in documents to prove their address</a>
     </p>
-    {% set addressLink = '<p><a href="' + serviceString + '/example-service/add-address">See the example council page for asking a user to scan in documents to prove their age</a></p>' %}
+    {% set addressLink = '<p><a href="' + serviceString + '/example-service/add-poage">See the example council page for asking a user to scan in documents to prove their age</a></p>' %}
     {{ addressLink | safe if age }}
     <p>
       Alternative routes should also include non-digital ways of accessing the service, which may include:
