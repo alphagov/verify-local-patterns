@@ -13,7 +13,7 @@
 
 </li>
 <li>
-    <h3 class="heading-small">"Unlikely to verify" and "verification failed" routes</h3>
+    <h3 class="heading-small">"Unlikely to verify" and "verification failed" pages</h3>
 
     <p>Some users may not have the documents or credit records that GOV.UK Verify needs to prove their identity.</p>
 
@@ -48,14 +48,8 @@
     {% set addressLink = '<p><a href="/service-patterns/' + serviceString + '/example-service/add-poage">See the example council page for asking a user to scan in documents to prove their age</a></p>' %}
     {{ addressLink | safe if age }}
     <p>
-      Alternative routes should also include non-digital ways of accessing the service, which may include:
+      Alternative routes should also include the offline ways of accessing the service mentioned on the service start page.
     </p>
-    <ul class="list list-bullet">
-        <li>
-            A paper form to print, complete and return to the council</li>
-        <li>A phone number to call to do the application over the phone</li>
-        <li>A place (such as a council office or library) that the user can come and get help completing the application process</li>
-    </ul>
     <p>
       Councils will provide details to GDS of the above alternative ways to access the service when integrating with GOV.UK Verify.
     </p>
