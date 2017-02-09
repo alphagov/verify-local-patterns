@@ -29,7 +29,7 @@
       Both these pages should link to the alternative ways to access the service described in sub-section c below.
     </p>
     <p>
-        <a href="{{ serviceString }}/example-service/verification-failed">See the example council page the user should see if they fail to verify</a>
+        <a href="/service-patterns/{{ serviceString }}/example-service/verification-failed">See the example council page the user should see if they fail to verify</a>
     </p>
 
   </li>
@@ -43,9 +43,9 @@
       In the alternative online route, users will need to prove their address {{"and age" if age}} by scanning in documents. This will require manual checks by councils.
     </p>
     <p>
-        <a href="{{ serviceString }}/example-service/add-poa">See the example council page for asking a user to scan in documents to prove their address</a>
+        <a href="/service-patterns/{{ serviceString }}/example-service/add-poa">See the example council page for asking a user to scan in documents to prove their address</a>
     </p>
-    {% set addressLink = '<p><a href="' + serviceString + '/example-service/add-poage">See the example council page for asking a user to scan in documents to prove their age</a></p>' %}
+    {% set addressLink = '<p><a href="/service-patterns/' + serviceString + '/example-service/add-poage">See the example council page for asking a user to scan in documents to prove their age</a></p>' %}
     {{ addressLink | safe if age }}
     <p>
       Alternative routes should also include non-digital ways of accessing the service, which may include:
