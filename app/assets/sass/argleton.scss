@@ -90,12 +90,26 @@ label.block-label.selection-button-checkbox{
   display: none;
 }
 
+//argleton styles
+.argleton-name-extra{
+  display: none;
+  @media(min-width: 405px){
+    display:inline;
+  }
+}
 
 body{
+  background-color: beige;
   min-height: 100vh;
 }
 
+//having to be annoyingly specific here to override the radio button styles
+.unbranded .block-label.selection-button-radio:before {
+  background: #fafafa;
+}
+
 input.form-control, textarea.form-control{
+  background: #fafafa;
   margin-bottom: 9px;
 }
 
@@ -109,6 +123,7 @@ header{
 }
 
 header{
+  background-color: #9cc162;
   padding: 0px 15px 0px;
   font-size: 1.6em;
   .container{
