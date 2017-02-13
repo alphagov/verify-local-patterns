@@ -27,15 +27,22 @@
           <p class="heading-medium">
             Which council do you want to test with?
           </p>
+          <script type="text/javascript">
+            console.log('test');
+          </script>
 
-          <label class="block-label" for="council-argleton">
+          {% for eachCouncil in councils %}
+          <label class="block-label" for="council-{{argleton}}">
             <input id="council-argleton" type="radio" name="councilChoice" value="argleton" {{ checked("councilChoice","argleton") }}>
-            argleton
+            {{ eachCouncil[0].name }}
           </label>
+          {% else %}
+          No councils found
+          {% endfor %}
 
-          <label class="block-label" for="council-unbranded">
+          {# <label class="block-label" for="council-unbranded">
             <input id="council-unbranded" type="radio" name="councilChoice" value="unbranded" {{ checked("councilChoice","unbranded") }}>
-            unbranded
+            unbranded #}
         </div>
         <div class="form-group">
           <input type="submit" class="button" value="Continue">

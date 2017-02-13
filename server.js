@@ -12,7 +12,7 @@ var browserSync = require('browser-sync')
 var config = require('./app/config.js')
 var utils = require('./lib/utils.js')
 var packageJson = require('./package.json')
-var councilsData = require('./app/councils.js')
+var councilsData = require('./app/councils.json')
 
 // Grab environment variables specified in Procfile or as Heroku config vars
 var releaseVersion = packageJson.version
@@ -104,6 +104,8 @@ app.use(session({
 // send assetPath to all views
 app.use(function (req, res, next) {
   res.locals.asset_path = '/public/'
+  console.log(councilsData)
+  res.locals.councils = councilsData
   next()
 })
 
