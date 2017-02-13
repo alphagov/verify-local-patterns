@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% block page_title %}
-{{council.name}} - Apply for an older person's bus pass in Argleton
+{{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
@@ -9,10 +9,10 @@
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">You are not eligible to apply for an older person's bus pass in Argleton</h1>
+  <h1 class="heading-xlarge">You are not eligible to apply for an older person's bus pass in {{council.shortName}}</h1>
 
   <p>
-    Because you don't live within the boundaries of the city of Argleton, you can't apply through this council's website.
+    Because you don't live within the boundaries of the city of {{council.shortName}}, you can't apply through this council's website.
   </p>
   <p>
     You should <a href="https://www.gov.uk/apply-for-elderly-person-bus-pass">visit GOV.UK to find which council to apply from.</a>

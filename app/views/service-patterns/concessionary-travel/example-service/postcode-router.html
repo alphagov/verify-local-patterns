@@ -1,13 +1,13 @@
 {% extends "layout_picker.html" %}
 
  {% block page_title %}
- {{council.name}} - Apply for an older person's bus pass in Argleton
+ {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
  {% endblock %} 
  {% block content %}
 
 <main id="content" role="main">
 
-    <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
+    <h1 class="heading-xlarge">Apply for an older person's bus pass in {{council.shortName}}</h1>
 
     <div class="article-container group">
 

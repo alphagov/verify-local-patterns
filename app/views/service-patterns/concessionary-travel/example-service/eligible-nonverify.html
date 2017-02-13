@@ -1,14 +1,14 @@
 {% extends "layout_picker.html" %}
 
 {% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in Argleton
+  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">You are eligible for a bus pass in Argleton</h1>
+  <h1 class="heading-xlarge">You are eligible for a bus pass in {{council.shortName}}</h1>
 
   <p>
     Based on what you have told us you are eligbile for a bus pass. The pass will allow you to travel for free on buses in England.

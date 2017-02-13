@@ -1,20 +1,20 @@
 {% extends "layout_picker.html" %}
 {% block page_title %}
-{{council.name}} - Apply for an older person's bus pass in Argleton
+{{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
 {% endblock %}
 {% block content %}
 
 <main id="content" role="main">
 
-    <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton
+    <h1 class="heading-xlarge">Apply for an older person's bus pass in {{council.shortName}}
 </h1>
 
     <p class="lede">
-      Your postcode, ARG1 3AA, is in Argleton.
+      Your postcode, ARG1 3AA, is in {{council.shortName}}.
     </p>
 
     <p>
-      <a href="start-page" class="button button-start">Apply for an older person's bus pass in Argleton</a>
+      <a href="start-page" class="button button-start">Apply for an older person's bus pass in {{council.shortName}}</a>
     </p>
 </main>
 
