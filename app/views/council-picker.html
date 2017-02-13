@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Service patterns for local government services
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Pick your council
+      </h1>
+
+      <p>
+        Set what the prototype will be styled as here.
+      </p>
+
+      <form action="council-chosen" method="post" class="form">
+        <div class="form-group">
+          <legend class="visuallyhidden">
+            Which council do you want to test with?
+          </legend>
+
+          <p class="heading-medium">
+            Which council do you want to test with?
+          </p>
+
+          <label class="block-label" for="council-argleton">
+            <input id="council-argleton" type="radio" name="council" value="Argleton" {{ checked("council","Argleton") }}>
+            Argleton
+          </label>
+
+          <label class="block-label" for="council-unbranded">
+            <input id="council-unbranded" type="radio" name="council" value="Unbranded" {{ checked("council","Unbranded") }}>
+            Unbranded
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
