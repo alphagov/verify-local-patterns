@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% block page_title %}
-  Argleton County Council - Apply for a resident's parking permit in Argleton
+  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
@@ -34,7 +34,7 @@
         <fieldset>
           <label class="block-label selection-button-checkbox" id="confirm_allow_verify_label" for="confirm_allow_verify" class="selection-button-checkbox">
             <input id="confirm_allow_verify" name="confirm_allow_verify" value="True" type="checkbox">
-            I agree to Argleton council using my name and address provided by GOV.UK Verify
+            I agree to {{council.name}} using my name and address provided by GOV.UK Verify
           </label>
         </fieldset>
       </form>
@@ -48,8 +48,9 @@
       </p>
 
       <p>
-Your permit will take longer to arrive as additional checks will be required. You will also be required to upload a proof of address such as a council tax bill, tenancy agreement, utility bill or recent bank statement</p>
-<a href="add-address">Continue without verifying</a>
+        Your permit will take longer to arrive as additional checks will be required. You will also be required to upload a proof of address such as a council tax bill, tenancy agreement, utility bill or recent bank statement
+      </p>
+      <a href="add-address">Continue without verifying</a>
     </div>
   </div>
 

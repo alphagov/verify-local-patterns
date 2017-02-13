@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% block page_title %}
-  Argleton County Council - Apply for a resident's parking permit in Argleton
+  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
@@ -11,13 +11,13 @@
 <div class="back">
 		<a href="javascript:history.back()">&#9664; Back</a>
 	</div>
-  <h1 class="heading-xlarge">You are not eligible for a parking permit in Argleton</h1>
+  <h1 class="heading-xlarge">You are not eligible for a parking permit in {{council.shortName}}</h1>
 
   <p>
-    Because you do not live in Argleton, you are not eligible for a parking permit.
+    Because you do not live in {{council.shortName}}, you are not eligible for a parking permit.
   </p>
   <p>
-    You can <a href="https://www.gov.uk/parking-permit">find your local council</a> to apply for a permit in your area or <a href="#">contact Argleton</a> if you have any further questions.  </p>
+    You can <a href="https://www.gov.uk/parking-permit">find your local council</a> to apply for a permit in your area or <a href="#">contact {{council.name}}</a> if you have any further questions.  </p>
 
 
 
