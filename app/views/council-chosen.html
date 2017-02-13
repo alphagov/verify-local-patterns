@@ -24,39 +24,18 @@
       <h2 class="heading-medium">Your council's variables</h2>
 
       <table>
+      {% for varName, var in council %}
         <tr>
           <td class="heading-small">
-            name
+            {{varName}}
           </td>
           <td>
-            {{council.name}}
+            {{var}}
           </td>
         </tr>
-        <tr>
-          <td class="heading-small">
-            shortName
-          </td>
-          <td>
-            {{council.shortName}}
-          </td>
-        </tr>
-        <tr>
-          <td class="heading-small">
-            string
-          </td>
-          <td>
-            {{council.string}}
-          </td>
-        </tr>
-        <tr>
-          <td class="heading-small">
-            parkingBoundary
-          </td>
-          <td>
-            {{council.parkingBoundary}}
-          </td>
-        </tr>
-
+      {% else %}
+      No council selected
+      {% endfor %}
       </table>
 
       <p>

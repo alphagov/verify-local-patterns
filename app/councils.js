@@ -7,12 +7,14 @@ module.exports = {
     name : 'Argleton County Council',
     shortName: 'Argleton',
     parkingBoundary: 'Argleton City Centre',
+    permitMax: 'four',
     string : 'argleton'
   },
   unbranded : {
     name : 'Unbrandedland Council',
     shortName : 'Unbrandedland',
     parkingBoundary : 'Unbrandedland City',
+    permitMax: 'sixty seven',
     string : 'unbranded'
   }
 }
