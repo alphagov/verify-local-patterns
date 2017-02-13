@@ -14,15 +14,40 @@
     	</div>
 
       <h1 class="heading-xlarge">
-        Your council is {{council}}
+        Your council is {{council.name}}
       </h1>
 
       <p>
-        Your council will stay set as {{council}} until you change it, or start a new session.
+        Your council will stay set as {{council.name}} until you change it, or start a new session.
       </p>
 
+      <h2 class="heading-medium">Your council's variables</h2>
+
+      <table>
+        <tr>
+          <td class="heading-small">
+            name
+          </td>
+          <td>
+            {{council.name}}
+          </td>
+        </tr>
+        <tr>
+          <td class="heading-small">
+            string
+          </td>
+          <td>
+            {{council.string}}
+          </td>
+        </tr>
+
+      </table>
+
       <p>
-        Pick a <a href="/">service pattern</a> to the view it's prototype
+        <a href="/">Pick a service pattern</a> to view a prototype
+      </p>
+      <p>
+        <a href="council-picker">Change your council</a>
       </p>
 
     </div>

@@ -12,6 +12,7 @@ var browserSync = require('browser-sync')
 var config = require('./app/config.js')
 var utils = require('./lib/utils.js')
 var packageJson = require('./package.json')
+var councilsData = require('./app/councils.js')
 
 // Grab environment variables specified in Procfile or as Heroku config vars
 var releaseVersion = packageJson.version
@@ -103,8 +104,6 @@ app.use(session({
 // send assetPath to all views
 app.use(function (req, res, next) {
   res.locals.asset_path = '/public/'
-  console.log('||||||||||||||', req.session)
-
   next()
 })
 
@@ -133,6 +132,11 @@ if (useAutoStoreData === 'true') {
         return value === storedValue ? 'checked' : ''
       }
     })
+
+    // set council variable to all of relevant councilData
+    if(req.session.data.councilChoice){
+      req.session.data.council = councilsData[req.session.data.councilChoice]
+    }
 
     next()
   })
