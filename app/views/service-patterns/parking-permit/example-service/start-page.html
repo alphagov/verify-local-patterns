@@ -23,39 +23,48 @@
         Each household is allowed up to {{council.permitMax}} permits
       </li>
        <li>
-         It costs £51 for a resident's permit for the first vehicle in your household. The second vehicle costs £81, and the third and fourth costs £153.
+         It costs £{{council.permitsCosts[0]}} for a resident's permit for the first vehicle in your household. The second vehicle costs £{{council.permitsCosts[1]}}, and the third and fourth costs £{{council.permitsCosts[3]}}.
       </li>
       <li>
-        To apply, you'll need to prove you live in Argleton and provide details of your vehicle.
+        To apply, you'll need to prove you live in {{council.parkingBoundary}} and provide details of your vehicle.
       </li>
+      {% if council.permitWait < 1 %}
       <li>
         You won't receive a physical permit. Wardens will check your vehicle's registration number.
       </li>
+      {% else %}
+      <li>
+        Your permit will take {{council.permitWait}} working days to arrive. While you wait, you'll need to use a temporary permit which we will email to you.
+      </li>
+      {% endif %}
     </ul>
   </div>
 
   <a class="button button-start" href="prove-identity" role="button">Apply online now</a>
 
-<h2 class="heading-medium">Other ways to apply</h2>
-  <h2 class="heading-small">Apply by phone</h2>
-<P>0300 083 0013<br>
-Monday to Friday, 8am to 7pm<br>
-Saturday, 8am to 2pm<br>
- <a href="#">Find out about call charges</a></P>
+  <details>
+     <summary><span class="summary">Other ways to apply</span></summary>
+     <div class="panel panel-border-narrow">
+      <h3 class="heading-small">Apply by phone</h3>
+      <p>0300 083 0013<br>
+      Monday to Friday, 8am to 7pm<br>
+      Saturday, 8am to 2pm<br>
+       <a href="#">Find out about call charges</a></p>
 
-  <h2 class="heading-small">Apply by post</h2>
-<p>
-send an <a href="#">application form</a> or a letter with the following information to the Argleton council:
-<li>a scanned copy of a council tax statement </li>
-<li>a scanned copy of a form of identity to prove your age</li> </p>
-<p>Send your request to: </p>
-<p>Concessionary travel pass office<br>
-Argleton coucil <br>
-12-14 Kings road <br>
-Argleton <br>
-AG3 4HP </p>
+      <h2 class="heading-small">Apply by post</h2>
+      <p>
+      send an <a href="#">application form</a> or a letter with the following information to {{council.name}}:
+      <li>a scanned copy of a council tax statement </li>
+      <li>a scanned copy of a form of identity to prove your age</li> </p>
+      <p>Send your request to: </p>
+      <p>Concessionary travel pass office<br>
+      {{council.name}}<br>
+      12-14 Kings road <br>
+      {{council.shortName}} <br>
+      AG3 4HP </p>
+    </div>
+  </details>
 
-</main>
 </main>
 
 {% endblock %}

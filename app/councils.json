@@ -4,6 +4,8 @@
     "shortName": "Argleton",
     "parkingBoundary": "Argleton City Centre",
     "permitMax": "four",
+    "permitsCosts": [51, 81, 153, 153],
+    "permitWait": 0,
     "string" : "argleton"
   },
   {
@@ -11,6 +13,8 @@
     "shortName" : "Unbrandedland",
     "parkingBoundary" : "Unbrandedland City",
     "permitMax": "sixty seven",
+    "permitsCosts": [67, 77, 100, 100],
+    "permitWait": 5,
     "string" : "unbranded"
   }
 ]
