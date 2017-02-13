@@ -104,8 +104,8 @@ app.use(session({
 // send assetPath to all views
 app.use(function (req, res, next) {
   res.locals.asset_path = '/public/'
-  console.log(councilsData)
-  res.locals.councils = councilsData
+  var councils = councilsData
+  res.locals.councils = councils
   next()
 })
 
@@ -137,7 +137,11 @@ if (useAutoStoreData === 'true') {
 
     // set council variable to all of relevant councilData
     if(req.session.data.councilChoice){
-      req.session.data.council = councilsData[req.session.data.councilChoice]
+      for(var i in councilsData){
+        if(councilsData[i].string == req.session.data.councilChoice){
+          req.session.data.council = councilsData[i]
+        }
+      }
     }
 
     next()

@@ -27,14 +27,11 @@
           <p class="heading-medium">
             Which council do you want to test with?
           </p>
-          <script type="text/javascript">
-            console.log('test');
-          </script>
 
           {% for eachCouncil in councils %}
-          <label class="block-label" for="council-{{argleton}}">
-            <input id="council-argleton" type="radio" name="councilChoice" value="argleton" {{ checked("councilChoice","argleton") }}>
-            {{ eachCouncil[0].name }}
+          <label class="block-label" for="council-{{eachCouncil.string}}">
+            <input id="council-{{eachCouncil.string}}" type="radio" name="councilChoice" value="{{eachCouncil.string}}" {{ checked("councilChoice", eachCouncil.string) }}>
+            {{ eachCouncil.name }}
           </label>
           {% else %}
           No councils found
