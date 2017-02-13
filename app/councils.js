@@ -5,10 +5,14 @@
 module.exports = {
   argleton : {
     name : 'Argleton County Council',
+    shortName: 'Argleton',
+    parkingBoundary: 'Argleton City Centre',
     string : 'argleton'
   },
   unbranded : {
-    name : 'Unbranded Council',
+    name : 'Unbrandedland Council',
+    shortName : 'Unbrandedland',
+    parkingBoundary : 'Unbrandedland City',
     string : 'unbranded'
   }
 }
