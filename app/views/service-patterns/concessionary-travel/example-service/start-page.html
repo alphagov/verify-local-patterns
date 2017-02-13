@@ -8,7 +8,7 @@
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">Apply for an older person's bus pass in Argleton</h1>
+  <h1 class="heading-xlarge">Apply for an older person's bus pass in {{council.shortName}}</h1>
 
   <p>
     In England you can get a bus pass for free local travel when you reach the female State Pension age, whether you’re a man or a woman.
@@ -17,7 +17,7 @@
     The pass is valid on any local bus in England at any time on a Saturday, Sunday or bank holiday, and from 9.30am to 11pm on any other day.
   </p>
   <p>
-    If you live in <a href="https://www.theguardian.com/technology/2009/nov/03/google">Argleton</a>, you should apply through this service. The pass will be valid on all bus services in England.
+    If you live in {{council.shortName}}, you should apply through this service. The pass will be valid on all bus services in England.
   </p>
 
   <p>
@@ -52,24 +52,28 @@
 
   <a class="button button-start" href="prove-identity" role="button">Apply online now</a>
 
-  <h2 class="heading-medium">Other ways to apply</h2>
-  <h2 class="heading-small">Apply by phone</h2>
-<P>0300 083 0013<br>
-Monday to Friday, 8am to 7pm<br>
-Saturday, 8am to 2pm<br>
- <a href="#">Find out about call charges</a></P>
+  <details>
+     <summary><span class="summary">Other ways to apply</span></summary>
+     <div class="panel panel-border-narrow">
+      <h3 class="heading-small">Apply by phone</h3>
+      <p>0300 083 0013<br>
+      Monday to Friday, 8am to 7pm<br>
+      Saturday, 8am to 2pm<br>
+       <a href="#">Find out about call charges</a></p>
 
-  <h2 class="heading-small">Apply by post</h2>
-<p>
-send an <a href="#">application form</a> or a letter with the following information to the Argleton council:
-<li>a scanned copy of a council tax statement </li>
-<li>a scanned copy of a form of identity to prove your age</li> </p>
-<p>Send your request to: </p>
-<p>Concessionary travel pass office<br>
-Argleton coucil <br>
-12-14 Kings road <br>
-Argleton <br>
-AG3 4HP </p>
+      <h2 class="heading-small">Apply by post</h2>
+      <p>
+      send an <a href="#">application form</a> or a letter with the following information to {{council.name}}:
+      <li>a scanned copy of a council tax statement </li>
+      <li>a scanned copy of a form of identity to prove your age</li> </p>
+      <p>Send your request to: </p>
+      <p>Concessionary travel pass office<br>
+      {{council.name}}<br>
+      12-14 Kings road <br>
+      {{council.shortName}} <br>
+      AG3 4HP </p>
+    </div>
+  </details>
 
 </main>
 
