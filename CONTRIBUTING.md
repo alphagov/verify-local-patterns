@@ -6,13 +6,15 @@ Please do add any issues with these services patterns to this project.
 
 You can contact us via email if you have our emails, or via the Verify Local Slack if you are part of that.
 
-## Suggesting features
+## Suggesting features or changes
 
-Please raise feature requests as issues before contributing any code.
+If you think something should be different in either of the patterns, [first check someone else hasn't already spotted it](https://github.com/alphagov/verify-local-patterns/issues?utf8=%E2%9C%93&q=is%3Aissue%20). If they haven't, feel free to [open an issue](https://github.com/alphagov/verify-local-patterns/issues/new) and we can discuss it.
 
 This ensures they are discussed properly before any time is spent on them.
 
-## Raising bugs
+Before opening
+
+## Raising bugs with the project
 
 When raising bugs please explain the issue in good detail and if neccesary, provide a guide to how to replicate it.
 When describing the bug it's useful to follow the format:
