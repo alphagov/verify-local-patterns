@@ -1,18 +1,10 @@
 # Contribution guidelines
 
-Please do add any issues with these services patterns to this project.
-
-## Contact the team
-
-You can contact us via email if you have our emails, or via the Verify Local Slack if you are part of that.
-
 ## Suggesting features or changes
 
 If you think something should be different in either of the patterns, [first check someone else hasn't already spotted it](https://github.com/alphagov/verify-local-patterns/issues?utf8=%E2%9C%93&q=is%3Aissue%20). If they haven't, feel free to [open an issue](https://github.com/alphagov/verify-local-patterns/issues/new) and we can discuss it.
 
-This ensures they are discussed properly before any time is spent on them.
-
-Before opening
+This ensures changes are discussed properly before any time is spent on them.
 
 ## Raising bugs with the project
 
@@ -23,12 +15,18 @@ When describing the bug it's useful to follow the format:
 - what you expected to happen
 - what happened
 
+## Contact the team
+
+You can contact us via email if you have our emails, or via the Verify Local Slack if you are part of that.
+
 ## GOV.UK Elements
 
 The project contains code taken from [GOV.UK Elements](https://github.com/alphagov/govuk_elements/) as well as the GOV.UK [Prototype kit](https://github.com/alphagov/govuk_prototype_kit) project.
-Please check that any issues related to that code are raised with those projects, not this one.
+Please check that any issues related to GOV.UK patterns, or the prototype kit, are raised with those projects, not this one.
 
 ## Contributing code
+
+If you want to contribute to this project directly, please make sure you're working on an issue which is open. Pull requests which do not refer to issues that have been discussed will be rejected.
 
 ### Indentation and whitespace
 
