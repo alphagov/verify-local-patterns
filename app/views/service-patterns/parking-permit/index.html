@@ -20,19 +20,7 @@
   {% include "includes/index_metadata.html" %}
 
   <div class="grid-row" data-module="highlight-active-section-heading">
-    <div class="column-third">
-
-      <!--  Page contents -->
-      <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
-        <h2 class="heading-small page-contents__title">Page contents:</h2>
-        <ul class="page-contents__list">
-            <li><a href="#user-need">What is the user need?</a></li>
-            <li><a href="#council-need">What do councils need?</a></li>
-            <li><a href="#user-journey">What is the user journey?</a></li>
-        </ul>
-      </div>
-
-    </div>
+    {% include "common-content/pattern-menu.html" %}
     <div class="column-two-thirds">
       <p>
          This page is for people who work in local authorities. It outlines a common pattern used for delivering resident's parking permits services effectively. <a href="/">Read more about service patterns.</a>
@@ -269,6 +257,9 @@
       <p>
         <a href="#">See the example renewal notification.</a> (page in progress)
       </p>
+
+      {% include 'common-content/feedback.html' %}
+
     </div>
   </div>
 
