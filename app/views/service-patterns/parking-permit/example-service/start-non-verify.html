@@ -8,14 +8,22 @@
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">Apply for a resident's parking permit in {{council.shortName}}</h1>
-
+  <h1 class="heading-xlarge">Apply for a resident's parking permit in {{council.shortName}} without verifying</h1>
   <p>
     To park in {{council.shortName}} City centre, you'll need a resident's parking permit.
   </p>
   <p>
-    Parking permits allow you to park anywhere within the <a href="https://www.theguardian.com/technology/2009/nov/03/google">boundaries of the city</a>.
+    Parking permits allow you to park anywhere within the {{council.parkingBoundary}}.
   </p>
+  {% if council.permitWait < 1 %}
+  <li>
+    You won't receive a physical permit. Wardens will check your vehicle's registration number.
+  </li>
+  {% else %}
+  <li>
+    Your permit will take {{council.permitWait}} working days to arrive. While you wait, you'll need to use a temporary permit which we will email to you.
+  </li>
+  {% endif %}
 
   <h2 class="heading-medium">About this service</h2>
 
@@ -26,10 +34,10 @@
     <li>
       Prices per year are as follows:
       <ul class="list list-circle">
-        <li>£51 for the first vehicle in the household</li>
-        <li>£81 for the second vehicle in the household</li>
-        <li>£153 for the third vehicle in the household</li>
-        <li>£153 for the fourth vehicle in the household</li>
+        <li>£{{council.permitCosts[0]}} for the first vehicle in the household</li>
+        <li>£{{council.permitCosts[1]}} for the second vehicle in the household</li>
+        <li>£{{council.permitCosts[2]}} for the third vehicle in the household</li>
+        <li>£{{council.permitCosts[3]}} for the fourth vehicle in the household</li>
       </ul>
     </li>
   </ul>
@@ -37,10 +45,14 @@
   <h2 class= "heading-medium">To apply online you will need to provide:</h2>
 
   <ul class="list list-bullet">
-    <li>Proof of address, such as a council tax bill or a recent utility bill or a tennancy agreement or a mortgage statement</li>
+    <li>Proof of address, such as a council tax bill or a recent utility bill or a tenancy agreement or a mortgage statement</li>
   </ul>
 
-  <a class="button button-start" href="add-address" role="button">Apply online now</a>
+  <p>
+    You'll need to scan in and upload these documents, and we'll check them after your application.
+  </p>
+
+  <a class="button button-start" href="add-poa" role="button">Apply online now</a>
 
 </main>
 
