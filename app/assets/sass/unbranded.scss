@@ -61,6 +61,30 @@ main img {
   margin-top: 55px;
 }
 
+
+.panel-photo-error {
+    background-image: url('/public/images/photo/icon-thick-cross.svg');
+}
+.panel-photo-result {
+    margin: 10px 15px 10px 0;
+    border-left: 0;
+    padding-left: 38px;
+    background-repeat: no-repeat;
+    background-position: left 10px;
+    background-size: 24px;
+    @media (min-width: 769px){
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 54px;
+        background-size: 36px;
+    }
+}
+.panel{
+  &:last-child {
+      margin-bottom: 0;
+  }
+}
+
 //radio button position
 label.block-label.selection-button-radio, label.block-label.selection-button-radio-selected{
   padding-left: 53px;
