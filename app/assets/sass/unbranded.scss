@@ -48,6 +48,13 @@ $toolkit-font-stack: $helvetica-regular;
 .grid-row{
   display: initial;
 }
+details{
+  margin-bottom: 1.5em;
+}
+
+form .heading-medium{
+  margin-top: 1em;
+}
 
 main img {
     max-width: 100%;

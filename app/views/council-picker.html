@@ -15,12 +15,12 @@
       </h1>
 
       <p>
-        Your current council is {{council.name}}. Prototypes will be styled like this page.
+        Your current council is {{council.name}}.
       </p>
 
       <details>
 
-        <summary><span class="summary">Your council's variables</span></summary>
+        <summary><span class="summary">Your council's options</span></summary>
 
         <div class="panel panel-border-narrow">
           <table>
@@ -37,40 +37,40 @@
           No council selected
           {% endfor %}
           </table>
-          <p>
-            Your council will stay the same until you change it below, or start a new session.
-          </p>
         </div>
 
       </details>
 
-      <div class="panel panel-border-wide">
 
-        <form action="council-picker" method="post" class="form">
-          <div class="form-group">
-            <legend class="visuallyhidden">
-              Which council do you want to test with?
-            </legend>
+      <p>
+        When viewing <a href="/">the pattern prototypes</a> in your browser, it will be styled like this page and use the above options until you change your council below.
+      </p>
 
-            <h3 class="heading-small">
-              Which council do you want to test with?
-            </h3>
 
-            {% for eachCouncil in councils %}
-            <label class="block-label" for="council-{{eachCouncil.string}}">
-              <input id="council-{{eachCouncil.string}}" type="radio" name="councilChoice" value="{{eachCouncil.string}}" {{ checked("councilChoice", eachCouncil.string) }}>
-              {{ eachCouncil.name }}
-            </label>
-            {% else %}
-            No councils found
-            {% endfor %}
+      <form action="council-picker" method="post" class="form">
+        <div class="form-group">
+          <legend class="visuallyhidden">
+            Which council do you want to test with?
+          </legend>
 
-          </div>
-          <div class="form-group">
-            <input type="submit" class="button" value="Change council">
-          </div>
-        </form>
-      </div>
+          <h2 class="heading-medium">
+            Which council do you want to test with?
+          </h2>
+
+          {% for eachCouncil in councils %}
+          <label class="block-label" for="council-{{eachCouncil.string}}">
+            <input id="council-{{eachCouncil.string}}" type="radio" name="councilChoice" value="{{eachCouncil.string}}" {{ checked("councilChoice", eachCouncil.string) }}>
+            {{ eachCouncil.name }}
+          </label>
+          {% else %}
+          No councils found
+          {% endfor %}
+
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" value="Change council">
+        </div>
+      </form>
 
     </div>
   </div>
