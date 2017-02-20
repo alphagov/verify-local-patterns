@@ -142,7 +142,10 @@ if (useAutoStoreData === 'true') {
           req.session.data.council = councilsData[i]
         }
       }
+    }else{
+      req.session.data.council = councilsData[0]
     }
+
 
     next()
   })
