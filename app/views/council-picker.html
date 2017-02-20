@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_picker.html" %}
 
 {% block page_title %}
   Service patterns for local government services
@@ -15,27 +15,34 @@
       </h1>
 
       <p>
-        Your current council is {{council.name}}
+        Your current council is {{council.name}}. Prototypes will be styled like this page.
       </p>
-      <h2 class="heading-medium">Your council's variables</h2>
 
-      <table>
-      {% for varName, var in council %}
-        <tr>
-          <td class="heading-small">
-            {{varName}}
-          </td>
-          <td>
-            {{var}}
-          </td>
-        </tr>
-      {% else %}
-      No council selected
-      {% endfor %}
-      </table>
-      <p>
-        Your council will stay the same until you change it below, or start a new session.
-      </p>
+      <details>
+
+        <summary><span class="summary">Your council's variables</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <table>
+          {% for varName, var in council %}
+            <tr>
+              <td class="heading-small">
+                {{varName}}
+              </td>
+              <td>
+                {{var}}
+              </td>
+            </tr>
+          {% else %}
+          No council selected
+          {% endfor %}
+          </table>
+          <p>
+            Your council will stay the same until you change it below, or start a new session.
+          </p>
+        </div>
+
+      </details>
 
       <div class="panel panel-border-wide">
 
