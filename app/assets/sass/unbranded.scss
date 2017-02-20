@@ -54,6 +54,13 @@ main img {
   margin-bottom: 2em;
 }
 
+.loading-spinner{
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
+  margin-top: 55px;
+}
+
 //radio button position
 label.block-label.selection-button-radio, label.block-label.selection-button-radio-selected{
   padding-left: 53px;
