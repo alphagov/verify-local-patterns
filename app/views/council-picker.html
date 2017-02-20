@@ -15,33 +15,55 @@
       </h1>
 
       <p>
-        Set what the prototype will be styled as here.
+        Your current council is {{council.name}}
+      </p>
+      <h2 class="heading-medium">Your council's variables</h2>
+
+      <table>
+      {% for varName, var in council %}
+        <tr>
+          <td class="heading-small">
+            {{varName}}
+          </td>
+          <td>
+            {{var}}
+          </td>
+        </tr>
+      {% else %}
+      No council selected
+      {% endfor %}
+      </table>
+      <p>
+        Your council will stay the same until you change it below, or start a new session.
       </p>
 
-      <form action="council-chosen" method="post" class="form">
-        <div class="form-group">
-          <legend class="visuallyhidden">
-            Which council do you want to test with?
-          </legend>
+      <div class="panel panel-border-wide">
 
-          <p class="heading-medium">
-            Which council do you want to test with?
-          </p>
+        <form action="council-picker" method="post" class="form">
+          <div class="form-group">
+            <legend class="visuallyhidden">
+              Which council do you want to test with?
+            </legend>
 
-          {% for eachCouncil in councils %}
-          <label class="block-label" for="council-{{eachCouncil.string}}">
-            <input id="council-{{eachCouncil.string}}" type="radio" name="councilChoice" value="{{eachCouncil.string}}" {{ checked("councilChoice", eachCouncil.string) }}>
-            {{ eachCouncil.name }}
-          </label>
-          {% else %}
-          No councils found
-          {% endfor %}
-          
-        </div>
-        <div class="form-group">
-          <input type="submit" class="button" value="Continue">
-        </div>
-      </form>
+            <h3 class="heading-small">
+              Which council do you want to test with?
+            </h3>
+
+            {% for eachCouncil in councils %}
+            <label class="block-label" for="council-{{eachCouncil.string}}">
+              <input id="council-{{eachCouncil.string}}" type="radio" name="councilChoice" value="{{eachCouncil.string}}" {{ checked("councilChoice", eachCouncil.string) }}>
+              {{ eachCouncil.name }}
+            </label>
+            {% else %}
+            No councils found
+            {% endfor %}
+
+          </div>
+          <div class="form-group">
+            <input type="submit" class="button" value="Change council">
+          </div>
+        </form>
+      </div>
 
     </div>
   </div>
