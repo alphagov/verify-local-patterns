@@ -22,10 +22,6 @@ $toolkit-font-stack: $helvetica-regular;
     font-family: $toolkit-font-stack !important;
   }
 
-  header{
-    color: white;
-  }
-
   // Remove GOV.UK footer styles
   main{
     min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
@@ -65,35 +61,6 @@ main img {
   margin-bottom: 2em;
 }
 
-.loading-spinner{
-  position: absolute;
-  left: 50%;
-  margin-left: -70px;
-  margin-top: 55px;
-}
-
-
-.panel-photo-error {
-    background-image: url('/public/images/photo/icon-thick-cross.svg');
-}
-.panel-photo-result {
-    margin: 10px 15px 10px 0;
-    border-left: 0;
-    padding-left: 38px;
-    background-repeat: no-repeat;
-    background-position: left 10px;
-    background-size: 24px;
-    @media (min-width: 769px){
-        margin-top: 15px;
-        margin-bottom: 15px;
-        padding-left: 54px;
-        background-size: 36px;
-    }
-}
-.panel{
-  &:last-child {
-      margin-bottom: 0;
-  }
 .button-start{
   margin-bottom: 1em;
 }
@@ -134,12 +101,26 @@ label.block-label.selection-button-checkbox{
   display: none;
 }
 
+//argleton styles
+.argleton-name-extra{
+  display: none;
+  @media(min-width: 405px){
+    display:inline;
+  }
+}
 
 body{
+  background-color: beige;
   min-height: 100vh;
 }
 
+//having to be annoyingly specific here to override the radio button styles
+.unbranded .block-label.selection-button-radio:before {
+  background: #fafafa;
+}
+
 input.form-control, textarea.form-control{
+  background: #fafafa;
   margin-bottom: 9px;
 }
 
@@ -153,6 +134,7 @@ header{
 }
 
 header{
+  background-color: #9cc162;
   padding: 0px 15px 0px;
   font-size: 1.6em;
   .container{
@@ -222,6 +204,7 @@ table{
 .payment-summary {
   display: inline-block;
   border: 7px solid #DEE0E2;
+  background-color: #fdfdf6;
   padding: .6em 1em 0;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -233,6 +216,7 @@ table{
 }
 
 .form-group{
+  background: beige;
   margin-bottom: 0;
   padding-bottom: 30px;
 }
@@ -367,11 +351,4 @@ p.accepted-copy-2 {
         background-image: url(/public/images/photo/icon-thick-cross.svg);
     }
   }
-}
-
-.photo-choose-file{
-  display: none;
-}
-.photo-status img{
-  width: 250px;
 }

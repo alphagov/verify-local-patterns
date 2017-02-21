@@ -1,7 +1,7 @@
-{% extends "layout_argleton.html" %}
+{% extends "layout_picker.html" %}
 
 {% block page_title %}
-  Argleton County Council - Apply for a older person's bus pass in Argleton
+  {{council.name}} - Apply for a older person's bus pass in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
@@ -20,9 +20,9 @@
     <h2 class="heading-small">2. Download a paper application</a></h2>
 
     <p>You will need to <a href="#">download,</a> print and complete the application form. You will then need to send the form, along with scanned copies of photo ID and proof of address. Send the form to:</p>
-    <p>Argleton council,<br />
+    <p>{{council.name}},<br />
 1-5 Swishy street,<br />
-Argleton,<br />
+{{council.shortName}},<br />
 AG99 1AX</p>
 
 <h2 class="heading-small">3. Phone the council on 080038748374834 </a></h2>

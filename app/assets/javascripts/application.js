@@ -26,27 +26,6 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
 
-  // code for verify give permission page, should probably be moved elsewhere so doesn't load on every page
-
-  if(window.location.href.indexOf("parking-permit") > -1) {
-    $('button').click(function(){
-      var checked = $('#confirm_allow_verify').prop('checked');
-      if(checked){
-        window.location.href = "http://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton";
-      }else{
-        $('.error-summary').removeClass('hidden');
-      }
-    });
-  }else if(window.location.href.indexOf("concessionary-travel") > -1){
-    $('button').click(function(){
-      var checked = $('#confirm_allow_verify').prop('checked');
-      if(checked){
-        window.location.href = "http://govuk-verify.herokuapp.com/intro?requestId=concessionary-travel-argleton";
-      }else{
-        $('.error-summary').removeClass('hidden');
-      }
-    });
-  }
 
   if(window.location.href.indexOf("upload") > -1){
     $('#photo').change(function(e){
@@ -56,7 +35,6 @@ $(document).ready(function () {
       // $('.photo-status').html('<div class="panel panel-border-wide"><h2 class="heading-medium">Your photo: </h2><p>'+e.currentTarget.value+'</p><img src="'+window.URL.createObjectURL(this.files[0])+'" /></div>')
     });
   }
-
 
   if(window.location.href.indexOf("loading") > -1){
 

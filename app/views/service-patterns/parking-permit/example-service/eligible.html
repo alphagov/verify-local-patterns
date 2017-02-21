@@ -1,7 +1,7 @@
-{% extends "layout_argleton.html" %}
+{% extends "layout_picker.html" %}
 
 {% block page_title %}
-  Argleton County Council - Apply for a resident's parking permit in Argleton
+  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
 		<a href="javascript:history.back()">&#9664; Back</a>
 	</div>
 
-  <h1 class="heading-xlarge">You are eligible for a parking permit in Argleton</h1>
+  <h1 class="heading-xlarge">You are eligible for a parking permit in {{council.shortName}}</h1>
 
   <p>
     The permit will allow you to park in the city centre 24 hours a day.
