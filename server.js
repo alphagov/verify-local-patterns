@@ -135,8 +135,6 @@ if (useAutoStoreData === 'true') {
       }
     })
 
-    console.log('sessiondata is',req.session.data);
-
     // set council variable to all of relevant councilData
     if(req.session.data.councilChoice){
       for(var i in councilsData){
