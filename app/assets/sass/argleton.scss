@@ -69,6 +69,11 @@ main img {
   margin-bottom: 1em;
 }
 
+// custom file upload button
+.file-upload input{
+  display: none;
+}
+
 //radio button position
 label.block-label.selection-button-radio, label.block-label.selection-button-radio-selected{
   padding-left: 53px;

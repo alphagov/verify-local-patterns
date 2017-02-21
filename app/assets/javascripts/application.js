@@ -27,14 +27,12 @@ $(document).ready(function () {
   showHideContent.init()
 
 
-  if(window.location.href.indexOf("upload") > -1){
-    $('#photo').change(function(e){
-      console.log(e);
-      console.log(e.currentTarget.value);
-      window.location.href = 'loading';
-      // $('.photo-status').html('<div class="panel panel-border-wide"><h2 class="heading-medium">Your photo: </h2><p>'+e.currentTarget.value+'</p><img src="'+window.URL.createObjectURL(this.files[0])+'" /></div>')
-    });
-  }
+  // if(window.location.href.indexOf("upload") > -1){
+  //   $('#photo').change(function(e){
+  //     window.location.href = 'loading';
+  //     // $('.photo-status').html('<div class="panel panel-border-wide"><h2 class="heading-medium">Your photo: </h2><p>'+e.currentTarget.value+'</p><img src="'+window.URL.createObjectURL(this.files[0])+'" /></div>')
+  //   });
+  // }
 
   if(window.location.href.indexOf("loading") > -1){
 

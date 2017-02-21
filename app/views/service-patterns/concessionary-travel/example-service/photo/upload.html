@@ -11,51 +11,52 @@
         <div class="column-two-thirds">
             <h2 class="heading-medium">Upload your photo</h2>
 
-            <form action="/photo/upload" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate="true" spellcheck="false">
-                <p>Your photo must meet the rules for digital passport photos.<br><a href="photo-guide">Read the photo guide</a>.</p>
+              <p>Your photo must meet the rules for digital passport photos.<br><a href="photo-guide">Read the photo guide</a>.</p>
 
-                <div class="panel panel-border-wide">
-                    <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
-                </div>
+              <div class="panel panel-border-wide">
+                  <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
+              </div>
+
+              <form action="good-photo" method="POST">
 
                 <div id="photo-group" class="form-group">
                   <div class="photo-status">
                   </div>
-                    <form action="success" method="GET">
-                      <label for="photo" class="button photo-upload-label" role="button">
-                        <span id="photo-label-text" class="">Upload your photo</span>
-                      </label>
-                      <input type="file" accept="image/jpeg" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true">
-                    </form>
-                    <img id="image-preview" src="" />
+                  <label for="photo" class="button photo-upload-label" role="button">
+                    <span id="photo-label-text" class="">Upload your photo</span>
+                  </label>
+                  <input type="file" accept="image/jpeg" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
+                  <!-- <input type="text" name="text" />
+                  <input type="submit" /> -->
+                  <input type="submit" />
                 </div>
+              </form>
 
-                <details role="group">
-                    <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary js-gaevent" data-galabel="details" data-gakey="printed photo">I have a printed photo</span></summary>
-                    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-                        <p>You can’t use a printed photo with this service. You’ll need to <a href="./need-photo">get a digital photo</a>, or <a href="#" class="js-gaevent" data-galabel="different service"
-                                data-gakey="printed photo">use a different service</a> to apply for your bus pass.</p>
-                    </div>
-                </details>
 
-                <h2 class="heading-small">How to take a good passport style photo</h2>
+              <details role="group">
+                  <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary js-gaevent" data-galabel="details" data-gakey="printed photo">I have a printed photo</span></summary>
+                  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                      <p>You can’t use a printed photo with this service. You’ll need to <a href="./need-photo">get a digital photo</a>, or <a href="#" class="js-gaevent" data-galabel="different service"
+                              data-gakey="printed photo">use a different service</a> to apply for your bus pass.</p>
+                  </div>
+              </details>
 
-                <div class="grid-row photo-upload-guide">
-                    <div class="column-half img">
-                        <img src="{{asset_path}}images/good-passport-photo.jpg" alt="">
-                    </div>
-                    <div class="column-half">
-                        <ul class="list list-number">
-                            <li>Get a friend to take your photo</li>
-                            <li>Use a plain background</li>
-                            <li>Don’t crop your photo – include your face, shoulders and upper body</li>
-                            <li>Keep your hair away from your face and brushed down</li>
-                            <li>Make sure there are no shadows on your face or behind you</li>
-                        </ul>
-                    </div>
-                </div>
-                <input type="hidden" name="x-csrf-token" value="9whngUWk-85biTchC-0J6P6xFvNBOfeVN9Ew">
-            </form>
+              <h2 class="heading-small">How to take a good passport style photo</h2>
+
+              <div class="grid-row photo-upload-guide">
+                  <div class="column-half img">
+                      <img src="{{asset_path}}images/good-passport-photo.jpg" alt="">
+                  </div>
+                  <div class="column-half">
+                      <ul class="list list-number">
+                          <li>Get a friend to take your photo</li>
+                          <li>Use a plain background</li>
+                          <li>Don’t crop your photo – include your face, shoulders and upper body</li>
+                          <li>Keep your hair away from your face and brushed down</li>
+                          <li>Make sure there are no shadows on your face or behind you</li>
+                      </ul>
+                  </div>
+              </div>
 
         </div>
     </div>
