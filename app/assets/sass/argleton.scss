@@ -74,6 +74,14 @@ main img {
   display: none;
 }
 
+.loading-spinner {
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
+    margin-top: 50px;
+}
+
 .photo-preview{
   width: 200px;
 }
