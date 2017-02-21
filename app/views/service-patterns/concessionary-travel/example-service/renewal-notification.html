@@ -1,4 +1,4 @@
-{% extends "layout_argleton.html" %}
+{% extends "layout_picker.html" %}
 
 {% block page_title %}
   GOV.UK prototype kit
@@ -15,7 +15,7 @@
 <form>
   <div class="form-group">
       <fieldset>
-        
+
       <legend class="visually-hidden">How would you like to receive your renewal notification?</legend>
 
       <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
@@ -35,16 +35,16 @@
         <label class="form-label" for="contact-text-message">Mobile phone number</label>
         <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
       </div>
-    
+
       <label class="block-label selection-button-radio" data-target="billing-address" for="contact-billing-address">
         <input id="contact-billing-address" type="radio" name="radio-contact-group" value="No">
         Letter (sent to verified address)
       </label>
-      <div class="panel panel-border-narrow js-hidden" id="billing-address"> 
+      <div class="panel panel-border-narrow js-hidden" id="billing-address">
       <p>
         John Smith<br />
-        1A Argleton High Street<br />
-        Argleton<br />
+        1A {{council.shortName}} High Street<br />
+        {{council.shortName}}<br />
         ARG1 4HP<br />
       </p>
       </div>

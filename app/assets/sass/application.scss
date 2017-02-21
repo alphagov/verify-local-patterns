@@ -32,6 +32,10 @@ p + ul{
   margin-bottom: 1em;
 }
 
+.panel .heading-small{
+  margin: 0 0 1.5em 0;
+}
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 h1 span.strapline {
@@ -100,4 +104,8 @@ h1 span.strapline {
 .page-contents__list .active {
     letter-spacing: 0;
     font-weight: bold;
+}
+
+table + p{
+  margin-top: 2em;
 }

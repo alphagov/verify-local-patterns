@@ -8,7 +8,7 @@
     <a href="/service-patterns/{{ serviceString }}/example-service/prove-identity">See the example council page for telling users about proving their identity</a>
   </p>
   <p>
-      <a href="http://govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-argleton">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
+      <a href="http://govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-{{council.string}}">Step through the GOV.UK Verify journey prototype</a> (username is pirate / password is bunting)
   </p>
 
 </li>
@@ -19,10 +19,10 @@
 
     <ul class="list list-bullet">
       <li>
-        GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won't be verified, they are shown the "<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-argleton&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page.
+        GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won't be verified, they are shown the "<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-{{council.string}}&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page.
       </li>
       <li>
-        A very small proportion of users will go through past these questions, and GOV.UK Verify will still not be able to verify their identity. These users will be told by their chosen Identity Provider that they couldn't be verified, and then be taken back to GOV.UK, where they will see a similar "<a href="https://govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-argleton&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2"> verification failed</a>" page. (<a href="https://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-argleton&verify=false">Step through the example GOV.UK Verify journey as a user who can not be verified</a>.)
+        A very small proportion of users will go through past these questions, and GOV.UK Verify will still not be able to verify their identity. These users will be told by their chosen Identity Provider that they couldn't be verified, and then be taken back to GOV.UK, where they will see a similar "<a href="https://govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2"> verification failed</a>" page. (<a href="https://govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Step through the example GOV.UK Verify journey as a user who can not be verified</a>.)
       </li>
     </ul>
     <p>
@@ -37,7 +37,7 @@
     <h3 class="heading-small">Alternative ways to access the service</h3>
 
     <p>
-      Alternative ways to access the service need to be shown to the user on the "<a href="/service-patterns/{{ serviceString }}/example-service/prove-identity">proving identity</a>" page, the "<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-argleton&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page, and the "<a href="https://govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-argleton&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2"> verification failed</a>" page.
+      Alternative ways to access the service need to be shown to the user on the "<a href="/service-patterns/{{ serviceString }}/example-service/prove-identity">proving identity</a>" page, the "<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-{{council.string}}&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page, and the "<a href="https://govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2"> verification failed</a>" page.
     </p>
     <p>
       In the alternative online route, users will need to prove their address {{"and age" if age}} by scanning in documents. This will require manual checks by councils.

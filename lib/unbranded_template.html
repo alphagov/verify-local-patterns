@@ -48,18 +48,9 @@
     </div>
     <!--end global-cookie-message-->
 
-    <!-- black box, legacy from govuk -->
+
     <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
-    </header>
-    <!-- argleton header -->
-    <header>
-      <div class="container">
-        <img src="{{ asset_path }}images/tree.svg" alt="Argleton logo">
-        <span class="argleton-name">Argleton </span><span class="argleton-name-extra">County Council</span>
-        <div class="contact-link">
-          <a href="#">Contact</a>
-        </div>
-      </div>
+      {{council.name}}
     </header>
     <!--end header-->
 
@@ -69,8 +60,6 @@
     {% block content %}{% endblock %}
 
     <footer class="group js-footer" id="footer" role="contentinfo">
-      Argleton is a fictional council to demonstrate <a href="/">local government service patterns</a>.<br />
-      <a href="/council-picker">Change your testing council</a>
     </footer>
 
     <!--end footer-->

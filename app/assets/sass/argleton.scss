@@ -22,10 +22,6 @@ $toolkit-font-stack: $helvetica-regular;
     font-family: $toolkit-font-stack !important;
   }
 
-  header{
-    color: white;
-  }
-
   // Remove GOV.UK footer styles
   main{
     min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
@@ -105,12 +101,26 @@ label.block-label.selection-button-checkbox{
   display: none;
 }
 
+//argleton styles
+.argleton-name-extra{
+  display: none;
+  @media(min-width: 405px){
+    display:inline;
+  }
+}
 
 body{
+  background-color: beige;
   min-height: 100vh;
 }
 
+//having to be annoyingly specific here to override the radio button styles
+.unbranded .block-label.selection-button-radio:before {
+  background: #fafafa;
+}
+
 input.form-control, textarea.form-control{
+  background: #fafafa;
   margin-bottom: 9px;
 }
 
@@ -124,6 +134,7 @@ header{
 }
 
 header{
+  background-color: #9cc162;
   padding: 0px 15px 0px;
   font-size: 1.6em;
   .container{
@@ -193,6 +204,7 @@ table{
 .payment-summary {
   display: inline-block;
   border: 7px solid #DEE0E2;
+  background-color: #fdfdf6;
   padding: .6em 1em 0;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -204,6 +216,7 @@ table{
 }
 
 .form-group{
+  background: beige;
   margin-bottom: 0;
   padding-bottom: 30px;
 }

@@ -1,7 +1,7 @@
-{% extends "layout_argleton.html" %}
+{% extends "layout_picker.html" %}
 
 {% block page_title %}
-  Argleton County Council - Apply for an older person's bus pass in Argleton
+  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
 {% endblock %}
 
 {% block content %}
@@ -29,8 +29,8 @@
     <div class="panel panel-border-wide">
       <p>
         {% if skip_verify == true %}Kay Dale{% else %}John Smith{% endif %}<br />
-        1A Argleton High Street<br />
-        Argleton<br />
+        1A {{council.shortName}} High Street<br />
+        {{council.shortName}}<br />
         ARG1 4HP<br />
       </p>
       <a href="#">Provide a different address</a>
