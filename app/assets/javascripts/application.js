@@ -29,6 +29,7 @@ $(document).ready(function () {
 
   if(window.location.href.indexOf("upload") > -1){
     $('#photo').change(function(e){
+      // todo: check that file is actually chosen!!
       window.location.href = 'loading';
     });
   }

@@ -171,7 +171,7 @@
                                 links to renewals and replacements services
                             </li>
                         </ul>
-                        <a href="concessionary-travel/example-service/start-page">See the example service start page</a>
+                        <a href="example-service/start-page">See the example service start page</a>
                     </li>
                     <li>
                         <ol class="list list-letter">
@@ -184,36 +184,49 @@
                         </ol>
                     </li>
                     <li>
+                      <h3 class="heading-small">Do you already have a bus pass?</h3>
+                      <p>
+                        If the user has been successfully verified, The council will receive the user's name, address, and date of birth from GOV.UK Verify.
+                      </p>
+                      <p>
+                        At this point the council should check whether or not they have a bus pass against their records. If they already have a pass, they should tell them they are not eligible to apply for a new one, but they can renew or replace a lost or stolen one with the 'Renew or replace your bus pass' service. The page should also include a link to contact the council if the user believes there has been a mistake.</p>
 
-                        <h3 class="heading-small">Confirm your address and eligibility</h3>
+                      <a href="example-service/not-eligible-pass">See the page telling the user they are not eligible because they already have a pass</a>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Confirm your address</h3>
                         <p>
                             GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address. This page
                             can also ask the user to confirm they want the council to send the bus pass to the address they've received through GOV.UK Verify.
                         </p>
-                        <a href="concessionary-travel/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
+                        <a href="example-service/confirm-address">See the example page asking users to confirm their name and address</a>
                         <p>
                             If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and warned that they must not
                             enter false information as this is a civic offence. If the travel pass is physical, councils will get extra confidence in the address by mailing the pass to the address given. Councils should mention they will be using the address for this purpose on
                             the confirmation page.
                         </p>
-                        <a href="concessionary-travel/example-service/incorrect-address">See the example page asking users to enter their current address</a>
+                        <a href="example-service/incorrect-address">See the example page asking users to enter their current address</a>
                         <p>
                             Once the user has confirmed their address, the council should check that the given address is in the area the council serves. If the address is not in the area, the council should tell them they are not eligible in this area.
                         </p>
-                        <a href="concessionary-travel/example-service/not-eligible-address">See the page telling the user they are not eligible because of their address</a>
-                        <p>
-                            If their address is eligible, the councils should check their date of birth. This task does not need to be visible to the user it can be performed as a background function
-                        </p>
+                        <a href="example-service/not-eligible-address">See the page telling the user they are not eligible because of their address</a>
+                  </li>
+                  <li>
+                      <h3 class="heading-small">Confirm your date of birth</h3>
+                      <p>
+                        The council should show the user their date of birth for the user to confirm it. (This is mainly done because of a legal requirement to show user's the data that has been received from GOV.UK Verify.)
+                      </p>
+                      <a href="example-service/confirm-dob">See the page asking users to confirm their date of birth</a>
+                      <p>
+                        If the user's date of birth is not correct, something has probably gone wrong in the verifying process, so the user should be advised to continue using a different channel.
+                      </p>
+                      <a href="example-service/incorrect-dob">See the page asking users to continue in a different channel</a>
 
-                        <p>If the user is not eligible based on their date of birth councils should tell them they are not eligbile yet and communicate when the user will be eligible.
-                        </p>
+                      <p>
+                        If the user confirms their date of birth, the council should check the user is old enough to be eligible. If the user is not eligible based on their date of birth councils should tell them and also tell the user when they will be eligible.
+                      </p>
 
-                        <a href="concessionary-travel/example-service/not-eligible-age">See the page telling the user they are not eligible because of their age</a>
-
-                        <p>If the user is not eligible because they already have a pass, the council should tell them and also link to the 'Renew or replace your bus pass' service. The page should also include a link to contact the council if the user believes there has
-                            been a mistake.</p>
-
-                        <a href="concessionary-travel/example-service/not-eligible-pass">See the page telling the user they are not eligible because they already have a pass</a>
+                      <a href="example-service/not-eligible-age">See the page telling the user they are not eligible because of their age</a>
 
                     </li>
                     <li>
@@ -226,7 +239,7 @@
                             Users can upload a digital passport style photograph for use on the bus pass, but they may need to be instructed how. The council website should ask the user whether or not they need instructions, and then step them through the process if they do.
                         </p>
                         <p>
-                            <a href="concessionary-travel/example-service/photo/need-photo">Step through the example guide for how to take and upload a passport style photograph</a>
+                            <a href="example-service/photo/need-photo">Step through the example guide for how to take and upload a passport style photograph</a>
                         </p>
                     </li>
                     <li>
@@ -239,7 +252,7 @@
                             The accompanying letter should also provide information on how, when and where the bus pass can be used, and what to do in case of a lost or stolen pass.
                         </p>
                         <p>
-                            <a href="concessionary-travel/example-service/success">See the example page telling the user when they can expect to receive their pass</a>
+                            <a href="example-service/success">See the example page telling the user when they can expect to receive their pass</a>
                         </p>
                     </li>
                     <li>
@@ -248,7 +261,7 @@
                           Many users want to be informed of the progress of their application. To notify users of their progress, you'll need to ask them for their preferred contact method and details.
                         </p>
                         <p>
-                          <a href="concessionary-travel/example-service/add_contact_details">See the example page asking users to provide their prefered contact details.</a>
+                          <a href="example-service/add_contact_details">See the example page asking users to provide their prefered contact details.</a>
                         </p>
                     <li>
                         <h3 class="heading-small">Use bus pass</h3>
