@@ -33,9 +33,18 @@ $(document).ready(function () {
       window.location.href = 'loading';
     });
   }
-
+  if(window.location.href.indexOf("add-poa") > -1){
+    $('#file').change(function(e){
+      // todo: check that file is actually chosen!!
+      window.location.href = 'loading-poa';
+    });
+  }
+  if(window.location.href.indexOf("loading-poa") > -1){
+    setTimeout(function(){
+      window.location.href = 'document-accepted';
+    }, 2000)
+  }
   if(window.location.href.indexOf("loading") > -1){
-
     setTimeout(function(){
       window.location.href = 'good-photo';
     }, 3000)
