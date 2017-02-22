@@ -6,9 +6,9 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <p>You must upload a digital photo of yourself for your bus pass.</p>
+            <p>We need a photo of you for your bus pass.</p>
 
-            <h2 class="heading-small">How to take a good photo for your bus pass</h2>
+            <h2 class="heading-small">How to take a good bus pass photo</h2>
 
             <div class="grid-row photo-upload-guide">
                 <div class="column-half img">
@@ -26,13 +26,17 @@
                 </div>
             </div>
 
-              <form action="good-photo" method="POST">
+            <h2 class="heading-small">How do you want to upload your photo?</h2>
 
+              <form action="good-photo" method="POST">
                 <div id="photo-group" class="form-group file-upload">
-                  <div class="photo-status">
-                  </div>
+                  <button id="startbutton" class="button">Use device camera</button>
+                  <!-- <video id="video">Video stream not available.</video> -->
+                  <p class="center">
+                    or
+                  </p>
                   <label for="photo" class="button photo-upload-label" role="button">
-                    <span id="photo-label-text" class="">Upload your photo</span>
+                    <span id="photo-label-text" class="">Upload photo file</span>
                   </label>
                   <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
 

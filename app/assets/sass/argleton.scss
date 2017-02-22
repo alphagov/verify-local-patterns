@@ -69,6 +69,15 @@ main img {
   margin-bottom: 1em;
 }
 
+.center{
+  text-align: center;
+  margin: 1em;
+  @media(min-width: 641px){
+    text-align: left;
+    margin-left: 4em;
+  }
+}
+
 // custom file upload button
 .file-upload input{
   display: none;
