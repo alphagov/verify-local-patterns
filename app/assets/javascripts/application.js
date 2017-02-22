@@ -41,4 +41,11 @@ $(document).ready(function () {
     }, 3000)
   }
 
+  if(window.location.href.indexOf("upload") > -1){
+    $('#cambutton').click(function(e){
+      e.preventDefault();
+      window.alert("This feature is currently in progress.");
+    });
+  }
+
 })
