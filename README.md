@@ -4,9 +4,17 @@
 
 This is a prototype of some content that will be included in the [GOV.UK Service Manual](https://gov.uk/service-manual) about the best practice for councils to deliver two services - parking permits and concessionary travel. The repo also includes a working prototype of both services which follows the guidance, as deliver by the fictional council of Argleton.
 
-## Project management
+## Contributing an issue
 
-I'm currently using the GitHub project board to manage tasks and iterations.
+If you spot an issue, please do add it to this project. But first, read the [contributing to this project guide](https://github.com/alphagov/verify-local-patterns/blob/master/CONTRIBUTING.md).
+
+Pull requests that don't reference issues are not likely to be accepted.
+
+## Working on this project
+
+I'm currently using the [GitHub project board](https://github.com/alphagov/verify-local-patterns/projects/1) to manage tasks and iterations.
+
+When making changes, it's best to make the change to the pattern(s) first, and then to the example prototype(s) to ensure consistency.
 
 ## Argleton
 
