@@ -1,0 +1,23 @@
+{% extends "layout_argleton.html" %} {% block page_title %} Argleton County Council - Apply for an older person's bus pass in Argleton {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <h1 class="heading-xlarge">Confirm your photo</h1>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+          <p>
+            This is the photo that we'll use on your bus pass.
+          </p>
+          <img src="{{asset_path}}images/good-passport-photo.jpg" class="photo-preview" />
+
+          <p>
+            By proceeding you confirm that this photo is of you.
+          </p>
+          <a href="../success" class="button">Continue</a>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -26,4 +26,46 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
 
+
+  if(window.location.href.indexOf("upload") > -1){
+    $('#photo').change(function(e){
+      // todo: check that file is actually chosen!!
+      window.location.href = 'loading';
+    });
+  }
+  if(window.location.href.indexOf("add-poa") > -1){
+    $('#file').change(function(e){
+      // todo: check that file is actually chosen!!
+      window.location.href = 'loading-poa';
+    });
+  }
+  if(window.location.href.indexOf("add-poage") > -1){
+    $('#file').change(function(e){
+      // todo: check that file is actually chosen!!
+      window.location.href = 'loading-poage';
+    });
+  }
+  if(window.location.href.indexOf("loading-poa") > -1){
+    setTimeout(function(){
+      window.location.href = 'document-accepted';
+    }, 2000)
+  }
+  if(window.location.href.indexOf("loading-poage") > -1){
+    setTimeout(function(){
+      window.location.href = 'eligible-nonverify';
+    }, 2000)
+  }
+  if(window.location.href.indexOf("loading") > -1){
+    setTimeout(function(){
+      window.location.href = 'good-photo';
+    }, 3000)
+  }
+
+  if(window.location.href.indexOf("upload") > -1){
+    $('#cambutton').click(function(e){
+      e.preventDefault();
+      window.alert("This feature is currently in progress.");
+    });
+  }
+
 })

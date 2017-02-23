@@ -1,0 +1,25 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for a parking permit in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Document successfully uploaded</h1>
+
+  <p>
+    Your document has been uploaded.
+  </p>
+  <p>
+    You'll now need to tell us some things about your vehicle.
+  </p>
+
+  <a class="button" role="button" href="enter-reg">Next</a>
+
+
+</main>
+
+{% endblock %}

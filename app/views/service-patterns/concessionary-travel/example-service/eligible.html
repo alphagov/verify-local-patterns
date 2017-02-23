@@ -1,0 +1,25 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<div class="back">
+		<a href="javascript:history.back()">&#9664; Back</a>
+	</div>
+
+  <h1 class="heading-xlarge">It looks like you are eligible for an older person's bus pass</h1>
+
+  <p>
+    Based on the information we have, you are eligible for a bus pass. To complete your application, you'll need to upload a photo of yourself for the pass.
+  </p>
+
+  <a class="button" role="button" href="photo/upload">Next</a>
+
+
+</main>
+
+{% endblock %}
