@@ -51,14 +51,14 @@ router.get('/service-patterns/parking-permit/example-service/eligible', function
   }
 })
 
-router.get('/service-patterns/concessionary-travel/example-service/confirm-dob', function (req, res) {
+router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
   var answer = req.query.answer
 
   if (answer === 'No') {
-    res.redirect('incorrect-address')
+    res.redirect('incorrect-dob')
   } else {
-    res.render('service-patterns/concessionary-travel/example-service/confirm-dob')
+    res.render('service-patterns/concessionary-travel/example-service/confirm-address')
   }
 })
 
@@ -67,7 +67,7 @@ router.get('/service-patterns/concessionary-travel/example-service/eligible', fu
   var answer = req.query.answer
 
   if (answer === 'No') {
-    res.redirect('incorrect-dob')
+    res.redirect('incorrect-address')
   } else {
     res.render('service-patterns/concessionary-travel/example-service/eligible')
   }
