@@ -20,7 +20,7 @@ git config --global user.name "YOUR NAME"
 git config --global user.email "YOUR EMAIL ADDRESS"
 ```
 
-For example,  `git config --global user.name "John Smith"`
+For example,  `git config --global user.name "Jane Smith"`
 
 If you have an account on GitHub, use the *same* email address for both.
 
