@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Apply for a bus pass without using GOV.UK Verify" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Apply for a bus pass without verifying online</h1>
+<div class="column-two-thirds">
 
   <p>
     You can still apply online for a older person's bus pass, but you'll need to scan and upload some documents.
@@ -21,8 +18,8 @@
     <li>Proof of age, such as a birth certificate, a passport or a driving license</li>
   </ul>
 
-  <a class="button button-start" href="add-poa" role="button">Continue</a>
+  <a class="button" href="add-poa" role="button">Continue</a>
 
-</main>
+</div>
 
 {% endblock %}

@@ -1,14 +1,9 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Verifying your identity" %}
 
 {% block content %}
-
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Verifying your identity</h1>
 
   <p>
     To apply for an older person's bus pass, we need to verify your identity.
@@ -50,10 +45,9 @@
          <li>an identity document such as a birth certificate, a passport or a photocard driving license.</li>
       </ul>
 
-      <a href="start-non-verify">Continue without using GOV.UK Verify</a>
+      <a href="verification-failed">Continue without using GOV.UK Verify</a>
 
     </div>
  </div>
-</main>
 
 {% endblock %}

@@ -1,8 +1,9 @@
-{% extends "layout_argleton.html" %} {% block page_title %} Argleton County Council - Apply for an older person's bus pass in Argleton {% endblock %} {% block content %}
+{% extends "layout_picker.html" %}
 
-<main id="content" role="main">
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Confirm your photo" %}
 
-    <h1 class="heading-xlarge">Confirm your photo</h1>
+{% block content %}
 
     <div class="grid-row">
         <div class="column-two-thirds">
@@ -18,6 +19,5 @@
 
         </div>
     </div>
-</main>
 
 {% endblock %}

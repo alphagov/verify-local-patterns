@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Upload complete" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Upload complete</h1>
+<div class="column-two-thirds">
 
   <p>
     You'll now need to upload a digital passport style photo to complete the application process.
@@ -16,7 +13,6 @@
 
   <a class="button" role="button" href="photo/upload">Next</a>
 
-
-</main>
+</div>
 
 {% endblock %}

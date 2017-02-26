@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Document successfully uploaded" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Document successfully uploaded</h1>
+<div class="column-two-thirds">
 
   <p>
     Your document has been uploaded.
@@ -20,6 +17,6 @@
   <a class="button" role="button" href="enter-reg">Next</a>
 
 
-</main>
+</div>
 
 {% endblock %}

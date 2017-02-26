@@ -1,14 +1,11 @@
-{% extends "layout_picker.html" %}
+{% extends "layout_argleton.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "There may have been a problem verifying your identity" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">There may have been a problem verifying your identity</h1>
+<div class="column-two-thirds">
 
   <p>
     Because your date of birth is not correct, there may have been a problem verifying your identity.
@@ -17,7 +14,6 @@
     Please <a href="#">contact the council</a> to continue with your application.
   </p>
 
-
-</main>
+</div>
 
 {% endblock %}

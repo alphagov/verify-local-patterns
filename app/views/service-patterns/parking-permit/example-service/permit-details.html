@@ -1,17 +1,13 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Add permit details" %}
 
 {% block content %}
-<main id="content" role="main">
-<div class="back">
-    <a href="javascript:history.back()">&#9664; Back</a>
-  </div>
-  <h1 class="heading-xlarge">Add permit details</h1>
 
-<h1 class="heading-medium">Enter permit start date</h1>
+<div class="column-two-thirds">
+
+<h2 class="heading-medium">Enter permit start date</h2>
   <div>
 <form method="post">
           <fieldset>
@@ -35,7 +31,7 @@
       </form>
   </div>
 
-<h1 class="heading-medium">Select permit length</h1>
+<h2 class="heading-medium">Select permit length</h2>
 
 <form>
   <div class="form-group">
@@ -60,11 +56,11 @@
 </form>
 
 <div>
-  
+
    <a class="button" role="button" href="contact-details">Next</a>
 </div>
 
- 
+
 
 </main>
 

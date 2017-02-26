@@ -1,18 +1,12 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Enter vehicle details" %}
 
 {% block content %}
 
-<main id="content" role="main">
-<div class="back">
-    <a href="javascript:history.back()">&#9664; Back</a>
-  </div>
-
-  <h1 class="heading-large">Enter vehicle details</h1>
-
+<div class="column-two-thirds">
+  
   <p>
     Enter the registration number of the vehicle you wish to get a permit for.
   </p>
@@ -33,6 +27,6 @@
   <a class="button" role="button" href="permit-details">Next</a>
 
 
-</main>
+</div>
 
 {% endblock %}

@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Apply for a resident's parking permit" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Apply for a resident's parking permit in {{council.shortName}}</h1>
+<div class="column-two-thirds">
 
   <p>
     To park in {{council.parkingBoundary}}, you'll need a resident's parking permit.
@@ -17,7 +14,7 @@
     Parking permits allow you to park anywhere within the <a href="https://www.theguardian.com/technology/2009/nov/03/google">boundaries of the city</a>.
   </p>
 
-<h2 class="heading-medium">About this service</h2>
+  <h2 class="heading-medium">About this service</h2>
     <ul class="list list-bullet">
       <li>
         Each household is allowed up to {{council.permitMax}} permits
@@ -38,7 +35,6 @@
       </li>
       {% endif %}
     </ul>
-  </div>
 
   <a class="button button-start" href="prove-identity" role="button">Apply online now</a>
 
@@ -65,6 +61,6 @@
     </div>
   </details>
 
-</main>
+</div>
 
 {% endblock %}

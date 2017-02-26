@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Is this your address?" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Is this your address?</h1>
+<div class="column-two-thirds">
 
   <p>
     We've received these details from GOV.UK Verify:
@@ -49,6 +46,6 @@
     </div>
   </form>
 
-</main>
+</div>
 
 {% endblock %}

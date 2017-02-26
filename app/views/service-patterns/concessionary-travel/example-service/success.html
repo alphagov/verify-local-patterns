@@ -1,26 +1,21 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Application complete" %}
 
 {% block content %}
 
-<main id="content" role="main">
-<div class="back">
-    <a href="javascript:history.back()">&#9664; Back</a>
-  </div>
+    <div class="govuk-box-highlight">
+      <p>
+        Your reference number is <br>
+        <strong class="heading-large">HDJ2123F</strong>
+      </p>
+    </div>
 
-      <div class="govuk-box-highlight">
-        <h1 class="bold-large">Application complete</h1>
-        <p>
-          Your reference number is <br>
-          <strong class="heading-medium">HDJ2123F</strong>
-        </p>
-      </div>
-  <p><a href="#"> Request</a> a confirmation email.</p>
+  <p><a href="#">Request a confirmation email.</a></p>
 
-   <p>
+  <div class="column-two-thirds">
+    <p>
      {% if skip_verify == true %} As long as your photo, proof of address and proof of age pass our manual checks, we'll send you your bus pass within 5 days. {% else %} As long as your photo passes our manual checks, we'll send you your bus pass within 5 days.{% endif %}
     </p>
     <p>
@@ -53,6 +48,10 @@
       </li>
     </ul>
 
-</main>
+    <p>
+      Whilst we process your application, we can send you notifications of it's progress. <a href="/service-patterns/concessionary-travel/example-service/add_contact_details">Sign up for a progress notifications</a>.
+    </p>
+
+    </div>
 
 {% endblock %}

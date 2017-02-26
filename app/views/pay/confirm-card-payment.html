@@ -1,17 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm your payment" %}
 
 {% block content %}
 
-<main id="content" role="main">
-	<div class="back">
-		<a href="javascript:history.back()">&#9664; Back</a>
-	</div>
 <div class="grid-row review-details">
-	  <h1 class="heading-large">Confirm your payment</h1>
 	  <div class="check-details">
 
 	  	<table>
@@ -38,11 +32,11 @@
 		      </tr>
 		      <tr>
 		        <td>Payment of:</td>
-		        <td class="table-info">Tax your vehicle – 12 months from 30 April 2016 to 30 April 2017</td>
+		        <td class="table-info">Resident's parking permit</td>
 		      </tr>
 		      <tr>
 		        <td>Amount to pay:</td>
-		        <td class="table-info">£145.00</td>
+		        <td class="table-info">£60.00</td>
 		      </tr>
 		    </tbody>
   		</table>
@@ -59,8 +53,5 @@
 			</div>
 		 </div>
 	 </div>
-
-
-</main>
 
 {% endblock %}

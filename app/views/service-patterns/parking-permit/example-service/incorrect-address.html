@@ -1,16 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Enter your current address" %}
 
 {% block content %}
 
-<main id="content" role="main">
-<div class="back">
-    <a href="javascript:history.back()">&#9664; Back</a>
-  </div>
-  <h1 class="heading-xlarge">Enter your current address</h1>
+<div class="column-two-thirds">
 
   <div>
       <form method="post">
@@ -55,6 +50,6 @@
   <a class="button" role="button" href="eligible">Next</a>
 
 
-</main>
+</div>
 
 {% endblock %}
