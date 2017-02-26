@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Add proof of age" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-   <h1 class="heading-xlarge">Add proof of age</h1>
+<div class="column-two-thirds">
 
   <p>This could be any one of the following documents</p>
   <ul class="list list-bullet">
@@ -19,6 +16,6 @@
 
   {% include 'common-content/address-upload.html' %}
 
-</main>
+</div>
 
 {% endblock %}

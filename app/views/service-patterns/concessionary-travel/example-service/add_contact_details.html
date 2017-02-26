@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Enter your contact details" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Enter your contact details</h1>
+<div class="column-two-thirds">
 
   <p>
     While we are processing your application, we can send you notifications about it's progress.
@@ -62,10 +59,8 @@
     </div>
   </form>
 
-
   <a class="button" role="button" href="success">Next</a>
 
-
-</main>
+</div>
 
 {% endblock %}

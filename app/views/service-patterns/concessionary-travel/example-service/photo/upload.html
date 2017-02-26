@@ -1,8 +1,9 @@
-{% extends "layout_picker.html" %} {% block page_title %} {{council.name}} - Apply for an older person's bus pass in {{council.shortName}} {% endblock %} {% block content %}
+{% extends "layout_picker.html" %}
 
-<main id="content" role="main">
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Upload a photo" %}
 
-    <h1 class="heading-xlarge">Apply for an older person's bus pass in {{council.shortName}}</h1>
+{% block content %}
 
     <div class="grid-row">
         <div class="column-two-thirds">
@@ -46,10 +47,7 @@
               <div class="panel panel-border-wide">
                   <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
               </div>
-
-
         </div>
     </div>
-</main>
 
 {% endblock %}

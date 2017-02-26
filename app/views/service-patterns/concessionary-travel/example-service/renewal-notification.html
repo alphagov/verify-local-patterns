@@ -1,16 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "How would you like to receive your renewal notification?" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-<h1 class="heading-xlarge">
-  How would you like to receive your renewal notification?
-</h1>
+<div class="column-two-thirds">
 
 <form>
   <div class="form-group">
@@ -84,6 +79,6 @@
   </div>
 </form>
 
-</main>
+</div>
 
 {% endblock %}

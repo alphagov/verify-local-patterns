@@ -1,12 +1,13 @@
+<!-- todo: check if this page is actually used anywhere -->
+
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Other ways to apply" %}
 
 {% block content %}
 
-<main id="content" role="main">
+<div class="column-two-thirds">
 
   <h1 class="heading-xlarge">Other ways to apply</h1>
 
@@ -27,6 +28,6 @@ AG99 1AX</p>
 
 <h2 class="heading-small">3. Phone the council on 080038748374834 </a></h2>
 
-</main>
+</div>
 
 {% endblock %}

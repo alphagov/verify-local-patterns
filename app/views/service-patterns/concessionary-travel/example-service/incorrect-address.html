@@ -1,15 +1,12 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Enter your current address" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Enter your current address</h1>
-
+<div class="column-two-thirds">
+  
   <div>
       <form method="post">
           <fieldset>
@@ -42,17 +39,16 @@
   </div>
 
   <div class="notice">
-  <i class="icon icon-important">
-    <span class="visually-hidden">Warning</span>
-  </i>
-  <strong class="bold-small">
-    You can be taken to court if you knowingly give false information in your application.
-  </strong>
-</div>
+    <i class="icon icon-important">
+      <span class="visually-hidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+      You can be taken to court if you knowingly give false information in your application.
+    </strong>
+  </div>
 
   <a class="button" role="button" href="confirm-dob">Next</a>
 
-
-</main>
+</div>
 
 {% endblock %}
