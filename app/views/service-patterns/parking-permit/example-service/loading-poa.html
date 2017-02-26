@@ -1,7 +1,12 @@
-{% extends "layout_argleton.html" %} {% block page_title %} Argleton County Council - Apply for a resident's parking permit in Argleton {% endblock %} {% block content %}
-<main id="content" role="main">
+{% extends "layout_picker.html" %}
 
-  <h1 class="heading-xlarge">Processing your document...</h1>
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Processing your document..." %}
+
+{% block content %}
+
+<main>
+
   {% include "common-content/loading.html" %}
 
 </main>

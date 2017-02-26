@@ -1,28 +1,22 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Application complete" %}
 
 {% block content %}
 
-<main id="content" role="main">
-<div class="back">
-		<a href="javascript:history.back()">&#9664; Back</a>
-	</div>
 
-      <div class="govuk-box-highlight">
-        <h1 class="bold-large">Application complete</h1>
-        <p>
-          Your reference number is <br>
-          <strong class="heading-medium">HDJ2123F</strong>
-        </p>
-      </div>
+  <div class="govuk-box-highlight">
+    <p>
+      Your reference number is <br>
+      <strong class="heading-large">HDJ2123F</strong>
+    </p>
+  </div>
 	<p><a href="#"> Request</a> a confirmation email.</p>
 
 <div>Your parking permit is on its way. You can expect your permit to arrive within 5 working days. In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
 </div>
-	
+
 
 </main>
 

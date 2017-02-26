@@ -1,17 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Your address already has a parking permit" %}
 
 {% block content %}
 
-
-<main id="content" role="main">
-<div class="back">
-    <a href="javascript:history.back()">&#9664; Back</a>
-  </div>
-  <h1 class="heading-xlarge">Your address already has a parking permit</h1>
+<div class="column-two-thirds">
 
   <p>
     Residents of {{council.shortName}} are eligible for one parking permit per address. Your address already has a parking permit, so you can not get another one.
@@ -22,9 +16,6 @@
     <a href="#">Contact the council</a> to get a former resident's permit cancelled or if you think there has been a mistake.
   </p>
 
-
-
-
-</main>
+</div>
 
 {% endblock %}

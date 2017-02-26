@@ -1,17 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Select which permit you would like to apply for" %}
 
 {% block content %}
 
-
-<main id="content" role="main">
-<div class="back">
-    <a href="javascript:history.back()">&#9664; Back</a>
-  </div>
-  <h1 class="heading-xlarge">Select which permit you would like to apply for</h1>
+<div class="column-two-thirds">
 
 <form>
   <div class="form-group">
@@ -36,12 +30,12 @@ Train station permit      </label>
 </form>
 
 <div>
-  
+
    <a class="button" role="button" href="enter-reg">Next</a>
 </div>
 
 
 
-</main>
+</div>
 
 {% endblock %}

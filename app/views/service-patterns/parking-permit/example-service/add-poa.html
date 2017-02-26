@@ -1,14 +1,11 @@
 {% extends "layout_picker.html" %}
 
-{% block page_title %}
-  {{council.name}} - Apply for a parking permit in {{council.shortName}}
-{% endblock %}
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Add proof of address" %}
 
 {% block content %}
 
-<main id="content" role="main">
-
-  <h1 class="heading-xlarge">Add proof of address</h1>
+<div class="column-two-thirds">
 
   <p>This could be any one of the following:</p>
   <ul class="list list-bullet">
@@ -23,6 +20,6 @@
 
   {% include 'common-content/address-upload.html' %}
 
-</main>
+</div>
 
 {% endblock %}
