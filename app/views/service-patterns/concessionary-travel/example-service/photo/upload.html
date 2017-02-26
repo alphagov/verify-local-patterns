@@ -8,7 +8,7 @@
         <div class="column-two-thirds">
             <p>We need a photo of you for your bus pass.</p>
 
-            <h2 class="heading-small">How to take a good bus pass photo</h2>
+            <h2 class="heading-medium">How to take a good bus pass photo</h2>
 
             <div class="grid-row photo-upload-guide">
                 <div class="column-half img">
@@ -20,23 +20,42 @@
                         <!-- <li>Get a friend to take your photo</li> -->
                         <li>Use a plain background</li>
                         <li>Include your face and shoulders</li>
-                        <li>Keep your hair away from your face and brushed down</li>
+                        <li>Keep your hair away from your face</li>
                         <li>Make sure there are no shadows on your face or behind you</li>
                     </ol>
                 </div>
             </div>
 
-            <h2 class="heading-small">How do you want to upload your photo?</h2>
+            <h2 class="heading-medium">How do you want to upload your photo?</h2>
 
-              <form action="good-photo" method="POST">
-                <div id="photo-group" class="form-group file-upload">
-                  <button id="cambutton" class="button">Use device camera</button>
-                  <!-- <video id="video">Video stream not available.</video> -->
-                  <p class="center">
-                    or
-                  </p>
+              <form action="contact/finished">
+                <div class="form-group">
+                  <fieldset>
+
+                    <legend class="visually-hidden">
+                      How do you want to upload your photo?
+                    </legend>
+
+                    <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
+                      <input id="upload-file" type="radio" name="radio-contact-group" value="Yes">
+                      Upload a file
+                    </label>
+
+                    <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
+                      <input id="webcam" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
+                      Take a photo with a webcam
+                    </label>
+
+                    <label class="block-label selection-button-radio" data-target="mobile-device" for="mobile-device">
+                      <input id="mobile-device" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
+                      Take a photo with a tablet or smartphone
+                    </label>
+
+                  </fieldset>
+                </div>
+                <div class="form-group file-upload">
                   <label for="photo" class="button photo-upload-label" role="button">
-                    <span id="photo-label-text" class="">Upload photo file</span>
+                    <span id="photo-label-text" class="">Continue</span>
                   </label>
                   <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
 
