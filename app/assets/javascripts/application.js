@@ -62,7 +62,7 @@ $(document).ready(function () {
   }
 
   if(window.location.href.indexOf("upload") > -1){
-    $('#cambutton').click(function(e){
+    $('.in-progress').click(function(e){
       e.preventDefault();
       window.alert("This feature is currently in progress.");
     });
