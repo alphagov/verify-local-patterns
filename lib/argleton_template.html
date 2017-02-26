@@ -69,7 +69,19 @@
 
     {% block after_header %}{% endblock %}
 
-    {% block content %}{% endblock %}
+    <main id="content" role="main">
+
+      {% if startPage %}
+      <h1 class="heading-xlarge">{{pageTitle}} in {{council.shortName}}</h1>
+      {% else %}
+      {% include "includes/service_breadcrumbs.html" %}
+      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+      {% endif %}
+
+      {% block content %}{% endblock %}
+
+    </main>
+
 
     <footer class="group js-footer" id="footer" role="contentinfo">
       Argleton is a fictional council to demonstrate <a href="/">local government service patterns</a>.<br />
