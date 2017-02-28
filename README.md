@@ -11,12 +11,12 @@ This project includes two things:
 
 If you are working with a council involved in the #VerifyLocal pilots project, you need to localise the prototype to properly for your user research. This involves:
 
- 1. Fork repository and running it locally
+ 1. Forking the repository and running it locally
  2. Adding your council options
  3. Adding a council stylesheet and template
  4. Making a pull request
 
-### 1. Fork this repository and running it locally
+### 1. Forking this repository and running it locally
 
  - First, [fork the repository](https://help.github.com/articles/fork-a-repo/).
  - You'll need to run `npm install` from the command line to install the node modules that the project requires.
@@ -61,7 +61,7 @@ Once you've added the above, you should be able to step through your prototype. 
 
 ### 4. Making a pull request
 
-To make a pull request, you'll need to push your version of the project to your own repository on GitHub
+Once you're happy with your changes, [make a pull request from your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 
 
 ## Contributing issues
