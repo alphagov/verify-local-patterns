@@ -233,6 +233,9 @@ header{
 
 table{
   margin-bottom: 30px;
+  th:first-of-type{
+    font-weight: normal;
+  }
 }
 
 .payment-summary {
