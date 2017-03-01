@@ -6,23 +6,33 @@
 {% block content %}
 
 <div class="column-two-thirds">
-  
+
   <p>
-    Enter the registration number of the vehicle you wish to get a permit for.
+    We need your vehicle's registration number to
   </p>
 
-  <div>
+  <ul class="list list-bullet">
+    <li>
+      calculate the price of your permit
+    </li>
+    <li>
+      associate your permit with your vehicle
+    </li>
+  </ul>
+
+  <div class="form-group">
       <form method="post">
           <fieldset>
-              <legend class="visuallyhidden">Enter vehicle registration number</legend>
-
-              <div class="ask_location">
-                  <label class="instruction" for="postcode">Enter vehicle registration number</label>
+              <legend class="visuallyhidden">Enter your vehicle's registration number</legend>
+              <div>
+                  <label class="form-label" for="postcode">Enter your vehicle's registration number</label>
                   <input class="reg-number" id="reg-number" name="reg-number" type="text" aria-invalid="false" value="">
               </div>
           </fieldset>
       </form>
   </div>
+
+
 
   <a class="button" role="button" href="permit-details">Next</a>
 
