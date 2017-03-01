@@ -9,7 +9,7 @@ This project includes two things:
 
 ## Localising the prototype
 
-If you are working with a council involved in the #VerifyLocal pilots project, you need to localise the prototype to properly for your user research. This involves:
+If you are working with a council involved in the #VerifyLocal pilots project, you need to localise the prototype to properly test it for your user research. This involves:
 
  1. Forking the repository and running it locally
  2. Adding your council options
@@ -68,7 +68,7 @@ Once you're happy with your changes, [make a pull request from your fork](https:
 
 If you spot an issue, [add it to this project](https://github.com/alphagov/verify-local-patterns/issues/new). But first, read the [contributing to this project guide](https://github.com/alphagov/verify-local-patterns/blob/master/CONTRIBUTING.md).
 
-I'm currently using the [GitHub project board](https://github.com/alphagov/verify-local-patterns/projects/1) to manage tasks and iterations, so you can see if what you've found is something I'm already working on.
+We're currently using the [GitHub project board](https://github.com/alphagov/verify-local-patterns/projects/1) to manage tasks and iterations, so you can see if what you've found is something we're already working on.
 
 ## Using this project
 
