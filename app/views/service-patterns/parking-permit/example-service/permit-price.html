@@ -1,0 +1,86 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Choose a permit" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+<p>
+  We've received these details from DVLA:
+</p>
+
+<table>
+  <tr>
+    <th>
+      Registration number
+    </th>
+    <th>
+      KS53 UTW
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Vehicle make
+    </th>
+    <th>
+      VOLKSWAGEN
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Cylinder capacity (cc)
+    </th>
+    <th>
+      1984cc
+    </th>
+  </tr>
+  <tr>
+    <th>
+      CO₂ emissions
+    </th>
+    <th>
+      192 g/km
+    </th>
+  </tr>
+</table>
+
+{% set halfCost = council.permitsCosts[0] / 2 %}
+
+<p>
+  Based on this information, your parking permit options are:
+</p>
+
+<form action="permit-details" method="post">
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">permit length</legend>
+
+      <label class="block-label selection-button-radio" for="radio-2">
+        <input id="radio-2" type="radio" name="permitChoice" value="6 month">
+        <span class="heading-small">6 month permit</span> - costs £{{halfCost.toFixed(2)}}
+      </label>
+      <label class="block-label selection-button-radio" for="radio-3">
+        <input id="radio-3" type="radio" name="permitChoice" value="12 month">
+        <span class="heading-small">12 month permit</span> - costs £{{council.permitsCosts[0]}}
+      </label>
+
+    </fieldset>
+  </div>
+
+
+  <p>
+    You'll set the permit start date in the next step.
+  </p>
+
+  <input type="submit" class="button" value="Next" />
+
+</form>
+
+
+
+</main>
+
+{% endblock %}

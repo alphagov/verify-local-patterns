@@ -7,58 +7,52 @@
 
 <div class="column-two-thirds">
 
+  <p>
+    You've chosen a {{permitChoice}} permit.
+  </p>
+
 <h2 class="heading-medium">Enter permit start date</h2>
-  <div>
-<form method="post">
-          <fieldset>
 
-            <div class="form-date">
-
-              <div class="form-group form-group-day">
-                <label for="dobDay">Day</label>
-                <input type="text" autocomplete="off" class="form-control" id="dobDay" name="dobDay">
-              </div>
-              <div class="form-group form-group-month">
-                <label for="dobMonth">Month</label>
-                <input type="text" autocomplete="off" class="form-control" id="dobMonth" name="dobMonth">
-              </div>
-              <div class="form-group form-group-year">
-                <label for="dobYear">Year</label>
-                <input type="text" autocomplete="off" class="form-control" id="dobYear" name="dobYear">
-              </div>
-            </div>
-</fieldset>
-      </form>
-  </div>
-
-<h2 class="heading-medium">Select permit length</h2>
-
-<form>
+<form action="pre-payment" method="post">
   <div class="form-group">
     <fieldset>
 
       <legend class="visually-hidden">permit length</legend>
 
-      <label class="block-label selection-button-radio" for="radio-1">
-        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
-       1 month
-      </label>
       <label class="block-label selection-button-radio" for="radio-2">
-        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
-        6 months
+        <input id="radio-2" type="radio" name="permitStartChoice" value="soon">
+        As soon as possible
       </label>
-      <label class="block-label selection-button-radio" for="radio-3">
-        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
-12 months      </label>
+      <label class="block-label selection-button-radio" for="radio-3" data-target="other-date">
+        <input id="radio-3" type="radio" name="permitStartChoice" value="other">
+        Some other date
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="other-date">
+        <fieldset>
+          <div class="form-date">
+
+            <div class="form-group form-group-day">
+              <label for="permitChoiceDay">Day</label>
+              <input type="text" autocomplete="off" class="form-control" id="permitChoiceDay" name="permitChoiceDay">
+            </div>
+            <div class="form-group form-group-month">
+              <label for="permitChoiceMonth">Month</label>
+              <input type="text" autocomplete="off" class="form-control" id="permitChoiceMonth" name="permitChoiceMonth">
+            </div>
+            <div class="form-group form-group-year">
+              <label for="permitChoiceYear">Year</label>
+              <input type="text" autocomplete="off" class="form-control" id="permitChoiceYear" name="permitChoiceYear">
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
     </fieldset>
   </div>
+
+  <input type="submit" class="button" value="Next" />
+
 </form>
-
-<div>
-
-   <a class="button" role="button" href="contact-details">Next</a>
-</div>
 
 
 

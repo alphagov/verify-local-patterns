@@ -7,7 +7,7 @@
 
 <div class="column-two-thirds">
 
-	<form class="form" method="GET" action="/pay/confirm-card-payment" autocomplete="off">
+	<form class="form" method="GET" action="confirm-card-payment" autocomplete="off">
 
 		<div class="form-group cards-group">
 			<label class="form-label-bold" for="card-number">
@@ -104,7 +104,7 @@
 
 			      <p class="payment-info">Resident's parking permit</p>
 			       <h3>Amount to pay:</h3>
-			       <p class="payment-amount">£60.00</p>
+			       <p class="payment-amount">£{{council.permitsCosts[0]}}</p>
 			</div>
 		</div>
 	</div>
