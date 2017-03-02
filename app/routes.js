@@ -21,7 +21,7 @@ router.get('/service-patterns/parking-permit/example-service/choose-payment', fu
   } else {
 
     // if radio-group is any other value (or is missing) render the page requested
-    res.render('choose-payment');
+    res.render('service-patterns/parking-permit/example-service/choose-payment');
 
   }
 
