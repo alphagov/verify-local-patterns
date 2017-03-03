@@ -8,44 +8,18 @@
 <div class="column-two-thirds">
 
   <p>
-    To park in {{council.shortName}} City centre, you'll need a resident's parking permit.
-  </p>
+   You can still apply online for a parking permit, but you'll need to scan and upload some documents.
   <p>
-    Parking permits allow you to park anywhere within the {{council.parkingBoundary}}.
-  </p>
-  {% if council.permitWait < 1 %}
-  <li>
-    You won't receive a physical permit. Wardens will check your vehicle's registration number.
-  </li>
-  {% else %}
-  <li>
-    Your permit will take {{council.permitWait}} working days to arrive. While you wait, you'll need to use a temporary permit which we will email to you.
-  </li>
-  {% endif %}
 
-  <h2 class="heading-medium">About this service</h2>
+  <h2 class="heading-medium">To apply online you will need to provide:
+
+</h2>
 
   <ul class="list list-bullet">
     <li>
-      Each household is allowed up to four permits
-    </li>
-    <li>
-      Prices per year are as follows:
-      <ul class="list list-circle">
-        <li>£{{council.permitCosts[0]}} for the first vehicle in the household</li>
-        <li>£{{council.permitCosts[1]}} for the second vehicle in the household</li>
-        <li>£{{council.permitCosts[2]}} for the third vehicle in the household</li>
-        <li>£{{council.permitCosts[3]}} for the fourth vehicle in the household</li>
-      </ul>
+Proof of address, such as a council tax bill or a recent utility bill or a tenancy agreement or a mortgage statement
     </li>
   </ul>
-
-  <h2 class= "heading-medium">To apply online you will need to provide:</h2>
-
-  <ul class="list list-bullet">
-    <li>Proof of address, such as a council tax bill or a recent utility bill or a tenancy agreement or a mortgage statement</li>
-  </ul>
-
   <p>
     You'll need to scan in and upload these documents, and we'll check them after your application.
   </p>
