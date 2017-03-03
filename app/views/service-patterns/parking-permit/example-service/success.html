@@ -5,7 +5,6 @@
 
 {% block content %}
 
-
   <div class="govuk-box-highlight">
     <p>
       Your reference number is <br>
@@ -13,9 +12,20 @@
     </p>
   </div>
 	<p><a href="#"> Request</a> a confirmation email.</p>
-
-<div>Your parking permit is on its way. You can expect your permit to arrive within 5 working days. In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
-</div>
+  <div class="column-two-thirds">
+    {% if council.permitWait < 1 %}
+    <p>
+      You won't receive a physical permit. Wardens will check your vehicle's registration number.
+    </p>
+    {% else %}
+    <p>
+      You can expect your permit to arrive within 5 working days.
+    </p>
+    <p>
+      In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
+    </p>
+    {% endif %}
+  </div>
 
 
 </main>
