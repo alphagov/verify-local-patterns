@@ -1,12 +1,12 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Add contact details" %}
+{% set pageTitle = "Sign up for confirmation and alerts" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-<p> We will only contact you in regards to your application for a parking permit.</p>
+<p>We'll send you a confirmation of your payment{% if council.permitWait > 0 %} and an alert when your permit is on it's way{% endif %}.</p>
 <form>
   <div class="form-group">
     <fieldset>
@@ -14,7 +14,7 @@
       <legend class="visually-hidden">How do you want to be contacted?</legend>
 
       <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Email">
         Email
       </label>
       <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
@@ -23,7 +23,7 @@
       </div>
 
       <label class="block-label selection-button-radio" data-target="contact-by-phone" for="example-contact-by-phone">
-        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="Phone">
         Phone
       </label>
       <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
@@ -32,13 +32,18 @@
       </div>
 
       <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
-        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="Text">
         Text message
       </label>
       <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
         <label class="form-label" for="contact-text-message">Mobile phone number</label>
         <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
       </div>
+
+      <label class="block-label selection-button-radio" for="no-contact">
+        <input id="no-contact" type="radio" name="radio-contact-group" value="No">
+        I don't want to receive a confirmation or progress alerts
+      </label>
 
     </fieldset>
   </div>
