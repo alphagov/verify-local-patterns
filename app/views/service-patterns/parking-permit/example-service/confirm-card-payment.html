@@ -12,7 +12,7 @@
 		    <tbody>
 		      <tr>
 		        <td>Card number:</td>
-		        <td class="table-info">{{cardNumber}}</td>
+		        <td class="table-info">**** **** **** {{cardNumber.substr(cardNumber.length - 4) }}</td>
 		      </tr>
 		      <tr>
 		       <td>Expiry date:</td>
@@ -24,7 +24,7 @@
 		      </tr>
 		      <tr>
 		        <td>Billing address:</td>
-		        <td class="table-info">{{buildingStreet}} {{townCity}}, {{postcode}}</td>
+		        <td class="table-info">{{buildingStreet}}, {{townCity}}, {{postcode}}</td>
 		      </tr>
 		       <tr>
 		        <td>Email address:</td>
