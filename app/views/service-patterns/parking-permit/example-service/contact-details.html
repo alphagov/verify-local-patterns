@@ -7,14 +7,14 @@
 
 <div class="column-two-thirds">
 <p>We'll send you a confirmation of your payment{% if council.permitWait > 0 %} and an alert when your permit is on it's way{% endif %}.</p>
-<form>
+<form method="post" action="success">
   <div class="form-group">
     <fieldset>
 
       <legend class="visually-hidden">How do you want to be contacted?</legend>
 
       <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Email">
+        <input id="example-contact-by-email" type="radio" name="contactChoice" value="Email">
         Email
       </label>
       <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
@@ -23,8 +23,8 @@
       </div>
 
       <label class="block-label selection-button-radio" data-target="contact-by-phone" for="example-contact-by-phone">
-        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="Phone">
-        Phone
+        <input id="example-contact-by-phone" type="radio" name="contactChoice" value="Phone">
+        Automated phone call
       </label>
       <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
         <label class="form-label" for="contact-phone">Phone number</label>
@@ -32,7 +32,7 @@
       </div>
 
       <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
-        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="Text">
+        <input id="example-contact-by-text" type="radio" name="contactChoice" value="Text">
         Text message
       </label>
       <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
@@ -41,18 +41,16 @@
       </div>
 
       <label class="block-label selection-button-radio" for="no-contact">
-        <input id="no-contact" type="radio" name="radio-contact-group" value="No">
+        <input id="no-contact" type="radio" name="contactChoice" value="No">
         I don't want to receive a confirmation or progress alerts
       </label>
 
     </fieldset>
   </div>
+  <div class="form-group">
+    <input type="submit" class="button" name="Continue">
+  </div>
 </form>
-
-<div>
-
-   <a class="button" role="button" href="/choose-payment">Next</a>
-</div>
 
 </div>
 
