@@ -104,9 +104,12 @@
 			<div class="payment-summary payment-summary-small">
 				<h2>Payment summary</h2>
 
-			      <p class="payment-info">Resident's parking permit</p>
+			      <p class="payment-info">{{ permitChoice }} resident's parking permit</p>
 			       <h3>Amount to pay:</h3>
-			       <p class="payment-amount">£{{council.permitsCosts[0]}}</p>
+			       <p class="payment-amount">
+							 {% set halfCost = council.permitsCosts[0] / 2 %}
+			         £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+						 </p>
 			</div>
 		</div>
 	</div>
