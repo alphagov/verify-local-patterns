@@ -1,0 +1,38 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "Check if you need a permit" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    To check if you need a permit, enter the postcode of the area where you'd like to park.
+  </p>
+
+  <div class="postcode-search-form" data-module="track-submit" data-track-category="postcodeSearch:find_local_council" data-track-action="postcodeSearchStarted">
+
+    <form method="post" action="resident-choice" id="local-locator-form" class="find-location-for-service">
+      <fieldset>
+        <legend class="visuallyhidden">Postcode lookup</legend>
+
+        <div class="ask_location">
+          <label class="heading-small" for="postcode">Enter a postcode</label>
+          <p>For example SW1A 2AA</p>
+          <input class="postcode" id="postcode" name="postcode" type="text" aria-invalid="false" value="">
+          <input type="submit" class="button" value="Find">
+          <p>
+            <a target="_blank" id="postcode-finder-link" rel="external" href="http://www.royalmail.com/find-a-postcode">Find a postcode on Royal Mail's postcode finder</a>
+          </p>
+        </div>
+      </fieldset>
+
+    </form>
+  </div>
+
+
+
+</div>
+
+{% endblock %}

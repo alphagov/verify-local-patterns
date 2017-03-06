@@ -8,6 +8,25 @@ router.get('/', function (req, res) {
 
 // add your routes here
 
+router.get('/service-patterns/parking-permit/example-service/resident-choice', function (req, res) {
+
+  // get the answer from the query string (eg. ?over18=false)
+  var resident = req.query['resident'];
+
+  if (resident){
+
+    // redirect to the relevant page
+    res.redirect(resident);
+
+  } else {
+
+    // if radio-group is any other value (or is missing) render the page requested
+    res.render('service-patterns/parking-permit/example-service/resident-choice');
+
+  }
+
+});
+
 router.get('/service-patterns/parking-permit/example-service/choose-payment', function (req, res) {
 
   // get the answer from the query string (eg. ?over18=false)

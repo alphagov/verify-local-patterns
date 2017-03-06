@@ -1,75 +1,25 @@
 {% extends "layout_picker.html" %}
 
-{% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Apply for a resident's parking permit" %}
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "Park your car or vehicle" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    To park in {{council.parkingBoundary}}, you'll need a resident's parking permit.
+    In some parts of {{council.shortName}}, you'll need a parking permit to park your car or other vehicle.
   </p>
   <p>
-    Parking permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
+    Parking permits allow you to park within a given boundary, 24 hours a day and 7 days a week.
   </p>
 
-  <h2 class="heading-medium">About this service</h2>
-    <ul class="list list-bullet">
-      <li>
-        Each household is allowed up to {{council.permitMax}} permits.
-      </li>
-      <li>
-        Permits can be bought for 6 months or for 12 months.
-      </li>
-       <li>
-         Permits cost between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[3]}} depending on your vehicle type and how many other other permits have been bought by your household.
-      </li>
-      {% if council.permitWait < 1 %}
-      <li>
-        You won't receive a physical permit. Wardens will check your vehicle's registration number.
-      </li>
-      {% else %}
-      <li>
-        Your permit will take {{council.permitWait}} working days to arrive. While you wait, you'll need to use a temporary permit which we will email to you.
-      </li>
-      {% endif %}
-      <li>
-        To apply, you'll need to prove you live in {{council.parkingBoundary}} and provide your vehicle registration number.
-      </li>
-      <li>
-        You can apply using GOV.UK Verify. If you don't already have an account, you'll need to create one which takes around 15 minutes. The rest of the application takes around 2 minutes.
-      </li>
-    </ul>
 
-  <a class="button button-start" href="prove-identity" role="button">Apply online now</a>
+  <a class="button button-start" href="check-boundary" role="button">Check if you need a permit</a>
 
   <p>
-    If you need assistance using the online service, <a href="#">contact {{ council.name }}</a>.
+    If you need assistance using this online service, <a href="#">contact {{ council.name }}</a>.
   </p>
-
-  <details>
-     <summary><span class="summary">Other ways to apply</span></summary>
-     <div class="panel panel-border-narrow">
-      <h3 class="heading-small">Apply by phone</h3>
-      <p>0300 083 0013<br>
-      Monday to Friday, 8am to 7pm<br>
-      Saturday, 8am to 2pm<br>
-       <a href="#">Find out about call charges</a></p>
-
-      <h2 class="heading-small">Apply by post</h2>
-      <p>
-      send an <a href="#">application form</a> or a letter with the following information to {{council.name}}:
-      <li>a scanned copy of a council tax statement </li>
-      <li>a scanned copy of a form of identity to prove your age</li> </p>
-      <p>Send your request to: </p>
-      <p>Concessionary travel pass office<br>
-      {{council.name}}<br>
-      12-14 Kings road <br>
-      {{council.shortName}} <br>
-      AG3 4HP </p>
-    </div>
-  </details>
 
 </div>
 

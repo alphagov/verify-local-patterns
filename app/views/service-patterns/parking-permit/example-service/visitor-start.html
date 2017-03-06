@@ -1,0 +1,48 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a parking permit" %}
+{% set pageTitle = "Apply for a visitor's parking permit" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Visitors to {{council.parkingBoundary}} can buy visitor's parking permits.
+  </p>
+  <p>
+    These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
+  </p>
+
+  <a class="button button-start" href="#" role="button">Apply online now</a>
+
+  <p>
+    If you need assistance using the online service, <a href="#">contact {{ council.name }}</a>.
+  </p>
+
+  <details>
+     <summary><span class="summary">Other ways to apply</span></summary>
+     <div class="panel panel-border-narrow">
+      <h3 class="heading-small">Apply by phone</h3>
+      <p>0300 083 0013<br>
+      Monday to Friday, 8am to 7pm<br>
+      Saturday, 8am to 2pm<br>
+       <a href="#">Find out about call charges</a></p>
+
+      <h2 class="heading-small">Apply by post</h2>
+      <p>
+      send an <a href="#">application form</a> or a letter with the following information to {{council.name}}:
+      <li>a scanned copy of a council tax statement </li>
+      <li>a scanned copy of a form of identity to prove your age</li> </p>
+      <p>Send your request to: </p>
+      <p>Concessionary travel pass office<br>
+      {{council.name}}<br>
+      12-14 Kings road <br>
+      {{council.shortName}} <br>
+      AG3 4HP </p>
+    </div>
+  </details>
+
+</div>
+
+{% endblock %}
