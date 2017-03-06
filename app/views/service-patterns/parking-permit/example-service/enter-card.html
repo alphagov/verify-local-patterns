@@ -7,49 +7,51 @@
 
 <div class="column-two-thirds">
 
-	<form class="form" method="GET" action="confirm-card-payment" autocomplete="off">
+	<form class="form" method="POST" action="confirm-card-payment" autocomplete="off">
 
 		<div class="form-group cards-group">
-			<label class="form-label-bold" for="card-number">
+			<label class="form-label-bold" for="cardNumber">
 		    Card number
-		  	</label>
-		  	<input class="form-control medium-width" id="card-number" type="number" pattern="[0-9]*" min="0" max="9999999999999999">
-		  	<div class="card-images">
-          <p class="accepted-copy-2">Accepted credit and debit card types</p>
-			  	<img class="original-accepted" id="original-accepted" src="/public/images/accepted-cards-x2.png">
-		  	</div>
+		  </label>
+		  <input class="form-control medium-width" id="cardNumber" name="cardNumber" type="number" pattern="[0-9]*" min="0" max="9999999999999999">
+		  <div class="card-images">
+        <p class="accepted-copy-2">Accepted credit and debit card types</p>
+			  <img class="original-accepted" id="original-accepted" src="/public/images/accepted-cards-x2.png">
+		  </div>
 		</div>
 
 		<div class="form-group">
-      		<fieldset>
-      		  <div class="form-date">
-        		<legend class="form-label-bold">Expiry date	<span class="form-hint">For example, 07/17</span>
-        		</legend>
-		          <div class="form-group form-group-month">
-        		    <label for="exp-month">Month</label>
-            		<input class="form-control" id="exp-month" name="exp-month" type="number" pattern="[0-9]*" min="1" max="12">
-		          </div>
-        		  <div class="form-group form-group-month">
-	            	<label for="exp-year">Year</label>
-    	        	<input class="form-control" id="exp-year" name="exp-year" type="number" pattern="[0-9]*" min="16" max="25">
-          		</div>
-        	</div>
-       		</fieldset>
-      	</div>
+			<fieldset>
+			  <div class="form-date">
+					<legend class="form-label-bold">
+						Expiry date
+						<span class="form-hint">For example, 07/17</span>
+					</legend>
+			    <div class="form-group form-group-month">
+				    <label for="expMonth">Month</label>
+			  		<input class="form-control" id="expMonth" name="expMonth" type="number" pattern="[0-9]*" min="1" max="12">
+			    </div>
+				  <div class="form-group form-group-month">
+			    	<label for="expYear">Year</label>
+			    	<input class="form-control" id="expYear" name="expYear" type="number" pattern="[0-9]*" min="17" max="27">
+					</div>
+				</div>
+			</fieldset>
+		</div>
 
       	<div class="form-group">
-			<label class="form-label-bold" for="full-name">
+			<label class="form-label-bold" for="cardName">
 		    	Name on card
 		  	</label>
-		  	<input class="form-control" id="full-name" name="full-name" type="text">
+		  	<input class="form-control" id="cardName" name="cardName" type="text">
 		</div>
 
 		<div class="form-group">
-			<label class="form-label-bold" for="card-security-number">
+			<label class="form-label-bold" for="cardSecurityNumber">
 		    Card security code
 		    <span class="form-hint">This is the 3 digit code on the back of your card</span>
 		  	</label>
-		  	<input class="form-control" id="security-number" type="number" pattern="[0-9]*" min="0" max="999"><img class="card-image" src="/public/images/card-security-code-2.png">
+		  	<input class="form-control" id="cardSecurityNumber" name="cardSecurityNumber" type="number" pattern="[0-9]*" min="0" max="999"><img class="card-image" src="/public/images/card-security-code-2.png">
 		</div>
 
       <div class="form-group">
@@ -59,17 +61,17 @@
   		</div>
       	<fieldset>
 			<div class="form-group">
-				<label class="form-label-bold" for="building-and-street">
+				<label class="form-label-bold" for="buildingStreet">
 			    Building name and/or number and street
 			  	</label>
-			  	<input class="form-control" id="building-and-street" name="building-and-street" type="text">
-			  	<input class="form-control" id="building-and-street" name="building-and-street" type="text">
+			  	<input class="form-control" id="buildingStreet" name="buildingStreet" type="text">
+			  	<input class="form-control" id="buildingStreet" name="buildingStreet" type="text">
 			</div>
 			<div class="form-group">
-				<label class="form-label-bold" for="town-or-city">
+				<label class="form-label-bold" for="townCity">
 			    Town or city
 			  	</label>
-			  	<input class="form-control medium-width" id="town-or-city" name="town-or-city" type="text">
+			  	<input class="form-control medium-width" id="townCity" name="townCity" type="text">
 			</div>
 			<div class="form-group">
 				<label class="form-label-bold" for="postcode">
@@ -78,9 +80,9 @@
 			  	<input class="form-control" id="postcode" name="postcode" type="text">
 			</div>
 			<div class="form-group">
-				<label class="form-label-bold" for="email-address">Email address<span class="form-hint">We'll send your payment confirmation here</span>
+				<label class="form-label-bold" for="email">Email address<span class="form-hint">We'll send your payment confirmation here</span>
 			  	</label>
-			  	<input class="form-control" id="email-address" name="email-address" type="text">
+			  	<input class="form-control" id="email" name="email" type="text">
 			</div>
 			</fieldset>
 		</div>
@@ -88,7 +90,7 @@
 		<div class="grid-row">
 			<div class="column-two-thirds">
 				<div class="form-group">
-			 		<button class="button">Continue</button>
+					<input type="submit" class="button" value="Continue">
 			 	</div>
 			 	<div class="back">
 					<a href="#">Cancel payment</a>
