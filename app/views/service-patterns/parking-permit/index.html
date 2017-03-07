@@ -50,15 +50,18 @@
                 <h2 class="heading-medium" id="council-need">What do councils need from users to deliver the service?</h2>
                 <p>Depending on local authority needs, the user may be asked to provide a combination of:</p>
                 <ul class="list list-bullet">
-                    <li>
-                        proof that the user lives in the area
-                    </li>
-                    <li>
-                        the registration number of the vehicle to be permitted
-                    </li>
-                    <li>
-                        payment (this is to support the cost of the service and will vary across councils and potentially within service, depending on the type of vehicle, engine size, parking zone and others)
-                    </li>
+                  <li>
+                    the postcode of the area where the user wants to park
+                  </li>
+                  <li>
+                      proof that the user lives in the area
+                  </li>
+                  <li>
+                      the registration number of the vehicle to be permitted
+                  </li>
+                  <li>
+                      payment (this is to support the cost of the service and will vary across councils and potentially within service, depending on the type of vehicle, engine size, parking zone and others)
+                  </li>
                 </ul>
 
                 <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
@@ -104,9 +107,54 @@
                         </p>
                     </li>
                     <li>
-                        <h3 class="heading-small">Service start page</h3>
+                      <h3 class="heading-small">Parking start page</h3>
+                      <p>
+                        Some users may not go through the first two steps above, and arrive on the council's website with a need to park, but no knowledge that they need a permit. For this reason, it's important that the council explains they may need a permit.
+                      </p>
+                      <p>
+                        <a href="parking-permit/example-service/start-page">See the example service start page</a>
+                      </p>
+                    </li>
+                    <li>
+                      <h3 class="heading-small">Routing to the right boundary</h3>
+                      <p>
+                        The council needs to find out where the user wants to park so they can:
+                      </p>
+                      <ul class="list list-bullet">
+                        <li>
+                          give the permit for the right parking boundary to the user
+                        </li>
+                        <li>
+                          let the user know if there are no permits available for the area in which they want to park
+                        </li>
+                        <li>
+                          ask the user if they are a resident in the parking boundary
+                        </li>
+                      </ul>
+                      <p>
+                        This should be done at this early point in the user journey so that the user doesn't have to go through unnecessary effort.
+                      </p>
+                      <p>
+                        <a href="parking-permit/example-service/check-boundary">See the example service page for asking users where they want to park</a>
+                      </p>
+                      <p>
+                        At this point the council should also check if there are permits available in the area the user wants to park in. If permits are available, move the user onto the next step. If not, the council should tell the user what the nearest boundaries with permits available are.
+                      </p>
+                      <p>
+                        <a href="parking-permit/example-service/no-permits">See the example service page for telling users there are no more permits available</a>
+                      </p>
+                    </li>
+                    <li>
+                      <h3 class="heading-small">Picking the right permit type</h3>
+                      <p>
+                        Once the council knows where the user wants to park, they can tell the user about the parking boundary and ask if they are a resident of that area.
+                      </p>
+                      <a href="parking-permit/example-service/resident-choice">See the example service page for asking a user whether they are a resident or a visitor</a>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Resident's start page</h3>
                         <p>
-                            Now the user is in the right place, the page on the council's website should communicate:
+                            Now the user is in the right place, this page should communicate:
                         </p>
                         <ul class="list list-bullet">
                             <li>
@@ -139,7 +187,7 @@
                             </li>
                             <li>if the service differs from this pattern, include any other information the user needs to provide</li>
                         </ul>
-                        <a href="parking-permit/example-service/start-page">See the example service start page</a>
+                        <a href="parking-permit/example-service/resident-start">See the example service start page</a>
                     </li>
                     <li>
                         <ol class="list list-letter">
@@ -156,7 +204,7 @@
                         <p>
                             GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address.
                         </p>
-            
+
                         <a href="parking-permit/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
                         <p>
                             If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and warned that they must not
@@ -242,7 +290,7 @@
 
                         <p>
                             The service should ask the user how they would like to receive this confirmation of payment, offering the choice of email, letter or text.
-                            <a href="/contact">See the example page on how to do this.</a>
+                            <a href="parking-permit/example-service/contact">See the example page on how to do this.</a>
                         </p>
                         <p>
                             In the future, councils will be able to send this confirmation using
