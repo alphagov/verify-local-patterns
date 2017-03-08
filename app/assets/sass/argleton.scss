@@ -19,7 +19,7 @@ $toolkit-font-stack: $helvetica-regular;
   // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
   * {
 
-    font-family: $toolkit-font-stack !important;
+    font-family: $toolkit-font-stack;
   }
 
   // Remove GOV.UK footer styles
@@ -387,5 +387,41 @@ p.accepted-copy-2 {
     .failed {
         background-image: url(/public/images/photo/icon-thick-cross.svg);
     }
+  }
+}
+
+.verify-box{
+  background: $govuk-blue;
+  color: #fff;
+  font-family: "nta",Arial,sans-serif;
+  padding: 1em 0 0 0;
+  margin-bottom: 1em;
+  display: inline-block;
+  .verify-logo{
+    width: 100%;
+  }
+  *{
+    font-family: "nta",Arial,sans-serif;
+  }
+  h2{
+    margin: 0 0 0.5em 0;
+  }
+  form, .form-group{
+    background: $govuk-blue;
+  }
+  .form-group{
+    padding: 1em;
+  }
+  fieldset{
+    margin-bottom: 1.3em;
+  }
+  .block-label.selection-button-radio:before{
+    color: black;
+  }
+  .button{
+    background: #fff;
+    color: #005ea5;
+    font-weight: bold;
+    margin-bottom: 1em;
   }
 }
