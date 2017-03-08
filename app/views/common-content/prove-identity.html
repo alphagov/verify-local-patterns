@@ -1,0 +1,78 @@
+<div class="column-two-thirds">
+
+  <p>
+    To make sure somebody else doesn't claim your parking permit, we need to make sure you are you.
+  </p>
+
+  <h2 class="heading-medium">How do you want to verify your identity?</h2>
+  <p>
+    Choose one of:
+  </p>
+  <form>
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">How do you want to verify your identity?</legend>
+
+        <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
+          <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+          <span class="heading-small">Setup a GOV.UK Verify account</span>
+          <ul class="list list-bullet">
+            <li>
+              Your permit will arrive within 5 working days.
+            </li>
+            <li>
+              The signup process takes about 15 minutes.
+            </li>
+            <li>
+              You can reuse your account with other government services.
+            </li>
+          </ul>
+        </label>
+        <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
+          <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+          <span class="heading-small">Use my existing GOV.UK Verify account</span>
+          <ul class="list list-bullet">
+            <li>
+              Your permit will arrive within 5 working days.
+            </li>
+            <li>
+              The signin process takes less than 1 minute.
+            </li>
+            <li>
+              You'll need your existing GOV.UK Verify account details.
+            </li>
+          </ul>
+        </label>
+        {# <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+          <label class="block-label selection-button-checkbox" id="confirm_allow_verify_label" for="confirm_allow_verify" class="selection-button-checkbox">
+            <input id="confirm_allow_verify" name="confirm_allow_verify" value="True" type="checkbox">
+            I agree to {{council.name}} using my name, address and date of birth provided by GOV.UK Verify
+          </label>
+        </div> #}
+
+        {# <span>Or</span> #}
+
+        <label class="block-label selection-button-radio" data-target="scan-doc" for="scan-doc">
+          <input id="scan-doc" type="radio" name="radio-contact-group" value="Yes">
+          <span class="heading-small">Scan and upload documents</span>
+          <ul class="list list-bullet">
+            <li>
+              You'll get your permit in 10 working days.
+            </li>
+            <li>
+              The process takes about 5 minutes.
+            </li>
+            <li>
+              You'll need to scan in a proof of address.
+            </li>
+          </ul>
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="scan-doc">
+        </div>
+
+      </fieldset>
+    </div>
+  </form>
+
+</div>
