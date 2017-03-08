@@ -43,12 +43,13 @@ If you are working with a council involved in the #VerifyLocal pilots project, y
  *(Every object needs the comma at the end except for the last object. [Read more about valid JSON](https://en.wikipedia.org/wiki/JSON#Example).)*
 
  - Fill in the options relevant to your council.
- - You can delete the parking permits if you're only doing the bus pass pilot, and vice versa.
+ - You can delete the parking permits options if you're only doing the bus pass pilot, and vice versa.
  - The `string` option should be lowercase.
  - If you want to see where any option is used, do a project search for the option name in your text editor.
 
 Once you've added your council into `app/councils.json`, your council will show up as an option in `http://localhost:3000/council-picker`. You can select it, but the page will look pretty broken until you do the next step.
 
+If you need to add new options for further localisations, either talk to us on Slack, or raise an issue on Github. For example, if your council doesn't charge anything for permits - Let us know and we'll back it possible for that to be an option in the kit.
 
 ### 3. Adding a council stylesheet and template
 
