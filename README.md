@@ -4,7 +4,7 @@
 
 This project includes two things:
 
-  - Pattern guidance: This is content that will be included in the [GOV.UK Service Manual](https://gov.uk/service-manual) outlining best practice for councils to deliver two services - "Apply for a residen'ts parking permit" and "Apply for an older person's bus pass."
+  - Pattern guidance: This is content that will be included in the [GOV.UK Service Manual](https://gov.uk/service-manual) outlining best practice for councils to deliver two services - "Apply for a resident's parking permit" and "Apply for an older person's bus pass."
   - A working prototype of both services which follows the pattern. By default this is styled for the fictional council of Argleton, but the prototype can be localised.
 
 ## Localising the prototype
