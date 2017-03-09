@@ -397,6 +397,12 @@ p.accepted-copy-2 {
   padding: 1em 0 0 0;
   margin-bottom: 1em;
   display: inline-block;
+  .verify-logo-box{
+    background: $govuk-blue;
+    padding: 10px;
+    border-radius: 100%;
+    width: 150px;
+  }
   .verify-logo{
     width: 100%;
   }
@@ -417,6 +423,9 @@ p.accepted-copy-2 {
   }
   .block-label.selection-button-radio:before{
     color: black;
+  }
+  .selection-button-radio.selected:after{
+    color:black;
   }
   .button{
     background: #fff;

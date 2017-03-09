@@ -1,55 +1,54 @@
-<div class="column-two-thirds">
+<div class="grid-row">
 
-  <p>
-    To make sure somebody else doesn't claim your parking permit, we need to make sure you are you.
-  </p>
-  <p>
-    You can prove your identity with GOV.UK Verify to receive your permit quicker.
-  </p>
-  <div class="verify-box">
+    <p>
+        To make sure somebody else doesn't claim your parking permit, we need to make sure you are you.
+    </p>
+    <h2 class="heading-medium">
+        Receive your permit quicker with GOV.UK Verify
+    </h2>
+    <div class="column-two-thirds">
 
-  {% set formTitle = 'Sign in with GOV.UK Verify' %}
-  <form>
-    <div class="form-group">
-        <legend class="visually-hidden">{{formTitle}}</legend>
+      <div class="verify-box">
 
-        <div class="column-one-third">
-          <img src="{{asset_path}}/images/govuk-verify.svg" class="verify-logo" />
-        </div>
+          {% set formTitle = 'Sign in with GOV.UK Verify' %}
+          <form>
+              <div class="form-group">
+                  <legend class="visually-hidden">{{formTitle}}</legend>
 
-        <div class="column-two-thirds">
-          <h2 class="heading-medium">{{formTitle}}</h2>
+                  <div class="column-one-third verify-logo-box">
+                      <img src="{{asset_path}}/images/govuk-verify.svg" class="verify-logo"/>
+                  </div>
 
-          <fieldset>
-            <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
-              This is my first time using Verify
-            </label>
+                  <div class="column-two-thirds">
+                      <h2 class="heading-medium">{{formTitle}}</h2>
 
-            <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
-              I've used Verify before
-            </label>
-          </fieldset>
-          <input type="submit" value="Continue" class="button" />
-      </fieldset>
-        </div>
+                      <p>
+                        Verify is the new way to sign in to government services.
+                      </p>
+                      <p>
+                        If you've not used it before, it will take up to 15 minutes to create an account.
+                      </p>
 
+                          <input type="submit" value="Continue" class="button"/>
+                      </fieldset>
+                  </div>
+
+              </div>
+
+          </form>
+
+      </div>
     </div>
 
-  </form>
 
-</div>
-
-
-<div class="panel panel-border-wide">
-  <h2 class="heading-medium">Or continue without GOV.UK Verify</h2>
-  <p>
-    You'll need to upload and scan documents, and your permit will take longer to arrive.
-  </p>
-  <p>
-    <a href="#">I don't want to use GOV.UK Verify</a>
-  </p>
-</div>
+    <div class="column-one-third">
+        <h2 class="heading-medium">Or continue without GOV.UK Verify</h2>
+        <p>
+            You'll need to upload and scan documents, and your permit will take longer to arrive.
+        </p>
+        <p>
+            <a href="#">I don't want to use GOV.UK Verify</a>
+        </p>
+    </div>
 
 </div>
