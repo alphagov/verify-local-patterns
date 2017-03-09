@@ -424,6 +424,9 @@ p.accepted-copy-2 {
   .block-label.selection-button-radio:before{
     color: black;
   }
+  .block-label.selection-button-checkbox::before{
+    border: 2px solid black;
+  }
   .selection-button-radio.selected:after{
     color:black;
   }
