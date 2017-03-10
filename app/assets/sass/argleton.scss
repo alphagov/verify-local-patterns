@@ -390,50 +390,16 @@ p.accepted-copy-2 {
   }
 }
 
-.verify-box{
-  background: $govuk-blue;
-  color: #fff;
-  font-family: "nta",Arial,sans-serif;
-  padding: 1em 0 0 0;
-  margin-bottom: 1em;
-  display: inline-block;
-  .verify-logo-box{
-    background: $govuk-blue;
-    padding: 10px;
-    border-radius: 100%;
-    width: 150px;
+.radio-with-bullets{
+  ul{
+    margin-left: 53px;
+    margin-top: -4px;
   }
-  .verify-logo{
-    width: 100%;
+  .form-group.verify{
+    padding-bottom: 0;
   }
-  *{
-    font-family: "nta",Arial,sans-serif;
-  }
-  h2{
-    margin: 0 0 0.5em 0;
-  }
-  form, .form-group{
-    background: $govuk-blue;
-  }
-  .form-group{
-    padding: 1em;
-  }
-  fieldset{
-    margin-bottom: 1.3em;
-  }
-  .block-label.selection-button-radio:before{
-    color: black;
-  }
-  .block-label.selection-button-checkbox::before{
-    border: 2px solid black;
-  }
-  .selection-button-radio.selected:after{
-    color:black;
-  }
-  .button{
-    background: #fff;
-    color: #005ea5;
-    font-weight: bold;
-    margin-bottom: 1em;
-  }
+}
+.form-group.or{
+  padding-bottom: 0;
+  margin-left: 17px;
 }
