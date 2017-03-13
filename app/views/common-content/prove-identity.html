@@ -11,7 +11,7 @@
 
     <div class="radio-with-bullets">
       <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
-        <input id="verify-option" type="radio" name="radio-contact-group" value="Yes">
+        <input id="verify-option" type="radio" name="radio-group" value="verify">
         <span class="heading-small">Sign in with GOV.UK Verify</span>
       </label>
 
@@ -27,14 +27,14 @@
       </div>
     </div>
 
-    <div class="panel panel-border-narrow js-hidden" id="verify-consent">
+    <!-- <div class="panel panel-border-narrow js-hidden" id="verify-consent">
       <fieldset>
         <label class="block-label selection-button-checkbox" id="confirm_allow_verify_label" for="confirm_allow_verify" class="selection-button-checkbox">
           <input id="confirm_allow_verify" name="confirm_allow_verify" value="True" type="checkbox">
           I agree to {{council.name}} using my name and address provided by GOV.UK Verify
         </label>
       </fieldset>
-    </div>
+    </div> -->
 
 
     <div class="form-group or">
@@ -45,7 +45,7 @@
 
   <div class="radio-with-bullets">
     <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-      <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+      <input id="example-contact-by-email" type="radio" name="radio-group" value="start-non-verify">
       <span class="heading-small">Scan and upload documents</span>
     </label>
 
@@ -63,7 +63,7 @@
   </div>
 
   <div class="form-group">
-      <a href="#" class="button">Continue</a>
+      <button class="button">Continue</button>
   </div>
 </form>
 
