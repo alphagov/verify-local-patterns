@@ -1,12 +1,13 @@
 
 <div class="column-two-thirds">
   <p>
-      We need to make sure that you are eligible for a parking permit.
+      We need to make sure that you are eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
   </p>
 
   <form>
-    {% set formTitle = 'How would you like to claim your permit?' %}
-    <h2 class="heading-medium">How would you like to claim your permit?</h2>
+    {% set formTitle = 'How do you want to claim your permit?' if serviceString == 'parking-permit' else 'How do you want to claim your bus pass?' %}
+
+    <h2 class="heading-medium">{{formTitle}}</h2>
     <legend class="visually-hidden">{{formTitle}}</legend>
 
     <div class="radio-with-bullets">
