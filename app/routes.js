@@ -6,6 +6,22 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.get('/service-patterns/parking-permit/example-service/pre-verify', function (req, res) {
+  //get the answer from the query string (eg. ?over18=false)
+  var radioGroup = req.query['radio-group'];
+
+  if (radioGroup) {
+
+    res.redirect(radioGroup);
+
+  } else {
+
+    // if radio-group is any other value (or is missing) render the page requested
+    res.render('service-patterns/parking-permit/example-service/pre-verify');
+
+  }
+});
+
 // add your routes here
 
 router.get('/service-patterns/parking-permit/example-service/resident-choice', function (req, res) {
