@@ -1,0 +1,40 @@
+<div class="column-two-thirds">
+  <p>
+    On the next screen, you'll sign in via GOV.UK Verify.
+  </p>
+  <p>
+    {{council.name}} will receive
+  </p>
+  <ul class="list list-bullet">
+    <li>
+      your name
+    </li>
+    <li>
+      your address
+    </li>
+  </ul>
+  <h2 class="heading-medium">
+    Can we use this information whilst you {{serviceName | lower}}?
+  </h2>
+  <form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Is this ok?</legend>
+
+      <label class="block-label selection-button-radio" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-{{council.string}}">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="radio-group" value="start-non-verify">
+        No
+      </label>
+
+    </fieldset>
+  </div>
+  <div class="form-group">
+      <button class="button">Next</button>
+  </div>
+</form>
+</div>
