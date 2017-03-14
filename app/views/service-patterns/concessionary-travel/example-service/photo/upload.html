@@ -5,65 +5,55 @@
 
 {% block content %}
 
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            <p>We need a photo of you for your bus pass.</p>
+<div class="column-two-thirds">
+    <p>We need a photo of you for your bus pass.</p>
 
-            <p>Example photo</p>
-            <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+    <h2 class="heading-medium">Example photo</h2>
+    <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
 
-            <h2 class="heading-medium">Your photo needs to</h2>
+    <h2 class="heading-medium">Your photo needs to</h2>
 
-            <div class="grid-row photo-upload-guide">
-                <div class="column-half">
-                    <ol class="list list-bullet">
-                        <!-- <li>Get a friend to take your photo</li> -->
-                        <li>have a plain white background</li>
-                        <li>include your shoulders</li>
-                        <li>show your face clearly</li>
-                    </ol>
-                </div>
-                <div class="column-half img">
-
-                </div>
-            </div>
+    <ul class="list list-bullet">
+        <li>have a plain white background</li>
+        <li>include your shoulders</li>
+        <li>show your face clearly</li>
+    </ul>
 
 
-            <h2 class="heading-medium">Do you have a photo like this?</h2>
+    <h2 class="heading-medium">Do you have a photo like this?</h2>
 
-              <form action="contact/finished">
-                <div class="form-group">
-                  <fieldset>
+      <form action="contact/finished">
+        <div class="form-group">
+          <fieldset class="inline">
 
-                    <legend class="visually-hidden">
-                      How do you want to upload your photo?
-                    </legend>
+            <legend class="visually-hidden">
+              How do you want to upload your photo?
+            </legend>
 
-                    <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
-                      <input id="upload-file" type="radio" name="radio-contact-group" value="Yes">
-                      Yes
-                    </label>
+            <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
+              <input id="upload-file" type="radio" name="radio-contact-group" value="Yes">
+              Yes
+            </label>
 
-                    <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-                      <input id="webcam" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
-                      No
-                    </label>
+            <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
+              <input id="webcam" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
+              No
+            </label>
 
-                  </fieldset>
-                </div>
-                <div class="form-group file-upload">
-                  <label for="photo" class="button photo-upload-label" role="button">
-                    <span id="photo-label-text" class="">Continue</span>
-                  </label>
-                  <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
-
-                </div>
-              </form>
-
-              <!-- <div class="panel panel-border-wide">
-                  <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
-              </div> -->
+          </fieldset>
         </div>
-    </div>
+        <div class="form-group file-upload">
+          <label for="photo" class="button photo-upload-label" role="button">
+            <span id="photo-label-text" class="">Continue</span>
+          </label>
+          <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
+
+        </div>
+      </form>
+
+      <!-- <div class="panel panel-border-wide">
+          <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
+      </div> -->
+</div>
 
 {% endblock %}
