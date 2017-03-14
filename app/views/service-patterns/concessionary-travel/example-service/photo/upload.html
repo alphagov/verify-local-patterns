@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Upload a photo" %}
+{% set pageTitle = "Your bus pass photo" %}
 
 {% block content %}
 
@@ -9,25 +9,27 @@
         <div class="column-two-thirds">
             <p>We need a photo of you for your bus pass.</p>
 
-            <h2 class="heading-medium">How to take a good bus pass photo</h2>
+            <p>Example photo</p>
+            <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+
+            <h2 class="heading-medium">Your photo needs to</h2>
 
             <div class="grid-row photo-upload-guide">
-                <div class="column-half img">
-                    <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
-                    <p>Example photo</p>
-                </div>
                 <div class="column-half">
-                    <ol class="list list-number">
+                    <ol class="list list-bullet">
                         <!-- <li>Get a friend to take your photo</li> -->
-                        <li>Use a plain background</li>
-                        <li>Include your face and shoulders</li>
-                        <li>Keep your hair away from your face</li>
-                        <li>Make sure there are no shadows on your face or behind you</li>
+                        <li>have a plain white background</li>
+                        <li>include your shoulders</li>
+                        <li>show your face clearly</li>
                     </ol>
+                </div>
+                <div class="column-half img">
+
                 </div>
             </div>
 
-            <h2 class="heading-medium">How do you want to upload your photo?</h2>
+
+            <h2 class="heading-medium">Do you have a photo like this?</h2>
 
               <form action="contact/finished">
                 <div class="form-group">
@@ -39,17 +41,12 @@
 
                     <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
                       <input id="upload-file" type="radio" name="radio-contact-group" value="Yes">
-                      Upload a file
+                      Yes
                     </label>
 
                     <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
                       <input id="webcam" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
-                      Take a photo with a webcam
-                    </label>
-
-                    <label class="block-label selection-button-radio" data-target="mobile-device" for="mobile-device">
-                      <input id="mobile-device" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
-                      Take a photo with a tablet or smartphone
+                      No
                     </label>
 
                   </fieldset>
@@ -63,9 +60,9 @@
                 </div>
               </form>
 
-              <div class="panel panel-border-wide">
+              <!-- <div class="panel panel-border-wide">
                   <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
-              </div>
+              </div> -->
         </div>
     </div>
 
