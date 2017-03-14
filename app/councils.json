@@ -9,6 +9,15 @@
     "string" : "argleton"
   },
   {
+    "name" : "Cambridgeshire County Council",
+    "shortName": "Cambridgeshire",
+    "parkingBoundary": "Cambridgeshire city centre",
+    "permitMax": "unlimited",
+    "permitsCosts": [51,61,71,120],
+    "permitWait": 5,
+    "string" : "cambridgeshire"
+  },
+  {
     "name" : "Unbrandedland Council",
     "shortName" : "Unbrandedland",
     "parkingBoundary" : "Unbrandedland City",
