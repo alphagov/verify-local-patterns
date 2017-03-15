@@ -27,6 +27,23 @@ body {
     @include border-radius(5px);
     @include box-shadow(0 0 6px rgba(0,0,0,.1));
 }
+
+@media only screen and (min-width: 480px) {
+  .site-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .site-wrapper {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    
+  }
+}
+
 .container {
   max-width: 990px;
   margin-left: auto;
@@ -44,22 +61,6 @@ footer {
     &:first-of-type {
       padding-left: 0;
     }
-  }
-}
-
-@media only screen and (min-width: 480px) {
-  .site-wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 1em;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .site-wrapper {
-    margin-top: 1.5em;
-    margin-bottom: 1em;
-    
   }
 }
 
@@ -103,6 +104,7 @@ footer {
 .nav img {
   width: 100%;
 }
+
 header input[type=search] {
     padding-left: 36px;
     background: file-url("cambridgeshire-search.png") 10px center no-repeat #fff;
@@ -113,9 +115,6 @@ header input[type=search] {
     -webkit-appearance: none;
 }
 
-input[type=submit] {
-    
-}
 header input[type=submit] {
     position: absolute;
     right: 0;
