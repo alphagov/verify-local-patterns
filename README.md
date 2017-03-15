@@ -62,7 +62,9 @@ Once you've added the above, you should be able to step through your prototype. 
 
 ### 4. Making a pull request
 
-Once you're happy with your changes, [make a pull request from your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+Once you're happy with your changes, [make a pull request from your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) to merge into the master branch of this repository.
+
+Any questions, ask on Slack!
 
 
 ## Contributing issues
