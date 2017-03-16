@@ -5,7 +5,7 @@
     "parkingBoundary": "Argleton City Centre",
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
-    "permitWait": 0,
+    "permitWait": 5,
     "string" : "argleton"
   },
   {
@@ -23,7 +23,7 @@
     "parkingBoundary" : "Unbrandedland City",
     "permitMax": "sixty seven",
     "permitsCosts": [67, 77, 100, 100],
-    "permitWait": 5,
+    "permitWait": 0,
     "string" : "unbranded"
   }
 ]

@@ -11,16 +11,12 @@
 	  	<table>
 		    <tbody>
 		      <tr>
-		        <td>Card number:</td>
-		        <td class="table-info">**** **** **** {{cardNumber.substr(cardNumber.length - 4) }}</td>
+		        <td>Account number:</td>
+		        <td class="table-info">**** **** **** {{accountNumber.substr(accountNumber.length - 4) }}</td>
 		      </tr>
 		      <tr>
-		       <td>Expiry date:</td>
-		        <td class="table-info">{{expMonth}}/{{expYear}}</td>
-		      </tr>
-		      <tr>
-		        <td>Name on card:</td>
-		        <td class="table-info">{{cardName}}</td>
+		        <td>Name on account:</td>
+		        <td class="table-info">{{nameAccount}}</td>
 		      </tr>
 		      <tr>
 		        <td>Billing address:</td>
@@ -32,14 +28,11 @@
 		      </tr>
 		      <tr>
 		        <td>Payment of:</td>
-		        <td class="table-info">{{ permitChoice }} resident's parking permit</td>
+		        <td class="table-info">Resident's parking permit</td>
 		      </tr>
 		      <tr>
 		        <td>Amount to pay:</td>
-		        <td class="table-info">
-							{% set halfCost = council.permitsCosts[0] / 2 %}
-			        £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
-						</td>
+		        <td class="table-info">£60.00</td>
 		      </tr>
 		    </tbody>
   		</table>
@@ -49,7 +42,7 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<div class="form-group">
-		 			<a href="contact-details"><button class="button">Confirm payment</button></a>
+		 			<a href="success"><button class="button">Confirm payment</button></a>
 		 		</div>
 		 		<div class="back">
 				<a href="#">Cancel payment</a>

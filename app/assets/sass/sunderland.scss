@@ -13,7 +13,7 @@ $path: "/public/images/";
 // https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_font_stack.scss#L13
 $toolkit-font-stack: $helvetica-regular;
 
-.unbranded {
+.sunderland{
   background: $white;
 
   // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
@@ -25,6 +25,14 @@ $toolkit-font-stack: $helvetica-regular;
   // Remove GOV.UK footer styles
   main{
     min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
+    background: white;
+    border-radius: 9px;
+    display: block;
+    margin: 25px auto !important;
+    padding: 0 25px 90px;
+  }
+  .heading-xlarge{
+    display: inline-block;
   }
   #footer {
     border: 0;
@@ -40,6 +48,7 @@ $toolkit-font-stack: $helvetica-regular;
     padding-bottom: 0.5em;
   }
 }
+
 
 .column-two-thirds{
 	background-color: white;
