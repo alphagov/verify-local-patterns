@@ -8,15 +8,15 @@
     "permitWait": 5,
     "string" : "argleton"
   },
-    {
-    "name" : "Sunderland City Council",
-    "shortName": "Sunderland",
-    "parkingBoundary": "Sunderland City Centre",
-    "permitMax": "five",
-    "permitsCosts": [0, 20, 40, 60],
-    "permitWait": 3,
-    "string" : "sunderland"
-  },
+  {
+    "name" : "Sunderland City Council",
+    "shortName": "Sunderland",
+    "parkingBoundary": "Sunderland City Centre",
+    "permitMax": "five",
+    "permitsCosts": [0, 20, 40, 60],
+    "permitWait": 3,
+    "string" : "sunderland"
+    },
   {
     "name" : "Unbrandedland Council",
     "shortName" : "Unbrandedland",
