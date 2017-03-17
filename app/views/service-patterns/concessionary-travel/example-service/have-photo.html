@@ -9,7 +9,7 @@
 
     <h2 class="heading-medium">Is your photo on this computer?</h2>
 
-      <form action="contact/finished">
+      <form>
         <div class="form-group">
           <fieldset>
 
@@ -18,27 +18,24 @@
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
-              <input id="upload-file" type="radio" name="radio-contact-group" value="Yes">
+              <input id="upload-file" type="radio" name="radio-group" value="upload">
               Yes
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
+              <input id="webcam" type="radio" name="radio-group" value="take-with-camera" class="in-progress">
               No
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-contact-group" value="Yes" class="in-progress">
+              <input id="webcam" type="radio" name="radio-group" value="no" class="in-progress">
               I'm not sure
             </label>
 
           </fieldset>
         </div>
-        <div class="form-group file-upload">
-          <label for="photo" class="button photo-upload-label" role="button">
-            <span id="photo-label-text" class="">Continue</span>
-          </label>
-
+        <div class="form-group">
+          <button id="photo-label-text" class="button">Continue</button>
         </div>
       </form>
 </div>
