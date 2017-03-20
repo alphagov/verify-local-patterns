@@ -9,8 +9,7 @@
   <p>
     Upload a photo from your computer.
   </p>
-  {% include 'common-content/example-photo.html' %}
- 
+
     <form>
       <div class="form-group file-upload">
         <label for="photo" class="button photo-upload-label" role="button">
@@ -19,8 +18,11 @@
         <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
       </div>
     </form>
-    <a href="#">I need help choosing a file on my computer</a>
+    <a href="#">Get help with uploading a file</a>
 
+    <hr />
+
+    {% include 'common-content/example-photo.html' %}
 
     <!-- <div class="panel panel-border-wide">
         <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
