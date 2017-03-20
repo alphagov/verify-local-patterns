@@ -6,30 +6,25 @@
 {% block content %}
 
 <div class="column-two-thirds">
-    <p>We need a photo of you for your bus pass.</p>
 
-    {% include 'common-content/example-photo.html' %}
-
-
-
-    <h2 class="heading-medium">Do you have a photo like this?</h2>
+    <h2 class="heading-medium">Do you have a digital camera?</h2>
 
       <form>
         <div class="form-group">
-          <fieldset class="inline">
+          <fieldset>
 
             <legend class="visually-hidden">
-              Do you have a photo like this?
+              Do you have a digital camera?
             </legend>
 
-            <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
-              <input id="upload-file" type="radio" name="radio-group" value="have-photo">
-              Yes
+            <label class="block-label selection-button-radio" data-target="take-photo-device" for="take-photo-device">
+              <input id="take-photo-device" type="radio" name="radio-group" value="take-photo-device" class="in-progress">
+              Yes, I have a digital camera
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="dont-have-photo" class="in-progress">
-              No
+              <input id="webcam" type="radio" name="radio-group" value="go-to-shop" class="in-progress">
+              No, I don't have a digital camera
             </label>
 
           </fieldset>

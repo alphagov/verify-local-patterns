@@ -6,41 +6,38 @@
 {% block content %}
 
 <div class="column-two-thirds">
-    <p>We need a photo of you for your bus pass.</p>
 
-    {% include 'common-content/example-photo.html' %}
-
-
-
-    <h2 class="heading-medium">Do you have a photo like this?</h2>
+    <h2 class="heading-medium">Do you have a camera on this device?</h2>
 
       <form>
         <div class="form-group">
-          <fieldset class="inline">
+          <fieldset>
 
             <legend class="visually-hidden">
-              Do you have a photo like this?
+              Do you have a camera on this device?
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
-              <input id="upload-file" type="radio" name="radio-group" value="have-photo">
+              <input id="upload-file" type="radio" name="radio-group" value="take-photo">
               Yes
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="dont-have-photo" class="in-progress">
+              <input id="webcam" type="radio" name="radio-group" value="need-camera" class="in-progress">
               No
+            </label>
+
+            <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
+              <input id="webcam" type="radio" name="radio-group" value="need-camera" class="in-progress">
+              I'm not sure
             </label>
 
           </fieldset>
         </div>
         <div class="form-group">
-            <button class="button">Continue</button>
-        </div>
-
+          <button id="photo-label-text" class="button">Continue</button>
         </div>
       </form>
-
 </div>
 
 {% endblock %}

@@ -389,3 +389,10 @@ p.accepted-copy-2 {
     }
   }
 }
+
+.example-photo-box{
+  display: block;
+  border: 5px solid $border-colour;
+  padding: 1em;
+  border-radius: 2px;
+}

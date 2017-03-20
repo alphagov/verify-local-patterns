@@ -1,0 +1,32 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Your bus pass photo" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+  <ol>
+    <li>
+      <span class="circle circle-step-large">1</span>Take a photo with your device.
+      {% include 'common-content/example-photo.html' %}
+      <a href="#">I need help taking a photo</a>
+    </li>
+    <li>
+      <span class="circle circle-step-large">2</span>Take a photo with your device.
+      <p>
+        Send your photo to this computer.
+      </p>
+      <a href="#">I need help sending my photo to this computer</a>
+  </ol>
+
+
+
+  <form>
+    <div class="form-group file-upload">
+      <a href="upload" class="button">I have my photo on this computer</a>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
