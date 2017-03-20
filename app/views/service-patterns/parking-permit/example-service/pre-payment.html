@@ -49,8 +49,8 @@
         Cost
       </th>
       <th>
-        {% set halfCost = council.permitsCosts[0] / 2 %}
-        £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+        {% import 'includes/permit-variables.html' as permit %}
+        £{{ permit.halfCost if permitChoice == '6 month' else permit.fullCost }}
       </th>
     </tr>
   </table>

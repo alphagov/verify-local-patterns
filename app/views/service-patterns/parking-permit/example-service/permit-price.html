@@ -46,13 +46,7 @@
   </tr>
 </table>
 
-{% if(council.permitsCosts[0] > 0) %}
-{% set halfCost = council.permitsCosts[0] / 2 %}
-{% set halfCost = halfCost.toFixed(2) %}
-{% else %}
-{% set halfCost = 0 %}
-{% set fullCost = 0 %}
-{% endif %}
+{% import 'includes/permit-variables.html' as permit %}
 
 <p>
   Based on this information, your parking permit options are:
@@ -66,11 +60,11 @@
 
       <label class="block-label selection-button-radio" for="radio-2">
         <input id="radio-2" type="radio" name="permitChoice" value="6 month">
-        <span class="heading-small">6 month permit</span> - costs £{{halfCost}}
+        <span class="heading-small">6 month permit</span> - costs £{{permit.halfCost}}
       </label>
       <label class="block-label selection-button-radio" for="radio-3">
         <input id="radio-3" type="radio" name="permitChoice" value="12 month">
-        <span class="heading-small">12 month permit</span> - costs £{{fullCost}}
+        <span class="heading-small">12 month permit</span> - costs £{{permit.fullCost}}
       </label>
 
     </fieldset>
