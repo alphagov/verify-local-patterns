@@ -1,0 +1,61 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Confirmation message" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    We can send you your confirmation message by email or text.
+  </p>
+
+  <p>
+    <strong class="bold-medium">
+    How do you want to receive your confirmation?
+    </strong>
+  </p>
+
+  <form>
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">
+          How do you want to receive your confirmation?
+        </legend>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email" for="example-contact-by-email">
+          <input id="example-contact-by-email" type="checkbox" name="checkbox-group" value="Yes">
+          Email
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contact-email" type="text" id="contact-email">
+        </div>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-text" for="example-contact-by-text">
+          <input id="example-contact-by-text" type="checkbox" name="checkbox-contact-group" value="No">
+          Text message
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+          <label class="form-label" for="contact-text-message">Mobile phone number</label>
+          <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+        </div>
+
+        <p class="form-block">or</p>
+
+        <label class="block-label selection-button-checkbox" data-target="no-contact" for="no-contact">
+          <input id="no-contact" type="checkbox" name="checkbox-contact-group" value="No">
+          I don't want an email or text confirmation
+        </label>
+
+      </fieldset>
+    </div>
+  </form>
+
+  <a class="button" role="button" href="contact-notifications">Next</a>
+
+</div>
+
+{% endblock %}

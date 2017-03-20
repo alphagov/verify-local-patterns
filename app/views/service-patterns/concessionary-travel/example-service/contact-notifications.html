@@ -1,19 +1,19 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Enter your contact details" %}
+{% set pageTitle = "Progress alerts" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    While we are processing your application, we can send you notifications about it's progress.
+    We can also send you progress alerts whilst you wait for your bus pass.
   </p>
 
   <p>
     <strong class="bold-medium">
-    How do you want to be contacted about your application's progress?
+    How do you want to receive progress alerts?
     </strong>
   </p>
 
@@ -21,7 +21,7 @@
     <div class="form-group">
       <fieldset>
 
-        <legend class="visually-hidden">How do you want to be contacted?</legend>
+        <legend class="visually-hidden">How do you want to receive progress alerts?</legend>
 
         <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
           <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
@@ -30,15 +30,6 @@
         <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
           <label class="form-label" for="contact-email">Email address</label>
           <input class="form-control" name="contact-email" type="text" id="contact-email">
-        </div>
-
-        <label class="block-label selection-button-radio" data-target="contact-by-phone" for="example-contact-by-phone">
-          <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
-          Phone
-        </label>
-        <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
-          <label class="form-label" for="contact-phone">Phone number</label>
-          <input class="form-control" name="contact-phone" type="text" id="contact-phone">
         </div>
 
         <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
@@ -52,7 +43,7 @@
 
         <label class="block-label selection-button-radio" data-target="no-contact" for="no-contact">
           <input id="no-contact" type="radio" name="radio-contact-group" value="No">
-          I don't want to be notified
+          I don't want email or text progress alerts
         </label>
 
       </fieldset>
