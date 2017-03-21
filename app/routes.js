@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-router.get('*', function (req, res) {
+router.get('*/example-service/*', function (req, res) {
 
   //get the answer from the query string (eg. ?over18=false)
   var radioGroup = req.query['radio-group'];
