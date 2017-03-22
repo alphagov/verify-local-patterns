@@ -18,7 +18,6 @@ $toolkit-font-stack: $helvetica-regular;
 
   // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
   * {
-
     font-family: $toolkit-font-stack;
   }
 
@@ -35,6 +34,7 @@ $toolkit-font-stack: $helvetica-regular;
   .notice{
     margin: 1em 0 2em;
   }
+
   .button{
     padding: 8px 25px;
   }

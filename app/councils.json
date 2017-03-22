@@ -16,5 +16,14 @@
     "permitsCosts": [67, 77, 100, 100],
     "permitWait": 0,
     "string" : "unbranded"
+  },
+  {
+    "name" : "Northumberland County Council",
+    "shortName" : "Northumberland",
+	"parkingBoundary" : "Northumberland Council",
+    "permitMax": "two",
+    "permitsCosts": [130,130,130,130],
+    "permitWait": 0,
+    "string" : "northumberland"
   }
 ]
