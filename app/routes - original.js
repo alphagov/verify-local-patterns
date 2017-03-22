@@ -46,27 +46,6 @@ router.get('/service-patterns/parking-permit/example-service/choose-payment', fu
 
 });
 
-router.get('/service-patterns/parking-permit/example-service/eligible', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-address')
-  } else {
-    res.render('service-patterns/parking-permit/example-service/eligible')
-  }
-})
-
-
-
-
-
-
-
-
-
-
-
 router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
   var answer = req.query.answer
@@ -80,6 +59,16 @@ router.get('/service-patterns/concessionary-travel/example-service/photo/photo-g
   }
 })
 
+router.get('/service-patterns/parking-permit/example-service/eligible', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'No') {
+    res.redirect('incorrect-address')
+  } else {
+    res.render('service-patterns/parking-permit/example-service/eligible')
+  }
+})
 
 router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
