@@ -47,8 +47,29 @@ $toolkit-font-stack: $helvetica-regular;
   .button-start{
     padding-bottom: 0.5em;
   }
+// make Sunderland header hrefs white
+#scch1, #scch2, #scch3, #scch4, #scch5, #scch6{
+	color: white;
+} 
+#sccHeaderTable table td{
+	border-bottom-style: none;
 }
-
+.searchbutton{
+	background-color: red;
+	color: white;
+	border: none;
+}
+#kword{
+	background-color: rgba(229,229,227,1);
+}
+.mysunderland-name-extra{
+	color: white;
+	font-size: 15px;
+}
+.sunderland-tr{
+	background-color: rgba(56,67,110,1);
+}
+}
 
 .column-two-thirds{
 	background-color: white;
@@ -194,9 +215,9 @@ header{
     padding-top: 20px;
   }
   img{
-    width: 5em;
+    width: 10em;
     vertical-align: middle;
-    margin-right: .5em;
+    margin-right: 0em;
   }
 }
 
