@@ -1,0 +1,23 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm your document" %}
+
+{% block content %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+          <p>
+            This is the image you have uploaded
+          </p>
+          <img src="{{asset_path}}images/AB313A25CC522E7C.png" class="photo-preview" />
+
+          <p>
+            By proceeding you confirm that this photo is of your v5 document.
+          </p>
+          <a href="choose-payment" class="button">Confirm</a>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -6,6 +6,7 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+
 router.get('*/example-service/*', function (req, res) {
 
   //get the answer from the query string (eg. ?over18=false)
@@ -18,6 +19,7 @@ router.get('*/example-service/*', function (req, res) {
   } else {
 
     // if radio-group is any other value (or is missing) render the page requested
+
     var str = req.path;
     res.render( str.substring(1) );
 
