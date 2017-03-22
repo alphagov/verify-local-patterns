@@ -68,4 +68,15 @@ $(document).ready(function () {
     });
   }
 
+  if(window.location.href.indexOf("contact-reference")){
+    $('#no-contact').click(function(e){
+      if($(this).prop('checked')){
+        var emailChecked = $('#contact-by-email').is(':checked');
+        console.log('email',emailChecked);
+        var emailChecked = $('#contact-by-text').is(':checked');
+        console.log('text',emailChecked);
+      }
+    })
+  }
+
 })
