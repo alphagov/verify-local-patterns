@@ -70,11 +70,23 @@ $(document).ready(function () {
 
   if(window.location.href.indexOf("contact-reference")){
     $('#no-contact').click(function(e){
+      // if user checks box, store data and uncheck
       if($(this).prop('checked')){
-        var emailChecked = $('#contact-by-email').is(':checked');
+        emailChecked = $('#contact-by-email').is(':checked');
+        textChecked = $('#contact-by-text').is(':checked');
+        console.log('i checked the box');
         console.log('email',emailChecked);
-        var emailChecked = $('#contact-by-text').is(':checked');
-        console.log('text',emailChecked);
+        console.log('text',textChecked);
+        //uncheck them
+        if(emailChecked){
+          $('#contact-by-email').prop('checked', false);          
+        }
+        // $('#contact-by-text').prop('checked', false);
+      }else{ // if user unchecks box, restore check status
+        console.log('i unchecked the box');
+        console.log('email',emailChecked);
+        console.log('text',textChecked);
+
       }
     })
   }
