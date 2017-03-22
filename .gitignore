@@ -7,3 +7,9 @@ lib/govuk_template.html
 govuk_modules
 node_modules/*
 .tmuxp.*
+node.exe
+node_etw_provider.man
+node_perfctr_provider.man
+nodevars.bat
+npm
+npm.cmd
