@@ -1,0 +1,116 @@
+{% extends "layout_picker.html" %} {% set serviceName = "Apply for a resident's parking permit" %} {% set pageTitle = "Pay by Direct Debit" %} {% block content %}
+
+<div class="column-two-thirds">
+    <div class="payment-type-intro">
+        <p>We will use Direct Debit to take a one-off payment from your bank account. Please fill in your details below.</p>
+    </div>
+
+    <form class="form" method="POST" action="confirm-debit-payment">
+        <div class="form-group">
+          <label class="form-label-bold" for="nameAccount">
+			         Name on the account
+			  	</label>
+          <input class="form-control" id="nameAccount" name="nameAccount" type="text">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="full-name">
+			      Sort code
+			  	</label>
+          <input class="form-control" id="sortCode" name="sortCode" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label-bold" for="accountNumber">
+			      Account number
+			  	</label>
+          <input class="form-control" id="accountNumber" name="accountNumber" type="text">
+        </div>
+
+        <fieldset class="inline">
+            <h2>Is more than one person required to authorise debits on this account?</h2>
+            <label class="block-label" for="radio-inline-1">
+				      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+				      Yes
+				    </label>
+            <label class="block-label" for="radio-inline-2">
+				      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+				      No
+				    </label>
+        </fieldset>
+
+
+        <div class="form-group">
+            <h2 class="heading-medium">Billing address</h2>
+            <div class="payment-type-intro">
+                <p>This is where your statements are sent</p>
+            </div>
+
+            <div class="form-group">
+      				<label class="form-label-bold" for="buildingStreet">
+      			    Building name and/or number and street
+      			  	</label>
+      			  	<input class="form-control" id="buildingStreet" name="buildingStreet" type="text">
+      			  	<input class="form-control" id="buildingStreet" name="buildingStreet" type="text">
+      			</div>
+      			<div class="form-group">
+      				<label class="form-label-bold" for="townCity">
+      			    Town or city
+      			  	</label>
+      			  	<input class="form-control medium-width" id="townCity" name="townCity" type="text">
+      			</div>
+      			<div class="form-group">
+      				<label class="form-label-bold" for="postcode">
+      			    Postcode
+      			  	</label>
+      			  	<input class="form-control" id="postcode" name="postcode" type="text">
+      			</div>
+
+            <div class="form-group">
+              <label class="form-label-bold" for="email">Email address
+                <span class="form-hint">We need this to confirm the Direct Debit with you</span>
+                </label>
+                <input class="form-control" id="email" name="email" type="text">
+            </div>
+        </div>
+
+</div>
+
+
+
+<div class="column-third">
+
+    <div class="payment-summary payment-summary-small">
+        <h2>Payment summary</h2>
+        <p class="payment-info">Resident's parking permit</p>
+        <h3>Amount:</h3>
+        <p class="payment-amount">£60.00</p>
+    </div>
+</div>
+</div>
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="form-group">
+            <input type="submit" class="button" value="Continue">
+        </div>
+        <div class="back">
+            <a href="#">Cancel</a>
+        </div>
+    </div>
+</div>
+</form>
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="DD-terms-conditions">
+            <!-- <div class="dd-images"><img src="/public/images/gocardless.png"><img src="/public/images/directdebit.png"></div> -->
+            <p>Your payments are protected by the <a>Direct Debit guarantee</a>.</p>
+            <p>GoCardless Ltd, 338-346 Goswell Road, London, EC1V 7LQ.</p>
+            <p>E-mail: help@gocardless.com / Tel: 020 7183 8674</p>
+        </div>
+    </div>
+</div>
+
+</main>
+
+{% endblock %}

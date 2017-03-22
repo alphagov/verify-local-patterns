@@ -1,0 +1,60 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm your payment" %}
+
+{% block content %}
+
+<div class="grid-row review-details">
+	  <div class="check-details">
+
+	  	<table>
+		    <tbody>
+		      <tr>
+		        <td>Card number:</td>
+		        <td class="table-info">**** **** **** {{cardNumber.substr(cardNumber.length - 4) }}</td>
+		      </tr>
+		      <tr>
+		       <td>Expiry date:</td>
+		        <td class="table-info">{{expMonth}}/{{expYear}}</td>
+		      </tr>
+		      <tr>
+		        <td>Name on card:</td>
+		        <td class="table-info">{{cardName}}</td>
+		      </tr>
+		      <tr>
+		        <td>Billing address:</td>
+		        <td class="table-info">{{buildingStreet}}, {{townCity}}, {{postcode}}</td>
+		      </tr>
+		       <tr>
+		        <td>Email address:</td>
+		        <td class="table-info">{{email}}</td>
+		      </tr>
+		      <tr>
+		        <td>Payment of:</td>
+		        <td class="table-info">{{ permitChoice }} resident's parking permit</td>
+		      </tr>
+		      <tr>
+		        <td>Amount to pay:</td>
+		        <td class="table-info">
+							{% set halfCost = council.permitsCosts[0] / 2 %}
+			        £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+						</td>
+		      </tr>
+		    </tbody>
+  		</table>
+		</div>
+</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="form-group">
+		 			<a href="contact-details"><button class="button">Confirm payment</button></a>
+		 		</div>
+		 		<div class="back">
+				<a href="#">Cancel payment</a>
+			</div>
+		 </div>
+	 </div>
+
+{% endblock %}

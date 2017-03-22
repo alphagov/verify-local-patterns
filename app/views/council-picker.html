@@ -1,0 +1,77 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  Service patterns for local government services
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Pick your council
+      </h1>
+
+      <p>
+        Your current council is {{council.name}}.
+      </p>
+
+      <details>
+
+        <summary><span class="summary">Your council's options</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <table>
+          {% for varName, var in council %}
+            <tr>
+              <td class="heading-small">
+                {{varName}}
+              </td>
+              <td>
+                {{var}}
+              </td>
+            </tr>
+          {% else %}
+          No council selected
+          {% endfor %}
+          </table>
+        </div>
+
+      </details>
+
+      <p>
+        When viewing <a href="/">the pattern prototypes</a> in your browser, it will be styled like this page and use the above options until you change your council below.
+      </p>
+
+      <form action="council-picker" method="post" class="form">
+        <div class="form-group">
+          <legend class="visuallyhidden">
+            Which council do you want to test with?
+          </legend>
+
+          <h2 class="heading-medium">
+            Which council do you want to test with?
+          </h2>
+
+          {% for eachCouncil in councils %}
+          <label class="block-label" for="council-{{eachCouncil.string}}">
+            <input id="council-{{eachCouncil.string}}" type="radio" name="councilChoice" value="{{eachCouncil.string}}" {{ checked("councilChoice", eachCouncil.string) }}>
+            {{ eachCouncil.name }}
+          </label>
+          {% else %}
+          No councils found
+          {% endfor %}
+
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" value="Change council">
+        </div>
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

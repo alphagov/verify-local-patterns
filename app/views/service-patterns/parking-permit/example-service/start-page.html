@@ -1,0 +1,26 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "Park your car or vehicle" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    In some parts of {{council.shortName}}, you'll need a parking permit to park your car or other vehicle.
+  </p>
+  <p>
+    Parking permits allow you to park within a given boundary, 24 hours a day and 7 days a week.
+  </p>
+
+
+  <a class="button button-start" href="check-boundary" role="button">Check if you need a permit</a>
+
+  <p>
+    If you need assistance using this online service, <a href="#">contact {{ council.name }}</a>.
+  </p>
+
+</div>
+
+{% endblock %}

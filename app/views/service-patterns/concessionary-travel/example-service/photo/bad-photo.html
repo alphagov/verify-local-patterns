@@ -1,0 +1,60 @@
+{% extends "layout_argleton.html" %}
+{% block page_title %}
+    Argleton County Council - Apply for an older person's bus pass in Argleton
+{% endblock %}
+{% block content %}
+
+    <main id="content" role="main">
+
+        <h1 class="heading-xlarge">You need another photo</h1>
+
+        <div class="grid-row">
+            <!-- <div id="progress-container" class="progress-container" role="region" aria-live="assertive" tabindex="-1">
+            <p id="progress" class="progress hide" role="progressbar">Uploading image</p>
+        </div> -->
+            <div class="column-two-thirds">
+                <p>
+                    Your photo has failed our checks for the following reasons:
+                </p>
+
+                <ul class="photo-checklist">
+                    <li>
+                        <div class="panel panel-photo-result panel-photo-error">
+                            <h2 class="heading-medium">It looks like you’re not facing the camera</h2>
+                            <p>If you tilt your head it may appear you’re not facing the camera.</p>
+                            <p>You can still submit your photo if you believe it should be accepted (eg there’s a medical reason why you can’t face the camera).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="panel panel-photo-result panel-photo-error">
+
+                            <h2 class="heading-medium">There are reflections on your face</h2>
+                            <p>
+                                Any reflections, or areas that appear white, will cause problems. Make sure you avoid:
+                            </p>
+                            <ul class="list list-bullet">
+                                <li>
+                                    using a flash
+                                </li>
+                                <li>
+                                    standing where there's uneven lighting
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="panel panel-border-wide">
+                    <h2 class="heading-medium">Your photo</h3>
+                    <p>
+                        <img src="http://lorempixel.com/200/250"/>
+                    </p>
+                </div>
+
+                <a href="upload" class="button">Try another photo</a>
+
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

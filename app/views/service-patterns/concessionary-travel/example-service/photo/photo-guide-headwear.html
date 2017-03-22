@@ -1,0 +1,61 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 8 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">How to take your own digital passport photo</h1>
+
+  <h2 class="heading-medium">Take off any headwear</h2>
+
+  <div class="text">
+    <p>Please remove any headwear unless worn for religious or medical reasons.</p>
+    <p>You must take off anything else that may obstruct the photo, like hair clips or glasses.</p>
+  </div>
+  <div class="guidance-photos" aria-hidden="true">
+          <ul>
+              <li>
+                  <img src="{{asset_path}}images/image-f2-religious-head-covering.jpg" alt="">
+                  <div class="result" style="height: 57px;">
+                      <p class="approved">Approved</p>
+                  </div>
+              </li>
+              <li>
+                  <img src="{{asset_path}}images/image-m3-head-covering.jpg" alt="">
+                  <div class="result" style="height: 57px;">
+                      <p class="failed">No fashion hair covering</p>
+                  </div>
+              </li>
+              <li>
+                  <img src="{{asset_path}}images/image-f1-hair-accessory.jpg" alt="">
+                  <div class="result" style="height: 57px;">
+                      <p class="failed">No hair accessories</p>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-lighting" role="button">Previous</a>
+      </li>
+      <li class="button-guide button-guide-previous">
+       <a class="button" href="photo-guide-face-clear" role="button">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}

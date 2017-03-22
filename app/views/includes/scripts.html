@@ -1,0 +1,35 @@
+<!-- Javascript -->
+<script src="/public/javascripts/details.polyfill.js"></script>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/govuk/selection-buttons.js"></script>
+<script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+<script src="/public/javascripts/govuk/show-hide-content.js"></script>
+<script src="/public/javascripts/application.js"></script>
+<script src="https://assets.publishing.service.gov.uk/service-manual-frontend/application-6e1076c8610026f4245c8eb8f5976a50b4ed2f2ef82f9fbb5f1811913e1561d4.js"></script>
+{% if useAutoStoreData %}
+  <script src="/public/javascripts/auto-store-data.js"></script>
+{% endif %}
+<script type="text/javascript">
+// code for verify give permission page, should probably be moved elsewhere so doesn't load on every page
+
+if(window.location.href.indexOf("parking-permit") > -1) {
+  console.log('{{council.string}}');
+  $('button').click(function(){
+    var checked = $('#confirm_allow_verify').prop('checked');
+    if(checked){
+      window.location.href = "https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}";
+    }else{
+      $('.error-summary').removeClass('hidden');
+    }
+  });
+}else if(window.location.href.indexOf("concessionary-travel") > -1){
+  $('button').click(function(){
+    var checked = $('#confirm_allow_verify').prop('checked');
+    if(checked){
+      window.location.href = "https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=concessionary-travel-{{council.string}}";
+    }else{
+      $('.error-summary').removeClass('hidden');
+    }
+  });
+}
+</script>

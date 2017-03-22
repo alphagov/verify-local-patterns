@@ -1,0 +1,111 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// should probs be in elements
+p + ul{
+  margin-bottom: 1em;
+}
+
+.panel .heading-small{
+  margin: 0 0 1.5em 0;
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+h1 span.strapline {
+    font-family: "nta",Arial,sans-serif;
+    font-size: 20px;
+    line-height: 1.1111111111;
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+    margin-bottom: 5px;
+    color: #6f777b;
+  @media (min-width: 641px) {
+    font-size: 27px;
+    line-height: 1.1111111111;
+  }
+}
+
+.list-letter{
+  list-style-type: lower-alpha;
+  padding-left: 15px;
+}
+
+.metadata {
+  font-size: 12px;
+  line-height: 1.25;
+  margin-bottom: 2em;
+  @media (min-width: 641px) {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+  dt {
+    float: left;
+    clear: left;
+    width: auto;
+    min-width: 120px;
+    @media (min-width: 641px) {
+      padding-right: 10px;
+    }
+  }
+}
+
+.page-contents__list li {
+  font-size: 14px;
+  line-height: 1.14286;
+  list-style-type: none;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  padding-right: 15px;
+  &:before {
+    content: "–";
+    float: left;
+    display: block;
+    width: 15px;
+    margin-left: -15px;
+  }
+  @media (min-width: 641px){
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.page-contents__list a {
+    text-decoration: none;
+    letter-spacing: 0.022em;
+}
+
+.page-contents__list .active {
+    letter-spacing: 0;
+    font-weight: bold;
+}
+
+table + p{
+  margin-top: 2em;
+}

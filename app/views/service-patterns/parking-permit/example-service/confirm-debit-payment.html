@@ -1,0 +1,53 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm your payment" %}
+
+{% block content %}
+
+<div class="grid-row review-details">
+	  <div class="check-details">
+
+	  	<table>
+		    <tbody>
+		      <tr>
+		        <td>Account number:</td>
+		        <td class="table-info">**** **** **** {{accountNumber.substr(accountNumber.length - 4) }}</td>
+		      </tr>
+		      <tr>
+		        <td>Name on account:</td>
+		        <td class="table-info">{{nameAccount}}</td>
+		      </tr>
+		      <tr>
+		        <td>Billing address:</td>
+		        <td class="table-info">{{buildingStreet}}, {{townCity}}, {{postcode}}</td>
+		      </tr>
+		       <tr>
+		        <td>Email address:</td>
+		        <td class="table-info">{{email}}</td>
+		      </tr>
+		      <tr>
+		        <td>Payment of:</td>
+		        <td class="table-info">Resident's parking permit</td>
+		      </tr>
+		      <tr>
+		        <td>Amount to pay:</td>
+		        <td class="table-info">£60.00</td>
+		      </tr>
+		    </tbody>
+  		</table>
+		</div>
+</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="form-group">
+		 			<a href="success"><button class="button">Confirm payment</button></a>
+		 		</div>
+		 		<div class="back">
+				<a href="#">Cancel payment</a>
+			</div>
+		 </div>
+	 </div>
+
+{% endblock %}

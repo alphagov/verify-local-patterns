@@ -1,0 +1,28 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 1 of 5</span>
+  </div>
+
+  <h1 class="heading-xlarge">Getting a digital photo from a shop</h1>
+
+
+  <div class="text">
+      <p>Most high street photo shops can take your digital passport photo. They’ll give you the photo as a digital file on either a CD or USB stick.</p>
+      <p>The cost will depend on where you get your photo.</p>
+  </div>
+
+  <a class="button" href="photo-shop-ask" role="button">Next</a>
+
+</main>
+
+{% endblock %}

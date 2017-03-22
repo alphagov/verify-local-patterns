@@ -1,0 +1,62 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Proceed to payment" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    You're about to pay for:
+  </p>
+
+  <table>
+    <tr>
+      <th>
+        Permit type
+      </th>
+      <th>
+        Resident's parking permit
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Permit length
+      </th>
+      <th>
+        {{permitChoice}}
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Start date
+      </th>
+      <th>
+        14th March 2017
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Expiry date
+      </th>
+      <th>
+        {{ '14th September 2017' if permitChoice == '6 month' else '14th March 2018' }}
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Cost
+      </th>
+      <th>
+        {% set halfCost = council.permitsCosts[0] / 2 %}
+        £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+      </th>
+    </tr>
+  </table>
+
+   <a class="button" role="button" href="choose-payment">Next</a>
+
+</main>
+
+{% endblock %}

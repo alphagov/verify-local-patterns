@@ -1,0 +1,33 @@
+<!-- todo: check if this page is actually used anywhere -->
+
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Other ways to apply" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <h1 class="heading-xlarge">Other ways to apply</h1>
+
+  <p>To apply for an older person's bus pass without using GOV.UK Verify you can:</p>
+
+
+    <h2 class="heading-small">1. Continue without verifying</a></h2>
+
+    <p>You can <a href="add-poa">continue</a> to fill out your form online but choose to skip verify, once you have completed your form you will need to bring a form of photo ID and proof of address to the county council in order to collect your pass.</p>
+
+    <h2 class="heading-small">2. Download a paper application</a></h2>
+
+    <p>You will need to <a href="#">download,</a> print and complete the application form. You will then need to send the form, along with scanned copies of photo ID and proof of address. Send the form to:</p>
+    <p>{{council.name}},<br />
+1-5 Swishy street,<br />
+{{council.shortName}},<br />
+AG99 1AX</p>
+
+<h2 class="heading-small">3. Phone the council on 080038748374834 </a></h2>
+
+</div>
+
+{% endblock %}

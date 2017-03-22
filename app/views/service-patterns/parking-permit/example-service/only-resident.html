@@ -1,0 +1,40 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for a resident's parking permit in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<div class="back">
+    <a href="javascript:history.back()">&#9664; Back</a>
+  </div>
+  <h1 class="heading-xlarge">Are you the only resident at your address?</h1>
+
+  <form>
+    <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visually-hidden">Are you the only resident at your address?</legend>
+
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+          No
+        </label>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <!-- <input class="button" type="submit" value="Next"> -->
+      <a href="eligible" class="button">Next</a>
+    </div>
+  </form>
+
+</main>
+
+{% endblock %}

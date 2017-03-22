@@ -1,0 +1,378 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/examples/unbranded/
+
+// Override the govuk_frontend_toolkit's font stack
+// https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_font_stack.scss#L13
+$toolkit-font-stack: $helvetica-regular;
+
+.unbranded {
+  background: $white;
+
+  // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+  * {
+
+    font-family: $toolkit-font-stack !important;
+  }
+
+  header{
+    color: white;
+  }
+
+  // Remove GOV.UK footer styles
+  main{
+    min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
+  }
+  #footer {
+    border: 0;
+    background: $white;
+    padding: 1em;
+    text-align: center;
+  }
+  .notice{
+    margin: 1em 0 2em;
+  }
+  .button-start{
+    padding-bottom: 0.5em;
+  }
+}
+
+// possibly should be in govuk styles
+.grid-row{
+  display: initial;
+}
+details{
+  margin-bottom: 1.5em;
+}
+
+form .heading-medium{
+  margin-top: 1em;
+}
+
+main img {
+    max-width: 100%;
+}
+
+.svg{
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.loading-spinner{
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
+  margin-top: 55px;
+}
+
+
+.panel-photo-error {
+    background-image: url('/public/images/photo/icon-thick-cross.svg');
+}
+.panel-photo-result {
+    margin: 10px 15px 10px 0;
+    border-left: 0;
+    padding-left: 38px;
+    background-repeat: no-repeat;
+    background-position: left 10px;
+    background-size: 24px;
+    @media (min-width: 769px){
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 54px;
+        background-size: 36px;
+    }
+}
+.panel{
+  &:last-child {
+      margin-bottom: 0;
+  }
+.button-start{
+  margin-bottom: 1em;
+}
+
+//radio button position
+label.block-label.selection-button-radio, label.block-label.selection-button-radio-selected{
+  padding-left: 53px;
+}
+
+//circle
+.js-enabled .block-label.selection-button-radio::before{
+  top: 10px;
+  left: 7px;
+}
+//dot
+.js-enabled .block-label.selection-button-radio::after{
+  top: 19px;
+  left: 16px;
+}
+
+label.block-label.selection-button-checkbox{
+  padding: 16px 20px 25px 70px;
+}
+//checkbox position
+.js-enabled .block-label.selection-button-checkbox::before{
+  top: 20px;
+  left: 17px;
+  background: #fff;
+}
+//tick position
+.js-enabled .block-label.selection-button-checkbox::after{
+  top: 29px;
+  left: 24px;
+}
+
+// for toggling display
+.hidden{
+  display: none;
+}
+
+
+body{
+  min-height: 100vh;
+}
+
+input.form-control, textarea.form-control{
+  margin-bottom: 9px;
+}
+
+// argleton header
+
+header{
+  padding-top: 0px;
+  .container{
+    padding-top: 9px;
+  }
+}
+
+header{
+  padding: 0px 15px 0px;
+  font-size: 1.6em;
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  img{
+    width: 2em;
+    vertical-align: middle;
+    margin-right: .5em;
+  }
+}
+
+.contact-link{
+  text-align: right;
+  font-size: .75em;
+  padding-bottom: .33em;
+}
+
+//verify start page
+@media screen and (min-width: 641px){
+  .choose-left-column {
+    border-right: 3px solid silver;
+    padding-right: 30px;
+  }
+}
+
+.allow-verify-box{
+  margin-bottom: 1em;
+}
+
+.block-label{
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  padding: 18px 30px 15px 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  @media (min-width: 641px){
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+//payment styles
+
+.card-images{
+  img{
+    height: 39px;
+  }
+}
+
+.card-image{
+  height: 60px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+table{
+  margin-bottom: 30px;
+}
+
+.payment-summary {
+  display: inline-block;
+  border: 7px solid #DEE0E2;
+  padding: .6em 1em 0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  h2{
+    font-size: 27px;
+    font-weight: 700;
+    padding-bottom: 15px;
+  }
+}
+
+.form-group{
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+
+.form-group .panel-border-narrow{
+  margin-left: 16px;
+}
+
+.form-group.form-group-price{
+  display: block;
+  float: none;
+  width: 75px;
+}
+
+.form-group.form-group-product-name{
+  display: block;
+  width: 350px;
+}
+
+p.accepted-copy-2 {
+    margin-bottom: 0;
+}
+
+// photo guide styles
+
+.back-link{
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 15px;
+  padding-left: 14px;
+  border-bottom: #0b0c0c 1px solid;
+  color: #0b0c0c;
+  text-decoration: none;
+  background: url(../images/back-caret.svg) no-repeat 1px 0;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  &:link{
+    color: #000;
+  }
+  @media (min-width: 641px){
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.photo-guide .marker {
+  color: #6f777b;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  @media (min-width: 641px){
+      font-size: 16px;
+      line-height: 1.25;
+  }
+}
+
+.guide-nav li{
+  list-style-type: none;
+  margin-bottom: 1em;
+  @media(min-width:640px){
+    float: left;
+    margin-left: 1em;
+  }
+}
+
+.guidance-photos{
+  display: inline-block;
+  ul{
+    margin-left: -8px;
+    li {
+      position: relative;
+      box-sizing: border-box;
+      float: left;
+      min-width: 120px;
+      max-width: 172px;
+      margin-bottom: 1.05263em;
+      padding-left: 8px;
+      @media (min-width: 769px) {
+          max-width: 188px;
+      }
+    }
+  }
+  img{
+    width: 100%;
+    vertical-align: bottom;
+  }
+  .result {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 85%;
+    height: 57px;
+    background: #fff;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #0b0c0c;
+    @media (min-width: 641px){
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+    .approved, .failed {
+      position: absolute;
+      top: 50%;
+      box-sizing: border-box;
+      width: 100%;
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      margin: 0;
+      padding: 8px 28px 5px 8px;
+      background-repeat: no-repeat;
+      background-position: right 7px center;
+      background-size: 18px;
+      @media (min-width: 641px){
+        padding-top: 11px;
+        padding-right: 34px;
+        padding-bottom: 8px;
+        background-size: 22px;
+      }
+    }
+    .approved {
+      background-image: url(/public/images/photo/icon-thick-tick.svg);
+    }
+    .failed {
+        background-image: url(/public/images/photo/icon-thick-cross.svg);
+    }
+  }
+}
+
+.photo-choose-file{
+  display: none;
+}
+.photo-status img{
+  width: 250px;
+}
+}

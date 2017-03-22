@@ -1,0 +1,298 @@
+{% extends "layout.html" %}
+{% set pageTitle = "Apply for an older person's concessionary travel pass" %}
+{% block page_title %}
+    {{ pageTitle }}
+{% endblock %}
+{% block content %}
+
+    <main id="content" role="main">
+        {% include "includes/phase_banner_alpha.html" %}
+        {% include "includes/toolkit_breadcrumbs.html" %}
+
+        <h1 class="heading-xlarge">
+            <span class="strapline">Service pattern for</span>
+            {{ pageTitle }}
+        </h1>
+        {% include "includes/index_metadata.html" %}
+
+        <div class="grid-row" data-module="highlight-active-section-heading">
+            <div class="column-third">
+                <!--  Page contents -->
+                <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+                    <h2 class="heading-small page-contents__title">Page contents:</h2>
+                    <ul class="page-contents__list">
+                        <li>
+                            <a href="#user-need">What is the user need?</a>
+                        </li>
+                        <li>
+                            <a href="#council-need">What do councils need?</a>
+                        </li>
+                        <li>
+                            <a href="#user-journey">What is the user journey?</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="column-two-thirds">
+
+                <p>
+                    This page is for people who work in local authorities. It outlines a common pattern used for delivering older person's concessionary travel services effectively.
+                    <a href="/">Read more about service patterns.</a>
+                </p>
+                <p>
+                    This pattern is specific to England. Concessionary travel passes work differently in
+                    <a href="http://www.transport.gov.scot/public-transport/concessionary-travel-people-aged-60-or-disability">Scotland</a>,
+                    <a href="http://gov.wales/topics/transport/public/concessionary/?lang=en">Wales</a>
+                    and
+                    <a href="https://www.nidirect.gov.uk/articles/free-and-concessionary-bus-and-rail-travel
+">Northern Ireland</a>.
+                </p>
+                <p>
+                    This is made possible through the English National Concessionary Travel Scheme. The Department of Transport has
+                    <a href="https://www.gov.uk/government/publications/guidance-for-travel-concession-authorities-on-the-england-national-concessionary-travel-scheme">published guidance for councils</a>
+                    about this scheme.
+                </p>
+
+                <h2 class="heading-medium" id="user-need">What is the user need?</h2>
+                <p>
+                    As someone who is old enough for a bus pass
+                    <br>
+                    I need to apply for a concessionary travel permit
+                    <br>
+                    So that I am able to travel for free
+                </p>
+
+                <h2 class="heading-medium" id="council-need">What do councils need from users to deliver the service?</h2>
+                <ul class="list list-bullet">
+                    <li>
+                        proof that the user lives in the area
+                    </li>
+                    <li>
+                        proof the user is old enough to be entitled to a pass
+                    </li>
+                    <li>
+                        a passport style photograph of the user to put on the pass
+                    </li>
+                </ul>
+
+                <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
+                <p>
+                    At a high level, these are the steps users should go through.
+                </p>
+
+                <ol class="list list-number">
+                    <li>
+                        <h3 class="heading-small">Awareness</h3>
+                        <p>
+                            Users need to find out about their entitlement to concessionary travel. They may find out in a variety of ways, for example:
+                        </p>
+                        <ul class="list list-bullet">
+                            <li>signage in a local library</li>
+                            <li>from local, district, borough and county councils</li>
+                            <li>through word of mouth</li>
+                            <li>a search on the internet</li>
+                            <li>signage on buses and bus stops</li>
+                        </ul>
+                        <p>
+                            Local authorities should try to make sure the right information is being provided through these channels.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Check you are the right age</h3>
+                        <p>
+                            Residents in England can get a bus pass for free travel when they reach the female State Pension age, whether they’re a man or a woman.
+                        </p>
+                        <p>
+                            Residents of London can travel free on buses, tubes and other transport when they’re 60 or older, but only within London.
+                        </p>
+                        <p>
+                            This means that users may need to check whether or not they are old enough for concessionary travel.
+                            <a href="https://www.gov.uk/state-pension-age/y/bus_pass">There's a page for this on GOV.UK.</a>
+                            Councils should link to this page on their service start page. (See step 3.)
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Find the right council</h3>
+
+                        <p>
+                            Once the user has found out they can get a free travel pass, they need to get to the right council's website to apply. Users might start by typing 'older person bus pass' or a related term into a search engine, or they might start on their local
+                            council's website.
+                        </p>
+                        <p>
+                            <a href="https://www.gov.uk/apply-for-elderly-person-bus-pass">The older person's bus pass page on GOV.UK</a>
+                            should send them to the right council's website once they enter their postcode. Councils should make sure the postcodes that they serve are linked to the right page on their website and email any corrections to
+                            <a href="mailto:local-direct-admin@digital.cabinet-office.gov.uk">local-direct-admin@digital.cabinet-office.gov.uk</a>.
+                        </p>
+                        <p>
+                            Users may also go straight to the website for the council that they think they need to get a travel pass from. This makes it very important that councils clearly state which area their concessionary travel service serves as the user may be in the
+                            wrong place. Read the next section for details on this.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Service start page</h3>
+                        <p>
+                            Now the user is in the right place, the page on the council's website should communicate:
+                        </p>
+                        <ul class="list list-bullet">
+                            <li>
+                                what the pass will allow its holder to do
+                            </li>
+                            <li>
+                                when the user is allowed to travel using the pass (The national bus concession in England is available at any time on a Saturday, Sunday or bank holiday, and from 9.30am to 11pm on any other day although some authorities offer extended travel times.)
+                            </li>
+                            <li>
+                                where the pass is valid
+                            </li>
+                            <li>
+                                how the pass will be used
+                            </li>
+                            <li>
+                                how long the process of applying will take
+                            </li>
+                            <li>
+                                when they should expect to receive their bus pass once they've applied
+                            </li>
+                            <li>
+                                that they'll need to provide a passport style photograph
+                            </li>
+                            <li>
+                                that they'll need to login or signup using GOV.UK Verify
+                            </li>
+                            <li>
+                                what to do if they need assistance with the application
+                            </li>
+                            <li>
+                                what to do if they can not complete the application
+                            </li>
+                            <li>
+                                links to renewals and replacements services
+                            </li>
+                        </ul>
+                        <a href="concessionary-travel/example-service/start-page">See the example service start page</a>
+                    </li>
+                    <li>
+                        <ol class="list list-letter">
+                            <li>
+                                <h3 class="heading-small">Prove you are a resident and are old enough to apply</h3>
+                                {% set serviceString = 'concessionary-travel' %}
+                                {% set age = true %}
+                                {% include 'common-content/proving-identity.html' %}
+                            </li>
+                        </ol>
+                    </li>
+                  <li>
+                      <h3 class="heading-small">Confirm your date of birth</h3>
+                      <p>
+                        If the user has been successfully verified, The council will receive the user's name, address, and date of birth from GOV.UK Verify.
+                      </p>
+                      <p>
+                        The council should show the user their date of birth for the user to confirm it. (This is mainly done because of a legal requirement to show user's the data that has been received from GOV.UK Verify.)
+                      </p>
+                      <a href="concessionary-travel/example-service/confirm-dob">See the page asking users to confirm their date of birth</a>
+                      <p>
+                        If the user's date of birth is not correct, something has probably gone wrong in the verifying process, so the user should be advised to continue using a different channel.
+                      </p>
+                      <a href="concessionary-travel/example-service/incorrect-dob">See the page asking users to continue in a different channel</a>
+
+                      <p>
+                        If the user confirms their date of birth, the council should check the user is old enough to be eligible. If the user is not eligible based on their date of birth councils should tell them and also tell the user when they will be eligible.
+                      </p>
+
+                      <a href="concessionary-travel/example-service/not-eligible-age">See the page telling the user they are not eligible because of their age</a>
+
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Confirm your address</h3>
+                        <p>
+                            GOV.UK Verify will send the council the user's address, as known by the user's chosen identity provider. On returning from the GOV.UK Verify process, the council should ask the user to confirm whether or not this is their current address. (This is mainly done because GOV.UK Verify identity providers may not have the user's address if they moved house in the last 3 months.)
+                        </p>
+                        <p>
+                          This page can also ask the user to confirm they want the council to send the bus pass to the address they've received through GOV.UK Verify.
+                        </p>
+                        <a href="concessionary-travel/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
+                        <p>
+                            If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and warned that they must not
+                            enter false information as this is a civic offence. If the travel pass is physical, councils will get extra confidence in the address by mailing the pass to the address given. Councils should mention they will be using the address for this purpose on
+                            the confirmation page.
+                        </p>
+                        <a href="concessionary-travel/example-service/incorrect-address">See the example page asking users to enter their current address</a>
+                        <p>
+                            Once the user has confirmed their address, the council should check that the given address is in the area the council serves. If the address is not in the area, the council should tell them they are not eligible in this area.
+                        </p>
+                        <a href="concessionary-travel/example-service/not-eligible-address">See the page telling the user they are not eligible because of their address</a>
+                  </li>
+                    <li>
+                      <h3 class="heading-small">Do you already have a bus pass?</h3>
+                      <p>
+                        At this point the council should check whether or not they have a bus pass against their records. If they already have a pass, they should tell them they are not eligible to apply for a new one, but they can renew or replace a lost or stolen one with the 'Renew or replace your bus pass' service. The page should also include a link to contact the council if the user believes there has been a mistake.</p>
+
+                      <a href="concessionary-travel/example-service/not-eligible-pass">See the page telling the user they are not eligible because they already have a pass</a>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Upload passport style photograph</h3>
+
+                        <p>
+                            Bus passes need to have a photograph of the person who owns them, so that they can't be used by anybody else. It's a bus driver's responsibility to check the photo matches the user.
+                        </p>
+                        <p>
+                            Users can upload a digital photograph of themselves for use on the bus pass, but they need to be given guidance on the required quality of the photograph. The council website should ask the user whether or not they want to take a picture using the device they are using, or by uploading a photograph that they already have.
+                        </p>
+                        <p>
+                            <a href="concessionary-travel/example-service/photo/upload">Step through the example guide for how to take and upload a passport style photograph</a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Confirmation page and sending the bus pass to the user</h3>
+
+                        <p>
+                            Once the user has uploaded their photograph, the council should tell the user their application is complete and reiterate when they can expect to receive their bus pass and that they will be posting it to the address they previously confirmed.
+                        </p>
+                        <p>
+                            The accompanying letter should also provide information on how, when and where the bus pass can be used, and what to do in case of a lost or stolen pass.
+                        </p>
+                        <p>
+                            <a href="concessionary-travel/example-service/success">See the example page telling the user when they can expect to receive their pass</a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Collect contact details to notify users of progress</h3>
+                        <p>
+                          Many users want to be informed of the progress of their application. To notify users of their progress, you'll need to ask them for their preferred contact method and details.
+                        </p>
+                        <p>
+                          <a href="concessionary-travel/example-service/add_contact_details">See the example page asking users to provide their prefered contact details.</a>
+                        </p>
+                    <li>
+                        <h3 class="heading-small">Use bus pass</h3>
+                        <p>
+                            Bus passes are a physical plastic card that users can use on any bus in England. They either have to show it to the driver or scan on a reader when they get onto the bus.
+                        </p>
+                        <p>
+                            In London, the pass is an Oyster card which the user scans on a reader.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="heading-small">Renewals</h3>
+                        <p>
+                            To reduce the possibility of fraud, bus passes have expiry dates which must be no more than 5 years from the date of issue. (Specification 1.31 from the
+                            <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/3621/travelconcession.pdf">Department for Transport guidance</a>.)
+                        </p>
+                        <p>
+                            Councils should send a notification to the user's preferred channel when their bus pass is about to expire.
+                        </p>
+                        <p>
+                            In the future, councils will be able to send this reminder using
+                            <a href="https://www.gov.uk/government/publications/govuk-notify/govuk-notify">GOV.UK Notify</a>.
+                        </p>
+                        <p>
+                            <a href="#">See the example notification letter to remind users to renew their pass</a>
+                            (page in progress)
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <!-- col two thirds -->
+        </div>
+    </main>
+{% endblock %}

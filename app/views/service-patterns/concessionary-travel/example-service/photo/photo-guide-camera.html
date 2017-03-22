@@ -1,0 +1,49 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 2 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">How to take your own digital passport photo</h1>
+
+  <h2 class="heading-medium">Find a camera</h2>
+
+  <div class="grid-row">
+    <div class="column-half">
+      <p>
+        You can use any device that takes digital photos (eg, a phone, digital camera or tablet).
+      </p>
+      <p>
+        You shouldn’t need to change the settings.
+      </p>
+    </div>
+    <div class="column-half">
+      <img class="svg" src="{{ asset_path }}images/diagram-smartphone-digital-camera.svg" />
+    </div>
+  </div>
+
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide" role="button">Previous</a>
+      </li>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-get-help" role="button">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}

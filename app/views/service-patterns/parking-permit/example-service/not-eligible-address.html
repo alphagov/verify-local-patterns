@@ -1,0 +1,18 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "You are not eligible for a parking permit in " + council.parkingBoundary %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Because you do not live in {{council.shortName}}, you are not eligible for a parking permit.
+  </p>
+  <p>
+    You can <a href="https://www.gov.uk/parking-permit">find your local council</a> to apply for a permit in your area or <a href="#">contact {{council.name}}</a> if you have any further questions.  </p>
+
+</div>
+
+{% endblock %}

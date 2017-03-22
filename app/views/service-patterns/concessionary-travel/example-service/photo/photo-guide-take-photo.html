@@ -1,0 +1,32 @@
+{% extends "layout_picker.html" %} {% block page_title %} {{council.name}} - Apply for an older person's bus pass in {{council.shortName}} {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="photo-guide">
+        <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+        <span class="marker">Guide part 13 of 13</span>
+    </div>
+
+    <h1 class="heading-xlarge">How to take your own digital passport photo</h1>
+
+    <h2 class="heading-medium">Take your photo now</h2>
+
+    <div class="text">
+        <p>
+          You can’t go any further with your application until you have your picture.
+        </p>
+        <p>
+          <a href="upload" class="button" role="button">Continue if you have a photo</a>
+        </p>
+        <p>
+          If you’re not ready, <a href="./photo-guide">you can read this guide again</a>.
+        </p>
+        <p>
+          Alternatively, you can <a href="./photo-shop">get your photo from a high-street photo shop</a>.
+        </p>
+    </div>
+
+
+</main>
+
+{% endblock %}

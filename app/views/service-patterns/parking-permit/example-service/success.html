@@ -1,0 +1,48 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Application complete" %}
+
+{% block content %}
+
+  <div class="column-two-thirds">
+    {% if contactChoice == 'Email' %}
+    <p>You should receive a confirmation email within the next minute.</p>
+    {% elif contactChoice == 'Phone' %}
+    <p>You should receive a confirmation phone call within the next minute.</p>
+    {% elif contactChoice == 'Text' %}
+    <p>You should receive a confirmation text within the next minute.</p>
+    {% else %}
+    <p>You have not signed up to receive a confirmation email. <a href="contact-details">Sign up for confirmation and progress alerts.</a></p>
+    {% endif %}
+
+    {% if council.permitWait < 1 %}
+    <p>
+      You won't receive a physical permit. Wardens will check your vehicle's registration number.
+    </p>
+    {% else %}
+    <p>
+      You can expect your permit to arrive within 5 working days.
+    </p>
+    <p>
+      We'll send it to this address:
+    </p>
+    <div class="panel panel-border-wide">
+      <p>
+        {% if skip_verify == true %}Jane Smith{% else %}Jane Smith{% endif %}<br />
+        1A {{council.shortName}} High Street<br />
+        {{council.shortName}}<br />
+        ARG1 4HP<br />
+      </p>
+      <a href="#">Provide a different address</a>
+    </div>
+    <p>
+      In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
+    </p>
+    {% endif %}
+  </div>
+
+
+</main>
+
+{% endblock %}

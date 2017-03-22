@@ -1,0 +1,57 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Application complete" %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+      <p>
+        Your reference number is <br>
+        <strong class="heading-large">HDJ2123F</strong>
+      </p>
+    </div>
+
+  <p><a href="#">Request a confirmation email.</a></p>
+
+  <div class="column-two-thirds">
+    <p>
+     {% if skip_verify == true %} As long as your photo, proof of address and proof of age pass our manual checks, we'll send you your bus pass within 5 days. {% else %} As long as your photo passes our manual checks, we'll send you your bus pass within 5 days.{% endif %}
+    </p>
+    <p>
+      We'll use this address:
+    </p>
+    <div class="panel panel-border-wide">
+      <p>
+        {% if skip_verify == true %}Jane Smith{% else %}Jane Smith{% endif %}<br />
+        1A {{council.shortName}} High Street<br />
+        {{council.shortName}}<br />
+        ARG1 4HP<br />
+      </p>
+      <a href="#">Provide a different address</a>
+    </div>
+
+    <h2 class="heading-medium">About your pass</h2>
+
+    <ul class="list list-bullet">
+      <li>
+        Your pass will expire in 5 years. If you'd like to receive a notification when it's time to renew your bus pass, <a href="/service-patterns/concessionary-travel/example-service/renewal-notification">sign up for a renewal notification</a>.
+      </li>
+      <li>
+        When travelling, you must have your pass with you and present it to the driver to get your free travel.
+      </li>
+      <li>
+        You must not share your pass with anyone else.
+      </li>
+      <li>
+        You are not permitted to hold more than one pass.
+      </li>
+    </ul>
+
+    <p>
+      Whilst we process your application, we can send you notifications of it's progress. <a href="/service-patterns/concessionary-travel/example-service/add_contact_details">Sign up for a progress notifications</a>.
+    </p>
+
+    </div>
+
+{% endblock %}

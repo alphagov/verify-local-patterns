@@ -1,0 +1,42 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Enter vehicle details" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    We need your vehicle's registration number to
+  </p>
+
+  <ul class="list list-bullet">
+    <li>
+      calculate the price of your permit using DVLA's records
+    </li>
+    <li>
+      associate your permit with your vehicle
+    </li>
+  </ul>
+
+  <div class="form-group">
+      <form method="post">
+          <fieldset>
+              <legend class="visuallyhidden">Enter your vehicle's registration number</legend>
+              <div>
+                  <label class="form-label" for="postcode">Enter your vehicle's registration number</label>
+                  <input class="reg-number" id="reg-number" name="reg-number" type="text" aria-invalid="false" value="">
+              </div>
+          </fieldset>
+      </form>
+  </div>
+
+
+
+  <a class="button" role="button" href="permit-price">Next</a>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Enter card details" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+	<form class="form" method="POST" action="confirm-card-payment" autocomplete="off">
+
+		<div class="form-group cards-group">
+			<label class="form-label-bold" for="cardNumber">
+		    Card number
+		  </label>
+		  <input class="form-control medium-width" id="cardNumber" name="cardNumber" type="number" pattern="[0-9]*" min="0" max="9999999999999999">
+		  <div class="card-images">
+        <p class="accepted-copy-2">Accepted credit and debit card types</p>
+			  <img class="original-accepted" id="original-accepted" src="/public/images/accepted-cards-x2.png">
+		  </div>
+		</div>
+
+		<div class="form-group">
+			<fieldset>
+			  <div class="form-date">
+					<legend class="form-label-bold">
+						Expiry date
+						<span class="form-hint">For example, 07/17</span>
+					</legend>
+			    <div class="form-group form-group-month">
+				    <label for="expMonth">Month</label>
+			  		<input class="form-control" id="expMonth" name="expMonth" type="number" pattern="[0-9]*" min="1" max="12">
+			    </div>
+				  <div class="form-group form-group-month">
+			    	<label for="expYear">Year</label>
+			    	<input class="form-control" id="expYear" name="expYear" type="number" pattern="[0-9]*" min="17" max="27">
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+      	<div class="form-group">
+			<label class="form-label-bold" for="cardName">
+		    	Name on card
+		  	</label>
+		  	<input class="form-control" id="cardName" name="cardName" type="text">
+		</div>
+
+		<div class="form-group">
+			<label class="form-label-bold" for="cardSecurityNumber">
+		    Card security code
+		    <span class="form-hint">This is the 3 digit code on the back of your card</span>
+		  	</label>
+		  	<input class="form-control" id="cardSecurityNumber" name="cardSecurityNumber" type="number" pattern="[0-9]*" min="0" max="999"><img class="card-image" src="/public/images/card-security-code-2.png">
+		</div>
+
+      <div class="form-group">
+	    <h2 class="heading-medium">Billing address</h2>
+	    <div class="payment-type-intro">
+  		<p>This is the address associated with the card</p>
+  		</div>
+      	<fieldset>
+			<div class="form-group">
+				<label class="form-label-bold" for="buildingStreet">
+			    Building name and/or number and street
+			  	</label>
+			  	<input class="form-control" id="buildingStreet" name="buildingStreet" type="text">
+			  	<input class="form-control" id="buildingStreet" name="buildingStreet" type="text">
+			</div>
+			<div class="form-group">
+				<label class="form-label-bold" for="townCity">
+			    Town or city
+			  	</label>
+			  	<input class="form-control medium-width" id="townCity" name="townCity" type="text">
+			</div>
+			<div class="form-group">
+				<label class="form-label-bold" for="postcode">
+			    Postcode
+			  	</label>
+			  	<input class="form-control" id="postcode" name="postcode" type="text">
+			</div>
+			<div class="form-group">
+				<label class="form-label-bold" for="email">Email address<span class="form-hint">We'll send your payment confirmation here</span>
+			  	</label>
+			  	<input class="form-control" id="email" name="email" type="text">
+			</div>
+			</fieldset>
+		</div>
+
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+			 	</div>
+			 	<div class="back">
+					<a href="#">Cancel payment</a>
+				</div>
+			</div>
+		</div>
+</form>
+</div>
+		<div class="column-third">
+
+			<div class="payment-summary payment-summary-small">
+				<h2>Payment summary</h2>
+
+			      <p class="payment-info">{{ permitChoice }} resident's parking permit</p>
+			       <h3>Amount to pay:</h3>
+			       <p class="payment-amount">
+							 {% set halfCost = council.permitsCosts[0] / 2 %}
+			         £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+						 </p>
+			</div>
+		</div>
+	</div>
+
+
+</main>
+
+
+{% endblock %}

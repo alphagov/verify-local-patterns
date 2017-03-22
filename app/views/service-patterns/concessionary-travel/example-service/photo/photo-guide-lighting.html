@@ -1,0 +1,66 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  {{council.name}} - Apply for an older person's bus pass in {{council.shortName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="photo-guide">
+    <a href="./need-photo" class="back-link">Other ways to get a photo</a>
+    <span class="marker">Guide part 7 of 13</span>
+  </div>
+
+  <h1 class="heading-xlarge">How to take your own digital passport photo</h1>
+
+  <h2 class="heading-medium">Check the lighting</h2>
+
+  <div class="text">
+        <p>There shouldn’t be any shadows on your face or behind your head.</p>
+        <p>Make sure:</p>
+        <ul class="list list-bullet">
+            <li>you use natural light (eg a large window facing you)</li>
+            <li>the lighting is even – don’t stand too close to a lamp that’s switched on</li>
+        </ul>
+    </div>
+    <div class="guidance-photos" aria-hidden="true">
+        <ul>
+            <li>
+                <img src="{{asset_path}}images/image-m1-plain.jpg" alt="">
+                <div class="result" style="height: 38px;">
+                    <p class="approved">Approved</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{asset_path}}images/image-m1-uneven-harsh.jpg" alt="">
+                <div class="result" style="height: 38px;">
+                    <p class="failed">Uneven lighting</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{asset_path}}images/image-m1-flash-shadow.jpg" alt="">
+                <div class="result" style="height: 38px;">
+                    <p class="failed">Avoid shadows</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-space" role="button">Previous</a>
+      </li>
+      <li class="button-guide button-guide-previous">
+        <a class="button" href="photo-guide-headwear" role="button">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+</main>
+
+{% endblock %}

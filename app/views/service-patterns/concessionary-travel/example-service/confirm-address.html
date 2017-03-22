@@ -1,0 +1,51 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Is this your address?" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    We've received these details from GOV.UK Verify:
+  </p>
+  <div class="panel panel-border-wide">
+    <p>
+      Jane Smith<br />
+      1A {{council.shortName}} High Street<br />
+      {{council.shortName}}<br />
+      ARG1 4HP<br />
+    </p>
+  </div>
+  <p>
+    We'll use this address to send you your bus pass and check you're applying through the right council.
+  </p>
+  <p>
+    Is this your current address?
+  </p>
+  <form action="eligible" method="get" class="form">
+    <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visually-hidden">Is this your current address?</legend>
+
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="answer" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="answer" value="No">
+          No
+        </label>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input class="button" type="submit" value="Next">
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}
