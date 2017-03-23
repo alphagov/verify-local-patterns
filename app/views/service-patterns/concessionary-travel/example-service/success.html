@@ -12,14 +12,20 @@
       </p>
     </div>
 
-  <p><a href="#">Request a confirmation email.</a></p>
-
   <div class="column-two-thirds">
     <p>
-     {% if skip_verify == true %} As long as your photo, proof of address and proof of age pass our manual checks, we'll send you your bus pass within 5 days. {% else %} As long as your photo passes our manual checks, we'll send you your bus pass within 5 days.{% endif %}
+      You'll receive a confirmation email and text with this reference number.
     </p>
     <p>
-      We'll use this address:
+      You'll also receive another message within 3 days when your bus pass is on it's away.
+    </p>
+
+  <!-- <p><a href="#">Request a confirmation email.</a></p> -->
+    <p>
+     {% if skip_verify == true %} As long as your photo, proof of address and proof of age pass our manual checks, we'll send you your bus pass within 10 days. {% else %} As long as your photo passes our manual checks, we'll send you your bus pass within 5 days.{% endif %}
+    </p>
+    <p>
+      We'll send your bus pass to this address:
     </p>
     <div class="panel panel-border-wide">
       <p>
@@ -35,9 +41,6 @@
 
     <ul class="list list-bullet">
       <li>
-        Your pass will expire in 5 years. If you'd like to receive a notification when it's time to renew your bus pass, <a href="/service-patterns/concessionary-travel/example-service/renewal-notification">sign up for a renewal notification</a>.
-      </li>
-      <li>
         When travelling, you must have your pass with you and present it to the driver to get your free travel.
       </li>
       <li>
@@ -46,11 +49,13 @@
       <li>
         You are not permitted to hold more than one pass.
       </li>
+      <li>
+        Your pass will expire in 5 years. You've signed up to receive a text and email when it's time to renew your pass.
+        <!-- <a href="/service-patterns/concessionary-travel/example-service/renewal-notification">sign up for a renewal notification</a>. -->
+      </li>
     </ul>
 
-    <p>
-      Whilst we process your application, we can send you notifications of it's progress. <a href="/service-patterns/concessionary-travel/example-service/add_contact_details">Sign up for a progress notifications</a>.
-    </p>
+    {% include "common-content/verify-reuse.html" %}
 
     </div>
 
