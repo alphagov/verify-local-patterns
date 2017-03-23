@@ -50,7 +50,11 @@ $toolkit-font-stack: $helvetica-regular;
 // make Sunderland header hrefs white
 #scch1, #scch2, #scch3, #scch4, #scch5, #scch6{
 	color: white;
-} 
+}
+#sccHeaderTable{
+  max-width: 960px;
+  margin: 0 auto;
+}
 #sccHeaderTable table td{
 	border-bottom-style: none;
 }
