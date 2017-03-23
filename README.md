@@ -53,8 +53,11 @@ If you need to add new options for further localisations, either talk to us on S
 
 ### 3. Adding a council stylesheet and template
 
+To make the prototype look like your council's website, you'll need to add CSS and a template HTML file. It's probably best to start with the Argleton one for both.
+
  - The council stylesheets are in `app/assets/sass/`. You should name your file with your `string` option set in step 2. For example if your `string` option is `exampleland`, your stylesheet should be `exampleland.scss`
    - The project uses [Sass](http://sass-lang.com/) for writing CSS. You don't need to use this though, you can just write normal CSS - But either way, you should save your CSS or SCSS file with a `.scss` file extension.
+
  - The layout templates are in `lib/`. The file should be called `lib/[string]_template.html`. (eg `lib/exampleland_template.html`). You should use this file to make the prototype look more like your council website. For example, you can add the HTML for your website's header bar in here.
    - The HTML template language is [Nunjucks](https://mozilla.github.io/nunjucks/). (This allows to use variables and a few other features in HTML.)
 
