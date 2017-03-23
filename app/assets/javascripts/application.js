@@ -77,16 +77,16 @@ $(document).ready(function () {
         console.log('i checked the box');
         console.log('email',emailChecked);
         console.log('text',textChecked);
-        //uncheck them
-        if(emailChecked){
-          $('#contact-by-email').prop('checked', false);          
-        }
-        // $('#contact-by-text').prop('checked', false);
       }else{ // if user unchecks box, restore check status
         console.log('i unchecked the box');
         console.log('email',emailChecked);
         console.log('text',textChecked);
-
+      }
+      if(emailChecked){
+        $('#contact-by-email').click();
+      }
+      if(textChecked){
+        $('#contact-by-text').click();
       }
     })
   }
