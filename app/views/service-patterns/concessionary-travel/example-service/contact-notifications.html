@@ -1,19 +1,19 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Progress alerts" %}
+{% set pageTitle = "Renewal notification" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    We can also send you progress alerts whilst you wait for your bus pass.
+    We can also send you a reminder in 5 years to renew your pass.
   </p>
 
   <p>
     <strong class="bold-medium">
-    How do you want to receive progress alerts?
+    How do you want to receive your renewal notification?
     </strong>
   </p>
 
@@ -21,30 +21,27 @@
     <div class="form-group">
       <fieldset>
 
-        <legend class="visually-hidden">How do you want to receive progress alerts?</legend>
+        <legend class="visually-hidden">
+          How do you want to receive your renewal notification?
+        </legend>
 
-        <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-          <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
+          <input id="contact-by-email" type="checkbox" name="checkbox-group" value="Yes">
           Email
         </label>
-        <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
           <label class="form-label" for="contact-email">Email address</label>
           <input class="form-control" name="contact-email" type="text" id="contact-email">
         </div>
 
-        <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
-          <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+        <label class="block-label selection-button-checkbox" data-target="contact-by-text-input" for="contact-by-text">
+          <input id="contact-by-text" type="checkbox" name="checkbox-contact-group" value="No">
           Text message
         </label>
-        <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
           <label class="form-label" for="contact-text-message">Mobile phone number</label>
           <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
         </div>
-
-        <label class="block-label selection-button-radio" data-target="no-contact" for="no-contact">
-          <input id="no-contact" type="radio" name="radio-contact-group" value="No">
-          I don't want email or text progress alerts
-        </label>
 
       </fieldset>
     </div>

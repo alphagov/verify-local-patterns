@@ -1,19 +1,31 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Confirmation message" %}
+{% set pageTitle = "Confirmation messages" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    We can send you your confirmation message by email or text.
+    We'll send you:
   </p>
+  <ul class="list list-bullet">
+    <li>
+      one message now with your reference number
+    </li>
+    <li>
+      one when your pass is on it's way
+    </li>
+  </ul>
+
+  <div class="spacer">
+
+  </div>
 
   <p>
     <strong class="bold-medium">
-    How do you want to receive your confirmation?
+    How do you want to receive your confirmation messages?
     </strong>
   </p>
 
@@ -22,7 +34,7 @@
       <fieldset>
 
         <legend class="visually-hidden">
-          How do you want to receive your confirmation?
+          How do you want to receive your confirmation messages?
         </legend>
 
         <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
