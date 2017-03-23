@@ -29,7 +29,7 @@
     </strong>
   </p>
 
-  <form>
+  <form action="contact-notifications" method="POST">
     <div class="form-group">
       <fieldset>
 
@@ -43,7 +43,7 @@
         </label>
         <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
           <label class="form-label" for="contact-email">Email address</label>
-          <input class="form-control" name="contact-email" type="text" id="contact-email">
+          <input class="form-control" name="contactEmail" type="text" id="contact-email">
         </div>
 
         <label class="block-label selection-button-checkbox" data-target="contact-by-text-input" for="contact-by-text">
@@ -52,14 +52,16 @@
         </label>
         <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
           <label class="form-label" for="contact-text-message">Mobile phone number</label>
-          <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+          <input class="form-control" name="contactText" type="text" id="contact-text-message">
         </div>
 
       </fieldset>
     </div>
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Next" />
+    </div>
   </form>
 
-  <a class="button" role="button" href="contact-notifications">Next</a>
 
 </div>
 
