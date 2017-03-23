@@ -68,27 +68,5 @@ $(document).ready(function () {
     });
   }
 
-  if(window.location.href.indexOf("contact-reference")){
-    $('#no-contact').click(function(e){
-      // if user checks box, store data and uncheck
-      if($(this).prop('checked')){
-        emailChecked = $('#contact-by-email').is(':checked');
-        textChecked = $('#contact-by-text').is(':checked');
-        console.log('i checked the box');
-        console.log('email',emailChecked);
-        console.log('text',textChecked);
-      }else{ // if user unchecks box, restore check status
-        console.log('i unchecked the box');
-        console.log('email',emailChecked);
-        console.log('text',textChecked);
-      }
-      if(emailChecked){
-        $('#contact-by-email').click();
-      }
-      if(textChecked){
-        $('#contact-by-text').click();
-      }
-    })
-  }
 
 })
