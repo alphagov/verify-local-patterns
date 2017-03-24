@@ -21,8 +21,8 @@
         "name": "Buckinghamshire County Council",
         "shortName": "Buckinghamshire",
         "parkingBoundary": "Buckinghamshire",
-        "permitMax": "sixty seven",
-        "permitsCosts": [67, 77, 100, 100],
+        "permitMax": "2",
+        "permitsCosts": [52],
         "permitWait": 0,
         "string": "buckinghamshire"
   }
