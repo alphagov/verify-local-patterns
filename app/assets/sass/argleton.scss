@@ -393,6 +393,32 @@ p.accepted-copy-2 {
   }
 }
 
+.example-photo-box{
+  display: block;
+  border: 5px solid $border-colour;
+  padding: 1em;
+  border-radius: 2px;
+}
+
+.take-photo-page{
+  .circle{
+    margin-right: 12px;
+  }
+  .list-box{
+    margin-left: 50px;
+  }
+  .example-photo-box{
+    margin-bottom: 1em;
+  }
+}
+.photo-device-button{
+  margin-top: 3em;
+}
+
+.spacer{
+  display: block;
+  margin-bottom: 3em;
+}
 .radio-with-bullets{
   ul{
     margin-left: 53px;
