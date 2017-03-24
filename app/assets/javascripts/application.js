@@ -68,4 +68,14 @@ $(document).ready(function () {
     });
   }
 
+  if(window.location.href.indexOf("enter-card")){
+    $('.form').submit(function(e){
+      e.preventDefault();
+      if( !$('#cardNumber').val() ){
+        $('.cards-group').addClass('form-group-error');
+        $('.cards-group').append('<span>Please enter card details</span>');
+      }
+    })
+  }
+
 })
