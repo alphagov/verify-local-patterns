@@ -36,15 +36,6 @@
     "string" : "northumberland"
   },
   {
-    "name": "Unbrandedland Council",
-    "shortName": "Unbrandedland",
-    "parkingBoundary": "Unbrandedland City",
-    "permitMax": "sixty seven",
-    "permitsCosts": [67, 77, 100, 100],
-    "permitWait": 0,
-    "string": "unbranded"
-  },
-  {
     "name": "Buckinghamshire County Council",
     "shortName": "Buckinghamshire",
     "parkingBoundary": "Buckinghamshire",
