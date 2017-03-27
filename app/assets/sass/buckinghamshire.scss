@@ -35,6 +35,10 @@ $toolkit-font-stack: $helvetica-regular;
 }
 
 // possibly should be in govuk styles
+.govuk-box-highlight{
+    clear: both;
+}
+
 .grid-row {
     display: initial;
 }
@@ -450,4 +454,4 @@ p.accepted-copy-2 {
             background-image: url(/public/images/photo/icon-thick-cross.svg);
         }
     }
-}
+  }
