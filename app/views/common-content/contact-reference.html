@@ -1,0 +1,59 @@
+<div class="column-two-thirds">
+
+  <p>
+    We'll send you:
+  </p>
+  <ul class="list list-bullet">
+    <li>
+      one message now with your reference number
+    </li>
+    <li>
+      one when your {{item}} is on it's way
+    </li>
+  </ul>
+
+  <div class="spacer">
+
+  </div>
+
+  <p>
+    <strong class="bold-medium">
+    How do you want to receive your confirmation messages?
+    </strong>
+  </p>
+
+  <form action="contact-notifications" method="POST">
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">
+          How do you want to receive your confirmation messages?
+        </legend>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
+          <input id="contact-by-email" type="checkbox" name="checkbox-group" value="Yes">
+          Email
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contactEmail" type="text" id="contact-email">
+        </div>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-text-input" for="contact-by-text">
+          <input id="contact-by-text" type="checkbox" name="checkbox-contact-group" value="No">
+          Text message
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
+          <label class="form-label" for="contact-text-message">Mobile phone number</label>
+          <input class="form-control" name="contactText" type="text" id="contact-text-message">
+        </div>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Next" />
+    </div>
+  </form>
+
+
+</div>

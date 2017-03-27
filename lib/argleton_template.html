@@ -1,7 +1,7 @@
 {% block top_of_page %}{% endblock %}
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="{{ html_lang|default('en') }}"><![endif]-->
-<!--[if gt IE 8]><!--><html class="unbranded" lang="{{ html_lang|default('en') }}"><!--<![endif]-->
+<!--[if gt IE 8]><!--><html class="unbranded govukish" lang="{{ html_lang|default('en') }}"><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     {% if serviceName == pageTitle %}
@@ -9,14 +9,20 @@
     {% endif %}
     <title>{{council.name}}: {{serviceName}} {{" " if startPage else " - " + pageTitle }} </title>
 
-    <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" /><!--<![endif]-->
+  <!-- start govukish styles -->
+
+    <!--[if gt IE 8]><!-->
+    <link href="{{ asset_path }}stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" />
+    <!--<![endif]-->
     <!--[if IE 6]><link href="{{ asset_path }}stylesheets/govuk-template-ie6.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
     <!--[if IE 7]><link href="{{ asset_path }}stylesheets/govuk-template-ie7.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
     <!--[if IE 8]><link href="{{ asset_path }}stylesheets/govuk-template-ie8.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
     <link href="{{ asset_path }}stylesheets/govuk-template-print.css?0.18.3" media="print" rel="stylesheet" />
 
     <!--[if IE 8]><link href="{{ asset_path }}stylesheets/fonts-ie8.css?0.18.3" media="all" rel="stylesheet" /><![endif]-->
-    <!--[if gte IE 9]><!--><link href="{{ asset_path }}stylesheets/fonts.css?0.18.3" media="all" rel="stylesheet" /><!--<![endif]-->
+    <!--[if gte IE 9]><!-->
+    <link href="{{ asset_path }}stylesheets/fonts.css?0.18.3" media="all" rel="stylesheet" />
+    <!--<![endif]-->
     <!--[if lt IE 9]><script src="{{ asset_path }}javascripts/ie.js?0.18.3"></script><![endif]-->
 
     <link rel="shortcut icon" href="{{ asset_path }}images/favicon.ico?0.18.3" type="image/x-icon" />
@@ -25,6 +31,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
     <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
+
+  <!-- end govukish styles -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.18.3">

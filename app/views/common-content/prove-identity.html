@@ -1,0 +1,61 @@
+
+<div class="column-two-thirds">
+  <p>
+      We need to make sure that you are eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
+  </p>
+
+  <form>
+    {% set formTitle = "How do you want to claim your resident's parking permit?" if serviceString == "parking-permit" else "How do you want to claim your older person's bus pass?" %}
+
+    <h2 class="heading-medium">{{formTitle}}</h2>
+    <legend class="visually-hidden">{{formTitle}}</legend>
+
+    <div class="radio-with-bullets">
+      <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
+        <input id="verify-option" type="radio" name="radio-group" value="pre-verify">
+        <span class="heading-small">Sign in with GOV.UK Verify</span>
+      </label>
+
+      <div class="form-group verify">
+        <ul class="list">
+          <li>
+            Your permit will arrive within 5 working days
+          </li>
+          <li>
+            To sign up, you'll need to answer identity questions online
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group or">
+      <p>
+        Or
+      </p>
+    </div>
+
+  <div class="radio-with-bullets">
+    <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
+      <input id="example-contact-by-email" type="radio" name="radio-group" value="start-non-verify">
+      <span class="heading-small">Scan and upload documents</span>
+    </label>
+
+    <div class="form-group">
+      <ul class="list">
+        <li>
+          Your permit will arrive within 10 working days
+        </li>
+        <li>
+          You'll need to upload and scan 2 documents
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+      <button class="button">Continue</button>
+  </div>
+</form>
+
+</div>
