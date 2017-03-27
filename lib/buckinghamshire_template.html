@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="{{ html_lang|default('en') }}"><![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="unbranded" lang="{{ html_lang|default('en') }}">
+<html class="unbranded govukish" lang="{{ html_lang|default('en') }}">
 <!--<![endif]-->
 
 <head>
     <meta charset="utf-8" /> {% if serviceName == pageTitle %} {% set startPage = true %} {% endif %}
     <title>{{council.name}}: {{serviceName}} {{" " if startPage else " - " + pageTitle }} </title>
+
+  <!-- start govukish styles -->
 
     <!--[if gt IE 8]><!-->
     <link href="{{ asset_path }}stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" />
@@ -29,6 +31,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
     <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
+
+  <!-- end govuk styles -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.18.3"> {% block head %}{% endblock %}
