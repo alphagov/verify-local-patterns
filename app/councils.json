@@ -1,13 +1,40 @@
 [
   {
-    "name" : "Argleton County Council",
+    "name": "Argleton County Council",
     "shortName": "Argleton",
     "parkingBoundary": "Argleton City Centre",
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
     "permitWait": 5,
-    "string" : "argleton"
+    "string": "argleton"
   },
+  {
+    "name": "Buckinghamshire County Council",
+    "shortName": "Buckinghamshire",
+    "parkingBoundary": "Buckinghamshire",
+    "permitMax": "2",
+    "permitsCosts": [52],
+    "permitWait": 0,
+    "string": "buckinghamshire"
+  },
+  {
+    "name" : "Northumberland County Council",
+    "shortName" : "Northumberland",
+    "parkingBoundary" : "Northumberland Council",
+    "permitMax": "two",
+    "permitsCosts": [130,130,130,130],
+    "permitWait": 0,
+    "string" : "northumberland"
+  },
+  {
+    "name" : "Sunderland City Council",
+    "shortName": "Sunderland",
+    "parkingBoundary": "Sunderland City Centre",
+    "permitMax": "five",
+    "permitsCosts": [0, 20, 40, 60],
+    "permitWait": 3,
+    "string" : "sunderland"
+    },
   {
     "name" : "Unbrandedland Council",
     "shortName" : "Unbrandedland",

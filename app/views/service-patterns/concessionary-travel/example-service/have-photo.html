@@ -1,0 +1,43 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Your bus pass photo" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+    <h2 class="heading-medium">Is your photo on this computer?</h2>
+
+      <form>
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visually-hidden">
+              Is your photo on this computer?
+            </legend>
+
+            <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
+              <input id="upload-file" type="radio" name="radio-group" value="upload">
+              Yes
+            </label>
+
+            <label class="block-label selection-button-radio" data-target="no" for="no">
+              <input id="no" type="radio" name="radio-group" value="need-camera" class="in-progress">
+              No
+            </label>
+
+            <label class="block-label selection-button-radio" data-target="dunno" for="dunno">
+              <input id="dunno" type="radio" name="radio-group" value="need-camera" class="in-progress">
+              I'm not sure
+            </label>
+
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <button id="photo-label-text" class="button">Continue</button>
+        </div>
+      </form>
+</div>
+
+{% endblock %}

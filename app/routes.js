@@ -6,45 +6,27 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// add your routes here
+// make radio-group button routes work
 
-router.get('/service-patterns/parking-permit/example-service/resident-choice', function (req, res) {
+router.get('*/example-service/*', function (req, res) {
 
-  // get the answer from the query string (eg. ?over18=false)
-  var resident = req.query['resident'];
-
-  if (resident){
-
-    // redirect to the relevant page
-    res.redirect(resident);
-
-  } else {
-
-    // if radio-group is any other value (or is missing) render the page requested
-    res.render('service-patterns/parking-permit/example-service/resident-choice');
-
-  }
-
-});
-
-router.get('/service-patterns/parking-permit/example-service/choose-payment', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
   var radioGroup = req.query['radio-group'];
 
-  if (radioGroup){
+  if (radioGroup) {
 
-    // redirect to the relevant page
     res.redirect(radioGroup);
 
   } else {
 
     // if radio-group is any other value (or is missing) render the page requested
-    res.render('service-patterns/parking-permit/example-service/choose-payment');
+
+    var str = req.path;
+    res.render( str.substring(1) );
 
   }
-
 });
+
+// add your routes here
 
 router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)

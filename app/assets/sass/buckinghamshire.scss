@@ -1,0 +1,68 @@
+@import 'patterns/_govukish.scss';
+
+// bcc header
+header {
+    border-top: 11px solid #97c34b;
+    background-color: #ffffff;
+    padding: 0px 15px 0px;
+    font-size: 1.375em;
+    -webkit-box-shadow: 0 -8px 30px rgba(0, 0, 0, .07) inset;
+    -moz-box-shadow: 0 -8px 30px rgba(0, 0, 0, .07) inset;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, .07) inset;
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 15px 0;
+    }
+    img {
+        width: 2em;
+        vertical-align: middle;
+        margin-right: .5em;
+    }
+}
+
+.contact-link {
+    text-align: right;
+    font-size: .75em;
+    padding-bottom: .33em;
+}
+
+// bcc content
+.breadcrumbs {
+    padding: 28px 0;
+}
+
+.breadcrumbs a {
+    color: #547f35;
+    font-weight: 700;
+}
+
+footer {
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 40px 0;
+        background: url(http://www.buckscc.gov.uk/content/images/footer-bg.png) no-repeat;
+        background-size: 960px;
+        background-position: bottom right;
+        height: inherit;
+    }
+    li {
+        float: left;
+        padding: 0 10px;
+        line-height: 18px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    ul {
+        padding: 43px 0;
+    }
+}
+
+#footer a {
+    color: #547f35;
+}
+
+#footer a:hover {
+    color: #395a22;
+}

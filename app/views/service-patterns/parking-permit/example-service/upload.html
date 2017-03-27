@@ -1,0 +1,34 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Upload v5 Document" %}
+
+{% block content %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p>We need to see your v5 document.</p>
+
+           
+            <h2 class="heading-medium">Upload your document</h2>
+
+              <form action="contact/finished">
+                <div class="form-group">
+                 
+                </div>
+                <div class="form-group file-upload">
+                  <label for="photo" class="button photo-upload-label" role="button">
+                    <span id="photo-label-text" class="">Continue</span>
+                  </label>
+                  <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
+
+                </div>
+              </form>
+
+              <div class="panel panel-border-wide">
+                  <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
+              </div>
+        </div>
+    </div>
+
+{% endblock %}
