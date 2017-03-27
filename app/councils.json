@@ -2,7 +2,7 @@
   {
     "name": "Argleton County Council",
     "shortName": "Argleton",
-    "parkingBoundary": "Argleton City Centre",
+    "parkingBoundary": "Argleton city centre",
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
     "permitWait": 5,
@@ -38,7 +38,7 @@
   {
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
-    "parkingBoundary": "Sunderland City Centre",
+    "parkingBoundary": "Sunderland city centre",
     "permitMax": "five",
     "permitsCosts": [0, 20, 40, 60],
     "permitWait": 3,
@@ -47,7 +47,7 @@
   {
     "name" : "Unbrandedland Council",
     "shortName" : "Unbrandedland",
-    "parkingBoundary" : "Unbrandedland City",
+    "parkingBoundary" : "Unbrandedland city",
     "permitMax": "sixty seven",
     "permitsCosts": [67, 77, 100, 100],
     "permitWait": 0,
