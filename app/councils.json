@@ -9,15 +9,6 @@
     "string": "argleton"
   },
   {
-    "name" : "Cambridgeshire County Council",
-    "shortName": "Cambridgeshire",
-    "parkingBoundary": "Cambridgeshire city centre",
-    "permitMax": "unlimited",
-    "permitsCosts": [51,61,71,120],
-    "permitWait": 5,
-    "string" : "cambridgeshire"
-  },
-  {
     "name": "Buckinghamshire County Council",
     "shortName": "Buckinghamshire",
     "parkingBoundary": "Buckinghamshire",
@@ -25,6 +16,15 @@
     "permitsCosts": [52],
     "permitWait": 0,
     "string": "buckinghamshire"
+  },
+  {
+    "name" : "Cambridgeshire County Council",
+    "shortName": "Cambridgeshire",
+    "parkingBoundary": "Cambridgeshire city centre",
+    "permitMax": "unlimited",
+    "permitsCosts": [51,61,71,120],
+    "permitWait": 5,
+    "string" : "cambridgeshire"
   },
   {
     "name" : "Northumberland County Council",
