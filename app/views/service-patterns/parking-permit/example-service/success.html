@@ -5,6 +5,13 @@
 
 {% block content %}
 
+<div class="govuk-box-highlight">
+  <p>
+    Your reference number is <br>
+    <strong class="heading-large">HDJ2123F</strong>
+  </p>
+</div>
+
   <div class="column-two-thirds">
     {% if contactChoice == 'Email' %}
     <p>You should receive a confirmation email within the next minute.</p>
@@ -13,7 +20,7 @@
     {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
     {% else %}
-    <p>You have not signed up to receive a confirmation email. <a href="contact-details">Sign up for confirmation and progress alerts.</a></p>
+    <p>You have not signed up to receive a confirmation email. <a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
     {% endif %}
 
     {% if council.permitWait < 1 %}
@@ -25,7 +32,7 @@
       You can expect your permit to arrive within 5 working days.
     </p>
     <p>
-      We'll send it to this address:
+      We'll send your parking permit to this address:
     </p>
     <div class="panel panel-border-wide">
       <p>
@@ -40,7 +47,23 @@
       In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
     </p>
     {% endif %}
+
+    <h2 class="heading-medium">About your parking permit</h2>
+
+    <ul class="list list-bullet">
+      <li>
+        Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
+      </li>
+      <li>
+        Your permit expires in 12 months. You've signed up to receive an email and text when your permit expires.
+      </li>
+    </ul>
+
+    {% include "common-content/verify-reuse.html" %}
+
   </div>
+
+
 
 
 </main>
