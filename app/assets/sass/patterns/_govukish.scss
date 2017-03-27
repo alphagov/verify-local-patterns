@@ -12,7 +12,7 @@
 
   // Override the govuk_frontend_toolkit's font stack
   // https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_font_stack.scss#L13
-  $toolkit-font-stack: $helvetica-regular;
+  $toolkit-font-stack: $helvetica-regular !important;
 
 .govukish{
 
@@ -192,7 +192,6 @@
     .payment-summary {
       display: inline-block;
       border: 7px solid #DEE0E2;
-      background-color: #fdfdf6;
       padding: .6em 1em 0;
       margin-bottom: 30px;
       margin-top: 30px;
@@ -204,7 +203,6 @@
     }
 
     .form-group{
-      background: beige;
       margin-bottom: 0;
       padding-bottom: 30px;
     }
