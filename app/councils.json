@@ -25,5 +25,14 @@
     "permitsCosts": [130,130,130,130],
     "permitWait": 0,
     "string" : "northumberland"
+  },
+  {
+    "name" : "Oxfordshire County Council",
+    "shortName" : "Oxfordshire",
+  "parkingBoundary" : "Oxfordshire County Council",
+    "permitMax": "two",
+    "permitsCosts": [60,120,130,130],
+    "permitWait": 0,
+    "string" : "oxfordshire"
   }
 ]
