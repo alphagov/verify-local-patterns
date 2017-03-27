@@ -63,6 +63,18 @@ To make the prototype look like your council's website, you'll need to add CSS a
 
 Once you've added the above, you should be able to step through your prototype. Do what you can with those two files to make the prototype look like the live service will look on your council's website.
 
+### Optional: Un-govuk-ing your local version
+
+By default, your localised prototype will follow an unbranded version of [GOV.UK elements](http://govuk-elements.herokuapp.com/). This means form elements, text spacing etc, will look like GOV.UK, but the font will be Helvetica instead of New Transport.
+
+You can turn this of if you want your prototype to look more like your website. To get rid of all GOV.UK-ish styling, do the following:
+
+ 1. Remove the `govukish` class from the `<html>` tag in your `lib/[string]_template.html` file.
+ 2. Remove the lines between the `<!-- start govukish styles -->` and `<!-- end govukish styles -->` also in your `lib/[string]_template.html` file.
+ 3. Remove the line `@import 'patterns/_govukish.scss';` from your `app/assets/sass/[string].scss` file.
+
+This should leave your version completely unstyled, and you can drop all your council's styling in `app/assets/sass/[string].scss` as you would anyway.
+
 ### 4. Making a pull request
 
 Once you're happy with your changes, [make a pull request from your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) to merge into the master branch of this repository.
