@@ -17,7 +17,11 @@
   {% set singleCost = council.permitsCosts[0] %}
   {% endif %}
   <p>
+  {% if council.customPriceLogic %}
+    {{council.customPriceLogic | safe}}
+  {% else %}
     Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and how many other other permits have been bought by your household.{% endif %}
+  {% endif %}
   </p>
   <p>
     If you don't live in {{council.shortName}}, you need to <a href="https://www.gov.uk/find-local-council">find your local council</a>.
