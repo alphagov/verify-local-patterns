@@ -46,6 +46,14 @@
   </tr>
 </table>
 
+{% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+{% set singleCost = council.permitsCosts[0] %}
+{% endif %}
+
+<p>
+  {% if council.customPriceLogic or singleCost %}Your{% else %}Based on this information, your{% endif %} parking permit options are:
+</p>
+
 {% if(council.permitsCosts[0] > 0) %}
 {% set halfCost = council.permitsCosts[0] / 2 %}
 {% set halfCost = halfCost.toFixed(2) %}
@@ -54,10 +62,6 @@
 {% set halfCost = 0 %}
 {% set fullCost = 0 %}
 {% endif %}
-
-<p>
-  {{ "Based on this information, y" if not council.customPriceLogic else "Y" }}our parking permit options are:
-</p>
 
 <form action="permit-details" method="post">
   <div class="form-group">
