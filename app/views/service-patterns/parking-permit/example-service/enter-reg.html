@@ -7,6 +7,14 @@
 
 <div class="column-two-thirds">
 
+  {% if council.customPriceLogic %}
+  
+  <p>
+    We need your vehicle's registration number to associate your permit with your vehicle
+  </p>
+
+  {% else %}
+
   <p>
     We need your vehicle's registration number to
   </p>
@@ -19,6 +27,7 @@
       associate your permit with your vehicle
     </li>
   </ul>
+  {% endif %}
 
   <div class="form-group">
       <form method="post">
