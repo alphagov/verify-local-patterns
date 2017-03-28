@@ -56,7 +56,7 @@
 {% endif %}
 
 <p>
-  Based on this information, your parking permit options are:
+  {{ "Based on this information, y" if not council.customPriceLogic else "Y" }}our parking permit options are:
 </p>
 
 <form action="permit-details" method="post">
