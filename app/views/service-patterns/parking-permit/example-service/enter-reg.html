@@ -24,7 +24,7 @@
     </li>
   </ul>
 
-  <h2 class="heading-medium">Enter your vehicle's registration numbers</h2>
+  <h2 class="heading-medium">Enter your vehicle's registration number{{"s" if r > 1}}</h2>
 
   {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
   {% set r = r / 10 %}
@@ -33,9 +33,9 @@
     <div class="form-group">
         <form method="post">
             <fieldset>
-                <legend class="visuallyhidden">Vehicle {{i}}</legend>
+                {% if r > 1 %}<legend class="visuallyhidden">Vehicle {{i}}</legend>{% endif %}
                 <div>
-                    <label class="form-label" for="postcode">Vehicle {{i}}</label>
+                    {% if r > 1 %}<label class="form-label" for="postcode">Vehicle {{i}}</label>{% endif %}
                     <input class="reg-number" id="reg-number-{{i}}" name="reg-number-{{i}}" type="text" aria-invalid="false" value="">
                 </div>
             </fieldset>
