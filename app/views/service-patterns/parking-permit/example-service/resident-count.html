@@ -1,0 +1,50 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Resident's parking permits" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Your household can have a maximum of {{council.permitMax}}.
+  </p>
+
+  <h2 class="heading-medium">How many resident's parking permits do you need?</h2>
+  {% if council.permitMax < 7 %}
+  <form>
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">How many resident's parking permits do you need?</legend>
+
+        {% set totalPrice = council.permitsCosts[0] %}
+        {% set maxPlusOne = council.permitMax + 1 %}
+        {% for i in range(1, maxPlusOne) %}
+        <div class="multiple-choice">
+          <label class="block-label selection-button-radio" for="radio-{{i}}">
+            <input id="radio-{{i}}" type="radio" name="radio-group" value="{{i}}">
+            <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span> - costs £{{totalPrice}}
+          </label>
+        </div>
+        {% set totalPrice = totalPrice + council.permitsCosts[i] %}
+        {% endfor %}
+
+      </fieldset>
+    </div>
+  </form>
+
+  {% else %}
+
+  <div class="form-group">
+    <input name="residentAmount" type="number" min="1" max="{{council.permitMax}}" />
+  </div>
+
+  {% endif %}
+
+  <a class="button" role="button" href="guest-count">Next</a>
+
+</div>
+
+{% endblock %}
