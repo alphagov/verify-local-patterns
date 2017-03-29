@@ -7,7 +7,8 @@
     "permitsCosts": [51, 81, 153, 153],
     "permitWait": 5,
     "string": "argleton",
-    "customPriceLogic": "Permits cost between £51 and £153 depending on where you want to park. You'll need to <a href='#'>check the boundaries</a> to find your price."
+    "customPriceLogic": "Permits cost between £51 and £153 depending on where you want to park. You'll need to <a href='#'>check the boundaries</a> to find your price.",
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
   },
   {
     "name": "Buckinghamshire County Council",
