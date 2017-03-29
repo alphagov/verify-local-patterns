@@ -6,7 +6,8 @@
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
     "permitWait": 5,
-    "string": "argleton"
+    "string": "argleton",
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
   },
   {
     "name": "Buckinghamshire County Council",
