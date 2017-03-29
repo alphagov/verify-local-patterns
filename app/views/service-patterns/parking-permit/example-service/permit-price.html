@@ -7,6 +7,8 @@
 
 <div class="column-two-thirds">
 
+{% if not council.customPriceLogic %}
+
 <p>
   We've received these details from DVLA:
 </p>
@@ -45,6 +47,9 @@
     </th>
   </tr>
 </table>
+
+{% endif %}
+
 
 {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
 {% set singleCost = council.permitsCosts[0] %}
