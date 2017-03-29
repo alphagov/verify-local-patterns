@@ -2,29 +2,29 @@
 
 {% set serviceName = "Apply for a resident's parking permit" %}
 {% set pageTitle = "We cannot issue you with any more parking permits" %}
-  
+
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
     {% if council.limitByHousehold %}
-      {% if council.permitMax=="one" %} 
+      {% if council.permitMax==1 %}
         Only one parking permit can be issued for each eligible address, so you cannot get another one.
-      {% else %} 
+      {% else %}
         We have already issued the maximum of {{council.permitMax}} parking permits for this address, so you cannot get another one.
       {% endif %}
     {% else %}
-      {% if council.permitMax=="one" %} 
+      {% if council.permitMax==1 %} 
         Residents of {{council.shortName}} are eligible for one parking permit each, so you cannot get another one.
-      {% else %} 
+      {% else %}
         Residents of {{council.shortName}} are eligible for {{council.permitMax}} parking permits each, so you cannot get another one.
       {% endif %}
     {% endif %}
   </p>
   <p>
-    If you think there has been a mistake you should <a href="#">contact the council</a>. 
-    
+    If you think there has been a mistake you should <a href="#">contact the council</a>.
+
     It's possible that there are old permits that need to be cancelled.
   </p>
 
