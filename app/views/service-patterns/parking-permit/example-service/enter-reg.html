@@ -6,9 +6,13 @@
 {% block content %}
 
 <div class="column-two-thirds">
+  {% set r = residentAmount %}
+  <p>
+    You've chosen {{r}} resident's parking permit{{"s" if r > 1}}.
+  </p>
 
   <p>
-    We need your vehicle's registration number to
+    We need your vehicle's registration number{{"s" if r > 1}} to
   </p>
 
   <ul class="list list-bullet">
@@ -20,17 +24,25 @@
     </li>
   </ul>
 
-  <div class="form-group">
-      <form method="post">
-          <fieldset>
-              <legend class="visuallyhidden">Enter your vehicle's registration number</legend>
-              <div>
-                  <label class="form-label" for="postcode">Enter your vehicle's registration number</label>
-                  <input class="reg-number" id="reg-number" name="reg-number" type="text" aria-invalid="false" value="">
-              </div>
-          </fieldset>
-      </form>
-  </div>
+  <h2 class="heading-medium">Enter your vehicle's registration numbers</h2>
+
+  {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
+  {% set r = r / 10 %}
+  {% set r = r * 10 %}
+  {% for i in range(1, r + 1) %}
+    <div class="form-group">
+        <form method="post">
+            <fieldset>
+                <legend class="visuallyhidden">Vehicle {{i}}</legend>
+                <div>
+                    <label class="form-label" for="postcode">Vehicle {{i}}</label>
+                    <input class="reg-number" id="reg-number-{{i}}" name="reg-number-{{i}}" type="text" aria-invalid="false" value="">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+  {% endfor %}
+
 
 
 
