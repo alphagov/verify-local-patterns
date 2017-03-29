@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Do you have a bus pass photo?" %}
+{% set pageTitle = "Your bus pass photo" %}
 
 {% block content %}
 
@@ -10,12 +10,16 @@
 
     {% include 'common-content/example-photo.html' %}
 
+
+
+    <h2 class="heading-medium">Do you have a photo like this?</h2>
+
       <form>
         <div class="form-group">
           <fieldset class="inline">
 
             <legend class="visually-hidden">
-              Do you have a bus pass photo?
+              Do you have a photo like this?
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
@@ -34,6 +38,7 @@
             <button class="button">Continue</button>
         </div>
 
+        </div>
       </form>
 
 </div>
