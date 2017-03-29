@@ -1,18 +1,23 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "You are eligible for a parking permit in " + council.parkingBoundary %}
+{% set pageTitle = "You are eligible for parking permits in " + council.parkingBoundary %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    The permit will allow you to park in the city centre 24 hours a day.
+    Parking permits allow you to park in {{council.parkingBoundary}} 24 hours a day.
+  </p>
+  <p>
+    Your household can buy up to {{council.permitMax}} resident's parking permits.
+  </p>
+  <p>
+    You can also buy additional permits for your guests.
   </p>
 
   <a class="button" role="button" href="enter-reg">Next</a>
-
 
 </div>
 
