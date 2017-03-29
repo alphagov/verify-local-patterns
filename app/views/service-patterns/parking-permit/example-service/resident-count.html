@@ -7,12 +7,11 @@
 
 <div class="column-two-thirds">
 
+  {% if council.permitMax < 7 %}
   <p>
     Your household can have a maximum of {{council.permitMax}}.
   </p>
 
-  <h2 class="heading-medium">How many resident's parking permits do you need?</h2>
-  {% if council.permitMax < 7 %}
   <form>
     <div class="form-group">
       <fieldset>
@@ -22,13 +21,19 @@
         {% set totalPrice = council.permitsCosts[0] %}
         {% set maxPlusOne = council.permitMax + 1 %}
         {% for i in range(1, maxPlusOne) %}
-        <div class="multiple-choice">
-          <label class="block-label selection-button-radio" for="radio-{{i}}">
-            <input id="radio-{{i}}" type="radio" name="radio-group" value="{{i}}">
-            <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span> - costs £{{totalPrice}}
-          </label>
-        </div>
-        {% set totalPrice = totalPrice + council.permitsCosts[i] %}
+          <div class="multiple-choice">
+            <label class="block-label selection-button-radio" for="radio-{{i}}">
+              <input id="radio-{{i}}" type="radio" name="radio-group" value="{{i}}">
+              <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span> - costs £{{totalPrice}}
+            </label>
+          </div>
+          {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+            {% set totalPrice = totalPrice + totalPrice %}
+          {% elseif i == council.permitsCosts.length %}
+            {% set totalPrice = totalPrice + council.permitsCosts[council.permitsCosts.length-1] %}
+          {% else %}
+            {% set totalPrice = totalPrice + council.permitsCosts[i] %}
+          {% endif %}
         {% endfor %}
 
       </fieldset>
@@ -36,6 +41,27 @@
   </form>
 
   {% else %}
+
+  <p>
+    Resident's parking permits are priced based on how many your household has.
+  </p>
+
+  <ul class="list list-bullet">
+    <li>
+      The first permit costs £{{council.permitsCosts[0]}}.
+    </li>
+    <li>
+      The second permit costs £{{council.permitsCosts[1]}}.
+    </li>
+    <li>
+      The third permit costs £{{council.permitsCosts[2]}}.
+    </li>
+    <li>
+      The fourth, and any further permits, cost £{{council.permitsCosts[3]}} each.
+    </li>
+  </ul>
+
+  <h2 class="heading-medium">How many resident's parking permits do you need?</h2>
 
   <div class="form-group">
     <input name="residentAmount" type="number" min="1" max="{{council.permitMax}}" />
