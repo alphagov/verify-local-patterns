@@ -7,57 +7,63 @@
 
 <div class="column-two-thirds">
 
-{% if not council.customPriceLogic %}
+  {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+  {% set singleCost = council.permitsCosts[0] %}
+  {% endif %}
 
-<p>
-  We've received these details from DVLA:
-</p>
+  {% if council.customPriceLogic or singleCost %}
+  
+    <p>
+      Your parking permit options are:
+    </p>
 
-<table>
-  <tr>
-    <th>
-      Registration number
-    </th>
-    <th>
-      KS53 UTW
-    </th>
-  </tr>
-  <tr>
-    <th>
-      Vehicle make
-    </th>
-    <th>
-      VOLKSWAGEN
-    </th>
-  </tr>
-  <tr>
-    <th>
-      Cylinder capacity (cc)
-    </th>
-    <th>
-      1984cc
-    </th>
-  </tr>
-  <tr>
-    <th>
-      CO₂ emissions
-    </th>
-    <th>
-      192 g/km
-    </th>
-  </tr>
-</table>
+  {% else %}
 
-{% endif %}
+    <p>
+      We've received these details from DVLA:
+    </p>
 
+    <table>
+      <tr>
+        <th>
+          Registration number
+        </th>
+        <th>
+          KS53 UTW
+        </th>
+      </tr>
+      <tr>
+        <th>
+          Vehicle make
+        </th>
+        <th>
+          VOLKSWAGEN
+        </th>
+      </tr>
+      <tr>
+        <th>
+          Cylinder capacity (cc)
+        </th>
+        <th>
+          1984cc
+        </th>
+      </tr>
+      <tr>
+        <th>
+          CO₂ emissions
+        </th>
+        <th>
+          192 g/km
+        </th>
+      </tr>
+    </table>
 
-{% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-{% set singleCost = council.permitsCosts[0] %}
-{% endif %}
+    <p>
+      Based on this information, your parking permit options are:
+    </p>
 
-<p>
-  {% if council.customPriceLogic or singleCost %}Your{% else %}Based on this information, your{% endif %} parking permit options are:
-</p>
+  {% endif %}
+
 
 {% if(council.permitsCosts[0] > 0) %}
 {% set halfCost = council.permitsCosts[0] / 2 %}
