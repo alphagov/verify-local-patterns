@@ -83,17 +83,20 @@
       You'll set the permit start date in the next step.
     </p>
 
+    <input type="submit" class="button" value="Next" />
+
+  </form>
+
 {% else %}
 
   <p>
     Based on this information, your permit will cost £{{council.permitsCosts[0]}}.
   </p>
 
+  <a href="permit-details" class="button">Next</a>
+
 {% endif %}
 
-  <input type="submit" class="button" value="Next" />
-
-</form>
 
 
 
