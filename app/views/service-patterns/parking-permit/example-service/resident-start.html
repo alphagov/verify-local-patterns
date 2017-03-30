@@ -53,7 +53,10 @@
       </li>
       {% else %}
       <li>
-        Your permit will take {{council.permitWait}} working days to arrive. While you wait, you'll need to use a temporary permit which we will email to you.
+        Your permit will take {{council.permitWait}} working days to arrive. 
+        {% if council.tempPermit == true %}
+        While you wait, you'll need to use a temporary permit which we will email to you.
+        {% endif %}
       </li>
       {% endif %}
       <li>

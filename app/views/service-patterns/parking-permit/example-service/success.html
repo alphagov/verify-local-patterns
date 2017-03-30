@@ -43,9 +43,12 @@
       </p>
       <a href="#">Provide a different address</a>
     </div>
+    {% if council.tempPermit == true %}
     <p>
       In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
     </p>
+    {% endif %}
+    
     {% endif %}
 
     <h2 class="heading-medium">About your parking permit</h2>
