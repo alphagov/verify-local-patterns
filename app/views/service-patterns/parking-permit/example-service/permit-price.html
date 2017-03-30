@@ -7,6 +7,8 @@
 
 <div class="column-two-thirds">
 
+{% if not council.customPriceLogic %}
+
 <p>
   We've received these details from DVLA:
 </p>
@@ -46,6 +48,8 @@
   </tr>
 </table>
 
+{% endif %}
+
 {% if(council.permitsCosts[0] > 0) %}
 {% set halfCost = council.permitsCosts[0] / 2 %}
 {% set halfCost = halfCost.toFixed(2) %}
@@ -56,7 +60,7 @@
 {% endif %}
 
 <p>
-  Based on this information, your parking permit options are:
+  {{ "Based on this information, y" if not council.customPriceLogic else "Y" }}our parking permit options are:
 </p>
 
 <form action="permit-details" method="post">

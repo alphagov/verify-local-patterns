@@ -10,12 +10,18 @@
   <p>
     Residents of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} can buy resident's parking permits.
   </p>
-  <p>
-    These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
-  </p>
-  <p>
-    Permits cost between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[3]}}, depending on your vehicle type and how many other other permits have been bought by your household.
-  </p>
+  {% if council.customPriceLogic %}
+    <p>
+      {{council.customPriceLogic | safe}}
+    </p>
+  {% else %}
+    <p>
+      These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
+    </p>
+    <p>
+      Permits cost between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[3]}}, depending on your vehicle type and how many other other permits have been bought by your household.
+    </p>
+  {% endif %}
   <p>
     If you don't live in {{council.shortName}}, you need to <a href="https://www.gov.uk/find-local-council">find your local council</a>.
   </p>
