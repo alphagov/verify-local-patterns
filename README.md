@@ -53,12 +53,29 @@ If you need to add new options for further localisations, either talk to us on S
 
 ### 3. Adding a council stylesheet and template
 
+To make the prototype look like your council's website, you'll need to add CSS and a template HTML file.
+
+It's best to start by copying the Argleton files for both.
+
  - The council stylesheets are in `app/assets/sass/`. You should name your file with your `string` option set in step 2. For example if your `string` option is `exampleland`, your stylesheet should be `exampleland.scss`
    - The project uses [Sass](http://sass-lang.com/) for writing CSS. You don't need to use this though, you can just write normal CSS - But either way, you should save your CSS or SCSS file with a `.scss` file extension.
- - The layout templates are in `lib/`. The file should be called `[string]_template.html`. (eg `exampleland_template.html`).
-   - The HTML template language is [Nunjucks](https://mozilla.github.io/nunjucks/).
+
+ - The layout templates are in `lib/`. The file should be called `lib/[string]_template.html`. (eg `lib/exampleland_template.html`). You should use this file to make the prototype look more like your council website. For example, you can add the HTML for your website's header bar in here.
+   - The HTML template language is [Nunjucks](https://mozilla.github.io/nunjucks/). (This allows to use variables and a few other features in HTML.)
 
 Once you've added the above, you should be able to step through your prototype. Do what you can with those two files to make the prototype look like the live service will look on your council's website.
+
+### Optional: Un-govuk-ing your local version
+
+By default, your localised prototype will follow an unbranded version of [GOV.UK elements](http://govuk-elements.herokuapp.com/). This means form elements, text spacing etc, will look like GOV.UK, but the font will be Helvetica instead of New Transport.
+
+You can turn this of if you want your prototype to look more like your website. To get rid of all GOV.UK-ish styling, do the following:
+
+ 1. Remove the `govukish` class from the `<html>` tag in your `lib/[string]_template.html` file.
+ 2. Remove the lines between the `<!-- start govukish styles -->` and `<!-- end govukish styles -->` also in your `lib/[string]_template.html` file.
+ 3. Remove the line `@import 'patterns/_govukish.scss';` from your `app/assets/sass/[string].scss` file.
+
+This should leave your version completely unstyled, and you can drop all your council's styling in `app/assets/sass/[string].scss` as you would anyway.
 
 ### 4. Making a pull request
 

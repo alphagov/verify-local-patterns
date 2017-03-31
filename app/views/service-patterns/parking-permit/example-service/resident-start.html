@@ -1,18 +1,47 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a parking permit" %}
-{% set pageTitle = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Apply for a resident's parking permit in " + council.parkingBoundary %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    Residents of {{council.parkingBoundary}} can buy resident's parking permits.
+    Residents of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} can buy resident's parking permits.
   </p>
+
+  {% if council.customPriceLogic %}
+    <p>
+      {{council.customPriceLogic | safe}}
+    </p>
+  {% else %}
+    {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+      {% set singleCost = council.permitsCosts[0] %}
+    {% endif %}
+    <p>
+      Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and how many other other permits have been bought by your household.{% endif %}
+    </p>
+    <p>
+      These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
+    </p>
+  {% endif %}
   <p>
-    These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
+    If you don't live in {{council.shortName}}, you need to <a href="https://www.gov.uk/find-local-council">find your local council</a>.
   </p>
+  <a class="button button-start" href="prove-identity" role="button">Apply for a resident's parking permit</a>
+
+  <p>
+    This service is for new applications. You can also:
+  </p>
+  <ul class="list list-bullet">
+    <li>
+      <a href="#">replace a lost or stolen parking permit</a>
+    </li>
+    <li>
+      <a href="#">renew an expired parking permit</a>
+    </li>
+  </ul>
 
   <h2 class="heading-medium">About this service</h2>
     <ul class="list list-bullet">
@@ -21,9 +50,6 @@
       </li>
       <li>
         Permits can be bought for 6 months or for 12 months.
-      </li>
-       <li>
-         Permits cost between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[3]}} depending on your vehicle type and how many other other permits have been bought by your household.
       </li>
       {% if council.permitWait < 1 %}
       <li>
@@ -42,7 +68,6 @@
       </li>
     </ul>
 
-  <a class="button button-start" href="prove-identity" role="button">Apply online now</a>
 
   <p>
     If you need assistance using the online service, <a href="#">contact {{ council.name }}</a>.

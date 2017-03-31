@@ -1,17 +1,46 @@
 [
   {
-    "name" : "Argleton County Council",
+    "name": "Argleton County Council",
     "shortName": "Argleton",
-    "parkingBoundary": "Argleton City Centre",
+    "parkingBoundary": "Argleton city centre",
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
     "permitWait": 5,
-    "string" : "argleton"
+    "string": "argleton",
+    "customPriceLogic": "Permits cost between £51 and £153 depending on where you want to park. You'll need to <a href='#'>check the boundaries</a> to find your price.</p><p>You can park anywhere within the boundary, at any time, once you have a permit.",
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
+  },
+  {
+    "name": "Buckinghamshire County Council",
+    "shortName": "Buckinghamshire",
+    "parkingBoundary": "Buckinghamshire",
+    "permitMax": "2",
+    "permitsCosts": [52],
+    "permitWait": 0,
+    "string": "buckinghamshire"
+  },
+  {
+    "name" : "Cambridgeshire County Council",
+    "shortName": "Cambridgeshire",
+    "parkingBoundary": "Cambridgeshire city centre",
+    "permitMax": "unlimited",
+    "permitsCosts": [51,61,71,120],
+    "permitWait": 5,
+    "string" : "cambridgeshire"
+  },
+  {
+    "name" : "Northumberland County Council",
+    "shortName" : "Northumberland",
+    "parkingBoundary" : "Northumberland Council",
+    "permitMax": "two",
+    "permitsCosts": [130,130,130,130],
+    "permitWait": 0,
+    "string" : "northumberland"
   },
   {
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
-    "parkingBoundary": "Sunderland City Centre",
+    "parkingBoundary": "Sunderland city centre",
     "permitMax": "five",
     "permitsCosts": [0, 20, 40, 60],
     "permitWait": 3,
@@ -20,7 +49,7 @@
   {
     "name" : "Unbrandedland Council",
     "shortName" : "Unbrandedland",
-    "parkingBoundary" : "Unbrandedland City",
+    "parkingBoundary" : "Unbrandedland city",
     "permitMax": "sixty seven",
     "permitsCosts": [67, 77, 100, 100],
     "permitWait": 0,

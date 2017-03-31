@@ -1,13 +1,15 @@
 {% block top_of_page %}{% endblock %}
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="{{ html_lang|default('en') }}"><![endif]-->
-<!--[if gt IE 8]><!--><html class="sunderland" lang="{{ html_lang|default('en') }}"><!--<![endif]-->
+<!--[if gt IE 8]><!--><html class="govukish sunderland" lang="{{ html_lang|default('en') }}"><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     {% if serviceName == pageTitle %}
     {% set startPage = true %}
     {% endif %}
     <title>{{council.name}}: {{serviceName}} {{" " if startPage else " - " + pageTitle }} </title>
+
+  <!-- start govukish styles -->
 
     <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" /><!--<![endif]-->
     <!--[if IE 6]><link href="{{ asset_path }}stylesheets/govuk-template-ie6.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
@@ -26,9 +28,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
     <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
 
+    <!-- end govukish styles -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.18.3">
-
 
     {% block head %}{% endblock %}
   </head>
@@ -78,7 +81,7 @@
 					<tr>
 						<td><form action="index.aspx?articleid=7" method="get"><input name="articleid" type="hidden" value="7">
 		    		     &nbsp;<input name="keyword" class="searchinput" id="kword" type="text" value="I am looking for...">
-		     <input name="go" class="searchbutton" type="submit" value="Search">		     
+		     <input name="go" class="searchbutton" type="submit" value="Search">
 <input name="returnarticleid" type="hidden" value="5676">
 <input name="articleaction" type="hidden" value="newsearch">
 	     </form></td>
@@ -87,8 +90,8 @@
 						<td><span class="mysunderland-name-extra"><strong>
 						<span lang="en-gb">&nbsp;&nbsp; </span>My Sunderland</strong>
   					  <span lang="en-gb">&nbsp; </span>
-  <a id="scch5" href="http://www.sunderland.gov.uk/index.aspx?articleid=6&amp;returnarticleid=5676">Sign 
-  in</a>&nbsp;<span lang="en-gb">&nbsp; </span><a id="scch6" href="http://www.sunderland.gov.uk/index.aspx?articleid=10472">What's 
+  <a id="scch5" href="http://www.sunderland.gov.uk/index.aspx?articleid=6&amp;returnarticleid=5676">Sign
+  in</a>&nbsp;<span lang="en-gb">&nbsp; </span><a id="scch6" href="http://www.sunderland.gov.uk/index.aspx?articleid=10472">What's
   this?</a></span></td>
 					</tr>
 				</table>
