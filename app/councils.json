@@ -5,10 +5,9 @@
     "parkingBoundary": "Argleton city centre",
     "permitMax": "four",
     "permitsCosts": [51],
-    "sixmonth": false,
+    "sixmonth": true,
     "permitWait": 5,
     "string": "argleton",
-    "customPriceLogic": "Permits cost between £51 and £153 depending on where you want to park. You'll need to <a href='#'>check the boundaries</a> to find your price.</p><p>You can park anywhere within the boundary, at any time, once you have a permit.",
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
   },
   {

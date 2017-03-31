@@ -7,18 +7,52 @@
 
 <div class="column-two-thirds">
 
+  {# setup singleCost variable #}
   {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
     {% set singleCost = council.permitsCosts[0] %}
   {% endif %}
 
-  {% if council.customPriceLogic or singleCost %}
+  {# setup sixmonthchoice macro #}
+  {% macro sixmonthchoice() %}
+    {% if(council.permitsCosts[0] > 0) %}
+      {% set halfCost = council.permitsCosts[0] / 2 %}
+      {% set halfCost = halfCost.toFixed(2) %}
+      {% set fullCost = council.permitsCosts[0].toFixed(2) %}
+    {% else %}
+      {% set halfCost = 0 %}
+      {% set fullCost = 0 %}
+    {% endif %}
+    <form action="permit-details" method="post">
+      <div class="form-group">
+        <fieldset>
 
-    <p>
-      Your parking permit options are:
-    </p>
+          <legend class="visually-hidden">permit length</legend>
 
-  {% else %}
+          <label class="block-label selection-button-radio" for="radio-2">
+            <input id="radio-2" type="radio" name="permitChoice" value="6 month">
+            <span class="heading-small">6 month permit</span> - costs £{{halfCost}}
+          </label>
+          <label class="block-label selection-button-radio" for="radio-3">
+            <input id="radio-3" type="radio" name="permitChoice" value="12 month">
+            <span class="heading-small">12 month permit</span> - costs £{{fullCost}}
+          </label>
 
+        </fieldset>
+      </div>
+
+      <p>
+        You'll set the permit start date in the next step.
+      </p>
+
+      <input type="submit" class="button" value="Next" />
+
+    </form>
+  {% endmacro %}
+
+  {# start of the content #}
+  {% if not singleCost %}
+
+  {# DVLA lookup #}
     <p>
       We've received these details from DVLA:
     </p>
@@ -58,62 +92,34 @@
       </tr>
     </table>
 
-    <p>
-      Based on this information, your parking permit options are:
-    </p>
-
-  {% endif %}
-
-
-  {% if council.sixmonth %}
-
-    {% if(council.permitsCosts[0] > 0) %}
-      {% set halfCost = council.permitsCosts[0] / 2 %}
-      {% set halfCost = halfCost.toFixed(2) %}
-      {% set fullCost = council.permitsCosts[0].toFixed(2) %}
-    {% else %}
-      {% set halfCost = 0 %}
-      {% set fullCost = 0 %}
-    {% endif %}
-
-    <p>
-      Based on this information, your parking permit options are:
-    </p>
-
-          <legend class="visually-hidden">permit length</legend>
-
-          <label class="block-label selection-button-radio" for="radio-2">
-            <input id="radio-2" type="radio" name="permitChoice" value="6 month">
-            <span class="heading-small">6 month permit</span> - costs £{{halfCost}}
-          </label>
-          <label class="block-label selection-button-radio" for="radio-3">
-            <input id="radio-3" type="radio" name="permitChoice" value="12 month">
-            <span class="heading-small">12 month permit</span> - costs £{{fullCost}}
-          </label>
-
-        </fieldset>
-      </div>
-
+    {% if not council.sixmonth %}
       <p>
-        You'll set the permit start date in the next step.
+        Based on this information, your permit will cost £{{council.permitsCosts[0]}}.
       </p>
 
-      <input type="submit" class="button" value="Next" />
+      <a href="permit-details" class="button">Next</a>
+    {% else %}
+      {# pre for 6 month permit choice #}
+      <p>
+        Based on this information, your parking permit options are:
+      </p>
 
-    </form>
+      {{ sixmonthchoice() }}
+
+    {% endif %}
 
   {% else %}
 
+  {# 6 month permit choice #}
+  {# {% if council.sixmonth %} #}
+
     <p>
-      Based on this information, your permit will cost £{{council.permitsCosts[0]}}.
+      Your parking permit options are:
     </p>
+    {{ sixmonthchoice() }}
 
-    <a href="permit-details" class="button">Next</a>
-
+  {# Note: if not sixmonth and singleCost, then user shouldn't see this page at all #}
   {% endif %}
-
-
-
 
 </main>
 
