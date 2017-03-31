@@ -10,16 +10,20 @@
   <p>
     Residents of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} can buy resident's parking permits.
   </p>
+
   {% if council.customPriceLogic %}
     <p>
       {{council.customPriceLogic | safe}}
     </p>
   {% else %}
+    {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+      {% set singleCost = council.permitsCosts[0] %}
+    {% endif %}
     <p>
-      These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
+      Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and how many other other permits have been bought by your household.{% endif %}
     </p>
     <p>
-      Permits cost between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[3]}}, depending on your vehicle type and how many other other permits have been bought by your household.
+      These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
     </p>
   {% endif %}
   <p>
