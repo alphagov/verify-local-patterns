@@ -80,10 +80,14 @@
     <main id="content" role="main">
 
       {% if startPage %}
-      <h1 class="heading-xlarge">{{pageTitle}} in {{council.shortName}}</h1>
+        <div class="column-two-thirds">
+          <h1 class="heading-xlarge">{{pageTitle}} in {{council.shortName}}</h1>
+        </div>
       {% else %}
-      {% include "includes/service_breadcrumbs.html" %}
-      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+        {% include "includes/service_breadcrumbs.html" %}
+        <div class="column-two-thirds">
+          <h1 class="heading-xlarge">{{pageTitle}}</h1>
+        </div>
       {% endif %}
 
       {% block content %}{% endblock %}
