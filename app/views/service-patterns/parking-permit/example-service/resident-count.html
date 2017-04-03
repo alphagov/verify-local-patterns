@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Resident's parking permits" %}
+{% set pageTitle = "How many resident's parking permits do you need?" %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
   <form method="POST" action="enter-reg">
   {% if council.permitMax < 7 %}
   <p>
-    Your household can have a maximum of {{council.permitMax}}.
+    Your household can have a maximum of {{council.permitMax}} resident's parking permits.
   </p>
 
 
