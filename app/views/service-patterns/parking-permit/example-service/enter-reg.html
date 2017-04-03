@@ -10,19 +10,32 @@
   <p>
     You've chosen {{r}} resident's parking permit{{"s" if r > 1}}.
   </p>
+  {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+  {% set singleCost = council.permitsCosts[0] %}
+  {% endif %}
 
-  <p>
-    We need your vehicle's registration number{{"s" if r > 1}} to
-  </p>
+  {% if council.customPriceLogic or singleCost %}
 
-  <ul class="list list-bullet">
-    <li>
-      calculate the price of your permit using DVLA's records
-    </li>
-    <li>
-      associate your permit with your vehicle
-    </li>
-  </ul>
+    <p>
+      We need your vehicle's registration number{{"s" if r > 1}} to associate your permit{{"s" if r > 1}} with your vehicle{{"s" if r > 1}}.
+    </p>
+
+  {% else %}
+
+    <p>
+      We need your vehicle's registration number{{"s" if r > 1}} to
+    </p>
+
+    <ul class="list list-bullet">
+      <li>
+        calculate the price of your permit using DVLA's records
+      </li>
+      <li>
+        associate your permit with your vehicle
+      </li>
+    </ul>
+
+  {% endif %}
 
   <h2 class="heading-medium">Enter your vehicle's registration number{{"s" if r > 1}}</h2>
 
@@ -43,11 +56,7 @@
     </div>
   {% endfor %}
 
-
-
-
   <a class="button" role="button" href="permit-price">Next</a>
-
 
 </div>
 

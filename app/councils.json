@@ -6,7 +6,9 @@
     "permitMax": 4,
     "permitsCosts": [51, 81, 153, 153],
     "permitWait": 5,
+    "tempPermit":true,
     "string": "argleton",
+    "customPriceLogic": "Permits cost between £51 and £153 depending on where you want to park. You'll need to <a href='#'>check the boundaries</a> to find your price.</p><p>You can park anywhere within the boundary, at any time, once you have a permit.",
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
   },
   {
@@ -16,6 +18,7 @@
     "permitMax": 2,
     "permitsCosts": [52],
     "permitWait": 0,
+    "tempPermit":true,
     "string": "buckinghamshire"
   },
   {
@@ -25,6 +28,7 @@
     "permitMax": "unlimited",
     "permitsCosts": [51,61,71,120],
     "permitWait": 5,
+    "tempPermit":true,
     "string" : "cambridgeshire"
   },
   {
@@ -34,6 +38,7 @@
     "permitMax": 2,
     "permitsCosts": [130,130,130,130],
     "permitWait": 0,
+    "tempPermit":true,
     "string" : "northumberland"
   },
   {
@@ -43,6 +48,7 @@
     "permitMax": 5,
     "permitsCosts": [0, 20, 40, 60],
     "permitWait": 3,
+    "tempPermit":true,
     "string" : "sunderland"
     },
   {
@@ -52,6 +58,7 @@
     "permitMax": 67,
     "permitsCosts": [67, 77, 100, 100],
     "permitWait": 0,
+    "tempPermit":true,
     "string" : "unbranded"
   }
 ]
