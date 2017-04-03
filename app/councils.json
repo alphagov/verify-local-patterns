@@ -5,7 +5,7 @@
     "parkingBoundary": "Argleton city centre",
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
-    "payOnline":false,
+    "payOnline":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
