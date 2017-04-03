@@ -7,6 +7,7 @@
     "permitsCosts": [51],
     "sixmonth": true,
     "permitWait": 5,
+    "tempPermit":true,
     "string": "argleton",
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
   },
@@ -18,6 +19,7 @@
     "permitsCosts": [52],
     "sixmonth": true,
     "permitWait": 0,
+    "tempPermit":true,
     "string": "buckinghamshire"
   },
   {
@@ -28,6 +30,7 @@
     "permitsCosts": [51,61,71,120],
     "sixmonth": true,
     "permitWait": 5,
+    "tempPermit":true,
     "string" : "cambridgeshire"
   },
   {
@@ -38,6 +41,7 @@
     "permitsCosts": [130,130,130,130],
     "sixmonth": true,
     "permitWait": 0,
+    "tempPermit":true,
     "string" : "northumberland"
   },
   {
@@ -48,6 +52,7 @@
     "permitsCosts": [0, 20, 40, 60],
     "sixmonth": true,
     "permitWait": 3,
+    "tempPermit":true,
     "string" : "sunderland"
     },
   {
@@ -58,6 +63,7 @@
     "permitsCosts": [67, 77, 100, 100],
     "sixmonth": true,
     "permitWait": 0,
+    "tempPermit":true,
     "string" : "unbranded"
   }
 ]
