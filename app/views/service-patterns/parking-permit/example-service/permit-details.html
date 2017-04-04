@@ -1,7 +1,17 @@
 {% extends "layout_picker.html" %}
 
+{% set r = residentAmount %}
+{# set default as 1 #}
+{% if not r %}
+  {% set r = 3 %}
+{% endif %}
+
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "When should your permit start?" %}
+{% if r > 1 %}
+  {% set pageTitle = "When should your permits start?" %}
+{% else %}
+  {% set pageTitle = "When should your permit start?" %}
+{% endif %}
 
 {% block content %}
 
@@ -11,46 +21,65 @@
 {% set freePermit = true %}
 {% endif %}
 
+{% macro enterDate() %}
+  <fieldset>
+    <div class="form-date">
+
+      <div class="form-group form-group-day">
+        <label for="permitChoiceDay">Day</label>
+        <input type="text" autocomplete="off" class="form-control" id="permitChoiceDay" name="permitChoiceDay">
+      </div>
+      <div class="form-group form-group-month">
+        <label for="permitChoiceMonth">Month</label>
+        <input type="text" autocomplete="off" class="form-control" id="permitChoiceMonth" name="permitChoiceMonth">
+      </div>
+      <div class="form-group form-group-year">
+        <label for="permitChoiceYear">Year</label>
+        <input type="text" autocomplete="off" class="form-control" id="permitChoiceYear" name="permitChoiceYear">
+      </div>
+    </div>
+  </fieldset>
+{% endmacro %}
+
 <form action="{{ "contact-reference" if freePermit else "pre-payment" }}" method="post">
   <div class="form-group">
     <fieldset>
 
       <legend class="visually-hidden">permit length</legend>
 
-      <label class="block-label selection-button-radio" for="radio-2">
-        <input id="radio-2" type="radio" name="permitStartChoice" value="soon">
+      <label class="block-label selection-button-radio" for="radio-1">
+        <input id="radio-1" type="radio" name="permitStartChoice" value="soon">
         As soon as possible
       </label>
-      <label class="block-label selection-button-radio" for="radio-3" data-target="other-date">
-        <input id="radio-3" type="radio" name="permitStartChoice" value="other">
+      <label class="block-label selection-button-radio" for="radio-2" data-target="other-date">
+        <input id="radio-2" type="radio" name="permitStartChoice" value="other">
         Some other date
       </label>
       <div class="panel panel-border-narrow js-hidden" id="other-date">
-        <fieldset>
-          <div class="form-date">
-
-            <div class="form-group form-group-day">
-              <label for="permitChoiceDay">Day</label>
-              <input type="text" autocomplete="off" class="form-control" id="permitChoiceDay" name="permitChoiceDay">
-            </div>
-            <div class="form-group form-group-month">
-              <label for="permitChoiceMonth">Month</label>
-              <input type="text" autocomplete="off" class="form-control" id="permitChoiceMonth" name="permitChoiceMonth">
-            </div>
-            <div class="form-group form-group-year">
-              <label for="permitChoiceYear">Year</label>
-              <input type="text" autocomplete="off" class="form-control" id="permitChoiceYear" name="permitChoiceYear">
-            </div>
-          </div>
-        </fieldset>
+        {{ enterDate() }}
       </div>
+      <label class="block-label selection-button-radio" for="radio-3" data-target="multi-dates">
+        <input id="radio-3" type="radio" name="permitStartChoice" value="other">
+        Different dates for different vehicles
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="multi-dates">
+        {% set r = r / 10 %}
+        {% set r = r * 10 %}
+        {% for i in range(1, r + 1) %}
+          <h3 class="heading-small">Vehicle {{i}}</h3>
+          {{ enterDate() }}
+        {% endfor %}
+      </div>
+
 
     </fieldset>
   </div>
 
-  <p class="panel panel-border-wide">
-    Your permit will expire {{ permitChoice if council.sixmonth else "1 year" }} after it's start date.
-  </p>
+  {% if council.sixmonth == false %}
+    <p class="panel panel-border-wide">
+      Your permit will expire 1 year after it's start date.
+    </p>
+  {% endif %}
 
   <input type="submit" class="button" value="Next" />
 
