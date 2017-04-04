@@ -22,7 +22,7 @@
       {% set halfCost = 0 %}
       {% set fullCost = 0 %}
     {% endif %}
-    <form action="permit-details" method="post">
+    <form action="{{ "contact-reference" if freePermit else "pre-payment" }}" method="post">
       <div class="form-group">
         <fieldset>
 
