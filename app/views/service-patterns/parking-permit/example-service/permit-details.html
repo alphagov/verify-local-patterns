@@ -41,7 +41,7 @@
   </fieldset>
 {% endmacro %}
 
-<form action="permit-length" method="post">
+<form action="{{'permit-length' if council.sixmonth else 'pre-payment'}}" method="post">
   <div class="form-group">
     <fieldset>
 
