@@ -74,10 +74,15 @@ router.get('/service-patterns/parking-permit/example-service/eligible', function
 router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
   var dateObj={};
   var d = req.session.data;
+  var earliestDate = new Date();
+  earliestDate.setDate(earliestDate.getDate()+d.council.permitWait);
   if (d.permitStartChoice=="other") {
-    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);    
+    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);  
+    if (dateObj.startDate < earliestDate) {
+      dateObj.startDate=earliestDate;
+    }  
   } else {
-    dateObj.startDate = new Date();
+    dateObj.startDate = earliestDate;
   }
   dateObj.niceStartDate = niceDate(dateObj.startDate);
   if (d.permitChoice=="12 month") {
