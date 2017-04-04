@@ -1,0 +1,146 @@
+@import 'patterns/_govukish.scss';
+
+//argleton styles
+.argleton-name-extra{
+  display: none;
+  @media(min-width: 405px){
+    display:inline;
+  }
+}
+
+body{
+  background-color: #dfeef5;
+  min-height: 100vh;
+}
+
+.form-group{
+  background: #dfeef5;
+}
+
+.payment-summary{
+  background-color: #fdfdf6;
+}
+
+//having to be annoyingly specific here to override the radio button styles
+.unbranded .block-label.selection-button-radio:before {
+  background: #fafafa;
+}
+
+input.form-control, textarea.form-control{
+  background: #fafafa;
+  margin-bottom: 9px;
+}
+
+// argleton header
+
+header{
+  padding-top: 0px;
+  .container{
+    padding-top: 9px;
+  }
+}
+
+header{
+  background-color: #fff;
+  padding: 0px 15px 0px;
+  font-size: 1.6em;
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  img{
+    width: 10em;
+    vertical-align: middle;
+    margin-right: .5em;
+  }
+}
+
+.contact-link{
+  text-align: right;
+  font-size: .75em;
+  padding-bottom: .33em;
+}
+
+#footer {
+  color: #fff;
+  background-color: #333 !important;
+  padding: 0px 15px 0px;
+  font-size: 1.6em;
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img{
+    width: 10em;
+    vertical-align: middle;
+    margin-right: .5em;
+  }
+  a {
+  color: #fff;
+  text-decoration: none;
+  }
+  a:hover {
+  color: #fff;
+  text-decoration: underline;
+  }
+}
+.button {
+  background-color: #00019F;
+  border-radius: 6px;
+  border: 2px solid #00019F;
+  box-shadow: none;
+}
+.button:hover, .button:focus {
+  background-color: #2D389C !important;
+  border-color: #204d74;
+}
+.button:visited {
+  background-color: #00019F;
+}
+.button:focus {
+  outline: 2px solid #ff9900;
+}
+
+.button-start {
+  background-image: none;
+}
+
+a.button {
+  color: #fff !important;
+}
+a.button:hover {
+    text-decoration: none;
+}
+
+p a, li a, span.summary, a.in-progress {
+  color: #0000e9 !important;
+  text-decoration: none;
+}
+
+p a:hover, li a:hover, a.in-progress:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid #ff9900;
+  background-color: #ff9900;
+}
+a.button-start {
+  font-size: 1em;
+  padding: 10px 25px !important;
+}
+h1 {
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  background-color: #fff;
+  padding: 5px 5px 5px 10px;
+}
+.govuk-box-highlight {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
