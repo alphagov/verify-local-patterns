@@ -6,50 +6,59 @@
 {% block content %}
 
 <div class="column-two-thirds">
-
-  {# DVLA lookup #}
+  {% set r = residentAmount %}
+  {# set default as 1 #}
+  {% if not r %}
+    {% set r = 1 %}
+  {% endif %}
   <p>
     We've received these details from DVLA:
   </p>
 
-  <table>
-    <tr>
-      <th>
-        Registration number
-      </th>
-      <th>
-        KS53 UTW
-      </th>
-    </tr>
-    <tr>
-      <th>
-        Vehicle make
-      </th>
-      <th>
-        VOLKSWAGEN
-      </th>
-    </tr>
-    <tr>
-      <th>
-        Cylinder capacity (cc)
-      </th>
-      <th>
-        1984cc
-      </th>
-    </tr>
-    <tr>
-      <th>
-        CO₂ emissions
-      </th>
-      <th>
-        192 g/km
-      </th>
-    </tr>
-  </table>
+  {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
+  {% set r = r / 10 %}
+  {% set r = r * 10 %}
+  {% for i in range(1, r + 1) %}
+    <h3 class="heading-small">Vehicle {{i}}</h3>
+    <table>
+      <tr>
+        <th>
+          Registration number
+        </th>
+        <th>
+          KS53 UTW
+        </th>
+      </tr>
+      <tr>
+        <th>
+          Vehicle make
+        </th>
+        <th>
+          VOLKSWAGEN
+        </th>
+      </tr>
+      <tr>
+        <th>
+          Cylinder capacity (cc)
+        </th>
+        <th>
+          1984cc
+        </th>
+      </tr>
+      <tr>
+        <th>
+          CO₂ emissions
+        </th>
+        <th>
+          192 g/km
+        </th>
+      </tr>
+    </table>
+  {% endfor %}
 
   <h2 class="heading-medium">Are these vehicle details correct?</h2>
 
-  <form action="permit-details" method="get" class="form">
+  <form class="form">
     <div class="form-group">
       <fieldset class="inline">
 
@@ -67,7 +76,7 @@
       </fieldset>
     </div>
     <div class="form-group">
-      <input class="button" type="submit" value="Next">
+      <a class="button" href="permit-details">Next</a>
     </div>
   </form>
 
