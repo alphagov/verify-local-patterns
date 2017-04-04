@@ -47,15 +47,29 @@
     </tr>
   </table>
 
-  {% if not council.sixmonth %}
-    <p>
-      Based on this information, your permit will cost £{{council.permitsCosts[0]}}.
-    </p>
+  <h2 class="heading-medium">Are these vehicle details correct?</h2>
 
-  {% endif %}
+  <form action="permit-details" method="get" class="form">
+    <div class="form-group">
+      <fieldset class="inline">
 
-  <a href="javascript:history.back()">Back</a>
-  <a href="permit-details" class="button">Next</a>
+        <legend class="visually-hidden">Are these vehicle details correct?</legend>
+
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="answer" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="answer" value="No">
+          No
+        </label>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input class="button" type="submit" value="Next">
+    </div>
+  </form>
 
 </main>
 
