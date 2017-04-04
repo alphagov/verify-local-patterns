@@ -38,6 +38,18 @@
     "string" : "cambridgeshire"
   },
   {
+    "name" : "London Borough of Camden",
+    "shortName": "Camden",
+    "parkingBoundary": "Camden borough",
+    "permitMax": "unlimited",
+    "limitByHousehold":true,
+    "permitsCosts": [1,1,1,1],
+    "payOnline":true,
+    "permitWait": 5,
+    "tempPermit":true,
+    "string" : "camden"
+  },
+  {
     "name" : "Northumberland County Council",
     "shortName" : "Northumberland",
     "parkingBoundary" : "Northumberland Council",
