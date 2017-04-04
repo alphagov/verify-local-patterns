@@ -66,7 +66,7 @@
         {% endif %}
       </li>
       <li>
-        Permits can be bought for 6 months or for 12 months.
+        {{"Permits can be bought for 6 months or for 12 months." if council.sixmonth else "Permits last for 12 months."}}
       </li>
       {% if council.permitWait < 1 %}
       <li>
