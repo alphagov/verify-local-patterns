@@ -5,6 +5,7 @@
     "parkingBoundary": "Argleton city centre",
     "permitMax": "four",
     "permitsCosts": [51, 81, 153, 153],
+    "payOnline":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
@@ -17,6 +18,7 @@
     "parkingBoundary": "Buckinghamshire",
     "permitMax": "2",
     "permitsCosts": [52],
+    "payOnline":true,
     "permitWait": 0,
     "tempPermit":true,
     "string": "buckinghamshire"
@@ -27,6 +29,7 @@
     "parkingBoundary": "Cambridgeshire city centre",
     "permitMax": "unlimited",
     "permitsCosts": [51,61,71,120],
+    "payOnline":true,
     "permitWait": 5,
     "tempPermit":true,
     "string" : "cambridgeshire"
@@ -37,6 +40,7 @@
     "parkingBoundary" : "Northumberland Council",
     "permitMax": "two",
     "permitsCosts": [130,130,130,130],
+    "payOnline":true,
     "permitWait": 0,
     "tempPermit":true,
     "string" : "northumberland"
@@ -47,6 +51,7 @@
     "parkingBoundary": "Sunderland city centre",
     "permitMax": "five",
     "permitsCosts": [0, 20, 40, 60],
+    "payOnline":true,
     "permitWait": 3,
     "tempPermit":true,
     "string" : "sunderland"
@@ -57,6 +62,7 @@
     "parkingBoundary" : "Unbrandedland city",
     "permitMax": "sixty seven",
     "permitsCosts": [67, 77, 100, 100],
+    "payOnline":true,
     "permitWait": 0,
     "tempPermit":true,
     "string" : "unbranded"
