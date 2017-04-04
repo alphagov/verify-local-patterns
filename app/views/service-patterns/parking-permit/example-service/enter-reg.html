@@ -62,7 +62,7 @@
   {% endfor %}
 
   {% if council.DVLAAPI %}
-    {% set nextPage = 'enter-reg' %}
+    {% set nextPage = 'confirm-vehicle-details' %}
   {% elif(council.sixmonth) %}
     {# How long will you need your permit(s)?  #}
     {% set nextPage = 'permit-price' %}
