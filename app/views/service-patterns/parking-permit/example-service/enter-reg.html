@@ -61,7 +61,17 @@
     </div>
   {% endfor %}
 
-  <a class="button" role="button" href="{{'permit-details' if (singleCost and council.sixmonth == false) else 'permit-price'}}">Next</a>
+  {% if council.DVLAAPI %}
+    {% set nextPage = 'enter-reg' %}
+  {% elif(council.sixmonth) %}
+    {# How long will you need your permit(s)?  #}
+    {% set nextPage = 'permit-price' %}
+  {% else %}
+    {# When should your permit(s) start? #}
+    {% set nextPage = 'permit-details' %}
+  {% endif %}
+
+  <a class="button" role="button" href="{{nextPage}}">Next</a>
 
 </div>
 
