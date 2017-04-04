@@ -23,6 +23,11 @@
       font-family: $toolkit-font-stack;
     }
 
+    // better line height
+    p{
+      line-height: 1.6em;
+    }
+
     // Remove GOV.UK footer styles
     main{
       min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now

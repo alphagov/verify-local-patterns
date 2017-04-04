@@ -28,9 +28,21 @@
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
     </p>
     {% else %}
-    <p>
-      You can expect your permit to arrive within 5 working days.
-    </p>
+    <p>  
+{% if council.payOnline %}
+  <p>  
+    You can expect your permit to arrive within 5 working days.
+  </p>
+{% else %}
+  <p>
+    Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
+  </p>
+  <p>
+    You can expect your permit to arrive within 5 working days of your payment.
+  </p>
+{% endif %}
+        
+    
     <p>
       We'll send your parking permit to this address:
     </p>
