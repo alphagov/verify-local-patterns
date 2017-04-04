@@ -23,6 +23,7 @@
 
 {# setup sixmonthchoice macro #}
 {% macro sixmonthchoice() %}
+  {# fix for free permits #}
   {% if(council.permitsCosts[0] > 0) %}
     {% set halfCost = council.permitsCosts[0] / 2 %}
     {% set halfCost = halfCost.toFixed(2) %}
@@ -37,11 +38,19 @@
 
         <label class="block-label selection-button-radio" for="radio-2">
           <input id="radio-2" type="radio" name="permitChoice" value="6 month">
-          <span class="heading-small">6 month permit</span> - costs £{{halfCost}}
+          <span class="heading-small">6 months</span>
+          {% if halfCost > 0 %}
+            <br />
+            <span>costs £{{halfCost}}</span>
+          {% endif %}
         </label>
         <label class="block-label selection-button-radio" for="radio-3">
           <input id="radio-3" type="radio" name="permitChoice" value="12 month">
-          <span class="heading-small">12 month permit</span> - costs £{{fullCost}}
+          <span class="heading-small">12 month permit</span>
+          {% if fullCost > 0 %}
+            <br />
+            <span>costs £{{fullCost}}</span>
+          {% endif %}
         </label>
 
       </fieldset>
