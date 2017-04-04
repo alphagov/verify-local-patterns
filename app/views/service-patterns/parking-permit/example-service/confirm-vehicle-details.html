@@ -1,0 +1,62 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm vehicle details" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  {# DVLA lookup #}
+  <p>
+    We've received these details from DVLA:
+  </p>
+
+  <table>
+    <tr>
+      <th>
+        Registration number
+      </th>
+      <th>
+        KS53 UTW
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Vehicle make
+      </th>
+      <th>
+        VOLKSWAGEN
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Cylinder capacity (cc)
+      </th>
+      <th>
+        1984cc
+      </th>
+    </tr>
+    <tr>
+      <th>
+        CO₂ emissions
+      </th>
+      <th>
+        192 g/km
+      </th>
+    </tr>
+  </table>
+
+  {% if not council.sixmonth %}
+    <p>
+      Based on this information, your permit will cost £{{council.permitsCosts[0]}}.
+    </p>
+
+  {% endif %}
+
+  <a href="javascript:history.back()">Back</a>
+  <a href="permit-details" class="button">Next</a>
+
+</main>
+
+{% endblock %}
