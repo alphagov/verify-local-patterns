@@ -42,13 +42,17 @@
 {% endif %}
 
 {# setup sixmonthchoice macro #}
-{% macro sixmonthchoice() %}
+{% macro sixmonthchoice(showTotal) %}
   <label class="block-label selection-button-radio" for="radio-1">
     <input id="radio-1" type="radio" name="permitChoice" value="6 month">
     <span class="heading-small">6 months</span>
     {% if halfCost > 0 %}
       <br />
-      <span>£{{totalHalfCost}} total for {{r}} permit{{"s" if r > 1}}</span>
+      {% if showTotal %}
+        <span>£{{totalHalfCost}} total for {{r}} permit{{"s" if r > 1}}</span>
+      {% elseif singleCost %}
+        <span>£{{halfCost}}</span>
+      {% endif %}
     {% endif %}
   </label>
   <label class="block-label selection-button-radio" for="radio-2">
@@ -56,7 +60,11 @@
     <span class="heading-small">12 months</span>
     {% if fullCost > 0 %}
       <br />
-      <span>£{{totalFullCost}} total for {{r}} permit{{"s" if r > 1}}</span>
+      {% if showTotal %}
+        <span>£{{totalFullCost}} total for {{r}} permit{{"s" if r > 1}}</span>
+      {% elseif singleCost %}
+        <span>£{{fullCost}}</span>
+      {% endif %}
     {% endif %}
   </label>
 {% endmacro %}
@@ -68,7 +76,7 @@
     <div class="form-group">
       <fieldset>
 
-        {{ sixmonthchoice() }}
+        {{ sixmonthchoice(true) }}
 
         {% if r > 1 %}
           <label class="block-label selection-button-radio" for="radio-3" data-target="multi-lengths">
@@ -81,7 +89,7 @@
             {% for i in range(1, r + 1) %}
               <div class="form-group">
                 <h3 class="heading-small">Vehicle {{i}}</h3>
-                {{ sixmonthchoice() }}
+                {{ sixmonthchoice(false) }}
               </div>
             {% endfor %}
           </div>
