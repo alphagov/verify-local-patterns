@@ -36,22 +36,28 @@
     <div class="form-group">
       <fieldset>
 
-        <label class="block-label selection-button-radio" for="radio-2">
-          <input id="radio-2" type="radio" name="permitChoice" value="6 month">
+        <label class="block-label selection-button-radio" for="radio-1">
+          <input id="radio-1" type="radio" name="permitChoice" value="6 month">
           <span class="heading-small">6 months</span>
           {% if halfCost > 0 %}
             <br />
             <span>costs £{{halfCost}}</span>
           {% endif %}
         </label>
-        <label class="block-label selection-button-radio" for="radio-3">
-          <input id="radio-3" type="radio" name="permitChoice" value="12 month">
+        <label class="block-label selection-button-radio" for="radio-2">
+          <input id="radio-2" type="radio" name="permitChoice" value="12 month">
           <span class="heading-small">12 months</span>
           {% if fullCost > 0 %}
             <br />
             <span>costs £{{fullCost}}</span>
           {% endif %}
         </label>
+        {% if r > 1 %}
+          <label class="block-label selection-button-radio" for="radio-3">
+            <input id="radio-3" type="radio" name="permitChoice" value="12 month">
+            <span class="heading-small">Different lengths</span>
+          </label>
+        {% endif %}
 
       </fieldset>
     </div>
