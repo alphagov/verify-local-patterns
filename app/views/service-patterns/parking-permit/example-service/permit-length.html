@@ -25,6 +25,17 @@
   {% set halfCost = council.permitsCosts[0] / 2 %}
   {% set halfCost = halfCost.toFixed(2) %}
   {% set fullCost = council.permitsCosts[0].toFixed(2) %}
+  {# set total costs #}
+  {% if singleCost %}
+    {% set totalHalfCost = halfCost * r %}
+    {% set totalFullCost = fullCost * r %}
+  {% else %}
+    {% for i in range(1, r + 1) %}
+      {% set eachHalfCost = council.permitsCosts[i] / 2 %}
+      {% set totalHalfCost = totalHalfCost + eachHalfCost %}
+      {% set totalFullCost = totalFullCost + council.permitsCosts[i] %}
+    {% endfor %}
+  {% endif %}
 {% else %}
   {% set halfCost = 0 %}
   {% set fullCost = 0 %}
@@ -37,7 +48,7 @@
     <span class="heading-small">6 months</span>
     {% if halfCost > 0 %}
       <br />
-      <span>costs £{{halfCost}}</span>
+      <span>£{{totalHalfCost}} total for {{r}} permit{{"s" if r > 1}}</span>
     {% endif %}
   </label>
   <label class="block-label selection-button-radio" for="radio-2">
@@ -45,7 +56,7 @@
     <span class="heading-small">12 months</span>
     {% if fullCost > 0 %}
       <br />
-      <span>costs £{{fullCost}}</span>
+      <span>£{{totalFullCost}} total for {{r}} permit{{"s" if r > 1}}</span>
     {% endif %}
   </label>
 {% endmacro %}
