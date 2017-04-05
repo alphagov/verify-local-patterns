@@ -16,56 +16,16 @@
   {% set pageTitle = "How long will you need your permit?" %}
 {% endif %}
 
-{# setup singleCost variable #}
-{% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-  {% set singleCost = council.permitsCosts[0] %}
-{% endif %}
-{# fix for free permits #}
-{% if(council.permitsCosts[0] > 0) %}
-  {% set halfCost = council.permitsCosts[0] / 2 %}
-  {% set halfCost = halfCost.toFixed(2) %}
-  {% set fullCost = council.permitsCosts[0].toFixed(2) %}
-  {# set total costs #}
-  {% if singleCost %}
-    {% set totalHalfCost = halfCost * r %}
-    {% set totalFullCost = fullCost * r %}
-  {% else %}
-    {% for i in range(1, r + 1) %}
-      {% set eachHalfCost = council.permitsCosts[i] / 2 %}
-      {% set totalHalfCost = totalHalfCost + eachHalfCost %}
-      {% set totalFullCost = totalFullCost + council.permitsCosts[i] %}
-    {% endfor %}
-  {% endif %}
-{% else %}
-  {% set halfCost = 0 %}
-  {% set fullCost = 0 %}
-{% endif %}
 
 {# setup sixmonthchoice macro #}
 {% macro sixmonthchoice(showTotal) %}
   <label class="block-label selection-button-radio" for="radio-1">
     <input id="radio-1" type="radio" name="permitChoice" value="6 month">
     <span class="heading-small">6 months</span>
-    {% if halfCost > 0 %}
-      <br />
-      {% if showTotal %}
-        <span>£{{totalHalfCost}} total for {{r}} permit{{"s" if r > 1}}</span>
-      {% elseif singleCost %}
-        <span>£{{halfCost}}</span>
-      {% endif %}
-    {% endif %}
   </label>
   <label class="block-label selection-button-radio" for="radio-2">
     <input id="radio-2" type="radio" name="permitChoice" value="12 month">
     <span class="heading-small">12 months</span>
-    {% if fullCost > 0 %}
-      <br />
-      {% if showTotal %}
-        <span>£{{totalFullCost}} total for {{r}} permit{{"s" if r > 1}}</span>
-      {% elseif singleCost %}
-        <span>£{{fullCost}}</span>
-      {% endif %}
-    {% endif %}
   </label>
 {% endmacro %}
 
