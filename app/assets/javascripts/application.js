@@ -33,6 +33,12 @@ $(document).ready(function () {
       window.location.href = 'loading';
     });
   }
+  if(window.location.href.indexOf("take-photo") > -1){
+    $('#photo').change(function(e){
+      // todo: check that file is actually chosen!!
+      window.location.href = 'loading';
+    });
+  }
   if(window.location.href.indexOf("add-poa") > -1){
     $('#file').change(function(e){
       // todo: check that file is actually chosen!!
