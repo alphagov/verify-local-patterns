@@ -65,9 +65,9 @@ header{
 
 #footer {
   color: #fff;
-  background-color: #333 !important;
-  padding: 0px 15px 0px;
+  padding: 0 !important;
   font-size: 1.6em;
+  margin-bottom: 20px;
   .container{
     max-width: 960px;
     margin: 0 auto;
@@ -143,4 +143,34 @@ h1 {
 .govuk-box-highlight {
   background-color: #dff0d8;
   color: #3c763d;
+}
+body {
+  background-color: #fff;
+}
+
+#content {
+  background-color: #dfeef5;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#content div:first-child {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#footer .container {
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.contact-link {
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.column-two-thirds {
+  width: 100%;
 }
