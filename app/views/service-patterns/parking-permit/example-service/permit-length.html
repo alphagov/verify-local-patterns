@@ -20,43 +20,60 @@
 {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
   {% set singleCost = council.permitsCosts[0] %}
 {% endif %}
+{# fix for free permits #}
+{% if(council.permitsCosts[0] > 0) %}
+  {% set halfCost = council.permitsCosts[0] / 2 %}
+  {% set halfCost = halfCost.toFixed(2) %}
+  {% set fullCost = council.permitsCosts[0].toFixed(2) %}
+{% else %}
+  {% set halfCost = 0 %}
+  {% set fullCost = 0 %}
+{% endif %}
 
 {# setup sixmonthchoice macro #}
 {% macro sixmonthchoice() %}
-  {# fix for free permits #}
-  {% if(council.permitsCosts[0] > 0) %}
-    {% set halfCost = council.permitsCosts[0] / 2 %}
-    {% set halfCost = halfCost.toFixed(2) %}
-    {% set fullCost = council.permitsCosts[0].toFixed(2) %}
-  {% else %}
-    {% set halfCost = 0 %}
-    {% set fullCost = 0 %}
-  {% endif %}
+  <label class="block-label selection-button-radio" for="radio-1">
+    <input id="radio-1" type="radio" name="permitChoice" value="6 month">
+    <span class="heading-small">6 months</span>
+    {% if halfCost > 0 %}
+      <br />
+      <span>costs £{{halfCost}}</span>
+    {% endif %}
+  </label>
+  <label class="block-label selection-button-radio" for="radio-2">
+    <input id="radio-2" type="radio" name="permitChoice" value="12 month">
+    <span class="heading-small">12 months</span>
+    {% if fullCost > 0 %}
+      <br />
+      <span>costs £{{fullCost}}</span>
+    {% endif %}
+  </label>
+{% endmacro %}
+
+{# start of the content #}
+{% block content %}
+<div class="column-two-thirds">
   <form action="{{ "contact-reference" if freePermit else "pre-payment" }}" method="post">
     <div class="form-group">
       <fieldset>
 
-        <label class="block-label selection-button-radio" for="radio-1">
-          <input id="radio-1" type="radio" name="permitChoice" value="6 month">
-          <span class="heading-small">6 months</span>
-          {% if halfCost > 0 %}
-            <br />
-            <span>costs £{{halfCost}}</span>
-          {% endif %}
-        </label>
-        <label class="block-label selection-button-radio" for="radio-2">
-          <input id="radio-2" type="radio" name="permitChoice" value="12 month">
-          <span class="heading-small">12 months</span>
-          {% if fullCost > 0 %}
-            <br />
-            <span>costs £{{fullCost}}</span>
-          {% endif %}
-        </label>
+        {{ sixmonthchoice() }}
+
         {% if r > 1 %}
-          <label class="block-label selection-button-radio" for="radio-3">
+          <label class="block-label selection-button-radio" for="radio-3" data-target="multi-lengths">
             <input id="radio-3" type="radio" name="permitChoice" value="12 month">
             <span class="heading-small">Different lengths</span>
           </label>
+          <div class="panel panel-border-narrow js-hidden" id="multi-lengths">
+            {% set r = r / 10 %}
+            {% set r = r * 10 %}
+            {% for i in range(1, r + 1) %}
+              <div class="form-group">
+                <h3 class="heading-small">Vehicle {{i}}</h3>
+                {{ sixmonthchoice() }}
+              </div>
+            {% endfor %}
+          </div>
         {% endif %}
 
       </fieldset>
@@ -65,13 +82,6 @@
     <input type="submit" class="button" value="Next" />
 
   </form>
-{% endmacro %}
-
-{# start of the content #}
-{% block content %}
-<div class="column-two-thirds">
-
-  {{ sixmonthchoice() }}
 
 </main>
 
