@@ -48,9 +48,12 @@
     </fieldset>
   </div>
 
-  <p class="panel panel-border-wide">
-    Your permit will expire {{ permitChoice if council.sixmonth else "1 year" }} after it's start date.
-  </p>
+  {% if council.sixmonth == false %}
+    <p class="panel panel-border-wide">
+      Your permit will expire 1 year after it's start date.
+    </p>
+  {% endif %}
+
 
   <input type="submit" class="button" value="Next" />
 
