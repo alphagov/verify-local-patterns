@@ -47,7 +47,7 @@
         Start date
       </th>
       <th>
-        14th March 2017
+        {{ niceStartDate }}
       </th>
     </tr>
     <tr>
@@ -55,7 +55,7 @@
         Expiry date
       </th>
       <th>
-        {{ '14th September 2017' if permitChoice == '6 month' else '14th March 2018' }}
+        {{ niceEndDate }}
       </th>
     </tr>
     <tr>

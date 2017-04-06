@@ -8,6 +8,7 @@
     "limitByHousehold":true,
     "permitMax": 4,
     "payOnline":true,
+    "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
@@ -24,6 +25,7 @@
     "permitsCosts": [52],
     "sixmonth": true,
     "payOnline":true,
+    "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
     "string": "buckinghamshire"
@@ -37,9 +39,22 @@
     "permitsCosts": [51,61,71,120],
     "sixmonth": true,
     "payOnline":true,
+    "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
     "string" : "cambridgeshire"
+  },
+  {
+    "name" : "London Borough of Camden",
+    "shortName": "Camden",
+    "parkingBoundary": "Camden borough",
+    "permitMax": "unlimited",
+    "limitByHousehold":true,
+    "permitsCosts": [1,1,1,1],
+    "payOnline":true,
+    "permitWait": 5,
+    "tempPermit":true,
+    "string" : "camden"
   },
   {
     "name" : "Northumberland County Council",
@@ -50,6 +65,7 @@
     "permitsCosts": [130,130,130,130],
     "sixmonth": true,
     "payOnline":true,
+    "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
     "string" : "northumberland"
@@ -63,6 +79,7 @@
     "permitsCosts": [0, 20, 40, 60],
     "sixmonth": true,
     "payOnline":true,
+    "userChooseStartDate":true,
     "permitWait": 3,
     "tempPermit":true,
     "string" : "sunderland"
@@ -76,6 +93,7 @@
     "permitsCosts": [67, 77, 100, 100],
     "sixmonth": true,
     "payOnline":true,
+    "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
     "string" : "unbranded"
