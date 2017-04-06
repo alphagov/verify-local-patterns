@@ -1,7 +1,66 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Paying for your permit" %}
+
+{# setup residentAmount #}
+{% set r = residentAmount %}
+{# set default as 1 #}
+{% if not r %}
+  {% set r = 1 %}
+{% endif %}
+
+{# setup pageTitle #}
+{% if r > 1 %}
+  {% set pageTitle = "Paying for your permits" %}
+{% else %}
+  {% set pageTitle = "How long will you need your permit?" %}
+{% endif %}
+
+{% macro permitTable() %}
+  <table>
+  <tr>
+    <th>
+      Permit type
+    </th>
+    <th>
+      Resident's parking permit
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Permit length
+    </th>
+    <th>
+      {{ permitChoice if council.sixmonth else "1 year" }}
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Start date
+    </th>
+    <th>
+      {{ niceStartDate }}
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Expiry date
+    </th>
+    <th>
+      {{ niceEndDate }}
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Cost
+    </th>
+    <th>
+      {% set halfCost = council.permitsCosts[0] / 2 %}
+      £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+    </th>
+  </tr>
+</table>
+{% endmacro %}
 
 {% block content %}
 
@@ -20,49 +79,14 @@
     </p>
   {% endif %}
 
-  <table>
-    <tr>
-      <th>
-        Permit type
-      </th>
-      <th>
-        Resident's parking permit
-      </th>
-    </tr>
-    <tr>
-      <th>
-        Permit length
-      </th>
-      <th>
-        {{ permitChoice if council.sixmonth else "1 year" }}
-      </th>
-    </tr>
-    <tr>
-      <th>
-        Start date
-      </th>
-      <th>
-        {{ niceStartDate }}
-      </th>
-    </tr>
-    <tr>
-      <th>
-        Expiry date
-      </th>
-      <th>
-        {{ niceEndDate }}
-      </th>
-    </tr>
-    <tr>
-      <th>
-        Cost
-      </th>
-      <th>
-        {% set halfCost = council.permitsCosts[0] / 2 %}
-        £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
-      </th>
-    </tr>
-  </table>
+  {% set r = r / 10 %}
+  {% set r = r * 10 %}
+  {% for i in range(1, r + 1) %}
+    <h3 class="heading-small">Vehicle {{i}}</h3>
+
+    {{ permitTable() }}
+  {% endfor %}
+
   {% if council.payOnline %}
     <a class="button" role="button" href="choose-payment">Next</a>
   {% else %}
