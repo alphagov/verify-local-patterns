@@ -6,7 +6,7 @@
 {% set r = residentAmount %}
 {# set default as 1 #}
 {% if not r %}
-  {% set r = 3 %}
+  {% set r = 1 %}
 {% endif %}
 
 {# setup pageTitle #}
@@ -15,7 +15,6 @@
 {% else %}
   {% set pageTitle = "How long will you need your permit?" %}
 {% endif %}
-
 
 {# setup sixmonthchoice macro #}
 {% macro sixmonthchoice(showTotal, i) %}
@@ -54,14 +53,9 @@
             {% endfor %}
           </div>
         {% endif %}
-
       </fieldset>
     </div>
-
     <input type="submit" class="button" value="Next" />
-
   </form>
-
 </main>
-
 {% endblock %}
