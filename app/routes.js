@@ -26,6 +26,25 @@ router.get('*/example-service/*', function (req, res) {
   }
 });
 
+function niceDate(d) {
+  var monthNames = [
+     "January", "February", "March",
+     "April", "May", "June", "July",
+     "August", "September", "October",
+     "November", "December"
+   ];
+  var suffixes =
+  //    0     1     2     3     4     5     6     7     8     9
+     [ "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
+  //    10    11    12    13    14    15    16    17    18    19
+       "th", "th", "th", "th", "th", "th", "th", "th", "th", "th",
+  //    20    21    22    23    24    25    26    27    28    29
+       "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
+  //    30    31
+       "th", "st" ];    
+   return d.getDate()+suffixes[d.getDate()]+" "+monthNames[d.getMonth()]+" "+d.getFullYear();
+}
+
 // add your routes here
 
 router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
@@ -50,6 +69,31 @@ router.get('/service-patterns/parking-permit/example-service/eligible', function
   } else {
     res.render('service-patterns/parking-permit/example-service/eligible')
   }
+})
+
+router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
+  var dateObj={};
+  var d = req.session.data;
+  var earliestDate = new Date();
+  earliestDate.setDate(earliestDate.getDate()+d.council.permitWait);
+  if (d.permitStartChoice=="other") {
+    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);  
+    if (dateObj.startDate < earliestDate) {
+      dateObj.startDate=earliestDate;
+    }  
+  } else {
+    dateObj.startDate = earliestDate;
+  }
+  dateObj.niceStartDate = niceDate(dateObj.startDate);
+  if (d.permitChoice=="12 month") {
+    dateObj.endDate=dateObj.startDate;
+    dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
+  } else {
+    dateObj.endDate=dateObj.startDate;
+    dateObj.endDate.setMonth(dateObj.startDate.getMonth()+6);
+  }
+  dateObj.niceEndDate = niceDate(dateObj.endDate);
+  res.render('service-patterns/parking-permit/example-service/pre-payment',dateObj);
 })
 
 router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
