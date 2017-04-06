@@ -7,23 +7,18 @@
 
 <div class="column-two-thirds">
 
-
-  
-    {% if council.payOnline %}
-      <p>
-        You're about to pay for:
-      </p>
-    {% else %}
-      <p>
-        Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
-      </p>
-      
-      <p>
-        You will need to pay for:
-      </p>
-      
-    {% endif %}
-  
+  {% if council.payOnline %}
+    <p>
+      You're about to pay for:
+    </p>
+  {% else %}
+    <p>
+      Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
+    </p>
+    <p>
+      You will need to pay for:
+    </p>
+  {% endif %}
 
   <table>
     <tr>
