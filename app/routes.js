@@ -41,7 +41,7 @@ function niceDate(d) {
   //    20    21    22    23    24    25    26    27    28    29
        "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
   //    30    31
-       "th", "st" ];    
+       "th", "st" ];
    return d.getDate()+suffixes[d.getDate()]+" "+monthNames[d.getMonth()]+" "+d.getFullYear();
 }
 
@@ -74,25 +74,74 @@ router.get('/service-patterns/parking-permit/example-service/eligible', function
 router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
   var dateObj={};
   var d = req.session.data;
+  // set earliestDate
   var earliestDate = new Date();
   earliestDate.setDate(earliestDate.getDate()+d.council.permitWait);
-  if (d.permitStartChoice=="other") {
-    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);  
-    if (dateObj.startDate < earliestDate) {
-      dateObj.startDate=earliestDate;
-    }  
-  } else {
-    dateObj.startDate = earliestDate;
+  if(d.residentAmount > 1){
+    for (var i = 0; i < d.residentAmount; i++) {
+      // set startdates
+      if(d.permitStartChoice=="multi"){
+          dateObj.startDate[i] = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
+          if (dateObj.startDate < earliestDate) {
+            dateObj.startDate[i]=earliestDate;
+          }
+      }else{
+        dateObj.startDate[i] = new
+        // TODO: Add i count to these variables
+        Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
+        if (dateObj.startDate < earliestDate) {
+          dateObj.startDate[i]=earliestDate;
+        }
+      }
+      //format startdates
+      dateObj.niceStartDate[i] = niceDate(dateObj.startDate);
+
+      //set enddates
+      if(d.permitChoice=="different"){
+        // TODO: add i variables
+        if (d.permitChoice=="12 month") {
+          dateObj.endDate=dateObj.startDate;
+          dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
+        } else {
+          dateObj.endDate=dateObj.startDate;
+          dateObj.endDate.setMonth(dateObj.startDate.getMonth()+6);
+        }
+      }else{
+        // all same enddate
+        if (d.permitChoice=="12 month") {
+          dateObj.endDate=dateObj.startDate;
+          dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
+        } else {
+          dateObj.endDate=dateObj.startDate;
+          dateObj.endDate.setMonth(dateObj.startDate.getMonth()+6);
+        }
+      }
+      // format enddate
+      dateObj.niceEndDate[i] = niceDate(dateObj.endDate);
+    }
+  }else{ // single permit
+    //set startdate
+    if (d.permitStartChoice=="other") {
+      dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
+      if (dateObj.startDate < earliestDate) {
+        dateObj.startDate=earliestDate;
+      }
+    } else {
+      dateObj.startDate = earliestDate;
+    }
+    //format startdate
+    dateObj.niceStartDate = niceDate(dateObj.startDate);
+    // set enddate
+    if (d.permitChoice=="12 month") {
+      dateObj.endDate=dateObj.startDate;
+      dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
+    } else {
+      dateObj.endDate=dateObj.startDate;
+      dateObj.endDate.setMonth(dateObj.startDate.getMonth()+6);
+    }
+    // format enddate
+    dateObj.niceEndDate = niceDate(dateObj.endDate);
   }
-  dateObj.niceStartDate = niceDate(dateObj.startDate);
-  if (d.permitChoice=="12 month") {
-    dateObj.endDate=dateObj.startDate;
-    dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
-  } else {
-    dateObj.endDate=dateObj.startDate;
-    dateObj.endDate.setMonth(dateObj.startDate.getMonth()+6);
-  }
-  dateObj.niceEndDate = niceDate(dateObj.endDate);
   res.render('service-patterns/parking-permit/example-service/pre-payment',dateObj);
 })
 

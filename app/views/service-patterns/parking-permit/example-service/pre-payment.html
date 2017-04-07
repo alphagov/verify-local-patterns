@@ -16,7 +16,7 @@
   {% set pageTitle = "How long will you need your permit?" %}
 {% endif %}
 
-{% macro permitTable() %}
+{% macro permitTable(i) %}
   <table>
   <tr>
     <th>
@@ -31,7 +31,7 @@
       Permit length
     </th>
     <th>
-      {{ permitChoice if council.sixmonth else "1 year" }}
+      {{ permitChoice }}
     </th>
   </tr>
   <tr>
@@ -79,13 +79,16 @@
     </p>
   {% endif %}
 
-  {% set r = r / 10 %}
-  {% set r = r * 10 %}
-  {% for i in range(1, r + 1) %}
-    <h3 class="heading-small">Vehicle {{i}}</h3>
-
+  {% if residentAmount > 1 %}
+    {% set r = r / 10 %}
+    {% set r = r * 10 %}
+    {% for i in range(1, r + 1) %}
+      <h3 class="heading-small">Vehicle {{i}}</h3>
+      {{ permitTable(i) }}
+    {% endfor %}
+  {% else %}
     {{ permitTable() }}
-  {% endfor %}
+  {% endif %}
 
   {% if council.payOnline %}
     <a class="button" role="button" href="choose-payment">Next</a>
