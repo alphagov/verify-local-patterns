@@ -86,7 +86,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
             dateObj.startDate[i]=earliestDate;
           }
       }else{
-        dateObj.startDate[i] = new
+        dateObj.startDate = new
         // TODO: Add i count to these variables
         Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
         if (dateObj.startDate < earliestDate) {
@@ -94,7 +94,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
         }
       }
       //format startdates
-      dateObj.niceStartDate[i] = niceDate(dateObj.startDate);
+      dateObj.niceStartDate = niceDate(dateObj.startDate);
 
       //set enddates
       if(d.permitChoice=="different"){
@@ -117,7 +117,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
         }
       }
       // format enddate
-      dateObj.niceEndDate[i] = niceDate(dateObj.endDate);
+      dateObj.niceEndDate = niceDate(dateObj.endDate);
     }
   }else{ // single permit
     //set startdate
