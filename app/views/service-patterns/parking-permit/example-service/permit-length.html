@@ -18,7 +18,7 @@
 
 {# setup sixmonthchoice macro #}
 {% macro sixmonthchoice(showTotal, i) %}
-  <label class="block-label selection-button-radio" for="radio-6m-{{i}}">
+  <label class="block-label selection-button-radio" for="radio-6m{{'-'+i}}">
     <input id="radio-6m{{'-'+i}}" type="radio" name="{{i}}permitChoice" value="6 month">
     <span class="heading-small">6 months</span>
   </label>
