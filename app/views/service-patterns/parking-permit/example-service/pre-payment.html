@@ -31,7 +31,7 @@
       Permit length
     </th>
     <th>
-      {{ permitChoice }}
+      {{ permitLength[i] }}
     </th>
   </tr>
   <tr>
@@ -56,7 +56,7 @@
     </th>
     <th>
       {% set halfCost = council.permitsCosts[0] / 2 %}
-      £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+      £{{ halfCost.toFixed(2) if permitLength == '6 month' else council.permitsCosts[0].toFixed(2)}}
     </th>
   </tr>
 </table>

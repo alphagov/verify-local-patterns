@@ -19,11 +19,11 @@
 {# setup sixmonthchoice macro #}
 {% macro sixmonthchoice(showTotal, i) %}
   <label class="block-label selection-button-radio" for="radio-6m{{'-'+i}}">
-    <input id="radio-6m{{'-'+i}}" type="radio" name="{{i}}permitChoice" value="6 month">
+    <input id="radio-6m{{'-'+i}}" type="radio" name="{{i}}permitLength" value="6 month">
     <span class="heading-small">6 months</span>
   </label>
   <label class="block-label selection-button-radio" for="radio-12m{{'-'+i}}">
-    <input id="radio-12m{{'-'+i}}" type="radio" name="{{i}}permitChoice" value="12 month">
+    <input id="radio-12m{{'-'+i}}" type="radio" name="{{i}}permitLength" value="12 month">
     <span class="heading-small">12 months</span>
   </label>
 {% endmacro %}
@@ -39,7 +39,7 @@
 
         {% if r > 1 %}
           <label class="block-label selection-button-radio" for="radio-3" data-target="multi-lengths">
-            <input id="radio-3" type="radio" name="permitChoice" value="different">
+            <input id="radio-3" type="radio" name="permitLength" value="different">
             <span class="heading-small">Different lengths for different vehicles</span>
           </label>
           <div class="panel panel-border-narrow js-hidden" id="multi-lengths">

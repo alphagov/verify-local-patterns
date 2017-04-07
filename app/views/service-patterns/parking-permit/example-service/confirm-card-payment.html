@@ -32,13 +32,13 @@
 		      </tr>
 		      <tr>
 		        <td>Payment of:</td>
-		        <td class="table-info">{{ permitChoice }} resident's parking permit</td>
+		        <td class="table-info">{{ permitLength }} resident's parking permit</td>
 		      </tr>
 		      <tr>
 		        <td>Amount to pay:</td>
 		        <td class="table-info">
 							{% set halfCost = council.permitsCosts[0] / 2 %}
-			        £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+			        £{{ halfCost.toFixed(2) if permitLength == '6 month' else council.permitsCosts[0].toFixed(2)}}
 						</td>
 		      </tr>
 		    </tbody>

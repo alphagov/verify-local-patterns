@@ -81,14 +81,14 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     for (var i = 0; i < d.residentAmount; i++) {
       // set startdates
       if(d.permitStartChoice=="multi"){
-          dateObj.startDate[i] = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
+          dateObj.startDate[i] = new Date(d.permitLengthYear+"-"+d.permitLengthMonth+"-"+d.permitLengthDay);
           if (dateObj.startDate < earliestDate) {
             dateObj.startDate[i]=earliestDate;
           }
       }else{
         dateObj.startDate = new
         // TODO: Add i count to these variables
-        Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
+        Date(d.permitLengthYear+"-"+d.permitLengthMonth+"-"+d.permitLengthDay);
         if (dateObj.startDate < earliestDate) {
           dateObj.startDate[i]=earliestDate;
         }
@@ -97,9 +97,9 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
       dateObj.niceStartDate = niceDate(dateObj.startDate);
 
       //set enddates
-      if(d.permitChoice=="different"){
+      if(d.permitLength=="different"){
         // TODO: add i variables
-        if (d.permitChoice=="12 month") {
+        if (d.permitLength=="12 month") {
           dateObj.endDate=dateObj.startDate;
           dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
         } else {
@@ -108,7 +108,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
         }
       }else{
         // all same enddate
-        if (d.permitChoice=="12 month") {
+        if (d.permitLength=="12 month") {
           dateObj.endDate=dateObj.startDate;
           dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
         } else {
@@ -122,7 +122,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
   }else{ // single permit
     //set startdate
     if (d.permitStartChoice=="other") {
-      dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
+      dateObj.startDate = new Date(d.permitLengthYear+"-"+d.permitLengthMonth+"-"+d.permitLengthDay);
       if (dateObj.startDate < earliestDate) {
         dateObj.startDate=earliestDate;
       }
@@ -132,7 +132,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     //format startdate
     dateObj.niceStartDate = niceDate(dateObj.startDate);
     // set enddate
-    if (d.permitChoice=="12 month") {
+    if (d.permitLength=="12 month") {
       dateObj.endDate=dateObj.startDate;
       dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
     } else {
