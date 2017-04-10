@@ -127,20 +127,13 @@ function constructDateData(sessionData){
 
   var dateObj={};
   var d = sessionData;
+  console.log('sessionData', sessionData);
   // set multiPermitsLength array
   if(d.permitLength){
     // set same value for all
     dateObj.multiPermitsLength = [];
     for (var i = 0; i < d.residentAmount; i++) {
-      var p = 'permitLength';
-      dateObj.multiPermitsLength[i] = d.p;
-    }
-  }else if(d.multiPermitsLength){
-    // set diff values
-    dateObj.multiPermitsLength = [];
-    for (var i = 0; i < d.residentAmount; i++) {
-      var p = i + 'permitLength';
-      dateObj.multiPermitsLength[i] = d.p;
+      dateObj.multiPermitsLength[i] = d.permitLength;
     }
   }else{
     // set unset value
