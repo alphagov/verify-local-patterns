@@ -28,9 +28,9 @@
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
     </p>
     {% else %}
-    <p>  
+    <p>
 {% if council.payOnline %}
-  <p>  
+  <p>
     You can expect your permit to arrive within 5 working days.
   </p>
 {% else %}
@@ -41,8 +41,8 @@
     You can expect your permit to arrive within 5 working days of your payment.
   </p>
 {% endif %}
-        
-    
+
+
     <p>
       We'll send your parking permit to this address:
     </p>
@@ -60,7 +60,7 @@
       In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
     </p>
     {% endif %}
-    
+
     {% endif %}
 
     <h2 class="heading-medium">About your parking permit</h2>
@@ -73,7 +73,7 @@
         Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
       </li>
       <li>
-        You've signed up to receive an email and text when your permit expires.
+        Your permit expires in {{ permitChoice + 's' if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
       </li>
     </ul>
 
