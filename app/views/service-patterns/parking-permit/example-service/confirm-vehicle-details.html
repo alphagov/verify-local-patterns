@@ -18,7 +18,7 @@
   {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
   {% set r = r / 10 %}
   {% set r = r * 10 %}
-  {% for i in range(0, r + 1) %}
+  {% for i in range(0, r) %}
     <h3 class="heading-small">Vehicle {{i + 1}}</h3>
     <table>
       <tr>
