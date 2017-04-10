@@ -77,7 +77,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
   // set multiPermitsLength array
   if(d.residentAmount > 1){
     for (var i = 0; i < d.residentAmount; i++) {
-      var p = i + 'permitLength'
+      var p = i + 'permitLength';
       dateObj.multiPermitsLength[i] = d.p;
     }
   }
