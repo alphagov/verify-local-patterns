@@ -31,7 +31,7 @@
       Permit length
     </th>
     <th>
-      {{ permitLength[i] }}
+      {{ permitLength if not i else multiPermitsLength[i] }}
     </th>
   </tr>
   <tr>

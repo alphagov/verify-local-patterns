@@ -74,6 +74,14 @@ router.get('/service-patterns/parking-permit/example-service/eligible', function
 router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
   var dateObj={};
   var d = req.session.data;
+  // set multiPermitsLength array
+  if(d.residentAmount > 1){
+    for (var i = 0; i < d.residentAmount; i++) {
+      var p = i + 'permitLength'
+      dateObj.multiPermitsLength[i] = d.p;
+    }
+  }
+
   // set earliestDate
   var earliestDate = new Date();
   earliestDate.setDate(earliestDate.getDate()+d.council.permitWait);
