@@ -6,6 +6,104 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+// add your routes here
+
+router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'skip') {
+    res.redirect('upload')
+  } else if (answer === 'shop') {
+    res.redirect('photo-shop')
+  } else {
+    res.render('service-patterns/concessionary-travel/example-service/photo/photo-guide')
+  }
+})
+
+router.get('/service-patterns/parking-permit/example-service/eligible', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'No') {
+    res.redirect('incorrect-address')
+  } else {
+    res.render('service-patterns/parking-permit/example-service/eligible')
+  }
+})
+
+
+router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'No') {
+    res.redirect('incorrect-dob')
+  } else {
+    res.render('service-patterns/concessionary-travel/example-service/confirm-address')
+  }
+})
+
+router.get('/service-patterns/concessionary-travel/example-service/eligible', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'No') {
+    res.redirect('incorrect-address')
+  } else {
+    res.render('service-patterns/concessionary-travel/example-service/eligible')
+  }
+})
+
+router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
+  req.session.skip_verify = true
+
+  res.render('service-patterns/concessionary-travel/example-service/add-poa')
+})
+
+router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
+  res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
+})
+
+
+router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
+  req.session.skip_verify = true
+
+  res.render('service-patterns/concessionary-travel/example-service/add-poa')
+})
+
+router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
+  res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
+})
+
+vehicleData = [
+  {
+    reg: 'KS53 UTW',
+    make: 'VOLKSWAGEN',
+    cc: '1984cc',
+    emissions: '192 g/km'
+  },
+  {
+    reg: 'BK52 UAY',
+    make: 'LAND ROVER',
+    cc: '2495cc',
+    emissions: '299 g/km'
+  },
+  {
+    reg: 'EF63 YPZ',
+    make: 'FORD',
+    cc: '998cc',
+    emissions: '114 g/km'
+  },
+  {
+    reg: 'YF64 OEE',
+    make: 'BMW',
+    cc: '647cc',
+    emissions: '13 g/km'
+  }
+]
+
+
 function niceDate(d) {
   var monthNames = [
      "January", "February", "March",
@@ -108,102 +206,6 @@ function constructDateData(sessionData){
   }
 }
 
-// add your routes here
-
-router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'skip') {
-    res.redirect('upload')
-  } else if (answer === 'shop') {
-    res.redirect('photo-shop')
-  } else {
-    res.render('service-patterns/concessionary-travel/example-service/photo/photo-guide')
-  }
-})
-
-router.get('/service-patterns/parking-permit/example-service/eligible', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-address')
-  } else {
-    res.render('service-patterns/parking-permit/example-service/eligible')
-  }
-})
-
-
-router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-dob')
-  } else {
-    res.render('service-patterns/concessionary-travel/example-service/confirm-address')
-  }
-})
-
-router.get('/service-patterns/concessionary-travel/example-service/eligible', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-address')
-  } else {
-    res.render('service-patterns/concessionary-travel/example-service/eligible')
-  }
-})
-
-router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
-  req.session.skip_verify = true
-
-  res.render('service-patterns/concessionary-travel/example-service/add-poa')
-})
-
-router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
-  res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
-})
-
-
-router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
-  req.session.skip_verify = true
-
-  res.render('service-patterns/concessionary-travel/example-service/add-poa')
-})
-
-router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
-  res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
-})
-
-vehicleData = [
-  {
-    reg: 'KS53 UTW',
-    make: 'VOLKSWAGEN',
-    cc: '1984cc',
-    emissions: '192 g/km'
-  },
-  {
-    reg: 'BK52 UAY',
-    make: 'LAND ROVER',
-    cc: '2495cc',
-    emissions: '299 g/km'
-  },
-  {
-    reg: 'EF63 YPZ',
-    make: 'FORD',
-    cc: '998cc',
-    emissions: '114 g/km'
-  },
-  {
-    reg: 'YF64 OEE',
-    make: 'BMW',
-    cc: '647cc',
-    emissions: '13 g/km'
-  }
-]
 
 function allTheData(sessionData){
   var dateData = constructDateData(sessionData)
@@ -227,7 +229,6 @@ router.get('*/example-service/*', function (req, res) {
   } else {
 
     // if radio-group is any other value (or is missing) render the page requested
-    console.log(allTheData(req.session.data));
     var str = req.path;
     res.render( str.substring(1), { 'data': allTheData(req.session.data)} );
 
