@@ -203,22 +203,6 @@ vehicleData = [
   }
 ]
 
-router.get('/service-patterns/parking-permit/example-service/confirm-vehicle-details', function(req, res){
-  console.log('test');
-  res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'vehicles': vehicleData});
-})
-
-router.get('/service-patterns/parking-permit/example-service/confirm-vehicle-details', function(req, res){
-  console.log('test');
-  res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'vehicles': vehicleData});
-})
-
-
-router.get('/service-patterns/parking-permit/example-service/permit-details', function(req, res){
-  console.log('test');
-  res.render('service-patterns/parking-permit/example-service/permit-details', { 'vehicles': vehicleData});
-})
-
 // make radio-group button routes work
 
 router.get('*/example-service/*', function (req, res) {
@@ -234,7 +218,7 @@ router.get('*/example-service/*', function (req, res) {
     // if radio-group is any other value (or is missing) render the page requested
 
     var str = req.path;
-    res.render( str.substring(1) );
+    res.render( str.substring(1), { 'vehicles': vehicleData} );
 
   }
 })
