@@ -65,9 +65,14 @@
       <div class="panel panel-border-narrow js-hidden" id="multi-dates">
         {% set r = r / 10 %}
         {% set r = r * 10 %}
-        {% for i in range(1, r + 1) %}
-          <h3 class="heading-small">Vehicle {{i}}</h3>
+        {% for i in range(0, r) %}
+        <div class="form-group">
+          <h3>Vehicle {{i + 1}}</h3>
+          <p class="heading-small">
+            {{vehicles[i].make}} - {{vehicles[i].reg}}
+          </p>
           {{ enterDate() }}
+        </div>
         {% endfor %}
       </div>
 

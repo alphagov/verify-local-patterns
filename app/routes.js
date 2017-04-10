@@ -208,6 +208,17 @@ router.get('/service-patterns/parking-permit/example-service/confirm-vehicle-det
   res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'vehicles': vehicleData});
 })
 
+router.get('/service-patterns/parking-permit/example-service/confirm-vehicle-details', function(req, res){
+  console.log('test');
+  res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'vehicles': vehicleData});
+})
+
+
+router.get('/service-patterns/parking-permit/example-service/permit-details', function(req, res){
+  console.log('test');
+  res.render('service-patterns/parking-permit/example-service/permit-details', { 'vehicles': vehicleData});
+})
+
 // make radio-group button routes work
 
 router.get('*/example-service/*', function (req, res) {
