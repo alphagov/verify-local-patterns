@@ -8,7 +8,7 @@
     "limitByHousehold":true,
     "permitMax": 4,
     "payOnline":true,
-    "userChooseStartDate":true,
+    "userChooseStartDate":false,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
