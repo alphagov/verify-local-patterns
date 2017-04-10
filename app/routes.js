@@ -128,12 +128,23 @@ function constructDateData(sessionData){
   var dateObj={};
   var d = sessionData;
   // set multiPermitsLength array
-  if(d.residentAmount > 1){
+  if(d.permitLength){
+    // set same value for all
+    dateObj.multiPermitsLength = [];
+    for (var i = 0; i < d.residentAmount; i++) {
+      var p = 'permitLength';
+      dateObj.multiPermitsLength[i] = d.p;
+    }
+  }else if(d.multiPermitsLength){
+    // set diff values
     dateObj.multiPermitsLength = [];
     for (var i = 0; i < d.residentAmount; i++) {
       var p = i + 'permitLength';
       dateObj.multiPermitsLength[i] = d.p;
     }
+  }else{
+    // set unset value
+    dateObj.multiPermitsLength = 'unset';
   }
 
   // set earliestDate
@@ -204,11 +215,14 @@ function constructDateData(sessionData){
     // format enddate
     dateObj.niceEndDate = niceDate(dateObj.endDate);
   }
+
+  return dateObj
 }
 
 
 function allTheData(sessionData){
   var dateData = constructDateData(sessionData)
+  console.log(dateData);
   var data = {
     vehicleData: vehicleData,
     dateData: dateData
