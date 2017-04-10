@@ -6,26 +6,6 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// make radio-group button routes work
-
-router.get('*/example-service/*', function (req, res) {
-
-  var radioGroup = req.query['radio-group'];
-
-  if (radioGroup) {
-
-    res.redirect(radioGroup);
-
-  } else {
-
-    // if radio-group is any other value (or is missing) render the page requested
-
-    var str = req.path;
-    res.render( str.substring(1) );
-
-  }
-});
-
 function niceDate(d) {
   var monthNames = [
      "January", "February", "March",
@@ -196,35 +176,56 @@ router.get('/service-patterns/concessionary-travel/example-service/photo/success
   res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
 })
 
-// vehicleData = [
-//   {
-//     reg: 'KS53 UTW',
-//     make: 'VOLKSWAGEN',
-//     cc: '1984cc',
-//     emissions: '192 g/km'
-//   },
-//   {
-//     reg: 'BK52 UAY',
-//     make: 'LAND ROVER',
-//     cc: '2495cc',
-//     emissions: '299 g/km'
-//   },
-//   {
-//     reg: 'EF63 YPZ',
-//     make: 'FORD',
-//     cc: '998cc',
-//     emissions: '114 g/km'
-//   },
-//   {
-//     reg: 'YF64 OEE',
-//     make: 'BMW',
-//     cc: '647cc',
-//     emissions: '13 g/km'
-//   }
-// ]
+vehicleData = [
+  {
+    reg: 'KS53 UTW',
+    make: 'VOLKSWAGEN',
+    cc: '1984cc',
+    emissions: '192 g/km'
+  },
+  {
+    reg: 'BK52 UAY',
+    make: 'LAND ROVER',
+    cc: '2495cc',
+    emissions: '299 g/km'
+  },
+  {
+    reg: 'EF63 YPZ',
+    make: 'FORD',
+    cc: '998cc',
+    emissions: '114 g/km'
+  },
+  {
+    reg: 'YF64 OEE',
+    make: 'BMW',
+    cc: '647cc',
+    emissions: '13 g/km'
+  }
+]
 
 router.get('/service-patterns/parking-permit/example-service/confirm-vehicle-details', function(req, res){
-  res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'test' : 'Foo' });
+  console.log('test');
+  res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'vehicles': vehicleData});
+})
+
+// make radio-group button routes work
+
+router.get('*/example-service/*', function (req, res) {
+
+  var radioGroup = req.query['radio-group'];
+
+  if (radioGroup) {
+
+    res.redirect(radioGroup);
+
+  } else {
+
+    // if radio-group is any other value (or is missing) render the page requested
+
+    var str = req.path;
+    res.render( str.substring(1) );
+
+  }
 })
 
 module.exports = router

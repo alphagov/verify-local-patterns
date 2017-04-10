@@ -15,33 +15,6 @@
     We've received these details from DVLA:
   </p>
 
-  {% set vehicles = [
-    {
-      reg: 'KS53 UTW',
-      make: 'VOLKSWAGEN',
-      cc: '1984cc',
-      emissions: '192 g/km'
-    },
-    {
-      reg: 'BK52 UAY',
-      make: 'LAND ROVER',
-      cc: '2495cc',
-      emissions: '299 g/km'
-    },
-    {
-      reg: 'EF63 YPZ',
-      make: 'FORD',
-      cc: '998cc',
-      emissions: '114 g/km'
-    },
-    {
-      reg: 'YF64 OEE',
-      make: 'BMW',
-      cc: '647cc',
-      emissions: '13 g/km'
-    }
-  ] %}
-
   {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
   {% set r = r / 10 %}
   {% set r = r * 10 %}
