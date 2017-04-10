@@ -13,17 +13,25 @@
 {% if r > 1 %}
   {% set pageTitle = "Paying for your permits" %}
 {% else %}
-  {% set pageTitle = "How long will you need your permit?" %}
+  {% set pageTitle = "Paying for your permit" %}
 {% endif %}
 
 {% macro permitTable(i) %}
   <table>
+    <tr>
+      <th>
+        Permit type
+      </th>
+      <th>
+        Resident's parking permit
+      </th>
+    </tr>
   <tr>
     <th>
-      Permit type
+      Vehicle registration
     </th>
     <th>
-      Resident's parking permit
+      {{data.vehicleData[i].reg}}
     </th>
   </tr>
   <tr>
@@ -82,8 +90,8 @@
   {% if residentAmount > 1 %}
     {% set r = r / 10 %}
     {% set r = r * 10 %}
-    {% for i in range(1, r + 1) %}
-      <h3 class="heading-small">Vehicle {{i}}</h3>
+    {% for i in range(0, r) %}
+      <h3 class="heading-small">Vehicle {{i + 1}}</h3>
       {{ permitTable(i) }}
     {% endfor %}
   {% else %}

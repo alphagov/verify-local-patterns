@@ -25,37 +25,13 @@ function niceDate(d) {
    return d.getDate()+suffixes[d.getDate()]+" "+monthNames[d.getMonth()]+" "+d.getFullYear();
 }
 
-// add your routes here
+function constructDateData(sessionData){
 
-router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'skip') {
-    res.redirect('upload')
-  } else if (answer === 'shop') {
-    res.redirect('photo-shop')
-  } else {
-    res.render('service-patterns/concessionary-travel/example-service/photo/photo-guide')
-  }
-})
-
-router.get('/service-patterns/parking-permit/example-service/eligible', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-address')
-  } else {
-    res.render('service-patterns/parking-permit/example-service/eligible')
-  }
-})
-
-router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
   var dateObj={};
-  var d = req.session.data;
+  var d = sessionData;
   // set multiPermitsLength array
   if(d.residentAmount > 1){
+    dateObj.multiPermitsLength = [];
     for (var i = 0; i < d.residentAmount; i++) {
       var p = i + 'permitLength';
       dateObj.multiPermitsLength[i] = d.p;
@@ -130,8 +106,34 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     // format enddate
     dateObj.niceEndDate = niceDate(dateObj.endDate);
   }
-  res.render('service-patterns/parking-permit/example-service/pre-payment',dateObj);
+}
+
+// add your routes here
+
+router.get('/service-patterns/concessionary-travel/example-service/photo/photo-guide', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'skip') {
+    res.redirect('upload')
+  } else if (answer === 'shop') {
+    res.redirect('photo-shop')
+  } else {
+    res.render('service-patterns/concessionary-travel/example-service/photo/photo-guide')
+  }
 })
+
+router.get('/service-patterns/parking-permit/example-service/eligible', function (req, res) {
+  // get the answer from the query string (eg. ?over18=false)
+  var answer = req.query.answer
+
+  if (answer === 'No') {
+    res.redirect('incorrect-address')
+  } else {
+    res.render('service-patterns/parking-permit/example-service/eligible')
+  }
+})
+
 
 router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
@@ -203,7 +205,16 @@ vehicleData = [
   }
 ]
 
-// make radio-group button routes work
+function allTheData(sessionData){
+  var dateData = constructDateData(sessionData)
+  var data = {
+    vehicleData: vehicleData,
+    dateData: dateData
+  }
+  return data
+}
+
+// make radio-group button routes work and pass all the data
 
 router.get('*/example-service/*', function (req, res) {
 
@@ -216,9 +227,9 @@ router.get('*/example-service/*', function (req, res) {
   } else {
 
     // if radio-group is any other value (or is missing) render the page requested
-
+    console.log(allTheData(req.session.data));
     var str = req.path;
-    res.render( str.substring(1), { 'vehicles': vehicleData} );
+    res.render( str.substring(1), { 'data': allTheData(req.session.data)} );
 
   }
 })

@@ -11,6 +11,7 @@
   {% if not r %}
     {% set r = 1 %}
   {% endif %}
+
   <p>
     We've received these details from DVLA:
   </p>
@@ -26,7 +27,7 @@
           Registration number
         </th>
         <th>
-          {{vehicles[i].reg}}
+          {{data.vehicleData[i].reg}}
         </th>
       </tr>
       <tr>
@@ -34,7 +35,7 @@
           Vehicle make
         </th>
         <th>
-          {{vehicles[i].make}}
+          {{data.vehicleData[i].make}}
         </th>
       </tr>
       <tr>
@@ -42,7 +43,7 @@
           Cylinder capacity (cc)
         </th>
         <th>
-          {{vehicles[i].cc}}
+          {{data.vehicleData[i].cc}}
         </th>
       </tr>
       <tr>
@@ -50,7 +51,7 @@
           CO₂ emissions
         </th>
         <th>
-          {{vehicles[i].emissions}}
+          {{data.vehicleData[i].emissions}}
         </th>
       </tr>
     </table>
