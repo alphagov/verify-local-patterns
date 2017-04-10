@@ -15,11 +15,7 @@
     You've chosen {{r}} resident's parking permit{{"s" if r > 1}}.
   </p>
 
-  {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-    {% set singleCost = council.permitsCosts[0] %}
-  {% endif %}
-
-  {% if singleCost or not council.DVLAAPI%}
+  {% if not council.DVLAAPI%}
 
     <p>
       We need your vehicle's registration number{{"s" if r > 1}} to associate your permit{{"s" if r > 1}} with your vehicle{{"s" if r > 1}}.
