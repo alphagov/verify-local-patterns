@@ -196,4 +196,35 @@ router.get('/service-patterns/concessionary-travel/example-service/photo/success
   res.render('service-patterns/concessionary-travel/example-service/photo/success', { skip_verify: req.session.skip_verify})
 })
 
+// vehicleData = [
+//   {
+//     reg: 'KS53 UTW',
+//     make: 'VOLKSWAGEN',
+//     cc: '1984cc',
+//     emissions: '192 g/km'
+//   },
+//   {
+//     reg: 'BK52 UAY',
+//     make: 'LAND ROVER',
+//     cc: '2495cc',
+//     emissions: '299 g/km'
+//   },
+//   {
+//     reg: 'EF63 YPZ',
+//     make: 'FORD',
+//     cc: '998cc',
+//     emissions: '114 g/km'
+//   },
+//   {
+//     reg: 'YF64 OEE',
+//     make: 'BMW',
+//     cc: '647cc',
+//     emissions: '13 g/km'
+//   }
+// ]
+
+router.get('/service-patterns/parking-permit/example-service/confirm-vehicle-details', function(req, res){
+  res.render('service-patterns/parking-permit/example-service/confirm-vehicle-details', { 'test' : 'Foo' });
+})
+
 module.exports = router
