@@ -1,6 +1,6 @@
 # Contribution guidelines
 
-## Suggesting features or changes
+## Raising issues
 
 If you think something should be different in either of the patterns, [first check someone else hasn't already spotted it](https://github.com/alphagov/verify-local-patterns/issues?utf8=%E2%9C%93&q=is%3Aissue%20). If they haven't, feel free to [open an issue](https://github.com/alphagov/verify-local-patterns/issues/new) and we can discuss it.
 
@@ -10,12 +10,18 @@ This ensures changes are discussed properly before any time is spent on them.
 
 ## Raising bugs with the project
 
-When raising bugs please explain the issue in good detail and if neccesary, provide a guide to how to replicate it.
+Bugs are reported as issues, but with the #bug tag. Please explain the issue in good detail and if neccesary, provide a guide to how to replicate it.
 When describing the bug it's useful to follow the format:
 
 - what you did
 - what you expected to happen
 - what happened
+
+## Submitting pull requests
+
+If you have fixed an issue which is already open, please feel free to submit a pull request.
+
+Unsolicited pull requests which do not refer to open issues might not be merged.
 
 ## Contact the team
 
