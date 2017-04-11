@@ -129,15 +129,15 @@ function constructDateData(sessionData){
   var d = sessionData;
   console.log('sessionData', sessionData);
   // set multiPermitsLength array
+  dateObj.multiPermitsLength = [];
   if(d.permitLength){
     // set same value for all
-    dateObj.multiPermitsLength = [];
     for (var i = 0; i < d.residentAmount; i++) {
       dateObj.multiPermitsLength[i] = d.permitLength;
     }
   }else{
     // set unset value
-    dateObj.multiPermitsLength = 'unset';
+    dateObj.multiPermitsLength[i] = 'Error: Length not entered';
   }
 
   // set earliestDate
@@ -149,18 +149,21 @@ function constructDateData(sessionData){
       if(d.permitStartChoice=="multi"){
           dateObj.startDate[i] = new Date(d.permitLengthYear+"-"+d.permitLengthMonth+"-"+d.permitLengthDay);
           if (dateObj.startDate < earliestDate) {
-            dateObj.startDate[i]=earliestDate;
+            dateObj.startDate=earliestDate;
           }
       }else{
         dateObj.startDate = new
         // TODO: Add i count to these variables
         Date(d.permitLengthYear+"-"+d.permitLengthMonth+"-"+d.permitLengthDay);
         if (dateObj.startDate < earliestDate) {
-          dateObj.startDate[i]=earliestDate;
+          dateObj.startDate=earliestDate;
         }
       }
       //format startdates
-      dateObj.niceStartDate = niceDate(dateObj.startDate);
+      dateObj.niceStartDate = [];
+      for (var i = 0; i < d.residentAmount; i++) {
+        dateObj.niceStartDate[i] = niceDate(dateObj.startDate);
+      }
 
       //set enddates
       if(d.permitLength=="different"){
