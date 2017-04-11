@@ -4,6 +4,8 @@
 
 If you think something should be different in either of the patterns, [first check someone else hasn't already spotted it](https://github.com/alphagov/verify-local-patterns/issues?utf8=%E2%9C%93&q=is%3Aissue%20). If they haven't, feel free to [open an issue](https://github.com/alphagov/verify-local-patterns/issues/new) and we can discuss it.
 
+Please make sure you are **describing problems not suggesting solutions** in your issue.
+
 This ensures changes are discussed properly before any time is spent on them.
 
 ## Raising bugs with the project
