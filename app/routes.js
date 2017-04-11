@@ -8,6 +8,8 @@ router.get('/', function (req, res) {
 
 
 router.get('*/example-service/*', function (req, res) {
+//router.get('*/service-patterns/*', function (req, res) {
+
 
   //get the answer from the query string (eg. ?over18=false)
   var radioGroup = req.query['radio-group'];
@@ -24,6 +26,8 @@ router.get('*/example-service/*', function (req, res) {
     res.render( str.substring(1) );
 
   }
+  
+  //res.render('service-patterns/parking-permit/example-service/resident-start')
 });
 
 // add your routes here
