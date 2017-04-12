@@ -41,7 +41,7 @@ function niceDate(d) {
   //    20    21    22    23    24    25    26    27    28    29
        "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
   //    30    31
-       "th", "st" ];    
+       "th", "st" ];
    return d.getDate()+suffixes[d.getDate()]+" "+monthNames[d.getMonth()]+" "+d.getFullYear();
 }
 
@@ -77,10 +77,10 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
   var earliestDate = new Date();
   earliestDate.setDate(earliestDate.getDate()+d.council.permitWait);
   if (d.permitStartChoice=="other") {
-    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);  
+    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
     if (dateObj.startDate < earliestDate) {
       dateObj.startDate=earliestDate;
-    }  
+    }
   } else {
     dateObj.startDate = earliestDate;
   }
@@ -94,28 +94,6 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
   }
   dateObj.niceEndDate = niceDate(dateObj.endDate);
   res.render('service-patterns/parking-permit/example-service/pre-payment',dateObj);
-})
-
-router.get('/service-patterns/concessionary-travel/example-service/confirm-address', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-dob')
-  } else {
-    res.render('service-patterns/concessionary-travel/example-service/confirm-address')
-  }
-})
-
-router.get('/service-patterns/concessionary-travel/example-service/eligible', function (req, res) {
-  // get the answer from the query string (eg. ?over18=false)
-  var answer = req.query.answer
-
-  if (answer === 'No') {
-    res.redirect('incorrect-address')
-  } else {
-    res.render('service-patterns/concessionary-travel/example-service/eligible')
-  }
 })
 
 router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
