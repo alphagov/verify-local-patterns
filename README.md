@@ -7,7 +7,7 @@ This project includes two things:
   - Pattern guidance: This is content that will be included in the [GOV.UK Service Manual](https://gov.uk/service-manual) outlining best practice for councils to deliver two services - "Apply for a resident's parking permit" and "Apply for an older person's bus pass."
   - A working prototype of both services which follows the pattern. By default this is styled for the fictional council of Argleton, but the prototype can be localised.
 
-## Localising the prototype
+## Localising the prototype (Step 1: Initial pull request)
 
 If you are working with a council involved in the #VerifyLocal pilots project, you need to localise the prototype to properly test it for your user research. This involves:
 
@@ -83,6 +83,47 @@ Once you're happy with your changes, [make a pull request from your fork](https:
 
 Any questions, ask on Slack!
 
+## Localising the prototype (Step 2: Changing local options)
+
+Some parts of the services are done differently in different places.
+
+We've built features for these things that councils can turn on in the prototype.
+
+Local options currently available:
+
+
+### `name`
+
+**Example value**: Argleton County Council
+**What it is**: The name of your council
+**Where it's used**: Wherever a user needs to know what the council will be doing, what data they will hold etc. eg "If you need help, contact {{council.name}}."
+
+### `shortName`
+
+**Example value**: Argleton
+**What it is**: The colliquial phrasing of the area that the council serves.
+**Where it's used**: Whereever the service talks generally about where a user should live. eg "You're eligible for a bus pass in {{council.shortName}}."
+
+### `parkingBoundary`
+
+**Example value**: Argleton City Centre
+**What it is**: The boundary that the user needs a parking permit for. As this is just a prototype, the first steps in the journey pretend to route the user to the right page for their boundary. Verify later checks they live in the boundary.
+**Where it's used**: Whenever the council needs to tell the user about where they can park with the permit they're applying for.
+
+### More example variables (to be documented fully later)
+    "permitsCosts": [51],
+    "sixmonth": true,
+    "limitByHousehold":true,
+    "permitMax": 4,
+    "payOnline":true,
+    "userChooseStartDate":false,
+    "permitWait": 5,
+    "tempPermit":true,
+    "string": "argleton",
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
+
+
+---
 
 ## Contributing issues
 
