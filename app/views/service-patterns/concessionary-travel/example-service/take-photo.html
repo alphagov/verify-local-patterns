@@ -1,0 +1,25 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Your bus pass photo" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Take a photo with your device.
+  </p>
+  {% include 'common-content/example-photo.html' %}
+    <form>
+      <div class="form-group file-upload">
+        <label for="photo" class="button photo-upload-label" role="button">
+          <span id="photo-label-text" class="">Take a photo</span>
+        </label>
+        <input type="file"  accept="image/*;capture=camera" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
+      </div>
+    </form>
+    <a href="#">I need help taking a photo</a>
+</div>
+
+{% endblock %}

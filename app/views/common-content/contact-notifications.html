@@ -1,0 +1,45 @@
+<div class="column-two-thirds">
+
+  <p>
+    We can send you a reminder in {% if item == 'resident\'s parking permit'%}{{ permitChoice + 's' if council.sixmonth else "1 year" }}{% else %}5 years{% endif %} to renew your {{item}}.
+  </p>
+
+  <p>
+    <strong class="bold-medium">
+    How do you want to receive your renewal notification?
+    </strong>
+  </p>
+
+  <form>
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">
+          How do you want to receive your renewal notification?
+        </legend>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
+          <input id="contact-by-email" type="checkbox" name="checkbox-group" value="Yes">
+          Email
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contactEmail" type="text" id="contact-email" value="{{contactEmail}}">
+        </div>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-text-input" for="contact-by-text">
+          <input id="contact-by-text" type="checkbox" name="checkbox-contact-group" value="No">
+          Text message
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
+          <label class="form-label" for="contact-text-message">Mobile phone number</label>
+          <input class="form-control" name="contactText" type="text" id="contact-text-message" value="{{contactText}}">
+        </div>
+
+      </fieldset>
+    </div>
+  </form>
+
+  <a class="button" role="button" href="success">Next</a>
+
+</div>

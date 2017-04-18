@@ -6,6 +6,17 @@
 {% block content %}
 
 <div class="column-two-thirds">
+  {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+  {% set singleCost = council.permitsCosts[0] %}
+  {% endif %}
+
+  {% if council.customPriceLogic or singleCost %}
+
+  <p>
+    We need your vehicle's registration number to associate your permit with your vehicle
+  </p>
+
+  {% else %}
 
   <p>
     We need your vehicle's registration number to
@@ -19,6 +30,7 @@
       associate your permit with your vehicle
     </li>
   </ul>
+  {% endif %}
 
   <div class="form-group">
       <form method="post">
@@ -34,7 +46,7 @@
 
 
 
-  <a class="button" role="button" href="permit-price">Next</a>
+  <a class="button" role="button" href="{{'permit-details' if (singleCost and council.sixmonth == false) else 'permit-price'}}">Next</a>
 
 
 </div>

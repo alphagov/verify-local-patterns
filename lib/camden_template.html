@@ -25,7 +25,7 @@
     <!--<![endif]-->
     <!--[if lt IE 9]><script src="{{ asset_path }}javascripts/ie.js?0.18.3"></script><![endif]-->
 
-    <link rel="shortcut icon" href="{{ asset_path }}images/favicon.ico?0.18.3" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://camden.gov.uk/ccm-ldn-theme/__ccm__/themes-prod/fc-sw2/images/icons/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset_path }}images/apple-touch-icon-152x152.png?0.18.3">
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
@@ -62,14 +62,11 @@
     <!-- black box, legacy from govuk -->
     <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
     </header>
-    <!-- argleton header -->
+    <!-- camden header -->
     <header>
       <div class="container">
-        <img src="{{ asset_path }}images/tree.svg" alt="Argleton logo">
-        <span class="argleton-name">Argleton </span><span class="argleton-name-extra">County Council</span>
-        <div class="contact-link">
-          <a href="#">Contact</a>
-        </div>
+        <img src="https://contact.camden.gov.uk/bootstrap-theme/images/ccpd_logo/headerLogo.png" alt="Camden logo">
+        <!-- <span class="argleton-name">Argleton </span><span class="argleton-name-extra">County Council</span> -->
       </div>
     </header>
     <!--end header-->
@@ -80,10 +77,14 @@
     <main id="content" role="main">
 
       {% if startPage %}
-      <h1 class="heading-xlarge">{{pageTitle}} in {{council.shortName}}</h1>
+        <div>
+          <h1 class="heading-xlarge">{{pageTitle}} in {{council.shortName}}</h1>
+        </div>
       {% else %}
-      {% include "includes/service_breadcrumbs.html" %}
-      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+        {% include "includes/service_breadcrumbs.html" %}
+        <div>
+          <h1 class="heading-xlarge">{{pageTitle}}</h1>
+        </div>
       {% endif %}
 
       {% block content %}{% endblock %}
@@ -92,8 +93,12 @@
 
 
     <footer class="group js-footer" id="footer" role="contentinfo">
-      Argleton is a fictional council to demonstrate <a href="/">local government service patterns</a>.<br />
-      <a href="/council-picker">Change your testing council</a>
+      <div class="container">
+        <img src="https://contact.camden.gov.uk/bootstrap-theme/images/ccpd_logo/footerLogo.png" alt="Camden logo">
+        <div class="contact-link">
+          Copyright © 2017 <a href="http://www.camden.gov.uk/privacy">Disclaimer and privacy statement</a>
+        </div>
+      </div>
     </footer>
 
     <!--end footer-->

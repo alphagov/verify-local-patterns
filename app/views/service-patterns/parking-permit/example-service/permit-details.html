@@ -1,23 +1,17 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Add permit details" %}
+{% set pageTitle = "When should your permit start?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
-  <p>
-    You've chosen a {{permitChoice}} permit.
-  </p>
-
-<h2 class="heading-medium">Enter permit start date</h2>
-
 {% if(council.permitsCosts[0] === 0) %}
 {% set freePermit = true %}
 {% endif %}
 
-<form action="{{ "contact-details" if freePermit else "pre-payment" }}" method="post">
+<form action="{{ "contact-reference" if freePermit else "pre-payment" }}" method="post">
   <div class="form-group">
     <fieldset>
 
@@ -53,6 +47,13 @@
 
     </fieldset>
   </div>
+
+  {% if council.sixmonth == false %}
+    <p class="panel panel-border-wide">
+      Your permit will expire 1 year after it's start date.
+    </p>
+  {% endif %}
+
 
   <input type="submit" class="button" value="Next" />
 
