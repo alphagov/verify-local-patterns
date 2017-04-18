@@ -73,16 +73,22 @@
     "tempPermit":true,
     "string" : "northumberland"
   },
-  {
-<<<<<<< HEAD
+ {
     "name" : "Oxfordshire County Council",
-    "shortName" : "Oxfordshire",
-  "parkingBoundary" : "Oxfordshire County Council",
-    "permitMax": "two",
-    "permitsCosts": [60,120,130,130],
-    "permitWait": 0,
+    "shortName": "Oxfordshire",
+    "parkingBoundary": "Oxfordshire",
+    "permitMax": 4,
+    "limitByHousehold":true,
+    "permitsCosts": [15,60,120,180],
+    "sixmonth": false,
+    "payOnline":false,
+    "testChangeAddress":true,
+    "userChooseStartDate":false,
+    "permitWait": 5,
+    "tempPermit":false,
     "string" : "oxfordshire"
-=======
+  },
+{
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
     "parkingBoundary": "Sunderland city centre",
@@ -111,6 +117,5 @@
     "permitWait": 0,
     "tempPermit":true,
     "string" : "unbranded"
->>>>>>> upstream/master
   }
 ]
