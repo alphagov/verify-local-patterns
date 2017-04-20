@@ -9,7 +9,6 @@ router.get('/', function (req, res) {
 // make radio-group button routes work
 
 router.get('*/example-service/*', function (req, res) {
-router.get('*/service-patterns/*', function (req, res) {
 
 
   var radioGroup = req.query['radio-group'];
