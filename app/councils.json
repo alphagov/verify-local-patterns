@@ -10,6 +10,8 @@
     "payOnline":true,
     "testChangeAddress":true,
     "userChooseStartDate":false,
+    "DVLAAPIenforcement":true,
+    "DVLAAPIprice":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
