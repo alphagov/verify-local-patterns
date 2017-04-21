@@ -18,16 +18,19 @@
     <div class="form-group">
       <fieldset class="inline">
 
-        <legend class="visually-hidden">Is this ok?</legend>
-
-        <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-{{council.string}}">
-          Yes
-        </label>
-        <label class="block-label selection-button-radio" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="radio-group" value="start-non-verify">
-          No
-        </label>
+      <legend class="visually-hidden">Can we use this information when you {{serviceName | lower}}?</legend>
+      <label class="block-label selection-button-radio" for="radio-inline-1">
+        {% if council.testChangeAddress %}
+        <input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@verify-local-hub.herokuapp.com/intro?requestId={{ serviceString }}-{{council.string}}">
+        {% else %}
+        <input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId={{ serviceString }}-{{council.string}}">
+        {% endif %}
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="radio-group" value="start-non-verify">
+        No
+      </label>
 
       </fieldset>
     </div>
