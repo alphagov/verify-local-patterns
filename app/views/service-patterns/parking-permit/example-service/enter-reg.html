@@ -45,7 +45,7 @@
   </div>
 
 {% if council.testv5cScan %}
-  {% set nextPage = 'v5c-scan' %}
+  {% set nextPage = 'upload-v5c' %}
 {% elif council.testv5cnumber %}
   {% set nextPage = 'v5c-number' %}
 {% elif (singleCost and council.sixmonth == false) %}
