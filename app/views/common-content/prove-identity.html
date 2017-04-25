@@ -5,7 +5,7 @@
   </p>
 
   <form>
-    {% set formTitle = "How do you want to claim your resident's parking permit?" if serviceString == "parking-permit" else "How do you want to claim your older person's bus pass?" %}
+    {% set formTitle = "How do you want us to check your identity?" %}
 
     <h2 class="heading-medium">{{formTitle}}</h2>
     <legend class="visually-hidden">{{formTitle}}</legend>
@@ -13,7 +13,7 @@
     <div class="radio-with-bullets">
       <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
         <input id="verify-option" type="radio" name="radio-group" value="pre-verify">
-        <span class="heading-small">Sign in with GOV.UK Verify</span>
+        <span class="heading-small">Use GOV.UK Verify</span>
       </label>
 
       <div class="form-group verify">
@@ -22,7 +22,7 @@
             Your permit will arrive within 5 working days
           </li>
           <li>
-            To sign up, you'll need to prove your identity and have an email address
+            You'll need to answer some security questions if this is your first time using GOV.UK Verify
           </li>
         </ul>
       </div>
@@ -46,7 +46,7 @@
           Your permit will arrive within 10 working days
         </li>
         <li>
-          You'll need to upload a document to prove your address {{"and a document to prove your age" if serviceString == 'concessionary-travel' }}
+          You'll need to upload a recent utility bill {{"and your passport or driving license to prove your age" if serviceString == 'concessionary-travel' }}
         </li>
       </ul>
     </div>
