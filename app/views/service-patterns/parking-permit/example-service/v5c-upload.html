@@ -1,0 +1,29 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Upload your V5C" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    We need you to scan the first page of your V5C. This is a document which proves you own your vehicle.
+  </p>
+  <p>
+    You can take a photo of this document with your smartphone camera or scan it with a scanner.
+  </p>
+  <form>
+    <div id="file-group" class="form-group file-upload">
+      <label for="file" class="button file-upload-label" role="button">
+        <span id="file-label-text" class="">Upload document</span>
+      </label>
+      <input type="file" id="file" class="file-choose-file" name="file" aria-controls="progress-container" aria-required="true" >
+    </div>
+  </form>
+
+
+
+</div>
+
+{% endblock %}
