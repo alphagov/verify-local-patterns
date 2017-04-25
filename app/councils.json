@@ -13,7 +13,8 @@
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
-    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
+    "pploa1": true
   },
   {
     "name": "Buckinghamshire County Council",
