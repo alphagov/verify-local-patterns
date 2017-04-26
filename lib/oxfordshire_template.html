@@ -1,7 +1,7 @@
 {% block top_of_page %}{% endblock %}
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="{{ html_lang|default('en') }}"><![endif]-->
-<!--[if gt IE 8]><!--><html class="unbranded" lang="{{ html_lang|default('en') }}"><!--<![endif]-->
+<!--[if gt IE 8]><!--><html  lang="{{ html_lang|default('en') }}"><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     {% if serviceName == pageTitle %}
@@ -32,8 +32,11 @@
 
     {% block head %}{% endblock %}
   </head>
-
-  <body class="{% block body_classes %}{% endblock %}">
+<!--
+  <body class="{% block body_classes %}{% endblock %}" >
+-->
+<body class="site-wrapper">
+  
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     {% block body_start %}{% endblock %}
@@ -719,23 +722,24 @@
   -->
   
     <!--end header-->
-
+<br>
 
     {% block after_header %}{% endblock %}
 
     <main id="content" role="main">
 
+    <!--
       {% if startPage %}
       <h1 class="heading-xlarge">{{pageTitle}} in {{council.shortName}}</h1>
       {% else %}
       {% include "includes/service_breadcrumbs.html" %}
-      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+      <h1 class="heading-xlarge">{{pageTitle}}</h1> 
       {% endif %}
-
+  -->
       {% block content %}{% endblock %}
 
     </main>
-
+<br><br><br>
 
 <!-- Start Oxfordshire footer -->
 
@@ -743,6 +747,10 @@
                 <div class="options">
            <div class="region region-footer-top">
     <div id="block-block-24" class="block block-block first last odd">
+
+
+
+
 
       
   <div class="content">
@@ -809,11 +817,15 @@
 </div><!-- /.block -->
   </div><!-- /.region -->
           </div>
-               <div class="region region-footer">
+
+
+    <div class="footer">
     <div id="block-block-2" class="block block-block first last odd">
 
-<!--
-      
+
+      <div class="region region-footer">
+    <div id="block-block-2" class="block block-block first last odd">
+
   <div class="content">
     <address><strong>Oxfordshire County Council</strong><br>
   County Hall, New Road, Oxford, OX1 1ND<br>
@@ -834,11 +846,13 @@
 </ul>
   </div>
 
-  -->
+ 
 
 </div><!-- /.block -->
   </div><!-- /.region -->
         </div>
+
+
 
     <!--end footer-->
 
