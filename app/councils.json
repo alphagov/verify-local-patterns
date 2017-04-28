@@ -46,7 +46,8 @@
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
-    "string" : "cambridgeshire"
+    "string" : "cambridgeshire",
+    "pploa1": true
   },
   {
     "name" : "London Borough of Camden",
