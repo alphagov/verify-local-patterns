@@ -1,7 +1,7 @@
 <div class="column-two-thirds">
 
   <p>
-    We can also send you a reminder in 5 years to renew your {{item}}.
+    We can send you a reminder in {% if item == 'resident\'s parking permit'%}{{ permitChoice + 's' if council.sixmonth else "1 year" }}{% else %}5 years{% endif %} to renew your {{item}}.
   </p>
 
   <p>

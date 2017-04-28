@@ -13,12 +13,31 @@
           <img src="{{asset_path}}images/image-f1-plain.jpg" class="photo-preview" />
 
           <p>
-            By proceeding you confirm that this photo is a good likeness of you and that it looks like the example photo.
+            By proceeding you confirm that this photo is a good likeness of you and that it looks like the example photo below.
           </p>
-          <a href="contact-reference" class="button">Confirm</a>
 
-          <div class="spacer">
-          </div>
+          <form class="inline-block">
+            <div class="form-group">
+              <fieldset class="inline">
+
+                <legend class="visually-hidden">Is this photo of you?</legend>
+
+                <label class="block-label selection-button-radio" for="radio-inline-1">
+                  <input id="radio-inline-1" type="radio" name="radio-group" value="contact-reference">
+                  Yes, use this photo
+                </label>
+                <label class="block-label selection-button-radio" for="radio-inline-2">
+                  <input id="radio-inline-2" type="radio" name="radio-group" value="upload">
+                  No, use a different photo
+                </label>
+
+              </fieldset>
+            </div>
+            <div class="form-group">
+                <button class="button">Next</button>
+            </div>
+          </form>
+
           {% include 'common-content/example-photo.html' %}
 
         </div>

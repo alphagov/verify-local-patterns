@@ -20,7 +20,15 @@
       {% set singleCost = council.permitsCosts[0] %}
     {% endif %}
     <p>
-      Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and how many other other permits have been bought by your household.{% endif %}
+      Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and
+
+
+      {% if council.limitByHousehold %}
+        how many other permits have been bought by your household.
+      {% else %}
+        how many other permits you already have.
+      {% endif %}
+    {% endif %}
     </p>
     <p>
       These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
@@ -46,10 +54,19 @@
   <h2 class="heading-medium">About this service</h2>
     <ul class="list list-bullet">
       <li>
-        Each household is allowed up to {{council.permitMax}} permits.
+        Each {% if council.limitByHousehold %}
+          household
+        {% else %}
+          resident
+        {% endif %}
+        {% if council.permitMax==1 %}
+          is allowed one permit.
+        {% else %}
+          is allowed up to {{council.permitMax}} permits.
+        {% endif %}
       </li>
       <li>
-        Permits can be bought for 6 months or for 12 months.
+        {{"Permits can be bought for 6 months or for 12 months." if council.sixmonth else "Permits last for 12 months."}}
       </li>
       {% if council.permitWait < 1 %}
       <li>
@@ -57,7 +74,10 @@
       </li>
       {% else %}
       <li>
-        Your permit will take {{council.permitWait}} working days to arrive. While you wait, you'll need to use a temporary permit which we will email to you.
+        Your permit will take {{council.permitWait}} working days to arrive.
+        {% if council.tempPermit == true %}
+        While you wait, you'll need to use a temporary permit which we will email to you.
+        {% endif %}
       </li>
       {% endif %}
       <li>
