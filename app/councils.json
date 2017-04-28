@@ -81,7 +81,7 @@
   {
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
-    "parkingBoundary": "Sunderland city centre",
+    "parkingBoundary": "Sunderland",
     "limitByHousehold":true,
     "permitMax": 5,
     "permitsCosts": [0, 20, 40, 60],
