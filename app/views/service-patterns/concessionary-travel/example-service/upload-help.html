@@ -18,19 +18,7 @@
         <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
       </div>
     </form>
-    <details>
-      <summary><span class="summary">Get help with uploading a file</span></summary>
-      <div class="panel panel-border-narrow">
-        <p>
-          Find your digital photo using your computer's file picker.
-        </p>
-        <img src="{{asset_path}}/images/mac-file-picker.png"  />
-        <p>
-          Double click your file to select it.
-        </p>
-      </div>
-    </details>
-
+    <a href="upload-help">Get help with uploading a file</a>
     <div class="spacer"></div>
 
     {% include 'common-content/example-photo.html' %}
