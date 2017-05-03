@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var MobileDetect = require('mobile-detect')
 
 // Route index page
 router.get('/', function (req, res) {
@@ -9,6 +10,8 @@ router.get('/', function (req, res) {
 // make radio-group button routes work
 
 router.get('*/example-service/*', function (req, res) {
+
+  md = new MobileDetect(req.headers['user-agent']);
 
   var radioGroup = req.query['radio-group'];
 
@@ -21,7 +24,7 @@ router.get('*/example-service/*', function (req, res) {
     // if radio-group is any other value (or is missing) render the page requested
 
     var str = req.path;
-    res.render( str.substring(1) );
+    res.render( str.substring(1), {'userAgent': md } );
 
   }
 });
