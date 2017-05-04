@@ -1,13 +1,26 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Your bus pass photo" %}
+{% set pageTitle = "Take a photo for your bus pass" %}
 
 {% block content %}
 
+{% if(userAgent.mobile()) %}
+{% set deviceString = 'device' %}
+{% else %}
+{% set deviceString = 'computer' %}
+{% endif %}
+
 <div class="column-two-thirds">
+  <p>
+    Take a photo using the camera on your {{deviceString}}.
+  </p>
+  <p>
+    <a href="#">I don't have a camera on my {{deviceString}}</a>
+  </p>
 
   {% include 'common-content/example-photo.html' %}
+
     <form>
       <div class="form-group file-upload">
         <label for="photo" class="button photo-upload-label" role="button">
@@ -16,7 +29,7 @@
         <input type="file"  accept="image/*;capture=camera" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
       </div>
     </form>
-    <a href="#">I need help taking a photo</a>
+
 </div>
 
 {% endblock %}
