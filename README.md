@@ -7,7 +7,7 @@ This project includes two things:
   - Pattern guidance: This is content that will be included in the [GOV.UK Service Manual](https://gov.uk/service-manual) outlining best practice for councils to deliver two services - "Apply for a resident's parking permit" and "Apply for an older person's bus pass."
   - A working prototype of both services which follows the pattern. By default this is styled for the fictional council of Argleton, but the prototype can be localised.
 
-## Localising the prototype
+## Localising the prototype (Step 1: Initial pull request)
 
 If you are working with a council involved in the #VerifyLocal pilots project, you need to localise the prototype to properly test it for your user research. This involves:
 
@@ -83,6 +83,95 @@ Once you're happy with your changes, [make a pull request from your fork](https:
 
 Any questions, ask on Slack!
 
+## Localising the prototype (Step 2: Changing local options)
+
+Some parts of the services are done differently in different places.
+
+We've built features for these things that councils can turn on in the prototype.
+
+Local options currently available:
+
+
+### `name`
+
+**Example value**: Argleton County Council
+**What it is**: The name of your council
+**Where it's used**: Wherever a user needs to know what the council will be doing, what data they will hold etc. eg "If you need help, contact {{council.name}}."
+
+### `shortName`
+
+**Example value**: `Argleton`
+**What it is**: The colliquial phrasing of the area that the council serves.
+**Where it's used**: Whereever the service talks generally about where a user should live. eg "You're eligible for a bus pass in {{council.shortName}}."
+
+### `parkingBoundary`
+
+**Example value**: `Argleton City Centre`
+**What it is**: The boundary that the user needs a parking permit for. As this is just a prototype, the first steps in the journey pretend to route the user to the right page for their boundary. Verify later checks they live in the boundary.
+**Where it's used**: Whenever the council needs to tell the user about where they can park with the permit they're applying for.
+
+### `permitsCosts`
+
+**Example value**: `[51]`
+**What it is**: The price of the permits.
+**Where it's used**: Whereever we show users the price of the permits.
+
+### `sixmonth`
+
+**Example value**: `true`
+**What it is**: Whether or not the council offers 6 month permits.
+**Where it's used**: This removes content about 6 month permits when set to false, and also removes the page where users choose the length of their permit.
+
+### `limitByHousehold`
+
+**Example value**: `true`
+**What it is**: Some councils limit permits by household, some limit by resident.
+**Where it's used**: Where the service is explaining how permits are allocated on the service page, and when the service tells the user how many permits they are eligible for just after they go through Verify. 
+
+### `permitMax`
+
+**Example value**: `4`
+**What it is**: How many permits the user is allowed. (Prototype currently always assumes user is applying for their first permit and the first permit in their household.)
+**Where it's used**: Same places as limitByHousehold really.
+
+### `payOnline`
+
+**Example value**: `true`
+**What it is**: Some councils do not have an online payment solution.
+**Where it's used**: This removes the payment screens and adds content to explain the user will need to pay at the council office.
+
+### `userChoosesStartDate`
+
+**Example value**: `false`
+**What it is**: Some councils do not allow users to choose the start date of their permits.
+**Where it's used**: There is a page for this that will not show if this is set to `false`.
+
+### `permitWait`
+
+**Example value**: 5
+**What it is**: How many working days the user can expect to wait for their permit to arrive at their address.
+**Where it's used**: At the start and at the end, when the user needs to know when their permit will arrive.
+
+### `tempPermit`
+
+**Example value**: `true`
+**What it is**: Whether or not the council offers a temporary permit.
+**Where it's used**: This removes the content telling users they'll need to print a temporary permit.
+
+### `string`
+
+**Example value**: `argleton`
+**What it is**: A thing for the URLs.
+**Where it's used**: This makes the link to Verify work.
+
+### `boundaryLink`
+
+**Example value**: `https://en.wikipedia.org/wiki/Argleton`
+**What it is**: Details about the parking boundaries for the user.
+**Where it's used**: Will display on the start page to tell the user where they can park. 
+
+
+---
 
 ## Contributing issues
 

@@ -26,8 +26,11 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
 
-
   if(window.location.href.indexOf("upload") > -1){
+    $('.in-progress').click(function(e){
+      e.preventDefault();
+      window.alert("This feature is currently in progress.");
+    });
     $('#photo').change(function(e){
       // todo: check that file is actually chosen!!
       window.location.href = 'loading';
@@ -51,6 +54,17 @@ $(document).ready(function () {
       window.location.href = 'loading-poage';
     });
   }
+  if(window.location.href.indexOf("v5c-upload") > -1){
+    $('#file').change(function(e){
+      // todo: check that file is actually chosen!!
+      window.location.href = 'loading-v5c';
+    });
+  }
+  if(window.location.href.indexOf("loading-v5c") > -1){
+    setTimeout(function(){
+      window.location.href = 'v5c-accepted';
+    }, 2000)
+  }
   if(window.location.href.indexOf("loading-poa") > -1){
     setTimeout(function(){
       window.location.href = 'document-accepted';
@@ -65,13 +79,6 @@ $(document).ready(function () {
     setTimeout(function(){
       window.location.href = 'good-photo';
     }, 3000)
-  }
-
-  if(window.location.href.indexOf("upload") > -1){
-    $('.in-progress').click(function(e){
-      e.preventDefault();
-      window.alert("This feature is currently in progress.");
-    });
   }
 
 })

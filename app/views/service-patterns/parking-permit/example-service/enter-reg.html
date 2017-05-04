@@ -65,7 +65,17 @@
   {% else %}
     {# When should your permit(s) start? #}
     {% set nextPage = 'permit-details' %}
+  {% elif council.testv5cScan %}
+    {% set nextPage = 'v5c-upload' %}
+  {% elif council.testv5cnumber %}
+    {% set nextPage = 'v5c-number' %}
+  {% elif (singleCost and council.sixmonth == false) %}
+    {% set nextPage = 'permit-details' %}
+  {% else %}
+    {% set nextPage = 'permit-price' %}
   {% endif %}
+
+<a class="button" role="button" href="{{nextPage}}">Next</a>
 
   <a class="button" role="button" href="{{nextPage}}">Next</a>
 

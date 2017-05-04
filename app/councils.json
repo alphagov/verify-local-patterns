@@ -8,13 +8,17 @@
     "limitByHousehold":true,
     "permitMax": 4,
     "payOnline":true,
+    "testChangeAddress":false,
+    "testv5cScan":true,
+    "testv5cnumber":false,
     "userChooseStartDate":false,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
     "customPriceLogic": "Permits cost between £51 and £153 depending on where you want to park. You'll need to <a href='#'>check the boundaries</a> to find your price.</p><p>You can park anywhere within the boundary, at any time, once you have a permit.",
     "DVLAAPI": false,
-    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
+    "pploa1": true
   },
   {
     "name": "Buckinghamshire County Council",
@@ -25,6 +29,7 @@
     "permitsCosts": [52],
     "sixmonth": true,
     "payOnline":true,
+    "testChangeAddress":false,
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
@@ -39,10 +44,12 @@
     "permitsCosts": [51,61,71,120],
     "sixmonth": true,
     "payOnline":true,
+    "testChangeAddress":false,
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
-    "string" : "cambridgeshire"
+    "string" : "cambridgeshire",
+    "pploa1": true
   },
   {
     "name" : "London Borough of Camden",
@@ -52,6 +59,7 @@
     "limitByHousehold":true,
     "permitsCosts": [1,1,1,1],
     "payOnline":true,
+    "testChangeAddress":false,
     "permitWait": 5,
     "tempPermit":true,
     "string" : "camden"
@@ -65,24 +73,28 @@
     "permitsCosts": [130,130,130,130],
     "sixmonth": true,
     "payOnline":true,
+    "testChangeAddress":false,
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
-    "string" : "northumberland"
+    "string" : "northumberland",
+    "pploa1": true
   },
   {
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
-    "parkingBoundary": "Sunderland city centre",
+    "parkingBoundary": "Sunderland",
     "limitByHousehold":true,
     "permitMax": 5,
     "permitsCosts": [0, 20, 40, 60],
     "sixmonth": true,
     "payOnline":true,
+    "testChangeAddress":false,
     "userChooseStartDate":true,
     "permitWait": 3,
     "tempPermit":true,
-    "string" : "sunderland"
+    "string" : "sunderland",
+    "pploa1": true
     },
   {
     "name" : "Unbrandedland Council",
@@ -93,6 +105,7 @@
     "permitsCosts": [67, 77, 100, 100],
     "sixmonth": true,
     "payOnline":true,
+    "testChangeAddress":false,
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
