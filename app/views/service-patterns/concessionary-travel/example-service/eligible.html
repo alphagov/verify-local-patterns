@@ -7,14 +7,22 @@
 
 <div class="column-two-thirds">
 
+  {% if(userAgent.mobile()) %}
+    {% set nextPage = 'take-photo' %}
+    {% set action = 'take' %}
+  {% else %}
+    {% set nextPage = 'need-photo' %}
+    {% set action = 'upload' %}
+  {% endif %}
+
   <p>
     Based on the information we have, you are eligible for a bus pass.
   </p>
   <p>
-    To complete your application, upload a photo of yourself for the pass.
+    To complete your application, {{action}} a photo of yourself for your bus pass.
   </p>
 
-  <a class="button" role="button" href="need-photo">Next</a>
+  <a class="button" role="button" href={{nextPage}}>Next</a>
 
 </div>
 
