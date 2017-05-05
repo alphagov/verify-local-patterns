@@ -5,9 +5,8 @@
 
 {% block content %}
 
-{# set nextPage link #}
 {% if (council.userChooseStartDate == true) %}
-  {% set nextPage = "permit-details"  %}
+  {% set nextPage = "permit-start"  %}
 {% else %}
   {% if freePermit %}
     {% set nextPage = "contact-reference"  %}
@@ -17,6 +16,7 @@
 {% endif %}
 
 <div class="column-two-thirds">
+  {{ registerNumbers }}
 
   {# setup singleCost variable #}
   {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}

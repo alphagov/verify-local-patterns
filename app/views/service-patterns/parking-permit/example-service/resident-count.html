@@ -19,21 +19,16 @@
 
           <legend class="visually-hidden">How many resident's parking permits do you need?</legend>
 
-          {% set totalPrice = council.permitsCosts[0] %}
-          {% set maxPlusOne = council.permitMax + 1 %}
+          {% set cost = council.permitsCosts[0] %}
+          {% set nextCost = council.permitsCosts[0] %}
 
-          {% for i in range(1, maxPlusOne) %}
+          {% for i in range(1, council.permitMax + 1) %}
             <label class="block-label selection-button-radio" for="radio-{{i}}">
               <input id="radio-{{i}}" type="radio" name="residentAmount" value="{{i}}">
-              <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span>{{' - costs £'+totalPrice if not council.DVLAAPI}}
+              <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span>{{' - costs £'+cost if not council.DVLAAPI}}
             </label>
-            {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-              {% set totalPrice = totalPrice + totalPrice %}
-            {% elseif i == council.permitsCosts.length %}
-              {% set totalPrice = totalPrice + council.permitsCosts[council.permitsCosts.length-1] %}
-            {% else %}
-              {% set totalPrice = totalPrice + council.permitsCosts[i] %}
-            {% endif %}
+            {% set nextCost = council.permitsCosts[i] if council.permitsCosts[i] else nextCost %}
+            {% set cost = cost + nextCost %}
           {% endfor %}
 
         </fieldset>
@@ -46,24 +41,25 @@
       </p>
 
       <ul class="list list-bullet">
+        {% set words = ['first', 'second', 'third'] %}
+        {% set cost = council.permitsCosts[0] %}
+        {% set nextCost = council.permitsCosts[0] %}
+        {% for i in range(1, 4) %}
+          <li>
+            The {{ words[i - 1] }} permit costs £{{ cost }}.
+          </li>
+          {% set nextCost = council.permitsCosts[i] if council.permitsCosts[i] else nextCost %}
+          {% set cost = cost + nextCost %}
+        {% endfor %}
         <li>
-          The first permit costs £{{council.permitsCosts[0]}}.
-        </li>
-        <li>
-          The second permit costs £{{council.permitsCosts[1]}}.
-        </li>
-        <li>
-          The third permit costs £{{council.permitsCosts[2]}}.
-        </li>
-        <li>
-          The fourth, and any further permits, cost £{{council.permitsCosts[3]}} each.
+          The fourth, and any further permits, cost £{{ nextCost }} each.
         </li>
       </ul>
 
       <h2 class="heading-medium">How many resident's parking permits do you need?</h2>
 
       <div class="form-group">
-        <input name="residentAmount" type="number" min="1" max="{{council.permitMax}}" />
+        <input class="form-control" value="{{ residentAmount }}" name="residentAmount" type="number" min="1" max="{{council.permitMax}}" />
       </div>
 
     {% endif %}

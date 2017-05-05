@@ -11,14 +11,19 @@
     Your V5C document has been uploaded.
   </p>
 
-  {% if (singleCost and council.sixmonth == false) %}
-    {% set nextPage = 'permit-details' %}
+  {% if council.testv5cnumber %}
+    {% set nextPage = 'v5c-number' %}
+  {% elif council.userChooseStartDate %}
+    {% set nextPage = 'permit-start' %}
+  {% elif council.sixmonth %}
+    {% set nextPage = 'permit-length' %}
+  {% elif council.permitsCosts[0] > 0 %}
+    {% set nextPage = 'pre-payment' %} 
   {% else %}
-    {% set nextPage = 'permit-price' %}
+    {% set nextPage = 'contact-reference' %} 
   {% endif %}
 
-  <a class="button" role="button" href="{{nextPage}}">Next</a>
-
+  <a class="button" role="button" href="{{ nextPage }}">Next</a>
 
 </div>
 
