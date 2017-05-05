@@ -6,78 +6,77 @@
 {% block content %}
 
 <div class="column-two-thirds">
-  {% set r = residentAmount %}
-  {# set default as 1 #}
-  {% if not r %}
-    {% set r = 1 %}
-  {% endif %}
+
+  {# residentAmount is a string and must be converted to a number 😒 #}
+  {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
+  {% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
+
   <p>
-    You've chosen {{r}} resident's parking permit{{"s" if r > 1}}.
+    You've chosen {{ parkingPermitCount }} resident's parking permit{{ pluralSuffix }}.
   </p>
 
-  {% if not council.DVLAAPI%}
+  {% if not council.DVLAAPI %}
 
     <p>
-      We need your vehicle's registration number{{"s" if r > 1}} to associate your permit{{"s" if r > 1}} with your vehicle{{"s" if r > 1}}.
+      We need your vehicle's registration number{{ pluralSuffix }} to associate your permit{{ pluralSuffix }} with your vehicle{{ pluralSuffix }}.
     </p>
 
   {% else %}
 
     <p>
-      We need your vehicle's registration number{{"s" if r > 1}} to
+      We need your vehicle's registration number{{ pluralSuffix }} to
     </p>
 
     <ul class="list list-bullet">
       <li>
-        calculate the price of your permit{{"s" if r > 1}} using DVLA's records
+        calculate the price of your permit{{ pluralSuffix }} using DVLA's records
       </li>
       <li>
-        associate your permit{{"s" if r > 1}} with your vehicle{{"s" if r > 1}}
+        associate your permit{{ pluralSuffix }} with your vehicle{{ pluralSuffix }}
       </li>
     </ul>
 
   {% endif %}
 
-  <h2 class="heading-medium">Enter your vehicle's registration number{{"s" if r > 1}}</h2>
-
-  {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
-  {% set r = r / 10 %}
-  {% set r = r * 10 %}
-  {% for i in range(1, r + 1) %}
-    <div class="form-group">
-        <form method="post">
-            <fieldset>
-                {% if r > 1 %}<legend class="visuallyhidden">Vehicle {{i}}</legend>{% endif %}
-                <div>
-                    {% if r > 1 %}<label class="form-label" for="postcode">Vehicle {{i}}</label>{% endif %}
-                    <input class="reg-number" id="reg-number-{{i}}" name="reg-number-{{i}}" type="text" aria-invalid="false" value="">
-                </div>
-            </fieldset>
-        </form>
-    </div>
-  {% endfor %}
+  <h2 class="heading-medium">Enter your vehicle's registration number{{ pluralSuffix }}</h2>
 
   {% if council.DVLAAPI %}
     {% set nextPage = 'confirm-vehicle-details' %}
-  {% elif(council.sixmonth) %}
-    {# How long will you need your permit(s)?  #}
-    {% set nextPage = 'permit-length' %}
-  {% else %}
-    {# When should your permit(s) start? #}
-    {% set nextPage = 'permit-details' %}
   {% elif council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
     {% set nextPage = 'v5c-number' %}
-  {% elif (singleCost and council.sixmonth == false) %}
-    {% set nextPage = 'permit-details' %}
+  {% elif council.userChooseStartDate %}
+    {% set nextPage = 'permit-start' %}
+  {% elif council.sixmonth %}
+    {% set nextPage = 'permit-length' %}
+  {% elif council.permitsCosts[0] > 0 %}
+    {% set nextPage = 'pre-payment' %} 
   {% else %}
-    {% set nextPage = 'permit-price' %}
+    {% set nextPage = 'contact-reference' %} 
   {% endif %}
 
-<a class="button" role="button" href="{{nextPage}}">Next</a>
+  <div class="form-group">
+      <form method="post" action="{{ nextPage }}">
+          <fieldset>
+              {% if parkingPermitCount > 1 %}
+                {% for i in range(0, parkingPermitCount) %}
+                  <legend class="visuallyhidden">Vehicle {{i + 1}}</legend>
+                  <div class="form-group">
+                      <label class="form-label" for="postcode">Vehicle {{ i + 1 }}</label>
+                      <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div>
+                  <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+                </div>
+              {% endif %}
+          </fieldset>
 
-  <a class="button" role="button" href="{{nextPage}}">Next</a>
+          <input class="button" type="submit" value="Next">
+      </form>
+  </div>
 
 </div>
 
