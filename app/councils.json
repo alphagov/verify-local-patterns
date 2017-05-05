@@ -9,13 +9,17 @@
     "permitMax": 4,
     "payOnline":true,
     "testChangeAddress":true,
+    "testv5cScan":true,
+    "testv5cnumber":false,
     "userChooseStartDate":false,
     "DVLAAPIenforcement":true,
     "DVLAAPIprice":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
-    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton"
+    "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
+    "pploa1": true
+
   },
   {
     "name": "Buckinghamshire County Council",
@@ -45,7 +49,8 @@
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
-    "string" : "cambridgeshire"
+    "string" : "cambridgeshire",
+    "pploa1": true
   },
   {
     "name" : "London Borough of Camden",
@@ -73,12 +78,13 @@
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
-    "string" : "northumberland"
+    "string" : "northumberland",
+    "pploa1": true
   },
   {
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
-    "parkingBoundary": "Sunderland city centre",
+    "parkingBoundary": "Sunderland",
     "limitByHousehold":true,
     "permitMax": 5,
     "permitsCosts": [0, 20, 40, 60],
@@ -88,7 +94,8 @@
     "userChooseStartDate":true,
     "permitWait": 3,
     "tempPermit":true,
-    "string" : "sunderland"
+    "string" : "sunderland",
+    "pploa1": true
     },
   {
     "name" : "Unbrandedland Council",
