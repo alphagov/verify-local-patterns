@@ -2,56 +2,50 @@
 
 {% set serviceName = "Apply for a resident's parking permit" %}
 
-{# setup residentAmount #}
-{% set r = residentAmount %}
-{# set default as 1 #}
-{% if not r %}
-  {% set r = 1 %}
-{% endif %}
+{# residentAmount is a string and must be converted to a number 😒 #}
+{% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
+{% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
+{% set pageTitle = "How long will you need your permit" + pluralSuffix + "?" %}
 
-{# setup pageTitle #}
-{% if r > 1 %}
-  {% set pageTitle = "How long will you need your permits?" %}
+{% if council.permitsCosts[0] > 0 %}
+  {% set nextPage = 'pre-payment' %} 
 {% else %}
-  {% set pageTitle = "How long will you need your permit?" %}
+  {% set nextPage = 'contact-reference' %} 
 {% endif %}
-
-{# setup sixmonthchoice macro #}
-{% macro sixmonthchoice(showTotal, i) %}
-  <label class="block-label selection-button-radio" for="radio-6m{{'-'+i}}">
-    <input id="radio-6m{{'-'+i}}" type="radio" name="{{i}}permitLength" value="6 month">
-    <span class="heading-small">6 months</span>
-  </label>
-  <label class="block-label selection-button-radio" for="radio-12m{{'-'+i}}">
-    <input id="radio-12m{{'-'+i}}" type="radio" name="{{i}}permitLength" value="12 month">
-    <span class="heading-small">12 months</span>
-  </label>
-{% endmacro %}
 
 {# start of the content #}
 {% block content %}
 <div class="column-two-thirds">
-  <form action="{{ "contact-reference" if freePermit else "pre-payment" }}" method="post">
+  <form action="{{ nextPage }}" method="post">
     <div class="form-group">
       <fieldset>
 
-        {{ sixmonthchoice(true) }}
+        <label class="block-label selection-button-radio" for="radio-6m">
+          <input id="radio-6m" type="radio" name="permitLength" value="6 month">
+          <span class="heading-small">6 months</span>
+        </label>
+        <label class="block-label selection-button-radio" for="radio-12m">
+          <input id="radio-12m" type="radio" name="permitLength" value="12 month">
+          <span class="heading-small">12 months</span>
+        </label>
 
-        {% if r > 1 %}
+        {% if registerNumbers.length > 1 %}
           <label class="block-label selection-button-radio" for="radio-3" data-target="multi-lengths">
-            <input id="radio-3" type="radio" name="permitLength" value="different">
+            <input id="radio-3" type="radio" name="permitLength" value="multi-lengths">
             <span class="heading-small">Different lengths for different vehicles</span>
           </label>
           <div class="panel panel-border-narrow js-hidden" id="multi-lengths">
-            {% set r = r / 10 %}
-            {% set r = r * 10 %}
-            {% for i in range(0, r) %}
+            {% for registerNumber in registerNumbers %}
               <div class="form-group">
-                <h3>Vehicle {{i + 1}}</h3>
-                <p class="heading-small">
-                  {{data.vehicleData[i].make}} - {{data.vehicleData[i].reg}}
-                </p>
-                {{ sixmonthchoice(false, i) }}
+                <h3 class="heading-medium">Vehicle {{ registerNumber }}</h3>
+                <label class="block-label selection-button-radio" for="radio-6m-{{ loop.index0 }}">
+                  <input id="radio-6m-{{ loop.index0 }}" type="radio" name="permitLengths[{{ loop.index0 }}]" value="6 month">
+                  <span class="heading-small">6 months</span>
+                </label>
+                <label class="block-label selection-button-radio" for="radio-12m-{{ loop.index0 }}">
+                  <input id="radio-12m-{{ loop.index0 }}" type="radio" name="permitLengths[{{ loop.index0 }}]" value="12 month">
+                  <span class="heading-small">12 months</span>
+                </label>
               </div>
             {% endfor %}
           </div>
