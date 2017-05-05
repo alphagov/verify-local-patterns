@@ -2,6 +2,7 @@
 .DS_Store
 .start.pid
 .port.tmp
+*.swp
 public
 lib/govuk_template.html
 govuk_modules
