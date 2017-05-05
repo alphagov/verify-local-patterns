@@ -6,53 +6,29 @@
 {% block content %}
 
 <div class="column-two-thirds">
-  {% set r = residentAmount %}
-  {# set default as 1 #}
-  {% if not r %}
-    {% set r = 1 %}
-  {% endif %}
 
   <p>
     We've received these details from DVLA:
   </p>
 
-  {# No idea why I need to add this, but for some reason nunjucks is behaving strangely here #}
-  {% set r = r / 10 %}
-  {% set r = r * 10 %}
-  {% for i in range(0, r) %}
-    <h3 class="heading-small">Vehicle {{i + 1}}</h3>
+  {% for registerNumber in registerNumbers %}
+    <h3 class="heading-small">Vehicle {{ loop.index }}</h3>
     <table>
       <tr>
-        <th>
-          Registration number
-        </th>
-        <th>
-          {{data.vehicleData[i].reg}}
-        </th>
+        <th>Registration number</th>
+        <th>{{ registerNumber }}</th>
       </tr>
       <tr>
-        <th>
-          Vehicle make
-        </th>
-        <th>
-          {{data.vehicleData[i].make}}
-        </th>
+        <th>Vehicle make</th>
+        <th>{{ ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] | random }}</th>
       </tr>
       <tr>
-        <th>
-          Cylinder capacity (cc)
-        </th>
-        <th>
-          {{data.vehicleData[i].cc}}
-        </th>
+        <th>Cylinder capacity (cc)</th>
+        <th>{{ ['1984cc', '2495cc', '998cc', '647cc'] | random }}</th>
       </tr>
       <tr>
-        <th>
-          CO₂ emissions
-        </th>
-        <th>
-          {{data.vehicleData[i].emissions}}
-        </th>
+        <th>CO₂ emissions</th>
+        <th>{{ ['192 g/km', '299 g/km', '114 g/km', '13 g/km'] | random }}</th>
       </tr>
     </table>
   {% endfor %}
@@ -66,18 +42,33 @@
         <legend class="visually-hidden">Are these vehicle details correct?</legend>
 
         <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="answer" value="Yes">
+          <input id="radio-inline-1" type="radio" name="confirmVehicleDetails" value="Yes">
           Yes
         </label>
         <label class="block-label selection-button-radio" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="answer" value="No">
+          <input id="radio-inline-2" type="radio" name="confirmVehicleDetails" value="No">
           No
         </label>
 
       </fieldset>
     </div>
+
+    {% if council.testv5cScan %}
+      {% set nextPage = 'v5c-upload' %}
+    {% elif council.testv5cnumber %}
+      {% set nextPage = 'v5c-number' %}
+    {% elif council.userChooseStartDate %}
+      {% set nextPage = 'permit-start' %}
+    {% elif council.sixmonth %}
+      {% set nextPage = 'permit-length' %}
+    {% elif council.permitsCosts[0] > 0 %}
+      {% set nextPage = 'pre-payment' %} 
+    {% else %}
+      {% set nextPage = 'contact-reference' %} 
+    {% endif %}
+
     <div class="form-group">
-      <a class="button" href="permit-details">Next</a>
+      <a class="button" href="{{ nextPage }}">Next</a>
     </div>
   </form>
 
