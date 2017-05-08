@@ -50,7 +50,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
   }
 
   function makeCost(length, permitCostForNthPermit, permitsCosts) {
-    let cost = permitCostForNthPermit || permitsCosts[permitsCosts.length - 1] || 0
+    let cost = permitCostForNthPermit === undefined ? permitsCosts[permitsCosts.length - 1] : permitCostForNthPermit
     return (cost / (length === '6 month' ? 2 : 1)).toFixed(2)
   }
 

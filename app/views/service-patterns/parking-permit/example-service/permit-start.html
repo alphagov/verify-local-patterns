@@ -33,7 +33,7 @@
 
 {% if council.sixmonth %}
   {% set nextPage = 'permit-length' %}
-{% elif council.permitsCosts[0] > 0 %}
+{% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
   {% set nextPage = 'pre-payment' %} 
 {% else %}
   {% set nextPage = 'contact-reference' %} 
