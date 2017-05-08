@@ -34,7 +34,9 @@
       </form>
   </div>
 
-  {% if council.testv5cScan %}
+  {% if council.DVLAAPIenforcement %}
+    {% set nextPage = 'vehicle-details' %}
+  {% elif council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
     {% set nextPage = 'v5c-number' %}
