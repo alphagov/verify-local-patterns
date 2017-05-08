@@ -34,9 +34,9 @@
 {% if council.sixmonth %}
   {% set nextPage = 'permit-length' %}
 {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
-  {% set nextPage = 'pre-payment' %} 
+  {% set nextPage = 'pre-payment' %}
 {% else %}
-  {% set nextPage = 'contact-reference' %} 
+  {% set nextPage = 'contact-reference' %}
 {% endif %}
 
 
@@ -64,7 +64,7 @@
       <div class="panel panel-border-narrow js-hidden" id="multi-dates">
         {% for registerNumber in registerNumbers %}
         <div class="form-group">
-          <h3 class="heading-medium">Vehicle {{ registerNumber }}</h3>
+          <h3 class="heading-medium">Vehicle {{loop.index0 + 1 }}: {{ registerNumber }}</h3>
           {{ enterDate(loop.index0, 'multi') }}
         </div>
         {% endfor %}
