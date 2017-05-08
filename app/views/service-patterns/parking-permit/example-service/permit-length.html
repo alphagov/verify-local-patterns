@@ -37,7 +37,7 @@
           <div class="panel panel-border-narrow js-hidden" id="multi-lengths">
             {% for registerNumber in registerNumbers %}
               <div class="form-group">
-                <h3 class="heading-medium">Vehicle {{ registerNumber }}</h3>
+                <h3 class="heading-medium">Vehicle {{loop.index0 + 1 }}: {{ registerNumber }}</h3>
                 <label class="block-label selection-button-radio" for="radio-6m-{{ loop.index0 }}">
                   <input id="radio-6m-{{ loop.index0 }}" type="radio" name="permitLengths[{{ loop.index0 }}]" value="6 month">
                   <span class="heading-small">6 months</span>
