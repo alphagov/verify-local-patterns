@@ -9,7 +9,7 @@
     "permitMax": 4,
     "payOnline":true,
     "testChangeAddress":true,
-    "testv5cScan":true,
+    "testv5cScan":false,
     "testv5cnumber":false,
     "userChooseStartDate":false,
     "DVLAAPIenforcement":true,
