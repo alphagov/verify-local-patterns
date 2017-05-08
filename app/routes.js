@@ -49,20 +49,33 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     return new Date()
   }
 
+  function makeCost(length, permitCostForNthPermit, permitsCosts) {
+    let cost = permitCostForNthPermit || permitsCosts[permitsCosts.length - 1] || 0
+    return (cost / (length === '6 month' ? 2 : 1)).toFixed(2)
+  }
+
   const data = req.session.data
   const council = req.session.data.council
+  const permitRequests = data.registerNumbers.map((registerNumber, i) => {
+    let requestedStartDate = makeDate(data.permitStartDate[data.permitStartChoice] && (data.permitStartDate[data.permitStartChoice][i] || data.permitStartDate[data.permitStartChoice][0]))
+    let startDate = makeStartDate(council.permitWait, requestedStartDate)
+    let length = data.permitLength === 'multi-lengths' ? data.permitLengths[i] : data.permitLength
+    return {
+      registerNumber: registerNumber,
+      startDate: startDate,
+      endDate: makeEndDate(startDate, length),
+      length: length,
+      cost: makeCost(length, council.permitsCosts[i], council.permitsCosts)
+    }
+  })
+
+  req.session.data.permitRequestData = {
+    permitRequests: permitRequests,
+    totalSum: permitRequests.reduce((sum, permit) => sum + Number(permit.cost), 0).toFixed(2)
+  }
+
   res.render('service-patterns/parking-permit/example-service/pre-payment', {
-    data: data.registerNumbers.map((registerNumber, i) => {
-      let requestedStartDate = makeDate(data.permitStartDate[data.permitStartChoice] && (data.permitStartDate[data.permitStartChoice][i] || data.permitStartDate[data.permitStartChoice][0]))
-      let startDate = makeStartDate(council.permitWait, requestedStartDate)
-      let length = data.permitLength === 'multi-lengths' ? data.permitLengths[i] : data.permitLength
-      return {
-        registerNumber: registerNumber,
-        startDate: startDate,
-        endDate: makeEndDate(startDate, length),
-        length: length
-      }
-    })
+    data: permitRequests
   });
 })
 
