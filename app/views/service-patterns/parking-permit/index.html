@@ -23,6 +23,9 @@
                     <h2 class="heading-small page-contents__title">Page contents:</h2>
                     <ul class="page-contents__list">
                         <li>
+                            <a href="#example-service">Example service</a>
+                        </li>
+                        <li>
                             <a href="#user-need">What is the user need?</a>
                         </li>
                         <li>
@@ -41,6 +44,11 @@
                     <a href="/">Read more about service patterns.</a>
                 </p>
 
+                <h2 class="heading-medium" id="example-service">Example service</h2>
+                <p>
+                  As well as reading about how the service should work in this page, you can also <a href="parking-permit/example-service/start-page">step through the example prototype service</a>.
+                </p>
+
                 <h2 class="heading-medium" id="user-need">What is the user need?</h2>
                 <p>
                     Residents need a place to park their car near their home. Parking permit services make sure that parking spaces are only occupied by residents by making it illegal to park in a given area without a permit.
@@ -57,7 +65,7 @@
                       proof that the user lives in the area
                   </li>
                   <li>
-                      the registration number of the vehicle to be permitted
+                      the registration number of the vehicle to be permitted (some councils)
                   </li>
                   <li>
                       payment (this is to support the cost of the service and will vary across councils and potentially within service, depending on the type of vehicle, engine size, parking zone and others)
@@ -253,16 +261,31 @@
                         </ol>
                     </li>
                     <li>
-                        <h3 class="heading-small">Enter vehicle details</h3>
+                        <h3 class="heading-small">Enter vehicle registration</h3>
                         <p>
-                            The council should now ask the user to enter the registration number of the car they wish to pay a permit for.
+                          Some councils require the permit to be associated with a specific vehicle.
                         </p>
                         <p>
-                            If the price of the permit varies depending on the vehicle type, emissions, make or any other condition, the council should present information or a tool that allows correct calculation of the permit price
+                          If the council requires this for enforcement purposes, the council should specify that this is why they need this information.
+                        </p>
+                        <p>
+                          In some councils, the permit price varies depending on the vehicle type, emissions, make or other conditions.
+                        </p>
+                        <p>
+                          If the council requires this information, they can look it up using DVLA's vehicle details API. In this case, the page should explain to users that their registration number will be used for this purpose as well.
                         </p>
                         <p>
                             <a href="parking-permit/example-service/enter-reg">See the example page of asking for a registration number</a>
                         </p>
+                    </li>
+                    <li>
+                      <h3 class="heading-small">Choose a permit</h3>
+                      <p>
+                        This page should only be displayed if the user actually has a choice of permit at this stage. Generally councils give users a choice of 6 month or 12 month permits.
+                      </p>
+                      <p>
+                        If the council has used the DVLA vehicle details API, they should display the returned data to the user and explain that the vehicle price has been calculated based on that info.
+                      </p>
                     </li>
                     <li>
                         <h3 class="heading-small">Pay</h3>
