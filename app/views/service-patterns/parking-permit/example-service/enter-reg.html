@@ -7,33 +7,34 @@
 
 <div class="column-two-thirds">
   {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-  {% set singleCost = council.permitsCosts[0] %}
+    {% set singleCost = council.permitsCosts[0] %}
   {% endif %}
 
   {% if council.customPriceLogic or singleCost %}
 
-  <p>
-    We need your vehicle's registration number to associate your permit with your vehicle.
-  </p>
+    <p>
+      We need your vehicle's registration number to associate your permit with your vehicle.
+    </p>
 
-  <p>
-    We'll use your registration number to look up your vehicle details.
-  </p>
+    <p>
+      We'll use your registration number to look up your vehicle details.
+    </p>
 
   {% else %}
 
-  <p>
-    We need your vehicle's registration number to
-  </p>
+    <p>
+      We need your vehicle's registration number to
+    </p>
 
-  <ul class="list list-bullet">
-    <li>
-      calculate the price of your permit using DVLA's records
-    </li>
-    <li>
-      associate your permit with your vehicle
-    </li>
-  </ul>
+    <ul class="list list-bullet">
+      <li>
+        calculate the price of your permit using DVLA's records
+      </li>
+      <li>
+        associate your permit with your vehicle
+      </li>
+    </ul>
+
   {% endif %}
 
   <div class="form-group">
@@ -48,17 +49,17 @@
       </form>
   </div>
 
-{% if council.testv5cScan %}
-  {% set nextPage = 'v5c-upload' %}
-{% elif council.testv5cnumber %}
-  {% set nextPage = 'v5c-number' %}
-{% elif (singleCost and council.sixmonth == false) %}
-  {% set nextPage = 'permit-details' %}
-{% else %}
-  {% set nextPage = 'permit-price' %}
-{% endif %}
+  {% if council.testv5cScan %}
+    {% set nextPage = 'v5c-upload' %}
+  {% elif council.testv5cnumber %}
+    {% set nextPage = 'v5c-number' %}
+  {% elif (singleCost and council.sixmonth == false) %}
+    {% set nextPage = 'permit-details' %}
+  {% else %}
+    {% set nextPage = 'permit-price' %}
+  {% endif %}
 
-<a class="button" role="button" href="{{nextPage}}">Next</a>
+  <a class="button" role="button" href="{{nextPage}}">Next</a>
 
 
 </div>
