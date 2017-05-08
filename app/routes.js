@@ -36,13 +36,13 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     if (requestedDate < earliestDate) return earliestDate
     return requestedDate
   }
-  
+
   function makeEndDate(startDate, length) {
     var date = new Date(startDate.getTime())
-    date.setMonth(date.getMonth() + (length === '6 month' ? 6 : 12))
+    date.setMonth(date.getMonth() + (length === '6 months' ? 6 : 12))
     return date
   }
-  
+
   function makeDate(permitStartDate) {
     if (permitStartDate && permitStartDate.year !== '' && permitStartDate.month !== '' && permitStartDate.day !== '')
       return new Date(permitStartDate.year, permitStartDate.month - 1, permitStartDate.day)
@@ -51,7 +51,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
 
   function makeCost(length, permitCostForNthPermit, permitsCosts) {
     let cost = permitCostForNthPermit === undefined ? permitsCosts[permitsCosts.length - 1] : permitCostForNthPermit
-    return (cost / (length === '6 month' ? 2 : 1)).toFixed(2)
+    return (cost / (length === '6 months' ? 2 : 1)).toFixed(2)
   }
 
   const data = req.session.data
