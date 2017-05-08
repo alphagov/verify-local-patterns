@@ -26,7 +26,9 @@
     You can get a free parking permit for any of these reasons:
   </p>
   <ul class="list list-bullet">
-    <li>[it's the first permit for your household]</li>
+    {% if council.permitsCosts[0] == 0 %}
+      <li>it's the first permit for your household</li>
+    {% endif %}
     <li>you're a Blue Badge holder</li>
     <li>this permit is for a low CO2 emission 'eco' car</li>
   </ul>
