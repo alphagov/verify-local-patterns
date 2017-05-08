@@ -13,7 +13,6 @@
     "testv5cnumber":false,
     "userChooseStartDate":false,
     "DVLAAPIenforcement":true,
-    "DVLAAPIprice":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
