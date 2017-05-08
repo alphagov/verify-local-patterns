@@ -31,28 +31,49 @@
       <tr>
         <th>Permit type</th>
         <th>Resident's parking permit</th>
+        <td>
+        </td>
       </tr>
     <tr>
       <th>Vehicle registration</th>
       <th>{{ permit.registerNumber }}</th>
+      <td class="change-answer">
+        <a href="#">
+          Change <span class="visuallyhidden">Producer name</span>
+        </a>
+      </td>
     </tr>
-    <tr>
-      <th>Permit length</th>
-      <th>{{ permit.length }}</th>
-    </tr>
-    <tr>
+    <tr class="grouped">
       <th>Start date</th>
       <th>{{ permit.startDate | niceDate }}</th>
+      <td class="change-answer">
+        <a href="#">
+          Change <span class="visuallyhidden">Producer name</span>
+        </a>
+      </td>
     </tr>
     <tr>
       <th>Expiry date</th>
       <th>{{ permit.endDate | niceDate }}</th>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <th>Permit length</th>
+      <th>{{ permit.length }}</th>
+      <td class="change-answer">
+        <a href="#">
+          Change <span class="visuallyhidden">Producer name</span>
+        </a>
+      </td>
     </tr>
     <tr>
       <th>Cost</th>
       <th>
         £{{ permit.cost }}
       </th>
+      <td>
+      </td>
     </tr>
   </table>
   {% endfor %}
