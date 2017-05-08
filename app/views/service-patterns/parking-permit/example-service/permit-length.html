@@ -7,10 +7,10 @@
 {% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
 {% set pageTitle = "How long will you need your permit" + pluralSuffix + "?" %}
 
-{% if council.permitsCosts[0] > 0 %}
-  {% set nextPage = 'pre-payment' %} 
+{% if permitRequestData.totalSum > 0 %}
+  {% set nextPage = 'pre-payment' %}
 {% else %}
-  {% set nextPage = 'contact-reference' %} 
+  {% set nextPage = 'contact-reference' %}
 {% endif %}
 
 {# start of the content #}
