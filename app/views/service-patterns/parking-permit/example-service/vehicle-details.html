@@ -1,0 +1,69 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm vehicle details" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  {# setup singleCost variable #}
+  {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
+    {% set singleCost = council.permitsCosts[0] %}
+  {% endif %}
+
+  <p>
+    We've received these details from DVLA:
+  </p>
+
+  <table>
+    <tr>
+      <th>
+        Registration number
+      </th>
+      <th>
+        KS53 UTW
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Vehicle make
+      </th>
+      <th>
+        VOLKSWAGEN
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Cylinder capacity (cc)
+      </th>
+      <th>
+        1984cc
+      </th>
+    </tr>
+    <tr>
+      <th>
+        CO₂ emissions
+      </th>
+      <th>
+        192 g/km
+      </th>
+    </tr>
+  </table>
+
+  {# set nextPage link #}
+  {% if (council.userChooseStartDate == true) %}
+    {% set nextPage = "permit-details"  %}
+  {% else %}
+    {% if freePermit %}
+      {% set nextPage = "contact-reference"  %}
+    {% else %}
+      {% set nextPage = "pre-payment"  %}
+    {% endif %}
+  {% endif %}
+
+  <a href="{{nextPage}}" class="button">Next</a>
+
+</main>
+
+{% endblock %}
