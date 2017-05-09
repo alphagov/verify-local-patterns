@@ -19,16 +19,11 @@
 
           <legend class="visually-hidden">How many resident's parking permits do you need?</legend>
 
-          {% set cost = council.permitsCosts[0] %}
-          {% set nextCost = council.permitsCosts[0] %}
-
           {% for i in range(1, council.permitMax + 1) %}
             <label class="block-label selection-button-radio" for="radio-{{i}}">
               <input id="radio-{{i}}" type="radio" name="residentAmount" value="{{i}}">
-              <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span>{{' – £'+cost if not council.DVLAAPI}}
+              <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span>
             </label>
-            {% set nextCost = council.permitsCosts[i] if council.permitsCosts[i] else nextCost %}
-            {% set cost = cost + nextCost %}
           {% endfor %}
 
         </fieldset>
@@ -65,7 +60,9 @@
     {% endif %}
 
     <div class="form-group">
-      {{ 'Your permits are priced based on vehicle details, which we will look up in the next step.' if council.DVLAAPI }}
+      <p>
+        Permits can be for 6 or 12 months.
+      </p>
     </div>
 
     <div class="form-group">
