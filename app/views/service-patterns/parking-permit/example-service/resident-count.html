@@ -10,7 +10,7 @@
     {# Limiting the amount of radio buttons, because more than 7 radio buttons is a bit ridiculous (and some councils offer unlimited permits) #}
     {% if council.permitMax < 7 %}
     <p>
-      Your household can have a maximum of {{council.permitMax}} resident's parking permits.
+      You{% if council.limitByHousehold %}r household{% endif %} can have a maximum of {{council.permitMax}} resident's parking permits.
     </p>
 
 
