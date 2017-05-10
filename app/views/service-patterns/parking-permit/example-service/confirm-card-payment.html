@@ -2,7 +2,7 @@
 
 {% set serviceName = "Apply for a resident's parking permit" %}
 {% set pageTitle = "Confirm your payment" %}
-{% set pluralSuffix = 's' if permitRequestData.permitRequests.length > 1 else '' %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
 
 {% block content %}
 
@@ -35,7 +35,7 @@
 		        <td>Payment of:</td>
             <td class="table-info">
               {{ permitRequestData.permitRequests.length }}
-              resident's parking permit{{ pluralSuffix }}
+              resident's parking permit{{s}}
             </td>
 		      </tr>
 		      <tr>

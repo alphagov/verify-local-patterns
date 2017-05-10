@@ -9,36 +9,36 @@
 
   {# residentAmount is a string and must be converted to a number 😒 #}
   {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
-  {% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
+  {% set s = 's' if parkingPermitCount > 1 else '' %}
 
   <p>
-    You've chosen {{ parkingPermitCount }} resident's parking permit{{ pluralSuffix }}.
+    You've chosen {{ parkingPermitCount }} resident's parking permit{{s}}.
   </p>
 
   {% if council.DVLAAPIenforcement %}
 
     <p>
-      We need your vehicle's registration number{{ pluralSuffix }} to associate your permit{{ pluralSuffix }} with your vehicle{{ pluralSuffix }}.
+      We need your vehicle's registration number{{s}} to associate your permit{{s}} with your vehicle{{s}}.
     </p>
 
   {% else %}
 
     <p>
-      We need your vehicle's registration number{{ pluralSuffix }} to
+      We need your vehicle's registration number{{s}} to
     </p>
 
     <ul class="list list-bullet">
       <li>
-        calculate the price of your permit{{ pluralSuffix }} using DVLA's records
+        calculate the price of your permit{{s}} using DVLA's records
       </li>
       <li>
-        associate your permit{{ pluralSuffix }} with your vehicle{{ pluralSuffix }}
+        associate your permit{{s}} with your vehicle{{s}}
       </li>
     </ul>
 
   {% endif %}
 
-  <h2 class="heading-medium">Enter your vehicle's registration number{{ pluralSuffix }}</h2>
+  <h2 class="heading-medium">Enter your vehicle's registration number{{s}}</h2>
 
   {% if council.DVLAAPIenforcement %}
     {% set nextPage = 'vehicle-details' %}

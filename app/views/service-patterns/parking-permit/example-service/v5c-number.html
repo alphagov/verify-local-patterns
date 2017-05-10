@@ -5,14 +5,14 @@
 
 {# residentAmount is a string and must be converted to a number 😒 #}
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
-{% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
+{% set s = 's' if parkingPermitCount > 1 else '' %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    We need the reference number on your V5C registration certificate (logbook) to prove you own your vehicle{{ pluralSuffix }}.
+    We need the reference number on your V5C registration certificate (logbook) to prove you own your vehicle{{ s }}.
   </p>
   <div class="form-group">
     <img src="{{asset_path}}/images/v5c.png" />
@@ -24,9 +24,9 @@
   {% elif council.sixmonth %}
     {% set nextPage = 'permit-length' %}
   {% elif council.permitsCosts[0] > 0 %}
-    {% set nextPage = 'pre-payment' %} 
+    {% set nextPage = 'pre-payment' %}
   {% else %}
-    {% set nextPage = 'contact-reference' %} 
+    {% set nextPage = 'contact-reference' %}
   {% endif %}
 
       <form method="post" action="{{ nextPage }}">

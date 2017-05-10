@@ -4,8 +4,8 @@
 
 {# residentAmount is a string and must be converted to a number 😒 #}
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
-{% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
-{% set pageTitle = "How long will you need your permit" + pluralSuffix + "?" %}
+{% set s = 's' if parkingPermitCount > 1 else '' %}
+{% set pageTitle = "How long will you need your permit" + s + "?" %}
 
 {% if council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
   {% set nextPage = 'pre-payment' %}
