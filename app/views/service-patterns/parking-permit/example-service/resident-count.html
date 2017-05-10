@@ -1,0 +1,81 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "How many resident's parking permits do you need?" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+  <form method="POST" action="enter-reg">
+    {# Limiting the amount of radio buttons, because more than 7 radio buttons is a bit ridiculous (and some councils offer unlimited permits) #}
+    {% if council.permitMax < 7 %}
+    <p>
+      You{% if council.limitByHousehold %}r household{% endif %} can have a maximum of {{council.permitMax}} resident's parking permits.
+    </p>
+
+    {% if council.testv5cnumber or council.testv5cScan %}
+    <p>
+      You must be the owner of the vehicles, as stated on your V5C document.
+    </p>
+    {% endif %}
+
+      <div class="form-group">
+        <fieldset>
+
+          <legend class="visually-hidden">How many resident's parking permits do you need?</legend>
+
+          {% for i in range(1, council.permitMax + 1) %}
+            <label class="block-label selection-button-radio" for="radio-{{i}}">
+              <input id="radio-{{i}}" type="radio" name="residentAmount" value="{{i}}">
+              <span class="heading-small">{{i}} permit{{"s" if i > 1}}</span>
+            </label>
+          {% endfor %}
+
+        </fieldset>
+      </div>
+
+    {% else %}
+
+      <p>
+        Resident's parking permits are priced based on how many your household has.
+      </p>
+
+      <ul class="list list-bullet">
+        {% set words = ['first', 'second', 'third'] %}
+        {% set cost = council.permitsCosts[0] %}
+        {% set nextCost = council.permitsCosts[0] %}
+        {% for i in range(1, 4) %}
+          <li>
+            The {{ words[i - 1] }} permit costs £{{ cost }}.
+          </li>
+          {% set nextCost = council.permitsCosts[i] if council.permitsCosts[i] else nextCost %}
+          {% set cost = cost + nextCost %}
+        {% endfor %}
+        <li>
+          The fourth, and any further permits, cost £{{ nextCost }} each.
+        </li>
+      </ul>
+
+      <h2 class="heading-medium">How many resident's parking permits do you need?</h2>
+
+      <div class="form-group">
+        <input class="form-control" value="{{ residentAmount }}" name="residentAmount" type="number" min="1" max="{{council.permitMax}}" />
+      </div>
+
+    {% endif %}
+
+    <div class="form-group">
+      <p>
+        Permits can be for 6 or 12 months.
+      </p>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Next" />
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

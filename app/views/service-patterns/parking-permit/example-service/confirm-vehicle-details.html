@@ -1,0 +1,77 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Confirm vehicle details" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    We've received these details from DVLA:
+  </p>
+
+  {% for registerNumber in registerNumbers %}
+    <h3 class="heading-small">Vehicle {{ loop.index }}</h3>
+    <table>
+      <tr>
+        <th>Registration number</th>
+        <th>{{ registerNumber }}</th>
+      </tr>
+      <tr>
+        <th>Vehicle make</th>
+        <th>{{ ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] | random }}</th>
+      </tr>
+      <tr>
+        <th>Cylinder capacity (cc)</th>
+        <th>{{ ['1984cc', '2495cc', '998cc', '647cc'] | random }}</th>
+      </tr>
+      <tr>
+        <th>CO₂ emissions</th>
+        <th>{{ ['192 g/km', '299 g/km', '114 g/km', '13 g/km'] | random }}</th>
+      </tr>
+    </table>
+  {% endfor %}
+
+  <h2 class="heading-medium">Are these vehicle details correct?</h2>
+
+  <form class="form">
+    <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visually-hidden">Are these vehicle details correct?</legend>
+
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="confirmVehicleDetails" value="Yes">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="confirmVehicleDetails" value="No">
+          No
+        </label>
+
+      </fieldset>
+    </div>
+
+    {% if council.testv5cScan %}
+      {% set nextPage = 'v5c-upload' %}
+    {% elif council.testv5cnumber %}
+      {% set nextPage = 'v5c-number' %}
+    {% elif council.userChooseStartDate %}
+      {% set nextPage = 'permit-start' %}
+    {% elif council.sixmonth %}
+      {% set nextPage = 'permit-length' %}
+    {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
+      {% set nextPage = 'pre-payment' %} 
+    {% else %}
+      {% set nextPage = 'contact-reference' %} 
+    {% endif %}
+
+    <div class="form-group">
+      <a class="button" href="{{ nextPage }}">Next</a>
+    </div>
+  </form>
+
+</main>
+
+{% endblock %}
