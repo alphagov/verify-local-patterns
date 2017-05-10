@@ -28,6 +28,10 @@ $path: "/public/images/";
 }
 
 // should probs be in elements
+img, svg{
+  max-width: 100%;
+}
+
 p + ul{
   margin-bottom: 1em;
 }
