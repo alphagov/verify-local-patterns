@@ -2,10 +2,10 @@
 
 {# residentAmount is a string and must be converted to a number 😒 #}
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 3 %}
-{% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
+{% set s = 's' if parkingPermitCount > 1 else '' %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "When should your permit" + pluralSuffix + " start?" %}
+{% set pageTitle = "When should your permit" + s + " start?" %}
 
 {% block content %}
 

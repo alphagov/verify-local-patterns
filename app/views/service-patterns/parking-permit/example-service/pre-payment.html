@@ -4,9 +4,9 @@
 
 {# residentAmount is a string and must be converted to a number 😒 #}
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
-{% set pluralSuffix = 's' if parkingPermitCount > 1 else '' %}
+{% set s = 's' if parkingPermitCount > 1 else '' %}
 
-{% set pageTitle = "Paying for your permit" + pluralSuffix %}
+{% set pageTitle = "Paying for your permit" + s %}
 
 {% block content %}
 
