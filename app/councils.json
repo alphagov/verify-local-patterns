@@ -17,7 +17,8 @@
     "string": "argleton",
     "DVLAAPI": false,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
-    "pploa1": true
+    "pploa1": true,
+    "ctloa1": true
   },
   {
     "name": "Buckinghamshire County Council",
@@ -35,7 +36,8 @@
     "string": "buckinghamshire",
     "testv5cScan": false,
     "testv5cnumber": false,
-    "DVLAAPI": false
+    "DVLAAPI": false,
+    "ctloa1": true
   },
   {
     "name" : "Cambridgeshire County Council",
@@ -87,6 +89,7 @@
     "tempPermit":true,
     "string" : "northumberland",
     "pploa1": true,
+    "ctloa1": true,
     "testv5cScan": false,
     "testv5cnumber": false,
     "DVLAAPI": false
