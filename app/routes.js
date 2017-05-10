@@ -26,50 +26,56 @@ router.get('*/example-service/*', function (req, res) {
   }
 });
 
-function niceDate(d) {
-  var monthNames = [
-     "January", "February", "March",
-     "April", "May", "June", "July",
-     "August", "September", "October",
-     "November", "December"
-   ];
-  var suffixes =
-  //    0     1     2     3     4     5     6     7     8     9
-     [ "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
-  //    10    11    12    13    14    15    16    17    18    19
-       "th", "th", "th", "th", "th", "th", "th", "th", "th", "th",
-  //    20    21    22    23    24    25    26    27    28    29
-       "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
-  //    30    31
-       "th", "st" ];
-   return d.getDate()+suffixes[d.getDate()]+" "+monthNames[d.getMonth()]+" "+d.getFullYear();
-}
-
 // add your routes here
 
 router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
-  var dateObj={};
-  var d = req.session.data;
-  var earliestDate = new Date();
-  earliestDate.setDate(earliestDate.getDate()+d.council.permitWait);
-  if (d.permitStartChoice=="other") {
-    dateObj.startDate = new Date(d.permitChoiceYear+"-"+d.permitChoiceMonth+"-"+d.permitChoiceDay);
-    if (dateObj.startDate < earliestDate) {
-      dateObj.startDate=earliestDate;
+
+  function makeStartDate(permitWait, requestedDate) {
+    let earliestDate = new Date()
+    earliestDate.setDate(earliestDate.getDate() + Number(permitWait || 0))
+    if (requestedDate < earliestDate) return earliestDate
+    return requestedDate
+  }
+
+  function makeEndDate(startDate, length) {
+    var date = new Date(startDate.getTime())
+    date.setMonth(date.getMonth() + (length === '6 months' ? 6 : 12))
+    return date
+  }
+
+  function makeDate(permitStartDate) {
+    if (permitStartDate && permitStartDate.year !== '' && permitStartDate.month !== '' && permitStartDate.day !== '')
+      return new Date(permitStartDate.year, permitStartDate.month - 1, permitStartDate.day)
+    return new Date()
+  }
+
+  function makeCost(length, permitCostForNthPermit, permitsCosts) {
+    let cost = permitCostForNthPermit === undefined ? permitsCosts[permitsCosts.length - 1] : permitCostForNthPermit
+    return (cost / (length === '6 months' ? 2 : 1)).toFixed(2)
+  }
+
+  const data = req.session.data
+  const council = req.session.data.council
+  const permitRequests = data.registerNumbers.map((registerNumber, i) => {
+    let permitStartDate = data.permitStartDate || {}
+    let requestedStartDate = makeDate(permitStartDate[data.permitStartChoice] && (permitStartDate[data.permitStartChoice][i] || permitStartDate[data.permitStartChoice][0]))
+    let startDate = makeStartDate(council.permitWait, requestedStartDate)
+    let length = data.permitLength === 'multi-lengths' ? data.permitLengths[i] : data.permitLength
+    return {
+      registerNumber: registerNumber,
+      startDate: startDate,
+      endDate: makeEndDate(startDate, length),
+      length: length,
+      cost: makeCost(length, council.permitsCosts[i], council.permitsCosts)
     }
-  } else {
-    dateObj.startDate = earliestDate;
+  })
+
+  req.session.data.permitRequestData = {
+    permitRequests: permitRequests,
+    totalSum: permitRequests.reduce((sum, permit) => sum + Number(permit.cost), 0).toFixed(2)
   }
-  dateObj.niceStartDate = niceDate(dateObj.startDate);
-  if (d.permitChoice=="12 month") {
-    dateObj.endDate=dateObj.startDate;
-    dateObj.endDate.setFullYear(dateObj.startDate.getFullYear()+1);
-  } else {
-    dateObj.endDate=dateObj.startDate;
-    dateObj.endDate.setMonth(dateObj.startDate.getMonth()+6);
-  }
-  dateObj.niceEndDate = niceDate(dateObj.endDate);
-  res.render('service-patterns/parking-permit/example-service/pre-payment',dateObj);
+
+  res.render('service-patterns/parking-permit/example-service/pre-payment', req.session.data.permitRequestData)
 })
 
 router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
