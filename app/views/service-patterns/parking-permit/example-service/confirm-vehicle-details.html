@@ -12,7 +12,7 @@
   </p>
 
   {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
-  {% set vehicleCCs = ['1984cc', '2495cc', '998cc', '647cc'] %}
+  {% set vehicleColours = ['Red', 'Blue', 'Silver', 'Blue'] %}
   {% set vehicleEmissions = ['192 g/km', '299 g/km', '114 g/km', '13 g/km'] %}
 
   <table>
@@ -31,8 +31,8 @@
         <th>{{ vehicleMakes[loop.index] }}</th>
       </tr>
       <tr>
-        <th>Cylinder capacity (cc)</th>
-        <th>{{ vehicleCCs[loop.index] }}</th>
+        <th>Vehicle colour</th>
+        <th>{{ vehicleColours[loop.index] }}</th>
       </tr>
       <tr>
         <th>CO₂ emissions</th>
