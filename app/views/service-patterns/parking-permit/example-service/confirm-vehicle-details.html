@@ -27,11 +27,11 @@
       </tr>
       <tr>
         <th>Vehicle colour</th>
-        <th>{{ vehicleColours[loop.index] }}</th>
+        <th>{{ vehicleColours[loop.index - 1] }}</th>
       </tr>
       <tr>
         <th>Vehicle make</th>
-        <th>{{ vehicleMakes[loop.index] }}</th>
+        <th>{{ vehicleMakes[loop.index - 1] }}</th>
       </tr>
     {% endfor %}
   </table>
