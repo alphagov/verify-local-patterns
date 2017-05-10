@@ -75,9 +75,7 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     totalSum: permitRequests.reduce((sum, permit) => sum + Number(permit.cost), 0).toFixed(2)
   }
 
-  res.render('service-patterns/parking-permit/example-service/pre-payment', {
-    data: permitRequests
-  });
+  res.render('service-patterns/parking-permit/example-service/pre-payment', req.session.data.permitRequestData)
 })
 
 router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
