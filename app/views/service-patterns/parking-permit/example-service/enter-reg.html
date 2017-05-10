@@ -1,7 +1,8 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Enter vehicle registration number" %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
+{% set pageTitle = "Enter vehicle registration number" + s %}
 
 {% block content %}
 
@@ -18,23 +19,23 @@
   {% if council.DVLAAPIenforcement %}
 
     <p>
-      We need your vehicle's registration number{{s}} to associate your permit{{s}} with your vehicle{{s}}.
-    </p>
-
-  {% else %}
-
-    <p>
       We need your vehicle's registration number{{s}} to
     </p>
 
     <ul class="list list-bullet">
       <li>
-        calculate the price of your permit{{s}} using DVLA's records
+        look up your vehicle make and colour using DVLA's records
       </li>
       <li>
         associate your permit{{s}} with your vehicle{{s}}
       </li>
     </ul>
+
+  {% else %}
+
+    <p>
+      We need your vehicle's registration number{{s}} to associate your permit{{s}} with your vehicle{{s}}.
+    </p>
 
   {% endif %}
 
