@@ -20,7 +20,7 @@
       {% set singleCost = council.permitsCosts[0] %}
     {% endif %}
     <p>
-      Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and
+      Resident's parking permits cost {% if singleCost %}£{{singleCost}} for 12 months.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and
 
 
       {% if council.limitByHousehold %}
@@ -28,7 +28,8 @@
       {% else %}
         how many other permits you already have.
       {% endif %}
-    {% endif %}
+    {% endif %} If you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> your parking permit is free. Blue Badge holders do not need a resident's parking permit.
+      </p>
     </p>
     <p>
       These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
@@ -48,6 +49,9 @@
     </li>
     <li>
       <a href="#">renew an expired parking permit</a>
+    </li>
+    <li>
+      <a href="#">apply for a Blue Badge</a>
     </li>
   </ul>
 
