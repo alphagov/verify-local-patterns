@@ -1,0 +1,24 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Visitor's permits" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Residents can buy visitors permits for their guests.
+  </p>
+
+  <h2 class="heading-medium">How many visitor's parking permits do you need?</h2>
+
+  <div class="form-group">
+    <input name="residentAmount" type="number" min="1" />
+  </div>
+
+  <a class="button" role="button" href="enter-reg">Next</a>
+
+</div>
+
+{% endblock %}

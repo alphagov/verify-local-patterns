@@ -33,7 +33,10 @@
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
-    "string": "buckinghamshire"
+    "string": "buckinghamshire",
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPIenforcement": false
   },
   {
     "name" : "Cambridgeshire County Council",
@@ -49,7 +52,10 @@
     "permitWait": 5,
     "tempPermit":true,
     "string" : "cambridgeshire",
-    "pploa1": true
+    "pploa1": true,
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPIenforcement": false
   },
   {
     "name" : "London Borough of Camden",
@@ -62,7 +68,10 @@
     "testChangeAddress":false,
     "permitWait": 5,
     "tempPermit":true,
-    "string" : "camden"
+    "string" : "camden",
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPIenforcement": false
   },
   {
     "name" : "Northumberland County Council",
@@ -78,7 +87,10 @@
     "permitWait": 0,
     "tempPermit":true,
     "string" : "northumberland",
-    "pploa1": true
+    "pploa1": true,
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPIenforcement": false
   },
   {
     "name" : "Sunderland City Council",
@@ -94,7 +106,10 @@
     "permitWait": 3,
     "tempPermit":true,
     "string" : "sunderland",
-    "pploa1": true
+    "pploa1": true,
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPIenforcement": false
     },
   {
     "name" : "Unbrandedland Council",
@@ -109,6 +124,9 @@
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
-    "string" : "unbranded"
+    "string" : "unbranded",
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPIenforcement": false
   }
 ]

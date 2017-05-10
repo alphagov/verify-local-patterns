@@ -95,6 +95,15 @@
       font-size: 47px;
     }
 
+    //table
+    .grouped th, .grouped td{
+      border: 0;
+    }
+    .change-answer {
+        text-align: right;
+        padding-right: 0;
+    }
+
     // custom file upload button
     .file-upload input{
       display: none;

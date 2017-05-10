@@ -1,4 +1,5 @@
 {% extends "layout_picker.html" %} {% set serviceName = "Apply for a resident's parking permit" %} {% set pageTitle = "Pay by Direct Debit" %} {% block content %}
+{% set pluralSuffix = 's' if permitRequestData.permitRequests.length > 1 else '' %}
 
 <div class="column-two-thirds">
     <div class="payment-type-intro">
@@ -81,10 +82,11 @@
 
     <div class="payment-summary payment-summary-small">
         <h2>Payment summary</h2>
-        <p class="payment-info">Resident's parking permit</p>
+        <p class="payment-info">{{ permitRequestData.permitRequests.length }} Resident's parking permit{{ pluralSuffix }}</p>
         <h3>Amount:</h3>
-        <p class="payment-amount">{% set halfCost = council.permitsCosts[0] / 2 %}
-			         £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}</p>
+        <p class="payment-amount">
+          £{{ permitRequestData.totalSum }}
+        </p>
     </div>
 </div>
 </div>
