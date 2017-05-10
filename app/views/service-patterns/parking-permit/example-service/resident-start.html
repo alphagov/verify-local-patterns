@@ -10,7 +10,7 @@
   <p>
     If you're a resident of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} you can buy a resident's parking permit to park near your home 24 hours a day, 7 days a week.</p>
   <p>
-    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} up to {{council.permitMax}} permits
+    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of up to {{council.permitMax}} permits
     {% endif %} per {% if council.limitByHousehold %}
             household.
           {% else %}
@@ -22,58 +22,20 @@
           you won't receive a physical permit – wardens will check your vehicle's registration number
         </li>
         {% else %}
+        {% endif %}
       </p>
   <p>
     If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.</p>
   <h2 class="heading-medium">Costs</h2>
   <p>
-    Your first permit costs {{"£51 for 12 months, or £25.50 for 6 months."if council.sixmonth else "£51 for 12 months"}} The cost of additional permits is higher. If the area where you live is divided into parking zones, permit costs may be different for different zones.
+    Your first permit costs {{"£51 for 12 months, or £25.50 for 6 months."if council.sixmonth else "£51 for 12 months"}} The cost of additional permits is higher. [If the area where you live is divided into parking zones, permit costs may be different for different zones.]
   </p>
   <p>
-    If you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> or drive a low emissions 'eco' vehicle your parking permit is free.
+    If you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> [or drive a low emissions 'eco' vehicle] your parking permit is free.
   </p>
   <p>
     Blue Badge holders do not need a resident's parking permit.
   </p>
-  <h2 class="heading-medium">Applying online</h2>
-  <p>
-    You can apply for this service using <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify">GOV.UK Verify</a> the new way to prove who you are online:
-  </p>
-  <p>
-    <ul class="list list-bullet">
-      <li>
-        creating an account takes about 15 minutes
-      </li>
-      <li>
-        the rest of the application takes around 2 minutes
-      </li>
-      <li>
-        permits usually take <b class="font-strong"> {{council.permitWait}} working days </b> to arrive
-        {% if council.tempPermit == true %}
-        {% endif %}
-      </li>
-        {% endif %}
-      <li>
-        you'll get a temporary permit at the end of your online application
-      </ul>
-    </p>
-    <p>
-      Or apply without using Verify:
-      <ul class="list list-bullet">
-      <li>find, scan and upload documents – this could take up to 20 minutes
-      </li>
-      <li>
-        the rest of the application takes around 2 minutes
-      </li>
-      <li>
-        permits usually take 10 working days to arrive
-      </li>
-      <li>
-        you won't receive a temporary permit
-      </li>
-    </ul>
-  </p>
-
   <h2 class="heading-medium">What you'll need</h2>
 <p>
   <ul class="list list-bullet">
