@@ -41,7 +41,7 @@
   <h2 class="heading-medium">Enter your vehicle's registration number{{s}}</h2>
 
   {% if council.DVLAAPIenforcement %}
-    {% set nextPage = 'vehicle-details' %}
+    {% set nextPage = 'confirm-vehicle-details' %}
   {% elif council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
