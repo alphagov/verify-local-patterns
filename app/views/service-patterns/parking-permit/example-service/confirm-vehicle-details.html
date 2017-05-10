@@ -11,8 +11,8 @@
     We've received these details from DVLA:
   </p>
 
-  {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
   {% set vehicleColours = ['Red', 'Blue', 'Silver', 'Blue'] %}
+  {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
 
   <table>
     {% for registerNumber in registerNumbers %}
@@ -26,12 +26,12 @@
         <th>{{ registerNumber }}</th>
       </tr>
       <tr>
-        <th>Vehicle make</th>
-        <th>{{ vehicleMakes[loop.index] }}</th>
-      </tr>
-      <tr>
         <th>Vehicle colour</th>
         <th>{{ vehicleColours[loop.index] }}</th>
+      </tr>
+      <tr>
+        <th>Vehicle make</th>
+        <th>{{ vehicleMakes[loop.index] }}</th>
       </tr>
     {% endfor %}
   </table>
