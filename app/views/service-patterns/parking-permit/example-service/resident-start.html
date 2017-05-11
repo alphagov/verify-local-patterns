@@ -1,42 +1,71 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a parking permit" %}
-{% set pageTitle = "Apply for a resident's parking permit in " + council.parkingBoundary %}
+{% set pageTitle = "Apply for a resident's parking permit" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    Residents of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} can buy resident's parking permits.
+    If you're a resident of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} you can buy a resident's parking permit to park near your home 24 hours a day, 7 days a week.</p>
+    <p>
+      If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.</p>
+    <h2 class="heading-medium">About this service</h2>
+      <ul class="list list-bullet">
+        <li>
+    maximum {% if council.permitMax==1 %} 1 permit {% else %} up to {{council.permitMax}} permits
+    {% endif %} per {% if council.limitByHousehold %}
+            household
+          {% else %}
+            resident
+          {% endif %}
+        </li>
+        {% if council.permitWait < 1 %}
+        <li>
+          you won't receive a physical permit – wardens will check your vehicle's registration number
+        </li>
+        {% else %}
+        <li>
+          you can apply for this service using GOV.UK Verify, this takes around 15 minutes if you need to create an account and the rest of the application takes around 2 minutes
+        </li>
+        <li>
+          when applying through Verify permits take <b class="font-strong"> {{council.permitWait}} working days </b> to arrive
+          {% if council.tempPermit == true %}
+          and you'll get a temporary permit to use until it arrives
+          {% endif %}
+        </li>
+        {% endif %}
+        <li>
+          without choosing to apply through Verify permits take 10 working days to arrive
+        </li>
+        </ul>
+      </p>
+    <h2 class="heading-medium">Costs</h2>
+    <p>
+    Your first permit costs {{"£51 for 12 months, or £25.50 for 6 months."if council.sixmonth else "£51 for 12 months"}} The cost of additional permits is higher. If the area where you live is divided into parking zones, permit costs may be different for different zones.
   </p>
-
-  {% if council.customPriceLogic %}
-    <p>
-      {{council.customPriceLogic | safe}}
-    </p>
-  {% else %}
-    {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-      {% set singleCost = council.permitsCosts[0] %}
-    {% endif %}
-    <p>
-      Resident's parking permits cost {% if singleCost %}£{{singleCost}}.{% else %}between £{{council.permitsCosts[0]}} and £{{council.permitsCosts[council.permitsCosts.length-1]}}, depending on your vehicle type and
-
-
-      {% if council.limitByHousehold %}
-        how many other permits have been bought by your household.
-      {% else %}
-        how many other permits you already have.
-      {% endif %}
-    {% endif %}
-    </p>
-    <p>
-      These permits allow you to park anywhere within {{council.parkingBoundary}} 24 hours a day, 7 days a week.
-    </p>
-  {% endif %}
   <p>
-    If you don't live in {{council.shortName}}, you need to <a href="https://www.gov.uk/find-local-council">find your local council</a>.
-  </p>
+    If you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> or drive a low emissions 'eco' vehicle your parking permit is free. Blue Badge holders do not need a resident's parking permit.
+    </p>
+
+  <h2 class="heading-medium">What you'll need</h2>
+<p>
+  <ul class="list list-bullet">
+    <li>
+ablity to prove you live in Argleton city centre
+</li>
+<li>
+car registration number
+</li>
+<li>
+V5C registration document (local rule)
+</li>
+<li>
+to answer security questions or upload documents to prove who you are
+</li>
+</ul>
+</p>
   <a class="button button-start" href="prove-identity" role="button">Apply for a resident's parking permit</a>
 
   <p>
@@ -49,46 +78,10 @@
     <li>
       <a href="#">renew an expired parking permit</a>
     </li>
+    <li>
+      <a href="#">apply for a Blue Badge</a>
+    </li>
   </ul>
-
-  <h2 class="heading-medium">About this service</h2>
-    <ul class="list list-bullet">
-      <li>
-        Each {% if council.limitByHousehold %}
-          household
-        {% else %}
-          resident
-        {% endif %}
-        {% if council.permitMax==1 %}
-          is allowed one permit.
-        {% else %}
-          is allowed up to {{council.permitMax}} permits.
-        {% endif %}
-      </li>
-      <li>
-        {{"Permits can be bought for 6 months or for 12 months." if council.sixmonth else "Permits last for 12 months."}}
-      </li>
-      {% if council.permitWait < 1 %}
-      <li>
-        You won't receive a physical permit. Wardens will check your vehicle's registration number.
-      </li>
-      {% else %}
-      <li>
-        Your permit will take {{council.permitWait}} working days to arrive.
-        {% if council.tempPermit == true %}
-        While you wait, you'll need to use a temporary permit which we will email to you.
-        {% endif %}
-      </li>
-      {% endif %}
-      <li>
-        To apply, you'll need to prove you live in {{council.parkingBoundary}} and provide your vehicle registration number.
-      </li>
-      <li>
-        You can apply using GOV.UK Verify. If you don't already have an account, you'll need to create one which takes around 15 minutes. The rest of the application takes around 2 minutes.
-      </li>
-    </ul>
-
-
   <p>
     If you need assistance using the online service, <a href="#">contact {{ council.name }}</a>.
   </p>
