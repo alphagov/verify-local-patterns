@@ -39,9 +39,11 @@
     <li>
     car registration number
     </li>
+    {% if council.testv5cScan or council.testv5cnumber %}
     <li>
-    V5C registration document (local rule)
+    V5C registration document
     </li>
+    {% endif %}
     <li>
     to answer security questions or upload documents to prove who you are
     </li>
