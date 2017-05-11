@@ -23,13 +23,13 @@
               you'll need to answer some security questions
           </li>
           <li>
-              permits usually take <b class="font-strong"> {{council.permitWait}} working days </b> to arrive
-              {% if council.tempPermit == true %}
-              {% endif %}
+              permits usually take {{council.permitWait}} working days to arrive
           </li>
+          {% if council.tempPermit == true %}
           <li>
               you'll receive a temporary permit
           </li>
+          {% endif %}
           <li>
               creating an account takes about 15 minutes and the rest of the application is around 2 minutes
           </li>
@@ -56,9 +56,11 @@
           <li>
             permits usually take 10 working days to arrive
           </li>
+          {% if council.tempPermit == true %}
           <li>
             you won't receive a temporary permit
           </li>
+          {% endif %}
           <li>
             your application could take up to 20 minutes
           </li>
