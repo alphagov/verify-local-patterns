@@ -13,18 +13,27 @@
     <div class="radio-with-bullets">
       <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
         <input id="verify-option" type="radio" name="radio-group" value="pre-verify">
-        <span class="heading-small">Use GOV.UK Verify</span>
+        <span class="heading-small">Use GOV.UK Verify, the new way to prove who you are online</span>
       </label>
 
       <div class="form-group verify">
-        <ul class="list">
+
+        <ul class="list list-bullet">
           <li>
-            Your permit will arrive within 5 working days
+              you'll need to answer some security questions
           </li>
           <li>
-            You'll need to answer some security questions if this is your first time using GOV.UK Verify
+              permits usually take <b class="font-strong"> {{council.permitWait}} working days </b> to arrive
+              {% if council.tempPermit == true %}
+              {% endif %}
           </li>
-        </ul>
+          <li>
+              you'll receive a temporary permit
+          </li>
+          <li>
+              creating an account takes about 15 minutes and the rest of the application is around 2 minutes
+          </li>
+          </ul>
       </div>
     </div>
 
@@ -41,14 +50,19 @@
     </label>
 
     <div class="form-group">
-      <ul class="list">
-        <li>
-          Your permit will arrive within 10 working days
-        </li>
-        <li>
-          You'll need to upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
-        </li>
-      </ul>
+        <ul class="list list-bullet">
+          <li>you'll need to scan and upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
+          </li>
+          <li>
+            permits usually take 10 working days to arrive
+          </li>
+          <li>
+            you won't receive a temporary permit
+          </li>
+          <li>
+            your application could take up to 20 minutes
+          </li>
+        </ul>
     </div>
 
   </div>
