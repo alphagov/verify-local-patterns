@@ -10,22 +10,16 @@
   <p>
     If you're a resident of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} you can buy a resident's parking permit to park near your home 24 hours a day, 7 days a week.</p>
   <p>
-    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of up to {{council.permitMax}} permits
-    {% endif %} per {% if council.limitByHousehold %}
-            household.
-          {% else %}
-            resident
-          {% endif %}
-        </li>
-        {% if council.permitWait < 1 %}
-        <li>
-          you won't receive a physical permit – wardens will check your vehicle's registration number
-        </li>
-        {% else %}
-        {% endif %}
-      </p>
+    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of up to {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
+  </p>
+  {% if council.permitWait < 1 %}
+    <li>
+      you won't receive a physical permit – wardens will check your vehicle's registration number
+    </li>
+  {% endif %}
   <p>
-    If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.</p>
+    If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.
+  </p>
   <h2 class="heading-medium">Costs</h2>
   <p>
     Your first permit costs {{"£51 for 12 months, or £25.50 for 6 months."if council.sixmonth else "£51 for 12 months"}} The cost of additional permits is higher. [If the area where you live is divided into parking zones, permit costs may be different for different zones.]
@@ -37,22 +31,21 @@
     Blue Badge holders do not need a resident's parking permit.
   </p>
   <h2 class="heading-medium">What you'll need</h2>
-<p>
   <ul class="list list-bullet">
     <li>
-ability to prove you live in Argleton city centre
-</li>
-<li>
-car registration number
-</li>
-<li>
-V5C registration document (local rule)
-</li>
-<li>
-to answer security questions or upload documents to prove who you are
-</li>
-</ul>
-</p>
+    ability to prove you live in Argleton city centre
+    </li>
+    <li>
+    car registration number
+    </li>
+    <li>
+    V5C registration document (local rule)
+    </li>
+    <li>
+    to answer security questions or upload documents to prove who you are
+    </li>
+  </ul>
+
   <a class="button button-start" href="prove-identity" role="button">Apply for a resident's parking permit</a>
 
   <p>
