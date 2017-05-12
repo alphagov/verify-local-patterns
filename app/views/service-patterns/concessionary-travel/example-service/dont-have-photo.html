@@ -1,20 +1,24 @@
 {% extends "layout_picker.html" %}
 
+{% if(userAgent.mobile()) %}
+{% set deviceString = 'device' %}
+{% else %}
+{% set deviceString = 'computer' %}
+{% endif %}
+
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Your bus pass photo" %}
+{% set pageTitle = "Do you have a camera on this " + deviceString + "?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-
-    <h2 class="heading-medium">Do you have a camera on this device?</h2>
 
       <form>
         <div class="form-group">
           <fieldset>
 
             <legend class="visually-hidden">
-              Do you have a camera on this device?
+              Do you have a camera on this {{ deviceString}}?
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
@@ -27,8 +31,8 @@
               No
             </label>
 
-            <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="need-camera" class="in-progress">
+            <label class="block-label selection-button-radio" data-target="not-sure" for="not-sure">
+              <input id="not-sure" type="radio" name="radio-group" value="need-camera" class="in-progress">
               I'm not sure
             </label>
 

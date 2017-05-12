@@ -9,14 +9,16 @@
     "permitMax": 4,
     "payOnline":true,
     "testChangeAddress":false,
-    "testv5cScan":true,
+    "testv5cScan":false,
     "testv5cnumber":false,
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
     "string": "argleton",
+    "DVLAAPI": false,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
-    "pploa1": true
+    "pploa1": true,
+    "ctloa1": true
   },
   {
     "name": "Buckinghamshire County Council",
@@ -31,7 +33,11 @@
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
-    "string": "buckinghamshire"
+    "string": "buckinghamshire",
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPI": false,
+    "ctloa1": true
   },
   {
     "name" : "Cambridgeshire County Council",
@@ -47,7 +53,10 @@
     "permitWait": 5,
     "tempPermit":true,
     "string" : "cambridgeshire",
-    "pploa1": true
+    "pploa1": true,
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPI": false
   },
   {
     "name" : "London Borough of Camden",
@@ -60,7 +69,10 @@
     "testChangeAddress":false,
     "permitWait": 5,
     "tempPermit":true,
-    "string" : "camden"
+    "string" : "camden",
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPI": false
   },
   {
     "name" : "Northumberland County Council",
@@ -76,7 +88,11 @@
     "permitWait": 0,
     "tempPermit":true,
     "string" : "northumberland",
-    "pploa1": true
+    "pploa1": true,
+    "ctloa1": true,
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPI": false
   },
   {
     "name" : "Sunderland City Council",
@@ -92,7 +108,10 @@
     "permitWait": 3,
     "tempPermit":true,
     "string" : "sunderland",
-    "pploa1": true
+    "pploa1": true,
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPI": false
     },
   {
     "name" : "Unbrandedland Council",
@@ -107,6 +126,9 @@
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
-    "string" : "unbranded"
+    "string" : "unbranded",
+    "testv5cScan": false,
+    "testv5cnumber": false,
+    "DVLAAPI": false
   }
 ]
