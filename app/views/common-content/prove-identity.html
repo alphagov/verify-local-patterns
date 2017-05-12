@@ -23,7 +23,7 @@
               you'll need to answer some security questions
           </li>
           <li>
-              permits usually take {{council.permitWait}} working days to arrive
+              {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive
           </li>
           {% if council.tempPermit == true and serviceString == 'parking-permit' %}
           <li>
@@ -54,12 +54,12 @@
           <li>you'll need to scan and upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
           </li>
           <li>
-            permits usually take 10 working days to arrive
+            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
           </li>
           {% if council.tempPermit == true and serviceString == 'parking-permit' %}
-          <li>
-            you won't receive a temporary permit
-          </li>
+            <li>
+              you won't receive a temporary permit
+            </li>
           {% endif %}
           <li>
             your application could take up to 20 minutes
