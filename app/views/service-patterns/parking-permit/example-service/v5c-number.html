@@ -15,36 +15,32 @@
     We need the reference number on your V5C registration certificate (logbook) to prove you own your vehicle{{ s }}.
   </p>
   <div class="form-group">
+  </p>
+  <div class="form-group">
     <img src="{{asset_path}}/images/v5c.png" />
   </div>
   <div class="form-group">
-
-  {% if council.userChooseStartDate %}
-    {% set nextPage = 'permit-start' %}
-  {% elif council.sixmonth %}
-    {% set nextPage = 'permit-length' %}
-  {% elif council.permitsCosts[0] > 0 %}
-    {% set nextPage = 'pre-payment' %}
-  {% else %}
-    {% set nextPage = 'contact-reference' %}
-  {% endif %}
-
-      <form method="post" action="{{ nextPage }}">
+      <form method="post">
           <fieldset>
               <legend class="visuallyhidden">Enter your V5C document reference number</legend>
-              <p>Enter your V5C document reference number</p>
-              {% for registerNumber in registerNumbers %}
-              <div class="form-group">
-                  <label class="form-label" for="reg-number-{{ loop.index0 }}">Vehicle register number: {{ registerNumber }}</label>
-                  <input class="reg-number form-control" id="reg-number-{{ loop.index0 }}" name="regNumber[{{ loop.index0 }}]" type="text" aria-invalid="false" value="">
+              <div>
+                  <label class="form-label" for="postcode">Enter your V5C document reference number</label>
+                  <input class="reg-number" id="reg-number" name="reg-number" type="text" aria-invalid="false" value="">
               </div>
-              {% endfor %}
           </fieldset>
-
-          <input type="submit" class="button" value="Next">
-
       </form>
   </div>
+
+{% if (singleCost and council.sixmonth == false) %}
+  {% set nextPage = 'permit-details' %}
+{% else %}
+  {% set nextPage = 'permit-price' %}
+{% endif %}
+<p>
+{{ council.name }} will store your vehicle registration data securely on our own system.
+</p>
+<a class="button" role="button" href="{{nextPage}}">Next</a>
+
 
 </div>
 
