@@ -16,11 +16,13 @@
 
   <table>
     {% for registerNumber in registerNumbers %}
+      {% if registerNumbers.length > 1 %}
       <tr class="grouped">
         <th>
           <h2 class="heading-medium">Vehicle {{ loop.index }}</h2>
         </th>
       </tr>
+      {% endif %}
       <tr>
         <th>Registration number</th>
         <th>{{ registerNumber }}</th>
@@ -32,6 +34,10 @@
       <tr>
         <th>Vehicle make</th>
         <th>{{ vehicleMakes[loop.index - 1] }}</th>
+      </tr>
+      <tr>
+        <th>Vehicle status</th>
+        <th>Tax not due</th>
       </tr>
     {% endfor %}
   </table>
