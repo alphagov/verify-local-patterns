@@ -3,12 +3,18 @@
 {% set serviceName = "Apply for a resident's parking permit" %}
 {% set pageTitle = "Enter V5C reference number" %}
 
+{# residentAmount is a string and must be converted to a number 😒 #}
+{% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
+{% set s = 's' if parkingPermitCount > 1 else '' %}
+
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    We need the reference number on your V5C registration certificate (logbook) to prove you own your vehicle.
+    We need the reference number on your V5C registration certificate (logbook) to prove you own your vehicle{{ s }}.
+  </p>
+  <div class="form-group">
   </p>
   <div class="form-group">
     <img src="{{asset_path}}/images/v5c.png" />
@@ -30,7 +36,9 @@
 {% else %}
   {% set nextPage = 'permit-price' %}
 {% endif %}
-
+<p>
+{{ council.name }} will store your vehicle registration data securely on our own system.
+</p>
 <a class="button" role="button" href="{{nextPage}}">Next</a>
 
 

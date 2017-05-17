@@ -2,6 +2,7 @@
 
 {% set serviceName = "Apply for a resident's parking permit" %}
 {% set pageTitle = "Enter card details" %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
 
 {% block content %}
 
@@ -104,11 +105,10 @@
 			<div class="payment-summary payment-summary-small">
 				<h2>Payment summary</h2>
 
-			      <p class="payment-info">{{ permitChoice }} resident's parking permit</p>
+        <p class="payment-info">{{ permitRequestData.permitRequests.length }} resident's parking permit{{s}}</p>
 			       <h3>Amount to pay:</h3>
 			       <p class="payment-amount">
-							 {% set halfCost = council.permitsCosts[0] / 2 %}
-			         £{{ halfCost.toFixed(2) if permitChoice == '6 month' else council.permitsCosts[0].toFixed(2)}}
+               £{{ permitRequestData.totalSum }}
 						 </p>
 			</div>
 		</div>
