@@ -15,8 +15,6 @@
   <div class="column-two-thirds">
     {% if contactChoice == 'Email' %}
     <p>You should receive a confirmation email within the next minute.</p>
-    {% elif contactChoice == 'Phone' %}
-    <p>You should receive a confirmation phone call within the next minute.</p>
     {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
     {% else %}
@@ -73,7 +71,7 @@
         Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
       </li>
       <li>
-        Your permit expires in {{ permitChoice + 's' if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
+        Your permit expires in {{ permitLength if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
       </li>
     </ul>
 
