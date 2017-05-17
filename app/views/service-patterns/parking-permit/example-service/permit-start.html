@@ -57,19 +57,20 @@
       <div class="panel panel-border-narrow js-hidden" id="other-date">
         {{ enterDate(0, 'other') }}
       </div>
-      <label class="block-label selection-button-radio" for="permitStartChoice-3" data-target="multi-dates">
-        <input id="permitStartChoice-3" type="radio" name="permitStartChoice" value="multi">
-        Different dates for different vehicles
-      </label>
-      <div class="panel panel-border-narrow js-hidden" id="multi-dates">
-        {% for registerNumber in registerNumbers %}
-        <div class="form-group">
-          <h3 class="heading-medium">Vehicle {{loop.index0 + 1 }}: {{ registerNumber }}</h3>
-          {{ enterDate(loop.index0, 'multi') }}
+      {% if registerNumbers.length > 1 %}
+        <label class="block-label selection-button-radio" for="permitStartChoice-3" data-target="multi-dates">
+          <input id="permitStartChoice-3" type="radio" name="permitStartChoice" value="multi">
+          Different dates for different vehicles
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="multi-dates">
+          {% for registerNumber in registerNumbers %}
+          <div class="form-group">
+            <h3 class="heading-medium">Vehicle {{loop.index0 + 1 }}: {{ registerNumber }}</h3>
+            {{ enterDate(loop.index0, 'multi') }}
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
-
+      {% endif %}
     </fieldset>
   </div>
 
