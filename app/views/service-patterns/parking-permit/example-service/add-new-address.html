@@ -66,7 +66,12 @@
     </strong>
   </div>
 
-  <a class="button" role="button" href="eligible">Next</a>
+  {% if council.proveNewAddressWithDocUpload %}
+    {% set nextPage = "add-poa" %}
+  {% else %}
+    {% set nextPage = "new-resident-permit" %}
+  {% endif %}
+  <a class="button" role="button" href={{nextPage}}>Next</a>
 
 
 </div>
