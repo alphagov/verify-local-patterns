@@ -98,21 +98,20 @@
 				</div>
 			</div>
 		</div>
-</form>
+	</form>
 </div>
-		<div class="column-third">
-
-			<div class="payment-summary payment-summary-small">
-				<h2>Payment summary</h2>
-
-        <p class="payment-info">{{ permitRequestData.permitRequests.length }} resident's parking permit{{s}}</p>
-			       <h3>Amount to pay:</h3>
-			       <p class="payment-amount">
-               £{{ permitRequestData.totalSum }}
-						 </p>
-			</div>
-		</div>
+<div class="column-third">
+	<div class="payment-summary payment-summary-small">
+		<h2>Payment summary</h2>
+		<p class="payment-info">
+			{{ permitRequestData.permitRequests.length }} resident's parking permit{{s}}
+		</p>
+		<h3>Amount to pay:</h3>
+		<p class="payment-amount">
+		 £{{ permitRequestData.totalSum }}
+		</p>
 	</div>
+</div>
 
 
 </main>
