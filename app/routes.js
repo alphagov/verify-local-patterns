@@ -76,7 +76,12 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
     let permitStartDate = data.permitStartDate || {}
     let requestedStartDate = makeDate(permitStartDate[data.permitStartChoice] && (permitStartDate[data.permitStartChoice][i] || permitStartDate[data.permitStartChoice][0]))
     let startDate = makeStartDate(council.permitWait, requestedStartDate)
-    let length = data.permitLength === 'multi-lengths' ? data.permitLengths[i] : data.permitLength
+    if(req.session.data.unverifiedAddress){
+      console.log('tttttt');
+      length = '3 months'
+    }else{
+      length = data.permitLength === 'multi-lengths' ? data.permitLengths[i] : data.permitLength
+    }
     return {
       registerNumber: registerNumber,
       startDate: startDate,
