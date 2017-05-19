@@ -53,10 +53,15 @@
       </p>
       <a href="#">Provide a different address</a>
     </div>
-    {% if council.tempPermit == true %}
-    <p>
-      In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
-    </p>
+    {% if council.tempPermit == 'print' or 'write' %}
+      <p>
+        In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
+      </p>
+    {% endif %}
+    {% if council.tempPermit == 'write' %}
+      <p>
+        If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
+      </p>
     {% endif %}
 
     {% endif %}

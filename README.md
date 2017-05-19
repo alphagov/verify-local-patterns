@@ -126,7 +126,7 @@ Local options currently available:
 
 **Example value**: `true`
 **What it is**: Some councils limit permits by household, some limit by resident.
-**Where it's used**: Where the service is explaining how permits are allocated on the service page, and when the service tells the user how many permits they are eligible for just after they go through Verify. 
+**Where it's used**: Where the service is explaining how permits are allocated on the service page, and when the service tells the user how many permits they are eligible for just after they go through Verify.
 
 ### `permitMax`
 
@@ -154,9 +154,9 @@ Local options currently available:
 
 ### `tempPermit`
 
-**Example value**: `true`
-**What it is**: Whether or not the council offers a temporary permit.
-**Where it's used**: This removes the content telling users they'll need to print a temporary permit.
+**Example value**: `"write"` or `"print"`
+**What it is**: Whether the council allows users to write their own, orprint their own temporary permit. No value or `false` means the council does not allow temporary permits.
+**Where it's used**: This changes the content telling users they'll need to print a temporary permit and how to get one.
 
 ### `string`
 
@@ -168,7 +168,7 @@ Local options currently available:
 
 **Example value**: `https://en.wikipedia.org/wiki/Argleton`
 **What it is**: Details about the parking boundaries for the user.
-**Where it's used**: Will display on the start page to tell the user where they can park. 
+**Where it's used**: Will display on the start page to tell the user where they can park.
 
 
 ---
