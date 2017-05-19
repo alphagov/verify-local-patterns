@@ -7,6 +7,11 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.get('/service-patterns/parking-permit/example-service/new-resident-permit', function(req, res){
+   req.session.data.unverifiedAddress = true;
+   res.render('service-patterns/parking-permit/example-service/new-resident-permit');
+})
+
 // make radio-group button routes work
 
 router.get('*/example-service/*', function (req, res) {

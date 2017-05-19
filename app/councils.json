@@ -14,7 +14,7 @@
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":true,
-    "proveNewAddressWithDocUpload":true,
+    "proveNewAddressWithDocUpload":false,
     "string": "argleton",
     "DVLAAPI": false,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
