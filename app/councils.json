@@ -14,7 +14,7 @@
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit": "write",
-    "threeMonthPermit": "print",
+    "threeMonthPermit": "post",
     "proveNewAddressWithDocUpload":false,
     "string": "argleton",
     "DVLAAPI": false,

@@ -54,12 +54,12 @@
         </p>
         <a href="#">Provide a different address</a>
       </div>
-      {% if (unverifiedAddress and council.threeMonthPermit == 'print') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
+      {% if (unverifiedAddress and council.threeMonthPermit == 'print' or 'write') or (not unverifiedAddress and tempPermit == 'print' or 'write') %}
         <p>
           In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
         </p>
       {% endif %}
-      {% if (unverifiedAddress and council.threeMonthPermit == 'print') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
+      {% if (unverifiedAddress and council.threeMonthPermit == 'write') or (not unverifiedAddress and tempPermit == 'write') %}
         <p>
           If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
         </p>
@@ -77,6 +77,9 @@
     <li>
       Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
     </li>
+    {% if unverifiedAddress %}
+      {% set permitLength = '3 months' %}
+    {% endif %}
     <li>
       Your permit expires in {{ permitLength if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
     </li>
