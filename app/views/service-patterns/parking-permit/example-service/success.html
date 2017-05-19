@@ -15,10 +15,13 @@
 <div class="column-two-thirds">
   {% if contactChoice == 'Email' %}
     <p>You should receive a confirmation email within the next minute.</p>
+    <hr />
   {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
+    <hr />
   {% else %}
     <p>You have not signed up to receive a confirmation email. <a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
+    <hr />
   {% endif %}
 
   {% if council.permitWait < 1 %}
@@ -26,40 +29,43 @@
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
     </p>
   {% else %}
-    {% if council.payOnline %}
-      <p>
-        You can expect your permit to arrive within 5 working days.
-      </p>
-    {% else %}
+    {% if not council.payOnline %}
       <p>
         Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
       </p>
       <p>
         You can expect your permit to arrive within 5 working days of your payment.
       </p>
-    {% endif %}{# endif council.payOnline #}
-    <p>
-      We'll send your parking permit to this address:
-    </p>
-    <div class="panel panel-border-wide">
+      <hr />
+    {% endif %}{# end if not council.payOnline #}
+    {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
       <p>
-        {% if skip_verify == true %}Jane Smith{% else %}Jane Smith{% endif %}<br />
-        1A {{council.shortName}} High Street<br />
-        {{council.shortName}}<br />
-        ARG1 4HP<br />
+        You can expect your {{'3 month' if unverifiedAddress}} permit to arrive within 5 working days.
       </p>
-      <a href="#">Provide a different address</a>
-    </div>
-    {% if council.tempPermit == 'print' or 'write' %}
       <p>
-        In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
+        We'll send your parking permit to this address:
       </p>
+      <div class="panel panel-border-wide">
+        <p>
+          {% if skip_verify == true %}Jane Smith{% else %}Jane Smith{% endif %}<br />
+          1A {{council.shortName}} High Street<br />
+          {{council.shortName}}<br />
+          ARG1 4HP<br />
+        </p>
+        <a href="#">Provide a different address</a>
+      </div>
+      {% if (unverifiedAddress and council.threeMonthPermit == 'print') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
+        <p>
+          In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
+        </p>
+      {% endif %}
+      {% if (unverifiedAddress and council.threeMonthPermit == 'print') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
+        <p>
+          If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
+        </p>
+      {% endif %}
     {% endif %}
-    {% if council.tempPermit == 'write' %}
-      <p>
-        If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
-      </p>
-    {% endif %}
+
   {% endif %}{# endif council.permitWait < 1#}
 
   <h2 class="heading-medium">About your parking permit</h2>
