@@ -12,35 +12,32 @@
   </p>
 </div>
 
-  <div class="column-two-thirds">
-    {% if contactChoice == 'Email' %}
+<div class="column-two-thirds">
+  {% if contactChoice == 'Email' %}
     <p>You should receive a confirmation email within the next minute.</p>
-    {% elif contactChoice == 'Text' %}
+  {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
-    {% else %}
+  {% else %}
     <p>You have not signed up to receive a confirmation email. <a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
-    {% endif %}
+  {% endif %}
 
-    {% if council.permitWait < 1 %}
+  {% if council.permitWait < 1 %}
     <p>
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
     </p>
+  {% else %}
+    {% if council.payOnline %}
+      <p>
+        You can expect your permit to arrive within 5 working days.
+      </p>
     {% else %}
-    <p>
-{% if council.payOnline %}
-  <p>
-    You can expect your permit to arrive within 5 working days.
-  </p>
-{% else %}
-  <p>
-    Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
-  </p>
-  <p>
-    You can expect your permit to arrive within 5 working days of your payment.
-  </p>
-{% endif %}
-
-
+      <p>
+        Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
+      </p>
+      <p>
+        You can expect your permit to arrive within 5 working days of your payment.
+      </p>
+    {% endif %}{# endif council.payOnline #}
     <p>
       We'll send your parking permit to this address:
     </p>
@@ -63,26 +60,25 @@
         If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
       </p>
     {% endif %}
+  {% endif %}{# endif council.permitWait < 1#}
 
-    {% endif %}
+  <h2 class="heading-medium">About your parking permit</h2>
 
-    <h2 class="heading-medium">About your parking permit</h2>
+  <ul class="list list-bullet">
+    <li>
+      You must display your permit clearly in your front car window when parking in {{council.parkingBoundary}}. Otherwise you may get a fine.
+    </li>
+    <li>
+      Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
+    </li>
+    <li>
+      Your permit expires in {{ permitLength if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
+    </li>
+  </ul>
 
-    <ul class="list list-bullet">
-      <li>
-        You must display your permit clearly in your front car window when parking in {{council.parkingBoundary}}. Otherwise you may get a fine.
-      </li>
-      <li>
-        Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
-      </li>
-      <li>
-        Your permit expires in {{ permitLength if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
-      </li>
-    </ul>
+  {% include "common-content/verify-reuse.html" %}
 
-    {% include "common-content/verify-reuse.html" %}
-
-  </div>
+</div>
 
 
 
