@@ -47,7 +47,11 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
 
   function makeEndDate(startDate, length) {
     var date = new Date(startDate.getTime())
-    date.setMonth(date.getMonth() + (length === '6 months' ? 6 : 12))
+    if(req.session.data.unverifiedAddress){
+      date.setMonth(date.getMonth() + 3)
+    }else{
+      date.setMonth(date.getMonth() + (length === '6 months' ? 6 : 12))
+    }
     return date
   }
 
