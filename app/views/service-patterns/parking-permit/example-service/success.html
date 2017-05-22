@@ -25,20 +25,20 @@
     <p>
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
     </p>
+    {% endif %}
+
+    {% if council.payOnline %}
+      <p>
+        You can expect your permit to arrive within 5 working days.
+      </p>
     {% else %}
-    <p>
-{% if council.payOnline %}
-  <p>
-    You can expect your permit to arrive within 5 working days.
-  </p>
-{% else %}
-  <p>
-    Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
-  </p>
-  <p>
-    You can expect your permit to arrive within 5 working days of your payment.
-  </p>
-{% endif %}
+      <p>
+        Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
+      </p>
+      <p>
+        You can expect your permit to arrive within 5 working days of your payment.
+      </p>
+    {% endif %}
 
 
     <p>
@@ -59,7 +59,6 @@
     </p>
     {% endif %}
 
-    {% endif %}
 
     <h2 class="heading-medium">Using your permit</h2>
 
@@ -75,12 +74,19 @@
       </li>
     </ol>
 
-    {% include "common-content/verify-reuse.html" %}
+    <h2 class="heading-medium">About your GOV.UK Verify account</h2>
+
+      <p>
+        You can reuse your GOV.UK Verify account on other government services like:
+      </p>
+
+      <ul class="list-bullet list">
+        <li><a href="https://www.gov.uk/view-driving-licence">view or share your driving licence information</a></li>
+        <li><a href="https://www.gov.uk/update-company-car-details">check or update your company car tax</a></li>
+        <li><a href="https://www.gov.uk/log-in-file-self-assessment-tax-return/if-youre-already-registered">complete your Self Assessment</a></li>
+      </ul>
 
   </div>
-
-
-
 
 </main>
 
