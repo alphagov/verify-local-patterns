@@ -38,9 +38,12 @@
       </p>
       <hr />
     {% endif %}{# end if not council.payOnline #}
+    {% if unverifiedAddress %}
+      {% set permitLength = '3 months' %}
+    {% endif %}
     {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
       <p>
-        You can expect your {{'3 month' if unverifiedAddress}} permit to arrive within 5 working days.
+        You can expect your {{permitLength}} permit to arrive within 5 working days.
       </p>
       <p>
         We'll send your parking permit to this address:
@@ -77,9 +80,6 @@
     <li>
       Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
     </li>
-    {% if unverifiedAddress %}
-      {% set permitLength = '3 months' %}
-    {% endif %}
     <li>
       Your permit expires in {{ permitLength if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
     </li>

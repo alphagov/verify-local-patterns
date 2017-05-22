@@ -13,7 +13,7 @@
     "testv5cnumber":false,
     "userChooseStartDate":true,
     "permitWait": 5,
-    "tempPermit": "write",
+    "tempPermit": "post",
     "threeMonthPermit": "post",
     "proveNewAddressWithDocUpload":false,
     "string": "argleton",
