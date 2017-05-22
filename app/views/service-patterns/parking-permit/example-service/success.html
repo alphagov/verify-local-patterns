@@ -28,23 +28,26 @@
     <p>
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
     </p>
-  {% else %}
-    {% if not council.payOnline %}
+    {% endif %}
+
+    {% if unverifiedAddress %}
+      {% set permitLength = '3 months' %}
+    {% endif %}
+    {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
+    {% if council.payOnline %}
+      <p>
+        You can expect your permit to arrive within 5 working days.
+      </p>
+    {% else %}
       <p>
         Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
       </p>
       <p>
         You can expect your permit to arrive within 5 working days of your payment.
       </p>
-      <hr />
+
+    <hr />
     {% endif %}{# end if not council.payOnline #}
-    {% if unverifiedAddress %}
-      {% set permitLength = '3 months' %}
-    {% endif %}
-    {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
-      <p>
-        You can expect your {{permitLength}} permit to arrive within 5 working days.
-      </p>
       <p>
         We'll send your parking permit to this address:
       </p>
@@ -59,7 +62,7 @@
       </div>
       {% if (unverifiedAddress and council.threeMonthPermit == 'print' or 'write') or (not unverifiedAddress and tempPermit == 'print' or 'write') %}
         <p>
-          In the mean time, you can print this <a href="#">temporary permit</a> and display it in your car window.
+          Until it arrives, you can print this <a href="#">temporary permit</a> and display it in your car window.
         </p>
       {% endif %}
       {% if (unverifiedAddress and council.threeMonthPermit == 'write') or (not unverifiedAddress and tempPermit == 'write') %}
@@ -67,30 +70,34 @@
           If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
         </p>
       {% endif %}
-    {% endif %}
-
   {% endif %}{# endif council.permitWait < 1#}
 
-  <h2 class="heading-medium">About your parking permit</h2>
+  <h2 class="heading-medium">Using your permit</h2>
 
-  <ul class="list list-bullet">
+  <ol class="list list-number">
     <li>
-      You must display your permit clearly in your front car window when parking in {{council.parkingBoundary}}. Otherwise you may get a fine.
+      Display your {{ permitLength if council.sixmonth else "1 year" }} permit clearly in your car's front window when you park in {{council.parkingBoundary}} to avoid a fine.
     </li>
     <li>
-      Your parking permit allows you to park in {{council.parkingBoundary}} at any time.
+      Park at any time in {{council.parkingBoundary}}  with your permit displayed.
     </li>
     <li>
-      Your permit expires in {{ permitLength if council.sixmonth else "1 year" }}. You've signed up to receive an email and text when your permit expires.
+      Renew your permit when it expires in {{ permitLength if council.sixmonth else "1 year" }} – you've signed up to receive a reminder email and text.
     </li>
-  </ul>
+  </ol>
+  <h2 class="heading-medium">Using your GOV.UK Verify account</h2>
 
-  {% include "common-content/verify-reuse.html" %}
+      <p>
+        You can use your GOV.UK Verify account for other government services including:
+      </p>
 
-</div>
+      <ul class="list-bullet list">
+        <li><a href="https://www.gov.uk/view-driving-licence">view or share your driving licence information</a></li>
+        <li><a href="https://www.gov.uk/update-company-car-details">check or update your company car tax</a></li>
+        <li><a href="https://www.gov.uk/log-in-file-self-assessment-tax-return/if-youre-already-registered">complete your Self Assessment</a></li>
+      </ul>
 
-
-
+  </div>
 
 </main>
 
