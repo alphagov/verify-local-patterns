@@ -12,27 +12,37 @@ router.get('/service-patterns/parking-permit/example-service/new-resident-permit
    res.render('service-patterns/parking-permit/example-service/new-resident-permit');
 })
 
-// make radio-group button routes work
-
-router.get('*/example-service/*', function (req, res) {
+router.get('*/example-service/*', function (req, res, next) {
 
   md = new MobileDetect(req.headers['user-agent']);
 
-  var radioGroup = req.query['radio-group'];
+  res.locals.userAgent = md
 
-  if (radioGroup) {
+  next()
 
-    res.redirect(radioGroup);
-
-  } else {
-
-    // if radio-group is any other value (or is missing) render the page requested
-
-    var str = req.path;
-    res.render( str.substring(1), {'userAgent': md } );
-
-  }
 });
+
+// // make radio-group button routes work
+//
+// router.get('*/example-service/*', function (req, res) {
+//
+//   md = new MobileDetect(req.headers['user-agent']);
+//
+//   var radioGroup = req.query['radio-group'];
+//
+//   if (radioGroup) {
+//
+//     res.redirect(radioGroup);
+//
+//   } else {
+//
+//     // if radio-group is any other value (or is missing) render the page requested
+//
+//     var str = req.path;
+//     res.render( str.substring(1), {'userAgent': md } );
+//
+//   }
+// });
 
 // add your routes here
 
