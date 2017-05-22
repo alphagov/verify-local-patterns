@@ -7,9 +7,27 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+// override session storage with data from URL
+function dataInURL(req, res){
+  var query = req.query;
+  return query
+}
+
 // make radio-group button routes work
 
 router.get('*/example-service/*', function (req, res) {
+
+  for(var key in req.query){
+    console.log('key', key);
+    if(!req.query.hasOwnProperty(key)) continue;
+    var obj = req.query[key];
+    for (var prop in obj){
+      if(!obj.hasOwnProperty(prop)) continue;
+      console.log("obj", obj)
+      req.session.data[key] = obj;
+    }
+  }
+  console.log('SESSION.DATA', req.session.data);
 
   md = new MobileDetect(req.headers['user-agent']);
 
