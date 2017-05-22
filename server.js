@@ -106,6 +106,8 @@ app.use(function (req, res, next) {
   res.locals.asset_path = '/public/'
   var councils = councilsData
   res.locals.councils = councils
+  req.session.data = req.session.data || {}
+  req.session.data.council = councilsData[0]
   next()
 })
 
@@ -142,8 +144,6 @@ if (useAutoStoreData === 'true') {
           req.session.data.council = councilsData[i]
         }
       }
-    }else{
-      req.session.data.council = councilsData[0]
     }
 
 
