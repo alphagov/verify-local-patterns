@@ -1,6 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
 {% set pageTitle = "Enter vehicle registration number" + s %}
 
 {% block content %}
