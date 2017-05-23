@@ -95,6 +95,25 @@
     "DVLAAPIenforcement": false
   },
   {
+     "name" : "Oxfordshire County Council",
+     "shortName": "Oxfordshire",
+     "parkingBoundary": "Oxfordshire",
+     "permitMax": 4,
+     "limitByHousehold":true,
+     "permitsCosts": [15,60,120,180],
+     "sixmonth": false,
+     "payOnline":false,
+     "testChangeAddress":true,
+     "userChooseStartDate":false,
+     "permitWait": 5,
+     "tempPermit":false,
+     "string" : "oxfordshire",
+     "pploa1": true,
+     "testv5cScan": false,
+     "testv5cnumber": false,
+     "DVLAAPIenforcement": false
+   },
+  {
     "name" : "Sunderland City Council",
     "shortName": "Sunderland",
     "parkingBoundary": "Sunderland",
