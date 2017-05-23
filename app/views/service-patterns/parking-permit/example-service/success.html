@@ -37,7 +37,7 @@
     {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
     {% if council.payOnline %}
       <p>
-        Your permit will usually arrive within 5 working days.
+        Your {{ permitLength if council.sixmonth else "1 year" }} permit will usually arrive within 5 working days.
       </p>
     {% else %}
       <p>
