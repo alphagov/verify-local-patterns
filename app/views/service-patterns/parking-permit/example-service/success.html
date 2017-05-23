@@ -24,6 +24,7 @@
     <hr />
   {% endif %}
 
+  <h2 class="heading-medium">What happens next</h2>
   {% if council.permitWait < 1 %}
     <p>
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
@@ -36,20 +37,19 @@
     {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
     {% if council.payOnline %}
       <p>
-        You can expect your permit to arrive within 5 working days.
+        Your permit will usually arrive within 5 working days.
       </p>
     {% else %}
       <p>
-        Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
+        When we have processed and approved your application, we'll contact you for payment. You'll be able to pay over the phone by either debit or credit card -- no service charges apply.
       </p>
       <p>
-        You can expect your permit to arrive within 5 working days of your payment.
+        Your permit will usually arrive within 5 working days of your payment.
       </p>
-
     <hr />
     {% endif %}{# end if not council.payOnline #}
       <p>
-        We'll send your parking permit to this address:
+        We'll send it to this address:
       </p>
       <div class="panel panel-border-wide">
         <p>
@@ -67,7 +67,7 @@
       {% endif %}
       {% if (unverifiedAddress and council.threeMonthPermit == 'write') or (not unverifiedAddress and tempPermit == 'write') %}
         <p>
-          If you don't have a printer, you can write down the reference number above with the words "temporary resident's permit" and display it in your car window.
+          If you don't have a printer, write your reference number HDJ2123F with the words "temporary resident's permit" on a piece of paper and display it in your car window.
         </p>
       {% endif %}
   {% endif %}{# endif council.permitWait < 1#}
