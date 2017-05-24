@@ -34,20 +34,20 @@
     {% if unverifiedAddress %}
       {% set permitLength = '3 months' %}
     {% endif %}
-    {% if (unverifiedAddress and council.threeMonthPermit == 'post' or 'print' or 'write') or (not unverifiedAddress and tempPermit == 'post' or 'print' or 'write') %}
-    {% if council.payOnline %}
-      <p>
-        Your {{ permitLength if council.sixmonth else "1 year" }} permit will usually arrive within 5 working days.
-      </p>
-    {% else %}
-      <p>
-        When we have processed and approved your application, we'll contact you for payment. You'll be able to pay over the phone by either debit or credit card -- no service charges apply.
-      </p>
-      <p>
-        Your permit will usually arrive within 5 working days of your payment.
-      </p>
-    <hr />
-    {% endif %}{# end if not council.payOnline #}
+    {% if (unverifiedAddress and council.threeMonthPermit == 'post') or (not unverifiedAddress and council.tempPermit == 'post' or 'print' or 'write') %}
+      {% if council.payOnline %}
+        <p>
+          Your {{ permitLength if council.sixmonth else "1 year" }} permit will usually arrive within 5 working days.
+        </p>
+      {% else %}
+        <p>
+          When we have processed and approved your application, we'll contact you for payment. You'll be able to pay over the phone by either debit or credit card -- no service charges apply.
+        </p>
+        <p>
+          Your permit will usually arrive within 5 working days of your payment.
+        </p>
+      <hr />
+      {% endif %}{# end if not council.payOnline #}
       <p>
         We'll send it to this address:
       </p>
@@ -60,7 +60,9 @@
         </p>
         <a href="#">Provide a different address</a>
       </div>
-      {% if (unverifiedAddress and council.threeMonthPermit == 'print' or 'write') or (not unverifiedAddress and tempPermit == 'print' or 'write') %}
+      {% if ((unverifiedAddress and (council.threeMonthPermit === 'print' or council.threeMonthPermit === 'write')) or (not unverifiedAddress and (tempPermit === 'print' or 'write'))) %}
+        {{unverifiedAddress}}
+        {{council.threeMonthPermit}}
         <p>
           Until it arrives, you can print this <a href="#">temporary permit</a> and display it in your car window.
         </p>
