@@ -52,7 +52,7 @@
       </label>
       <label class="block-label selection-button-radio" for="permitStartChoice-2" data-target="other-date">
         <input id="permitStartChoice-2" type="radio" name="permitStartChoice" value="other">
-        Some other date
+        A specific date
       </label>
       <div class="panel panel-border-narrow js-hidden" id="other-date">
         {{ enterDate(0, 'other') }}
@@ -76,7 +76,7 @@
 
   {% if council.sixmonth == false %}
     <p class="panel panel-border-wide">
-      Your permit will expire 1 year after it's start date.
+      Your permit will expire 1 year after its start date.
     </p>
   {% endif %}
 
