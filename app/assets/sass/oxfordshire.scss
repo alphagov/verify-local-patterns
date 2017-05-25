@@ -118,6 +118,7 @@ h6 {
   background-repeat: no-repeat;
   background-size: 550px;
   background-position: 100% 40%;
+  min-height: 99px;
 }
 
 .occlss-header__top-part {
@@ -132,7 +133,7 @@ h6 {
 
 .occlss-header__middle-part {
   @include clearfix();
-  padding: 0;
+  padding: 0.8em 0;
 }
 
 
@@ -140,7 +141,6 @@ h6 {
 
 .occlss-header-nav {
   float: right;
-  padding: 1.250em 0 0 0;
 }
 
 .occlss-header-nav__list {
@@ -253,5 +253,11 @@ a.occlss-header-nav__link {
 .column-half--footer {
   @media (max-width: $main-br-point) {
     padding: 10px 30px 0px 30px;
+  }
+}
+
+#content {
+  @media (min-width: 769px) {
+   padding-bottom: 30px;
   }
 }
