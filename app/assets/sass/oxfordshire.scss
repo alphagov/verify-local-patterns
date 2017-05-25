@@ -192,6 +192,17 @@ a.occlss-header-nav__link {
 
 }
 
+.button-start {
+
+  color: #fff;
+  background: #f3830b;
+
+  &:visited {
+    color: #fff;
+    background: #f3830b;
+  }
+}
+
 // forms
 
 .postcode {
