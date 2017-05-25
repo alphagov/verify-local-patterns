@@ -18,7 +18,7 @@ $main-br-point: 641px;
 // default syle
 html,
 body {
-    color: #525252;
+    color: #333;
     background-color: #8f949a;
 }
 
@@ -31,13 +31,13 @@ body {
 a:visited,
 a {
     outline: 0;
-    color: #0c62ba
+    color: #0c62ba;
 }
 
 a:hover,
 a:focus,
 a.ie7focus {
-    color: #EA6C18;
+    color: #f3830b;
 }
 
 a:focus img {
@@ -51,21 +51,19 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
     font-size: 2em;
-    line-height: 1.3em;
     margin-top: 0;
     margin-bottom: 0.5em;
+    color: #525252;
 }
 
 h2 {
-    font-size: 1.5em;
-    line-height: 1.3em;
+    font-size: 1.750em;
     margin-top: 0.667em;
     margin-bottom: 0.667em;
 }
 
 h3 {
     font-size: 1.3em;
-    line-height: 1.3em;
     margin-top: 0.769em;
     margin-bottom: 0.769em;
 }
@@ -74,9 +72,17 @@ h4,
 h5,
 h6 {
     font-size: 1.1em;
-    line-height: 1.3em;
     margin-top: 0.909em;
     margin-bottom: 0.909em;
+}
+
+p {
+  font-size: 1.125em;
+}
+
+.govukish .heading-xlarge {
+  font-size: 2.250em;
+  margin-bottom: 0.7em;
 }
 
 // Bredcrumbs
