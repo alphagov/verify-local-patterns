@@ -1,0 +1,45 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Take a photo for your bus pass" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+  <p>
+    Take a photo using your webcam.
+  </p>
+  <p>
+    <a href="#">I don't have a camera on my computer</a>
+  </p>
+
+  <section id='start-section'>
+    <button class='button button-start' onclick='takePhotoWebcam.start()'>Start</button>
+  </section>
+
+  <section id='cannot-section' style='display:none'>
+    <p>
+      It seems that your computer cannot be used to take a picture.<br>
+      Please, <a href='do-you-have-photo'>Choose another way to upload a photo</a>
+    </p>
+  </section>
+
+  <section id='capture-section' style='display:none'>
+    <video id='webcam-video' width='320'>Webcam not available</video><br>
+    <button class='button' onclick='takePhotoWebcam.captureImage()'>Capture image</button>
+  </section>
+
+  <section id='upload-section' style='display:none;'>
+    <img id='webcam-photo' alt='result'><br>
+    <a class='button' href='loading'>Upload</a>
+    <button class='button' onclick='takePhotoWebcam.showCaptureSection()'>Retake picture</button>
+  </section>
+  <br>
+
+  {% include 'common-content/example-photo.html' %}
+
+</div>
+
+<script src="/public/javascripts/take-photo-webcam.js" async></script>
+
+{% endblock %}
