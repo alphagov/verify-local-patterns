@@ -10,8 +10,9 @@
   {% if(userAgent.mobile()) %}
     {% set nextPage = 'take-photo' %}
     {% set action = 'take' %}
+  {# TODO: detect userAgent to avoid do you have camera question  #}
   {% else %}
-    {% set nextPage = 'do-you-have-photo' %}
+    {% set nextPage = 'do-you-have-camera' %}
     {% set action = 'upload' %}
   {% endif %}
 
@@ -22,7 +23,7 @@
     The next step in your application is to {{action}} a digital photo of yourself. This will be used on your bus pass.
   </p>
   <p>
-    We'll give you guidance for doing this. 
+    We'll give you guidance for doing this.
   </p>
 
   <a class="button" role="button" href={{nextPage}}>Next</a>
