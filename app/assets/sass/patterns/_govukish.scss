@@ -32,6 +32,9 @@
     main{
       min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
     }
+    .column-half{
+      padding: 0;
+    }
     #footer {
       border: 0;
       background: $white;
