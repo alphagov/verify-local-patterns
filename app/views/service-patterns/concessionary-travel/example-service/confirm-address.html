@@ -7,6 +7,15 @@
 
 <div class="column-two-thirds">
 
+  {% if(userAgent.mobile()) %}
+    {% set nextPage = 'take-photo' %}
+    {% set action = 'take' %}
+  {# TODO: detect userAgent to avoid do you have camera question  #}
+  {% else %}
+    {% set nextPage = 'do-you-have-camera' %}
+    {% set action = 'upload' %}
+  {% endif %}
+
   <p>
     We've received these details from GOV.UK Verify:
   </p>
@@ -31,7 +40,7 @@
         <legend class="visually-hidden">Is this your current address?</legend>
 
         <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-group" value="eligible">
+          <input id="radio-inline-1" type="radio" name="radio-group" value="{{nextPage}}">
           Yes
         </label>
         <label class="block-label selection-button-radio" for="radio-inline-2">
