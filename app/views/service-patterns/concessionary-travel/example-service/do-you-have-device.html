@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Do you have a digital camera?" %}
+{% set pageTitle = "Do you have a mobile phone, tablet or laptop which has a camera?" %}
 
 {% block content %}
 
@@ -12,16 +12,16 @@
           <fieldset>
 
             <legend class="visually-hidden">
-              Do you have a digital camera?
+              Do you have a mobile phone, tablet or laptop which has a camera?
             </legend>
 
-            <label class="block-label selection-button-radio" data-target="take-photo-camera" for="take-photo-camera">
-              <input id="take-photo-camera" type="radio" name="radio-group" value="take-photo-device" class="in-progress">
+            <label class="block-label selection-button-radio" data-target="take-photo-device" for="take-photo-device">
+              <input id="take-photo-device" type="radio" name="radio-group" value="take-photo-device" class="in-progress">
               Yes
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="go-to-shop" class="in-progress">
+              <input id="webcam" type="radio" name="radio-group" value="do-you-have-digital-camera" class="in-progress">
               No
             </label>
 
