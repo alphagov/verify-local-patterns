@@ -6,36 +6,37 @@
 {% block content %}
 
 <div class="column-two-thirds">
-  <p>
-    Upload a photo from your computer.
-  </p>
+
+  <div class="grid-row">
+
+    <div class="column-half">
+      <h2 class="heading-medium">Your photo needs to</h2>
+      <ul class="list list-bullet">
+          <li>have a plain white background</li>
+          <li>include your shoulders</li>
+          <li>show your face clearly</li>
+      </ul>
+    </div>
+    <div class="column-half">
+      {# <h2 class="heading-medium">Example photo</h2> #}
+      <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+
+    </div>
+
+  </div>
+
 
     <form>
       <div class="form-group file-upload">
         <label for="photo" class="button photo-upload-label" role="button">
-          <span id="photo-label-text" class="">Choose your file</span>
+          <span id="photo-label-text" class="">Upload your photo</span>
         </label>
         <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
       </div>
     </form>
-    <a class="in-progress" href="#">Get help with uploading a file</a>
-    <div class="spacer"></div>
-
-    <div class="grid-row">
-      <div class="column-half">
-        <h2 class="heading-medium">Example photo</h2>
-        <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
-
-      </div>
-      <div class="column-half video-help-text">
-        <h2 class="heading-small">Your photo needs to</h2>
-        <ul class="list list-bullet">
-            <li>have a plain white background</li>
-            <li>include your shoulders</li>
-            <li>show your face clearly</li>
-        </ul>
-      </div>
-    </div>
+    <p>
+      <a class="in-progress" href="#">Get help with uploading</a>
+    </p>
 
 
     <!-- <div class="panel panel-border-wide">
