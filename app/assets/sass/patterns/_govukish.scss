@@ -402,4 +402,14 @@
       width: 90%;
     }
 
+    .video-container{
+      overflow: hidden;
+      display: block;
+      width: 191px;
+      height: 255px;
+      video{
+        margin-left: -50%;
+      }
+    }
+
 } // end .govukish

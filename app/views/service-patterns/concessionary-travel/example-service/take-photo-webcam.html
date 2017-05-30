@@ -8,9 +8,9 @@
 <div class="column-two-thirds">
   <section id='start-section'>
     <p>
-      Use your computer's camera to take a photo for your bus pass.
+      Use your computer's camera to take a photo.
     </p>
-    <button class='button button-start' onclick='takePhotoWebcam.start()'>Take a photo</button>
+    <button class='button button-start' onclick='takePhotoWebcam.start()'>Open camera</button>
     <p>
       <a href="#">I don't have a camera on my computer</a>
     </p>
@@ -25,7 +25,7 @@
 
   <section id='capture-section' style='display:none'>
     <div class="video-container">
-      <video id='webcam-video' width='320'>Webcam not available</video><br>      
+      <video id='webcam-video' width='320'>Webcam not available</video><br>
     </div>
     <button class='button' onclick='takePhotoWebcam.captureImage()'>Capture image</button>
     {% include 'common-content/example-photo.html' %}
