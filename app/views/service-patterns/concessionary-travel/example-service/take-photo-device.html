@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Take a photo with your camera" %}
+{% set pageTitle = "Take a photo with your device" %}
 
 {% block content %}
 
@@ -10,6 +10,20 @@
 
     <div class="form-group photo-device-button">
       <a href="move-photo-from-camera" class="button button-start">I've taken my photo</a>
+
+      <details>
+
+        <summary><span class="summary">Help with taking a photo</span></summary>
+
+        <div class="panel panel-border-narrow">
+
+          <p>
+            Call {{council.name}} on +44 7895 123 673 and say you need help taking a photo.
+          </p>
+
+        </div>
+
+      </details>
     </div>
 
 </div>
