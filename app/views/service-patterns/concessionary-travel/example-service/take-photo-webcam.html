@@ -24,20 +24,78 @@
   </section>
 
   <section id='capture-section' style='display:none'>
-    <div class="video-container">
-      <video id='webcam-video' width='320'>Webcam not available</video><br>
+
+
+
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">Your photo</h2>
+        <div class="video-container">
+          <video id='webcam-video' width='320'>Webcam not available</video><br>
+        </div>
+      </div>
+
+      <div class="column-half video-help-text">
+        <h2 class="heading-small">Make sure it</h2>
+        <ul class="list list-bullet">
+            <li>has a plain white background</li>
+            <li>includes your shoulders</li>
+            <li>shows your face clearly</li>
+        </ul>
+        <button class='button button-start' onclick='takePhotoWebcam.captureImage()'>Take photo</button>
+      </div>
     </div>
-    <button class='button' onclick='takePhotoWebcam.captureImage()'>Capture image</button>
-    {% include 'common-content/example-photo.html' %}
+
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">
+          Example photo
+        </h2>
+        <!-- <h2 class="heading-medium">Example photo</h2> -->
+        <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+      </div>
+    </div>
 
   </section>
 
   <section id='upload-section' style='display:none;'>
-    <img id='webcam-photo' alt='result'><br>
-    <a class='button' href='loading'>Upload</a>
-    <button class='button' onclick='takePhotoWebcam.showCaptureSection()'>Retake picture</button>
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">Your photo</h2>
+        <div class="photo-container">
+          <img id='webcam-photo' alt='result' class="webcam-photo"><br>
+        </div>
+      </div>
+
+      <div class="column-half video-help-text">
+        <h2 class="heading-small">Make sure it</h2>
+        <ul class="list list-bullet">
+            <li>has a plain white background</li>
+            <li>includes your shoulders</li>
+            <li>shows your face clearly</li>
+        </ul>
+        <a class='button heading-medium' href='loading'>Use this photo</a>
+        <p>
+        Or <a href="#" onclick='takePhotoWebcam.showCaptureSection()'>take a new photo</a>
+        </p>
+      </div>
+    </div>
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">
+          Example photo
+        </h2>
+        <!-- <h2 class="heading-medium">Example photo</h2> -->
+        <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+      </div>
+    </div>
+
   </section>
-  <br>
+
 
 </div>
 

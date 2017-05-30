@@ -411,5 +411,17 @@
         margin-left: -50%;
       }
     }
+    .photo-container{
+      overflow: hidden;
+      display: block;
+      height: 255px;
+      width: 191px;
+      img{
+        object-fit: cover;
+      }
+    }
+    .video-help-text{
+      margin-top: 69px;
+    }
 
 } // end .govukish
