@@ -426,5 +426,11 @@
     .video-help-text{
       margin-top: 69px;
     }
-
+    ol li{
+      display: block;
+      margin-bottom: 2em;
+    }
+    ol h2, ol h2+p{
+      display: inline;
+    }
 } // end .govukish
