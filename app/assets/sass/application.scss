@@ -113,3 +113,13 @@ h1 span.strapline {
 table + p{
   margin-top: 2em;
 }
+
+.video-container{
+  overflow: hidden;
+  display: block;
+  width: 191px;
+  height: 255px;
+  video{
+    margin-left: -50%;
+  }
+}

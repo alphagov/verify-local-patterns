@@ -6,15 +6,14 @@
 {% block content %}
 
 <div class="column-two-thirds">
-  <p>
-    Take a photo using your webcam.
-  </p>
-  <p>
-    <a href="#">I don't have a camera on my computer</a>
-  </p>
-
   <section id='start-section'>
-    <button class='button button-start' onclick='takePhotoWebcam.start()'>Start</button>
+    <p>
+      Use your computer's camera to take a photo for your bus pass.
+    </p>
+    <button class='button button-start' onclick='takePhotoWebcam.start()'>Take a photo</button>
+    <p>
+      <a href="#">I don't have a camera on my computer</a>
+    </p>
   </section>
 
   <section id='cannot-section' style='display:none'>
@@ -25,8 +24,12 @@
   </section>
 
   <section id='capture-section' style='display:none'>
-    <video id='webcam-video' width='320'>Webcam not available</video><br>
+    <div class="video-container">
+      <video id='webcam-video' width='320'>Webcam not available</video><br>      
+    </div>
     <button class='button' onclick='takePhotoWebcam.captureImage()'>Capture image</button>
+    {% include 'common-content/example-photo.html' %}
+
   </section>
 
   <section id='upload-section' style='display:none;'>
@@ -35,8 +38,6 @@
     <button class='button' onclick='takePhotoWebcam.showCaptureSection()'>Retake picture</button>
   </section>
   <br>
-
-  {% include 'common-content/example-photo.html' %}
 
 </div>
 
