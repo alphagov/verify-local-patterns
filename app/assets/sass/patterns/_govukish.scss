@@ -411,7 +411,8 @@
       width: 191px;
       height: 255px;
       video{
-        margin-left: -50%;
+        margin-left: -36%;
+        transform: rotateY(180deg);
       }
     }
     .photo-container{
