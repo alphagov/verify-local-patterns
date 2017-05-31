@@ -422,6 +422,7 @@
       width: 191px;
       img{
         object-fit: cover;
+        transform: rotateY(180deg);
       }
     }
     .video-help-text{
