@@ -1,17 +1,31 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "It looks like you are eligible for an older person's bus pass" %}
+{% set pageTitle = "You're eligible for an older person's bus pass" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
+  {% if(userAgent.mobile()) %}
+    {% set nextPage = 'take-photo' %}
+    {% set action = 'take' %}
+  {% else %}
+    {% set nextPage = 'need-photo' %}
+    {% set action = 'upload' %}
+  {% endif %}
+
   <p>
-    Based on the information we have, you are eligible for a bus pass. To complete your application, you'll need to upload a photo of yourself for the pass.
+    Based on the information we've received, you're eligible for a free bus pass.
+  </p>
+  <p>
+    The next step in your application is to {{action}} a digital photo of yourself. This will be used on your bus pass.
+  </p>
+  <p>
+    We'll give you guidance for doing this. 
   </p>
 
-  <a class="button" role="button" href="need-photo">Next</a>
+  <a class="button" role="button" href={{nextPage}}>Next</a>
 
 </div>
 

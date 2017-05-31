@@ -8,17 +8,36 @@
     <div class="grid-row">
         <div class="column-two-thirds">
           <p>
-            This is the photo that we'll use on your bus pass.
+            This is the photo we'll use on your bus pass:
           </p>
           <img src="{{asset_path}}images/image-f1-plain.jpg" class="photo-preview" />
 
           <p>
-            By proceeding you confirm that this photo is a good likeness of you and that it looks like the example photo.
+            By continuing your application you confirm this photo is a good likeness of you, has a plain white background, includes your shoulders and shows your face clearly.
           </p>
-          <a href="contact-reference" class="button">Confirm</a>
 
-          <div class="spacer">
-          </div>
+          <form class="inline-block">
+            <div class="form-group">
+              <fieldset class="inline">
+
+                <legend class="visually-hidden">Is this photo of you?</legend>
+
+                <label class="block-label selection-button-radio" for="radio-inline-1">
+                  <input id="radio-inline-1" type="radio" name="radio-group" value="contact-reference">
+                  Yes, use this photo
+                </label>
+                <label class="block-label selection-button-radio" for="radio-inline-2">
+                  <input id="radio-inline-2" type="radio" name="radio-group" value="upload">
+                  No, use a different photo
+                </label>
+
+              </fieldset>
+            </div>
+            <div class="form-group">
+                <button class="button">Continue</button>
+            </div>
+          </form>
+
           {% include 'common-content/example-photo.html' %}
 
         </div>

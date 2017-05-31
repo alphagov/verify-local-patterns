@@ -1,53 +1,87 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Enter vehicle details" %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
+{% set pageTitle = "Enter vehicle registration number" + s %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-  {% if council.permitsCosts[0] - council.permitsCosts[council.permitsCosts.length-1] == 0 %}
-  {% set singleCost = council.permitsCosts[0] %}
-  {% endif %}
 
-  {% if council.customPriceLogic or singleCost %}
+  {# residentAmount is a string and must be converted to a number 😒 #}
+  {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
+  {% set s = 's' if parkingPermitCount > 1 else '' %}
 
   <p>
-    We need your vehicle's registration number to associate your permit with your vehicle
+    You've chosen {{ parkingPermitCount }} resident's parking permit{{s}}.
   </p>
+
+  {% if council.DVLAAPIenforcement %}
+
+    <p>
+      We need your vehicle's registration number{{s}} to:
+    </p>
+
+    <ul class="list list-bullet">
+      <li>
+        look up your vehicle make, colour and tax status using DVLA's records
+      </li>
+      <li>
+        link your permit{{s}} to your vehicle{{s}}
+      </li>
+    </ul>
 
   {% else %}
 
-  <p>
-    We need your vehicle's registration number to
-  </p>
+    <p>
+      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
+    </p>
 
-  <ul class="list list-bullet">
-    <li>
-      calculate the price of your permit using DVLA's records
-    </li>
-    <li>
-      associate your permit with your vehicle
-    </li>
-  </ul>
+  {% endif %}
+
+  <h2 class="heading-medium">Enter your vehicle's registration number{{s}}</h2>
+
+  {% if council.DVLAAPIenforcement %}
+    {% set nextPage = 'confirm-vehicle-details' %}
+  {% elif council.testv5cScan %}
+    {% set nextPage = 'v5c-upload' %}
+  {% elif council.testv5cnumber %}
+    {% set nextPage = 'v5c-number' %}
+  {% elif (singleCost and council.sixmonth == false) %}
+    {% set nextPage = 'permit-details' %}
+    {% elif council.userChooseStartDate %}
+      {% set nextPage = 'permit-start' %}
+    {% elif council.sixmonth %}
+      {% set nextPage = 'permit-length' %}
+    {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
+      {% set nextPage = 'pre-payment' %}
+  {% else %}
+    {% set nextPage = 'contact-reference' %}
   {% endif %}
 
   <div class="form-group">
-      <form method="post">
+      <form method="post" action="{{ nextPage }}">
           <fieldset>
-              <legend class="visuallyhidden">Enter your vehicle's registration number</legend>
-              <div>
-                  <label class="form-label" for="postcode">Enter your vehicle's registration number</label>
-                  <input class="reg-number" id="reg-number" name="reg-number" type="text" aria-invalid="false" value="">
-              </div>
+              {% if parkingPermitCount > 1 %}
+                {% for i in range(0, parkingPermitCount) %}
+                  <legend class="visuallyhidden">Vehicle {{i + 1}}</legend>
+                  <div class="form-group">
+                      <label class="form-label" for="postcode">Vehicle {{ i + 1 }}</label>
+                      <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div>
+                  <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+                </div>
+              {% endif %}
           </fieldset>
+<p>
+  {{ council.name }} will store your vehicle registration data securely on our own system.
+</p>
+          <input class="button" type="submit" value="Next">
       </form>
   </div>
-
-
-
-  <a class="button" role="button" href="{{'permit-details' if (singleCost and council.sixmonth == false) else 'permit-price'}}">Next</a>
-
 
 </div>
 
