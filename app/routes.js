@@ -11,6 +11,7 @@ router.get('/', function (req, res) {
 
 router.get('*/example-service/*', function (req, res) {
 
+
   md = new MobileDetect(req.headers['user-agent']);
 
   var radioGroup = req.query['radio-group'];
@@ -27,6 +28,8 @@ router.get('*/example-service/*', function (req, res) {
     res.render( str.substring(1), {'userAgent': md } );
 
   }
+  
+  //res.render('service-patterns/parking-permit/example-service/resident-start')
 });
 
 // add your routes here
