@@ -448,7 +448,9 @@
       }
     }
     .video-help-text{
-      margin-top: 69px;
+      @media(min-width: 640px){
+        margin-top: 69px;        
+      }
     }
     ol li{
       display: block;
