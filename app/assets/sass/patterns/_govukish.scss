@@ -55,6 +55,7 @@
     // possibly should be in govuk styles
     .grid-row{
       display: initial;
+      margin:0;
     }
     details{
       margin-bottom: 1.5em;
@@ -436,7 +437,7 @@
     }
     .video-help-text{
       @media(min-width: 640px){
-        margin-top: 69px;        
+        margin-top: 69px;
       }
     }
     ol li{

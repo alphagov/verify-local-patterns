@@ -15,9 +15,6 @@
   <p>
     Take a photo using the camera on your {{deviceString}}.
   </p>
-  <p>
-    <a href="#">I don't have a camera on my {{deviceString}}</a>
-  </p>
 
   {% include 'common-content/example-photo.html' %}
 
@@ -29,6 +26,10 @@
         <input type="file"  accept="image/*;capture=camera" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
       </div>
     </form>
+
+    <p>
+      <a href="#">I don't have a camera on my {{deviceString}}</a>
+    </p>
 
 </div>
 

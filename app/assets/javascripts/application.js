@@ -75,14 +75,14 @@ $(document).ready(function () {
       window.location.href = 'eligible-nonverify';
     }, 2000)
   }
-  if(window.location.href.indexOf("loading-webcam-photo") > -1){
-    setTimeout(function(){
-      window.location.href = 'webcam-photo-accepted';
-    }, 3000)
-  }
   if(window.location.href.indexOf("loading") > -1){
     setTimeout(function(){
       window.location.href = 'good-photo';
+    }, 3000)
+  }
+  if(window.location.href.indexOf("loading-webcam-photo") > -1){
+    setTimeout(function(){
+      window.location.href = 'webcam-photo-accepted';
     }, 3000)
   }
 
