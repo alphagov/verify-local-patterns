@@ -83,7 +83,7 @@ window.takePhotoWebcam = (function () {
 
     usePhoto: function(){
       localStorage.setItem('photo', captureImage(q('#webcam-video')))
-      window.location.href = "loading";
+      window.location.href = "loading-webcam-photo";
     }
 
   }
