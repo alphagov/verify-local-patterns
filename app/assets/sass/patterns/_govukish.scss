@@ -420,9 +420,18 @@
       display: block;
       height: 255px;
       width: 191px;
+      position: relative;
       img{
         object-fit: cover;
         transform: rotateY(180deg);
+      }
+      #blackbox{
+        position: absolute;
+        top: 0px;
+        bottom: 16px;
+        left: 0px;
+        right: 0px;
+        background: rgb(0, 0, 0);
       }
     }
     .photo-preview-container{

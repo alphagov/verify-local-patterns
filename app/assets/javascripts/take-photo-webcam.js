@@ -67,13 +67,17 @@ window.takePhotoWebcam = (function () {
     },
 
     captureImage: function () {
+      $('#blackbox').fadeIn(10);
       q('#webcam-photo').src = captureImage(q('#webcam-video'))
       hide(q('#capture-section'))
+      $('h1').text('Confirm your photo');
       show(q('#upload-section'))
+      $('#blackbox').fadeOut(500);
     },
 
     showCaptureSection: function () {
       hide(q('#upload-section'))
+      $('h1').text('Take a photo for your bus pass');
       show(q('#capture-section'))
     },
 

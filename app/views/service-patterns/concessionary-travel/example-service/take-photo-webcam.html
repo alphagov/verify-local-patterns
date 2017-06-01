@@ -48,7 +48,7 @@
             <li>includes your shoulders</li>
             <li>shows your face clearly</li>
         </ul>
-        <button class='button button-start' onclick='takePhotoWebcam.captureImage()'>Take photo</button>
+        <button class='button' onclick='takePhotoWebcam.captureImage()'>Take photo</button>
       </div>
     </div>
 
@@ -72,20 +72,21 @@
         <h2 class="heading-medium">Your photo</h2>
         <div class="photo-container">
           <img id='webcam-photo' alt='result' class="webcam-photo"><br>
+          <div id="blackbox"></div>
         </div>
       </div>
 
       <div class="column-half video-help-text">
-        <h2 class="heading-small">Make sure it</h2>
+        <h2 class="heading-small">Does your photo</h2>
         <ul class="list list-bullet">
-            <li>has a plain white background</li>
-            <li>includes your shoulders</li>
-            <li>shows your face clearly</li>
+            <li>have a plain white background?</li>
+            <li>include your shoulders?</li>
+            <li>show your face clearly?</li>
         </ul>
-        <button class='button heading-medium' onclick='takePhotoWebcam.usePhoto()'>Use this photo</button>
         <p>
-        Or <a href="#" onclick='takePhotoWebcam.showCaptureSection()'>take a new photo</a>
+          <a href="#" onclick='takePhotoWebcam.showCaptureSection()'>No, take a new photo</a>
         </p>
+        <button class='button' onclick='takePhotoWebcam.usePhoto()'>Yes, use this photo</button>
       </div>
     </div>
     <div class="grid-row">
