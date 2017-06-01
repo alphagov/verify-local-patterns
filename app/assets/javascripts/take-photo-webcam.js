@@ -72,7 +72,7 @@ window.takePhotoWebcam = (function () {
       hide(q('#capture-section'))
       $('h1').text('Confirm your photo');
       show(q('#upload-section'))
-      $('#blackbox').fadeOut(500);
+      $('#blackbox').fadeOut(2000);
     },
 
     showCaptureSection: function () {
