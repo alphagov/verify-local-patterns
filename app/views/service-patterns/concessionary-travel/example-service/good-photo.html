@@ -10,7 +10,9 @@
           <p>
             This is the photo we'll use on your bus pass:
           </p>
-          <img src="{{asset_path}}images/image-f1-plain.jpg" class="photo-preview" />
+          <div class="photo-preview-container">
+            <img src="{{asset_path}}images/image-f1-plain.jpg" class="photo-preview" id="photo" />            
+          </div>
 
           <p>
             By continuing your application you confirm this photo is a good likeness of you, has a plain white background, includes your shoulders and shows your face clearly.
@@ -39,6 +41,8 @@
           </form>
 
           {% include 'common-content/example-photo.html' %}
+
+          <script src="/public/javascripts/good-photo.js"></script>
 
         </div>
     </div>

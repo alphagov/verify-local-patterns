@@ -75,8 +75,13 @@ window.takePhotoWebcam = (function () {
     showCaptureSection: function () {
       hide(q('#upload-section'))
       show(q('#capture-section'))
+    },
+
+    usePhoto: function(){
+      localStorage.setItem('photo', captureImage(q('#webcam-video')))
+      window.location.href = "loading";
     }
-    
+
   }
-  
+
 }())

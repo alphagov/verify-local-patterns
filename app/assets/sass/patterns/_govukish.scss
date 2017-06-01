@@ -425,6 +425,19 @@
         transform: rotateY(180deg);
       }
     }
+    .photo-preview-container{
+      overflow: hidden;
+      display: block;
+      height: 255px;
+      width: 191px;
+      .photo-preview{
+        height: 100%;
+        width: auto;
+        max-width: none;
+        margin-left: -32%;
+        transform: rotateY(180deg);
+      }
+    }
     .video-help-text{
       margin-top: 69px;
     }
