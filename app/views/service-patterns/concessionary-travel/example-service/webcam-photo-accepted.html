@@ -1,0 +1,22 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Photo received" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+  {# <img src="{{asset_path}}/images/photo/icon-thick-tick.svg" width="100px" /> #}
+  <p>
+    Your photo has passed our automatic checks.
+  </p>
+  <p>
+    We'll also manually check your photo and contact you if there's any problems.
+  </p>
+  <p>
+    <a class="button" href="contact-reference">Next</a>
+  </p>
+
+</div>
+
+{% endblock %}
