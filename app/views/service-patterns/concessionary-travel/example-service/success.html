@@ -13,16 +13,18 @@
     </div>
 
   <div class="column-two-thirds">
-    <p>
-      You'll receive a confirmation email and text with this reference number.
-    </p>
-    <p>
-      You'll also receive another message within 3 days when your bus pass is on its way.
-    </p>
+    {% if contactChoice == 'Email' %}
+    <p>You should receive a confirmation email within the next minute.</p>
+    {% elif contactChoice == 'Text' %}
+    <p>You should receive a confirmation text within the next minute.</p>
+    {% else %}
+    <p>You have not signed up to receive a confirmation email. <a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
+    {% endif %}
 
-  <!-- <p><a href="#">Request a confirmation email.</a></p> -->
+    <hr />
+    <h2 class="heading-medium">What happens next</h2>
     <p>
-     {% if skip_verify == true %} If your photo, proof of address and proof of age pass our manual checks, we'll send you your bus pass within 10 days. {% else %} If your photo passes our manual checks, we'll send you your bus pass within 5 days.{% endif %} If it doesn't pass we'll contact you.
+     {% if skip_verify == true %} If your photo, proof of address and proof of age pass our manual checks, you'll usually recieve your bus pass within 10 days. {% else %} If your photo passes our manual checks, you'll usually recieve your bus pass within 5 days.{% endif %} If it doesn't pass we'll contact you.
     </p>
     <p>
       We'll send your bus pass to this address:
@@ -65,7 +67,16 @@
         <!-- <a href="/service-patterns/concessionary-travel/example-service/renewal-notification">sign up for a renewal notification</a>. -->
       </li>
       </ul>
-    {% include "common-content/verify-reuse.html" %}
+  <h2 class="heading-medium">Using your GOV.UK Verify account</h2>
+
+    <p>
+      You can use your GOV.UK Verify account for other government services  including:
+
+      <ul class="list-bullet list">
+    <li><a href="https://www.gov.uk/report-driving-medical-condition">report a medical condition that affects your driving</a></li>
+    <li><a href="https://www.universal-credit.service.gov.uk/sign-in">complete your claim or access your Universal Credit account</a></li>
+    <li><a href="https://www.gov.uk/log-in-file-self-assessment-tax-return/if-youre-already-registered">complete your Self Assessment</a></li></li>
+  </ul>
 
 </p>
     </div>

@@ -1,7 +1,8 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Enter vehicle details" %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
+{% set pageTitle = "Enter vehicle registration number" + s %}
 
 {% block content %}
 
@@ -9,49 +10,51 @@
 
   {# residentAmount is a string and must be converted to a number 😒 #}
   {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
-  {% set s= 's' if parkingPermitCount > 1 else '' %}
+  {% set s = 's' if parkingPermitCount > 1 else '' %}
 
   <p>
     You've chosen {{ parkingPermitCount }} resident's parking permit{{s}}.
   </p>
 
-  {% if not council.DVLAAPI %}
+  {% if council.DVLAAPIenforcement %}
 
     <p>
-      We need your vehicle's registration number{{s}} to associate your permit{{s}} with your vehicle{{s}}.
-    </p>
-
-  {% else %}
-
-    <p>
-      We need your vehicle's registration number{{s}} to
+      We need your vehicle's registration number{{s}} to:
     </p>
 
     <ul class="list list-bullet">
       <li>
-        calculate the price of your permit{{s}} using DVLA's records
+        look up your vehicle make, colour and tax status using DVLA's records
       </li>
       <li>
-        associate your permit{{s}} with your vehicle{{s}}
+        link your permit{{s}} to your vehicle{{s}}
       </li>
     </ul>
+
+  {% else %}
+
+    <p>
+      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
+    </p>
 
   {% endif %}
 
   <h2 class="heading-medium">Enter your vehicle's registration number{{s}}</h2>
 
-  {% if council.DVLAAPI %}
+  {% if council.DVLAAPIenforcement %}
     {% set nextPage = 'confirm-vehicle-details' %}
   {% elif council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
     {% set nextPage = 'v5c-number' %}
-  {% elif council.userChooseStartDate %}
-    {% set nextPage = 'permit-start' %}
-  {% elif council.sixmonth %}
-    {% set nextPage = 'permit-length' %}
-  {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
-    {% set nextPage = 'pre-payment' %}
+  {% elif (singleCost and council.sixmonth == false) %}
+    {% set nextPage = 'permit-details' %}
+    {% elif council.userChooseStartDate %}
+      {% set nextPage = 'permit-start' %}
+    {% elif council.sixmonth %}
+      {% set nextPage = 'permit-length' %}
+    {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
+      {% set nextPage = 'pre-payment' %}
   {% else %}
     {% set nextPage = 'contact-reference' %}
   {% endif %}

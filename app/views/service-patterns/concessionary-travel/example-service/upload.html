@@ -6,26 +6,58 @@
 {% block content %}
 
 <div class="column-two-thirds">
-  <p>
-    Upload a photo from your computer.
-  </p>
 
-    <form>
-      <div class="form-group file-upload">
-        <label for="photo" class="button photo-upload-label" role="button">
-          <span id="photo-label-text" class="">Choose your file</span>
-        </label>
-        <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
-      </div>
-    </form>
-    <a class="in-progress" href="#">Get help with uploading a file</a>
-    <div class="spacer"></div>
+      <form>
+        <div class="form-group file-upload">
+          <label for="photo" class="button photo-upload-label" role="button">
+            <span id="photo-label-text" class="">Upload your photo</span>
+          </label>
+          <input type="file"  accept="image/*" id="photo" class="photo-choose-file" name="photo" aria-controls="progress-container" aria-required="true" >
+        </div>
+      </form>
+    </div>
 
-    {% include 'common-content/example-photo.html' %}
+  <details>
+    <summary><span class="summary">Get help uploading a photo from your computer</span></summary>
+    <div class="panel panel-border-narrow">
+      <ol class="list">
+        <li>
+          <h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+          <p>
+            Select the 'Upload your photo' button above.
+          </p>
+        </li>
+        <li>
+          <h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+          <p>
+            Find the folder where you've saved your digital photo, or use the computer search to find it.
+          </p>
+        </li>
+        <li>
+          <h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
+          <p>
+            Double-click on your photo file, called MyPhoto.jpg in the example below. This will select your photo and add it to your application.
+          </p>
+        </li>
+        </p>
+      </ol>
 
-    <!-- <div class="panel panel-border-wide">
-        <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
-    </div> -->
+      <img src="{{asset_path}}/images/mac-file-picker.png"  />
+    </div>
+  </details>
+
+  <!-- <div class="panel panel-border-wide">
+      <p>We’ll store all photos for up to 30 days in line with our <a href="#" class="new-window" target="_blank">privacy policy<span class="visuallyhidden">(Opens in a new window)</span></a>.</p>
+  </div> -->
+  <h2 class="heading-medium">Your photo needs to</h2>
+  <ul class="list list-bullet">
+      <li>have a plain white background</li>
+      <li>include your shoulders</li>
+      <li>show your face clearly</li>
+  </ul>
+      <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+      <p>Example photo</p>
+
 
 </div>
 

@@ -32,6 +32,9 @@
     main{
       min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
     }
+    .column-half{
+      padding: 0;
+    }
     #footer {
       border: 0;
       background: $white;
@@ -52,6 +55,7 @@
     // possibly should be in govuk styles
     .grid-row{
       display: initial;
+      margin:0;
     }
     details{
       margin-bottom: 1.5em;
@@ -402,4 +406,45 @@
       width: 90%;
     }
 
+    .video-container{
+      overflow: hidden;
+      display: block;
+      width: 191px;
+      height: 255px;
+      video{
+        margin-left: -36%;
+        transform: rotateY(180deg);
+      }
+    }
+    .photo-container{
+      overflow: hidden;
+      display: block;
+      height: 255px;
+      width: 191px;
+      position: relative;
+      img{
+        object-fit: cover;
+        transform: rotateY(180deg);
+      }
+      #blackbox{
+        position: absolute;
+        top: 0px;
+        bottom: 16px;
+        left: 0px;
+        right: 0px;
+        background: rgb(0, 0, 0);
+      }
+    }
+    .video-help-text{
+      @media(min-width: 640px){
+        margin-top: 69px;
+      }
+    }
+    ol li{
+      display: block;
+      margin-bottom: 2em;
+    }
+    ol h2, ol h2+p{
+      display: inline;
+    }
 } // end .govukish

@@ -7,32 +7,36 @@
 {% endif %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Do you have a camera on this " + deviceString + "?" %}
+{% set pageTitle = "Do you have a webcam on this " + deviceString + "?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
+
+    <p>
+      We need a photo of you for your bus pass. The easiest way is to take a photo with a webcam.
+    </p>
 
       <form>
         <div class="form-group">
           <fieldset>
 
             <legend class="visually-hidden">
-              Do you have a camera on this {{ deviceString}}?
+              Do you have a webcam on this {{ deviceString}}?
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
-              <input id="upload-file" type="radio" name="radio-group" value="take-photo">
+              <input id="upload-file" type="radio" name="radio-group" value="take-photo-webcam">
               Yes
             </label>
 
-            <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="need-camera" class="in-progress">
+            <label class="block-label selection-button-radio" data-target="digital-cam" for="digital-cam">
+              <input id="digital-cam" type="radio" name="radio-group" value="do-you-have-photo" class="in-progress">
               No
             </label>
 
             <label class="block-label selection-button-radio" data-target="not-sure" for="not-sure">
-              <input id="not-sure" type="radio" name="radio-group" value="need-camera" class="in-progress">
+              <input id="not-sure" type="radio" name="radio-group" value="do-you-have-photo" class="in-progress">
               I'm not sure
             </label>
 
