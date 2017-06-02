@@ -10,7 +10,8 @@ $(document).ready(function(){
   }
 
   $("#photo").change(function() {
+			$('#start-section').hide()
+			$('#upload-section').show()
       readURL(this);
-      console.log('r',readURL(this));
   });
 })
