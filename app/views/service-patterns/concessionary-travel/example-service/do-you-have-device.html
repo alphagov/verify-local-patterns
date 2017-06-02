@@ -1,37 +1,28 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Do you have a digital camera?" %}
+{% set pageTitle = "Do you have a mobile phone, tablet or laptop which has a camera?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-
-      <p>
-        This could include having a camera on your mobile phone or tablet.
-      </p>
 
       <form>
         <div class="form-group">
           <fieldset>
 
             <legend class="visually-hidden">
-              Do you have a digital camera?
+              Do you have a mobile phone, tablet or laptop which has a camera?
             </legend>
-
-            <label class="block-label selection-button-radio" data-target="take-photo-camera" for="take-photo-camera">
-              <input id="take-photo-camera" type="radio" name="radio-group" value="take-photo-device" class="in-progress">
-              I have a digital camera
-            </label>
 
             <label class="block-label selection-button-radio" data-target="take-photo-device" for="take-photo-device">
               <input id="take-photo-device" type="radio" name="radio-group" value="take-photo-device" class="in-progress">
-              I have a mobile phone, tablet or laptop which has a camera
+              Yes
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="go-to-shop" class="in-progress">
-              No, I don't have a digital camera or a device with a digital camera
+              <input id="webcam" type="radio" name="radio-group" value="do-you-have-digital-camera" class="in-progress">
+              No
             </label>
 
           </fieldset>

@@ -1,16 +1,13 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Your bus pass photo" %}
+{% set pageTitle = "Do you have a photo like this stored on this computer?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-    <p>We need a digital photo of you for your bus pass.</p>
 
     {% include 'common-content/example-photo.html' %}
-
-    <h2 class="heading-medium">Do you have a digital photo like this?</h2>
 
       <form>
         <div class="form-group">
@@ -21,13 +18,13 @@
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
-              <input id="upload-file" type="radio" name="radio-group" value="have-photo">
-              Yes
+              <input id="upload-file" type="radio" name="radio-group" value="upload">
+              Yes, I have a photo like this
             </label>
 
             <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
-              <input id="webcam" type="radio" name="radio-group" value="dont-have-photo" class="in-progress">
-              No
+              <input id="webcam" type="radio" name="radio-group" value="do-you-have-device" class="in-progress">
+              No, I need to take a photo
             </label>
 
           </fieldset>
