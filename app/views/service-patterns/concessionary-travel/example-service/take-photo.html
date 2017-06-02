@@ -18,7 +18,7 @@
 
   {% include 'common-content/example-photo.html' %}
 
-    <form>
+    <form name="photoForm">
       <div class="form-group file-upload">
         <label for="photo" class="button photo-upload-label" role="button">
           <span id="photo-label-text" class="">Take a photo</span>
@@ -27,9 +27,14 @@
       </div>
     </form>
 
+    <div class="photo-preview-container">
+      <img id="previewImage" src="#" />
+    </div>
     <p>
       <a href="#">I don't have a camera on my {{deviceString}}</a>
     </p>
+
+    <script src="/public/javascripts/take-photo.js" async></script>
 
 </div>
 
