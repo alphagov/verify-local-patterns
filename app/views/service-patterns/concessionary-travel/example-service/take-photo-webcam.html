@@ -1,15 +1,15 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Take a photo for your bus pass" %}
+{% set pageTitle = "Take a photo" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
+	<p>
+		Use your computer's camera to take a photo for your bus pass.
+	</p>
   <section id='start-section'>
-    <p>
-      Use your computer's camera to take a photo.
-    </p>
     <button class='button button-start' onclick='takePhotoWebcam.start()'>Open camera</button>
     <p>
       <a href="upload">I already have a photo to upload</a>
@@ -51,6 +51,9 @@
         <button class='button' onclick='takePhotoWebcam.captureImage()'>Take photo</button>
       </div>
     </div>
+		<p>
+			We will store your photo in line with our <a href="#">privacy policy</a>. This is so that your pass can be renewed easily.
+		</p>
 
     <div class="grid-row">
 
@@ -87,6 +90,9 @@
         <a class='button heading-medium' href='loading-webcam-photo'>Yes, use this photo</a>
       </div>
     </div>
+		<p>
+			We will store your photo in line with our <a href="#">privacy policy</a>. This is so that your pass can be renewed easily.
+		</p>
     <div class="grid-row">
 
       <div class="column-half">
