@@ -42,6 +42,12 @@ $(document).ready(function() {
             window.location.href = 'loading-poa';
         });
     }
+		if (window.location.href.indexOf("new-postal-address-proof") > -1) {
+				$('#file').change(function(e) {
+						// todo: check that file is actually chosen!!
+						window.location.href = 'loading-new-postal-poa';
+				});
+		}
     if (window.location.href.indexOf("add-poage") > -1) {
         $('#file').change(function(e) {
             // todo: check that file is actually chosen!!
@@ -64,6 +70,11 @@ $(document).ready(function() {
             window.location.href = 'document-accepted';
         }, 2000)
     }
+		if (window.location.href.indexOf("loading-new-postal-poa") > -1) {
+				setTimeout(function() {
+						window.location.href = 'document-accepted-new-postal';
+				}, 2000)
+		}
     if (window.location.href.indexOf("loading-poage") > -1) {
         setTimeout(function() {
             window.location.href = 'eligible-nonverify';
