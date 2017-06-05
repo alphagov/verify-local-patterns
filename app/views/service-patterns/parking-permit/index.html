@@ -125,7 +125,11 @@
                         Some users may not go through the two steps above. They may arrive on your council's website with a need to park, but no knowledge that they need a permit. So it's important to explain they may need a permit.
                       </p>
                       <p>
-                        <a href="parking-permit/example-service/start-page">See the example service start page</a>
+                        <a href="parking-permit/example-service/start-page">Explore the example council service start page</a>
+                      </p>
+                      <p>
+                          <a href="user-research/discovery">
+                        Access related user research</a>
                       </p>
                     </div>
                   </details>
@@ -153,13 +157,21 @@
                         It should be done at this early point in the user journey so that the user doesn't go through unnecessary effort.
                       </p>
                       <p>
-                        <a href="parking-permit/example-service/check-boundary">See the example service page for asking users where they want to park</a>
+                        <a href="parking-permit/example-service/check-boundary">Explore the where do you want to park example council page</a>
+                      </p>
+                      <p>
+                          <a href="user-research/discovery">
+                        Access related user research</a>
                       </p>
                       <p>
                         At this point your online service should also check if there are permits available in the area the user wants to park in. If permits are available, move the user onto the next step. If not, the council should tell the user what their alternative options are, based on the nearest boundaries with permits available.
                       </p>
                       <p>
-                        <a href="parking-permit/example-service/no-permits">See the example service page for telling users there are no more permits available</a>
+                        <a href="parking-permit/example-service/no-permits">Explore the no permits available example council page</a>
+                      </p>
+                      <p>
+                          <a href="user-research/discovery">
+                        Access related user research</a>
                       </p>
                     </div>
                     </details>
@@ -169,7 +181,11 @@
                       <p>
                         When the council knows where the user wants to park and that permits are available, they can tell the user about the parking boundary and ask if they are a resident of that area.
                       </p>
-                      <a href="parking-permit/example-service/resident-choice">See the example service page for asking a user whether they are a resident or a visitor</a>
+                      <a href="parking-permit/example-service/resident-choice">Explore the resident or visitor example council page</a>
+                      <p>
+                          <a href="user-research/discovery">
+                        Access related user research</a>
+                      </p>
                     </div>
                   </details>
                   <details>
@@ -206,7 +222,11 @@
                         </li>
                         <li>if the service differs from this pattern, include any other information the user needs to provide</li>
                         </ul>
-                        <a href="parking-permit/example-service/resident-start">See the example service start page</a>
+                        <a href="parking-permit/example-service/resident-start">Explre the example council resident's start page</a>
+                        <p>
+                            <a href="user-research/discovery">
+                          Access related user research</a>
+                        </p>
                     </div>
                   </details>
                   <details>
@@ -225,7 +245,11 @@
                             GOV.UK Verify will send the council the user's address, as supplied by the user's chosen identity provider. When the user returns from the GOV.UK Verify process, your service's webpage should ask them to confirm if this is their current address.
                         </p>
 
-                        <a href="parking-permit/example-service/confirm-address">See the example page asking users to confirm their name and address</a>
+                        <a href="parking-permit/example-service/confirm-address">Explore the confirm name and address example council page</a>
+                        <p>
+                            <a href="user-research/discovery">
+                          Access related user research</a>
+                        </p>
                         <p>
                             If the user says the address supplied through GOV.UK Verify is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and be warned that they must not
                             enter false information.
@@ -293,7 +317,7 @@
                         This page should only be displayed if the user has a choice of permit at this point. Generally local councils give users a choice of 6 month or 12 month permits.
                       </p>
                       <p>
-                        If the council has used the DVLA vehicle details API, they should display the returned data to the user and explain that the vehicle price has been calculated based on that info.
+                        If your sercvice has used the DVLA vehicle details API, it should display the returned data to the user and explain that the vehicle price has been calculated based on that information.
                       </p>
                     </div>
                   </details>
@@ -301,17 +325,17 @@
                         <summary><span class="summary">12. Pay</span></summary>
                         <div class="panel panel-border-narrow">
                       <p>
-                        The fee will vary based on the fee calculation rules determined by each individual council. In some cases the permit can be issued free of charge, for example, if the resident is the first member of the household to apply.
+                        Permit fees will vary based on fee calculation rules determined by each individual council. In some cases the permit may be issued free of charge, for example, if the resident is the first member of the household to apply.
                       </p>
                       <p>
                         <a href="parking-permit/example-service/pre-payment">Step through the example pages of accepting payments.</a>
                       </p>
                       <p>
-                        Councils can accept payment via a number of channels, including checks, bank transfers or online payments.
+                        Your service can accept payment via a number of channels, including checks, bank transfers or online payments.
                         <a href="https://www.gov.uk/guidance/g-cloud-buyers-guide">Councils can find a supplier on the Digital Marketplace.</a>
                       </p>
                       <p>
-                        In the future, councils will be able to accept payments using
+                        In the future, your service will be able to accept payments using
                         <a href="https://www.gov.uk/government/publications/govuk-pay/govuk-pay">GOV.UK Pay</a>.
                         </p>
                     </div>
@@ -320,15 +344,17 @@
                     <summary><span class="summary">13. Receive permit confirmation</span></summary>
                     <div class="panel panel-border-narrow">
                       <p>
-                        After payment, the user needs to receive a confirmation of payment and an acknowledgement that their application has been successful. They should also receive information about how the permit will be enforced (See step 8). If the payment cannot be
-                        accepted or if the application fails for some reason (i.e. times out) the user should be shown an on-screen message that specifies the next steps a user should take to continue with the application.
+                        After payment, the user needs to receive a confirmation of payment and an acknowledgement that their application has been successful. They should also receive information about how the permit will be enforced (see step 8).
                       </p>
                       <p>
-                        The service should ask the user how they would like to receive this confirmation of payment, offering the choice of email, letter or text.
+                        If the payment cannot be accepted or if the application fails, for example it times out, the user should be shown an on-screen message that specifies the next steps to take to continue with the application.
+                      </p>
+                      <p>
+                        Your service should ask the user how they would like to receive this confirmation of payment, offering the choice of email, letter or text.
                         <a href="parking-permit/example-service/contact">See the example page on how to do this.</a>
                       </p>
                       <p>
-                      In the future, councils will be able to send this confirmation using
+                      In the future, your service will be able to send this confirmation using
                         <a href="https://www.gov.uk/government/publications/govuk-notify/govuk-notify">GOV.UK Notify</a>.
                       </p>
                   </div>
@@ -340,7 +366,7 @@
                       You may want to capture users contact details so they can be contacted if things go wrong with their application, or for use in future for renewal reminders.
                     </p>
                     <p>
-                      You should allow users to select their prefered contact method and only contact them in this way in future.
+                      Allow your users to select their prefered contact method and only contact them in this way in future.
                     </p>
                     <p>
                       <a href="parking-permit/example-service/contact-notifications">See the example page asking users to provide their prefered contact details.</a>
@@ -351,26 +377,26 @@
                   <summary><span class="summary">15. Checking permits</span></summary>
                   <div class="panel panel-border-narrow">
                   <p>
-                    It's better for users and cheaper for government if the permits are issued electronically. Wardens check the permits by entering number plates into a database.
+                    It's better for users and cheaper for government if permits are issued electronically. Wardens check electronic permits by entering registration numbers into a handheld device linked to a database.
                     </p>
                   <p>
-                    Councils who haven't yet moved over to an electronic permit system, should have a plan in place to move over.
+                    If your service hasn't yet moved over to an electronic permit system, it should have a plan in place to move over.
                   </p>
-                  <p>In the meantime, councils should mention in the payment receipt
+                  <p>Until then, your service should mention in the physical permit payment receipt
                   </p>
                     <ul class="list list-bullet">
                         <li>
-                        how long they will need to wait for a permit to be posted to them
+                        how long the user will need to wait for a permit to be posted to them
                         </li>
-                        <li>if they can pick up their permit from a council office to get it faster and where from</li>
+                        <li>if the user can pick up their permit from a council office to get it faster and where that is</li>
                         <li>
-                        if they can print a temporary permit themselves while they wait for a permanent one
+                        if the user can print a temporary permit themselves while they wait for a permanent one
                         </li>
                         <li>this information should also be communicated on the council's start page at the beginning of the user journey</li>
                         <li>advice on how customers can park without their permit until they receive it</li>
                     </ul>
                   <p>
-                    This information should also be communicated on the council's start page at the beginning of the user journey.
+                    This information should also be communicated on your service's start page at the beginning of the user journey.
                   </p>
                   <p>
                     Temporary permits should clearly show their expiry date so wardens and users can check them easily.
@@ -381,11 +407,11 @@
                     <summary><span class="summary">16. Renewals </span></summary>
                     <div class="panel panel-border-narrow">
                   <p>
-                    Councils should remind users when it's time for them to renew their permits. They should do this using the same contact method as used in the payment receipt.
+                    Your service should remind users when it's time for them to renew their permits, using the same contact method used for the payment receipt.
                   </p>
                   <p>
                     <a href="#">See the example renewal notification.</a>
-                            (page in progress)
+                            (Page in progress)
                   </p>
                 </div>
               </details>
