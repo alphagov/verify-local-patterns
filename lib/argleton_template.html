@@ -78,14 +78,14 @@
     {% block after_header %}{% endblock %}
 
     <main id="content" role="main">
-
-      {% if startPage %}
-      <h1 class="heading-xlarge">{{pageTitle}}</h1>
-      {% else %}
-      {% include "includes/service_breadcrumbs.html" %}
-      <h1 class="heading-xlarge">{{pageTitle}}</h1>
-      {% endif %}
-
+			<div class="column-two-thirds">
+				{% if startPage %}
+	      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+	      {% else %}
+	      {% include "includes/service_breadcrumbs.html" %}
+	      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+	      {% endif %}
+			</div>
       {% block content %}{% endblock %}
 
     </main>
