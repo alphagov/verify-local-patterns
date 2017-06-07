@@ -5,12 +5,14 @@
 
 {% block content %}
 
+	<div class="column-full">
     <div class="govuk-box-highlight">
       <p>
         Your reference number is <br>
         <strong class="heading-large">HDJ2123F</strong>
       </p>
     </div>
+	</div>
 
   <div class="column-two-thirds">
     {% if contactChoice == 'Email' %}
@@ -36,7 +38,7 @@
         {{council.shortName}}<br />
         ARG1 4HP<br />
       </p>
-      <a href="#">Provide a different address</a>
+      <a href="new-postal-address">Provide a different address</a>
     </div>
 
     <h2 class="heading-medium">How to use your older person's bus pass</h2>

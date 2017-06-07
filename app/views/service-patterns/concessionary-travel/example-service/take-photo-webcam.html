@@ -1,0 +1,114 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Take a photo" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+	<p>
+		Use your computer's camera to take a photo for your bus pass.
+	</p>
+  <section id='start-section'>
+    <button class='button button-start' onclick='takePhotoWebcam.start()'>Open camera</button>
+    <p>
+      <a href="upload">I already have a photo to upload</a>
+    </p>
+    <p>
+      <a href="do-you-have-device">I don't have a camera on my computer</a>
+    </p>
+  </section>
+
+  <section id='cannot-section' style='display:none'>
+    <p>
+      Your computer cannot be used to take a picture.
+    </p>
+    <p>
+      <a class="button" href='do-you-have-photo'>Choose another way to upload a photo</a>
+    </p>
+  </section>
+
+  <section id='capture-section' style='display:none'>
+
+
+
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">Your photo</h2>
+        <div class="video-container">
+          <video id='webcam-video' width='320'>Webcam not available</video><br>
+        </div>
+      </div>
+
+      <div class="column-half video-help-text">
+        <h2 class="heading-small">Make sure it</h2>
+        <ul class="list list-bullet">
+            <li>has a plain white background</li>
+            <li>includes your shoulders</li>
+            <li>shows your face clearly</li>
+        </ul>
+        <button class='button' onclick='takePhotoWebcam.captureImage()'>Take photo</button>
+      </div>
+    </div>
+		<p>
+			We will store your photo in line with our <a href="#">privacy policy</a>. This is so that your pass can be renewed easily.
+		</p>
+
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">
+          Example photo
+        </h2>
+        <!-- <h2 class="heading-medium">Example photo</h2> -->
+        <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+      </div>
+    </div>
+
+  </section>
+
+  <section id='upload-section' style='display:none;'>
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">Your photo</h2>
+        <div class="photo-container">
+          <img id='webcam-photo' alt='result' class="webcam-photo"><br>
+          <div id="blackbox"></div>
+        </div>
+      </div>
+
+      <div class="column-half video-help-text">
+        <h2 class="heading-small">Does your photo</h2>
+        <ul class="list list-bullet">
+            <li>have a plain white background?</li>
+            <li>include your shoulders?</li>
+            <li>show your face clearly?</li>
+        </ul>
+        <a href="#" onclick='takePhotoWebcam.showCaptureSection()'>No, take a new photo</a>
+        <a class='button heading-medium' href='loading-webcam-photo'>Yes, use this photo</a>
+      </div>
+    </div>
+		<p>
+			We will store your photo in line with our <a href="#">privacy policy</a>. This is so that your pass can be renewed easily.
+		</p>
+    <div class="grid-row">
+
+      <div class="column-half">
+        <h2 class="heading-medium">
+          Example photo
+        </h2>
+        <!-- <h2 class="heading-medium">Example photo</h2> -->
+        <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
+      </div>
+    </div>
+
+  </section>
+
+
+</div>
+
+<script src="/public/javascripts/take-photo-webcam.js" async></script>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-[
+[ 
   {
     "name": "Argleton County Council",
     "shortName": "Argleton",
@@ -103,7 +103,7 @@
      "permitsCosts": [15,60,120,180],
      "sixmonth": false,
      "payOnline":false,
-     "testChangeAddress":true,
+     "testChangeAddress":false,
      "userChooseStartDate":false,
      "permitWait": 5,
      "tempPermit":false,
@@ -119,13 +119,13 @@
     "parkingBoundary": "Sunderland",
     "limitByHousehold":true,
     "permitMax": 5,
-    "permitsCosts": [0, 20, 40, 60],
-    "sixmonth": true,
+    "permitsCosts": [0, 20, 40, 60, 80],
+    "sixmonth": false,
     "payOnline":true,
     "testChangeAddress":false,
-    "userChooseStartDate":true,
+    "userChooseStartDate":false,
     "permitWait": 3,
-    "tempPermit":true,
+    "tempPermit":false,
     "string" : "sunderland",
     "pploa1": true,
     "testv5cScan": false,

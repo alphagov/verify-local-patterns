@@ -7,11 +7,20 @@
 
 <div class="column-two-thirds">
 
+  {% if(userAgent.mobile()) %}
+    {% set nextPage = 'take-photo' %}
+    {% set action = 'take' %}
+  {# TODO: detect userAgent to avoid do you have camera question  #}
+  {% else %}
+    {% set nextPage = 'do-you-have-camera' %}
+    {% set action = 'upload' %}
+  {% endif %}
+
   <p>
-    You'll now need to upload a digital passport style photo to complete the application process.
+    We need a digital photo of you to complete the application process.
   </p>
 
-  <a class="button" role="button" href="upload">Next</a>
+  <a class="button" role="button" href="{{nextPage}}">Next</a>
 
 </div>
 
