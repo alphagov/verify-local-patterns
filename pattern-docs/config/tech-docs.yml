@@ -3,9 +3,9 @@ host: local-service-patterns
 
 # Header-related options
 show_govuk_logo: true
-service_name: My First Service
+service_name: Local government service patterns
 service_link: https://www.larry-the-cat.service.gov.uk
-phase: Beta
+phase: Alpha
 
 # Links to show on right-hand-side of header
 header_links:
