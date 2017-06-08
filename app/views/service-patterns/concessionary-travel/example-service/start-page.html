@@ -1,19 +1,13 @@
 {% extends "layout_picker.html" %}
 
-{% if council.string == "camden" %}
-	{% set travel == "freedom" %}
-{% else %}
-	{% set travel == "bus" %}
-{% endif %}
-
-{% set serviceName = "Apply for an older person's" + travel + "pass" %}
-{% set pageTitle = "Apply for an older person's" + travel + "pass" %}
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Apply for an older person's bus pass" %}
 
 {% block content %}
 
   <div class="column-two-thirds">
 		<p>
-			If you’re 60 or over you could get a free {{travel}} pass.
+			If you’re 60 or over you could get a free bus pass.
 		</p>
 		<h2 class="heading-medium">Check if you can apply</h2>
 		<p>
@@ -24,12 +18,9 @@
     </p>
     <h3 class="heading-medium">Using your pass</h3>
     <p>
-      Bring your {{travel}} pass when you travel by bus {{'or train' if travel  == "freedom"}}. It's valid:
+      Bring your bus pass when you travel by bus. It's valid:
     </p>
     <ul class="list list-bullet">
-			{% if travel == "freedom" %}
-			<li>on all trains in London</li>
-			{% endif %}
       <li>on all local bus services in England</li>
       <li>9.30am to 11pm weekdays</li>
       <li>any time Saturdays, Sundays or bank holidays</li>
@@ -47,10 +38,10 @@
     </p>
     <ul class="list list-bullet">
       <li>
-        <a href="#">replace a lost or stolen {{travel}} pass.</a>
+        <a href="#">replace a lost or stolen bus pass.</a>
       </li>
       <li>
-        <a href="#">renew an expired {{travel}} pass.</a>
+        <a href="#">renew an expired bus pass.</a>
       </li>
     </ul>
 
