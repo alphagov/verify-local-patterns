@@ -21,7 +21,7 @@
       <legend class="visually-hidden">Can we use this information when you {{serviceName | lower}}?</legend>
       <label class="block-label selection-button-radio" for="radio-inline-1">
         {% if council.testChangeAddress %}
-          <input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@verify-local-hub.herokuapp.com/intro?requestId={{ serviceString }}-{{council.string}}">
+				<input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@govuk-verify-loa1.herokuapp.com/intro?requestId=parking-permit-{{council.string}}-new&userLOA=0">
         {% elif council.pploa1 and serviceString == 'parking-permit' %}
           <input id="radio-inline-1" type="radio" name="radio-group" value="https://pirate:bunting@govuk-verify-loa1.herokuapp.com/intro?requestId=parking-permit-{{council.string}}&userLOA=0">
         {% elif council.ctloa1 and serviceString == 'concessionary-travel' %}
