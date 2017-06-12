@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Confirm address" %}
+{% set pageTitle = "Verified address not in " + council.parkingBoundary %}
 
 {% block content %}
 
@@ -19,10 +19,10 @@
     </p>
   </div>
   <p>
-    This address is not in Argleton.
+    This address is not in {{council.parkingBoundary}}.
   </p>
   <p>
-    If you do currently live in Argleton, you can apply for a 3 month permit.
+    If you do currently live in {{council.parkingBoundary}}, you can apply for a 3 month permit.
   </p>
   <a class="button" href="add-new-address">Next</a>
 
