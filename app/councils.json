@@ -1,4 +1,4 @@
-[ 
+[
   {
     "name": "Argleton County Council",
     "shortName": "Argleton",
@@ -37,7 +37,8 @@
     "testv5cScan": false,
     "testv5cnumber": false,
     "DVLAAPIenforcement": false,
-    "ctloa1": true
+    "ctloa1": true,
+		"pploa1": false
   },
   {
     "name" : "Cambridgeshire County Council",
