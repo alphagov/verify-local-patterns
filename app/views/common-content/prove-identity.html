@@ -22,14 +22,16 @@
           <li>
               you'll need to answer some security questions
           </li>
-          <li>
-              {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive
-          </li>
-          {% if council.tempPermit == true and serviceString == 'parking-permit' %}
-          <li>
-              you'll receive a temporary permit
-          </li>
-          {% endif %}
+					{% if council.permitWait > 1 %}
+	          <li>
+	              {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive
+	          </li>
+	          {% if council.tempPermit == true and serviceString == 'parking-permit' %}
+	          <li>
+	              you'll receive a temporary permit
+	          </li>
+	          {% endif %}
+					{% endif %}
           <li>
               creating an account takes about 5 minutes and the rest of the application is around 2 minutes
           </li>
@@ -53,14 +55,16 @@
         <ul class="list list-bullet">
           <li>you'll need to scan and upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
           </li>
-          <li>
-            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
-          </li>
-          {% if council.tempPermit == true and serviceString == 'parking-permit' %}
-            <li>
-              you won't receive a temporary permit
-            </li>
-          {% endif %}
+					{% if council.permitWait > 1 %}
+	          <li>
+	            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
+	          </li>
+		        {% if council.tempPermit == true and serviceString == 'parking-permit' %}
+		          <li>
+		            you won't receive a temporary permit
+		          </li>
+		        {% endif %}
+					{% endif %}
           <li>
             your application could take up to 20 minutes
           </li>
