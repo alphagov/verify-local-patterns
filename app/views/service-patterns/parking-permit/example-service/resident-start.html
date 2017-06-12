@@ -8,18 +8,21 @@
 <div class="column-two-thirds">
 
   <p>
-    If you're a resident of {% if council.boundaryLink %}<a href="{{council.boundaryLink}}">{{council.parkingBoundary}}</a>{% else %} {{council.parkingBoundary}}{% endif %} you can buy a resident's parking permit to park near your home 24 hours a day, 7 days a week.</p>
+    Your postcode's in the <a href="http://www.sunderland.gov.uk/CHttpHandler.ashx?id=18284&p=0&fsize=883kb&ftype=Ashbrooke%20and%20Thornholme%20CPMS.PDF" target="_blank">Ashbrooke and Thornholme</a> parking area.
+  </p>
+  <h2 class="heading-medium">Who can apply</h2>
+    As a resident you can buy a resident's parking permit to park near your home 24 hours a day, 7 days a week.
+  </p>
+  <p>If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.</p>
+  </p>
   <p>
-    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of up to {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
+    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
   </p>
   {% if council.permitWait < 1 %}
     <li>
       you won't receive a physical permit – wardens will check your vehicle's registration number
     </li>
   {% endif %}
-  <p>
-    If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.
-  </p>
   <h2 class="heading-medium">Costs</h2>
 	{% if council.permitsCosts[0] > 0 %}
 		{% set halfCost = council.permitsCosts[0] / 2%}
@@ -35,15 +38,15 @@
 
   {# Content about prices which vary based on zones should go here, if the user can't be routed to a specific page based on zone #}
   <p>
-    If you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> <!-- [or drive a low emissions 'eco' vehicle] if council offers this -->  your parking permit is free.
+    Blue Badge holders do not need a resident's parking permit.
   </p>
   <p>
-    Blue Badge holders do not need a resident's parking permit.
+    People living in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> <!-- [or drive a low emissions 'eco' vehicle] if council offers this -->  aren't charged for parking permits.
   </p>
   <h2 class="heading-medium">What you'll need</h2>
   <ul class="list list-bullet">
     <li>
-    ability to prove you live in Argleton city centre
+    ability to prove you live in Ashbrooke and Thornholme
     </li>
     <li>
     car registration number
