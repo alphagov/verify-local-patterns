@@ -1,34 +1,31 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Your bus pass photo" %}
+{% set pageTitle = "Take a photo with your device" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-  <ol class="take-photo-page">
-    <li>
-      <h2 class="heading-medium"><span class="circle circle-step-large">1</span>Take a photo with your camera</h2>
-      <div class="list-box">
-        {% include 'common-content/example-photo.html' %}
-        <a href="#">Get help taking a photo</a>
-      </div>
-    </li>
-    <li>
-      <h2 class="heading-medium"><span class="circle circle-step-large">2</span>Send your photo to this computer</h2>
-      <div class="list-box">
-        <p>
-          You can send your file to this computer using email, a memory card, or another file sharing method.
-        </p>
-        <a href="#">Get help sending a photo to this computer</a>
-      </div>
-    </li>
-    <li>
-      <div class="form-group photo-device-button">
-        <a href="upload" class="button button-start">My photo is now on this computer</a>
-      </div>
-    </li>
-  </ol>
+    {% include 'common-content/example-photo.html' %}
+
+    <div class="form-group photo-device-button">
+      <a href="move-photo-from-device" class="button button-start">I've taken my photo</a>
+
+      <details>
+
+        <summary><span class="summary">Get help with taking a photo</span></summary>
+
+        <div class="panel panel-border-narrow">
+
+          <p>
+            Call {{council.name}} on +44 7895 123 673 and say you need help taking a photo.
+          </p>
+
+        </div>
+
+      </details>
+    </div>
+
 </div>
 
 {% endblock %}

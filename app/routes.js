@@ -12,6 +12,8 @@ router.get('/service-patterns/parking-permit/example-service/unverified-address'
    res.render('service-patterns/parking-permit/example-service/unverified-address');
 })
 
+// make radio-group button routes work
+
 router.get('*/example-service/*', function (req, res, next) {
     md = new MobileDetect(req.headers['user-agent']);
     res.locals.userAgent = md
@@ -23,6 +25,7 @@ router.get('*/example-service/*', function (req, res, next) {
     } else {
       next()
     }
+
 });
 
 // add your routes here

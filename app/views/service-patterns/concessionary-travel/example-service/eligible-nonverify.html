@@ -7,11 +7,24 @@
 
 <div class="column-two-thirds">
 
-  <p>
-    You'll now need to upload a digital passport style photo to complete the application process.
-  </p>
+  {% if(userAgent.mobile()) %}
+    {% set nextPage = 'take-photo' %}
+    {% set action = 'take' %}
+  {# TODO: detect userAgent to avoid do you have camera question  #}
+  {% else %}
+    {% set nextPage = 'do-you-have-camera' %}
+    {% set action = 'upload' %}
+  {% endif %}
 
-  <a class="button" role="button" href="upload">Next</a>
+  <p>
+    You've successfully uploaded your proof of age.
+  </p>
+  <p>We need a digital photo of you to complete your application online – you'll get help taking or uploading one.
+  </p>
+  <br>
+</br>
+
+  <a class="button" role="button" href="{{nextPage}}">Next</a>
 
 </div>
 

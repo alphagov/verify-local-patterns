@@ -1,0 +1,277 @@
+@import 'patterns/_govukish-oxfordshire.scss';
+
+// Mixins
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+$main-br-point: 641px;
+
+// default syle
+html,
+body {
+    color: #333;
+    background-color: #8f949a;
+}
+
+body {
+  @media (min-width: $main-br-point) {
+    padding-bottom: 40px;
+  }
+}
+
+a:visited,
+a {
+    outline: 0;
+    color: #0c62ba;
+}
+
+a:hover,
+a:focus,
+a.ie7focus {
+    color: #f3830b;
+}
+
+a:focus img {
+    outline: 2px dotted #777;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 400;
+}
+
+
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #525252;
+}
+
+h2 {
+    font-size: 1.750em;
+    margin-top: 0.667em;
+    margin-bottom: 0.667em;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin-top: 0.769em;
+    margin-bottom: 0.769em;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 1.1em;
+    margin-top: 0.909em;
+    margin-bottom: 0.909em;
+}
+
+p {
+  font-size: 1.125em;
+}
+
+.govukish .heading-xlarge {
+  font-size: 2.250em;
+  margin-bottom: 0.7em;
+}
+
+// Bredcrumbs
+.breadcrumbs {
+  padding-bottom: 0;
+}
+
+.breadcrumbs li {
+    background-image: url(/public/images/OxfordshireCountyCouncil/occlss-icon-caret-right.svg);
+    background-size: 0.625em 0.625em;
+    margin-left: 0.3em;
+    padding-left: 0.8em;
+}
+
+// Page wrapper
+
+.occlss-page-wrapper {
+  width: 100%;
+  max-width: 1010px;
+  margin: 0 auto;
+  background: #fff;
+
+  -webkit-box-shadow: 0px 0px 24px rgba(66, 66, 66, 1);
+  -moz-box-shadow: 0px 0px 24px rgba(66, 66, 66, 1);
+  box-shadow: 0px 0px 24px rgba(66, 66, 66, 1);
+
+  @media (min-width: $main-br-point) {
+    border-radius: 0 0 12px 12px;
+  }
+  overflow: hidden;
+}
+
+// Header
+
+.occlss-header {
+  padding: 0 1.250em;
+  background-color: #059a00;
+  background-image: url('/public/images/OxfordshireCountyCouncil/OxfordshireCountyCouncilLogo-badge.svg');
+  background-repeat: no-repeat;
+  background-size: 550px;
+  background-position: 100% 40%;
+  min-height: 99px;
+}
+
+.occlss-header__top-part {
+  background: url('/public/images/OxfordshireCountyCouncil/occlss-header-dark-bg.png');
+  padding: 0.313em 0.313em 0 0.313em;
+}
+
+.occlss-header-logo {
+  width: 100%;
+  max-width: 10.625em;
+}
+
+.occlss-header__middle-part {
+  @include clearfix();
+  padding: 0.8em 0;
+}
+
+
+// nav header
+
+.occlss-header-nav {
+  float: right;
+}
+
+.occlss-header-nav__list {
+  padding: 0;
+  margin: 0;
+}
+
+.occlss-header-nav__list-item {
+  display: inline-block;
+  margin-left: 1.250em;
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+.occlss-header-nav__link:visited,
+.occlss-header-nav__link,
+a.occlss-header-nav__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+// Button
+
+.button {
+  padding: 0.625em;
+  border-radius: 4px;
+  background: #f3830b;
+  color: #fff;
+  font-weight: 400;
+  border: 0;
+  font-size: 1em;
+
+  -webkit-box-shadow: 3px 3px 3px rgba(136, 136, 136, 1);
+  -moz-box-shadow: 3px 3px 3px rgba(136, 136, 136, 1);
+  box-shadow: 3px 3px 3px rgba(136, 136, 136, 1);
+  text-decoration: none;
+
+  &:visited {
+    color: #fff;
+    background: #f3830b;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    background: #0c62ba;
+  }
+
+}
+
+.button-start:visited,
+.button-start {
+  color: #fff;
+  background: #f3830b;
+  outline: none;
+}
+
+// forms
+
+.postcode {
+  padding: 0.530em;
+  border-color: #525252;
+  border-width: 1px;
+  @media (max-width: $main-br-point) {
+    margin-bottom: 10px;
+  }
+}
+
+// footer
+
+#footer {
+  background-color: #000;
+  color: #fff;
+}
+
+#footer strong {
+  font-weight: 700;
+}
+
+
+#footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+// layout
+
+.column-quarter--empty {
+    @media (max-width: $main-br-point) {
+      display: none;
+    }
+    &:after {
+      content: "";
+      width: 1px;
+      height: 1px;
+      display: block;
+    }
+}
+
+.column-half--footer,
+.column-quarter--footer {
+    padding: 10px 30px 20px 30px;
+}
+
+.column-quarter--footer {
+  @media (max-width: $main-br-point) {
+    padding: 0px 30px 20px 30px;
+  }
+}
+
+.column-half--footer {
+  @media (max-width: $main-br-point) {
+    padding: 10px 30px 0px 30px;
+  }
+}
+
+#content {
+  @media (min-width: 769px) {
+   padding-bottom: 30px;
+  }
+}

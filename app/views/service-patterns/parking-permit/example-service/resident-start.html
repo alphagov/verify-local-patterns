@@ -21,9 +21,18 @@
     If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council</a>.
   </p>
   <h2 class="heading-medium">Costs</h2>
-  <p>
-    Your first permit costs {{"£51 for 12 months, or £25.50 for 6 months."if council.sixmonth else "£51 for 12 months"}} The cost of additional permits is higher.
-  </p>
+	{% if council.permitsCosts[0] > 0 %}
+		{% set halfCost = council.permitsCosts[0] / 2%}
+			<p>
+				Your first permit costs {{"£"+council.permitsCosts[0]+" for 12 months, or £"+halfCost.toFixed(2)+" for 6 months."if council.sixmonth else "£"+council.permitsCosts[0]+" for 12 months"}} The cost of additional permits is higher.
+			</p>
+	{% else %}
+		{% set halfCost = council.permitsCosts[1] / 2%}
+		<p>
+			Your first permit is free. The second permit is {{"£"+council.permitsCosts[1]+" for 12 months, or £"+halfCost.toFixed(2)+" for 6 months" if council.sixmonth else "£"+council.permitsCosts[1]+" for 12 months"}}. The cost of additional permits is higher.
+		</p>
+	{% endif %}
+
   {# Content about prices which vary based on zones should go here, if the user can't be routed to a specific page based on zone #}
   <p>
     If you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house of multiple occupancy</a> <!-- [or drive a low emissions 'eco' vehicle] if council offers this -->  your parking permit is free.
@@ -80,18 +89,18 @@
 
       <h2 class="heading-small">Apply by post</h2>
       <p>
-      send an <a href="#">application form</a> or a letter with the following information to {{council.name}}:
-      <li>a scanned copy of a council tax statement </li>
+      Print, complete and send us an <a href="#">application form</a> or a letter with the following information:
+      <li>recent council tax statement – scanned copy</li>
       <li>
       car registration number
       </li>
       {% if council.testv5cScan or council.testv5cnumber %}
       <li>
-      V5C registration document
+      V5C registration document – scanned copy
       </li>
       {% endif %}
-      <p>Send your request to: </p>
-      <p>Parking services<br>
+      <p>Send your application to: </p>
+      <p>Parking Services<br>
       {{council.name}}<br>
       12-14 Kings road <br>
       {{council.shortName}} <br>

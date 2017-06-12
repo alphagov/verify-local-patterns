@@ -1,0 +1,71 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "Transfer your photo to this computer" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+    <div class="list-box">
+      <p>
+        Move your photo to this computer using:
+      </p>
+      <ul class="list list-bullet">
+        <li>
+          a memory card
+        </li>
+        <li>
+          a transfer cable
+        </li>
+        <li>
+          wifi or bluetooth
+        </li>
+      </ul>
+
+      <details>
+
+        <summary><span class="summary">Get help transferring photo</span></summary>
+
+        <div class="panel panel-border-narrow">
+
+          <p>
+            <h3 class="heading-medium">Memory card</h3>
+            <p>
+              A memory card is a small plastic card used as removable storage for your photos. Your camera automatically saves your photos to your memory card.
+            </p>
+            <p>
+              Take the memory card out of your camera and insert it into your computer. Your photos are now on your computer.
+            </p>
+
+            <h3 class="heading-medium">Transfer cable</h3>
+            <p>
+              A transfer cable is a lead which can connect your camera to your computer. When it's connected, your computer will start transferring your photos to your computer.
+            </p>
+            <p>
+              Insert one end of the cable into your camera and the other into your computer to begin the transfer.
+            </p>
+
+            <h3 class="heading-medium">Wifi or bluetooth</h3>
+            <p>
+              If your camera has wifi or bluetooth functionality, it should have a wifi or bluetooth icon. If your computer also has wifi or bluetooth you can move your photos from your camera to your computer without physically connecting the 2 devices.
+            </p>
+            <p>
+              Look at your camera instructions to find out how wifi and bluetooth work for your camera.
+            </p>
+
+            <h3 class="heading-medium">Need more help?</h3>
+            <p>
+              Call {{council.name}} on +44 7895 123 673 and say you need help transferring a photo.
+            </p>
+
+        </div>
+
+      </details>
+    </div>
+    <div class="form-group">
+      <a href="upload" class="button button-start">My photo is now on this computer</a>
+    </div>
+
+</div>
+
+{% endblock %}

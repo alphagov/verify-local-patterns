@@ -5,12 +5,14 @@
 
 {% block content %}
 
-<div class="govuk-box-highlight">
-  <p>
-    Your reference number is <br>
-    <strong class="heading-large">HDJ2123F</strong>
-  </p>
-</div>
+	<div class="column-full">
+		<div class="govuk-box-highlight">
+		  <p>
+		    Your reference number is <br>
+		    <strong class="heading-large">HDJ2123F</strong>
+		  </p>
+		</div>
+	</div>
 
 <div class="column-two-thirds">
   {% if contactChoice == 'Email' %}
@@ -34,6 +36,7 @@
     {% if unverifiedAddress %}
       {% set permitLength = '3 months' %}
     {% endif %}
+
     {% if (unverifiedAddress and council.threeMonthPermit == 'post') or (not unverifiedAddress == true and council.tempPermit == 'post' or 'print' or 'write') %}
       {% if council.payOnline %}
         <p>
@@ -48,9 +51,11 @@
         </p>
       <hr />
       {% endif %}{# end if not council.payOnline #}
-      <p>
-        We'll send it to this address:
-      </p>
+
+    <p>
+      We'll issue and send your parking permit to this address:
+    </p>
+
       <div class="panel panel-border-wide">
         <p>
           {% if skip_verify == true %}Jane Smith{% else %}Jane Smith{% endif %}<br />

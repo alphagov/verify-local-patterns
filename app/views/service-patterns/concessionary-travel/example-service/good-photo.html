@@ -7,39 +7,32 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-          <p>
-            This is the photo that we'll use on your bus pass.
-          </p>
+
           <img src="{{asset_path}}images/image-f1-plain.jpg" class="photo-preview" />
 
-          <p>
-            By proceeding you confirm that this photo is a good likeness of you and that it looks like the example photo below.
-          </p>
-
-          <form class="inline-block">
-            <div class="form-group">
-              <fieldset class="inline">
-
-                <legend class="visually-hidden">Is this photo of you?</legend>
-
-                <label class="block-label selection-button-radio" for="radio-inline-1">
-                  <input id="radio-inline-1" type="radio" name="radio-group" value="contact-reference">
-                  Yes, use this photo
-                </label>
-                <label class="block-label selection-button-radio" for="radio-inline-2">
-                  <input id="radio-inline-2" type="radio" name="radio-group" value="upload">
-                  No, use a different photo
-                </label>
-
-              </fieldset>
+          <div class="grid-row">
+            <div class="column-half">
+              <h2 class="heading-medium">Does your photo</h2>
+              <ul class="list list-bullet">
+                  <li>have a plain white background?</li>
+                  <li>include your shoulders?</li>
+                  <li>show your face clearly?</li>
+              </ul>
+              <p>
+                It can be landscape or portrait.
+              </p>
+              <a class='button heading-medium' href='contact-reference'>Use this photo</a>
+              <p>
+                <a href="#" onclick='take-photo'>No, add a new photo</a>
+              </p>
             </div>
-            <div class="form-group">
-                <button class="button">Next</button>
-            </div>
-          </form>
+          </div>
 
-          {% include 'common-content/example-photo.html' %}
+          <div class="column-half">
+            <h2 class="heading-medium">Example photo</h2>
+            <img src="{{asset_path}}images/image-m2-plain.jpg" alt="Example bus pass photo">
 
+          </div>
         </div>
     </div>
 
