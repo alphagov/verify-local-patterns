@@ -1,0 +1,24 @@
+{% extends "layout_picker.html" %}
+
+{% block page_title %}
+  Council index
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="heading-large">Strings for adding to URLs to change the council</h1>
+
+  <p>
+    Add <code class="code">?sessionOverride=</code> and a string below to change the council on any page.
+  </p>
+  <p>
+    For example, <code class="code">http://localhost:3000/service-patterns/parking-permit/example-service/success?sessionOverride=%7B%22council%22:%7B%22name%22:%22Buckinghamshire%20County%20Council%22,%22shortName%22:%22Buckinghamshire%22,%22parkingBoundary%22:%22Buckinghamshire%22,%22limitByHousehold%22:true,%22permitMax%22:2,%22permitsCosts%22:%5B52%5D,%22sixmonth%22:true,%22payOnline%22:true,%22testChangeAddress%22:false,%22userChooseStartDate%22:true,%22permitWait%22:0,%22tempPermit%22:true,%22string%22:%22buckinghamshire%22,%22testv5cScan%22:false,%22testv5cnumber%22:false,%22DVLAAPIenforcement%22:false,%22ctloa1%22:true%7D%7D</code>
+  </p>
+
+  <ul class="list list-bullet">
+    <li class="code">
+      %7B%22council%22:%7B%22name%22:%22Buckinghamshire%20County%20Council%22,%22shortName%22:%22Buckinghamshire%22,%22parkingBoundary%22:%22Buckinghamshire%22,%22limitByHousehold%22:true,%22permitMax%22:2,%22permitsCosts%22:%5B52%5D,%22sixmonth%22:true,%22payOnline%22:true,%22testChangeAddress%22:false,%22userChooseStartDate%22:true,%22permitWait%22:0,%22tempPermit%22:true,%22string%22:%22buckinghamshire%22,%22testv5cScan%22:false,%22testv5cnumber%22:false,%22DVLAAPIenforcement%22:false,%22ctloa1%22:true%7D%7D
+    </li>
+  </ul>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Verified address not in " + council.parkingBoundary %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    GOV.UK Verify has sent us your most recent verified address:
+  </p>
+  <div class="panel panel-border-wide">
+    <p>
+      Jane Smith<br />
+      7 Lower Drive<br />
+      Passington<br />
+      PS3 6HO<br />
+    </p>
+  </div>
+  <p>
+    This address is not in {{council.parkingBoundary}}.
+  </p>
+  <p>
+    If you do currently live in {{council.parkingBoundary}}, you can apply for a 3 month permit.
+  </p>
+  <a class="button" href="add-new-address">Next</a>
+
+</div>
+
+{% endblock %}

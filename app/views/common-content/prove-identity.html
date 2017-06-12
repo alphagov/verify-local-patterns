@@ -22,14 +22,18 @@
           <li>
               you'll need to answer some security questions
           </li>
-					{% if council.permitWait > 1 %}
+					{% if council.permitWait > 1 or serviceString == 'concessionary-travel' %}
 	          <li>
 	              {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive
 	          </li>
-	          {% if council.tempPermit == true and serviceString == 'parking-permit' %}
-	          <li>
-	              you'll receive a temporary permit
-	          </li>
+	          {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
+	            <li>
+	                you'll need to print a temporary permit to park straight away
+	            </li>
+	          {% elif council.tempPermit == "write" and serviceString == 'parking-permit' %}
+	            <li>
+	                you'll need to print or write your own temporary permit to be able to park straight away
+	            </li>
 	          {% endif %}
 					{% endif %}
           <li>
