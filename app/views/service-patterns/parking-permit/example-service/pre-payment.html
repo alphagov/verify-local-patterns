@@ -6,15 +6,19 @@
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
 {% set s = 's' if parkingPermitCount > 1 else '' %}
 
-{% set pageTitle = "Paying for your permit" + s %}
+{% if permit.cost > 1 %}
+	{% set pageTitle = "Paying for your permit" + s %}
+{% else %}
+	{% set pageTitle = "Confirm your permit details" %}
+{% endif %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
-  {% if council.payOnline %}
-    <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} permits.</p>
-  {% else %}
+  {% if council.payOnline and permit.cost > 1 %}
+    <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} permit{{s}}.</p>
+	{% elif council.payOnline == false %}
     <p>
       Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
     </p>
@@ -46,11 +50,13 @@
     <tr class="grouped">
       <th>Start date</th>
       <th>{{ permit.startDate | niceDate }}</th>
+			{% if council.userChooseStartDate %}
       <td class="change-answer">
         <a href="permit-start">
           Change <span class="visuallyhidden">start date</span>
         </a>
       </td>
+			{% endif %}
     </tr>
     <tr>
       <th>Expiry date</th>
@@ -61,11 +67,13 @@
     <tr>
       <th>Permit length</th>
       <th>{{ permit.length }}</th>
+			{% if council.sixmonth %}
       <td class="change-answer">
         <a href="permit-length">
           Change <span class="visuallyhidden">permit length</span>
         </a>
       </td>
+			{% endif %}
     </tr>
     <tr>
       <th>Cost</th>
@@ -78,7 +86,7 @@
   </table>
   {% endfor %}
 
-  {% if council.payOnline %}
+  {% if council.payOnline and permit.cost > 1 %}
     <a class="button" role="button" href="choose-payment">Next</a>
   {% else %}
     <a class="button" role="button" href="contact-reference">Next</a>
