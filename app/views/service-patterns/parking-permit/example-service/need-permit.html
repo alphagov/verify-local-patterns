@@ -1,13 +1,14 @@
 {% extends "layout_picker.html" %}
 
-{% set serviceName = "Apply for a parking permit" %}
-{% set pageTitle = "Your parking permit area" %}
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "You need a parking permit" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
+
   <p>
-    SR2 7LE is within the Ashbrooke and Thornholme Community Parking Management Scheme.
+    {{postcode}} is within the Ashbrooke and Thornholme Community Parking Management Scheme, so you'll need a permit to park.
   </p>
   <details>
 
@@ -85,7 +86,7 @@
 <br>
 <br>
 
-  <a class="button button-start" href="prove-identity" role="button">Back to resident's start page</a>
+  <a class="button button-start" href="resident-choice" role="button">Select permit type</a>
 
 
 </div>
