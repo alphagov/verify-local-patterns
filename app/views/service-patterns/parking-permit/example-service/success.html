@@ -40,7 +40,7 @@
     {% if (unverifiedAddress and council.threeMonthPermit == 'post') or (not unverifiedAddress == true and council.tempPermit == 'post' or 'print' or 'write') %}
       {% if council.payOnline %}
         <p>
-          Your {{ permitLength if council.sixmonth else "1 year" }} permit will usually arrive within 5 working days.
+          Your {{ permitLength or '1 year' }} permit will usually arrive within 5 working days.
         </p>
       {% else %}
         <p>
@@ -81,13 +81,13 @@
 
   <ol class="list list-number">
     <li>
-      Display your {{ permitLength if council.sixmonth else "1 year" }} permit clearly in your car's front window when you park in {{council.parkingBoundary}} to avoid a fine.
+      Display your {{ permitLength or "1 year" }} permit clearly in your car's front window when you park in {{council.parkingBoundary}} to avoid a fine.
     </li>
     <li>
       Park at any time in {{council.parkingBoundary}}  with your permit displayed.
     </li>
     <li>
-      Renew your permit when it expires in {{ permitLength if council.sixmonth else "1 year" }} – you've signed up to receive a reminder email and text.
+      Renew your permit when it expires in {{ permitLength or "1 year" }} – you've signed up to receive a reminder email and text.
     </li>
   </ol>
   <h2 class="heading-medium">Using your GOV.UK Verify account</h2>
