@@ -84,7 +84,7 @@
     "permitsCosts": [130,130,130,130],
     "sixmonth": false,
     "payOnline":true,
-    "testChangeAddress":false,
+    "testChangeAddress":true,
     "userChooseStartDate":true,
     "permitWait": 0,
     "tempPermit":true,
