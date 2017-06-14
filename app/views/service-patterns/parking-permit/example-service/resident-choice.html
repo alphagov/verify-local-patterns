@@ -9,29 +9,35 @@
 
 
   <form class="radio-nav">
-  <div class="form-group">
-    <fieldset>
-    <h3 class="heading-medium">Resident's permit</h4>
-      <label class="block-label selection-button-radio" for="radio-1">
-        <input id="radio-1" type="radio" name="radio-group" value="resident-start">
-        I live in {{council.parkingBoundary}}
-      </label>
-    <h3 class="heading-medium">Visitor's permit</h4>
+	  <div class="radio-with-bullets">
+	    <label class="block-label selection-button-radio" for="radio-1">
+	      <input id="radio-1" type="radio" name="radio-group" value="resident-start">
+				<span class="heading-small">Resident's permit</span>
+				<p>
+					I live in {{council.parkingBoundary}}
+				</p>
+	    </label>
+
+	    <label class="block-label selection-button-radio" for="radio-2">
+	      <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
+				<span class="heading-small">Visitor's permit</span>
+				<p>
+					I live here, and have a visitor
+				</p>
+	    </label>
+
       <label class="block-label selection-button-radio" for="radio-2">
         <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
-        I live here, and have a visitor
+				<span class="heading-small">Trade and business permit</span>
+				<p>
+					I work in {{council.parkingBoundary}}
+				</p>
       </label>
-    <h3 class="heading-medium">Trade and business permit</h4>
-      <label class="block-label selection-button-radio" for="radio-2">
-        <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
-        I work in {{council.parkingBoundary}}
-      </label>
-    </fieldset>
-  </div>
-  <div class="form-group">
-    <button class="button">Continue</button>
-  </div>
-</form>
+		</div>
+	  <div class="form-group">
+	    <button class="button">Continue</button>
+	  </div>
+	</form>
 
 
 </div>
