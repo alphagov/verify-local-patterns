@@ -1,7 +1,7 @@
 <div class="column-two-thirds">
 
   <p>
-    We can send you a reminder in {% if item == 'resident\'s parking permit'%}{{ permitLength if council.sixmonth else "1 year" }}{% else %}5 years{% endif %} to renew your {{item}}.
+    We can send you a renewal reminder 30 days before your parking permit expires.
   </p>
 
   <p>
@@ -34,6 +34,15 @@
         <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
           <label class="form-label" for="contact-text-message">Mobile phone number</label>
           <input class="form-control" name="contactText" type="text" id="contact-text-message" value="{{contactText}}">
+        </div>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-post-input" for="contact-by-post">
+          <input id="contact-by-post" type="checkbox" name="checkbox-contact-group" value="No">
+          By post
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-post-input">
+          <label class="form-label" for="contact-address">Address</label>
+          <input class="form-control" name="contactPost" type="post" id="contact-post" value="{{contactPost}}">
         </div>
 
       </fieldset>
