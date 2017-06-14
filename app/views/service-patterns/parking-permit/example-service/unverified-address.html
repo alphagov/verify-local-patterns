@@ -1,0 +1,54 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "New address not yet verified" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+	<p>
+		We received your new and old addresses from GOV.UK Verify.
+	</p>
+
+	<p>
+		Your new address isn't yet verified because you haven't lived there long enough.
+	</p>
+
+	{# <details>
+		<summary><span class="summary">Addresses received from GOV.UK Verify</span></summary> #}
+		{# <div class="panel panel-border-narrow"> #}
+			<h2 class="heading-small">Old address</h2>
+			<div class="panel panel-border-wide">
+				<p>
+					Jane Smith<br />
+					7 Lower Drive<br />
+					Passington<br />
+					PS3 6HO<br />
+				</p>
+			</div>
+			<h2 class="heading-small">New address</h2>
+			<div class="panel panel-border-wide">
+				<p>
+					Jane Smith<br />
+					30 Thornhill Gardens<br  />
+					{{council.shortName}}<br  />
+					SR2 7LE
+				</p>
+			</div>
+		{# </div> #}
+	{# </details> #}
+
+
+	<h2 class="heading-medium">What this means</h2>
+	<p>
+		This means you can't get a 12 month resident's permit today.
+	</p>
+	<p>
+		 However, you can get a 3 month permit today. Just before it expires, you'll be able to apply for a full 12 month permit with GOV.UK Verify – you'll have lived there long enough by then.
+	</p>
+  <a class="button button-start" href="resident-count">Apply for a 3 month resident's permit</a>
+
+</div>
+
+{% endblock %}

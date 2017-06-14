@@ -1,35 +1,30 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Park your car or vehicle" %}
-{% set pageTitle = "You need a parking permit" %}
+{% set pageTitle = "Select a parking permit type" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
-  <p>
-    {{postcode}} is within {{council.parkingBoundary}}, so you'll need a parking permit.
-  </p>
-
-  <h2 class="heading-medium">What's the best description for your parking needs?</h2>
 
   <form class="radio-nav">
   <div class="form-group">
     <fieldset>
-
-      <legend class="visually-hidden">What's the best description for your parking needs?</legend>
-
+    <h3 class="heading-medium">Resident's permit</h4>
       <label class="block-label selection-button-radio" for="radio-1">
         <input id="radio-1" type="radio" name="radio-group" value="resident-start">
-        I live here
+        I live in {{council.parkingBoundary}}
       </label>
+    <h3 class="heading-medium">Visitor's permit</h4>
       <label class="block-label selection-button-radio" for="radio-2">
         <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
         I live here, and have a visitor
       </label>
+    <h3 class="heading-medium">Trade and business permit</h4>
       <label class="block-label selection-button-radio" for="radio-2">
         <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
-        I work here
+        I work in {{council.parkingBoundary}}
       </label>
     </fieldset>
   </div>
