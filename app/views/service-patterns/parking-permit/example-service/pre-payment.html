@@ -6,7 +6,7 @@
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
 {% set s = 's' if parkingPermitCount > 1 else '' %}
 
-{% if permit.cost > 1 %}
+{% if totalSum > 1 %}
 	{% set pageTitle = "Paying for your permit" + s %}
 {% else %}
 	{% set pageTitle = "Confirm your permit details" %}
@@ -16,7 +16,7 @@
 
 <div class="column-two-thirds">
 
-  {% if council.payOnline and permit.cost > 1 %}
+  {% if council.payOnline and totalSum > 1 %}
     <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} permit{{s}}.</p>
 	{% elif council.payOnline == false %}
     <p>
@@ -86,7 +86,7 @@
   </table>
   {% endfor %}
 
-  {% if council.payOnline and permit.cost > 1 %}
+  {% if council.payOnline and totalSum > 1 %}
     <a class="button" role="button" href="choose-payment">Next</a>
   {% else %}
     <a class="button" role="button" href="contact-reference">Next</a>
