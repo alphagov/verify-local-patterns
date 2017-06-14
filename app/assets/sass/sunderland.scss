@@ -106,7 +106,7 @@ nav#mysunderland li {
 	padding-left: 14px;
 	height: 33px;
 	line-height: 33px;
-    list-style-type: none;
+  list-style-type: none;
 }
 nav#mainmenu li {
 	float: left;
@@ -173,6 +173,12 @@ nav#mainmenu ul {
 nav#mainmenu li {
     list-style-type: none;
 }
+.list-bullet{
+	list-style-type: disc;
+}
+.list-number{
+	list-style: decimal;
+}
 #content {
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -183,7 +189,7 @@ nav#mainmenu li {
 }
 #footer a:visited {
     color: #d5e8f3;
-} 
+}
 .govuk-box-highlight {
 	color: #000;
 	background: #fff;
