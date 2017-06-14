@@ -68,7 +68,7 @@
       {# {% if ((unverifiedAddress and (council.threeMonthPermit == 'print' or council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'print' or council.tempPermit == 'write'))) %} #}
 			{% if unverifiedAddress and council.tempPermit == 'print' %}
         <p>
-          Until it arrives, you can print this <a href="#">temporary permit</a> and display it in your car window.
+          Until it arrives, you can print this <a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">temporary permit</a> and display it in your car window.
         </p>
       {# {% endif %}
       {% if (unverifiedAddress and (council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'write')) %} #}
