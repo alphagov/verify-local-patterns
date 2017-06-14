@@ -65,12 +65,14 @@
         </p>
         <a href="#">Provide a different address</a>
       </div>
-      {% if ((unverifiedAddress and (council.threeMonthPermit == 'print' or council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'print' or council.tempPermit == 'write'))) %}
+      {# {% if ((unverifiedAddress and (council.threeMonthPermit == 'print' or council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'print' or council.tempPermit == 'write'))) %} #}
+			{% if unverifiedAddress and council.tempPermit == 'print' %}
         <p>
           Until it arrives, you can print this <a href="#">temporary permit</a> and display it in your car window.
         </p>
-      {% endif %}
-      {% if (unverifiedAddress and (council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'write')) %}
+      {# {% endif %}
+      {% if (unverifiedAddress and (council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'write')) %} #}
+			{% elif unverifiedAddress and council.tempPermit == 'write' %}
         <p>
           If you don't have a printer, write your reference number HDJ2123F with the words "temporary resident's permit" on a piece of paper and display it in your car window.
         </p>

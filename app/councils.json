@@ -127,7 +127,7 @@
     "testChangeAddress":true,
     "userChooseStartDate":false,
     "permitWait": 3,
-    "tempPermit":true,
+    "tempPermit":"print",
     "string" : "sunderland",
     "pploa1": true,
     "testv5cScan": false,
