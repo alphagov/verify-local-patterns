@@ -30,7 +30,11 @@
         <input id="radio-3" type="radio" name="radio-group" value="business-start">
 				<span class="heading-small">Trade and business permit</span>
 				<p>
-					I work in {{council.parkingBoundary}}
+          {% if council.string == 'sunderland' %}
+          I own a business in {{council.parkingBoundary}}
+          {% else %}
+          I work in {{council.parkingBoundary}}
+          {% endif %}
 				</p>
       </label>
 		</div>
