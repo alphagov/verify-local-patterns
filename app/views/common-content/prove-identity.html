@@ -57,7 +57,12 @@
 
     <div class="form-group">
         <ul class="list list-bullet">
+          {% if council.string == 'sunderland' %}
+          <li>provide documents to prove your identity
+          </li>
+          {% else %}
           <li>you'll need to scan and upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
+          {% endif %}
           </li>
 					{% if council.permitWait > 1 %}
 	          <li>
@@ -76,6 +81,10 @@
     </div>
 
   </div>
+  {% if council.string == 'sunderland' %}
+  <p>&nbsp;
+  </p>
+  {% else %}
   <details>
      <summary><span class="summary">Other ways to apply</span></summary>
      <div class="panel panel-border-narrow">
@@ -98,6 +107,7 @@
       AG3 4HP </p>
     </div>
   </details>
+  {% endif %}
   <div class="form-group">
       <button class="button">Continue</button>
   </div>
