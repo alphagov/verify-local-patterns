@@ -17,16 +17,12 @@
 <div class="column-two-thirds">
   {% if contactChoice == 'Email' %}
     <p>You should receive a confirmation email within the next minute.</p>
-    <hr />
   {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
-    <hr />
   {% else %}
     <p><a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
-    <hr />
   {% endif %}
-
-
+	<hr>
   {% if council.permitWait < 1 %}
     <p>
       You won't receive a physical permit. Wardens will check your vehicle's registration number.
@@ -40,7 +36,7 @@
     {% if (unverifiedAddress and council.threeMonthPermit == 'post') or (not unverifiedAddress == true and council.tempPermit == 'post' or 'print' or 'write') %}
       {% if council.payOnline %}
         <p>
-          We'll issue and send your {{ permitLength or '1 year' }} parking permit to the following address – it'll usually arrive within 5 working days:
+          We'll issue and send your {{ permitLength or '1 year' }} parking permit to your address – it'll usually arrive within 5 working days:
 				</p>
       {% else %}
         <p>
@@ -73,29 +69,25 @@
         </p>
       {% endif %}
   {% endif %}{# endif council.permitWait < 1#}
-
+	<h2 class="heading-medium">Temporary permit</h2>
+	<p>
+		<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print a temporary permit</a> – or write your reference number and the words "temporary resident's permit" on a piece of paper. Use this until your full permit arrives.
+	</p>
   <h2 class="heading-medium">Using your permit</h2>
 
-  <ol class="list list-number">
-    <li>
       Display your permit clearly in the front window of your car to park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a>.
-    </li>
 		{% if permitLength == "3 months" %}
-			<li>
+
 				Apply for a full resident's permit before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
-			</li>
 		{% else %}
-	    <li>
+	</p>
+	<p>
 	      Renew your permit when it expires in {{ permitLength or "1 year" }} – you've signed up to receive a reminder email and text.
-	    </li>
+	</p>
 		{% endif %}
   </ol>
-		<h2 class="heading-medium">Temporary permit</h2>
-		<p>
-			<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print a temporary permit</a> or write your reference number and the words "temporary resident's permit" on a piece of paper. Use this until your full permit arrives.
-		</p>
-	<hr />
-  <h2 class="heading-medium">Your GOV.UK Verify account</h2>
+
+	<hr>
 
       <p>
         You can use your GOV.UK Verify account to prove your identity online for <a href="https://www.gov.uk/view-driving-licence">other government services</a>.
