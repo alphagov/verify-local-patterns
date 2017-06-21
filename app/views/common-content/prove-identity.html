@@ -1,80 +1,47 @@
 
 <div class="column-two-thirds">
   <p>
-      We need to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
+      We need to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}, and make sure it's you completing this application.
   </p>
+  <p>
+      To do this, we'll use GOV.UK Verify, the new way to prove who you are online.
 
-  <form>
-    {% set formTitle = "How do you want us to check your identity?" %}
-
-    <h2 class="heading-medium">{{formTitle}}</h2>
-    <legend class="visually-hidden">{{formTitle}}</legend>
-
-    <div class="radio-with-bullets">
-      <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
-        <input id="verify-option" type="radio" name="radio-group" value="pre-verify">
-        <span class="heading-small">Use GOV.UK Verify, the new way to prove who you are online</span>
-      </label>
-
-      <div class="form-group verify">
-
-        <ul class="list list-bullet">
-          <li>
-              you'll need to answer some security questions
+  <h2 class="heading-medium">What this involves</h2>
+  </p>
+        <ol class="list list-number">
+          <li>We'll transfer you to GOV.UK Verify.
           </li>
-					{% if council.permitWait > 1 or serviceString == 'concessionary-travel' %}
-	          <li>
-	              {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive
-	          </li>
-	          {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
-	            <li>
-	                you'll need to print a temporary permit to park straight away
-	            </li>
-	          {% elif council.tempPermit == "write" and serviceString == 'parking-permit' %}
-	            <li>
-	                you'll need to print or write your own temporary permit to be able to park straight away
-	            </li>
-	          {% endif %}
-					{% endif %}
           <li>
-              creating an account takes about 5 minutes and the rest of the application is around 2 minutes
+              You'll choose an independent, government-approved company to check your identity.
           </li>
-          </ul>
-      </div>
-    </div>
-
-    <div class="form-group or">
+          <li>
+              You'll answer some security questions.
+          </li>
+          <li>
+              You'll return to {{ council.name }} website to complete your application.
+          </li>
+          </ol>
+      <h2 class="heading-medium">How long will it take?</h2>
       <p>
-        Or
+        Verifying yourself with GOV.UK Verify takes about 5 minutes, and finishing your {{ 'parking permit' if serviceString == 'parking-permit' else 'bus pass' }} application is around 2 minutes.
       </p>
-    </div>
+      <p>
+        {% if council.permitWait > 1 or serviceString == 'concessionary-travel' %}
+        {% if serviceString == 'parking-permit' %}Parking permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive.
+      </p>
+        {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
+      <p>
+        You'll need to print a temporary permit to park straight away.
+      </p>
+        {% elif council.tempPermit == "write" and serviceString == 'parking-permit' %}
+      <p>
+        You'll need to print or write your own temporary permit to be able to park straight away.
+      </p>
+      {% endif %}
+      {% endif %}
 
-  <div class="radio-with-bullets">
-    <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-      <input id="example-contact-by-email" type="radio" name="radio-group" value="start-non-verify">
-      <span class="heading-small">Provide proof of identity</span>
-    </label>
 
-    <div class="form-group">
-        <ul class="list list-bullet">
-          {% if council.string == 'sunderland' %}
-          {% else %}
-          <li>you'll need to scan and upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
-          </li>{% endif %}
-					{% if council.permitWait > 1 %}
-	          <li>
-	            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
-	          </li>
-		        {% if council.tempPermit == true and serviceString == 'parking-permit' %}
-		          <li>
-		            you won't receive a temporary permit
-		          </li>
-		        {% endif %}
-					{% endif %}
-          <li>
-            your application could take up to 20 minutes
-          </li>
-        </ul>
+      </div>
     </div>
 
   </div>
@@ -85,29 +52,62 @@
   <details>
      <summary><span class="summary">Other ways to apply</span></summary>
      <div class="panel panel-border-narrow">
+      <h3 class="heading-small">Scan and upload documents</h3>
+      {% if council.string == 'sunderland' %}
+      {% else %}
+      <p>Scan and upload a recent utility bill, council tax statement or proof of your address{{" and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}.
+      {% endif %}<br>
+      <a href="#">Upload your document</a>
+
       <h3 class="heading-small">Apply by phone</h3>
       <p>0300 083 0013<br>
       Monday to Friday, 8am to 7pm<br>
       Saturday, 8am to 2pm<br>
-       <a href="#">Find out about call charges</a></p>
+      <a href="#">Find out about call charges</a>
+     </p>
+      <h3 class="heading-small">Apply by post</h3>
+      <ol class="list list-number">
+      <li>
+      Print and complete an <a href="#">application form</a> or provide details asked for by the application form in a letter.
+      </li>
+      <li>
+      Scan and print a recent utility bill, council tax statement or other proof of your address.
+      </li>
+      <li>
+      Send your application form or letter and scanned document to:</li>
 
-      <h2 class="heading-small">Apply by post</h2>
-      <p>
-      Print, complete and send an <a href="#">application form</a>, or send a letter with scanned copies of the following documents:
-      <li>recent council tax statement </li>
-      <li>form of identity to prove your age</li> </p>
-      <p>Send to: </p>
       <p>{{"Concessionary Travel Services" if serviceString == 'concessionary-travel' }}{{"Parking Services" if serviceString == 'parking-permit' }}<br>
       {{council.name}}<br>
       12-14 Kings Road <br>
       {{council.shortName}} <br>
       AG3 4HP </p>
+    </li>
+    </ol>
+    {% endif %}
+    <h3 class="heading-small">More information</h3>
+    <p>
+    When you apply by scanning, phone or post:
+  </p>
+    {% if council.permitWait > 1 %}
+      <li>
+        {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
+      </li>
+      {% if council.tempPermit == true and serviceString == 'parking-permit' %}
+        <li>
+          you won't receive a temporary permit
+        </li>
+      {% endif %}
+    {% endif %}
+    <li>
+      your application could take up to 20 minutes
+    </li>
+  </ul>
     </div>
-  </details>
-  {% endif %}
-  <div class="form-group">
-      <button class="button">Continue</button>
-  </div>
-</form>
+    </details>
 
-</div>
+    <div class="form-group">
+    <button class="button">Continue</button>
+    </div>
+  </form>
+
+  </div>
