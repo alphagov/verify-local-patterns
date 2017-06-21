@@ -1,10 +1,10 @@
 
 <div class="column-two-thirds">
   <p>
-      We need to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}, and make sure it's you completing this application.
+      We need to check you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}, and make sure it's you completing this application.
   </p>
   <p>
-      To do this, we'll use GOV.UK Verify, the new way to prove who you are online.
+      To do this, we'll use GOV.UK Verify – the new, secure way to prove who you are online.
 
   <h2 class="heading-medium">What this involves</h2>
   </p>
@@ -27,7 +27,7 @@
       </p>
       <p>
         {% if council.permitWait > 1 or serviceString == 'concessionary-travel' %}
-        {% if serviceString == 'parking-permit' %}Parking permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive.
+        {% if serviceString == 'parking-permit' %}Permits{% else %}Bus passes{% endif %} usually take {{council.permitWait}} working days to arrive.
       </p>
         {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
       <p>
@@ -49,6 +49,10 @@
   <p>&nbsp;
   </p>
   {% else %}
+
+  <div class="form-group">
+  <button class="button">Continue</button>
+  </div>
   <details>
      <summary><span class="summary">Other ways to apply</span></summary>
      <div class="panel panel-border-narrow">
@@ -105,9 +109,5 @@
     </div>
     </details>
 
-    <div class="form-group">
-    <button class="button">Continue</button>
-    </div>
-  </form>
 
   </div>
