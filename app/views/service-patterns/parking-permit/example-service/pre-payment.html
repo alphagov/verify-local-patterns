@@ -17,7 +17,8 @@
 <div class="column-two-thirds">
 
   {% if council.payOnline and totalSum > 1 %}
-    <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} permit{{s}}.</p>
+    <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} permit{{s}}.
+		<br>Check the details and costs: </p>
 	{% elif council.payOnline == false %}
     <p>
       Once we have processed and approved your application, we will contact you for payment. You will be able to pay over the phone by either a debit/credit card (no service charges apply).
