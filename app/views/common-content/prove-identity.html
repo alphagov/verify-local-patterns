@@ -1,49 +1,26 @@
 
 <div class="column-two-thirds">
   <p>
-      We need to check you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}, and make sure it's you completing this application.
-  </p>
-  <p>
-      To do this, we'll use GOV.UK Verify – the new, secure way to prove who you are online.
-
-  <h2 class="heading-medium">What this involves</h2>
-  </p>
-        <ol class="list list-number">
-          <li>We'll transfer you to GOV.UK Verify.
+      We need to check you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}, and that it's you completing this application. We'll use <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#how-govuk-verify-works">GOV.UK Verify</a> the secure way to prove who you are online.
+      <p>You'll:
+      </p>
+        <ul class="list list-bullet">
+          <li>
+              choose an independent, government-approved company
           </li>
           <li>
-              You'll choose an independent, government-approved company to check your identity.
+              answer some security questions
           </li>
           <li>
-              You'll answer some security questions.
+              complete your {{ 'parking permit' if serviceString == 'parking-permit' else 'bus pass' }} application on our website
           </li>
           <li>
-              You'll return to {{ council.name }} website to complete your application.
+              wait {{council.permitWait}} working days for your permit to arrive – but receive a temporary parking permit to use immediately
           </li>
-          </ol>
-      <h2 class="heading-medium">How long will it take?</h2>
-      <p>
-        Verifying yourself with GOV.UK Verify takes about 5 minutes, and finishing your {{ 'parking permit' if serviceString == 'parking-permit' else 'bus pass' }} application is around 2 minutes.
-      </p>
-      <p>
-        {% if council.permitWait > 1 or serviceString == 'concessionary-travel' %}
-        {% if serviceString == 'parking-permit' %}Permits{% else %}Bus passes{% endif %} usually take {{council.permitWait}} working days to arrive.
-      </p>
-        {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
-      <p>
-        You'll need to print a temporary permit to park straight away.
-      </p>
-        {% elif council.tempPermit == "write" and serviceString == 'parking-permit' %}
-      <p>
-        You'll need to print or write your own temporary permit to be able to park straight away.
-      </p>
-      {% endif %}
-      {% endif %}
-
-
+        </ul>
+        <br>
       </div>
     </div>
-
   </div>
   {% if council.string == 'sunderland' %}
   <p>&nbsp;
@@ -51,7 +28,7 @@
   {% else %}
 
   <div class="form-group">
-  <button class="button">Continue</button>
+  <button class="button">Continue to GOV.UK Verify</button>
   </div>
   <details>
      <summary><span class="summary">Other ways to apply</span></summary>
@@ -90,7 +67,7 @@
     {% endif %}
     <h3 class="heading-small">More information</h3>
     <p>
-    When you apply by scanning, phone or post:
+    If you apply by scanning, phone or post:
   </p>
     {% if council.permitWait > 1 %}
       <li>
