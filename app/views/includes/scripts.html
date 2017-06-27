@@ -34,7 +34,17 @@ function main() {
 		});
 		// you can get the native map to work with it
 		var map = vis.getNativeMap();
-		L.marker([54.8970847740886, -1.39000872756029]).addTo(map);
+		var greenIcon = L.icon({
+		    iconUrl: '{{asset_path}}/images/map-marker.png',
+		    // shadowUrl: 'leaf-shadow.png',
+
+		    iconSize:     [65, 60], // size of the icon
+		    shadowSize:   [50, 64], // size of the shadow
+		    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+		    shadowAnchor: [4, 62],  // the same for the shadow
+		    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+		});
+		L.marker([54.8970847740886, -1.39000872756029], {icon: greenIcon}).addTo(map);
 		// now, perform any operations you need
 		// map.setZoom(3);
 		// map.panTo([50.5, 30.5]);
