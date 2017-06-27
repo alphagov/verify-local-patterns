@@ -42,22 +42,30 @@
     People living in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house in multiple occupation</a> <!-- [or drive a low emissions 'eco' vehicle] if council offers this -->  aren't charged for parking permits.
   </p>
   <h2 class="heading-medium">What you'll need</h2>
-  <ul class="list list-bullet">
+  <ol class="list list-number">
     <li>
-    ability to prove you live in {{council.parkingBoundary}}
+    Answer security questions or upload documents to prove you live in {{council.parkingBoundary}}.
     </li>
     <li>
-    car registration number
+    Choose
+    {% if council.sixmonth %}
+    permit length and start date.
+    {% else %}
+    start date.
+    {% endif %}
+    </li>
+    <li>
+    Enter your car registration number.
     </li>
     {% if council.testv5cScan or council.testv5cnumber %}
     <li>
-    V5C registration document
+    Upload your V5C registration document.
     </li>
     {% endif %}
     <li>
-    to answer security questions or upload documents to prove who you are
-    </li>
-  </ul>
+    Pay online if applicable.
+  </li>
+  </ol>
 
   <a class="button button-start" href="prove-identity" role="button">Apply for a resident's parking permit</a>
 
