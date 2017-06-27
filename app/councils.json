@@ -13,7 +13,7 @@
     "testv5cnumber":false,
     "userChooseStartDate":true,
     "permitWait": 5,
-    "tempPermit":true,
+    "tempPermit":"print",
     "string": "argleton",
     "DVLAAPIenforcement":true,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
