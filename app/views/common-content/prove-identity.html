@@ -28,18 +28,21 @@
 	          </li>
 	          {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
 	            <li>
-	                you'll need to print a temporary permit to park straight away
+	                you'll be able to print a temporary permit to park straight away
 	            </li>
 	          {% elif council.tempPermit == "write" and serviceString == 'parking-permit' %}
 	            <li>
-	                you'll need to print or write your own temporary permit to be able to park straight away
+	                you'll be able to print or write your own temporary permit to be able to park straight away
 	            </li>
 	          {% endif %}
 					{% endif %}
-          <li>
+            <li>
+              if you've moved in the last 3 months you could only get a 3 month permit today
+            </li>
+            <li>
               creating an account takes about 5 minutes and the rest of the application is around 2 minutes
-          </li>
-          </ul>
+            </li>
+            </ul>
       </div>
     </div>
 
@@ -65,12 +68,15 @@
 	          <li>
 	            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
 	          </li>
-		        {% if council.tempPermit == true and serviceString == 'parking-permit' %}
+		        {% if council.tempPermit == 'print' and serviceString == 'parking-permit' %}
 		          <li>
 		            you won't receive a temporary permit
 		          </li>
 		        {% endif %}
 					{% endif %}
+          <li>
+            when your permit arrives, it'll be a full 6 or 12 month permit
+          </li>
           <li>
             your application could take up to 20 minutes
           </li>
