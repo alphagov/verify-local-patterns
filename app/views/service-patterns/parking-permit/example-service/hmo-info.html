@@ -1,0 +1,29 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a parking permit" %}
+{% set pageTitle = "House in multiple occupation" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+  <p>
+    If you live in a rented property with shared facilities – like a shower or kitchen – with at least 2 other people who  aren't related or married to each other, you may be eligible for a free parking permit.</p>
+  <p>Ask your landlord if you're in a registered house of multiple occupation. If you are you can
+  {% if council.hmo == "phone" %}
+    apply via phone:</p>
+    <p>0300 083 0013<br>
+       Monday to Friday, 8am to 7pm<br>
+       Saturday, 8am to 2pm <br>
+      <a href="#">Find out about call charges</a>
+    <p>
+    <a class="button button-start" href="resident-start" role="button">Back to online application</a>
+    </p>
+  {% elif council.hmo == "online" %}
+      apply online – your address will be recognised as a house in multiple occupation.
+    </p>
+    <a class="button button-start" href="resident-start" role="button">Back to apply online</a>
+  {% endif %}
+
+</div>
+
+{% endblock %}
