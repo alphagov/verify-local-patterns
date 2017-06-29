@@ -32,15 +32,20 @@
     </ul>
 
   {% else %}
-
+    {% if council.extraDetails == false %}
     <p>
       We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
     </p>
+    {% else %}
+    <p>
+      We need your vehicle's registration number{{s}}, make and colour to link your permit{{s}} to your vehicle{{s}}. You can <a href href="https://vehicleenquiry.service.gov.uk/">check your vehicle make and colour</a> on GOV.UK. 
+    </p>
+    {% endif %}
 
   {% endif %}
-
+  {% if council.extraDetails == false %}
   <h2 class="heading-medium">Enter your vehicle's registration number{{s}}</h2>
-
+  {% endif %}
   {% if council.DVLAAPIenforcement %}
     {% set nextPage = 'confirm-vehicle-details' %}
   {% elif council.testv5cScan %}
@@ -72,13 +77,42 @@
                 {% endfor %}
               {% else %}
                 <div>
+                  {% if council.extraDetails %}
+                  <label class="form-label-bold" for="nameAccount">
+                       Enter vehicle registration number
+                  </label>
+                  {% endif %}
                   <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
                 </div>
               {% endif %}
           </fieldset>
+{% if council.extraDetails %}
+<br>
+    <form class="form" method="POST" action="confirm-debit-payment">
+        <div class="form-group">
+          <label class="form-label-bold" for="nameAccount">
+			         Choose vehicle make
+			  	</label>
+          <input class="form-control" id="nameAccount" name="nameAccount" type="text">
+        </div>
+    <form class="form" method="POST" action="confirm-debit-payment">
+        <div class="form-group">
+          <label class="form-label-bold" for="nameAccount">
+    			     Choose vehicle colour
+    			 </label>
+           <input class="form-control" id="nameAccount" name="nameAccount" type="text">
+        </div>
+{% else %}
+{% endif %}
+{% if council.extraDetails == false %}
 <p>
   {{ council.name }} will store your vehicle registration data securely on our own system.
 </p>
+{% else %}
+<p>
+  {{ council.name }} will store your vehicle details securely on our own system.
+</p>
+{% endif %}
           <input class="button" type="submit" value="Next">
       </form>
   </div>

@@ -6,10 +6,11 @@
 {% block content %}
 
 <div class="column-two-thirds">
-
+  {% if council.extraDetails == false %}
   <p>
     We've received these details from DVLA:
   </p>
+  {% endif %}
 
   {% set vehicleColours = ['Red', 'Blue', 'Silver', 'Blue'] %}
   {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
