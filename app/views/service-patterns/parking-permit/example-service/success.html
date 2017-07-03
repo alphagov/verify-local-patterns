@@ -35,19 +35,37 @@
 
     {% if (unverifiedAddress and council.threeMonthPermit == 'post') or (not unverifiedAddress == true and council.tempPermit == 'post' or 'print' or 'write') %}
       {% if council.payOnline %}
-        <p>
-          We'll issue and send your {{ permitLength or '1 year' }} parking permit to your address – it'll usually arrive within 5 working days:
+					{% if council.string == 'sunderland' %}
+
+					{% else %}
+				<p>
+          	Your {{ permitLength or '1 year' }} permit will usually arrive within 5 working days.
 				</p>
+					{% endif %}
       {% else %}
         <p>
-          When we have processed and approved your application, we'll contact you for payment. You'll be able to pay over the phone by either debit or credit card -- no service charges apply.
+          When we have processed and approved your application, we'll contact you for payment. You'll be able to pay over the phone by either debit or credit card – no service charges apply.
         </p>
         <p>
           Your permit will usually arrive within 5 working days of your payment.
         </p>
       <hr />
       {% endif %}{# end if not council.payOnline #}
+	 		{% if council.string == 'sunderland' and permitStartChoice == 'soon' %}
+	 			<p>
+					Your 1 year permit will usually arrive within 5 working days. It's valid until 31 July 2017.
+				</p>
+	 		{% endif %}
 
+			{% if council.string == 'sunderland' and permitStartChoice == 'August' %}
+	 			<p>
+					Your 1 year permit will usually arrive within 5 working days. It's valid from 1 August to 31 July 2018.
+				</p>
+	 		{% endif %}
+
+    	<p>
+      	We'll issue and send your parking permit to this address:
+    	</p>
       <div class="panel panel-border-wide">
         <p>
           Jane Smith<br />
@@ -77,8 +95,9 @@
 
       Display your permit clearly in the front window of your car to park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a>.
 		{% if permitLength == "3 months" %}
-
-				Apply for a full resident's permit before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
+			<li>
+				Apply for a full resident's permit 10 days before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
+			</li>
 		{% else %}
 	</p>
 	<p>
