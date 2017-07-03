@@ -62,7 +62,7 @@
         <ul class="list list-bullet">
           {% if council.string == 'sunderland' %}
           {% else %}
-          <li>you'll need to scan and upload a recent utility bill {{"and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}
+          <li>you'll need to scan and upload {{"your passport or driving licence to prove your age, and a proof of address" if serviceString == 'concessionary-travel' }}
           </li>{% endif %}
 					{% if council.permitWait > 1 %}
 	          <li>
