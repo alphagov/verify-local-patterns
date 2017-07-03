@@ -1,124 +1,96 @@
-
 <div class="column-two-thirds">
   <p>
-      We need to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
-  </p>
+    We need to check you're eligible for
+    {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}, and that it's you completing this application. We'll use GOV.UK Verify, the secure way to prove who you are online.
+    <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#how-govuk-verify-works">Learn about GOV.UK Verify</a>.
+    <h3 class="heading-medium">What you'll need to do</h3>
 
-  <form>
-    {% set formTitle = "How do you want us to check your identity?" %}
-
-    <h2 class="heading-medium">{{formTitle}}</h2>
-    <legend class="visually-hidden">{{formTitle}}</legend>
-
-    <div class="radio-with-bullets">
-      <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
-        <input id="verify-option" type="radio" name="radio-group" value="pre-verify">
-        <span class="heading-small">Use GOV.UK Verify, the new way to prove who you are online</span>
-      </label>
-
-      <div class="form-group verify">
-
-        <ul class="list list-bullet">
-          <li>
-              you'll need to answer some security questions
-          </li>
-					{% if council.permitWait > 1 or serviceString == 'concessionary-travel' %}
-	          <li>
-	              {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take {{council.permitWait}} working days to arrive
-	          </li>
-	          {% if council.tempPermit == "print" and serviceString == 'parking-permit' %}
-	            <li>
-	                you'll be able to print a temporary permit to park straight away
-	            </li>
-	          {% elif council.tempPermit == "write" and serviceString == 'parking-permit' %}
-	            <li>
-	                you'll be able to print or write your own temporary permit to be able to park straight away
-	            </li>
-	          {% endif %}
-					{% endif %}
-            <li>
-              if you've moved in the last 3 months you could only get a 3 month permit today
-            </li>
-            <li>
-              creating an account takes about 5 minutes and the rest of the application is around 2 minutes
-            </li>
-            </ul>
-      </div>
-    </div>
-
-    <div class="form-group or">
-      <p>
-        Or
-      </p>
-    </div>
-
-  <div class="radio-with-bullets">
-
-    <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
-      <input id="example-contact-by-email" type="radio" name="radio-group" value="start-non-verify">
-      {% if council.string == 'sunderland' %}
-        <span class="heading-small" >Provide proof of identity</span>
-      {% else %}
-        <span class="heading-small" >Scan and upload documents</span>
-      {% endif %}
-    </label>
-
+    <ul class="list list-bullet">
+      <li>
+        choose an independent, government-approved company
+      </li>
+      <li>
+        answer some security questions
+      </li>
+      <li>
+        complete your
+        {{ 'parking permit' if serviceString == 'parking-permit' else 'bus pass' }}
+        application on our website
+      </li>
+      <li>
+        wait
+        {{council.permitWait}}
+        working days for your permit to arrive – but receive a temporary parking permit to use immediately
+      </li>
+    </ul>
+    <br>
     <div class="form-group">
-        <ul class="list list-bullet">
-          {% if council.string !== 'sunderland' %}
-            <li>you'll need to scan and upload {{"your passport or driving licence to prove your age, and a proof of address" if serviceString == 'concessionary-travel' }}
-          </li>
-          {% endif %}
-					{% if council.permitWait > 1 %}
-	          <li>
-	            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %} usually take 10 working days to arrive
-	          </li>
-		        {% if council.tempPermit == 'print' and serviceString == 'parking-permit' %}
-		          <li>
-		            you won't receive a temporary permit
-		          </li>
-		        {% endif %}
-					{% endif %}
-          <li>
-            when your permit arrives, it'll be a full 6 or 12 month permit
-          </li>
-          <li>
-            your application could take up to 20 minutes
-          </li>
-        </ul>
+      <button class="button">Continue to GOV.UK Verify</button>
     </div>
 
-  </div>
-  {% if council.string == 'sunderland' %}
-  <p>&nbsp;
-  </p>
-  {% else %}
-  <details>
-     <summary><span class="summary">Other ways to apply</span></summary>
-     <div class="panel panel-border-narrow">
-      <h3 class="heading-small">Apply by phone</h3>
-      <p>0300 083 0013<br>
-      Monday to Friday, 8am to 7pm<br>
-      Saturday, 8am to 2pm<br>
-       <a href="#">Find out about call charges</a></p>
+      <details>
+        <summary>
+          <span class="summary">Other ways to apply</span>
+        </summary>
+        <div class="panel panel-border-narrow">
+            {% if council.string !== 'sunderland' %}
+          <h3 class="heading-small">Scan and upload documents</h3>
 
-      <h2 class="heading-small">Apply by post</h2>
-      <p>
-      Print, complete and send an <a href="#">application form</a>, or send a letter with scanned copies of the following documents:
-      <li>recent council tax statement </li>
-      <li>form of identity to prove your age</li> </p>
-      <p>Send to: </p>
-      <p>{{"Concessionary Travel Services" if serviceString == 'concessionary-travel' }}{{"Parking Services" if serviceString == 'parking-permit' }}<br>
-      {{council.name}}<br>
-      12-14 Kings Road <br>
-      {{council.shortName}} <br>
-      AG3 4HP </p>
+            <p>
+              Scan and upload a recent utility bill, council tax statement or proof of your address{{" and your passport or driving licence to prove your age" if serviceString == 'concessionary-travel' }}.
+            </p>
+            <a href="#">Upload your document</a>
+              {% endif %}
+            <h3 class="heading-small">Apply by phone</h3>
+            <p>0300 083 0013<br>
+              Monday to Friday, 8am to 7pm<br>
+              Saturday, 8am to 2pm<br>
+              <a href="#">Find out about call charges</a>
+            </p>
+            <h3 class="heading-small">Apply by post</h3>
+            <ol class="list list-number">
+              <li>
+                Print and complete an
+                <a href="#">application form</a>
+                or provide details asked for by the application form in a letter.
+              </li>
+              <li>
+                Scan and print a recent utility bill, council tax statement or other proof of your address.
+              </li>
+              <li>
+                Send your application form or letter and scanned document to:</li>
+
+              <p>{{"Concessionary Travel Services" if serviceString == 'concessionary-travel' }}{{"Parking Services" if serviceString == 'parking-permit' }}<br>
+                {{council.name}}<br>
+                12-14 Kings Road
+                <br>
+                {{council.shortName}}
+                <br>
+                AG3 4HP
+              </p>
+            </li>
+          </ol>
+        
+        <h3 class="heading-small">More information</h3>
+        <p>
+          If you apply by scanning, phone or post:
+        </p>
+        {% if council.permitWait > 1 %}
+          <li>
+            {% if serviceString == 'parking-permit' %}permits{% else %}bus passes{% endif %}
+            usually take 10 working days to arrive
+          </li>
+          {% if council.tempPermit == true and serviceString == 'parking-permit' %}
+            <li>
+              you won't receive a temporary permit
+            </li>
+          {% endif %}
+        {% endif %}
+        <li>
+          your application could take up to 20 minutes
+        </li>
+      </ul>
     </div>
   </details>
-  {% endif %}
-  <div class="form-group">
-      <button class="button">Continue</button>
-  </div>
-</form>
 
 </div>
