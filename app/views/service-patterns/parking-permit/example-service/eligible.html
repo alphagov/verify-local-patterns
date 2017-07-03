@@ -11,7 +11,12 @@
     Parking permits allow you to park in {{council.parkingBoundary}} 24 hours a day.
   </p>
   <p>
+    {% if council.string == 'cambridgeshire' %}
+    {{'Your household' if council.limitByHousehold else 'You'}} can buy {{council.permitMax}} resident's parking permits.
+{% else %}
+  <p>
     {{'Your household' if council.limitByHousehold else 'You'}} can buy up to {{council.permitMax}} resident's parking permits.
+    {% endif %}
   </p>
 
   <a class="button" role="button" href="resident-count">Next</a>
