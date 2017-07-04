@@ -58,7 +58,6 @@
   {% else %}
     {% set nextPage = 'contact-reference' %}
   {% endif %}
-
   <div class="form-group">
       <form method="post" action="{{ nextPage }}">
           <fieldset>
@@ -76,9 +75,9 @@
                 </div>
               {% endif %}
           </fieldset>
-<p>
-  {{ council.name }} will store your vehicle registration data securely on our own system.
-</p>
+					<p>
+					  {{ council.name }} will store your vehicle registration data securely on our own system.
+					</p>
           <input class="button" type="submit" value="Next">
       </form>
   </div>
