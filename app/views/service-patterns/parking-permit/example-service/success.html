@@ -83,7 +83,7 @@
 			<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print a temporary permit</a>{% if council.tempPermit == 'write' %} – or write your reference number and the words "temporary resident's permit" on a piece of paper{% endif %}. Use this until your full permit arrives.
 		</p>
 	{% endif %}
-	
+
   <h2 class="heading-medium">Using your permit</h2>
 	<p>
 		Display your permit clearly in the front window of your car to park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a>.
@@ -95,7 +95,16 @@
 		</p>
 	{% else %}
 		<p>
-      Renew your permit when it expires in {{ permitLength or "1 year" }} – you've signed up to receive a reminder email and text.
+      Renew your permit when it expires in {{ permitLength or "1 year" }} –
+			{% if renewalsChoice == 'Email' %}
+		    you've signed up to receive a reminder by email.
+		  {% elif renewalsChoice == 'Text' %}
+		    you've signed up to receive a reminder by text.
+			{% elif renewalsChoice == 'Post' %}
+					you've signed up to receive a reminder by post.
+		  {% else %}
+		    <a href="contact-notifications">sign up for a renewal reminder.</a>
+		  {% endif %}
 		</p>
 	{% endif %}
 
