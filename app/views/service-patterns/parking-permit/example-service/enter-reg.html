@@ -58,25 +58,15 @@
     </p>
   {% else %}
     <p>
-      We need your vehicle's registration number{{s}}
-      to link your permit{{s}}
-      to your vehicle{{s}}.
-
-    </p>
-    <p>
+      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
     </p>
     <div class="form-group">
-
         <label class="form-label-bold" for="cardName">
           Enter registration number:
         </label>
     </div>
   {% endif %}
-  <p>
-    {{ council.name }}
-    will store your vehicle details securely on our own system.
-  </p>
-  <input class="button" type="submit" value="Next">
+  
   {% if council.makeColour ==true %}
     {% set nextPage = 'confirm-vehicle-details' %}
   {% elif council.makeColour ==false %}
