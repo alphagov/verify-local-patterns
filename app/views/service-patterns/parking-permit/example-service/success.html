@@ -92,24 +92,25 @@
 		<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print a temporary permit</a> – or write your reference number and the words "temporary resident's permit" on a piece of paper. Use this until your full permit arrives.
 	</p>
   <h2 class="heading-medium">Using your permit</h2>
-
-      Display your permit clearly in the front window of your car to park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a>.
-		{% if permitLength == "3 months" %}
-			<li>
-				Apply for a full resident's permit 10 days before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
-			</li>
-		{% else %}
-	</p>
 	<p>
-	      Renew your permit when it expires in {{ permitLength or "1 year" }} – you've signed up to receive a reminder email and text.
+		Display your permit clearly in the front window of your car to park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a>.
 	</p>
-		{% endif %}
-  </ol>
 
-	<hr>
+	{% if permitLength == "3 months" %}
+		<p>
+			Apply for a full resident's permit 10 days before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
+		</p>
+	{% else %}
+		<p>
+      Renew your permit when it expires in {{ permitLength or "1 year" }} – you've signed up to receive a reminder email and text.
+		</p>
+	{% endif %}
 
-      <p>
-        You can use your GOV.UK Verify account to prove your identity online for <a href="https://www.gov.uk/view-driving-licence">other government services</a>.
+		<hr>
+
+	  <p>
+	    You can use your GOV.UK Verify account to prove your identity online for <a href="https://www.gov.uk/view-driving-licence">other government services</a>.
+		</p>
   </div>
 
 </main>
