@@ -7,22 +7,12 @@
 
 <div class="column-two-thirds">
 
-  <p>
-    We've received these details from DVLA:
-  </p>
 
   {% set vehicleColours = ['Red', 'Blue', 'Silver', 'Blue'] %}
   {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
 
+{% if council.makeColour == true %}
   <table>
-    {% for registerNumber in registerNumbers %}
-      {% if registerNumbers.length > 1 %}
-      <tr class="grouped">
-        <th>
-          <h2 class="heading-medium">Vehicle {{ loop.index }}</h2>
-        </th>
-      </tr>
-      {% endif %}
       <tr>
         <th>Registration number</th>
         <th>{{ registerNumber }}</th>
@@ -35,14 +25,18 @@
         <th>Vehicle make</th>
         <th>{{ vehicleMakes[loop.index - 1] }}</th>
       </tr>
-      <tr>
-        <th>Vehicle status</th>
-        <th>Tax not due</th>
-      </tr>
-    {% endfor %}
   </table>
+  {% else %}
+  <table>
+      <tr>
+        <th>Registration number</th>
+        <th>{{ registerNumber }}</th>
+      </tr>
+      <tr>
+  </table>
+  {% endif %}
 
-  <h2 class="heading-medium">Are these vehicle details correct?</h2>
+  <h2 class="heading-medium">Are your vehicle details correct?</h2>
 
   <form class="form">
     <div class="form-group">

@@ -28,6 +28,10 @@
       line-height: 1.6em;
     }
 
+		hr{
+			height: 2px; // weird quirk in chrome makes 1px not show sometimes
+		}
+
     // Remove GOV.UK footer styles
     main{
       min-height: 65vh; // there is probs a better way of pushing the footer down, but this will do for now
@@ -447,4 +451,10 @@
     ol h2, ol h2+p{
       display: inline;
     }
+		#map{
+			position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 480px;
+		}
 } // end .govukish

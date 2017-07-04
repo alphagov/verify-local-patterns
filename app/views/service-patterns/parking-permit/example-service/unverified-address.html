@@ -6,46 +6,54 @@
 {% block content %}
 
 <div class="column-two-thirds">
-
 	<p>
-		We received your new and old addresses from GOV.UK Verify.
-	</p>
-
-	<p>
-		Your new address isn't yet verified because you haven't lived there long enough.
-	</p>
-
-	{# <details>
-		<summary><span class="summary">Addresses received from GOV.UK Verify</span></summary> #}
-		{# <div class="panel panel-border-narrow"> #}
-			<h2 class="heading-small">Old address</h2>
-			<div class="panel panel-border-wide">
-				<p>
-					Jane Smith<br />
-					7 Lower Drive<br />
-					Passington<br />
-					PS3 6HO<br />
-				</p>
-			</div>
-			<h2 class="heading-small">New address</h2>
-			<div class="panel panel-border-wide">
-				<p>
-					Jane Smith<br />
-					30 Thornhill Gardens<br  />
-					{{council.shortName}}<br  />
-					SR2 7LE
-				</p>
-			</div>
-		{# </div> #}
-	{# </details> #}
-
-
-	<h2 class="heading-medium">What this means</h2>
-	<p>
-		This means you can't get a 12 month resident's permit today.
+		You can't get a 12 month resident's parking permit today, as your new address has not been verified by GOV.UK Verify.
 	</p>
 	<p>
-		 However, you can get a 3 month permit today. Just before it expires, you'll be able to apply for a full 12 month permit with GOV.UK Verify – you'll have lived there long enough by then.
+		This is because you haven't lived there long enough – it takes up to 3 months for a new address to be verified.
+	</p>
+
+	<details>
+
+	  <summary><span class="summary">Your addresses</span></summary>
+
+	  <div class="panel panel-border-narrow">
+			<p>
+				We received these addresses for you from GOV.UK Verify:
+			</p>
+					<h2 class="heading-small">Old address</h2>
+
+						<p>
+							Jane Smith<br />
+							7 Lower Drive<br />
+							Passington<br />
+							PS3 6HO<br />
+						</p>
+
+					<h2 class="heading-small">New address</h2>
+
+						<p>
+							Jane Smith<br />
+							30 Thornhill Gardens<br  />
+							{{council.shortName}}<br  />
+							SR2 7LE
+						</p>
+
+
+
+	  </div>
+
+	</details>
+
+	<p>
+
+	</p>
+
+	<h2 class="heading-medium">Get a 3 month permit</h2>
+	<p>You can get a 3 month permit today. 10 days before it expires, re-apply for the full 12 month permit.
+	</p>
+	<p>
+		 However, you can get a 3 month permit today. 10 days before it expires, you'll be able to apply for a full length permit with GOV.UK Verify – you'll have lived there long enough by then.
 	</p>
   <a class="button button-start" href="resident-count">Apply for a 3 month resident's permit</a>
 
