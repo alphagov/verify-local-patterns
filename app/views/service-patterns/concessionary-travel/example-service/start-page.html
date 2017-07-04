@@ -6,25 +6,40 @@
 {% block content %}
 
   <div class="column-two-thirds">
-		<p>
-			If you’re 60 or over you may be able to get a free bus pass.
-		</p>
-		<h2 class="heading-medium">Check if you can apply</h2>
-		<p>
-			 <a href="check-age">Check if you're eligible</a> – you'll need to enter your date of birth.
+    <p>
+      If you’re 60 or over you may be able to get a free bus pass.
+    </p>
+    <h2 class="heading-medium">Check if you can apply</h2>
+    <p>
+      <a href="check-age">Check if you're eligible</a>
+      – you'll need to enter your date of birth.
     </p>
     <p>
-      You need to apply through your local council. If you don't live in {{council.shortName}}, <a href="https://www.gov.uk/find-local-council">find your local council on GOV.UK</a>.
+      You need to apply through your local council. If you don't live in
+      {{council.shortName}},
+      <a href="https://www.gov.uk/find-local-council">find your local council on GOV.UK</a>.
     </p>
     <h3 class="heading-medium">Using your pass</h3>
     <p>
       Bring your bus pass when you travel by bus. It's valid:
     </p>
     <ul class="list list-bullet">
-      <li>on all local bus services in England</li>
+      <li>on all
+        <a href="local-buses">local bus services</a>
+        in England</li>
       <li>9.30am to 11pm weekdays</li>
       <li>any time Saturdays, Sundays or bank holidays</li>
     </ul>
+    <details>
+      <summary>
+        <span class="summary">Additional discounted travel for pass holders in {{council.shortName}}</span>
+      </summary>
+      <div class="panel panel-border-narrow">
+        <p>
+          Free text area for council-specific local area older person's bus pass-related travel concessions.
+        </p>
+      </div>
+    </details>
     <h3 class="heading-medium">How to apply</h3>
     <ol class="list list-number">
       <li>Complete online security checks or scan documents to prove you’re eligible.</li>
@@ -46,32 +61,43 @@
     </ul>
 
     <p>
-      If you need assistance using the online service, <a href="#">contact {{ council.name }}</a>.
+      If you need assistance using the online service,
+      <a href="#">contact
+        {{ council.name }}</a>.
     </p>
 
-
     <details>
-       <summary><span class="summary">Other ways to apply</span></summary>
-       <div class="panel panel-border-narrow">
+      <summary>
+        <span class="summary">Other ways to apply</span>
+      </summary>
+      <div class="panel panel-border-narrow">
         <h3 class="heading-small">Apply by phone</h3>
         <p>0300 083 0013<br>
-        Monday to Friday, 8am to 7pm<br>
-        Saturday, 8am to 2pm<br>
-         <a href="#">Find out about call charges</a></p>
+          Monday to Friday, 8am to 7pm<br>
+          Saturday, 8am to 2pm<br>
+          <a href="#">Find out about call charges</a>
+        </p>
 
         <h2 class="heading-small">Apply by post</h2>
         <p>
-        Print, complete and send an <a href="#">application form</a>, or send a letter with scanned copies of the following documents:
-        <li>recent council tax statement </li>
-        <li>form of identity to prove your age</li> </p>
-        <p>Send to: </p>
-        <p>Concessionary Travel Services<br>
+          Print, complete and send an
+          <a href="#">application form</a>, or send a letter with scanned copies of the following documents:
+        <li>recent council tax statement
+        </li>
+        <li>form of identity to prove your age</li>
+      </p>
+      <p>Send to:
+      </p>
+      <p>Concessionary Travel Services<br>
         {{council.name}}<br>
-        12-14 Kings Road <br>
-        {{council.shortName}} <br>
-        AG3 4HP </p>
-      </div>
-    </details>
-  </div>
+        12-14 Kings Road
+        <br>
+        {{council.shortName}}
+        <br>
+        AG3 4HP
+      </p>
+    </div>
+  </details>
+</div>
 
 {% endblock %}
