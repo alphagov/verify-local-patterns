@@ -1,53 +1,86 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
+{% set s = 's' if permitRequestData.permitRequests.length > 1 else
+  '' %}
 {% set pageTitle = "Enter vehicle registration number" + s %}
 
 {% block content %}
 
-<div class="column-two-thirds">
+  <div class="column-two-thirds">
 
-  {# residentAmount is a string and must be converted to a number 😒 #}
-  {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
-  {% set s = 's' if parkingPermitCount > 1 else '' %}
-
-  <p>
-    You've chosen {{ parkingPermitCount }} resident's parking permit{{s}}.
-  </p>
-
-  {% if council.DVLAAPIenforcement %}
-
+    {# residentAmount is a string and must be converted to a number 😒 #}
+    {% set parkingPermitCount = residentAmount * 1 if residentAmount else
+      1 %}
+    {% set s = 's' if parkingPermitCount > 1 else
+      '' %}
     <p>
-      We need your vehicle's registration number{{s}} to:
+      You've chosen
+      {{ parkingPermitCount }}
+      resident's parking permit{{s}}.
     </p>
+    {% if council.makeColour == true %}
+      <p>
+        We need your vehicle registration number{{s}}, make and colour to link your permit{{s}}
+        to your vehicle{{s}}.
+      </p>
+      <div class="form-group">
 
-    <ul class="list list-bullet">
-      <li>
-        look up your vehicle make, colour and tax status using DVLA's records
-      </li>
-      <li>
-        link your permit{{s}} to your vehicle{{s}}
-      </li>
-    </ul>
+        <label class="form-label-bold" for="cardName">
+          Enter registration number:
+        </label>
+        <input class="form-control" id="cardName" name="cardName" type="text">
 
+      </div>
+      <br>
+      <div class="form-group">
+
+        <label class="form-label-bold" for="cardName">
+          Choose vehicle make:
+        </label>
+        <input class="form-control" id="cardName" name="cardName" type="text">
+
+      </div>
+
+      <br>
+      <div class="form-group">
+
+        <label class="form-label-bold" for="cardName">
+          Choose vehicle colour:
+        </label>
+        <input class="form-control" id="cardName" name="cardName" type="text">
+
+      </div>
+    </p>
+    <p>
+      <a href href="https://vehicleenquiry.service.gov.uk/">Check your vehicle make and colour</a>
+      on GOV.UK.
+    </p>
   {% else %}
-    {% if council.extraDetails == false %}
     <p>
-      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
-    </p>
-    {% else %}
-    <p>
-      We need your vehicle's registration number{{s}}, make and colour to link your permit{{s}} to your vehicle{{s}}. You can <a href href="https://vehicleenquiry.service.gov.uk/">check your vehicle make and colour</a> on GOV.UK. 
-    </p>
-    {% endif %}
+      We need your vehicle's registration number{{s}}
+      to link your permit{{s}}
+      to your vehicle{{s}}.
 
+    </p>
+    <p>
+    </p>
+    <div class="form-group">
+
+        <label class="form-label-bold" for="cardName">
+          Enter registration number:
+        </label>
+    </div>
   {% endif %}
-  {% if council.extraDetails == false %}
-  <h2 class="heading-medium">Enter your vehicle's registration number{{s}}</h2>
-  {% endif %}
-  {% if council.DVLAAPIenforcement %}
+  <p>
+    {{ council.name }}
+    will store your vehicle details securely on our own system.
+  </p>
+  <input class="button" type="submit" value="Next">
+  {% if council.makeColour ==true %}
     {% set nextPage = 'confirm-vehicle-details' %}
+  {% elif council.makeColour ==false %}
+    {% set nextPage = 'permit-start' %}
   {% elif council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
@@ -63,60 +96,7 @@
   {% else %}
     {% set nextPage = 'contact-reference' %}
   {% endif %}
-
-  <div class="form-group">
-      <form method="post" action="{{ nextPage }}">
-          <fieldset>
-              {% if parkingPermitCount > 1 %}
-                {% for i in range(0, parkingPermitCount) %}
-                  <legend class="visuallyhidden">Vehicle {{i + 1}}</legend>
-                  <div class="form-group">
-                      <label class="form-label" for="postcode">Vehicle {{ i + 1 }}</label>
-                      <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
-                  </div>
-                {% endfor %}
-              {% else %}
-                <div>
-                  {% if council.extraDetails %}
-                  <label class="form-label-bold" for="nameAccount">
-                       Enter vehicle registration number
-                  </label>
-                  {% endif %}
-                  <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
-                </div>
-              {% endif %}
-          </fieldset>
-{% if council.extraDetails %}
-<br>
-    <form class="form" method="POST" action="confirm-debit-payment">
-        <div class="form-group">
-          <label class="form-label-bold" for="nameAccount">
-			         Choose vehicle make
-			  	</label>
-          <input class="form-control" id="nameAccount" name="nameAccount" type="text">
-        </div>
-    <form class="form" method="POST" action="confirm-debit-payment">
-        <div class="form-group">
-          <label class="form-label-bold" for="nameAccount">
-    			     Choose vehicle colour
-    			 </label>
-           <input class="form-control" id="nameAccount" name="nameAccount" type="text">
-        </div>
-{% else %}
-{% endif %}
-{% if council.extraDetails == false %}
-<p>
-  {{ council.name }} will store your vehicle registration data securely on our own system.
-</p>
-{% else %}
-<p>
-  {{ council.name }} will store your vehicle details securely on our own system.
-</p>
-{% endif %}
-          <input class="button" type="submit" value="Next">
-      </form>
-  </div>
-
+</form>
 </div>
-
+</div>
 {% endblock %}
