@@ -89,9 +89,7 @@
     </div>
   {% endif %}
 
-  {% if council.makeColour ==true %}
-		{% set nextPage = 'permit-start' %}
-  {% elif council.testv5cScan %}
+  {% if council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
     {% set nextPage = 'v5c-number' %}
