@@ -90,9 +90,7 @@
   {% endif %}
 
   {% if council.makeColour ==true %}
-    {% set nextPage = 'confirm-vehicle-details' %}
-  {% elif council.makeColour ==false %}
-    {% set nextPage = 'permit-start' %}
+		{% set nextPage = 'permit-start' %}
   {% elif council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
