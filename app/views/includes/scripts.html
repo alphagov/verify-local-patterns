@@ -10,6 +10,25 @@
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
 
+<script src="{{asset_path}}/javascripts/vehicle-makes.js"></script>
+<script src="{{asset_path}}/javascripts/vehicle-colours.js"></script>
+<script src="{{asset_path}}/javascripts/accessible-autocomplete.js"></script>
+
+<script>
+	var numPermits = $('.vehicleMake').length;
+	for (var i = 0; i < numPermits; i++) {
+		accessibleAutocomplete({
+			element: document.querySelector('#vehicleColour-'+i),
+			id: 'vehicleColour-' + i, // To match it to the existing <label>.
+			source: vehicleColours
+		})
+		accessibleAutocomplete({
+			element: document.querySelector('#vehicleMake-'+i),
+			id: 'vehicleMake-' + i, // To match it to the existing <label>.
+			source: vehicleMakes
+		})
+	}
+</script>
 
 <script src="{{asset_path}}/javascripts/cartodb.js"></script>
 <script>
