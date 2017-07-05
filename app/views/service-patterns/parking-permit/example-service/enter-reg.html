@@ -27,7 +27,7 @@
       <div class="form-group">
 
         <label class="form-label-bold" for="cardName">
-          Enter registration number:
+          Enter registration number
         </label>
         <input class="form-control" id="cardName" name="cardName" type="text">
 
@@ -36,7 +36,7 @@
       <div class="form-group">
 
         <label class="form-label-bold" for="cardName">
-          Choose vehicle make:
+          Choose vehicle make
         </label>
         <input class="form-control" id="cardName" name="cardName" type="text">
 
@@ -45,10 +45,12 @@
       <br>
       <div class="form-group">
 
-        <label class="form-label-bold" for="cardName">
-          Choose vehicle colour:
+        <label class="form-label-bold" for="vehicleColour">
+          Choose vehicle colour
         </label>
-        <input class="form-control" id="cardName" name="cardName" type="text">
+				<div id="vehicleColour">
+				</div>
+        {# <input class="form-control" id="vehicleColour" name="vehicleColour" type="text"> #}
 
       </div>
     </p>
@@ -66,7 +68,7 @@
         </label>
     </div>
   {% endif %}
-  
+
   {% if council.makeColour ==true %}
     {% set nextPage = 'confirm-vehicle-details' %}
   {% elif council.makeColour ==false %}
@@ -86,7 +88,7 @@
   {% else %}
     {% set nextPage = 'contact-reference' %}
   {% endif %}
-
+{#
   <div class="form-group">
       <form method="post" action="{{ nextPage }}">
           <fieldset>
@@ -109,7 +111,7 @@
 					</p>
           <input class="button" type="submit" value="Next">
       </form>
-  </div>
+  </div> #}
 
 </div>
 {% endblock %}

@@ -9,7 +9,36 @@
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
+<script src="{{asset_path}}/javascripts/accessible-autocomplete.js"></script>
+<script>
+const colours = [
+	'Multiple',
+	'Yellow',
+	'White',
+	'Turquoise',
+	'Silver',
+	'Red',
+	'Pink',
+	'Orange',
+	'Purple',
+	'Maroon',
+	'Grey',
+	'Green',
+	'Gold',
+	'Cream',
+	'Brown',
+	'Bronze',
+	'Blue',
+	'Black',
+	'Beige'
+]
 
+accessibleAutocomplete({
+  element: document.querySelector('#vehicleColour'),
+  id: 'vehicleColour', // To match it to the existing <label>.
+  source: colours
+})
+</script>
 
 <script src="{{asset_path}}/javascripts/cartodb.js"></script>
 <script>
