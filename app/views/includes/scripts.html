@@ -15,16 +15,19 @@
 <script src="{{asset_path}}/javascripts/accessible-autocomplete.js"></script>
 
 <script>
-accessibleAutocomplete({
-  element: document.querySelector('#vehicleColour'),
-  id: 'vehicleColour', // To match it to the existing <label>.
-  source: vehicleColours
-})
-accessibleAutocomplete({
-  element: document.querySelector('#vehicleMake'),
-  id: 'vehicleMake', // To match it to the existing <label>.
-  source: vehicleMakes
-})
+	var numPermits = $('.vehicleMake').length;
+	for (var i = 0; i < numPermits; i++) {
+		accessibleAutocomplete({
+			element: document.querySelector('#vehicleColour-'+i),
+			id: 'vehicleColour-' + i, // To match it to the existing <label>.
+			source: vehicleColours
+		})
+		accessibleAutocomplete({
+			element: document.querySelector('#vehicleMake-'+i),
+			id: 'vehicleMake-' + i, // To match it to the existing <label>.
+			source: vehicleMakes
+		})
+	}
 </script>
 
 <script src="{{asset_path}}/javascripts/cartodb.js"></script>
