@@ -93,6 +93,7 @@
     "ctloa1": true,
     "testv5cScan": false,
     "testv5cnumber": false,
+    "digi-permit": true,
     "DVLAAPIenforcement": false
   },
   {

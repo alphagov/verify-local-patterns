@@ -1,0 +1,46 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Application complete" %}
+
+{% block content %}
+
+	<div class="column-full">
+		<div class="govuk-box-highlight">
+		  <p>
+		    Your reference number is: <br>
+		    <strong class="heading-large">HDJ2123F</strong>
+		  </p>
+		</div>
+	</div>
+
+<div class="column-two-thirds">
+	<hr>
+		<h3 class="heading-medium">Your permit</h3>
+    <p>
+      Your application is complete. You won't receive a physical permit – your {{ permitLength or '1 year' }} permit will be activated immediately.	Wardens will be able to check your vehicle has a parking permit by looking up its registration number.
+    </p>
+		<p>
+      Renew your permit when it expires in {{ permitLength or "1 year" }} –
+			{% if renewalsChoice == 'Email' %}
+		    you've signed up to receive a reminder by email.
+		  {% elif renewalsChoice == 'Text' %}
+		    you've signed up to receive a reminder by text.
+			{% elif renewalsChoice == 'Post' %}
+					you've signed up to receive a reminder by post.
+		  {% else %}
+		    <a href="contact-notifications">sign up for a renewal reminder.</a>
+		  {% endif %}
+		</p>
+
+	<hr>
+		<h3 class="heading-medium">GOV.UK Verify</h3>
+	  <p>
+	    You can re-use your GOV.UK Verify account to prove your identity online for <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#government-services-you-can-use-with-govuk-verify">other government services</a>.
+		</p>
+  </div>
+
+</main>
+</div>
+
+{% endblock %}
