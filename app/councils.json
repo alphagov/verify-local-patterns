@@ -86,14 +86,13 @@
     "payOnline":true,
     "testChangeAddress":false,
     "userChooseStartDate":true,
-    "permitWait": 0,
+    "permitWait": 5,
     "tempPermit":true,
     "string" : "northumberland",
     "pploa1": true,
     "ctloa1": true,
     "testv5cScan": false,
     "testv5cnumber": false,
-    "digi-permit": true,
     "DVLAAPIenforcement": false
   },
   {

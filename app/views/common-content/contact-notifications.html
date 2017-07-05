@@ -9,7 +9,7 @@
       How do you want to receive your renewal reminder?
     </strong>
   </p>
-  {% if council.string == 'northumberland' %}
+  {% if council.permitWait < 1 %}
     {% set nextPage = 'success-digi-permit' %}
   {% else %}
     {% set nextPage = 'success' %}
