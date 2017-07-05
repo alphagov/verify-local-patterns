@@ -23,11 +23,7 @@
     <p><a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
   {% endif %}
 	<hr>
-  {% if council.permitWait < 1 %}
-    <p>
-      You won't receive a physical permit. Wardens will check your vehicle's registration number.
-    </p>
-    {% endif %}
+	<h2 class="heading-medium">Your application is now complete</h2>
 
     {% if unverifiedAddress %}
       {% set permitLength = '3 months' %}

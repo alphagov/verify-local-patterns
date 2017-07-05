@@ -87,7 +87,7 @@
     "payOnline":true,
     "testChangeAddress":false,
     "userChooseStartDate":true,
-    "permitWait": 0,
+    "permitWait": 5,
     "tempPermit":true,
     "string" : "northumberland",
     "pploa1": true,

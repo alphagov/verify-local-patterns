@@ -1,0 +1,42 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "How should we contact you for payment?" %}
+
+{% block content %}
+<div class="column-two-thirds">
+
+  <form action="contact-notifications" method="POST">
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">
+          How do you want to receive your confirmation messages?
+        </legend>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
+          <input id="contact-by-email" type="checkbox" name="contactChoice" value="Email">
+          Email me an invoice
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contactEmail" type="text" id="contact-email">
+        </div>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-text-input" for="contact-by-text">
+          <input id="contact-by-text" type="checkbox" name="contactChoice" value="Text">
+          Call me for a debit or credit card payment (no card service charges)
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
+          <label class="form-label" for="contact-text-message">Phone number</label>
+          <input class="form-control" name="contactText" type="text" id="contact-text-message">
+        </div>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Next" />
+    </div>
+  </form>
+</div>
+{% endblock %}
