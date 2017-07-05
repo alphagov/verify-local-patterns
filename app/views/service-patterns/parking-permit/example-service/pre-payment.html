@@ -22,7 +22,7 @@
 		Check details and costs:</p>
 	{% elif council.payOnline == false %}
     <p>
-      When we've processed and approved your application, we will contact you for payment. You can by pay phone with a debit or credit card – no card service charges apply – or we can email your invoice to you.
+      When we've processed and approved your application, we'll contact you for payment. You can by pay phone with a debit or credit card, or we can email you an invoice.
     </p>
     <p>
       You will need to pay for:
@@ -88,11 +88,16 @@
   </table>
   {% endfor %}
 
-  {% if council.payOnline and totalSum > 1 %}
-    <a class="button" role="button" href="choose-payment">Next</a>
+
+	{% if council.string == 'oxfordshire' %}
+		{% set nextPage = 'choose-payment-contact' %}
+  {% elif council.payOnline and totalSum > 1 %}
+		{% set nextPage = 'choose-payment' %}
   {% else %}
-    <a class="button" role="button" href="contact-reference">Next</a>
+		{% set nextPage = 'contact-reference' %}
   {% endif %}
+	<a class="button" role="button" href="{{nextPage}}">Next</a>
+
 </main>
 <br>
 </br>
