@@ -17,7 +17,8 @@
     "tempPermit":"print",
     "HMOonline": true,
     "string": "argleton",
-    "DVLAAPIenforcement":true,
+    "DVLAAPIenforcement":false,
+		"makeColour":true,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
     "pploa1": true,
     "ctloa1": true

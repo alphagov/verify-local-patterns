@@ -76,6 +76,7 @@
                 </ul>
 
                 <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
+								{% include 'includes/pp-user-journey-diagram.html' %}
                 <p>
                     These are the steps users should go through.
                 </p>
@@ -232,8 +233,8 @@
                   <details>
                     <summary><span class="summary">7. Prove you are a resident </span></summary>
                     <div class="panel panel-border-narrow">
-                                {% set serviceString = 'parking-permit' %}
-                                {% include 'common-content/proving-identity.html' %}
+                    	{% set serviceString = 'parking-permit' %}
+	                    {% include 'common-content/proving-identity.html' %}
                     </li>
                     </ol>
                   </div>
