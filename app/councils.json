@@ -15,6 +15,7 @@
     "userChooseStartDate":true,
     "permitWait": 5,
     "tempPermit":"print",
+    "HMOonline": true,
     "string": "argleton",
     "DVLAAPIenforcement":true,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
