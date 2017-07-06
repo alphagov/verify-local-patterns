@@ -1,4 +1,4 @@
-var sunderlandBoundaryData = {
+var argletonBoundaryData = {
   [
     [-1.388499, 54.898119],
     [-1.388606, 54.897308],
