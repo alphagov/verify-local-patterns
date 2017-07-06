@@ -33,7 +33,8 @@ router.get('*/example-service/*', function (req, res, next) {
 
 router.all('/service-patterns/parking-permit/example-service/need-permit', function (req, resp) {
 
-	var url = 'http://api.postcodes.io/postcodes/SR2%207LE';
+	var postcode = encodeURIComponent(req.session.data.postcode)
+	var url = 'http://api.postcodes.io/postcodes/'+postcode;
 
 	http.get(url, function(res){
 	    var body = '';
