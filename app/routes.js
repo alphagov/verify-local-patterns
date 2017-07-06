@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var MobileDetect = require('mobile-detect')
+var http = require('http')
 
 // Route index page
 router.get('/', function (req, res) {
@@ -29,6 +30,30 @@ router.get('*/example-service/*', function (req, res, next) {
 });
 
 // add your routes here
+
+router.all('/service-patterns/parking-permit/example-service/need-permit', function (req, resp) {
+
+	var url = 'http://api.postcodes.io/postcodes/SR2%207LE';
+
+	http.get(url, function(res){
+	    var body = '';
+
+	    res.on('data', function(chunk){
+	        body += chunk;
+	    });
+
+	    res.on('end', function(){
+	        var response = JSON.parse(body);
+					var lat = response.result.latitude;
+					var long = response.result.longitude;
+	        console.log("Got a postcode response");
+					resp.render('service-patterns/parking-permit/example-service/need-permit', {latitude: lat, longitude: long})
+	    });
+	}).on('error', function(e){
+	      console.log("Got an error: ", e);
+	});
+
+})
 
 router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
 
