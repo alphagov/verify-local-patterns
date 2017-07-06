@@ -45,10 +45,16 @@ router.all('/service-patterns/parking-permit/example-service/need-permit', funct
 
 	    res.on('end', function(){
 	        var response = JSON.parse(body);
-					var lat = response.result.latitude;
-					var long = response.result.longitude;
-	        console.log("Got a postcode response");
-					resp.render('service-patterns/parking-permit/example-service/need-permit', {latitude: lat, longitude: long})
+					if(response.result){
+						var lat = response.result.latitude;
+						var long = response.result.longitude;
+						resp.render('service-patterns/parking-permit/example-service/need-permit', {latitude: lat, longitude: long})
+
+					}else{
+						console.log('not a real postcode')
+						resp.render('service-patterns/parking-permit/example-service/need-permit', {latitude: 51.5035398826274, longitude: -0.127695242183412})
+
+					}
 	    });
 	}).on('error', function(e){
 	      console.log("Got an error: ", e);
