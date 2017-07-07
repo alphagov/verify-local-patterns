@@ -48,6 +48,7 @@
 	var marker = L.marker([{{latitude}}, {{longitude}}]).addTo(mymap);
 
 	var boundaries = {{council.string}}BoundaryData;
+	console.log('thing', {{council.string}}BoundaryData)
 
 	for (var i = 0; i < boundaries.length; i++) {
 		var polygon = L.polygon(L.GeoJSON.coordsToLatLngs(boundaries[i])).addTo(mymap);

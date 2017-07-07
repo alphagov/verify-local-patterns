@@ -1,4 +1,4 @@
-var argletonBoundaryData = {
+const argletonBoundaryData = [
   [
     [-1.388499, 54.898119],
     [-1.388606, 54.897308],
@@ -252,4 +252,4 @@ var argletonBoundaryData = {
     [-1.392598, 54.900053],
     [-1.392673, 54.900112]
   ]
-}
+]
