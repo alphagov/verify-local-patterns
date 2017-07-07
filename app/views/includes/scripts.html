@@ -30,47 +30,26 @@
 	}
 </script>
 
-<script src="{{asset_path}}/javascripts/cartodb.js"></script>
+<script src="{{asset_path}}/data/{{council.string}}BoundaryData.js"></script>
+<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+   integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+   crossorigin=""></script>
 <script>
-function main() {
-	cartodb.createVis('map', 'https://sanjaypoyzer.cartodb.com/api/v2/viz/3d165db2-5b3a-11e7-90fd-0e8c56e2ffdb/viz.json', {
-			shareable: false,
-			title: false,
-			description: true,
-			search: false,
-			tiles_loader: true,
-			center_lat: 54.8970847740886,
-			center_lon: -1.39000872756029,
-			fullscreen: true,
-			zoom: 16
-	})
-	.done(function(vis, layers) {
-		// layer 0 is the base layer, layer 1 is cartodb layer
-		// setInteraction is disabled by default
-		layers[1].setInteraction(true);
-		layers[1].on('featureOver', function(e, latlng, pos, data) {
-			cartodb.log.log(e, latlng, pos, data);
-		});
-		// you can get the native map to work with it
-		var map = vis.getNativeMap();
-		var greenIcon = L.icon({
-		    iconUrl: '{{asset_path}}/images/map-marker.png',
-		    // shadowUrl: 'leaf-shadow.png',
 
-		    iconSize:     [65, 60], // size of the icon
-		    shadowSize:   [50, 64], // size of the shadow
-		    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-		    shadowAnchor: [4, 62],  // the same for the shadow
-		    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-		});
-		L.marker([54.8970847740886, -1.39000872756029], {icon: greenIcon}).addTo(map);
-		// now, perform any operations you need
-		// map.setZoom(3);
-		// map.panTo([50.5, 30.5]);
-	})
-	.error(function(err) {
-		console.log(err);
-	});
-}
-window.onload = main;
+	// {{latitude}} and {{longitude}} set in routes.js
+
+	var mymap = L.map('map').setView([{{latitude}}, {{longitude}}], 16);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	    maxZoom: 20,
+	    id: 'mapbox.streets',
+	    accessToken: 'pk.eyJ1Ijoic2FuamF5cG95emVyIiwiYSI6ImNqNHNiaDVvNDMxcGcyd3NlNWE5MXZqZDIifQ.jLkU7XzY3H4lTFIfrryVGg'
+	}).addTo(mymap);
+	var marker = L.marker([{{latitude}}, {{longitude}}]).addTo(mymap);
+
+	var boundaries = {{council.string}}BoundaryData;
+
+	for (var i = 0; i < boundaries.length; i++) {
+		var polygon = L.polygon(L.GeoJSON.coordsToLatLngs(boundaries[i])).addTo(mymap);
+	}
 </script>
