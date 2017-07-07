@@ -88,7 +88,9 @@
 			{% endif %}
     </div>
   {% endif %}
-
+  <p>
+{{ council.name }} will store your vehicle details securely on our own systems.
+</p>
   {% if council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
