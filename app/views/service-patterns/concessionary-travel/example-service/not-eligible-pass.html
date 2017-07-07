@@ -5,18 +5,28 @@
 
 {% block content %}
 
-<div class="column-two-thirds">
+  <div class="column-two-thirds">
 
-  <p>
-    It looks like you already have a bus pass, so you can not apply for one through this service.
-  </p>
-  <p>
-    If you need to renew or replace a lost/stolen pass, you can do so through the <a href="#">Renew your pass service</a>.
-  </p>
-  <p>
-    Please <a href="#">contact the council</a> if you have further questions.
-  </p>
+    <p>
+      It looks like you already have a bus pass from
+      {{ council.name }}, so you can't apply for a new one.
+    </p>
+    <p>
+      However you can:
+      <ul class="list list-bullet">
+        <li>
+          <a href="#">renew an expired bus pass service</a>
+        </li>
+        <li>
+          <a href="#">replace a lost or stolen bus pass service</a>
+        </li>
+      </ul>
+    </p>
+    <p>
+      <a href="#">Contact us</a>
+      if you have any questions.
+    </p>
 
-</div>
+  </div>
 
 {% endblock %}
