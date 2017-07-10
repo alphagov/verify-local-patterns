@@ -5,73 +5,36 @@
 
 {% block content %}
 
-<div class="column-two-thirds">
+  <div class="column-two-thirds">
 
-  <p>
-    The postcode you entered is in the {{council.parkingBoundary}} parking boundary. There are currently no resident's parking permits available.
-  <p>
-    To join the waiting list for a resident's parking permit in this area, enter your address below:
-  </p>
-  {# <p><a href="#">Contact us</a> to join a waiting list for {{council.parkingBoundary}} resident's parking permits.</p> #}
-  <div>
-      <form method="post">
-          <fieldset>
-              <legend class="visuallyhidden">Enter current address</legend>
-
-              <div class="ask_location">
-                <div class="form-group">
-                  <label class="form-label-bold" for="building-and-street">
-                    Building name and/or number and street
-                    </label>
-                    <input class="form-control" id="building-and-street" name="building-and-street" type="text">
-                    <input class="form-control" id="building-and-street" name="building-and-street" type="text">
-                </div>
-                <div class="form-group">
-                  <label class="form-label-bold" for="town-or-city">
-                    Town or city
-                    </label>
-                    <input class="form-control medium-width" id="town-or-city" name="town-or-city" type="text">
-                </div>
-                <div class="form-group">
-                  <label class="form-label-bold" for="postcode">
-                    Postcode
-                    </label>
-                    <input class="form-control" id="postcode" name="postcode" type="text">
-                </div>
-    <a class="button" role="button" href={{nextPage}}>Submit</a>
-  {# <h2 class="heading-medium">Choose a different area</h2>
-  <p>
-    Apply for a parking permit nearby. Permits are available for:
-  </p>
-
-  <form>
-  <div class="form-group">
-    <fieldset>
-
-      <legend class="visually-hidden">Where do you live?</legend>
-
-      <label class="block-label selection-button-radio" for="radio-1">
-        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
-        Argletonshire
-      </label>
-      <label class="block-label selection-button-radio" for="radio-2">
-        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
-        Argleton beach
-      </label>
-      <p class="form-block">or</p>
-      <label class="block-label selection-button-radio" for="radio-3">
-        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
-        Little Argleton
-      </label>
-
-    </fieldset>
-  </div>
-  <div class="form-group">
-    <button class="button">Continue</button>
-  </div>#}
-
-</form>
-
-</div>
-
-{% endblock %}
+    <p>
+      The postcode you entered is in the
+      {{council.parkingBoundary}}
+      parking boundary. There are currently no resident's parking permits available.
+      <p>
+        To join the waiting list for a resident's parking permit in this area, enter your details below:
+      </p>
+       <div> <form method="post"> <fieldset> <legend class="visuallyhidden">Enter current address</legend> <div class="form-group">
+      {# new stuff <label class="form-label-bold" for="town-or-city"> First name </label> <input class="form-control medium-width" id="town-or-city" name="town-or-city" type="text"> </div> <div class="form-group"> <label class="form-label-bold" for="town-or-city"> Last
+      name </label> <input class="form-control medium-width" id="town-or-city" name="town-or-city" type="text"> </div> #}
+      <div class="ask_location"> <div class="form-group"> <label class="form-label-bold" for="building-and-street"> Building name and/or number
+      and street </label> <input class="form-control" id="building-and-street" name="building-and-street" type="text"> <input class="form-control" id="building-and-street" name="building-and-street" type="text"> </div> <div class="form-group"> <label
+      class="form-label-bold" for="town-or-city"> Town or city </label> <input class="form-control medium-width" id="town-or-city" name="town-or-city" type="text"> </div> <div class="form-group"> <label class="form-label-bold" for="postcode"> Postcode
+      </label> <input class="form-control" id="postcode" name="postcode" type="text"> </div>
+      {# new stuff <h3 class="heading-medium">How do you want to be contacted when a permit becomes available?</h3>
+      <legend class="visually-hidden"> How do you want to be contacted when a permit becomes available? </legend> <label class="block-label selection-button-checkbox"
+      data-target="contact-by-email-input" for="contact-by-email"> <input id="contact-by-email" type="checkbox" name="renewalsChoice" value="Email"> Email </label> <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input"> <label
+      class="form-label" for="contact-email">Email address</label> <input class="form-control" name="contactEmail" type="text" id="contact-email" value="{{contactEmail}}"> </div> <label class="block-label selection-button-checkbox"
+      data-target="contact-by-text-input" for="contact-by-text"> <input id="contact-by-text" type="checkbox" name="renewalsChoice" value="Text"> Text message </label> <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input"> <label
+      class="form-label" for="contact-text-message">Mobile phone number</label> <input class="form-control" name="contactText" type="text" id="contact-text-message" value="{{contactText}}"> </div> <label class="block-label selection-button-checkbox"
+      data-target="contact-by-post-input" for="contact-by-post"> <input id="contact-by-post" type="checkbox" name="renewalsChoice" value="Post"> By post </label> <div class="panel panel-border-narrow js-hidden" id="contact-by-post-input"> </div>
+      <a
+      class="button" role="button" href={{nextPage}}>Submit</a> #}
+      {# old stuff <p><a href="#">Contact us</a> to join a waiting list for {{council.parkingBoundary}} resident's parking permits.</p> #}
+      {# old stuff <h2 class="heading-medium">Choose a different area</h2> <p> Apply for a parking permit nearby. Permits are available for: </p> <form> <div class="form-group"> <fieldset> <legend
+      class="visually-hidden">Where do you live?</legend> <label class="block-label selection-button-radio" for="radio-1"> <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland"> Argletonshire </label> <label class="block-label
+      selection-button-radio" for="radio-2"> <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands"> Argleton beach </label> <p class="form-block">or</p> <label class="block-label selection-button-radio"
+      for="radio-3"> <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad"> Little Argleton </label> </fieldset> </div> <div class="form-group"> <button class="button">Continue</button> </div>#} </form>
+      </div>
+      {%
+      endblock %}

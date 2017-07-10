@@ -4,9 +4,9 @@
 {% set s = 's' if permitRequestData.permitRequests.length > 1 else
   '' %}
 {% if council.makeColour == true %}
-	{% set pageTitle = "Enter vehicle details" %}
+  {% set pageTitle = "Enter vehicle details" %}
 {% else %}
-	{% set pageTitle = "Enter vehicle registration number" + s %}
+  {% set pageTitle = "Enter vehicle registration number" + s %}
 {% endif %}
 
 {% block content %}
@@ -28,70 +28,74 @@
         We need your vehicle registration number{{s}}, make and colour to link your permit{{s}}
         to your vehicle{{s}}.
       </p>
-			<p>
-				<a href href="https://vehicleenquiry.service.gov.uk/">Check your vehicle make and colour</a>
-				on GOV.UK.
-			</p>
+      <p>
+        <a href href="https://vehicleenquiry.service.gov.uk/">Check your vehicle make and colour</a>
+        on GOV.UK.
+      </p>
 
       <div class="form-group">
-					{% for i in range(0, parkingPermitCount) %}
-						{% if parkingPermitCount > 1 %}
-						<h2 class="heading-medium">Vehicle {{i + 1}}</h2>
-						{% endif %}
-		        <label class="form-label" for="cardName">
-		          Registration number
-		        </label>
-		        <input class="form-control" id="cardName" name="cardName" type="text">
+        {% for i in range(0, parkingPermitCount) %}
+          {% if parkingPermitCount > 1 %}
+            <h2 class="heading-medium">Vehicle
+              {{i + 1}}</h2>
+          {% endif %}
+          <label class="form-label" for="cardName">
+            Registration number
+          </label>
+          <input class="form-control" id="cardName" name="cardName" type="text">
 
-		      </div>
-		      <br>
-		      <div class="form-group">
+        </div>
+        <br>
+        <div class="form-group">
 
-		        <label class="form-label vehicleMake" for="vehicleMake-{{i}}">
-		          Vehicle make
-		        </label>
-						<div id="vehicleMake-{{i}}">
-						</div>
+          <label class="form-label vehicleMake" for="vehicleMake-{{i}}">
+            Vehicle make
+          </label>
+          <div id="vehicleMake-{{i}}"></div>
 
-		      </div>
+        </div>
 
-		      <br>
-		      <div class="form-group">
+        <br>
+        <div class="form-group">
 
-		        <label class="form-label vehicleColour" for="vehicleColour-{{i}}">
-		          Vehicle colour
-		        </label>
-						<div id="vehicleColour-{{i}}">
-						</div>
+          <label class="form-label vehicleColour" for="vehicleColour-{{i}}">
+            Vehicle colour
+          </label>
+          <div id="vehicleColour-{{i}}"></div>
 
-				{% endfor %}
-			</div>
-		</p>
+        {% endfor %}
+      </div>
+    </p>
 
   {% else %}
     <p>
-      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
+      We need your vehicle's registration number{{s}}
+      to link your permit{{s}}
+      to your vehicle{{s}}.
     </p>
     <div class="form-group">
-			{% if parkingPermitCount > 1 %}
-				{% for i in range(0, parkingPermitCount) %}
-					<legend class="visuallyhidden">Vehicle {{i + 1}}</legend>
-					<div class="form-group">
-							<label class="form-label" for="postcode">Vehicle {{ i + 1 }}</label>
-							<input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
-					</div>
-				{% endfor %}
-			{% else %}
-				<div>
-					<input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
-				</div>
-			{% endif %}
+      {% if parkingPermitCount > 1 %}
+        {% for i in range(0, parkingPermitCount) %}
+          <legend class="visuallyhidden">Vehicle
+            {{i + 1}}</legend>
+          <div class="form-group">
+            <label class="form-label" for="postcode">Vehicle
+              {{ i + 1 }}</label>
+            <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+          </div>
+        {% endfor %}
+      {% else %}
+        <div>
+          <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+        </div>
+      {% endif %}
     </div>
   {% endif %}
   <p>
-{{ council.name }} will store your vehicle details securely on our own systems.
-</p>
-  {% if council.testv5cScan %}
+    {{ council.name }}
+    will store your vehicle details securely on our own systems.
+  </p>
+{# {% if council.testv5cScan %}
     {% set nextPage = 'v5c-upload' %}
   {% elif council.testv5cnumber %}
     {% set nextPage = 'v5c-number' %}
@@ -105,9 +109,10 @@
     {% set nextPage = 'pre-payment' %}
   {% else %}
     {% set nextPage = 'contact-reference' %}
-  {% endif %}
-
-	<a href="{{nextPage}}" class="button">Next</a>
-
+  {% endif %} #}
+  {# {% if council.makeColour %}
+    {% set nextPage = 'confirm-vehicle-details' %}
+  {% endif %} #}
+  <a href="confirm-vehicle-details" class="button">Next</a>
 </div>
 {% endblock %}
