@@ -1,0 +1,27 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "You're now on the parking permits waiting list" %}
+
+{% block content %}
+
+	<div class="column-full">
+		<div class="govuk-box-highlight">
+		  <p>
+		    Your reference number is <br>
+		    <strong class="heading-large">HDJ2123F</strong>
+		  </p>
+		</div>
+	</div>
+
+<div class="column-two-thirds">
+  {% if contactChoice == 'Email' %}
+    <p>You should receive a confirmation email within the next minute.</p>
+  {% elif contactChoice == 'Text' %}
+    <p>You should receive a confirmation text within the next minute.</p>
+  {% else %}
+    <p><a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
+  {% endif %}
+</div>
+
+{% endblock %}
