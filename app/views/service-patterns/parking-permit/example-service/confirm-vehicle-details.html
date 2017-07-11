@@ -14,7 +14,7 @@
       <table>
         <tr>
           <th>Registration number</th>
-          <th>{{ registerNumber }}</th>
+          <th>{{ registerNumbers[loop.index - 1] }}</th>
         </tr>
         <tr>
           <th>Vehicle colour</th>
@@ -29,7 +29,7 @@
       <table>
         <tr>
           <th>Registration number</th>
-          <th>{{ registerNumber }}</th>
+          <th>{{ registerNumbers[loop.index - 1] }}</th>
         </tr>
         <tr></table>
       {% endif %}

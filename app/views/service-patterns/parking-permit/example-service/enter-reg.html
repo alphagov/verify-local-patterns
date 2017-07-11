@@ -23,6 +23,22 @@
       {{ parkingPermitCount }}
       resident's parking permit{{s}}.
     </p>
+		{% if council.testv5cScan %}
+			 {% set nextPage = 'v5c-upload' %}
+		{% elif council.testv5cnumber %}
+			{% set nextPage = 'v5c-number' %}
+		{% elif unverifiedAddress %}
+			{% set nextPage = 'pre-payment' %}
+		{% elif council.userChooseStartDate %}
+			{% set nextPage = 'permit-start' %}
+		{% elif council.sixmonth %}
+			{% set nextPage = 'permit-length' %}
+		{% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
+			{% set nextPage = 'pre-payment' %}
+		{% else %}
+			{% set nextPage = 'contact-reference' %}
+		{% endif %}
+	<form action="{{nextPage}}" method="POST">
     {% if council.makeColour == true %}
       <p>
         We need your vehicle registration number{{s}}, make and colour to link your permit{{s}}
@@ -69,9 +85,7 @@
 
   {% else %}
     <p>
-      We need your vehicle's registration number{{s}}
-      to link your permit{{s}}
-      to your vehicle{{s}}.
+      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
     </p>
     <div class="form-group">
       {% if parkingPermitCount > 1 %}
@@ -95,24 +109,10 @@
     {{ council.name }}
     will store your vehicle details securely on our own systems.
   </p>
-{# {% if council.testv5cScan %}
-    {% set nextPage = 'v5c-upload' %}
-  {% elif council.testv5cnumber %}
-    {% set nextPage = 'v5c-number' %}
-  {% elif unverifiedAddress %}
-    {% set nextPage = 'pre-payment' %}
-  {% elif council.userChooseStartDate %}
-    {% set nextPage = 'permit-start' %}
-  {% elif council.sixmonth %}
-    {% set nextPage = 'permit-length' %}
-  {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
-    {% set nextPage = 'pre-payment' %}
-  {% else %}
-    {% set nextPage = 'contact-reference' %}
-  {% endif %} #}
-  {# {% if council.makeColour %}
-    {% set nextPage = 'confirm-vehicle-details' %}
-  {% endif %} #}
-  <a href="confirm-vehicle-details" class="button">Next</a>
+
+	<div class="form-group">
+		<input type="submit" class="button" role="button" value="Next" />
+	</div>
+	</form>
 </div>
 {% endblock %}
