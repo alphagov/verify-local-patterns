@@ -61,7 +61,36 @@ router.all('/service-patterns/parking-permit/example-service/need-permit', funct
 	});
 
 })
+router.all('/service-patterns/parking-permit/example-service/wait-need-permit', function (req, resp) {
 
+	var postcode = encodeURIComponent(req.session.data.postcode)
+	var url = 'http://api.postcodes.io/postcodes/'+postcode;
+
+	http.get(url, function(res){
+	    var body = '';
+
+	    res.on('data', function(chunk){
+	        body += chunk;
+	    });
+
+	    res.on('end', function(){
+	        var response = JSON.parse(body);
+					if(response.result){
+						var lat = response.result.latitude;
+						var long = response.result.longitude;
+						resp.render('service-patterns/parking-permit/example-service/wait-need-permit', {latitude: lat, longitude: long})
+
+					}else{
+						console.log('not a real postcode')
+						resp.render('service-patterns/parking-permit/example-service/wait-need-permit', {latitude: 51.5035398826274, longitude: -0.127695242183412})
+
+					}
+	    });
+	}).on('error', function(e){
+	      console.log("Got an error: ", e);
+	});
+
+})
 router.all('/service-patterns/parking-permit/example-service/pre-payment', function (req, res) {
 
   function makeStartDate(permitWait, requestedDate) {
