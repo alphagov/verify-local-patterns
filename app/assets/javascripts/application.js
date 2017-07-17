@@ -48,7 +48,7 @@ $(document).ready(function() {
 						window.location.href = 'loading-new-postal-poa';
 				});
 		}
-    if (window.location.href.indexOf("add-poage") > -1) {
+    if (window.location.href.indexOf("prove-age") > -1) {
         $('#file').change(function(e) {
             // todo: check that file is actually chosen!!
             window.location.href = 'loading-poage';
