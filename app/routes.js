@@ -157,10 +157,10 @@ router.all('/service-patterns/parking-permit/example-service/pre-payment', funct
   res.render('service-patterns/parking-permit/example-service/pre-payment', req.session.data.permitRequestData)
 })
 
-router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
+router.get('/service-patterns/concessionary-travel/example-service/prove-address', function(req, res) {
   req.session.skip_verify = true
 
-  res.render('service-patterns/concessionary-travel/example-service/add-poa')
+  res.render('service-patterns/concessionary-travel/example-service/prove-address')
 })
 
 router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
@@ -168,10 +168,10 @@ router.get('/service-patterns/concessionary-travel/example-service/photo/success
 })
 
 
-router.get('/service-patterns/concessionary-travel/example-service/add-poa', function(req, res) {
+router.get('/service-patterns/concessionary-travel/example-service/prove-address', function(req, res) {
   req.session.skip_verify = true
 
-  res.render('service-patterns/concessionary-travel/example-service/add-poa')
+  res.render('service-patterns/concessionary-travel/example-service/prove-address')
 })
 
 router.get('/service-patterns/concessionary-travel/example-service/photo/success', function(req, res) {
