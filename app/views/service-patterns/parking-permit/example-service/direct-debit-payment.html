@@ -1,9 +1,10 @@
-{% extends "layout_picker.html" %} {% set serviceName = "Apply for a resident's parking permit" %} {% set pageTitle = "Pay by Direct Debit" %} {% block content %}
+{% extends "layout_picker.html" %} {% set serviceName = "Apply for a resident's parking permit" %} {% set pageTitle = "Pay by bank transfer" %} {% block content %}
 {% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
 
 <div class="column-two-thirds">
     <div class="payment-type-intro">
-        <p>We'll use Direct Debit to take a one-off payment from your bank account. Complete your details below.</p>
+        <p>We'll take a one-off payment from your bank account. This will be set up as a direct debit payment, but you will only make one payment, for the full amount.</p>
+        <p>Complete your details below.</p>
     </div>
 
     <form class="form" method="POST" action="confirm-debit-payment">
