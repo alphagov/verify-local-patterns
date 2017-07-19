@@ -6,6 +6,7 @@
 		"showMap": true,
     "permitsCosts": [51],
     "sixmonth": true,
+    "hmo": "online",
     "limitByHousehold":true,
     "extraDetails": false,
     "permitMax": 4,
@@ -125,6 +126,7 @@
 		"showMap": true,
     "boundaryLink": "http://www.sunderland.gov.uk/CHttpHandler.ashx?id=18284&p=0&fsize=883kb&ftype=Ashbrooke%20and%20Thornholme%20CPMS.PDF",
     "boundaryPage": "parking-boundary-map",
+    "hmo": "phone",
     "limitByHousehold":true,
     "permitMax": 5,
     "permitsCosts": [0, 20, 40, 60],
@@ -140,7 +142,7 @@
     "testv5cScan": false,
     "testv5cnumber": false,
     "DVLAAPIenforcement": false
-    },
+    }, 
   {
     "name" : "Unbrandedland Council",
     "shortName" : "Unbrandedland",
