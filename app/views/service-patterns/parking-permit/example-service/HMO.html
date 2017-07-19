@@ -1,0 +1,30 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Add council tax number" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    You've told us you live in a <a href="https://www.gov.uk/private-renting/houses-in-multiple-occupation">house in multiple occupation</a>.
+
+  <p>Enter your council tax number:
+  </p>
+
+              <div>
+                <input class="reg-number form-control" id="reg-number-{{i}}" name="registerNumbers[{{i}}]" type="text" aria-invalid="false" value="">
+              </div>
+  <p>
+    We'll use this to check your address.
+  </p>
+<br>
+</br>
+        <input class="button" type="submit" value="Continue">
+    </form>
+</div>
+
+</div>
+
+{% endblock %}
