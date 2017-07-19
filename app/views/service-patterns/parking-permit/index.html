@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set pageTitle = "Apply for a resident's parking permit" %}
 {% block page_title %}
-    {{ pageTitle }}
+  {{ pageTitle }}
 {% endblock %}
 {% block content %}
 
@@ -9,73 +9,72 @@
     {% include "includes/phase_banner_alpha.html" %}
     {% include "includes/toolkit_breadcrumbs.html" %}
 
-        <h1 class="heading-xlarge">
-            <span class="strapline">Service pattern for</span>
-            {{ pageTitle }}
-        </h1>
-        {% include "includes/index_metadata.html" %}
+    <h1 class="heading-xlarge">
+      <span class="strapline">Service pattern for</span>
+      {{ pageTitle }}
+    </h1>
+    {% include "includes/index_metadata.html" %}
 
-        <div class="grid-row" data-module="highlight-active-section-heading">
-            <div class="column-third">
+    <div class="grid-row" data-module="highlight-active-section-heading">
+      <div class="column-third">
 
-                <!--  Page contents -->
-                <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
-                    <h2 class="heading-small page-contents__title">Page contents:</h2>
-                    <ul class="page-contents__list">
-                        <li>
-                            <a href="#example-service">Example service</a>
-                        </li>
-                        <li>
-                            <a href="#user-need">What is the user need?</a>
-                        </li>
-                        <li>
-                            <a href="#council-need">What do councils need?</a>
-                        </li>
-                        <li>
-                            <a href="#user-journey">What is the user journey?</a>
-                        </li>
-                    </ul>
-                </div>
+        <!--  Page contents -->
+        <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+          <h2 class="heading-small page-contents__title">Page contents:</h2>
+          <ul class="page-contents__list">
+            <li>
+              <a href="#example-service">Example service</a>
+            </li>
+            <li>
+              <a href="#user-need">What is the user need?</a>
+            </li>
+            <li>
+              <a href="#council-need">What do councils need?</a>
+            </li>
+            <li>
+              <a href="#user-journey">What is the user journey?</a>
+            </li>
+          </ul>
+        </div>
 
-            </div>
-            <div class="column-two-thirds">
-                <p>
-                    This page is for people who work in local authorities. It outlines a common pattern used for providing resident's parking permits services effectively.
-                    <a href="/">Read more about service patterns.</a>
-                </p>
+      </div>
+      <div class="column-two-thirds">
+        <p>
+          This page is for people who work in local authorities. It outlines a common pattern for providing resident's parking permits services effectively online, based on user needs.
+          <a href="/">Read more about service patterns.</a>
+        </p>
 
-                <h2 class="heading-medium" id="example-service">Example service</h2>
-                <p>
-                  While reading the service pattern description, explore <a href="parking-permit/example-service/start-page">the example council service</a>.
-                </p>
+        <h2 class="heading-medium" id="example-service">Example service</h2>
+        <p>
+          As you read the service pattern description, explore
+          <a href="parking-permit/example-service/start-page">the example council service</a>.
+        </p>
 
                 <h2 class="heading-medium" id="user-need">What is the user need?</h2>
                 <p>
                     Residents need a place to park their car near their home. Parking permit services make sure there are parking spaces available for residents. They make it illegal to park in some areas without a permit.
                 </p>
-                <p>
-                  We recommend putting users first when designing your parking permit service.
-                </p>
                 <p><a href="/service-patterns/parking-permit/user-research/discovery/user-needs">Understand other user needs for this service</a></p>
 
-                <h2 class="heading-medium" id="council-need">What does your service need from users to deliver this service?</h2>
-                <p>Depending on your local authority's needs, the user may be asked to provide:</p>
-                <ul class="list list-bullet">
-                  <li>
-                    the postcode of the area where they want to park
-                  </li>
-                  <li>
-                      proof they live in the area
-                  </li>
-                  <li>
-                      the registration number of the vehicle to be permitted
-                  </li>
-                  <li>
-                      payment (supports the cost of the service and may vary from council to council and within the service, depending on for example vehicle and parking zone)
-                  </li>
-                </ul>
+        <h2 class="heading-medium" id="council-need">What does your service need from users to deliver this service?</h2>
+        <p>Depending on your local authority's needs, users may be asked to provide:</p>
+        <ul class="list list-bullet">
+          <li>
+            the postcode of the area where they want to park
+          </li>
+          <li>
+            proof they live in the area
+          </li>
+          <li>
+            the registration number of the vehicle to be permitted
+          </li>
+          <li>
+            payment (to support the cost of the service – may vary from council to council and within the service, for example depending on parking zone)
+          </li>
+        </ul>
 
                 <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
+								{% include 'includes/pp-user-journey-diagram.html' %}
                 <p>
                     These are the steps users should go through.
                 </p>
@@ -93,7 +92,7 @@
                       messaging to users new users of other council services in the area
                       </li>
                       <li>
-                      information provided to new home owners or tennants in parking areas
+                      information provided to new home owners or tenants in parking areas
                       </li>
                       <li>
                       street signage
@@ -144,7 +143,7 @@
                       </p>
                       <ul class="list list-bullet">
                         <li>
-                          identify which parking zone the user will need a permit for 
+                          identify which parking zone the user will need a permit for
                         </li>
                         <li>
                           check availability of permits in the parking zone and handle the application accordingly
@@ -176,7 +175,7 @@
                           <a href="/service-patterns/parking-permit/user-research/alpha/picking-right-permit">
                         Access related user research</a>
                       </p>
-                      
+
                       <p>
                         At this point the service should also check availability of the selected permit in the user's parking zone. If permits are not available, the service should process the application accordingly.
                       </p>
@@ -187,8 +186,8 @@
                           <a href="/service-patterns/parking-permit/user-research/alpha/no-permit">
                         Access related user research</a>
                       </p>
-                      
-                      
+
+
                     </div>
                   </details>
                   <details>
@@ -209,8 +208,8 @@
                         </li>
                         <li>
                           what needs to be provided to complete the application
-                        </li>    
-                                            
+                        </li>
+
                         <li>
                           where the permit will allow them to park
                         </li>
@@ -234,8 +233,8 @@
                   <details>
                     <summary><span class="summary">7. Proving you are a resident </span></summary>
                     <div class="panel panel-border-narrow">
-                                {% set serviceString = 'parking-permit' %}
-                                {% include 'common-content/proving-identity.html' %}
+                    {% set serviceString = 'parking-permit' %}
+                    {% include 'common-content/proving-identity.html' %}
                   </div>
                   </details>
                   <details>
@@ -246,7 +245,7 @@
                         </p>
 
                         <a href="parking-permit/example-service/confirm-address">Explore the confirm name and address example council page</a>
-                       
+
                         <p>
                             If the user says the address supplied through GOV.UK Verify is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and be warned that they must not
                             enter false information.

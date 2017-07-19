@@ -1,0 +1,19 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "No permits available" %}
+
+{% block content %}
+
+  <div class="column-two-thirds">
+
+    <p>
+      There are currently no resident's parking permits available in {{council.parkingBoundary}}.
+    </p>
+		{# Should we have a map here to tell them where they _can_ park? #}
+		<p>
+			You can join the waiting list and we'll let you know when a resident's permit becomes available.</p> 
+      <p>The average wait time is currently 3 weeks.</p>
+		<a href="wait-join-waiting-list" class="button button-start">Join waiting list</a>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "Join the parking permits waiting list" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+	<p>
+		To join the waiting list for a resident's parking permit in
+		{{council.parkingBoundary}}, enter your details below:
+	</p>
+	<div>
+	<form method="post">
+		<fieldset>
+			<div class="form-group">
+				<label class="form-label-bold" for="name">
+					Your full name
+				</label>
+				<input class="form-control" id="name" name="name" type="text">
+			</div>
+			<h2 class="heading-small">Your address</h2>
+			<legend class="visuallyhidden">Enter current address</legend>
+			<div class="form-group">
+				<div class="ask_location">
+					<div class="form-group">
+						<label class="form-label" for="building-and-street">
+							Building name and/or number and street
+						</label>
+						<input class="form-control" id="building-and-street" name="building-and-street" type="text">
+						<input class="form-control" id="building-and-street" name="building-and-street" type="text">
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="town-or-city">
+							Town or city
+						</label>
+						<input class="form-control medium-width" id="town-or-city" name="town-or-city" type="text">
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="postcode">
+							Postcode
+						</label>
+						<input class="form-control" id="postcode" name="postcode" type="text">
+					</div>
+					<a href="wait-waiting-list-contact" class="button">Next</a>
+				</fieldset>
+			</form>
+		</div>
+</div>
+{% endblock %}

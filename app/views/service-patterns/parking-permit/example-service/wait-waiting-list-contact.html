@@ -1,0 +1,48 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "How do you want to be contacted?" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+	<p>
+		We'll only contact you to let you know a parking permit is available.
+	</p>
+
+	<form action="wait-waiting-list-success" method="POST">
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">
+          How do you want to be contacted?
+        </legend>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
+          <input id="contact-by-email" type="checkbox" name="contactChoice" value="Email">
+          Email
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contactEmail" type="text" id="contact-email">
+        </div>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-text-input" for="contact-by-text">
+          <input id="contact-by-text" type="checkbox" name="contactChoice" value="Text">
+          Text message
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-text-input">
+          <label class="form-label" for="contact-text-message">Mobile phone number</label>
+          <input class="form-control" name="contactText" type="text" id="contact-text-message">
+        </div>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Next" />
+    </div>
+  </form>
+
+</div>
+{% endblock %}

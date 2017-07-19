@@ -2,100 +2,107 @@
 
 {# residentAmount is a string and must be converted to a number 😒 #}
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else
-  3 %}
+	3 %}
 {% set s = 's' if parkingPermitCount > 1 else
-  '' %}
+	'' %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
 {% set pageTitle = "When should your permit" + s + " start?" %}
 
 {% block content %}
 
-  <div class="column-two-thirds">
+	<div class="column-two-thirds">
 
-    {% macro enterDate(index, suffix) %}
-      <fieldset>
-        <div class="form-date">
+	{% macro enterDate(index, suffix) %}
+		<fieldset>
+			<div class="form-date">
+				<div class="form-group form-group-day">
+					<label for="permitLengthDay-{{ index }}-{{ suffix }}">Day</label>
+					<input type="number" autocomplete="off" class="form-control" id="permitLengthDay-{{ index }}-{{ suffix }}" name="permitStartDate[{{ suffix }}][{{ index }}][day]">
+				</div>
+				<div class="form-group form-group-month">
+					<label for="permitLengthMonth-{{ index }}-{{ suffix }}">Month</label>
+					<input type="number" autocomplete="off" class="form-control" id="permitLengthMonth-{{ index }}-{{ suffix }}" name="permitStartDate[{{ suffix }}][{{ index }}][month]">
+				</div>
+				<div class="form-group form-group-year">
+					<label for="permitLengthYear-{{ index }}-{{ suffix
+			}}">Year</label>
+					<input type="number" autocomplete="off" class="form-control" id="permitLengthYear-{{ index }}-{{ suffix }}" name="permitStartDate[{{ suffix }}][{{ index }}][year]">
+				</div>
+			</div>
+		</fieldset>
+	{% endmacro %}
 
-          <div class="form-group form-group-day">
-            <label for="permitLengthDay-{{ index }}-{{ suffix }}">Day</label>
-            <input type="number" autocomplete="off" class="form-control" id="permitLengthDay-{{ index }}-{{ suffix }}" name="permitStartDate[{{ suffix }}][{{ index }}][day]">
-          </div>
-          <div class="form-group form-group-month">
-            <label for="permitLengthMonth-{{ index }}-{{ suffix }}">Month</label>
-            <input type="number" autocomplete="off" class="form-control" id="permitLengthMonth-{{ index }}-{{ suffix }}" name="permitStartDate[{{ suffix }}][{{ index }}][month]">
-          </div>
-          <div class="form-group form-group-year">
-            <label for="permitLengthYear-{{ index }}-{{ suffix }}">Year</label>
-            <input type="number" autocomplete="off" class="form-control" id="permitLengthYear-{{ index }}-{{ suffix }}" name="permitStartDate[{{ suffix }}][{{ index }}][year]">
-          </div>
-        </div>
-      </fieldset>
-    {% endmacro %}
+		{% if council.string == "sunderland" %}
+			{% set nextPage = 'pre-payment' %}
+		{% elif council.sixmonth %}
+			{% set nextPage = 'permit-length' %}
+		{% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
+			{% set nextPage = 'pre-payment' %}
+		{% else %}
+			{% set nextPage = 'contact-preference' %}
+		{% endif %}
 
-    {% if council.string == "sunderland" %}
-      {% set nextPage = 'pre-payment' %}
-    {% elif council.sixmonth %}
-      {% set nextPage = 'permit-length' %}
-    {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
-      {% set nextPage = 'pre-payment' %}
-    {% else %}
-      {% set nextPage = 'contact-reference' %}
-    {% endif %}
+		<form action="{{ nextPage }}" method="post">
+			<div class="form-group">
+				<fieldset>
 
-    <form action="{{ nextPage }}" method="post">
-      <div class="form-group">
-        <fieldset>
+					<legend class="visually-hidden">permit length</legend>
 
-          <legend class="visually-hidden">permit length</legend>
+					<label class="block-label selection-button-radio" for="permitStartChoice-1">
+						<input id="permitStartChoice-1" type="radio" name="permitStartChoice" value="soon">
+						As soon as possible{% if council.tempPermit == 'print' or 'write' %}
+							– print{% if council.tempPermit == 'write' %}
+								or write
+							{% endif %}
+							a temporary permit at the end of application
+						{% endif %}
+					</label>
+					{% if council.string == 'sunderland' %}
+						<label class="block-label selection-button-radio" for="permitStartChoice-2">
+							<input id="permitStartChoice-2" type="radio" name="permitStartChoice" value="August">
+							1 August 2017
+						</label>
+					{% else %}
+						<label class="block-label selection-button-radio" for="permitStartChoice-2" data-target="other-date">
+							<input id="permitStartChoice-2" type="radio" name="permitStartChoice" value="other">
+							A specific date
+						</label>
+						<div class="panel panel-border-narrow js-hidden" id="other-date">
+							{{ enterDate(0, 'other') }}
+						</div>
+						{% if registerNumbers.length > 1 %}
+							<label class="block-label selection-button-radio" for="permitStartChoice-3" data-target="multi-dates">
+								<input id="permitStartChoice-3" type="radio" name="permitStartChoice" value="multi">
+								Different dates for different vehicles
+							</label>
+							<div class="panel panel-border-narrow js-hidden" id="multi-dates">
+								{% for registerNumber in registerNumbers %}
+									<div class="form-group">
+										<h3 class="heading-medium">Vehicle
+											{{loop.index0 + 1 }}:
+											{{ registerNumber }}</h3>
+										{{ enterDate(loop.index0, 'multi') }}
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
+						{#non-Sunderland stuff  #}
+					</fieldset>
+				</div>
+			{% endif %}
+			{# {% if registerNumbers.length > 1 %} #}
 
-          <label class="block-label selection-button-radio" for="permitStartChoice-1">
-            <input id="permitStartChoice-1" type="radio" name="permitStartChoice" value="soon">
-            As soon as possible
-          </label>
-          {% if council.string == 'sunderland' %}
-            <label class="block-label selection-button-radio" for="permitStartChoice-2">
-              <input id="permitStartChoice-2" type="radio" name="permitStartChoice" value="August">
-              1 August 2017
-            </label>
-          {% else %}
-            <label class="block-label selection-button-radio" for="permitStartChoice-2" data-target="other-date">
-              <input id="permitStartChoice-2" type="radio" name="permitStartChoice" value="other">
-              A specific date
-            </label>
-            <div class="panel panel-border-narrow js-hidden" id="other-date">
-              {{ enterDate(0, 'other') }}
-            </div>
-            {% if registerNumbers.length > 1 %}
-              <label class="block-label selection-button-radio" for="permitStartChoice-3" data-target="multi-dates">
-                <input id="permitStartChoice-3" type="radio" name="permitStartChoice" value="multi">
-                Different dates for different vehicles
-              </label>
-              <div class="panel panel-border-narrow js-hidden" id="multi-dates">
-                {% for registerNumber in registerNumbers %}
-                  <div class="form-group">
-                    <h3 class="heading-medium">Vehicle
-                      {{loop.index0 + 1 }}:
-                      {{ registerNumber }}</h3>
-                    {{ enterDate(loop.index0, 'multi') }}
-                  </div>
-                {% endfor %}
-              </div>
-            {% endif %} {# {% if registerNumbers.length > 1 %} #}
-          {% endif %} {#non-Sunderland stuff  #}
-        </fieldset>
-      </div>
+			{% if council.sixmonth == false %}
+				<p class="panel panel-border-wide">
+					Your permit will expire 1 year after its start date.
+				</p>
+			{% endif %}
 
-      {% if council.sixmonth == false %}
-        <p class="panel panel-border-wide">
-          Your permit will expire 1 year after its start date.
-        </p>
-      {% endif %}
+			<input type="submit" class="button" value="Next"/>
 
-      <input type="submit" class="button" value="Next"/>
+		</form>
 
-    </form>
-
-  </main>
+	</main>
 
 {% endblock %}

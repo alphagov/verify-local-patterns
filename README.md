@@ -83,14 +83,13 @@ Once you're happy with your changes, [make a pull request from your fork](https:
 
 Any questions, ask on Slack!
 
-## Localising the prototype (Step 2: Changing local options)
+### 5. Localising the prototype (Step 2: Changing local options)
 
 Some parts of the services are done differently in different places.
 
 We've built features for these things that councils can turn on in the prototype.
 
 Local options currently available:
-
 
 ### `name`
 
@@ -170,6 +169,18 @@ Local options currently available:
 **What it is**: Details about the parking boundaries for the user.
 **Where it's used**: Will display on the start page to tell the user where they can park.
 
+
+### 6. Localising the parking boundaries (Parking Permits only)
+
+The "Apply for a resident's parking permit" includes a map of where the user can park, with the parking boundary zones highlighted.
+
+To include this map in your prototype, follow these steps:
+
+ 1. Add a `showMap` value in `councils.json` for your council and set it to `true`.
+ 2. Add your boundaries data as an array of arrays to `app/assets/data/`yourCouncilString`BoundaryData.js`. Look at the other councils data in that folder for an example of the format.
+ 3. Add a list of streets the user can park in, marked up in HTML, to `app/views/service-patterns/parking-permit/streets`. See the files in that folder for an example of the format.
+
+The map should now display at `service-patterns/parking-permit/example-service/need-permit`.
 
 ---
 
