@@ -7,7 +7,7 @@
     {% if serviceName == pageTitle %}
     {% set startPage = true %}
     {% endif %}
-    <title>{{council.name}}: {{serviceName}} {{" " if startPage else " - " + pageTitle }} </title>
+    <title>{{serviceName}} {{" " if startPage else " - " + pageTitle }} - {{council.name}} </title>
 
     <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" /><!--<![endif]-->
     <!--[if IE 6]><link href="{{ asset_path }}stylesheets/govuk-template-ie6.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->

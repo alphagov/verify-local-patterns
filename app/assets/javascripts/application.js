@@ -67,7 +67,7 @@ $(document).ready(function() {
     }
     if (window.location.href.indexOf("loading-poa") > -1) {
         setTimeout(function() {
-            window.location.href = 'document-accepted';
+            window.location.href = 'doc-uploaded';
         }, 2000)
     }
 		if (window.location.href.indexOf("loading-new-postal-poa") > -1) {
