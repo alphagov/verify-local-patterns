@@ -17,21 +17,13 @@
 <div class="column-two-thirds">
   {% if contactChoice == 'Email' %}
     <p>You should receive a confirmation email within the next minute.</p>
-    <hr />
   {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
-    <hr />
   {% else %}
-    <p>You have not signed up to receive a confirmation email. <a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
-    <hr />
+    <p><a href="contact-preference">Sign up for confirmation and progress alerts.</a></p>
   {% endif %}
-
-  <h2 class="heading-medium">What happens next</h2>
-  {% if council.permitWait < 1 %}
-    <p>
-      You won't receive a physical permit. Wardens will check your vehicle's registration number.
-    </p>
-    {% endif %}
+	<hr>
+	<h2 class="heading-medium">Your application is now complete</h2>
 
     {% if unverifiedAddress %}
       {% set permitLength = '3 months' %}
@@ -55,7 +47,6 @@
         </p>
       <hr />
       {% endif %}{# end if not council.payOnline #}
-
 	 		{% if council.string == 'sunderland' and permitStartChoice == 'soon' %}
 	 			<p>
 					Your 1 year permit will usually arrive within 5 working days. It's valid until 31 July 2017.
@@ -69,9 +60,8 @@
 	 		{% endif %}
 
     	<p>
-      	We'll issue and send your parking permit to this address:
+      	We'll issue and send your parking permits to this address:
     	</p>
-
       <div class="panel panel-border-wide">
         <p>
           Jane Smith<br />
@@ -81,53 +71,47 @@
         </p>
         <a href="#">Provide a different address</a>
       </div>
-      {# {% if ((unverifiedAddress and (council.threeMonthPermit == 'print' or council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'print' or council.tempPermit == 'write'))) %} #}
-			{% if unverifiedAddress and council.tempPermit == 'print' %}
-        <p>
-          Until it arrives, you can print this <a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">temporary permit</a> and display it in your car window.
-        </p>
-      {# {% endif %}
-      {% if (unverifiedAddress and (council.threeMonthPermit == 'write')) or (not unverifiedAddress == true and (council.tempPermit == 'write')) %} #}
-			{% elif unverifiedAddress and council.tempPermit == 'write' %}
-        <p>
-          If you don't have a printer, write your reference number HDJ2123F with the words "temporary resident's permit" on a piece of paper and display it in your car window.
-        </p>
-      {% endif %}
+
   {% endif %}{# endif council.permitWait < 1#}
+	{% if council.tempPermit == 'print' or 'write' %}
+		<h2 class="heading-medium">Temporary permit</h2>
+		<p>
+			<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print your temporary permits</a>{% if council.tempPermit == 'write' %} – or write your reference number and the words "temporary resident's permit" on a piece of paper{% endif %}. Use this until your full permits arrive.
+		</p>
+	{% endif %}
 
   <h2 class="heading-medium">Using your permit</h2>
+	<p>
+		Display your permit clearly in the front window of your car to park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a>.
+	</p>
 
-  <ol class="list list-number">
-    <li>
-      Display your {{ permitLength or "1 year" }} permit clearly in your car's front window when you park in {{council.parkingBoundary}} to avoid a fine.
-    </li>
-    <li>
-      Park at any time in <a href="parking-boundary-map-success">{{council.parkingBoundary}}</a> with your permit displayed.
-    </li>
-		{% if permitLength == "3 months" %}
-			<li>
-				Apply for a full resident's permit 10 days before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
-			</li>
-		{% else %}
-	    <li>
-	      Renew your permit when it expires in {{ permitLength or "1 year" }} – you've signed up to receive a reminder email and text.
-	    </li>
-		{% endif %}
-  </ol>
-  <h2 class="heading-medium">Using your GOV.UK Verify account</h2>
+	{% if permitLength == "3 months" %}
+		<p>
+			Apply for a full resident's permit 10 days before your 3 month permit expires.{% if contactChoice %} We'll send you a message to remind you.{% endif %}
+		</p>
+	{% else %}
+		<p>
+      Renew your permit when it expires in {{ permitLength or "1 year" }} –
+			{% if renewalsChoice == 'Email' %}
+		    you've signed up to receive a reminder by email.
+		  {% elif renewalsChoice == 'Text' %}
+		    you've signed up to receive a reminder by text.
+			{% elif renewalsChoice == 'Post' %}
+					you've signed up to receive a reminder by post.
+		  {% else %}
+		    <a href="renewal-reminder">sign up for a renewal reminder.</a>
+		  {% endif %}
+		</p>
+	{% endif %}
 
-      <p>
-        You can use your GOV.UK Verify account for other government services including:
-      </p>
+	<hr>
 
-      <ul class="list-bullet list">
-        <li><a href="https://www.gov.uk/view-driving-licence">view or share your driving licence information</a></li>
-        <li><a href="https://www.gov.uk/update-company-car-details">check or update your company car tax</a></li>
-        <li><a href="https://www.gov.uk/log-in-file-self-assessment-tax-return/if-youre-already-registered">complete your Self Assessment</a></li>
-      </ul>
-
+	  <p>
+	    You can use your GOV.UK Verify account to prove your identity online for <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#government-services-you-can-use-with-govuk-verify">other government services</a>.
+		</p>
   </div>
 
 </main>
+</div>
 
 {% endblock %}

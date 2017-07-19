@@ -1,17 +1,17 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "You are not eligible to apply for an older person's bus pass in " + council.shortName %}
+{% set pageTitle = "You are not eligible to apply in " + council.shortName %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    Because you don't live within the boundaries of the city of {{council.shortName}}, you can't apply through this council's website.
+    Because you don't live in the {{council.shortName}} area, you can't apply through this council's website.
   </p>
   <p>
-    You should <a href="https://www.gov.uk/apply-for-elderly-person-bus-pass">visit GOV.UK to find which council to apply from.</a>
+    <a href="https://www.gov.uk/apply-for-elderly-person-bus-pass">Find your local council</a> on GOV.UK and apply for an older person's bus pass on their website.
   </p>
 
 </div>
