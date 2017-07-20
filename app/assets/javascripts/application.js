@@ -82,7 +82,7 @@ $(document).ready(function() {
     }
     if (window.location.href.indexOf("loading") > -1) {
         setTimeout(function() {
-            window.location.href = 'good-photo';
+            window.location.href = 'confirm-photo';
         }, 3000)
     }
     if (window.location.href.indexOf("loading-webcam-photo") > -1) {
