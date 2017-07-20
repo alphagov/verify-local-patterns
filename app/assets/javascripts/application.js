@@ -77,7 +77,7 @@ $(document).ready(function() {
 		}
     if (window.location.href.indexOf("loading-poage") > -1) {
         setTimeout(function() {
-            window.location.href = 'eligible-nonverify';
+            window.location.href = 'upload-complete';
         }, 2000)
     }
     if (window.location.href.indexOf("loading") > -1) {
