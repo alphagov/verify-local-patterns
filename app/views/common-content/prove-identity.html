@@ -36,9 +36,11 @@
 	            </li>
 	          {% endif %}
 					{% endif %}
+					{% if serviceString == 'parking-permit' and council.sixmonth %}
             <li>
               if you've moved in the last 3 months you could only get a 3 month permit today
             </li>
+					{% endif %}
             <li>
               creating an account takes about 5 minutes and the rest of the application is around 2 minutes
             </li>
