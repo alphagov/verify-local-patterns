@@ -9,7 +9,7 @@
       How do you want to receive your renewal reminder?
     </strong>
   </p>
-  {% if council.permitWait < 1 %}
+  {% if council.permitWait < 1 and item == "resident's parking permit" %}
     {% set nextPage = 'success-digi-permit' %}
   {% else %}
     {% set nextPage = 'success' %}
