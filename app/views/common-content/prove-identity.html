@@ -79,9 +79,11 @@
 		          </li>
 		        {% endif %}
 					{% endif %}
+					{% if serviceString == 'parking-permit' and council.sixmonth %}
           <li>
             when your permit arrives, it'll be a full 6 or 12 month permit
           </li>
+					{% endif %}
           <li>
             your application could take up to 20 minutes
           </li>
