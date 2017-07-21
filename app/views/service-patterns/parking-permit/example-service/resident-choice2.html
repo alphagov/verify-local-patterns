@@ -7,14 +7,16 @@
 
 <div class="column-two-thirds">
 
-
+  <p>
+    Choose the type of permit you need for parking in SR2 7LE.
+  </p>
   <form class="radio-nav">
 	  <div class="radio-with-bullets">
 	    <label class="block-label selection-button-radio" for="radio-1">
 	      <input id="radio-1" type="radio" name="radio-group" value="resident-start">
 				<span class="heading-small">Resident's permit</span>
 				<p>
-					I live in SR2 7LE.
+					I live here.
 				</p>
 	    </label>
 
@@ -22,7 +24,7 @@
 	      <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
 				<span class="heading-small">Visitor's permit</span>
 				<p>
-					I live in SR2 7LE, and have a visitor.
+					I live here, and have a visitor.
 				</p>
 	    </label>
 
@@ -31,9 +33,9 @@
 				<span class="heading-small">Trade and business permit</span>
 				<p>
           {% if council.string == 'sunderland' %}
-          I own a business in SR2 7LE.
+          I own a business here.
           {% else %}
-          I work in SR2 7LE.
+          I work here.
           {% endif %}
 				</p>
       </label>
