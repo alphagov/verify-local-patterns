@@ -31,7 +31,7 @@
     "limitByHousehold":true,
     "permitMax": 2,
     "permitsCosts": [52],
-    "sixmonth": true,
+    "sixmonth": false,
     "payOnline":true,
     "testChangeAddress":false,
     "userChooseStartDate":true,
