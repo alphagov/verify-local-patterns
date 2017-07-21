@@ -45,7 +45,7 @@ $(document).ready(function() {
 		if (window.location.href.indexOf("new-postal-address-proof") > -1) {
 				$('#file').change(function(e) {
 						// todo: check that file is actually chosen!!
-						window.location.href = 'loading-new-postal-poa';
+						window.location.href = 'loading-new-address-proof';
 				});
 		}
     if (window.location.href.indexOf("prove-age") > -1) {
@@ -70,7 +70,7 @@ $(document).ready(function() {
             window.location.href = 'doc-uploaded';
         }, 2000)
     }
-		if (window.location.href.indexOf("loading-new-postal-poa") > -1) {
+		if (window.location.href.indexOf("loading-new-address-proof") > -1) {
 				setTimeout(function() {
 						window.location.href = 'document-accepted-new-postal';
 				}, 2000)
