@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  User research for the parking start page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+          <a href="http://gov.uk/service-toolkit">Service toolkit</a>
+      </li>
+      <li>
+          <a href="/">Local government service patterns</a>
+      </li>
+      <li>
+          <a href="/service-patterns/concessionary-travel">Apply for an older person's concessionary travel pass</a>
+      </li>
+      <li>
+          User research
+      </li>
+    </ol>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Confirming address</h1>
+      <h2 class="heading-medium">What we learnt</h2>
+      <p>When confirming correct addresses, users have experienced few significant issues.</p>
+      <p>When presented with an incorrect address, users have iddentified this issue and responded appropriately. Having identified an incorrect address, some have questioned the need to re-enter their address, however all have completed this successfully.</p>
+      <h2 class="heading-medium">What we changed</h2>
+      <p>Early iterations of this interaction provided users with a page confirming their eligibility for a pass, however, it was observed that users had assumed they would be eligible when viewing this page. This page was removed, so that only those who were not elgible were informed of their eligibility status.</p>
+      <p>This change removed an unnecessary page for most users without any noticable side effects.</p>
+    </div>
+
+
+  </div>
+
+  
+</main>
+
+{% endblock %}

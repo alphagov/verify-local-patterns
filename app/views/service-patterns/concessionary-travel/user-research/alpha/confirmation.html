@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  User research for the parking start page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+          <a href="http://gov.uk/service-toolkit">Service toolkit</a>
+      </li>
+      <li>
+          <a href="/">Local government service patterns</a>
+      </li>
+      <li>
+          <a href="/service-patterns/concessionary-travel">Apply for an older person's concessionary travel pass</a>
+      </li>
+      <li>
+          User research
+      </li>
+    </ol>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Concessionary travel start page</h1>
+      <h2 class="heading-medium">What we learnt</h2>
+      <p>At the end of the transaction, users need a clear confirmation that they have completed the task. In addition to this, they also need to understand when and how they will recieve their pass.</p>
+      <p>Several users also wanted to know how and where they would be able to user their pass.</p>
+      <h2 class="heading-medium">What we changed</h2>
+      <p>Content has been added to this page to explain how the pass can be used.</p>
+      <p>Content has also been added to mention other potentially relevant services the user can access with their Verify account. This addresses an observed issue where some users thought the identity verification process was specifically for the bus pass application.</p>
+    </div>
+
+
+  </div>
+
+  
+</main>
+
+{% endblock %}
