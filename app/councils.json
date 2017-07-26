@@ -19,7 +19,7 @@
     "HMOonline": true,
     "string": "argleton",
     "DVLAAPIenforcement":false,
-		"makeColour":true,
+		"makeColour":false,
     "boundaryLink": "https://en.wikipedia.org/wiki/Argleton",
     "pploa1": true,
     "ctloa1": true
