@@ -20,7 +20,7 @@
   {% elif contactChoice == 'Text' %}
     <p>You should receive a confirmation text within the next minute.</p>
   {% else %}
-    <p><a href="contact-reference">Sign up for confirmation and progress alerts.</a></p>
+    <p><a href="contact-preference">Sign up for confirmation and progress alerts.</a></p>
   {% endif %}
 	<hr>
 	<h2 class="heading-medium">Your application is now complete</h2>
@@ -60,7 +60,7 @@
 	 		{% endif %}
 
     	<p>
-      	We'll issue and send your parking permit to this address:
+      	We'll issue and send your parking permits to this address:
     	</p>
       <div class="panel panel-border-wide">
         <p>
@@ -76,7 +76,7 @@
 	{% if council.tempPermit == 'print' or 'write' %}
 		<h2 class="heading-medium">Temporary permit</h2>
 		<p>
-			<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print a temporary permit</a>{% if council.tempPermit == 'write' %} – or write your reference number and the words "temporary resident's permit" on a piece of paper{% endif %}. Use this until your full permit arrives.
+			<a href="{{asset_path}}/TemporaryParkingPermit-sunderland.pdf">Print your temporary permits</a>{% if council.tempPermit == 'write' %} – or write your reference number and the words "temporary resident's permit" on a piece of paper{% endif %}. Use this until your full permits arrive.
 		</p>
 	{% endif %}
 
@@ -99,7 +99,7 @@
 			{% elif renewalsChoice == 'Post' %}
 					you've signed up to receive a reminder by post.
 		  {% else %}
-		    <a href="contact-notifications">sign up for a renewal reminder.</a>
+		    <a href="renewal-reminder">sign up for a renewal reminder.</a>
 		  {% endif %}
 		</p>
 	{% endif %}
@@ -107,7 +107,7 @@
 	<hr>
 
 	  <p>
-	    You can use your GOV.UK Verify account to prove your identity online for <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#government-services-you-can-use-with-govuk-verify">other government services</a>.
+	    You can use GOV.UK Verify to prove your identity online with <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify#government-services-you-can-use-with-govuk-verify">other government services</a>.
 		</p>
   </div>
 

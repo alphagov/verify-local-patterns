@@ -7,7 +7,7 @@
     {% if serviceName == pageTitle %}
     {% set startPage = true %}
     {% endif %}
-    <title>{{council.name}}: {{serviceName}} {{" " if startPage else " - " + pageTitle }} </title>
+    <title>{{serviceName}} {{" " if startPage else " - " + pageTitle }} - {{council.name}} </title>
 
   <!-- start govukish styles -->
 
@@ -96,7 +96,7 @@
       <div class="container">
         <img src="https://contact.camden.gov.uk/bootstrap-theme/images/ccpd_logo/footerLogo.png" alt="Camden logo">
         <div class="contact-link">
-          Copyright © 2017 <a href="http://www.camden.gov.uk/privacy">Disclaimer and privacy statement</a>
+          Copyright © 2017 <a href="privacy-policy">Privacy policy</a>
         </div>
       </div>
     </footer>

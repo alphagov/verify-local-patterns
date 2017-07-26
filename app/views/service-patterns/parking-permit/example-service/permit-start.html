@@ -40,7 +40,7 @@
 		{% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
 			{% set nextPage = 'pre-payment' %}
 		{% else %}
-			{% set nextPage = 'contact-reference' %}
+			{% set nextPage = 'contact-preference' %}
 		{% endif %}
 
 		<form action="{{ nextPage }}" method="post">
@@ -71,13 +71,13 @@
 						<div class="panel panel-border-narrow js-hidden" id="other-date">
 							{{ enterDate(0, 'other') }}
 						</div>
-						{% if registerNumbers.length > 1 %}
+						{% if registerNumber.length > 1 %}
 							<label class="block-label selection-button-radio" for="permitStartChoice-3" data-target="multi-dates">
 								<input id="permitStartChoice-3" type="radio" name="permitStartChoice" value="multi">
 								Different dates for different vehicles
 							</label>
 							<div class="panel panel-border-narrow js-hidden" id="multi-dates">
-								{% for registerNumber in registerNumbers %}
+								{% for registerNumber in registerNumber %}
 									<div class="form-group">
 										<h3 class="heading-medium">Vehicle
 											{{loop.index0 + 1 }}:

@@ -1,0 +1,11 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Your personal data" %}
+
+{% block content %}
+
+  {% set serviceString = "parking-permit" %}
+  {% include 'common-content/personal-data.html' %}
+
+{% endblock %}

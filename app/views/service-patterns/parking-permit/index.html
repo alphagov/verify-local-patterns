@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set pageTitle = "Apply for a resident's parking permit" %}
 {% block page_title %}
-    {{ pageTitle }}
+  {{ pageTitle }}
 {% endblock %}
 {% block content %}
 
@@ -9,73 +9,72 @@
     {% include "includes/phase_banner_alpha.html" %}
     {% include "includes/toolkit_breadcrumbs.html" %}
 
-        <h1 class="heading-xlarge">
-            <span class="strapline">Service pattern for</span>
-            {{ pageTitle }}
-        </h1>
-        {% include "includes/index_metadata.html" %}
+    <h1 class="heading-xlarge">
+      <span class="strapline">Service pattern for</span>
+      {{ pageTitle }}
+    </h1>
+    {% include "includes/index_metadata.html" %}
 
-        <div class="grid-row" data-module="highlight-active-section-heading">
-            <div class="column-third">
+    <div class="grid-row" data-module="highlight-active-section-heading">
+      <div class="column-third">
 
-                <!--  Page contents -->
-                <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
-                    <h2 class="heading-small page-contents__title">Page contents:</h2>
-                    <ul class="page-contents__list">
-                        <li>
-                            <a href="#example-service">Example service</a>
-                        </li>
-                        <li>
-                            <a href="#user-need">What is the user need?</a>
-                        </li>
-                        <li>
-                            <a href="#council-need">What do councils need?</a>
-                        </li>
-                        <li>
-                            <a href="#user-journey">What is the user journey?</a>
-                        </li>
-                    </ul>
-                </div>
+        <!--  Page contents -->
+        <div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+          <h2 class="heading-small page-contents__title">Page contents:</h2>
+          <ul class="page-contents__list">
+            <li>
+              <a href="#example-service">Example service</a>
+            </li>
+            <li>
+              <a href="#user-need">What is the user need?</a>
+            </li>
+            <li>
+              <a href="#council-need">What do councils need?</a>
+            </li>
+            <li>
+              <a href="#user-journey">What is the user journey?</a>
+            </li>
+          </ul>
+        </div>
 
-            </div>
-            <div class="column-two-thirds">
-                <p>
-                    This page is for people who work in local authorities. It outlines a common pattern used for providing resident's parking permits services effectively.
-                    <a href="/">Read more about service patterns.</a>
-                </p>
+      </div>
+      <div class="column-two-thirds">
+        <p>
+          This page is for people who work in local authorities. It outlines a common pattern for providing resident's parking permits services effectively online, based on user needs.
+          <a href="/">Read more about service patterns.</a>
+        </p>
 
-                <h2 class="heading-medium" id="example-service">Example service</h2>
-                <p>
-                  While reading the service pattern description, explore <a href="parking-permit/example-service/start-page">the example council service</a>.
-                </p>
+        <h2 class="heading-medium" id="example-service">Example service</h2>
+        <p>
+          As you read the service pattern description, explore
+          <a href="parking-permit/example-service/start-page">the example council service</a>.
+        </p>
 
                 <h2 class="heading-medium" id="user-need">What is the user need?</h2>
                 <p>
                     Residents need a place to park their car near their home. Parking permit services make sure there are parking spaces available for residents. They make it illegal to park in some areas without a permit.
                 </p>
-                <p>
-                  We recommend putting users first when designing your parking permit service.
-                </p>
-                <p><a href="/service-patterns/parking-permit/user-research/discovery">Understand other user needs for this service</a></p>
+                <p><a href="/service-patterns/parking-permit/user-research/discovery/user-needs">Understand other user needs for this service</a></p>
 
-                <h2 class="heading-medium" id="council-need">What does your service need from users to deliver this service?</h2>
-                <p>Depending on your local authority's needs, the user may be asked to provide:</p>
-                <ul class="list list-bullet">
-                  <li>
-                    the postcode of the area where they want to park
-                  </li>
-                  <li>
-                      proof they live in the area
-                  </li>
-                  <li>
-                      the registration number of the vehicle to be permitted
-                  </li>
-                  <li>
-                      payment (supports the cost of the service and may vary from council to council and within the service, depending on for example vehicle and parking zone)
-                  </li>
-                </ul>
+        <h2 class="heading-medium" id="council-need">What does your service need from users to deliver this service?</h2>
+        <p>Depending on your local authority's needs, users may be asked to provide:</p>
+        <ul class="list list-bullet">
+          <li>
+            the postcode of the area where they want to park
+          </li>
+          <li>
+            proof they live in the area
+          </li>
+          <li>
+            the registration number of the vehicle to be permitted
+          </li>
+          <li>
+            payment (to support the cost of the service – may vary from council to council and within the service, for example depending on parking zone)
+          </li>
+        </ul>
 
                 <h2 class="heading-medium" id="user-journey">What is the user journey?</h2>
+								{% include 'includes/pp-user-journey-diagram.html' %}
                 <p>
                     These are the steps users should go through.
                 </p>
@@ -83,21 +82,24 @@
                   <summary><span class="summary">1. Awareness</span></summary>
                   <div class="panel panel-border-narrow">
                     <p>
-                      Users should find out about the parking permits service before they need to park their car. This could be through:
+                      Users need to be made aware the need for a permit and also how to apply for that permit so that they are able to recieve the permit before they need to park their car. This could be through:
                     </p>
                     <ul class="list list-bullet">
                       <li>
-                      council messaging when they sign up for council tax payments
+                      direct mail to residents in areas affected by new parking schemes
                       </li>
                       <li>
-                      estate agent information when they buy their house
+                      messaging to users new users of other council services in the area
+                      </li>
+                      <li>
+                      information provided to new home owners or tenants in parking areas
                       </li>
                       <li>
                       street signage
                       </li>
                       </ul>
                     <p>
-                      Your service needs to make sure correct information is being provided through all channels within your control.
+                      Your service needs to make sure correct information is being provided through all appropriate channels within your control and that this information addresses both the need for a permit and how to apply.
                     </p>
                     </div>
                         </details>
@@ -128,49 +130,36 @@
                         <a href="parking-permit/example-service/start-page">Explore the example council service start page</a>
                       </p>
                       <p>
-                          <a href="user-research/discovery">
+                          <a href="/service-patterns/parking-permit/user-research/alpha/start-page">
                         Access related user research</a>
                       </p>
                     </div>
                   </details>
                   <details>
-                    <summary><span class="summary">4. Routing to the right boundary</span></summary>
+                    <summary><span class="summary">4. Finding the right parking zone</span></summary>
                     <div class="panel panel-border-narrow">
                       <p>
-                        You need to find out where the user wants to park your service can:
+                        The service asks for the postcode of where the user wants to park, so that it can:
                       </p>
                       <ul class="list list-bullet">
                         <li>
-                          give the user a permit for the right parking boundary
+                          identify which parking zone the user will need a permit for
                         </li>
                         <li>
-                          let the user know if there are no permits available for the area where they want to park
+                          check availability of permits in the parking zone and handle the application accordingly
                         </li>
                         <li>
-                          check the user is a resident in the parking boundary where they want to park
+                          check the user is a resident within the parking zone
                         </li>
                       </ul>
                       <p>
-                        The best way to do this is through a postcode lookup tool, as this is the easiest and fastest way for users to find and understand information they need about where they can park.
-                      </p>
-                      <p>
-                        It should be done at this early point in the user journey so that the user doesn't go through unnecessary effort.
+                        These checks take place early in the user journey to ensure the application is for the correct permit.
                       </p>
                       <p>
                         <a href="parking-permit/example-service/check-boundary">Explore the where do you want to park example council page</a>
                       </p>
                       <p>
-                          <a href="user-research/discovery">
-                        Access related user research</a>
-                      </p>
-                      <p>
-                        At this point your online service should also check if there are permits available in the area the user wants to park in. If permits are available, move the user onto the next step. If not, the council should tell the user what their alternative options are, based on the nearest boundaries with permits available.
-                      </p>
-                      <p>
-                        <a href="parking-permit/example-service/no-permits">Explore the no permits available example council page</a>
-                      </p>
-                      <p>
-                          <a href="user-research/discovery">
+                          <a href="/service-patterns/parking-permit/user-research/alpha/finding-right-zone">
                         Access related user research</a>
                       </p>
                     </div>
@@ -179,33 +168,37 @@
                     <summary><span class="summary">5. Picking the right permit type</span></summary>
                       <div class="panel panel-border-narrow">
                       <p>
-                        When the council knows where the user wants to park and that permits are available, they can tell the user about the parking boundary and ask if they are a resident of that area.
+                        Once we know which zone, we can ask what kind of permit the user needs.
                       </p>
                       <a href="parking-permit/example-service/resident-choice">Explore the resident or visitor example council page</a>
                       <p>
-                          <a href="user-research/discovery">
+                          <a href="/service-patterns/parking-permit/user-research/alpha/picking-right-permit">
                         Access related user research</a>
                       </p>
+
+                      <p>
+                        At this point the service should also check availability of the selected permit in the user's parking zone. If permits are not available, the service should process the application accordingly.
+                      </p>
+                      <p>
+                        <a href="parking-permit/example-service/no-permits">Explore the no permits available example council page</a>
+                      </p>
+                      <p>
+                          <a href="/service-patterns/parking-permit/user-research/alpha/no-permit">
+                        Access related user research</a>
+                      </p>
+
+
                     </div>
                   </details>
                   <details>
                     <summary><span class="summary">6. Resident's start page </span></summary>
                     <div class="panel panel-border-narrow">
                       <p>
-                        Now the user is in the right place, this page should communicate:
+                        Now that the zone and permit type are known, this page should communicate:
                       </p>
                       <ul class="list list-bullet">
                         <li>
-                          types of permit users can apply for (if applicable)
-                        </li>
-                        <li>
                           permit eligibility requirements
-                        </li>
-                        <li>
-                          where the permit they are applying for will allow them to park
-                        </li>
-                        <li>
-                          at what time the permit they are applying for will allow them to park
                         </li>
                         <li>
                           how much the permit will cost
@@ -213,57 +206,60 @@
                         <li>
                           how long the permit is valid for
                         </li>
-                        <li>what information they need about the car for example vehicle registration number</li>
+                        <li>
+                          what needs to be provided to complete the application
+                        </li>
+
+                        <li>
+                          where the permit will allow them to park
+                        </li>
+                        <li>
+                          when the permit will allow them to park
+                        </li>
                         <li>
                           how long the process usually takes
                         </li>
                         <li>
                           what to do if they need assistance with the application
                         </li>
-                        <li>if the service differs from this pattern, include any other information the user needs to provide</li>
                         </ul>
-                        <a href="parking-permit/example-service/resident-start">Explre the example council resident's start page</a>
+                        <a href="parking-permit/example-service/resident-start">Explore the example council resident's start page</a>
                         <p>
-                            <a href="user-research/discovery">
+                            <a href="/service-patterns/parking-permit/user-research/alpha/resident-start-page">
                           Access related user research</a>
                         </p>
                     </div>
                   </details>
                   <details>
-                    <summary><span class="summary">7. Prove you are a resident </span></summary>
+                    <summary><span class="summary">7. Proving you are a resident </span></summary>
                     <div class="panel panel-border-narrow">
-                                {% set serviceString = 'parking-permit' %}
-                                {% include 'common-content/proving-identity.html' %}
-                    </li>
-                    </ol>
+                    {% set serviceString = 'parking-permit' %}
+                    {% include 'common-content/proving-identity.html' %}
                   </div>
                   </details>
                   <details>
-                    <summary><span class="summary">8. Confirm address and eligibility</span></summary>
+                    <summary><span class="summary">8. Confirm address details</span></summary>
                     <div class="panel panel-border-narrow">
                         <p>
-                            GOV.UK Verify will send the council the user's address, as supplied by the user's chosen identity provider. When the user returns from the GOV.UK Verify process, your service's webpage should ask them to confirm if this is their current address.
+                            GOV.UK Verify will send the council the user's address, as supplied by the user's chosen identity provider. When the user returns from the GOV.UK Verify the service should ask them to confirm if this is their current address.
                         </p>
 
                         <a href="parking-permit/example-service/confirm-address">Explore the confirm name and address example council page</a>
-                        <p>
-                            <a href="user-research/discovery">
-                          Access related user research</a>
-                        </p>
+
                         <p>
                             If the user says the address supplied through GOV.UK Verify is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The user should then be asked to enter their current address and be warned that they must not
                             enter false information.
                         </p>
                         <a href="parking-permit/example-service/unverified-address">Explore the enter current address example council page</a>
                         <p>
-                            <a href="user-research/discovery">
-                          Access related user research</a>
-                        </p>
-                        <p>
                             If the parking permit your council issues is physical, your service can gain extra confidence that the applicant's address is current by mailing the permit to the address they've confirmed in their online application. Mention you'll be using the address for this purpose on the confirmation page.
                         </p>
                         <p>
                             If the permit your council issues is digital and your serice wants extra confidence of eligibility, you can issue a short-term permit, for example for 3 months. After this time, the user's identity provider should have the new address and the user can re-apply using GOV.UK Verify.
+                        </p>
+                        <p>
+                            <a href="/service-patterns/parking-permit/user-research/alpha/confirm-details">
+                          Access related user research</a>
                         </p>
                     </div>
                   </details>
@@ -272,14 +268,10 @@
                     <div class="panel panel-border-narrow">
                       <h4 class="heading-small">a. Does the user live in the area?</h4>
                       <p>
-                        At this point your service should check if the user lives in the eligible area, and if they do show them a message confirming they are eligible. This can be done by checking the user's address against your council's database of parking permit zones.
+                        At this point your service should check if the user lives in the eligible area, and notify them if they are not eligible. This can be done by checking the user's address against your council's database of parking permit zones.
                       </p>
                       <p>
-                      <a href="parking-permit/example-service/not-eligible-address">Explore the not eligible due to address example council page</a>
-                    </p>
-                      <p>
-                      <a href="user-research/discovery">
-                        Access related user research</a>
+                        <a href="parking-permit/example-service/not-eligible-address">Explore the not eligible due to address example council page</a>
                       </p>
 
                       <h4 class="heading-small">b. Does the user or the user's address already have a permit?</h4>
@@ -290,17 +282,7 @@
                       <a href="parking-permit/example-service/not-eligible-permits-exceeded">Explore the not eligble due to number of permits example council page</a>
                       </p>
                       <p>
-                      <a href="user-research/discovery">
-                        Access related user research</a>
-                      </p>
-                      <h4 class="heading-small">c. Is the user eligible for multiple permits?</h4>
-                      <p>
-                      If the user is eligible for multiple permits, for example visitors permits, your service should ask which type of permit the user would like to apply for.
-                      </p>
-                      <p>
-                      <a href="parking-permit/example-service/eligible-for-many">Explore the choose permit example council page</a>
-                      <p>
-                      <a href="user-research/discovery">
+                      <a href="/service-patterns/parking-permit/user-research/alpha/checking-eligibility">
                         Access related user research</a>
                       </p>
                       </p>
@@ -313,37 +295,53 @@
                           Some councils require the permit to be associated with a specific vehicle.
                         </p>
                         <p>
-                          If your service requires this for enforcement purposes, your service's webpage needs to specify that this is why you need the data.
+                          If your service requires this for enforcement purposes, the service needs to specify that this is why you need the data.
                         </p>
                         <p>
                           In some councils, the permit price varies depending on the vehicle type, emissions, make or other conditions.
                         </p>
                         <p>
-                          If your council requires this information, your service can look it up using DVLA's vehicle details API. In this case, the page should explain to users that their registration number will be used for this purpose as well.
+                          If your council requires this information, your service can look it up using DVLA's vehicle details API. In this case, the service should explain to users that their registration number will be used for this purpose as well.
                         </p>
+                        <p>Some councils require users to provide either their V5C number, or a scan or the V5C form. If your council requires this information the service should explain to users why this information is required and how it will be used.</p>
                         <p>
                             <a href="parking-permit/example-service/enter-reg">Explore the enter registration number example council page</a>
 
                         </p>
                         <p>
-                        <a href="user-research/discovery">
+                            <a href="parking-permit/example-service/v5c-upload">Explore the V5C upload example council page</a>
+
+                        </p>
+                        <p>
+                            <a href="parking-permit/example-service/v5c-number">Explore the entering a V5C number example council page</a>
+
+                        </p>
+                        <p>
+                        <a href="/service-patterns/parking-permit/user-research/alpha/vehicle-registration">
                           Access related user research</a>
                         </p>
                     </div>
                   </details>
                       <details>
-                        <summary><span class="summary">11. Choose a permit</span></summary>
+                        <summary><span class="summary">11. Choosing permit length</span></summary>
                         <div class="panel panel-border-narrow">
                       <p>
                         This page should only be displayed if the user has a choice of permit at this point. Generally local councils give users a choice of 6 month or 12 month permits.
                       </p>
                       <p>
-                        If your sercvice has used the DVLA vehicle details API, it should display the returned data to the user and explain that the vehicle price has been calculated based on that information.
+                        If your service has used the DVLA vehicle details API, it should display the returned data to the user and explain that the vehicle price has been calculated based on that information.
+                      </p>
+                      <a href="/service-patterns/parking-permit/example-service/permit-length">
+                        Explore the choosing a permit example council page</a>
+                      </p>
+                      <p>
+                      <a href="/service-patterns/parking-permit/user-research/alpha/choose-duration">
+                        Access related user research</a>
                       </p>
                     </div>
                   </details>
                       <details>
-                        <summary><span class="summary">12. Pay</span></summary>
+                        <summary><span class="summary">12. Paying for a permit</span></summary>
                         <div class="panel panel-border-narrow">
                       <p>
                         Permit fees will vary based on fee calculation rules determined by each individual council. In some cases the permit may be issued free of charge, for example, if the resident is the first member of the household to apply.
@@ -352,7 +350,7 @@
                         <a href="parking-permit/example-service/pre-payment">Explore accepting payments example council pages</a>
                       </p>
                       <p>
-                      <a href="user-research/discovery">
+                      <a href="/service-patterns/parking-permit/user-research/alpha/paying-for-permit">
                         Access related user research</a>
                       </p>
                       <p>
@@ -388,7 +386,10 @@
                   <summary><span class="summary">14. Contacting users</span></summary>
                   <div class="panel panel-border-narrow">
                     <p>
-                      You may want to capture users contact details so they can be contacted if things go wrong with their application, or for use in future for renewal reminders.
+                      Users need to be updated on the process of their application. They need to know when their permit is on its way, and if there are any problems with their application.
+                    </p>
+                    <p>
+                      Users need to be reminded when its time to renew their permit.
                     </p>
                     <p>
                       Allow your users to select their prefered contact method and only contact them in this way in future.
@@ -397,7 +398,7 @@
                       <a href="parking-permit/example-service/contact-notifications">Explore the preferred contact details example council page</a>
                     </p>
                       <p>
-                      <a href="user-research/discovery">
+                      <a href="/service-patterns/parking-permit/user-research/alpha/contact-details">
                         Access related user research</a>
                     </p>
                   </div>

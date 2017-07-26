@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Resident's permit start page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+          <a href="http://gov.uk/service-toolkit">Service toolkit</a>
+      </li>
+      <li>
+          <a href="/">Local government service patterns</a>
+      </li>
+      <li>
+          <a href="/service-patterns/parking-permit">Apply for a resident's parking permit</a>
+      </li>
+      <li>
+          User research
+      </li>
+    </ol>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Resident's permit start page</h1>
+
+
+      <h2 class="heading-medium">What we learnt</h2>
+      <p>By the time users leave this page and commit to applying for their permit, they need to have a clear understanding of what they are committing to and what they will get in return. This understanding allows users to start the online application process with confidence.</p>
+      <p>Earlier versions of this page presented this information in a single bullet list, however, this large block of relatively undifferentiated content was often not read by users.</p>
+      <p>There remains an unresolved issue about houses of multiple occupancy. Residents of these properties are usually eligible for free permits, however this technical terminology is poorly understood and confuses many users.</p>
+      <h2 class="heading-medium">What we changed</h2>
+      <p>The information that users need to start the application confidently has been broken down and is now delivered in smaller chunks.</p>
+      <p>Information about the parking zone is now provided on an earlier page, and the remaining information is provided in smaller chunks, with appropriate sub-headings.</p>
+    </div>
+
+
+  </div>
+
+
+</main>
+
+{% endblock %}

@@ -36,7 +36,7 @@ $(document).ready(function() {
             window.location.href = 'loading';
         });
     }
-    if (window.location.href.indexOf("add-poa") > -1) {
+    if (window.location.href.indexOf("prove-address") > -1) {
         $('#file').change(function(e) {
             // todo: check that file is actually chosen!!
             window.location.href = 'loading-poa';
@@ -45,10 +45,10 @@ $(document).ready(function() {
 		if (window.location.href.indexOf("new-postal-address-proof") > -1) {
 				$('#file').change(function(e) {
 						// todo: check that file is actually chosen!!
-						window.location.href = 'loading-new-postal-poa';
+						window.location.href = 'loading-postal-address-proof';
 				});
 		}
-    if (window.location.href.indexOf("add-poage") > -1) {
+    if (window.location.href.indexOf("prove-age") > -1) {
         $('#file').change(function(e) {
             // todo: check that file is actually chosen!!
             window.location.href = 'loading-poage';
@@ -67,22 +67,22 @@ $(document).ready(function() {
     }
     if (window.location.href.indexOf("loading-poa") > -1) {
         setTimeout(function() {
-            window.location.href = 'document-accepted';
+            window.location.href = 'doc-uploaded';
         }, 2000)
     }
-		if (window.location.href.indexOf("loading-new-postal-poa") > -1) {
+		if (window.location.href.indexOf("loading-postal-address-proof") > -1) {
 				setTimeout(function() {
 						window.location.href = 'document-accepted-new-postal';
 				}, 2000)
 		}
     if (window.location.href.indexOf("loading-poage") > -1) {
         setTimeout(function() {
-            window.location.href = 'eligible-nonverify';
+            window.location.href = 'upload-complete';
         }, 2000)
     }
     if (window.location.href.indexOf("loading") > -1) {
         setTimeout(function() {
-            window.location.href = 'good-photo';
+            window.location.href = 'confirm-photo';
         }, 3000)
     }
     if (window.location.href.indexOf("loading-webcam-photo") > -1) {

@@ -1,41 +1,41 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Is your bus pass photo on this computer?" %}
+{% set pageTitle = "Do you have a photo like this stored on this computer?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
+    {% include 'common-content/example-photo.html' %}
+
       <form>
         <div class="form-group">
-          <fieldset>
+          <fieldset class="inline">
 
             <legend class="visually-hidden">
-              Is your photo on this computer?
+              Do you have a photo like this?
             </legend>
 
             <label class="block-label selection-button-radio" data-target="upload-file" for="upload-file">
               <input id="upload-file" type="radio" name="radio-group" value="upload">
-              Yes
+              Yes, I have a photo like this
             </label>
 
-            <label class="block-label selection-button-radio" data-target="no" for="no">
-              <input id="no" type="radio" name="radio-group" value="do-you-have-camera" class="in-progress">
-              No
-            </label>
-
-            <label class="block-label selection-button-radio" data-target="dunno" for="dunno">
-              <input id="dunno" type="radio" name="radio-group" value="do-you-have-camera" class="in-progress">
-              I'm not sure
+            <label class="block-label selection-button-radio" data-target="webcam" for="webcam">
+              <input id="webcam" type="radio" name="radio-group" value="have-device" class="in-progress">
+              No, I need to take a photo
             </label>
 
           </fieldset>
         </div>
         <div class="form-group">
-          <button id="photo-label-text" class="button">Continue</button>
+            <button class="button">Continue</button>
+        </div>
+
         </div>
       </form>
+
 </div>
 
 {% endblock %}

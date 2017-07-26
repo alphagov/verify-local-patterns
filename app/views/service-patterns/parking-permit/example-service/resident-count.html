@@ -12,12 +12,21 @@
     <p>
       You{% if council.limitByHousehold %}r household{% endif %} can have a maximum of {{council.permitMax}} resident's parking permits.
     </p>
+    <p>
+      These can be only used by:
+      <ul class="list list-bullet">
+  <li>people who're living with you at your address</li>
+  <li>you if you've got more than one car you need to park on the street</li>
+</ul>
+
+    </p>
 
     {% if council.testv5cnumber or council.testv5cScan %}
     <p>
       You must be the owner of the vehicles, as stated on your V5C document.
     </p>
     {% endif %}
+
 
       <div class="form-group">
         <fieldset>
@@ -72,6 +81,7 @@
           Permits can be for 6 or 12 months.
         {% endif %}
       </p>
+
     </div>
 
     <div class="form-group">

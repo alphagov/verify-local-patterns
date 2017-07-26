@@ -1,0 +1,32 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for an older person's bus pass" %}
+{% set pageTitle = "You are not eligible for an older person's bus pass" %}
+
+{% block content %}
+
+  <div class="column-two-thirds">
+
+    <p>
+      It looks like you already have a bus pass from
+      {{ council.name }}, so you can't apply for a new one.
+    </p>
+    <p>
+      However you can:
+      <ul class="list list-bullet">
+        <li>
+          <a href="#">renew an expired bus pass service</a>
+        </li>
+        <li>
+          <a href="#">replace a lost or stolen bus pass service</a>
+        </li>
+      </ul>
+    </p>
+    <p>
+      <a href="#">Contact us</a>
+      if you have any questions.
+    </p>
+
+  </div>
+
+{% endblock %}

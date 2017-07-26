@@ -5,78 +5,76 @@
 
 {% block content %}
 
-<div class="column-two-thirds">
+  <div class="column-two-thirds">
 
+    {% set vehicleColours = ['Red', 'Blue', 'Silver', 'Blue'] %}
+    {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
 
-  {% set vehicleColours = ['Red', 'Blue', 'Silver', 'Blue'] %}
-  {% set vehicleMakes = ['LAND ROVER', 'FORD', 'VOLKSWAGEN', 'BMW'] %}
-
-{% if council.makeColour == true %}
-  <table>
-      <tr>
-        <th>Registration number</th>
-        <th>{{ registerNumber }}</th>
-      </tr>
-      <tr>
-        <th>Vehicle colour</th>
-        <th>{{ vehicleColours[loop.index - 1] }}</th>
-      </tr>
-      <tr>
-        <th>Vehicle make</th>
-        <th>{{ vehicleMakes[loop.index - 1] }}</th>
-      </tr>
-  </table>
-  {% else %}
-  <table>
-      <tr>
-        <th>Registration number</th>
-        <th>{{ registerNumber }}</th>
-      </tr>
-      <tr>
-  </table>
-  {% endif %}
-
-  <h2 class="heading-medium">Are your vehicle details correct?</h2>
-
-  <form class="form">
-    <div class="form-group">
-      <fieldset class="inline">
-
-        <legend class="visually-hidden">Are these vehicle details correct?</legend>
-
-        <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="confirmVehicleDetails" value="Yes">
-          Yes
-        </label>
-        <label class="block-label selection-button-radio" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="confirmVehicleDetails" value="No">
-          No
-        </label>
-
-      </fieldset>
-    </div>
-
-    {% if council.testv5cScan %}
-      {% set nextPage = 'v5c-upload' %}
-    {% elif council.testv5cnumber %}
-      {% set nextPage = 'v5c-number' %}
-    {% elif unverifiedAddress %}
-      {% set nextPage = 'pre-payment' %}
-    {% elif council.userChooseStartDate %}
-      {% set nextPage = 'permit-start' %}
-    {% elif council.sixmonth %}
-      {% set nextPage = 'permit-length' %}
-    {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
-      {% set nextPage = 'pre-payment' %}
+    {% if council.makeColour == true %}
+      <table>
+        <tr>
+          <th>Registration number</th>
+          <th>{{ registerNumbers[loop.index - 1] }}</th>
+        </tr>
+        <tr>
+          <th>Vehicle colour</th>
+          <th>{{ vehicleColours[loop.index - 1] }}</th>
+        </tr>
+        <tr>
+          <th>Vehicle make</th>
+          <th>{{ vehicleMakes[loop.index - 1] }}</th>
+        </tr>
+      </table>
     {% else %}
-      {% set nextPage = 'contact-reference' %}
-    {% endif %}
+      <table>
+        <tr>
+          <th>Registration number</th>
+          <th>{{ registerNumbers[loop.index - 1] }}</th>
+        </tr>
+        <tr></table>
+      {% endif %}
 
-    <div class="form-group">
-      <a class="button" href="{{ nextPage }}">Next</a>
-    </div>
-  </form>
+      <h2 class="heading-medium">Are your vehicle details correct?</h2>
 
-</main>
+      <form class="form">
+        <div class="form-group">
+          <fieldset class="inline">
 
-{% endblock %}
+            <legend class="visually-hidden">Are these vehicle details correct?</legend>
+
+            <label class="block-label selection-button-radio" for="radio-inline-1">
+              <input id="radio-inline-1" type="radio" name="confirmVehicleDetails" value="Yes">
+              Yes
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-2">
+              <input id="radio-inline-2" type="radio" name="confirmVehicleDetails" value="No">
+              No
+            </label>
+
+          </fieldset>
+        </div>
+
+        {% if council.testv5cScan %}
+          {% set nextPage = 'v5c-upload' %}
+        {% elif council.testv5cnumber %}
+          {% set nextPage = 'v5c-number' %}
+        {% elif unverifiedAddress %}
+          {% set nextPage = 'pre-payment' %}
+        {% elif council.userChooseStartDate %}
+          {% set nextPage = 'permit-start' %}
+        {% elif council.sixmonth %}
+          {% set nextPage = 'permit-length' %}
+        {% elif council.permitsCosts[0] > 0 or council.permitsCosts.length > 1 %}
+          {% set nextPage = 'pre-payment' %}
+        {% else %}
+          {% set nextPage = 'contact-preference' %}
+        {% endif %}
+
+        <div class="form-group">
+          <a class="button" href="{{ nextPage }}">Next</a>
+        </div>
+      </form>
+
+    </main>
+
+  {% endblock %}

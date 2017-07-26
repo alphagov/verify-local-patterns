@@ -1,0 +1,21 @@
+const vehicleColours = [
+	"Multiple",
+	"Yellow",
+	"White",
+	"Turquoise",
+	"Silver",
+	"Red",
+	"Pink",
+	"Orange",
+	"Purple",
+	"Maroon",
+	"Grey",
+	"Green",
+	"Gold",
+	"Cream",
+	"Brown",
+	"Bronze",
+	"Blue",
+	"Black",
+	"Beige"
+]

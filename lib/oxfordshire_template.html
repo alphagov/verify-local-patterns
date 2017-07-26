@@ -7,7 +7,7 @@
     {% if serviceName == pageTitle %}
     {% set startPage = true %}
     {% endif %}
-    <title>{{council.name}}: {{serviceName}} {{" " if startPage else " - " + pageTitle }} </title>
+    <title>{{serviceName}} {{" " if startPage else " - " + pageTitle }} - {{council.name}} </title>
 
   <!-- start govukish styles -->
 
@@ -119,7 +119,7 @@
 
               <ul>
 
-                <li><a href="https://identityassurance.blog.gov.uk/2015/09/11/gov-uk-verify-identity-assurance-principles/">Privacy policy</a></li>
+                <li><a href="privacy-policy">Privacy policy</a></li>
                 <li><a href="">Access to information</a></li>
                 <li><a href="">Terms and conditions</a></li>
                 <li><a href="">How we use cookies</a></li>

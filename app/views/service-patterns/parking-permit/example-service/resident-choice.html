@@ -8,40 +8,45 @@
 <div class="column-two-thirds">
 
 
-  <form class="radio-nav">
-	  <div class="radio-with-bullets">
-	    <label class="block-label selection-button-radio" for="radio-1">
-	      <input id="radio-1" type="radio" name="radio-group" value="resident-start">
-				<span class="heading-small">Resident's permit</span>
-				<p>
-					I live in {{council.parkingBoundary}}
-				</p>
-	    </label>
+    <p>
+      {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>. You'll need a permit to park.</p>
+    <p>
+      Select your permit type:
+    </p>
+    <form class="radio-nav">
+  	  <div class="radio-with-bullets">
+  	    <label class="block-label selection-button-radio" for="radio-1">
+  	      <input id="radio-1" type="radio" name="radio-group" value="resident-start">
+  				<span class="heading-small">Resident's permit</span>
+  				<p>
+  					I live here.
+  				</p>
+  	    </label>
 
-	    <label class="block-label selection-button-radio" for="radio-2">
-	      <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
-				<span class="heading-small">Visitor's permit</span>
-				<p>
-					I live here, and have a visitor
-				</p>
-	    </label>
+  	    <label class="block-label selection-button-radio" for="radio-2">
+  	      <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
+  				<span class="heading-small">Visitor's permit</span>
+  				<p>
+  					I live here, and have a visitor.
+  				</p>
+  	    </label>
 
-      <label class="block-label selection-button-radio" for="radio-3">
-        <input id="radio-3" type="radio" name="radio-group" value="business-start">
-				<span class="heading-small">Trade and business permit</span>
-				<p>
-          {% if council.string == 'sunderland' %}
-          I own a business in {{council.parkingBoundary}}
-          {% else %}
-          I work in {{council.parkingBoundary}}
-          {% endif %}
-				</p>
-      </label>
-		</div>
-	  <div class="form-group">
-	    <button class="button">Continue</button>
-	  </div>
-	</form>
+        <label class="block-label selection-button-radio" for="radio-3">
+          <input id="radio-3" type="radio" name="radio-group" value="business-start">
+  				<span class="heading-small">Trade and business permit</span>
+  				<p>
+            {% if council.string == 'sunderland' %}
+            I own a business here.
+            {% else %}
+            I work here.
+            {% endif %}
+  				</p>
+        </label>
+  		</div>
+  	  <div class="form-group">
+  	    <button class="button">Continue</button>
+  	  </div>
+  	</form>
 
 
 </div>
