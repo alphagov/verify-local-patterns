@@ -31,7 +31,7 @@ router.get('*/example-service/*', function (req, res, next) {
 
 // add your routes here
 
-router.all('/service-patterns/parking-permit/example-service/need-permit', function (req, resp) {
+router.all('/service-patterns/parking-permit/example-service/parking-zone-map', function (req, resp) {
 
 	var postcode = encodeURIComponent(req.session.data.postcode)
 	var url = 'http://api.postcodes.io/postcodes/'+postcode;
@@ -48,11 +48,11 @@ router.all('/service-patterns/parking-permit/example-service/need-permit', funct
 					if(response.result){
 						var lat = response.result.latitude;
 						var long = response.result.longitude;
-						resp.render('service-patterns/parking-permit/example-service/need-permit', {latitude: lat, longitude: long})
+						resp.render('service-patterns/parking-permit/example-service/parking-zone-map', {latitude: lat, longitude: long})
 
 					}else{
 						console.log('not a real postcode')
-						resp.render('service-patterns/parking-permit/example-service/need-permit', {latitude: 51.5035398826274, longitude: -0.127695242183412})
+						resp.render('service-patterns/parking-permit/example-service/parking-zone-map', {latitude: 51.5035398826274, longitude: -0.127695242183412})
 
 					}
 	    });
