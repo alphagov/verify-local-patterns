@@ -9,7 +9,7 @@
 						{% set active = 'active' %}
 					{% endif %}
 					<li class="{{active}}">
-						<a href="../{{section | lower}}">{{section}}</a>
+						<a href="../{{thisTab |lower}}/{{section | lower}}">{{section}}</a>
 					</li>
 				{% endfor %}
 			</ul>
