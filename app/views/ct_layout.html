@@ -10,12 +10,13 @@
 	{% include "includes/pattern_header.html" %}
 
 	{% set serviceAreas = ["Overview", "Awareness", "Identity", "Photo", "End"] %}
+	{% set thisArea = 'Overview' %}
 
 	{% include "includes/pattern_side_nav.html" %}
 
 			<div class="column-two-thirds">
 
-				<h2 class="heading-medium">Overview</h2>
+				<h2 class="heading-medium">{{thisArea}}</h2>
 
 				{% include "includes/pattern_tab_nav.html" %}
 
