@@ -1,16 +1,15 @@
+{% set tabs = ['Policy', 'Research', 'Design', 'Code'] %}
+
 <div class="js-tabs nav-tabs">
 	<ul class="tabs-nav">
-		<li class="active">
-			<a href="policy">Policy</a>
-		</li>
-		<li>
-			<a href="research">Research</a>
-		</li>
-		<li>
-			<a href="design">Design</a>
-		</li>
-		<li>
-			<a href="code">Code</a>
-		</li>
+		{% for tab in tabs %}
+			{% set active = '' %}
+			{% if tab == pageTab %}
+				{% set active = 'active' %}
+			{% endif %}
+			<li class="{{active}}">
+				<a href="{{tab | lower}}">{{tab}}</a>
+			</li>
+		{% endfor %}
 	</ul>
 </div>
