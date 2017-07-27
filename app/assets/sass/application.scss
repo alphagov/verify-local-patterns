@@ -120,15 +120,12 @@ table + p{
     padding: 0;
     position: relative;
 		display: block;
-		// margin-top: 2em;
+		overflow: hidden;
 }
 .nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
     float: left;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 5;
+		width: 100%;
+		border-bottom: 1px solid #ccc;
 }
 .nav-tabs li, .nav-tabs .tabs-nav li {
     font-family: "nta", Arial, sans-serif;

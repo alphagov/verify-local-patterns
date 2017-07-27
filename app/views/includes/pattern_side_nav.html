@@ -1,19 +1,18 @@
 <div class="grid-row" data-module="highlight-active-section-heading">
-		<div class="column-third">
-				<!--  Page contents -->
-				<div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
-						<h2 class="heading-medium page-contents__title">Service areas</h2>
-						<ul class="page-contents__list">
-							{% for serviceArea in serviceAreas %}
-							{% set active = '' %}
-							{% if serviceArea == thisArea %}
-								{% set active = 'active' %}
-							{% endif %}
-							<li class="{{active}}">
-								<a href="{{serviceArea | lower}}">{{serviceArea}}</a>
-							</li>
-							{% endfor %}
-						</ul>
-				</div>
-
+	<div class="column-third">
+		<!--  Page contents -->
+		<div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
+			<h2 class="heading-medium page-contents__title">Service areas</h2>
+			<ul class="page-contents__list">
+				{% for serviceArea in serviceAreas %}
+					{% set active = '' %}
+					{% if serviceArea == thisArea %}
+						{% set active = 'active' %}
+					{% endif %}
+					<li class="{{active}}">
+						<a href="../{{serviceArea | lower}}">{{serviceArea}}</a>
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
+	</div>
