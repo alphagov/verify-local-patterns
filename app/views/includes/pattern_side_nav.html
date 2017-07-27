@@ -2,15 +2,14 @@
 	<div class="column-third">
 		<!--  Page contents -->
 		<div class="page-contents js-page-contents js-stick-at-top-when-scrolling js-sticky-resize" style="width: 212px;">
-			<h2 class="heading-medium page-contents__title">Service areas</h2>
 			<ul class="page-contents__list">
-				{% for serviceArea in serviceAreas %}
+				{% for section in sections %}
 					{% set active = '' %}
-					{% if serviceArea == thisArea %}
+					{% if section == pageTab %}
 						{% set active = 'active' %}
 					{% endif %}
 					<li class="{{active}}">
-						<a href="../{{serviceArea | lower}}">{{serviceArea}}</a>
+						<a href="../{{section | lower}}">{{section}}</a>
 					</li>
 				{% endfor %}
 			</ul>

@@ -1,10 +1,10 @@
-{% set tabs = ['Policy', 'Research', 'Design', 'Code'] %}
+{% set tabs = ["Overview", "Awareness", "Identity", "Photo", "End"] %}
 
 <div class="js-tabs nav-tabs">
 	<ul class="tabs-nav">
 		{% for tab in tabs %}
 			{% set active = '' %}
-			{% if tab == pageTab %}
+			{% if tab == thisTab %}
 				{% set active = 'active' %}
 			{% endif %}
 			<li class="{{active}}">
