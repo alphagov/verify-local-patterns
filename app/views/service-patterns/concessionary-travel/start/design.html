@@ -1,8 +1,53 @@
-{% set thisTab = 'Awareness' %}
+{% set thisTab = 'Start' %}
 {% set pageTab = 'Design' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
+<img src="{{asset_path}}images/ctscreenshot/startpage_1.png" />
 <p>
-
+	The council name is clearly displayed in the website banner.
 </p>
+<p>
+	Users can check if their date of birth makes them eligible to apply by accessing a simple date of birth checker.
+</p>
+<img src="{{asset_path}}images/ctscreenshot/startpage_2.png" />
+<p>
+	The user is told how to use the pass.
+</p>
+<p>
+	What the pass will allow its holder to do, where and when, is clearly explained.
+</p>
+<img src="{{asset_path}}images/ctscreenshot/startpage_3.png" />
+<p>
+	Users are told what to expect in the application process, including proving their identity and providing a digital photograph.
+</p>
+<img src="{{asset_path}}images/ctscreenshot/startpage_4.png" />
+<p>
+	Users are told what to do if they need assistance.
+</p>
+<p>
+	Users are given links to links to renewals and replacements services.
+</p>
+<img src="{{asset_path}}images/ctscreenshot/startpage_5.png" />
+
+<img src="{{asset_path}}images/ctscreenshot/startpage_6.png" />
+
+<h2 class="heading-medium">What we learnt from testing with users</h2>
+<p>
+	Early iterations of this page presented users with a significant amount of content, with few sub headings. This resulted in most users simply starting the interaction without reading.
+</p>
+<p>
+	Users become eligible for a pass when they reach the female state pension age. Due to current changes in the female state pension age, the age a user becomes eligible varies with their birth year.
+</p>
+<p>
+	Attempts at explaining this have confused users. Linking to the GOV.UK page that allows users to look up their pension age has also confused users as they do not understand the association between bus passes and pensions.
+</p>
+<h2 class="heading-medium">What we changed as a result</h2>
+<p>
+	The content on this page has been broken up with task specific sub-headings, helping those scanning the page to identify relevant content.
+</p>
+<p>
+	To address confusion around eligibility, a custom eligibility checker has been created. This is linked from the start page, allowing users to simply enter their date of birth to determine their eligibility. This has removed any confusion resulting from the link with female state pension age.
+</p>
+<img src="{{asset_path}}images/ctscreenshot/startpage_whole.png" />
+
 {% endblock %}
