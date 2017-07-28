@@ -2,34 +2,56 @@
 {% set pageTab = 'Design' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
-<img src="{{asset_path}}images/ctscreenshot/startpage_1.png" />
-<p>
-	The council name is clearly displayed in the website banner.
-</p>
-<p>
-	Users can check if their date of birth makes them eligible to apply by accessing a simple date of birth checker.
-</p>
-<img src="{{asset_path}}images/ctscreenshot/startpage_2.png" />
-<p>
-	The user is told how to use the pass.
-</p>
-<p>
-	What the pass will allow its holder to do, where and when, is clearly explained.
-</p>
-<img src="{{asset_path}}images/ctscreenshot/startpage_3.png" />
+
+<div class="annotated-image">
+	<img src="{{asset_path}}images/ctscreenshot/startpage_whole.png" />
+	<ol class="list upload-help">
+		<li style="top: -0.5%; left: 46%;">
+			<a href="#1">
+				<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+			</a>
+		</li>
+		<li style="top: 28%; left: 58%;">
+			<a href="#2">
+				<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+			</a>
+		</li>
+	</ol>
+</div>
+
+<ol class="list upload-help big-number-list">
+	<li id="1">
+			<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+				<p>
+					The council name is clearly displayed in the website banner.
+				</p>
+				<p>
+					Users can check if their date of birth makes them eligible to apply by accessing a simple date of birth checker.
+				</p>
+	</li>
+	<li id="2">
+		<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+		<p>
+			The user is told how to use the pass.
+		</p>
+		<p>
+			What the pass will allow its holder to do, where and when, is clearly explained.
+		</p>
+	</li>
+</ol>
+
+
+
 <p>
 	Users are told what to expect in the application process, including proving their identity and providing a digital photograph.
 </p>
-<img src="{{asset_path}}images/ctscreenshot/startpage_4.png" />
 <p>
 	Users are told what to do if they need assistance.
 </p>
 <p>
 	Users are given links to links to renewals and replacements services.
 </p>
-<img src="{{asset_path}}images/ctscreenshot/startpage_5.png" />
 
-<img src="{{asset_path}}images/ctscreenshot/startpage_6.png" />
 
 <h2 class="heading-medium">What we learnt from testing with users</h2>
 <p>
@@ -48,6 +70,5 @@
 <p>
 	To address confusion around eligibility, a custom eligibility checker has been created. This is linked from the start page, allowing users to simply enter their date of birth to determine their eligibility. This has removed any confusion resulting from the link with female state pension age.
 </p>
-<img src="{{asset_path}}images/ctscreenshot/startpage_whole.png" />
 
 {% endblock %}

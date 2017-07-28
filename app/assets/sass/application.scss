@@ -44,6 +44,13 @@ details{
 	 margin: 1em 0 1.6em;
 }
 
+.big-number-list h2, .big-number-list h2 + p {
+    display: inline;
+}
+.big-number-list p + p{
+	margin-top: 1em;
+}
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 h1 span.strapline {
@@ -174,6 +181,10 @@ table + p{
 		margin-bottom: 3em;
 }
 
+.page-contents > h2{
+	margin-top: 0;
+}
+
 .page-contents__list li{
 	font-size: 18px;
 }
@@ -186,4 +197,41 @@ table + p{
 }
 .lede{
 	margin-bottom: 2em;
+}
+
+.leftborder{
+	border-left: 1px solid #ddd;
+}
+
+.annotated-image{
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #bfc1c3;
+	padding: 10px;
+	margin: 15px 0 30px 0;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	li{
+		position: absolute;
+	}
+	.circle:before{
+		display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 23px solid black;
+    position: absolute;
+    left: -14px;
+    top: 23px;
+
+	}
+	.circle:hover{
+		background: #6F777B;
+	}
+	.circle:hover:before{
+		border-right: 23px solid #6F777B;
+	}
 }
