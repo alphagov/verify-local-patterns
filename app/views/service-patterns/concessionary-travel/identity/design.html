@@ -2,5 +2,32 @@
 {% set pageTab = 'Design' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
+<p>
+	Linked to from the <a href="start/design">service start page</a>, this page should communicate:
+</p>
+<ul class="list list-bullet">
+	<li>
+		that users can prove their identity online using GOV.UK Verify, and can create an account
+	</li>
+	<li>
+		alternative online and offline options for proving identity
+	</li>
+	<li>
+		how long the process of applying will take
+	</li>
+	<li>
+		when they should expect to receive their bus pass once they've applied
+	</li>
+</ul>
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ctscreenshot/checkingidentity_whole.png" />
+	</div>
+	<a href="">See the example council page</a>
+</div>
+<h3 class="heading-small">GOV.UK Verify</h3>
+<p>
+	If the user selects the GOV.UK Verify route, they will be sent away from the council's website to prove their identity to a certified company. Before the user does this, the council should make sure the user understands what personal data will be shared so that the user can change their mind with minimal wasted time.
+</p>
 
 {% endblock %}
