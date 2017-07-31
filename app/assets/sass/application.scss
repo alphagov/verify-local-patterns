@@ -207,15 +207,21 @@ table + p{
 	border-left: 1px solid #ddd;
 }
 
+.annotated-image-container{
+	border: 1px solid #bfc1c3;
+	padding: 10px;
+	margin: 15px 0 15px 0;
+}
+
 .annotated-image{
 	position: relative;
 	box-sizing: border-box;
-	border: 1px solid #bfc1c3;
-	padding: 10px;
-	margin: 15px 0 30px 0;
 	max-width: 100%;
 	width: auto;
-	height: auto;
+	height: 100%;
+	.list{
+		margin:0;
+	}
 	li{
 		position: absolute;
 	}
