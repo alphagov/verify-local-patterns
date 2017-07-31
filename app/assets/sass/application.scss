@@ -28,6 +28,18 @@ $path: "/public/images/";
 }
 
 // should probs be in elements
+
+.column-three-quarter{
+	box-sizing: border-box;
+	padding: 0 15px;
+	float: left;
+	width: 75%;
+}
+
+h2:first-child{
+	margin-top: 0;
+}
+
 img, svg{
   max-width: 100%;
 }
@@ -199,9 +211,6 @@ table + p{
 	font-size: 18px;
 }
 
-.column-two-thirds > h2{
-	margin-top: 0;
-}
 .heading-xlarge{
 	margin-bottom: .6em;
 }
