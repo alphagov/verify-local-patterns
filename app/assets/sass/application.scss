@@ -51,6 +51,10 @@ details{
 	margin-top: 1em;
 }
 
+.big-number-list .circle{
+ margin: 5px 5px 10px 0;
+}
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 h1 span.strapline {
@@ -222,7 +226,7 @@ table + p{
     height: 0;
     border-top: 16px solid transparent;
     border-bottom: 16px solid transparent;
-    border-right: 23px solid black;
+    border-right: 23px solid #0b0c0c;
     position: absolute;
     left: -14px;
     top: 23px;
