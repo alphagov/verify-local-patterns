@@ -44,12 +44,18 @@ details{
 	 margin: 1em 0 1.6em;
 }
 
-.big-number-list h2, .big-number-list h2 + p {
+.big-number-list h2{
     display: inline;
 }
-.big-number-list p + p{
-	margin-top: 1em;
+.big-number-list p{
+	width: calc(100% - 3em);
+	display: inline-block;
+	vertical-align: top;
+	margin: 13px 0 5px 7px;
 }
+// .big-number-list p + p{
+// 	margin-top: 1em;
+// }
 
 .big-number-list .circle{
  margin: 5px 5px 10px 0;
