@@ -1,0 +1,113 @@
+{% set thisTab = 'Start' %}
+{% set pageTab = 'Design' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ctscreenshot/startpage_whole.png" />
+		<ol class="list upload-help">
+			<li style="top: 2.5%; right: -4%;">
+				<a href="#1">
+					<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+				</a>
+			</li>
+			<li style="top: 19%; left: 61%;">
+				<a href="#2">
+					<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+				</a>
+			</li>
+			<li style="top: 28%; left: 31%;">
+				<a href="#3">
+					<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
+				</a>
+			</li>
+			<li style="top: 47%; left: 31%;">
+				<a href="#4">
+					<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
+				</a>
+			</li>
+			<li style="top: 55%; left: 66%;">
+				<a href="#5">
+					<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
+				</a>
+			</li>
+			<li style="bottom: 15%; left: 50%;">
+				<a href="#6">
+					<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
+				</a>
+			</li>
+			<li style="bottom: 5%; left: 66%;">
+				<a href="#7">
+					<h2 class="heading-small"><span class="circle circle-step-large">7</span></h2>
+				</a>
+			</li>
+		</ol>
+	</div>
+	<span><a href="">See the example council page</a></span>
+</div>
+
+
+
+<h2 class="heading-medium">What we learnt from testing with users</h2>
+<p>
+	Early iterations of this page presented users with a significant amount of content, with few sub headings. This resulted in most users simply starting the interaction without reading.
+</p>
+<p>
+	Users become eligible for a pass when they reach the female state pension age. Due to current changes in the female state pension age, the age a user becomes eligible varies with their birth year.
+</p>
+<p>
+	Attempts at explaining this have confused users. Linking to the GOV.UK page that allows users to look up their pension age has also confused users as they do not understand the association between bus passes and pensions.
+</p>
+<h2 class="heading-medium">What we changed as a result</h2>
+<ol class="list upload-help big-number-list">
+	<li id="1">
+		<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+		<p>
+			Include a prominent contact link throughout the journey.
+		</p>
+	</li>
+	<li id="2">
+		<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+		<p>
+			To address confusion around eligibility, a page for the user to check their eligibility has been added. This is linked from the start page, allowing users to enter their date of birth to determine their eligibility. This has removed any confusion resulting from the link with female state pension age. The user would be taken to a page that looks like this:
+		</p>
+		<div class="annotated-image-container">
+			<img src="{{asset_path}}images/ctscreenshot/confirmdob_whole.png" />
+			<span><a href="">See the example council page</a></span>
+		</div>
+	</li>
+	<li id="3">
+		<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
+		<p>
+			The content on this page has been broken up with task specific sub-headings, helping those scanning the page to identify relevant content.
+		</p>
+	</li>
+	<li id="4">
+		<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
+		<p>
+			The content on this page has been broken up with task specific sub-headings, helping those scanning the page to identify relevant content.
+		</p>
+	</li>
+	<li id="5">
+		<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
+		<p>
+			Users are told what to expect in the application process, including proving their identity and providing a digital photograph.
+		</p>
+	</li>
+	<li id="6">
+		<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
+		<p>
+			Users are given links to links to renewals and replacements services.
+		</p>
+	</li>
+	<li id="7">
+		<h2 class="heading-small"><span class="circle circle-step-large">7</span></h2>
+		<p>
+			Users are told what to do if they need assistance.
+		</p>
+	</li>
+
+</ol>
+
+{% endblock %}
