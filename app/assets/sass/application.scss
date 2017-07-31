@@ -65,9 +65,18 @@ details{
 	vertical-align: top;
 	margin: 13px 0 5px 7px;
 }
-// .big-number-list p + p{
-// 	margin-top: 1em;
-// }
+.big-number-list .circle-list-item{
+	width: calc(100% - 3em);
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	.annotated-image-container{
+		margin-left: 0;
+	}
+}
+.big-number-list p + p{
+	margin-top: 1em;
+}
 
 .big-number-list .circle{
  margin: 5px 5px 10px 0;

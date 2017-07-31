@@ -3,7 +3,7 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 <p>
-	Linked to from the <a href="start/design">service start page</a>, this page should communicate:
+	Linked to from the <a href="start/design">service start page</a>, the "Checking your identity" page should communicate:
 </p>
 <ul class="list list-bullet">
 	<li>
@@ -25,9 +25,34 @@
 	</div>
 	<a href="">See the example council page</a>
 </div>
-<h3 class="heading-small">GOV.UK Verify</h3>
-<p>
-	If the user selects the GOV.UK Verify route, they will be sent away from the council's website to prove their identity to a certified company. Before the user does this, the council should make sure the user understands what personal data will be shared so that the user can change their mind with minimal wasted time.
-</p>
+<ol class="list upload-help big-number-list">
+	<li id="1">
+		<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+		<p>
+			Different methods of identity verification are presented to the user. The best way to present a choice to users is with radio buttons.
+		</p>
+	</li>
+	<li id="2">
+		<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+		{# <h3 class="heading-small">GOV.UK Verify</h3> #}
+		<div class="circle-list-item">
+		<p>
+			If the user selects the GOV.UK Verify route, they will be sent away from the council's website to prove their identity to a certified company. Before the user does this, the council should make sure the user understands what personal data will be shared so that the user can change their mind with minimal wasted time.
+		</p>
+		<div class="annotated-image-container">
+			<div class="annotated-image">
+				<img src="{{asset_path}}images/ctscreenshot/personaldata.png" />
+			</div>
+			<a href="">See the example council page</a>
+		</div>
+		<p>
+			The user will then be sent to GOV.UK, choose a certified company to verify their identity and then return to the council website to confirm their address and date of birth.
+		</p>
+		<div class="annotated-image-container">
+			<img src="{{asset_path}}images/verify-flow.jpg" />			
+		</div>
+	</li>
+</ol>
+
 
 {% endblock %}
