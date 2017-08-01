@@ -20,30 +20,39 @@
 			when they should expect to receive their bus pass once they've applied
 		</li>
 	</ul>
+	{% set annotationsContent = [
+		{
+			"position": "top: 35%; right: 40%;",
+			"header": "Radio buttons",
+			"content": "<p>
+								Different methods of identity verification are presented to the user. The best way to present a choice to users is with radio buttons.
+							</p>
+							<p>
+								This particular choice will be unfamiliar to many users, so the consequences of the choice should be clearly described using bullet points.
+							</p>"
+		},
+		{
+			"position": "top: 42%; right: 40%;"
+		},
+		{
+			"position": "top: 65%; right: 40%;"
+		},
+		{
+			"position": "top: 83%; left: 25%;"
+		}
+	]
+		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
 			<img src="{{asset_path}}images/ctscreenshot/checkingidentity_whole.png"/>
 			<ol class="list upload-help">
-				<li style="top: 35%; right: 40%;">
-					<a href="#1">
-						<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+				{% for annotation in annotationsContent %}
+				<li style="{{annotation.position}}">
+					<a href="#{{loop.index}}">
+						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
 					</a>
 				</li>
-				<li style="top: 42%; right: 40%;">
-					<a href="#2">
-						<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
-					</a>
-				</li>
-				<li style="top: 65%; right: 40%;">
-					<a href="#3">
-						<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
-					</a>
-				</li>
-				<li style="top: 83%; left: 25%;">
-					<a href="#4">
-						<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
-					</a>
-				</li>
+				{% endfor %}
 			</ol>
 		</div>
 		<a href="">See the example council page</a>
@@ -54,6 +63,7 @@
 				<span class="circle circle-step-large">1</span>
 			</h2>
 			<div class="circle-list-item">
+				<h3 class="heading-small">Radio buttons</h3>
 				<p>
 					Different methods of identity verification are presented to the user. The best way to present a choice to users is with radio buttons.
 				</p>
@@ -66,8 +76,8 @@
 			<h2 class="heading-small">
 				<span class="circle circle-step-large">2</span>
 			</h2>
-			{# <h3 class="heading-small">GOV.UK Verify</h3> #}
 			<div class="circle-list-item">
+				<h3 class="heading-small">GOV.UK Verify</h3>
 				<p>
 					If the user selects the GOV.UK Verify route, they will be sent away from the council's website to prove their identity to a certified company. Before the user does this, the council should make sure the user understands what personal data will be
 					shared so that the user can change their mind with minimal wasted time.
@@ -167,17 +177,23 @@
 		<h2 class="heading-small">
 			<span class="circle circle-step-large">3</span>
 		</h2>
-		<p>
-			Councils should provide an alternative online route to access the service, as not everybody will have enough of a digital history to be able to be verified.
-		</p>
+		<div class="circle-list-item">
+			<h3 class="heading-small">Alternative online route</h3>
+			<p>
+				Councils should provide an alternative online route to access the service, as not everybody will have enough of a digital history to be able to be verified.
+			</p>
+		</div>
 	</li>
 	<li id="4">
 		<h2 class="heading-small">
 			<span class="circle circle-step-large">4</span>
 		</h2>
-		<p>
-			Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
-		</p>
+		<div class="circle-list-item">
+			<h3 class="heading-small">Offline route</h3>
+			<p>
+				Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
+			</p>
+		</div>
 	</li>
 </ol>
 
