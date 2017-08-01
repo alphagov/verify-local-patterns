@@ -3,40 +3,28 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 	<p>
-		Linked to from the
-		<a href="start/design">service start page</a>, the "Checking your identity" page should communicate:
+		Linked to from <a href="start/design">service start page</a>.
 	</p>
-	<ul class="list list-bullet">
-		<li>
-			that users can prove their identity online using GOV.UK Verify, and can create an account
-		</li>
-		<li>
-			alternative online and offline options for proving identity
-		</li>
-		<li>
-			how long the process of applying will take
-		</li>
-		<li>
-			when they should expect to receive their bus pass once they've applied
-		</li>
-	</ul>
 	{% set annotationsContent = [
 		{
 			"position": "top: 35%; right: 40%;",
 			"header": "Radio buttons",
 			"content": "<p>
-								Different methods of identity verification are presented to the user. The best way to present a choice to users is with radio buttons.
+								Different methods of identity verification are presented using radio buttons.</p><p>
+									 <a href='https://designnotes.blog.gov.uk/2016/11/30/weve-updated-the-radios-and-checkboxes-on-gov-uk/'>Use large radio buttons</a>.
 							</p>
 							<p>
-								This particular choice will be unfamiliar to many users, so the consequences of the choice should be clearly described using bullet points.
+								The copy explains the consequences of the choice using bullet points within the radio buttons.
 							</p>"
 		},
 		{
 			"position": "top: 42%; right: 40%;",
 			"header": "GOV.UK Verify",
 			"content": '<p>
-				If the user selects the GOV.UK Verify route, they will be sent away from the council\'s website to prove their identity to a certified company. Before the user does this, the council should make sure the user understands what personal data will be
-				shared so that the user can change their mind with minimal wasted time.
+				If the user selects the GOV.UK Verify route, the service asks the user if they can use their personal data for this application.
+			</p>
+			<p>
+					If the user says no, the service routes them back to the previous page.
 			</p>
 			<div class="annotated-image-container">
 				<div class="annotated-image">
@@ -45,88 +33,122 @@
 				<a href="">See the example council page</a>
 			</div>
 			<p>
-				The user will then be sent to GOV.UK, choose a certified company to verify their identity and then if the verification is successful, the user will be returned to the council website to confirm their address and date of birth.
+				If the user says yes, they are sent to GOV.UK, where they choose a certified company to verify their identity. If the verification is successful, the user is returned to the council website to confirm their address and date of birth.
 			</p>
 			<div class="annotated-image-container">
 				<img src="'+asset_path+'images/verify-flow.jpg"/>
 			</div>
+			<details>
+				<summary><span class="summary">Unlikely to verify</span></summary>
+				<div class="panel">
 
-			<h3 class="heading-small">"Unlikely to verify" and "verification failed" pages</h3>
+					<p>
+						Some users may not have the documents or credit records that GOV.UK Verify needs to prove their identity.
+					</p>
 
-			<p>Some users may not have the documents or credit records that GOV.UK Verify needs to prove their identity.
-			</p>
-
-			<p>GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won\'t be verified, they are shown the "<a href="https://pirate:bunting@govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-{{council.string}}&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a>" page.
-			</p>
-			<p>
-				A very small proportion of users will go through past these questions, and GOV.UK Verify will still not be able to verify their identity. These users will be told by their chosen Identity Provider that they couldn\'t be verified, and then be taken
-				back to GOV.UK, where they will see a similar "<a
-					href="https://pirate:bunting@govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2">
-					verification failed</a>" page.
-			</p>
-			<p>
-				<a href="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Explore the example GOV.UK Verify journey as a user who cannot be verified</a>.
-			</p>
-			<p>
-				Both these pages should link to the alternative ways to access the service described in the next section.
-			</p>
-			<p>
-				<a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a>
-
+					<p>
+						GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won\'t be verified, they are shown the <a href="https://pirate:bunting@govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-{{council.string}}&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a> page which includes links to other ways to apply.
+					</p>
+				</div>
+				</details>
+				<details>
+					<summary><span class="summary">Verification failed</span></summary>
+					<div class="panel">
+						<p>
+							After these questions, a very small proportion of users will still not be able to verify their identity. These users are told by their chosen Identity Provider that they couldn\'t be verified, and are taken
+							back to GOV.UK, where they will see the <a
+								href="https://pirate:bunting@govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2">verification failed</a> page which includes links to other ways to apply.
+						</p>
+						<p>screenshot
+							<a href="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Explore the example GOV.UK Verify journey as a user who cannot be verified</a>.
+						</p>
+						<p>
+							screenshot <a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a>
+						</p>
+					</div>
+				</details>
+			<h3 class="heading-small">Confirm date of birth</h3>
+				<p>
+					Once the user has verified their identity, they are returned to the council website. At this point the service asks them to confirm their date of birth.
+				</p>
 				<a href="concessionary-travel/example-service/confirm-dob">Explore confirm date of birth example council page</a>
 			</p>
-			<h3 class="heading-small">Unsuccessful verification</h3>
-			<p>
-				If the user\'s date of birth is not correct, something has probably gone wrong in the verifying process. Your service needs to advise them to continue using a different channel.
-			</p>
-			<a href="concessionary-travel/example-service/incorrect-dob">Explore confirm date of birth example council page</a>
-		</p>
-		<h3 class="heading-small">Not egibile because of age</h3>
-		<p>
-			If the user confirms their date of birth, your service should check the user is old enough to be eligible. If the user is not eligible based on their date of birth your service webpage should tell them they are not currently eligible and supply the
-			date when they will be eligible.
-		</p>
-		<p>
-			<a href="concessionary-travel/example-service/not-eligible-age">Explore the not eligible because of age example council page</a>
-		</p>
+			<details>
+				<summary><span class="summary">Incorrect date of birth</span></summary>
+				<div class="panel">
+					<h3 class="heading-small">Incorrect date of birth</h3>
+					<p>
+						If the user\'s date of birth is not correct, something has probably gone wrong in the verifying process. Your service needs to advise them to continue using a different channel.
+					</p>
+					<a href="concessionary-travel/example-service/incorrect-dob">Explore confirm date of birth example council page</a>
+					</p>
+				</div>
+			</details>
+			<details>
+				<summary><span class="summary">Not egibile because of age</span></summary>
+				<div class="panel">
+				<p>
+					If the user confirms their date of birth, your service should check the user is old enough to be eligible. If the user is not eligible based on their date of birth your service webpage should tell them they are not currently eligible and supply the
+					date when they will be eligible.
+				</p>
+				<p>
+					<a href="concessionary-travel/example-service/not-eligible-age">Explore the not eligible because of age example council page</a>
+				</p>
+			</div>
+		</details>
+
 		<h3 class="heading-small">Confirm address</h3>
 		<p>
-			GOV.UK Verify will send your service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, your service webpage should ask them to confirm if this is their current address. (This
-			is mainly done because GOV.UK Verify identity providers may not have the user\'s address if they moved house in the last 3 months.)
+			GOV.UK Verify will send your service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, your service webpage should ask them to confirm if this is their current address. This
+			is mainly done because GOV.UK Verify identity providers may not have the user\'s address if they moved house in the last 3 months.
 		</p>
 		<p>
-			On this page you can also ask the user to confirm if they want your service to send the bus pass to the address they\'ve received through GOV.UK Verify.
+			This page also tells the user their bus pass will be sent to the address received through GOV.UK Verify.
 		</p>
-		<h3 class="heading-small">New residents address confirmation</h3>
-		<a href="concessionary-travel/example-service/confirm-address">Explore the confirm name and address example council page</a>
-		<p>
-			If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. Your service should ask users to enter their current address and warn them not to enter false
-			information, as this is a civic offence.
-		</p>
-		<p>
-			If the travel pass is physical, your service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that your service will be using the address they\'ve given for this purpose on the service confirmation
-			page.
-		</p>
+		<details>
+			<summary><span class="summary">New residents</span></summary>
+			<div class="panel">
+				<a href="concessionary-travel/example-service/confirm-address">Explore the confirm name and address example council page</a>
+				<p>
+					If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. Your service should ask users to enter their current address and warn them not to enter false
+					information, as this is a civic offence.
+				</p>
+				<p>
+					If the travel pass is physical, your service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that your service will be using the address they\'ve given for this purpose on the service confirmation
+					page.
+				</p>
 
-		<a href="concessionary-travel/example-service/current-address">Explore the enter their current address example council page</a>
+				<a href="concessionary-travel/example-service/current-address">Explore the enter their current address example council page</a>
+			</div>
+		</details>
+		<details>
+			<summary><span class="summary">Wrong council</span></summary>
+			<div class="panel">
+				<p>
+					When the user has confirmed their address, your service should check that the address they\'ve given is in the area your council provides services for. If the address is not in the area, your service webpage should tell them they are not eligible in
+					this area.
+				</p>
+				<p>
+					<a href="concessionary-travel/example-service/not-eligible-address">Explore the not eligible because of address example council page</a>
+				</p>
+			</div>
+		</details>
+		<details>
+			<summary><span class="summary">Existing pass</span></summary>
+			<div class="panel">
+				<p>
+					At this point your service should check if the user already has a bus pass by searching its records.</p>
+				<p>
+					If they already have a pass, your service webpage should tell them they are not eligible to apply for a new one, but they can renew or replace a lost or stolen pass with the \'Renew or replace your bus pass\' service.</p>
+				<p>
+					Include a link to contact your service, in case the user believes there has been a mistake.</p>
 
+				<a href="concessionary-travel/example-service/pass-already-issued">Explore the not eligible because already have a pass example council page</a>
+			</div>
+		</details>
 		<p>
-			When the user has confirmed their address, your service should check that the address they\'ve given is in the area your council provides services for. If the address is not in the area, your service webpage should tell them they are not eligible in
-			this area.
-		</p>
-		<p>
-			<a href="concessionary-travel/example-service/not-eligible-address">Explore the not eligible because of address example council page</a>
-		</p>
-		<h3 class="heading-small">Checking for existing passes</h3>
-
-		<p>
-			At this point your service should check if the user already has a bus pass by searching its records.</p>
-		<p>
-			If they already have a pass, your service webpage should tell them they are not eligible to apply for a new one, but they can renew or replace a lost or stolen pass with the \'Renew or replace your bus pass\' service.</p>
-		<p>
-			Include a link to contact your service, in case the user believes there has been a mistake.</p>
-
-		<a href="concessionary-travel/example-service/pass-already-issued">Explore the not eligible because already have a pass example council page</a>'
+			Once the service has checked their address is in the council\'s area and the service has checked they don\'t already have a pass, they move onto the <a href="design/photo">photo section</a>.
+		</p>'
 		},
 		{
 			"position": "top: 65%; right: 40%;",
