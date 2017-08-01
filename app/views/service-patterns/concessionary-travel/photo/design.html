@@ -3,29 +3,34 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 	<p>
-		Linked to from the
-		<a href="start/design">service start page</a>, the "Checking your identity" page should communicate:
+		Users are required to upload a photo of themself for their bus pass. The easiest way for most users to do this is by taking a photo with their device.
 	</p>
-	<ul class="list list-bullet">
-		<li>
-			that users can prove their identity online using GOV.UK Verify, and can create an account
-		</li>
-		<li>
-			alternative online and offline options for proving identity
-		</li>
-		<li>
-			how long the process of applying will take
-		</li>
-		<li>
-			when they should expect to receive their bus pass once they've applied
-		</li>
-	</ul>
 	{% set annotationsContent = [
+		{
+			"header": "Detecting device",
+			"position": "top: 17%; left: 45%",
+			"content": "<p>
+				At this point your service should detect the user agent string for the user's device. If the device is a mobile device, the user should be directed to the following page (and not asked if they have a webcam):
+			</p>
+			<div class='annotated-image-container'>
+				<img src='"+asset_path+"images/ctscreenshot/mobile-cam.png' />
+			</div>
+			<p>
+				The 'Add a photo' button should open the device's camera, and when the user takes a photo, it should be uploaded straight away.
+			</p>
+			"
+		},{
+			"header": "Taking a photo with a webcam",
+			"position": "top: 57%; left: 20%",
+			"content": "<p>
+				Many devices will have a webcam that will not be detectable via the user agent string. The service should ask the user if they have a webcam, and if they do, route them to a page that allows them to take a photo within the browser window:
+			</p>"
+		}
 	]
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
-			<img src="{{asset_path}}images/ctscreenshot/checkingidentity_whole.png"/>
+			<img src="{{asset_path}}images/ctscreenshot/webcamstart_whole.png" />
 			<ol class="list upload-help">
 				{% for annotation in annotationsContent %}
 				<li style="{{annotation.position}}">
