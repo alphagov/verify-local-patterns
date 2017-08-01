@@ -1,0 +1,55 @@
+{% set thisTab = 'Photo' %}
+{% set pageTab = 'Design' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+	<p>
+		Linked to from the
+		<a href="start/design">service start page</a>, the "Checking your identity" page should communicate:
+	</p>
+	<ul class="list list-bullet">
+		<li>
+			that users can prove their identity online using GOV.UK Verify, and can create an account
+		</li>
+		<li>
+			alternative online and offline options for proving identity
+		</li>
+		<li>
+			how long the process of applying will take
+		</li>
+		<li>
+			when they should expect to receive their bus pass once they've applied
+		</li>
+	</ul>
+	{% set annotationsContent = [
+	]
+		%}
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ctscreenshot/checkingidentity_whole.png"/>
+			<ol class="list upload-help">
+				{% for annotation in annotationsContent %}
+				<li style="{{annotation.position}}">
+					<a href="#{{loop.index}}">
+						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
+					</a>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+		<a href="">See the example council page</a>
+	</div>
+	<ol class="list upload-help big-number-list">
+		{% for annotation in annotationsContent %}
+		<li id="{{loop.index}}">
+			<h2 class="heading-small">
+				<span class="circle circle-step-large">{{loop.index}}</span>
+			</h2>
+			<div class="circle-list-item">
+				<h3 class="heading-small">{{annotation.header}}</h3>
+				{{annotation.content | safe}}
+			</div>
+		</li>
+		{% endfor %}
+</ol>
+
+{% endblock %}
