@@ -29,3 +29,11 @@
 		})
 	}
 </script>
+
+<script>
+	$.get( "https://api.github.com/repos/alphagov/verify-local-patterns/issues", function( data ) {
+		for (var i = 0; i < data.length; i++) {
+			$('.github-issues-list').append('<li><a href="'+data[i].html_url+'">'+data[i].title+'</a></li>')
+		}
+	});
+</script>
