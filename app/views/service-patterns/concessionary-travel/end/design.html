@@ -1,0 +1,41 @@
+{% set thisTab = 'End' %}
+{% set pageTab = 'Design' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+	<p>
+
+	</p>
+	{% set annotationsContent = [
+		{}
+		]
+		%}
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ctscreenshot/contactpref.png" />
+			<ol class="list upload-help">
+				{% for annotation in annotationsContent %}
+				<li style="{{annotation.position}}">
+					<a href="#{{loop.index}}">
+						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
+					</a>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+		<a href="">See the example council page</a>
+	</div>
+	<ol class="list upload-help big-number-list">
+		{% for annotation in annotationsContent %}
+		<li id="{{loop.index}}">
+			<h2 class="heading-small">
+				<span class="circle circle-step-large">{{loop.index}}</span>
+			</h2>
+			<div class="circle-list-item">
+				<h3 class="heading-small">{{annotation.header}}</h3>
+				{{annotation.content | safe}}
+			</div>
+		</li>
+		{% endfor %}
+</ol>
+
+{% endblock %}

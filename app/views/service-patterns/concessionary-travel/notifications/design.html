@@ -3,13 +3,64 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 	<p>
-		
+
 	</p>
-	{% set annotationsContent = []
+	{% set annotationsContent = [
+		{
+			"position": "top: 46%; left: 60%",
+			"header": "Choice of contact preferences",
+			"content": '
+			<p>
+				The service should offer a choice of contact channels. Best practice is to offer email, text and letter as contact options.
+			</p>
+			<p>
+				<a href="https://www.notifications.service.gov.uk">GOV.UK Notify</a> allows councils to send and manage these types of notifications easily.
+			</p>
+			'
+		},{
+			"position": "top: 54%; left: 23%",
+			"header": "Use checkboxes for multiple selection",
+			"content": '
+			<p>
+				Users expressed a need in research to get more than one type of notification, so this choice should be presented as checkboxes so that they can subscribe to the channels they need.
+			</p>
+			'
+		},{
+			"position": "top: 62%; left: 39%",
+			"header": "Reveal text inputs only when checkboxes are checked",
+			"content": '
+			<p>
+				This is done to keep the page uncluttered before a user selects the option they need.
+			</p>
+			'
+		},{
+			"position": "top: 80%; left: 39%",
+			"header": "Add validation messages for common input mistakes",
+			"content": '
+			<p>
+				Common input mistakes include email addresses with no "@" or "." and phone numbers with an incorrect number of digits.
+			</p>
+			'
+		},{
+			"position": "top: 86%; left: 20%",
+			"header": "Renewal notifications",
+			"content": '
+			<p>
+				The next page allows users to sign up for another notification when it\s time to renew their pass:
+			</p>
+			<div class="annotated-image-container">
+				<img src="'+asset_path+'images/ctscreenshot/renewalremind.png" />
+			</div>
+			<p>
+				The user is then routed to the <a href="design/end">End section</a>.
+			</p>
+			'
+		}
+		]
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
-			<img src="{{asset_path}}images/ctscreenshot/webcamstart_whole.png" />
+			<img src="{{asset_path}}images/ctscreenshot/contactpref.png" />
 			<ol class="list upload-help">
 				{% for annotation in annotationsContent %}
 				<li style="{{annotation.position}}">
