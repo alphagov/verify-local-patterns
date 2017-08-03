@@ -3,94 +3,9 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 	<p>
-		Users are required to upload a photo of themself for their bus pass. The easiest way for most users to do this is by taking a photo with their device.
+		
 	</p>
-	{% set annotationsContent = [
-		{
-			"header": "Detecting mobile device",
-			"position": "top: 17%; left: 45%",
-			"content": "<p>
-				The service should detect the user agent string for the user's device. If it is a mobile device, the user should not be shown the page asking if they have a webcam, as most mobile devices with browsers have cameras. Instead, the user should be directed to the following page:
-			</p>
-			<div class='annotated-image-container'>
-				<img src='"+asset_path+"images/ctscreenshot/mobile-cam.png' />
-			</div>
-			<p>
-				The 'Add a photo' button should open the device's camera, and when the user takes a photo, it should be uploaded straight away.
-			</p>
-			"
-		},{
-			"header": "Taking a photo with a webcam",
-			"position": "top: 57%; left: 20%",
-			"content": '<p>
-				Many devices will have a webcam that will not be detectable via the user agent string. The service should ask the user if they have a webcam, and if they do, route them to a page that allows them to take a photo within the browser window:
-			</p>
-			<div class="annotated-image-container">
-				<img src="'+asset_path+'images/ctscreenshot/openwebcam.png" />
-			</div>
-			<div class="annotated-image-container">
-				<img src="'+asset_path+'images/ctscreenshot/takephotocomp.png" />
-			</div>
-			'
-		},{
-			"header": "Uploading a photo",
-			"position": "top: 65%; left: 20%",
-			"content": '<p>
-				If the user does not have a camera on their computer, they will need to upload a photo. The user is routed to a page which asks them whether or not they have a photo on the device they are using:
-			</p>
-			<div class="annotated-image-container">
-				<img src="'+asset_path+'images/ctscreenshot/photooncomp.png" />
-			</div>
-			<details>
-				<summary><span class="summary">No photo on device - Has another device with camera</span></summary>
-				<div class="panel">
-					<div class="annotated-image-container">
-						<img src="'+asset_path+'images/ctscreenshot/mobilewithcam.png" />
-					</div>
-					<div class="annotated-image-container">
-						<img src="'+asset_path+'images/ctscreenshot/takephotodev.png" />
-					</div>
-					<div class="annotated-image-container">
-						<img src="'+asset_path+'images/ctscreenshot/movephoto.png" />
-					</div>
-				</div>
-			</details>
-			<details>
-				<summary><span class="summary">No photo on device - Has a digital camera</span></summary>
-				<div class="panel">
-					<div class="annotated-image-container">
-						<img src="'+asset_path+'images/ctscreenshot/mobilewithcam.png" />
-					</div>
-				</div>
-				<div class="annotated-image-container">
-					<img src="'+asset_path+'images/ctscreenshot/takephotocam.png" />
-				</div>
-				<div class="annotated-image-container">
-					<img src="'+asset_path+'images/ctscreenshot/movephoto.png" />
-				</div>
-			</details>
-			<details>
-				<summary><span class="summary">No photo on device and no camera</span></summary>
-				<div class="panel">
-					<div class="annotated-image-container">
-						<img src="'+asset_path+'images/ctscreenshot/gotoshop.png" />
-					</div>
-				</div>
-			</details>
-			<p>
-				If the user has a photo on their computer, they are given guidance to help them with uploading:
-			</p>
-			<div class="annotated-image-container">
-				<img src="'+asset_path+'images/ctscreenshot/uploadphoto.png" />
-			</div>
-			<div class="annotated-image-container">
-				<img src="'+asset_path+'images/ctscreenshot/helpuploading.png" />
-			</div>
-			<p>
-				Once the user has uploaded a photo, they should be routed to the <a href="design/notifications">notifications section</a>.
-			</p>'
-		}
-	]
+	{% set annotationsContent = []
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
