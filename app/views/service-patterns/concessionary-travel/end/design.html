@@ -6,12 +6,27 @@
 
 	</p>
 	{% set annotationsContent = [
-		{}
+		{
+			"position": "top: 20%; left: 60%",
+			"header": "Clearly state reference number"
+		},{
+			"position": "top: 27%; left: 50%",
+			"header": "Let users know when to expect their confirmation message"
+		},{
+			"position": "top: 34%; left: 50%",
+			"header": "Let users know when to expect their pass"
+		},{
+			"position": "top: 57%; left: 50%",
+			"header": "Let users know how they can use their pass"
+		},{
+			"position": "top: 83%; left: 50%",
+			"header": "Link to other services that use GOV.UK Verify"
+		}
 		]
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
-			<img src="{{asset_path}}images/ctscreenshot/contactpref.png" />
+			<img src="{{asset_path}}images/ctscreenshot/complete.png" />
 			<ol class="list upload-help">
 				{% for annotation in annotationsContent %}
 				<li style="{{annotation.position}}">
