@@ -16,6 +16,9 @@
 				<img src='"+asset_path+"images/ctscreenshot/mobile-cam.png' />
 			</div>
 			<p>
+				<a href=\"/service-patterns/concessionary-travel/example-service/take-photo\" target=\"_blank\">Take photo on mobile example council page</a>
+			</p>
+			<p>
 				The \'Add a photo\' button should open the device\'s camera, and when the user takes a photo, it should be uploaded straight away. They are then routed to the <a href=\"design/notifications\">notifications section</a>.
 			</p>
 			"
@@ -27,6 +30,7 @@
 			</p>
 			<div class="annotated-image-container">
 				<img src="'+asset_path+'images/ctscreenshot/openwebcam.png" />
+					<a href=\"/service-patterns/concessionary-travel/example-service/take-photo-webcam\" target=\"_blank\">Open webcam example council page</a>
 			</div>
 			<p>
 				When the user clicks the \'Open camera\' button the webcam opens within the page:
@@ -40,7 +44,14 @@
 			<div class="annotated-image-container">
 				<img src="'+asset_path+'images/ctscreenshot/confwebcam.png" />
 			</div>
-			When the user select \'Yes, use this photo\' they are routed to the <a href="design/notifications">notifications section</a>.
+			<p>
+			When the user select \'Yes, use this photo\' they are shown the following page, which explains their photo will be checked manually:
+			</p>
+			<div class="annotated-image-container">
+				<img src="'+asset_path+'images/ctscreenshot/photo-received.png" />
+					<a href=\"/service-patterns/concessionary-travel/example-service/webcam-photo-accepted\" target=\"_blank\">Photo received example council page</a>
+			</div>
+			The user is then routed to the <a href="design/notifications">notifications section</a>.
 			'
 		},{
 			"header": "Uploading a photo",
@@ -50,6 +61,7 @@
 			</p>
 			<div class="annotated-image-container">
 				<img src="'+asset_path+'images/ctscreenshot/photooncomp.png" />
+				<a href=\"/service-patterns/concessionary-travel/example-service/have-photo\" target=\"_blank\">Photo on computer example council page</a>
 			</div>
 			<details>
 				<summary><span class="summary">No photo on device – has another device with camera</span></summary>
@@ -59,18 +71,21 @@
 					</p>
 					<div class="annotated-image-container">
 						<img src="'+asset_path+'images/ctscreenshot/mobilewithcam.png" />
+						<a href=\"/service-patterns/concessionary-travel/example-service/have-device\" target=\"_blank\">Device question example council page</a>
 					</div>
 					<p>
 						If they choose \'Yes\' they\'re directed to this screen, which includes copy explaining the photo requirements:
 					</p>
 					<div class="annotated-image-container">
 						<img src="'+asset_path+'images/ctscreenshot/takephotodev.png" />
+						<a href=\"/service-patterns/concessionary-travel/example-service/take-photo-device\" target=\"_blank\">Take photo on device example council page</a>
 					</div>
 					<p>
 						The next screen gives guidance on moving the photo from their device onto the computer the user is accessing the application with:
 					</p>
 					<div class="annotated-image-container">
 						<img src="'+asset_path+'images/ctscreenshot/movephoto.png" />
+						<a href=\"/service-patterns/concessionary-travel/example-service/from-device\" target=\"_blank\">Move photo example council page</a>
 					</div>
 					<p>
 					The user is then directed to the \'Upload your bus pass photo\' screen.
@@ -85,22 +100,26 @@
 					</p>
 					<div class="annotated-image-container">
 						<img src="'+asset_path+'images/ctscreenshot/mobilewithcam.png" />
+						<a href=\"/service-patterns/concessionary-travel/example-service/have-device\" target=\"_blank\">Device question example council page</a>
 					</div>
 					<p>If they choose \'No\' the next screen asks if they have a digital camera:
 					</p>
 					<div class="annotated-image-container">
 						<img src="'+asset_path+'images/ctscreenshot/dodigicam.png" />
+						<a href=\"/service-patterns/concessionary-travel/example-service/have-camera\" target=\"_blank\">Camera question example council page</a>
 					</div>
 					<p>If they choose \'Yes\' they\'re directed to this screen, which includes copy explaining the photo requirements:
 					</p>
 				<div class="annotated-image-container">
 					<img src="'+asset_path+'images/ctscreenshot/takephotocam.png" />
+					<a href=\"/service-patterns/concessionary-travel/example-service/take-photo-camera\" target=\"_blank\">Take photo on camera example council page</a>
 				</div>
 				<p>
 					The next screen gives guidance on transferring the photo from their digital camera onto the computer the user is accessing the application with:
 				</p>
 				<div class="annotated-image-container">
 					<img src="'+asset_path+'images/ctscreenshot/transferphoto.png" />
+					<a href=\"/service-patterns/concessionary-travel/example-service/from-camera\" target=\"_blank\">Transfer photo example council page</a>
 				</div>
 				<p>
 					The user is then directed to the \'Upload your bus pass photo\' screen.
@@ -114,17 +133,22 @@
 					</p>
 					<div class="annotated-image-container">
 						<img src="'+asset_path+'images/ctscreenshot/gotoshop.png" />
+						<a href=\"/service-patterns/concessionary-travel/example-service/have-go-to-shop\" target=\"_blank\">Go to shop example council page</a>
 					</div>
 					<p>
 						This is the end of the journey for these users – they\'ll need to restart their application when they have a digital photo from a shop.
 				</div>
 			</details>
 			<p>
-				If the user has a photo on their computer, they\'re given guidance to help them with uploading:
+				If the user has a photo on their computer, they\'re asked to upload it.
 			</p>
 			<div class="annotated-image-container">
 				<img src="'+asset_path+'images/ctscreenshot/uploadphoto.png" />
+				<a href=\"/service-patterns/concessionary-travel/example-service/upload\" target=\"_blank\">Upload photo example council page</a>
 			</div>
+			<p>
+				Guidance on uploading a photo is provided in an expandable section:
+			</p>
 			<div class="annotated-image-container">
 				<img src="'+asset_path+'images/ctscreenshot/helpuploading.png" />
 			</div>
@@ -147,7 +171,7 @@
 				{% endfor %}
 			</ol>
 		</div>
-		<a href="">See the example council page</a>
+		<a href="/service-patterns/concessionary-travel/example-service/webcam-start" target="_blank">Webcam question example council page</a>
 	</div>
 	<ol class="list upload-help big-number-list">
 		{% for annotation in annotationsContent %}
