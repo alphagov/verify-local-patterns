@@ -1,0 +1,23 @@
+{% set thisTab = 'Notifications' %}
+{% set pageTab = 'Policy' %}
+
+{% extends "ct_layout.html" %}
+
+{% block page_content %}
+
+	<p>
+		Users need to be sent notifications for:
+	</p>
+	<ul class="list list-bullet">
+		<li>
+			confirmation of their application
+		</li>
+		<li>
+			when their pass is on it's way
+		</li>
+		<li>
+			when their pass is due for renewal
+		</li>
+	</ul>
+
+{% endblock %}
