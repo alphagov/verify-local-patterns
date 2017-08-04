@@ -47,8 +47,13 @@
 					</p>
 
 					<p>
-						GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won\'t be verified, they are shown the <a href="https://pirate:bunting@govuk-verify.herokuapp.com/unlikely-to-verify?requestId={{serviceString}}-{{council.string}}&selection=true&above_age_threshold=false&resident_last_12_months=false&not_resident_reason=NoAddress">unlikely to verify</a> page which includes links to other ways to apply.
+						GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won\'t be verified, they are shown the unlikely to verify page which includes links to other ways to apply.
 					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+						<img src="'+asset_path+'images/ctscreenshot/unlikelytoverify.png"/>
+					</div>
+					<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId=concessionary-travel-argleton&selection=true" target="_blank">Unlikely to verify example GOV.UK page</a>
 				</div>
 				</details>
 				<details>
@@ -56,14 +61,19 @@
 					<div class="panel">
 						<p>
 							After these questions, a very small proportion of users will still not be able to verify their identity. These users are told by their chosen Identity Provider that they couldn\'t be verified, and are taken
-							back to GOV.UK, where they will see the <a
-								href="https://pirate:bunting@govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2">verification failed</a> page which includes links to other ways to apply.
+							back to GOV.UK, where they will see the verification failed page which includes links to other ways to apply.
 						</p>
-						<p>screenshot
+						<div class="annotated-image-container">
+							<div class="annotated-image">
+							<img src="'+asset_path+'images/ctscreenshot/unlikelytoverify.png"/>
+						</div>
+						<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId=concessionary-travel-argleton&selection=true" target="_blank">Verification failed example GOV.UK page</a>
+					</div>
+						{# <p>screenshot
 							<a href="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Explore the example GOV.UK Verify journey as a user who cannot be verified</a>.
 						</p>
 						<p>
-							screenshot <a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a>
+							screenshot <a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a> #}
 						</p>
 					</div>
 				</details>
