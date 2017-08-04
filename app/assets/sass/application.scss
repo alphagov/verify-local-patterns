@@ -59,7 +59,7 @@ details{
 .big-number-list h2{
     display: inline;
 }
-.big-number-list p{
+.big-number-list > p{
 	width: calc(100% - 3em);
 	display: inline-block;
 	vertical-align: top;

@@ -2,9 +2,9 @@
 {% set pageTab = 'Design' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
-	<p>
-
-	</p>
+<p>
+	Linked to from <a href="/service-patterns/concessionary-travel/identity/design">notifications section</a>.
+</p>
 	{% set annotationsContent = [
 		{
 			"position": "top: 20%; left: 60%",
@@ -19,7 +19,10 @@
 			"content":
 			"<p>
 				This copy shows if the user opted in to recieve email and or text confirmation messages. If they did not, alternate copy would show plus a link to sign up for confirmation messages:
-			</p>"
+			</p>
+			<div class='annotated-image-container'>
+				<img src='"+asset_path+"images/ctscreenshot/optedout.png' />
+			</div>"
 		},{
 			"position": "top: 34%; left: 50%",
 			"header": "Let users know when to expect their pass",
@@ -57,7 +60,7 @@
 				{% endfor %}
 			</ol>
 		</div>
-		<a href="">See the example council page</a>
+		<a href="/service-patterns/concessionary-travel/example-service/success" target="_blank">Application complete example council page</a>
 	</div>
 	<ol class="list upload-help big-number-list">
 		{% for annotation in annotationsContent %}
