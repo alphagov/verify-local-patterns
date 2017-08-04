@@ -1,0 +1,35 @@
+{% set thisTab = 'Start' %}
+{% set pageTab = 'Research' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+
+<h3 class="heading-medium">User needs observed while testing and iterating</h3>
+
+<h4 class="heading-small">What we learnt from testing with users</h4>
+<p>
+	By the time users leave this page and commit to applying for their permit, they need to have a clear understanding of what they are committing to and what they will get in return. This understanding allows users to start the online application process with confidence.
+</p>
+<p>
+	Earlier versions of this page presented this information in a single bullet list, however, this large block of relatively undifferentiated content was often not read by users.
+</p>
+<p>
+	There remains an issue about houses of multiple occupancy, which is still being iterated on. Residents of these properties are usually eligible for free permits, however this technical terminology was poorly understood and confused many users.
+</p>
+<h4 class="heading-small">What we changed as a result</h4>
+<p>
+	The information that users need to start the application confidently has been broken down and is now delivered in smaller chunks.
+</p>
+<p>
+	Information about the parking zone is now provided on an earlier page, and the remaining information is provided in smaller chunks, with appropriate sub-headings.
+</p>
+<p>
+	A link was added to a page explaining houses of multiple occupancy, but some users still assumed they lived in a house of multiple occupation. To mitigate this we added “licensed” in front of the term, which is also more factually accurate.
+</p>
+
+<h3 class="heading-medium">Issue history</h3>
+
+<div class="github-issues-list"></div>
+{% set labels = '["start-page", "Visitor+Permits"]' %}
+
+
+{% endblock %}
