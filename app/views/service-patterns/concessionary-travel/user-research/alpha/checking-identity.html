@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  User research for the parking start page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+          <a href="http://gov.uk/service-toolkit">Service toolkit</a>
+      </li>
+      <li>
+          <a href="/">Local government service patterns</a>
+      </li>
+      <li>
+          <a href="/service-patterns/concessionary-travel">Apply for an older person's concessionary travel pass</a>
+      </li>
+      <li>
+          User research
+      </li>
+    </ol>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Checking your identity</h1>
+      <h2 class="heading-medium">What we learnt</h2>
+      <p>Early iterations of this page used the page layout to prioritise the choice of Verify, this introduced usability issues that resulted in many users unintentionally opting to scan and upload documents.</p>
+      <p>At this stage in the transaction, most users only have a poor understanding of Verify, and therefore struggle to make an informed decision about its use. For many, having to register for an account before applying was a strong disincentive to using Verify.</p>
+      <p>Some users did not understand that this was a choice, thinking that this page represented a sequence of actions required to complete the application.</p>
+      <p>Although this page now has significantly more content, we have found that placing this content in the context of a decision point encourages users to read before they decide.</p>
+      <h2 class="heading-medium">What we changed</h2>
+      <p>Significant changes have been made to the layout of this page, resulting in a layout that is closer to a standard radio button form element, with the word 'or' place between to reinforce that this is a choice, not a sequence.</p>
+      <p>Content has been added to help users understand what Verify is, and to explain the relative benefits of the options offered.</p>
+      <p>A link to 'other ways to apply' has also been added to this page, as this was frequently missed one the resident's start page. This has significantly improved awareness of these options.</p>    
+    </div>
+
+
+  </div>
+
+  
+</main>
+
+{% endblock %}

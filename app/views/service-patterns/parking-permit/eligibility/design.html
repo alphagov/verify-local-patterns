@@ -1,0 +1,172 @@
+{% set thisTab = 'Eligibility' %}
+{% set pageTab = 'Design' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+	<p>
+		Linked to from <a href="/service-patterns/parking-permit/start/design">service start page</a>.
+	</p>
+	{% set annotationsContent = [
+		{
+			"position": "top: 35%; right: 30%;",
+			"header": "Radio buttons",
+			"content": "<p>
+								Different methods of identity verification are presented using radio buttons.</p><p>
+									 <a href='https://designnotes.blog.gov.uk/2016/11/30/weve-updated-the-radios-and-checkboxes-on-gov-uk/'>Use large radio buttons</a>.
+							</p>
+							<p>
+								The copy explains the consequences of the choice using bullet points within the radio buttons.
+							</p>"
+		},
+		{
+			"position": "top: 41%; right: 40%;",
+			"header": "GOV.UK Verify",
+			"content": '<p>
+				If the user selects the GOV.UK Verify route, the service asks the user if they can use their personal data for this application.
+			</p>
+			<p>
+					If the user says no, the service routes them back to the previous page.
+			</p>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="'+asset_path+'images/ctscreenshot/personaldata.png"/>
+				</div>
+				<a href="/service-patterns/parking-permit/example-service/personal-data" target="_blank">Your personal data example council page</a>
+			</div>
+			<p>
+				If the user says yes, they are sent to GOV.UK, where they choose a certified company to verify their identity. If the verification is successful, the user is returned to the council website to confirm their address and date of birth.
+			</p>
+			<div class="annotated-image-container">
+				<img src="'+asset_path+'images/verify-flow.jpg"/>
+			</div>
+			<details>
+				<summary><span class="summary">Unlikely to verify</span></summary>
+				<div class="panel">
+					<p>
+						Some users may not have the documents or credit records that GOV.UK Verify needs to prove their identity.
+					</p>
+
+					<p>
+						GOV.UK Verify asks users questions to work out if they are likely to be verified. If it looks like they won\'t be verified, they are shown the unlikely to verify page which includes links to other ways to apply.
+					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+						<img src="'+asset_path+'images/ctscreenshot/unlikelytoverify.png"/>
+					</div>
+					<a href="https://govuk-verify.herokuapp.com/unlikely-to-verify?requestId=concessionary-travel-argleton&selection=true" target="_blank">Unlikely to verify example GOV.UK page</a>
+				</div>
+				</details>
+				<details>
+					<summary><span class="summary">Verification failed</span></summary>
+					<div class="panel">
+						<p>
+							After these questions, a very small proportion of users will still not be able to verify their identity. These users are told by their chosen Identity Provider that they couldn\'t be verified, and are taken
+							back to GOV.UK, where they will see the verification failed page which includes links to other ways to apply.
+						</p>
+						<div class="annotated-image-container">
+							<div class="annotated-image">
+							<img src="'+asset_path+'images/ctscreenshot/verificationfailed
+							.png"/>
+						</div>
+						<a href="https://govuk-verify.herokuapp.com/fail?requestId=concessionary-travel-argleton&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=barclays&userLOA=2" target="_blank">Verification failed example GOV.UK page</a>
+					</div>
+						</p>
+					</div>
+				</details>
+		<h3 class="heading-small">Confirm address</h3>
+		<p>
+			GOV.UK Verify will send your service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, your service webpage should ask them to confirm if this is their current address. This
+			is mainly done because GOV.UK Verify identity providers may not have the user\'s address if they moved house in the last 3 months.
+		</p>
+		<p>
+			This page also tells the user their bus pass will be sent to the address received through GOV.UK Verify.
+		</p>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="'+asset_path+'images/ppscreenshot/confirmaddress.png"/>
+				</div>
+				<a href="/service-patterns/parking-permit/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
+			</div>
+		<details>
+			<summary><span class="summary">New residents</span></summary>
+				<div class="panel">
+				<p>
+					If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. Your service should ask users to enter their current address and warn them not to enter false
+					information, as this is a civic offence.
+				</p>
+				<p>
+					If the travel pass is physical, your service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that your service will be using the address they\'ve given for this purpose on the service confirmation
+					page.
+				</p>
+				<div class="annotated-image-container">
+					<div class="annotated-image">
+						<img src="'+asset_path+'images/ppscreenshot/currentaddress.png"/>
+					</div>
+					<a href="/service-patterns/parking-permit/example-service/add-new-address" target="_blank">Enter current address example council page</a>
+				</div>
+			</div>
+		</details>
+		<details>
+			<summary><span class="summary">Wrong council</span></summary>
+			<div class="panel">
+				<p>
+					When the user has confirmed their address, your service should check that the address they\'ve given is in the area your council provides services for. If the address is not in the area, your service webpage should tell them they are not eligible in
+					this area.
+				</p>
+				<div class="annotated-image-container">
+					<div class="annotated-image">
+						<img src="'+asset_path+'images/ppscreenshot/noteligibleaddress.png"/>
+					</div>
+					<a href="/service-patterns/parking-permit/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
+				</div>
+			</div>
+		</details>
+		<p>
+			When the service has checked their address is in the council\'s area the user is moved on to the <a href="/service-patterns/concessionary-travel/permit/design">permit section</a>.
+		</p>'
+		},
+		{
+			"position": "top: 65%; right: 40%;",
+			"header": "Alternative online route",
+			"content": "<p>
+							Councils should provide an alternative online route to access the service, as not everybody will have enough of a digital history to be able to be verified.
+						</p>"
+		},
+		{
+			"position": "top: 84%; left: 30%;",
+			"header": "Offline route",
+			"content": "<p>
+							Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
+						</p>"
+		}
+	]
+		%}
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/checkingyouridentity.png"/>
+			<ol class="list upload-help">
+				{% for annotation in annotationsContent %}
+				<li style="{{annotation.position}}">
+					<a href="#{{loop.index}}">
+						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
+					</a>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+		<a href="/service-patterns/parking-permit/example-service/prove-identity" target="_blank">Checking your identity example council page</a>
+	</div>
+	<ol class="list upload-help big-number-list">
+		{% for annotation in annotationsContent %}
+		<li id="{{loop.index}}">
+			<h2 class="heading-small">
+				<span class="circle circle-step-large">{{loop.index}}</span>
+			</h2>
+			<div class="circle-list-item">
+				<h3 class="heading-small">{{annotation.header}}</h3>
+				{{annotation.content | safe}}
+			</div>
+		</li>
+		{% endfor %}
+</ol>
+
+{% endblock %}

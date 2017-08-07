@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% set thingString = "parking-permit" %}
+{% set pageTitle = "Apply for a resident's parking permit" %}
+{% block page_title %}
+    {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+	{% include "includes/pattern_header.html" %}
+
+	{% set tabs = ["Overview", "Awareness", "Check", "Start", "Eligibility",  "Permit", "Payment","Notifications", "End"] %}
+	{% include "includes/pattern_tab_nav.html" %}
+
+	{% set sections = ['Policy', 'Research', 'Design', 'Code'] %}
+	{% include "includes/pattern_side_nav.html" %}
+
+			<div class="column-three-quarter leftborder">
+
+				<h2 class="heading-large">{{pageTab}}</h2>
+
+				{% block page_content %}{% endblock %}
+
+				<hr />
+				{% if pageTab == 'Policy' %}
+					{% set commentTitle =  'Does this reflect your local policy?'%}
+					{% set commentDescription = 'Write a comment explaining any local variations in policy that should be covered on this page.' %}
+				{% elif pageTab == 'Research' %}
+					{% set commentTitle =  'Add your local council\'s research'%}
+					{% set commentDescription = 'Include the date and location your research took place, screenshots of relevant pages, and ananoymised quotes from real users.' %}
+				{% elif pageTab == 'Design' %}
+					{% set commentTitle =  'Add your local council\'s design variations' %}
+					{% set commentDescription = 'You must reference points in the research or policy section for your design to be added to the pattern.' %}
+				{% elif pageTab == 'Code' %}
+					{% set commentTitle =  'Add open source code for other councils to use' %}
+					{% set commentDescription = 'Add a link to a GitHub repo or other way to download the code.' %}
+				{% endif %}
+
+
+								 {#
+								 		policy:   Does this reflect your local policy?
+															Explain any variations in your local policy to be included above
+								 		research: Add your local council's research
+															Include the date your research took place...etc
+								 		design:   Add your local council's design
+															You must reference points in the research or policy section for your design to be added to the pattern.
+										code:			Add open source code for councils to use
+
+								  #}
+				<details>
+				 <summary><span class="summary heading-small">{{commentTitle}}</span></summary>
+
+				 <div class="panel panel-border-narrow">
+					 	<p>
+							{{commentDescription}}
+						</p>
+				<div id="disqus_thread"></div>
+				<script>
+
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = 'https://verify-local-patterns-herokuapp-com.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				                            <script id="dsq-count-scr" src="//verify-local-patterns-herokuapp-com.disqus.com/count.js" async></script>
+																	</div>
+																</details>
+			</div>
+</main>
+{% endblock %}

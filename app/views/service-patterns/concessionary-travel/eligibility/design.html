@@ -1,13 +1,13 @@
-{% set thisTab = 'Identity' %}
+{% set thisTab = 'Eligibility' %}
 {% set pageTab = 'Design' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
 	<p>
-		Linked to from <a href="/service-patterns/parking-permit/start/design">service start page</a>.
+		Linked to from <a href="/service-patterns/concessionary-travel/start/design">service start page</a>.
 	</p>
 	{% set annotationsContent = [
 		{
-			"position": "top: 35%; right: 30%;",
+			"position": "top: 35%; right: 40%;",
 			"header": "Radio buttons",
 			"content": "<p>
 								Different methods of identity verification are presented using radio buttons.</p><p>
@@ -18,7 +18,7 @@
 							</p>"
 		},
 		{
-			"position": "top: 41%; right: 40%;",
+			"position": "top: 42%; right: 40%;",
 			"header": "GOV.UK Verify",
 			"content": '<p>
 				If the user selects the GOV.UK Verify route, the service asks the user if they can use their personal data for this application.
@@ -30,7 +30,7 @@
 				<div class="annotated-image">
 					<img src="'+asset_path+'images/ctscreenshot/personaldata.png"/>
 				</div>
-				<a href="/service-patterns/parking-permit/example-service/personal-data" target="_blank">Your personal data example council page</a>
+				<a href="/service-patterns/concessionary-travel/example-service/personal-data" target="_blank">Your personal data example council page</a>
 			</div>
 			<p>
 				If the user says yes, they are sent to GOV.UK, where they choose a certified company to verify their identity. If the verification is successful, the user is returned to the council website to confirm their address and date of birth.
@@ -41,6 +41,7 @@
 			<details>
 				<summary><span class="summary">Unlikely to verify</span></summary>
 				<div class="panel">
+
 					<p>
 						Some users may not have the documents or credit records that GOV.UK Verify needs to prove their identity.
 					</p>
@@ -72,6 +73,52 @@
 						</p>
 					</div>
 				</details>
+			<h3 class="heading-small">Confirm date of birth</h3>
+				<p>
+					When the user has verified their identity, they are returned to the council website. At this point the service asks them to confirm their date of birth.
+				</p>
+				<div class="annotated-image-container">
+					<div class="annotated-image">
+						<img src="'+asset_path+'images/ctscreenshot/confirmdob_whole.png"/>
+					</div>
+					<a href="/service-patterns/concessionary-travel/example-service/confirm-dob" target="_blank">Confirm date of birth example council page</a>
+				</div>
+			</p>
+			<details>
+				<summary><span class="summary">Incorrect date of birth</span></summary>
+				<div class="panel">
+					<h3 class="heading-small">Incorrect date of birth</h3>
+					<p>
+						If the user\'s date of birth is not correct, something has probably gone wrong in the verifying process. Your service needs to advise them to continue using a different channel.
+					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/ctscreenshot/unsuccessfulverifying_whole.png"/>
+						</div>
+						<a href="/service-patterns/concessionary-travel/example-service/incorrect-dob" target="_blank">Incorrect date of birth example council page</a>
+						</p>
+					</div>
+
+				</div>
+			</details>
+			<details>
+				<summary><span class="summary">Not egibile because of age</span></summary>
+				<div class="panel">
+				<p>
+					If the user confirms their date of birth, your service should check the user is old enough to be eligible. If the user is not eligible based on their date of birth your service webpage should tell them they are not currently eligible and supply the
+					date when they will be eligible.
+				</p>
+				<p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/ctscreenshot/noteligibledob_whole.png"/>
+						</div>
+						<a href="/service-patterns/concessionary-travel/example-service/not-eligible-age" target="_blank">Not eligible because of age example council page</a>
+					</div>
+				</p>
+			</div>
+		</details>
+
 		<h3 class="heading-small">Confirm address</h3>
 		<p>
 			GOV.UK Verify will send your service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, your service webpage should ask them to confirm if this is their current address. This
@@ -82,9 +129,9 @@
 		</p>
 			<div class="annotated-image-container">
 				<div class="annotated-image">
-					<img src="'+asset_path+'images/ppscreenshot/confirmaddress.png"/>
+					<img src="'+asset_path+'images/ctscreenshot/confirmaddress_whole.png"/>
 				</div>
-				<a href="/service-patterns/parking-permit/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
+				<a href="/service-patterns/concessionary-travel/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
 			</div>
 		<details>
 			<summary><span class="summary">New residents</span></summary>
@@ -94,14 +141,14 @@
 					information, as this is a civic offence.
 				</p>
 				<p>
-					If the travel pass is physical, your service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that your service will be using the address they\'ve given for this purpose on the service confirmation
-					page.
+					If the travel pass is physical, your service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that your service will be using the address they\'ve given for this purpose on the <a href="../end/design">service confirmation
+					page</a>.
 				</p>
 				<div class="annotated-image-container">
 					<div class="annotated-image">
-						<img src="'+asset_path+'images/ppscreenshot/currentaddress.png"/>
+						<img src="'+asset_path+'images/ctscreenshot/entercurrentaddress_whole.png"/>
 					</div>
-					<a href="/service-patterns/parking-permit/example-service/add-new-address" target="_blank">Enter current address example council page</a>
+					<a href="/service-patterns/concessionary-travel/example-service/current-address" target="_blank">Enter current address example council page</a>
 				</div>
 			</div>
 		</details>
@@ -114,14 +161,31 @@
 				</p>
 				<div class="annotated-image-container">
 					<div class="annotated-image">
-						<img src="'+asset_path+'images/ppscreenshot/noteligibleaddress.png"/>
+						<img src="'+asset_path+'images/ctscreenshot/noteligibleaddress_whole.png"/>
 					</div>
-					<a href="/service-patterns/parking-permit/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
+					<a href="/service-patterns/concessionary-travel/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
 				</div>
 			</div>
 		</details>
+		<details>
+			<summary><span class="summary">Existing pass</span></summary>
+			<div class="panel">
+				<p>
+					At this point the service should check in the council\'s database to see if the user already has a bus pass.</p>
+				<p>
+					If they already have a pass, your service webpage should tell them they are not eligible to apply for a new one, but they can renew or replace a lost or stolen pass with the \'Renew or replace your bus pass\' service.</p>
+				<p>
+					Include a link to contact your service, in case the user believes there has been a mistake.</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/ctscreenshot/noteligiblepass_whole.png"/>
+						</div>
+						<a href="/service-patterns/concessionary-travel/example-service/pass-already-issued" target="_blank">Not eligible because already have a pass example council page</a>
+					</div>
+			</div>
+		</details>
 		<p>
-			When the service has checked their address is in the council\'s area the user is moved on to the <a href="/service-patterns/concessionary-travel/permit/design">permit section</a>.
+			Once the service has checked their address is in the council\'s area and the service has checked they don\'t already have a pass, they move onto the <a href="/service-patterns/concessionary-travel/photo/design">photo section</a>.
 		</p>'
 		},
 		{
@@ -132,7 +196,7 @@
 						</p>"
 		},
 		{
-			"position": "top: 84%; left: 30%;",
+			"position": "top: 83%; left: 25%;",
 			"header": "Offline route",
 			"content": "<p>
 							Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
@@ -142,7 +206,7 @@
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
-			<img src="{{asset_path}}images/ppscreenshot/checkingyouridentity.png"/>
+			<img src="{{asset_path}}images/ctscreenshot/checkingidentity_whole.png"/>
 			<ol class="list upload-help">
 				{% for annotation in annotationsContent %}
 				<li style="{{annotation.position}}">
@@ -153,7 +217,7 @@
 				{% endfor %}
 			</ol>
 		</div>
-		<a href="/service-patterns/parking-permit/example-service/prove-identity" target="_blank">Checking your identity example council page</a>
+		<a href="/service-patterns/concessionary-travel/example-service/prove-identity" target="_blank">Checking your identity example council page</a>
 	</div>
 	<ol class="list upload-help big-number-list">
 		{% for annotation in annotationsContent %}
@@ -166,6 +230,11 @@
 				{{annotation.content | safe}}
 			</div>
 		</li>
+		{# <p>screenshot
+			<a href="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Explore the example GOV.UK Verify journey as a user who cannot be verified</a>.
+		</p>
+		<p>
+			screenshot <a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a> #}
 		{% endfor %}
 </ol>
 

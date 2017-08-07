@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  User research for the parking start page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+          <a href="http://gov.uk/service-toolkit">Service toolkit</a>
+      </li>
+      <li>
+          <a href="/">Local government service patterns</a>
+      </li>
+      <li>
+          <a href="/service-patterns/concessionary-travel">Apply for an older person's concessionary travel pass</a>
+      </li>
+      <li>
+          User research
+      </li>
+    </ol>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Concessionary travel start page</h1>
+      <h2 class="heading-medium">What we learnt</h2>
+
+      <p>Early iterations of this page presented users with a significant amount of content, with few sub headings. This resulted in most users simply starting the interaction without reading.</p>
+      <p>Users become eligible for a pass when they reach the female state pension age. Due to current changes in the female state pension age, the age a user becomes eligibile varies with their birth year.</p>
+      <p>Attempts at explaining this have confused users. Linking to the GOV.UK page that allows users to look up their pension age has also confused users as they do not understand the association between bus passes and pensions.</p>
+      <h2 class="heading-medium">What we changed</h2>
+      <p>The content on this page has been broken up with task specific sub-headings, helping those scanning the page to identify relevant content.</p>
+      <p>To address confusion around eligibility, a custom eligibility checker has been created. This is linked from the start page, allowing users to simply enter their date of birth to determine their elgibility. This has removed any confusion resulting from the link with female state pension age.</p>
+    </div>
+
+
+  </div>
+
+  
+</main>
+
+{% endblock %}
