@@ -2,44 +2,48 @@
 {% set pageTab = 'Research' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
+{% set labels = '["success-page", "verify reuse"]' %}
 <h3 class="heading-medium">User needs identified during the Discovery phase</h3>
 <p>
-  As a resident applying for a pass, I need:
-  <ul class="list list-bullet">
-  <li>to know how that I’ve done everything correctly, so	that I know my application will be successful</li>
-  <li>to know what’s happening with my application, so that I don’t have to call up</li>
-  <li>to find out when I’ll get it</li>
-  <li>to get my bus pass quickly, so that I’m able to travel</li>
-  <li>to know where and how I can use my pass, so I don’t get thrown off a bus</li>
+	As a resident applying for a pass, I need:
+	<ul class="list list-bullet">
+	<li>to know how that I’ve done everything correctly, so	that I know my application will be successful</li>
+	<li>to know what’s happening with my application, so that I don’t have to call up</li>
+	<li>to find out when I’ll get it</li>
+	<li>to get my bus pass quickly, so that I’m able to travel</li>
+	<li>to know where and how I can use my pass, so I don’t get thrown off a bus</li>
 </ul>
 </p>
 <p>
-  Once applications had been submitted users needed to know that they were being processed, as well as when they would be issued.
+	Once applications had been submitted users needed to know that they were being processed, as well as when they would be issued.
 </p>
 <p>
-  These users also tended to be less confident about their applications, and there was a greater need to know that they had completed the application correctly.
+	These users also tended to be less confident about their applications, and there was a greater need to know that they had completed the application correctly.
 </p>
-<p>
-<h3 class="heading-medium">User needs observed while testing and iterating</h3>
-<h4 class="heading-small">What we learnt</h4>
-<p>
-  At the end of the transaction, users need a clear confirmation that they have completed the task. In addition to this, they also need to understand when and how they will receive their pass.
-</p>
-<p>
-  Several users also wanted to know how and where they would be able to use their pass.
-</p>
-<p>
-  Some users thought the identity verification process was specifically for the bus pass application.
-</p>
-<h4 class="heading-small">What we changed</h4>
-<p>
-  Content has been added to this page to explain how the pass can be used.
-</p>
-<p>
-  Content has also been added to mention other potentially relevant services the user can access with their Verify account. This addresses an observed issue where some users thought the identity verification process was specifically for the bus pass application.
-</p>
-<h3 class="heading-medium">Issue history</h3>
-<div class="github-issues-list"></div>
-{% set labels = '["success-page", "success+%2F+reuse"]' %}
+<div class="container-success-page">
+	<h3 class="heading-medium">Success page</h3>
+	<a href="design">&rarr; Skip to design section for page screenshots</a>
+	<h4 class="heading-small">What we learnt while testing</h4>
+	<p>
+	  At the end of the transaction, users need a clear confirmation that they have completed the task. In addition to this, they also need to understand when and how they will receive their pass.
+	</p>
+	<p>
+	  Several users also wanted to know how and where they would be able to use their pass.
+	</p>
+	<p>
+	  Some users thought the identity verification process was specifically for the bus pass application.
+	</p>
+	<h4 class="heading-small">What we changed as a result</h4>
+	<p>
+	  Content has been added to this page to explain how the pass can be used.
+	</p>
+	<p>
+	  Content has also been added to mention other potentially relevant services the user can access with their Verify account. This addresses an observed issue where some users thought the identity verification process was specifically for the bus pass application.
+	</p>
+	<h4 class="heading-small">Issue history</h4>
+</div>
+<div class="container-verify-reuse">
+	<h3 class="heading-medium">Verify reuse</h3>
+</div>
 
 {% endblock %}
