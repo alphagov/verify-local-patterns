@@ -28,6 +28,18 @@ $path: "/public/images/";
 }
 
 // should probs be in elements
+
+.column-three-quarter{
+	box-sizing: border-box;
+	padding: 0 15px;
+	float: left;
+	width: 75%;
+}
+
+h2:first-child{
+	margin-top: 0;
+}
+
 img, svg{
   max-width: 100%;
 }
@@ -38,6 +50,39 @@ p + ul{
 
 .panel .heading-small{
   margin: 0 0 1.5em 0;
+}
+
+details{
+	 margin: 1em 0 1.6em;
+}
+
+.big-number-list h2{
+    display: inline;
+}
+.big-number-list > p{
+	width: calc(100% - 3em);
+	display: inline-block;
+	vertical-align: top;
+	margin: 13px 0 5px 7px;
+}
+.big-number-list .circle-list-item{
+	width: calc(100% - 3em);
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	.annotated-image-container, p{
+		margin-left: 0;
+	}
+	.heading-small{
+		margin-top: 12px;
+	}
+}
+.big-number-list p + p{
+	margin-top: 1em;
+}
+
+.big-number-list .circle{
+ margin: 5px 5px 10px 0;
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -86,15 +131,14 @@ h1 span.strapline {
   line-height: 1.14286;
   list-style-type: none;
   margin-bottom: 5px;
-  margin-left: 15px;
-  padding-right: 15px;
-  &:before {
-    content: "–";
-    float: left;
-    display: block;
-    width: 15px;
-    margin-left: -15px;
-  }
+  padding: 9px 15px 10px;
+  // &:before {
+  //   content: "–";
+  //   float: left;
+  //   display: block;
+  //   width: 15px;
+  //   margin-left: -15px;
+  // }
   @media (min-width: 641px){
     font-size: 16px;
     line-height: 1.25;
@@ -108,8 +152,132 @@ h1 span.strapline {
 .page-contents__list .active {
     letter-spacing: 0;
     font-weight: bold;
+
+    background-color: #f0f0f0;
+    font-weight: bold !important;
+    letter-spacing: 0;
+    border-left: 4px solid #005ea5;
 }
 
 table + p{
   margin-top: 2em;
+}
+
+.nav-tabs {
+    zoom: 1;
+    background: #fff;
+    padding: 0;
+    position: relative;
+		display: block;
+		overflow: hidden;
+}
+.nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
+    float: left;
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+}
+.nav-tabs li, .nav-tabs .tabs-nav li {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    float: left;
+}
+
+.nav-tabs li.active a, .nav-tabs .tabs-nav li.active a {
+    background-color: #fff;
+    border: solid 1px #bfc1c3;
+    border-bottom: solid 1px #fff;
+    color: #0b0c0c;
+    position: relative;
+    text-decoration: none;
+    z-index: 5;
+}
+
+.nav-tabs li a, .nav-tabs .tabs-nav li a {
+    border: solid 1px #fff;
+    border-bottom: none;
+    float: left;
+    height: 2.25em;
+    line-height: 2.25em;
+    margin-bottom: -1px;
+    padding: 0 1em 0 1em;
+    position: relative;
+    text-align: center;
+    top: 0;
+}
+
+.nav-tabs:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+		margin-bottom: 3em;
+}
+
+.page-contents > h2{
+	margin-top: 0;
+}
+
+.page-contents__list li{
+	font-size: 18px;
+}
+
+.heading-xlarge{
+	margin-bottom: .6em;
+}
+.lede{
+	margin-bottom: 2em;
+}
+
+.leftborder{
+	border-left: 1px solid #ddd;
+}
+
+.annotated-image-container{
+	border: 1px solid #bfc1c3;
+	padding: 10px;
+	margin: 15px 0 15px 0;
+}
+
+.annotated-image{
+	position: relative;
+	box-sizing: border-box;
+	max-width: 100%;
+	width: auto;
+	height: 100%;
+	.list{
+		margin:0;
+	}
+	li{
+		position: absolute;
+	}
+	.circle:before{
+		display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 23px solid #0b0c0c;
+    position: absolute;
+    left: -14px;
+    top: 3px;
+
+	}
+	.circle:hover{
+		background: #6F777B;
+	}
+	.circle:hover:before{
+		border-right: 23px solid #6F777B;
+	}
+}
+
+.big-number-list .annotated-image-container{
+	margin-left: 3em;
+}
+.annotated-image-container-half{
+	width: 48%;
+	height: 520px;
+  overflow: scroll;
 }

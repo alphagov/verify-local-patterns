@@ -29,27 +29,8 @@
 		})
 	}
 </script>
-
-<script src="{{asset_path}}/data/{{council.string}}BoundaryData.js"></script>
-<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
-   integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
-   crossorigin=""></script>
+<script src="{{asset_path}}/javascripts/loadissues.js"></script>
 <script>
-
-	// {{latitude}} and {{longitude}} set in routes.js
-
-	var mymap = L.map('map').setView([{{latitude}}, {{longitude}}], 16);
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-	    maxZoom: 20,
-	    id: 'mapbox.streets',
-	    accessToken: 'pk.eyJ1Ijoic2FuamF5cG95emVyIiwiYSI6ImNqNHNiaDVvNDMxcGcyd3NlNWE5MXZqZDIifQ.jLkU7XzY3H4lTFIfrryVGg'
-	}).addTo(mymap);
-	var marker = L.marker([{{latitude}}, {{longitude}}]).addTo(mymap);
-
-	var boundaries = {{council.string}}BoundaryData;
-
-	for (var i = 0; i < boundaries.length; i++) {
-		var polygon = L.polygon(L.GeoJSON.coordsToLatLngs(boundaries[i])).addTo(mymap);
-	}
+var labels = {{labels | safe}}
+loadIssues(labels);
 </script>

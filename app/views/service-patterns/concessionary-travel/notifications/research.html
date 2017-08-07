@@ -1,0 +1,34 @@
+{% set thisTab = 'Notifications' %}
+{% set pageTab = 'Research' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+
+{% set labels = '["contact-details", "notifications"]' %}
+
+<div class="container-contact-details">
+	<h3 class="heading-medium">Contact details</h3>
+	<a href="design">&rarr; Skip to design section for page screenshots</a>
+
+	<h4 class="heading-small">What we learnt while testing</h4>
+	<p>
+	In early iterations, users were able to choose to opt out whether of they would receive notifications from the service. Although none opted out of these notifications on purpose, some did so accidentally.
+	</p>
+	<p>
+	Early iterations also only allowed users to select a single contact type, yet some users wanted to select more than one.
+	</p>
+	<p>
+	Some expressed disappointment at having to re-enter their phone number or email address.
+	</p>
+	<h4 class="heading-small">What we changed as a result</h4>
+	<p>
+	Changes were made to allow users to select multiple contact types and to ensure that contact details that have already been entered are displayed.
+	Where possible, these pages should be pre-populated with contact details entered earlier in the transaction to reduce the need for re-entering personal data.
+	</p>
+	<h4 class="heading-small">Issue history</h4>
+</div>
+<div class="container-notifications">
+	<h3 class="heading-medium">Notifications</h3>
+	<h4 class="heading-small">Issue history</h4>
+</div>
+
+{% endblock %}

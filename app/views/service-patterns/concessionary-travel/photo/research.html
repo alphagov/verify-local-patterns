@@ -1,0 +1,33 @@
+{% set thisTab = 'Photo' %}
+{% set pageTab = 'Research' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+{% set labels = '["upload-photo"]' %}
+
+<div class="container-upload-photo">
+
+	<h3 class="heading-medium">Upload photo</h3>
+	<a href="design">&rarr; Skip to design section for page screenshots</a>
+
+<h4 class="heading-small">What we learnt while testing</h4>
+<p>
+  Early testing of this interaction identified that this as a critical point where users needed significant assistance to successfully provide a photo.
+  Although most users were able to take a photo with a smartphone or tablet, few were able to transfer that photo between devices in order to be able to upload it to the service and some also experienced issues with using the OS file browser to select their photo.
+</p>
+<p>
+  Several users also assumed that the photos would need to meet the more stringent criteria of passport photographs.
+</p>
+<h4 class="heading-small">What we changed as a result</h4>
+<p>
+  Early iterations of these pages prioritised uploading an existing photograph, believing this would be the easiest option for most. However this was not the case.
+</p>
+<p>
+  This issue has been addressed by prioritising, where possible, taking a photo with the camera on the user's device. Users with a tablet, smartphone or computer with a webcam are able to take their picture without the challenges of uploading a file themselves. For most users this provides a simple means of providing their photograph.
+</p>
+<p>
+  Those users who are unable to take a photo in this way are directed to the most appropriate means and provided with content to help them.
+</p>
+
+<h4 class="heading-small">Issue history</h4>
+</div>
+{% endblock %}
