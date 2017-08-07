@@ -3,9 +3,8 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 
-<div class="github-issues-list"></div>
 {% set labels = '["prove-identity-page", "verify-hub-pages", "confirm-dob-page",  "confirm-address-page","informed choice"]' %}
-<div class="container-0">
+<div class="container-prove-identity-page">
 	<h3 class="heading-medium">Prove identity page</h4>
 	<a href="design">&rarr; Skip to design section for page screenshots</a>
 	<h4 class="heading-small">What we learnt while testing</h4>
@@ -30,10 +29,14 @@
 	</p>
 	<h4 class="heading-small">Issue history</h4>
 </div>
-<div class="container-1">
+<div class="container-informed-choice">
+	<a href="design">&rarr; Skip to design section for page screenshots</a>
+	<h3 class="heading-medium">Informed choice</h3>
+</div>
+<div class="container-verify-hub-pages">
 	<h3 class="heading-medium">Verify hub pages</h3>
 </div>
-<div class="container-2">
+<div class="container-confirm-dob-page">
 	<h3 class="heading-medium">Confirm date of birth page</h3>
 	<a href="design#2">&rarr; Skip to design section for page screenshots</a>
 	<h4 class="heading-small">What we learnt while testing</h4>
@@ -45,7 +48,7 @@
 	No significant changes have been made to the 'Confirm date of birth' page.
 	</p>
 </div>
-<div class="container-3">
+<div class="container-confirm-address-page">
 	<h3 class="heading-medium">Confirm address page</h3>
 	<a href="design#2">&rarr; Skip to design section for page screenshots</a>
 	<h4 class="heading-small">What we learnt while testing</h4>
@@ -65,9 +68,5 @@
 	<p>
 	User research has shown that users assume eligibility when allowed to proceed with an application. Users should therefore only be notified where they are not eligible to continue.
 	</p>
-</div>
-<div class="container-4">
-	<h3 class="heading-medium">Informed choice</h3>
-
 </div>
 {% endblock %}

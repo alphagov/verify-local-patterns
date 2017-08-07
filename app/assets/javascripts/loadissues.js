@@ -11,7 +11,7 @@ function loadIssues(labels){
 
 		var list = '<ul class="list list-bullet issues-tagged-'+thisLabelClass+'"></ul>';
 
-		$('.container-'+i).append(list);
+		$('.container-'+thisLabelClass).append(list);
 
 		$.get( "https://api.github.com/repos/alphagov/verify-local-patterns/issues?state=all&labels=Concessionary%20Travel,"+thisLabel, function( issues ) {
 			for (var j = 0; j < issues.length; j++) {
