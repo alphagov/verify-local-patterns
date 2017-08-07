@@ -2,75 +2,55 @@
 {% set pageTab = 'Design' %}
 {% extends "pp_layout.html" %}
 {% block page_content %}
-<p>
-	This is for the Check tab
-<p>
+
+{% set annotationsContent = [
+	{
+		"position": "top: 8.5%; right: -4%;",
+		"header": "Include a prominent contact link throughout the journey."
+	},{
+		"position": "top: 34%; left: 71%;",
+		"header": "Copy explains the user may need a parking permit."
+	},{
+		"position": "top: 47%; left: 71%;",
+		"header": "Different types of parking permit issued by the council are referenced."
+	},{
+		"position": "top: 60%; left: 71%;",
+		"header": "Users are informed what a permit will allow them to do."
+	},{
+		"position": "bottom: 5%; left: 66%;",
+		"header": "Users are told how to get assistance if they need it."
+	}
+	] %}
+
 <div class="annotated-image-container">
 	<div class="annotated-image">
-		<img src="{{asset_path}}images/ppscreenshot/parkingstart.png" />
+		<img src="{{asset_path}}images/ppscreenshot/parkingstart.png"/>
 		<ol class="list upload-help">
-			<li style="top: 8.5%; right: -4%;">
-				<a href="#1">
-					<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+			{% for annotation in annotationsContent %}
+			<li style="{{annotation.position}}">
+				<a href="#{{loop.index}}">
+					<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
 				</a>
 			</li>
-			<li style="top: 34%; left: 71%;">
-				<a href="#2">
-					<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
-				</a>
-			</li>
-			<li style="top: 47%; left: 71%;">
-				<a href="#3">
-					<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
-				</a>
-			</li>
-			<li style="top: 60%; left: 71%;">
-				<a href="#4">
-					<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
-				</a>
-			</li>
-			<li style="bottom: 5%; left: 66%;">
-				<a href="#5">
-					<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
-				</a>
-			</li>
+			{% endfor %}
 		</ol>
 	</div>
-	<span><a href="/service-patterns/parking-permit/example-service/start-page" target="_blank">Start page example council page</a></span>
+	<a href="/service-patterns/parking-permit/example-service/start-page" target="_blank">Park your car example council page</a>
 </div>
-
 <ol class="list upload-help big-number-list">
-	<li id="1">
-		<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
-		<p>
-			Include a prominent contact link throughout the journey.
-		</p>
+	{% for annotation in annotationsContent %}
+	<li id="{{loop.index}}">
+		<h2 class="heading-small">
+			<span class="circle circle-step-large">{{loop.index}}</span>
+		</h2>
+		<div class="circle-list-item">
+			<h3 class="heading-small">{{annotation.header}}</h3>
+			{{annotation.content | safe}}
+		</div>
 	</li>
-	<li id="2">
-		<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
-		<p>
-			Copy explains the user may need a parking permit.
-		</p>
-	</li>
-	<li id="3">
-		<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
-		<p>
-			Different types of parking permit issued by the council are referenced.
-		</p>
-	</li>
-	<li id="4">
-		<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
-		<p>
-			Users are informed what a permit will allow them to do.
-		</p>
-	</li>
-	<li id="5">
-		<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
-		<p>
-			Users are told how to get assistance if they need it.
-		</p>
-	</li>
+	{% endfor %}
 </ol>
+
 The next page in the flow asks users to enter their postcode to check if they need a permit:
 	<div class="annotated-image-container">
 		<div class="annotated-image">
