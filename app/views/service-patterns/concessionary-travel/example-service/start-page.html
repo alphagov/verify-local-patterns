@@ -25,16 +25,21 @@
       <li>9.30am to 11pm weekdays</li>
       <li>any time Saturdays, Sundays or bank holidays</li>
     </ul>
+    {% if council.string == 'camden' %}
     <details>
       <summary>
-        <span class="summary">Additional discounted travel for pass holders in {{council.shortName}}</span>
+        <span class="summary">Related discounted travel in {{council.shortName}}</span>
       </summary>
       <div class="panel panel-border-narrow">
-        {% if council.string == 'camden' %}
         <p>
           Until you quality for a Freedom Pass, if you’re aged 60 or over you can apply for a 60+ London Oyster photo card from Transport for London, which allows you free travel on public transport in London.
         </p>
         {% else %}
+        <details>
+          <summary>
+            <span class="summary">Additional discounted travel for pass holders in {{council.shortName}}</span>
+          </summary>
+          <div class="panel panel-border-narrow">
         <p>
           Free text area for council-specific local area older person's bus pass-related travel concessions.
         </p>
