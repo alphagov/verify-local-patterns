@@ -2,8 +2,13 @@
 {% set pageTab = 'Research' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
-<h3 class="heading-medium">User needs observed while testing and iterating</h3>
-<h4 class="heading-small">What we learnt</h4>
+{% set labels = '["upload-photo"]' %}
+
+<div class="container-upload-photo">
+
+	<h3 class="heading-medium">Upload photo</h3>
+
+<h4 class="heading-small">What we learnt while testing</h4>
 <p>
   Early testing of this interaction identified that this as a critical point where users needed significant assistance to successfully provide a photo.
   Although most users were able to take a photo with a smartphone or tablet, few were able to transfer that photo between devices in order to be able to upload it to the service and some also experienced issues with using the OS file browser to select their photo.
@@ -11,7 +16,7 @@
 <p>
   Several users also assumed that the photos would need to meet the more stringent criteria of passport photographs.
 </p>
-<h4 class="heading-small">What we changed</h4>
+<h4 class="heading-small">What we changed as a result</h4>
 <p>
   Early iterations of these pages prioritised uploading an existing photograph, believing this would be the easiest option for most. However this was not the case.
 </p>
@@ -22,7 +27,6 @@
   Those users who are unable to take a photo in this way are directed to the most appropriate means and provided with content to help them.
 </p>
 
-<h3 class="heading-medium">Issue history</h3>
-<div class="github-issues-list"></div>
-{% set labels = '["upload-photo"]' %}
+<h4 class="heading-small">Issue history</h4>
+</div>
 {% endblock %}
