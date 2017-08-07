@@ -1,0 +1,73 @@
+{% set thisTab = 'Start' %}
+{% set pageTab = 'Research' %}
+{% extends "ct_layout.html" %}
+{% block page_content %}
+<p>
+	This is for the Check tab
+<p>
+<h3 class="heading-medium">User needs identified during the Discovery phase</h3>
+<p>
+	As a resident applying for a permit, I need:
+</p>
+<ul class="list list-bullet">
+	<li>
+		to apply without showing you all sorts of documents, so that I’m able to complete my application easily
+	</li>
+	<li>
+		to apply without being registered for council tax, so that I don’t get fined
+	</li>
+	<li>
+		to get someone to apply on my behalf, so that I don’t get fined
+	</li>
+</ul>
+<p>
+	The most common cause of issues in completing the application process was the need to provide documents to prove identity and residency. This problem was seen with both digital and paper-based applications, but the impact was most significant in digital applications.
+</p>
+<p>
+	A few users were only able to complete digital applications with assistance from friends and family, whilst others struggled to provide sufficient evidence of their eligibility.
+</p>
+
+<h3 class="heading-medium">User needs observed while testing and iterating</h3>
+
+
+<h4 class="heading-small">What we learnt from testing with users</h4>
+<p>
+	None of the users we have spoken to have had a problem with checking to see if they needed a permit before they started.
+</p>
+<p>
+	Early versions of this page did not mention the types of permits that would be available and this led to uncertainty for some. These users were unsure what permit the service would let them apply for.
+</p>
+<hr>
+<p>
+	Throughout the research, we found that users were happy to be told which parking zone they needed to apply for, and trusted the answers they were given.
+<p>
+	Some users needed to know more than just whether they could park at a specific postcode. These users needed to understand exactly where the permit would enable them to park, and some of these wanted to be able to refer to this later.
+<hr>
+<p>
+	<p>
+		Those using the map experienced significant usability issues, particularly when accessed with a mobile device. Additionally, those who wanted to print the map as a reference were unable to do so.
+	</p>
+</p>
+<h4 class="heading-small">What we changed as a result</h4>
+<p>
+	To address users' uncertainty we added content to let users know which permits they could apply for with this service.
+</p>
+<hr>
+<p>
+	The need for a more detailed understanding of what the permit covers whas been addressed by providing users with both a map of the zone and list of the streets within the zone. In user research most used the list of street names to learn check that roads of interest were included.
+</p>
+<hr>
+<p>
+	By supplementing the name of the permit with a description of who would apply for it, we have resolved the confusion seen in earlier iterations.
+</p>
+<p>
+	After observing users not recognising the name of the parking boundary area or associating their address with it, we supplemented this with their postcode.
+</p>
+
+<h3 class="heading-medium">Issue history</h3>
+
+<div class="github-issues-list"></div>
+{% set labels = '["start-page", "Visitor+Permits"]' %}
+
+
+{% endblock %}
