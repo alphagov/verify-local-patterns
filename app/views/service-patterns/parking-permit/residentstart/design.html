@@ -2,44 +2,51 @@
 {% set pageTab = 'Design' %}
 {% extends "ct_layout.html" %}
 {% block page_content %}
-
+<p>
+	This is for the resident's start page
+</p>
 <div class="annotated-image-container">
 	<div class="annotated-image">
-		<img src="{{asset_path}}images/ctscreenshot/startpage_whole.png" />
+		<img src="{{asset_path}}images/ppscreenshot/residentstart.png" />
 		<ol class="list upload-help">
-			<li style="top: 2.5%; right: -4%;">
+			<li style="top: 26%; right: 24%;">
 				<a href="#1">
 					<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
 				</a>
 			</li>
-			<li style="top: 19%; left: 61%;">
+			<li style="top: 38%; right: 24%;">
 				<a href="#2">
 					<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
 				</a>
 			</li>
-			<li style="top: 28%; left: 31%;">
+			<li style="top: 44%; right: 24%;">
 				<a href="#3">
 					<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
 				</a>
 			</li>
-			<li style="top: 47%; left: 31%;">
+			<li style="top: 49%; right: 24%;">
 				<a href="#4">
 					<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
 				</a>
 			</li>
-			<li style="top: 55%; left: 66%;">
+			<li style="top: 58%; right: 24%;">
 				<a href="#5">
 					<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
 				</a>
 			</li>
-			<li style="bottom: 15%; left: 50%;">
+			<li style="bottom: 14%; left: 50%;">
 				<a href="#6">
 					<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
 				</a>
 			</li>
-			<li style="bottom: 5%; left: 66%;">
+			<li style="bottom: 7%; left: 66%;">
 				<a href="#7">
 					<h2 class="heading-small"><span class="circle circle-step-large">7</span></h2>
+				</a>
+			</li>
+			<li style="bottom: 1.5%; left: 32%;">
+				<a href="#7">
+					<h2 class="heading-small"><span class="circle circle-step-large">8</span></h2>
 				</a>
 			</li>
 		</ol>
@@ -51,47 +58,53 @@
 	<li id="1">
 		<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
 		<p>
-			Include a prominent contact link throughout the journey.
+			Copy explains what the permit allows the user to do and lets them know the maximum number of permits available per household.
 		</p>
 	</li>
 	<li id="2">
 		<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
 		<p>
-			To address confusion around eligibility, a page for the user to check their eligibility has been added. This is linked from the start page, allowing users to enter their date of birth to determine their eligibility. This has removed any confusion resulting from the link with female state pension age. The user would be taken to a page that looks like this:
+			Costs are briefly explained.
 		</p>
-		<div class="annotated-image-container">
-			<img src="{{asset_path}}images/ctscreenshot/checkageeligibility.png" />
-			<span><a href="/service-patterns/concessionary-travel/example-service/check-age" target="_blank">Check age eligility example council page</a></span>
-		</div>
 	</li>
 	<li id="3">
 		<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
 		<p>
-			The content on this page has been broken up with task specific sub-headings, helping those scanning the page to identify relevant content.
+			The council's local rule for Blue Badge holders is explained here, with a link to the Blue Badge application service where relevant.
 		</p>
 	</li>
 	<li id="4">
 		<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
 		<p>
-			The content on this page has been broken up with task specific sub-headings, helping those scanning the page to identify relevant content.
+			The council's local rule for residents of houses in multiple occupation is explained here. Users can click through to a page explaining house in multiple occupation in more detail:
 		</p>
+		<div class="annotated-image-container">
+			<img src="{{asset_path}}images/ppscreenshot/hmo.png" />
+			<span><a href="/service-patterns/parking-permit/example-service/hmo-info" target="_blank">House in multiple occupation example council page</a></span>
+		</div>
 	</li>
 	<li id="5">
 		<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
 		<p>
-			Users are told what to expect in the application process, including proving their identity and providing a digital photograph.
+			Users are told what to expect in the application process, including proving their address and entering their vehicle registration numbr.
 		</p>
 	</li>
 	<li id="6">
 		<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
 		<p>
-			Users are given links to links to renewals and replacements services.
+			Users are given links to renewals and replacements services.
 		</p>
 	</li>
 	<li id="7">
 		<h2 class="heading-small"><span class="circle circle-step-large">7</span></h2>
 		<p>
 			Users are told what to do if they need assistance.
+		</p>
+	</li>
+	<li id="8">
+		<h2 class="heading-small"><span class="circle circle-step-large">8</span></h2>
+		<p>
+			Users are given offline application alternatives.
 		</p>
 	</li>
 
