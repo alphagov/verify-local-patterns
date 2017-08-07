@@ -7,7 +7,7 @@
 	</p>
 	{% set annotationsContent = [
 		{
-			"position": "top: 35%; right: 40%;",
+			"position": "top: 35%; right: 30%;",
 			"header": "Radio buttons",
 			"content": "<p>
 								Different methods of identity verification are presented using radio buttons.</p><p>
@@ -18,7 +18,7 @@
 							</p>"
 		},
 		{
-			"position": "top: 42%; right: 40%;",
+			"position": "top: 41%; right: 40%;",
 			"header": "GOV.UK Verify",
 			"content": '<p>
 				If the user selects the GOV.UK Verify route, the service asks the user if they can use their personal data for this application.
@@ -52,67 +52,21 @@
 				</div>
 				</details>
 				<details>
-					<summary><span class="summary">Verification failed</span></summary>
-					<div class="panel">
-						<p>
-							After these questions, a very small proportion of users will still not be able to verify their identity. These users are told by their chosen Identity Provider that they couldn\'t be verified, and are taken
-							back to GOV.UK, where they will see the <a
-								href="https://pirate:bunting@govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2">verification failed</a> page which includes links to other ways to apply.
-						</p>
-						<p>screenshot
-							<a href="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Explore the example GOV.UK Verify journey as a user who cannot be verified</a>.
-						</p>
-						<p>
-							screenshot <a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a>
-						</p>
-					</div>
-				</details>
-			<h3 class="heading-small">Confirm date of birth</h3>
-				<p>
-					When the user has verified their identity, they are returned to the council website. At this point the service asks them to confirm their date of birth.
-				</p>
-				<div class="annotated-image-container">
-					<div class="annotated-image">
-						<img src="'+asset_path+'images/ctscreenshot/confirmdob_whole.png"/>
-					</div>
-					<a href="/service-patterns/concessionary-travel/example-service/confirm-dob" target="_blank">Confirm date of birth example council page</a>
-				</div>
-			</p>
-			<details>
-				<summary><span class="summary">Incorrect date of birth</span></summary>
+				<summary><span class="summary">Verification failed</span></summary>
 				<div class="panel">
-					<h3 class="heading-small">Incorrect date of birth</h3>
 					<p>
-						If the user\'s date of birth is not correct, something has probably gone wrong in the verifying process. Your service needs to advise them to continue using a different channel.
+						After these questions, a very small proportion of users will still not be able to verify their identity. These users are told by their chosen Identity Provider that they couldn\'t be verified, and are taken
+						back to GOV.UK, where they will see the <a
+							href="https://pirate:bunting@govuk-verify.herokuapp.com/fail?requestId={{serviceString}}-{{council.string}}&serviceLOA=2&verify=false&security1=&security2=&firstName=&middleName=&lastName=&prevFirstName=&prevMiddleName=&prevLastName=&dob-day=&dob-month=&dob-year=&idp=experian&userLOA=2">verification failed</a> page which includes links to other ways to apply.
 					</p>
-					<div class="annotated-image-container">
-						<div class="annotated-image">
-							<img src="'+asset_path+'images/ctscreenshot/unsuccessfulverifying_whole.png"/>
-						</div>
-						<a href="/service-patterns/concessionary-travel/example-service/incorrect-dob" target="_blank">Incorrect date of birth example council page</a>
-						</p>
-					</div>
-
+					<p>screenshot
+						<a href="https://pirate:bunting@govuk-verify.herokuapp.com/intro?requestId=apply-for-parking-permit-{{council.string}}&verify=false">Explore the example GOV.UK Verify journey as a user who cannot be verified</a>.
+					</p>
+					<p>
+						screenshot <a href="/service-patterns/{{ serviceString }}/example-service/start-non-verify">Explore the fail to verify user example council page</a>
+					</p>
 				</div>
-			</details>
-			<details>
-				<summary><span class="summary">Not egibile because of age</span></summary>
-				<div class="panel">
-				<p>
-					If the user confirms their date of birth, your service should check the user is old enough to be eligible. If the user is not eligible based on their date of birth your service webpage should tell them they are not currently eligible and supply the
-					date when they will be eligible.
-				</p>
-				<p>
-					<div class="annotated-image-container">
-						<div class="annotated-image">
-							<img src="'+asset_path+'images/ctscreenshot/noteligibledob_whole.png"/>
-						</div>
-						<a href="/service-patterns/concessionary-travel/example-service/not-eligible-age" target="_blank">Not eligible because of age example council page</a>
-					</div>
-				</p>
-			</div>
-		</details>
-
+				</details>
 		<h3 class="heading-small">Confirm address</h3>
 		<p>
 			GOV.UK Verify will send your service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, your service webpage should ask them to confirm if this is their current address. This
@@ -123,7 +77,7 @@
 		</p>
 			<div class="annotated-image-container">
 				<div class="annotated-image">
-					<img src="'+asset_path+'images/ctscreenshot/confirmaddress_whole.png"/>
+					<img src="'+asset_path+'images/ppscreenshot/confirmaddress.png"/>
 				</div>
 				<a href="/service-patterns/concessionary-travel/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
 			</div>
@@ -190,7 +144,7 @@
 						</p>"
 		},
 		{
-			"position": "top: 83%; left: 25%;",
+			"position": "top: 84%; left: 30%;",
 			"header": "Offline route",
 			"content": "<p>
 							Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
@@ -200,7 +154,7 @@
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
-			<img src="{{asset_path}}images/ctscreenshot/checkingidentity_whole.png"/>
+			<img src="{{asset_path}}images/ppscreenshot/checkingyouridentity.png"/>
 			<ol class="list upload-help">
 				{% for annotation in annotationsContent %}
 				<li style="{{annotation.position}}">
