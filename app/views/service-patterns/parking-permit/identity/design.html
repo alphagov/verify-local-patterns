@@ -3,7 +3,7 @@
 {% extends "ct_layout.html" %}
 {% block page_content %}
 	<p>
-		Linked to from <a href="/service-patterns/concessionary-travel/start/design">service start page</a>.
+		Linked to from <a href="/service-patterns/parking-permit/start/design">service start page</a>.
 	</p>
 	{% set annotationsContent = [
 		{
@@ -30,7 +30,7 @@
 				<div class="annotated-image">
 					<img src="'+asset_path+'images/ctscreenshot/personaldata.png"/>
 				</div>
-				<a href="/service-patterns/concessionary-travel/example-service/personal-data" target="_blank">Your personal data example council page</a>
+				<a href="/service-patterns/parking-permit/example-service/personal-data" target="_blank">Your personal data example council page</a>
 			</div>
 			<p>
 				If the user says yes, they are sent to GOV.UK, where they choose a certified company to verify their identity. If the verification is successful, the user is returned to the council website to confirm their address and date of birth.
@@ -84,7 +84,7 @@
 				<div class="annotated-image">
 					<img src="'+asset_path+'images/ppscreenshot/confirmaddress.png"/>
 				</div>
-				<a href="/service-patterns/concessionary-travel/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
+				<a href="/service-patterns/parking-permit/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
 			</div>
 		<details>
 			<summary><span class="summary">New residents</span></summary>
@@ -99,9 +99,9 @@
 				</p>
 				<div class="annotated-image-container">
 					<div class="annotated-image">
-						<img src="'+asset_path+'images/ctscreenshot/entercurrentaddress_whole.png"/>
+						<img src="'+asset_path+'images/ppscreenshot/currentaddress.png"/>
 					</div>
-					<a href="/service-patterns/concessionary-travel/example-service/current-address" target="_blank">Enter current address example council page</a>
+					<a href="/service-patterns/parking-permit/example-service/add-new-address" target="_blank">Enter current address example council page</a>
 				</div>
 			</div>
 		</details>
@@ -114,31 +114,14 @@
 				</p>
 				<div class="annotated-image-container">
 					<div class="annotated-image">
-						<img src="'+asset_path+'images/ctscreenshot/noteligibleaddress_whole.png"/>
+						<img src="'+asset_path+'images/ppscreenshot/noteligibleaddress.png"/>
 					</div>
-					<a href="/service-patterns/concessionary-travel/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
+					<a href="/service-patterns/parking-permit/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
 				</div>
 			</div>
 		</details>
-		<details>
-			<summary><span class="summary">Existing pass</span></summary>
-			<div class="panel">
-				<p>
-					At this point your service should check if the user already has a bus pass by searching its records.</p>
-				<p>
-					If they already have a pass, your service webpage should tell them they are not eligible to apply for a new one, but they can renew or replace a lost or stolen pass with the \'Renew or replace your bus pass\' service.</p>
-				<p>
-					Include a link to contact your service, in case the user believes there has been a mistake.</p>
-					<div class="annotated-image-container">
-						<div class="annotated-image">
-							<img src="'+asset_path+'images/ctscreenshot/noteligiblepass_whole.png"/>
-						</div>
-						<a href="/service-patterns/concessionary-travel/example-service/pass-already-issued" target="_blank">Not eligible because already have a pass example council page</a>
-					</div>
-			</div>
-		</details>
 		<p>
-			Once the service has checked their address is in the council\'s area and the service has checked they don\'t already have a pass, they move onto the <a href="/service-patterns/concessionary-travel/photo/design">photo section</a>.
+			When the service has checked their address is in the council\'s area the user is moved on to the <a href="/service-patterns/concessionary-travel/permit/design">permit section</a>.
 		</p>'
 		},
 		{
@@ -170,7 +153,7 @@
 				{% endfor %}
 			</ol>
 		</div>
-		<a href="/service-patterns/concessionary-travel/example-service/prove-identity" target="_blank">Checking your identity example council page</a>
+		<a href="/service-patterns/parking-permit/example-service/prove-identity" target="_blank">Checking your identity example council page</a>
 	</div>
 	<ol class="list upload-help big-number-list">
 		{% for annotation in annotationsContent %}
