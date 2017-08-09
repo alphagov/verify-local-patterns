@@ -1,0 +1,33 @@
+{% set thisTab = 'Payment' %}
+{% set pageTab = 'Research' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+  {# <h3 class="heading-medium">User needs identified during the Discovery phase</h3>
+  <p>
+  </p>
+  <ul class="list list-bullet">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <p>
+  </p> #}
+  <h3 class="heading-medium">User needs observed while testing and iterating</h3>
+  <h4 class="heading-small">What we learnt</h4>
+  <p>
+    When choosing how to pay, some users were confused by the idea of a one-off direct debit. These users expected direct debits to either be multi-part payments or repeating payments.
+  </p>
+  <p>
+    Some also wanted to know if there were charges associated with making a credit card payment.
+  </p>
+  <p>
+    Most users were happy to provide their payment details, as they clearly understood the need for this. However, many objected to the need to re-enter personal data such as name and address that had been entered earlier in the transaction.
+  </p>
+  <h4 class="heading-small">What we changed</h4>
+  <p>
+    Further information has been added to the payment options to address users' uncertainties about one-off direct debits and credit card fees.
+  </p>
+  <h3 class="heading-medium">Issue history</h3>
+  <div class="github-issues-list"></div>
+  {% set labels = '["payment", "choose-payment", "Cost+of+permit", "enter-card"]' %}
+{% endblock %}

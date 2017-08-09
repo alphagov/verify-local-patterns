@@ -1,0 +1,101 @@
+{% set thisTab = 'Permit' %}
+{% set pageTab = 'Design' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+	Linked to from <a href="/service-patterns/parking-permit/eligibility/design">eligibility section</a>.
+</p>
+	{% set annotationsContent = [
+		{
+			"position": "top: 40%; left: 70%",
+			"content":
+			"<p>
+				Copy tells the users the maximum of number of permits their household can have.
+			</p>"
+		},{
+			"position": "top: 50%; left: 70%",
+			"content":
+			"<p>
+				The user is told who can use the permits.
+			</p>"
+		},{
+			"position": "top: 58%; left: 40%",
+			"content":
+			"<p>
+				Radio buttons allow the user to select the number of permits they want to apply for.
+			</p>"
+		},{
+			"position": "top: 85%; left: 40%",
+			"content":
+			"<p>
+				Copy details how long the permit is for, as applicable. If the council only offers a 12 month permit, the copy would be: \'Permits are for 12 months\'.
+			</p>"
+		}
+		]
+		%}
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/howmany.png" />
+			<ol class="list upload-help">
+				{% for annotation in annotationsContent %}
+				<li style="{{annotation.position}}">
+					<a href="#{{loop.index}}">
+						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
+					</a>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+		<a href="/service-patterns/parking-permit/example-service/resident-count" target="_blank">How many permits example council page</a>
+	</div>
+	<ol class="list upload-help big-number-list">
+		{% for annotation in annotationsContent %}
+		<li id="{{loop.index}}">
+			<h2 class="heading-small">
+				<span class="circle circle-step-large">{{loop.index}}</span>
+			</h2>
+			<div class="circle-list-item">
+				<h3 class="heading-small">{{annotation.header}}</h3>
+				{{annotation.content | safe}}
+			</div>
+		</li>
+		{% endfor %}
+</ol>
+<p>
+The next page in the flow asks users to enter their vehicle registration number(s):
+</p>
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/vehregnumber.png" />
+		<span><a href="/service-patterns/parking-permit/example-service/enter-reg" target="_blank">Check if you need a permit example council page</a></span>
+	</div>
+	</div>
+	<p>
+	 Users then select a start date option:
+	</p>
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/whenstart.png" />
+				<a href="/service-patterns/parking-permit/example-service/permit-start" target="_blank">Permit start example council page</a>
+				</div>
+			</div>
+			<p>
+			 If the user chooses the specific date option the following expandable text shows:
+			</p>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="{{asset_path}}images/ppscreenshot/startdate.png" />
+			</div>
+			</div>
+			Next the user is asked to choose a permit length. If the council only offers 12 month permits this screen would not be included in the journey flow.
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="{{asset_path}}images/ppscreenshot/howlong.png" />
+				<span><a href="/service-patterns/parking-permit/example-service/permit-length" target="_blank">Permit length example council page</a></span>
+			</div>
+			</div>
+
+<p>
+	The user is then routed to the <a href="/service-patterns/parking-permit/payment/design">payment section</a>.
+</p>
+
+{% endblock %}

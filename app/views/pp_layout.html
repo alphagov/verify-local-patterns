@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% set thingString = "concessionary-travel" %}
-{% set pageTitle = "Apply for an older person's bus pass" %}
+{% set thingString = "parking-permit" %}
+{% set pageTitle = "Apply for a resident's parking permit" %}
 {% block page_title %}
     {{ pageTitle }}
 {% endblock %}
@@ -10,19 +10,17 @@
 
 	{% include "includes/pattern_header.html" %}
 
-	{% set sections = ["Overview", "1. Awareness", "2. Start", "3. Eligibility", "4. Photo", "5. Notifications", "6. End"] %}
-	{% set tabs = ['Policy', 'Research', 'Design', 'Code'] %}
+	{% set tabs = ["Overview", "Awareness", "Check", "Start", "Eligibility",  "Permit", "Payment","Notifications", "End"] %}
+	{% include "includes/pattern_tab_nav.html" %}
 
-
+	{% set sections = ['Policy', 'Research', 'Design', 'Code'] %}
 	{% include "includes/pattern_side_nav.html" %}
 
-			<div class="column-three-quarter ">
-				<h2 class="heading-large">{{thisTab}}</h2>
+			<div class="column-three-quarter leftborder">
 
-				{% include "includes/pattern_tab_nav.html" %}
+				<h2 class="heading-large">{{pageTab}}</h2>
 
-				<div class="">
-					{% block page_content %}{% endblock %}
+				{% block page_content %}{% endblock %}
 
 				<hr />
 				{% if pageTab == 'Policy' %}
@@ -39,6 +37,17 @@
 					{% set commentDescription = 'Add a link to a GitHub repo or other way to download the code.' %}
 				{% endif %}
 
+
+								 {#
+								 		policy:   Does this reflect your local policy?
+															Explain any variations in your local policy to be included above
+								 		research: Add your local council's research
+															Include the date your research took place...etc
+								 		design:   Add your local council's design
+															You must reference points in the research or policy section for your design to be added to the pattern.
+										code:			Add open source code for councils to use
+
+								  #}
 				<details>
 				 <summary><span class="summary heading-small">{{commentTitle}}</span></summary>
 
@@ -66,11 +75,9 @@
 				})();
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	        <script id="dsq-count-scr" src="//verify-local-patterns-herokuapp-com.disqus.com/count.js" async></script>
-				</div>
-			</details>
+				                            <script id="dsq-count-scr" src="//verify-local-patterns-herokuapp-com.disqus.com/count.js" async></script>
+																	</div>
+																</details>
 			</div>
-		</div>
-
 </main>
 {% endblock %}

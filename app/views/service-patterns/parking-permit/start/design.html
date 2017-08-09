@@ -1,0 +1,152 @@
+{% set thisTab = 'Start' %}
+{% set pageTab = 'Design' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/residentstart.png" />
+		<ol class="list upload-help">
+			<li style="top: 26%; right: 24%;">
+				<a href="#1">
+					<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+				</a>
+			</li>
+			<li style="top: 38%; right: 24%;">
+				<a href="#2">
+					<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+				</a>
+			</li>
+			<li style="top: 44%; right: 24%;">
+				<a href="#3">
+					<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
+				</a>
+			</li>
+			<li style="top: 49%; right: 24%;">
+				<a href="#4">
+					<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
+				</a>
+			</li>
+			<li style="top: 58%; right: 24%;">
+				<a href="#5">
+					<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
+				</a>
+			</li>
+			<li style="bottom: 14%; left: 50%;">
+				<a href="#6">
+					<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
+				</a>
+			</li>
+			<li style="bottom: 7%; left: 66%;">
+				<a href="#7">
+					<h2 class="heading-small"><span class="circle circle-step-large">7</span></h2>
+				</a>
+			</li>
+			<li style="bottom: 1.5%; left: 32%;">
+				<a href="#7">
+					<h2 class="heading-small"><span class="circle circle-step-large">8</span></h2>
+				</a>
+			</li>
+		</ol>
+	</div>
+	<span><a href="/service-patterns/concessionary-travel/example-service/start-page" target="_blank">Start page example council page</a></span>
+</div>
+
+<ol class="list upload-help big-number-list">
+	<li id="1">
+		<h2 class="heading-small"><span class="circle circle-step-large">1</span></h2>
+		<p>
+			Copy explains what the permit allows the user to do and lets them know the maximum number of permits available per household.
+		</p>
+	</li>
+	<li id="2">
+		<h2 class="heading-small"><span class="circle circle-step-large">2</span></h2>
+		<p>
+			Costs are briefly explained.
+		</p>
+	</li>
+	<li id="3">
+		<h2 class="heading-small"><span class="circle circle-step-large">3</span></h2>
+		<p>
+			The council's local rule for Blue Badge holders is explained here, with a link to the Blue Badge application service where relevant.
+		</p>
+	</li>
+	<li id="4">
+		<h2 class="heading-small"><span class="circle circle-step-large">4</span></h2>
+		<p>
+			The council's local rule for residents of houses in multiple occupation is explained here. Users can click through to a page explaining house in multiple occupation in more detail:
+		</p>
+		<div class="annotated-image-container">
+			<img src="{{asset_path}}images/ppscreenshot/hmo.png" />
+			<span><a href="/service-patterns/parking-permit/example-service/hmo-info" target="_blank">House in multiple occupation example council page</a></span>
+		</div>
+	</li>
+	<li id="5">
+		<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
+		<p>
+			Users are told what to expect in the application process, including proving their address and entering their vehicle registration numbr.
+		</p>
+	</li>
+	<li id="6">
+		<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
+		<p>
+			Users are given links to renewals and replacements services.
+		</p>
+	</li>
+	<li id="7">
+		<h2 class="heading-small"><span class="circle circle-step-large">7</span></h2>
+		<p>
+			Users are told what to do if they need assistance.
+		</p>
+	</li>
+	<li id="8">
+		<h2 class="heading-small"><span class="circle circle-step-large">8</span></h2>
+		<p>
+			Users are given offline application alternatives.
+		</p>
+	</li>
+
+</ol>
+<p>
+The next page in the flow asks users to enter their postcode to check if they need a permit:
+</p>
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/checkpermit.png" />
+		<span><a href="/service-patterns/parking-permit/example-service/check-boundary" target="_blank">Check if you need a permit example council page</a></span>
+	</div>
+	</div>
+	<p>
+	 At this point the council service will check the user's postcode against a database of parking permit zones. If the postcode requires a parking permit to park, the screen below will show. It allows the user to choose the type of permit they need and access details about the parking zone area.
+	</p>
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/permittype.png" />
+			<ol class="list upload-help">
+				<li style="top: 51%; right: 50%;">
+					<a href="#6">
+						<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
+					</a>
+				</li>
+				<a href="/service-patterns/parking-permit/example-service/resident-choice" target="_blank">Select permit type example council page</a>
+				</div>
+			</div>
+			<p>
+			 A screen listing streets in the parking permit zone area for the user's postcode, plus a street map, displays when the user clicks the parking zone area link. They return to the the select permit type via the call to action link.
+			</p>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="{{asset_path}}images/ppscreenshot/parkingareastreets.png" />
+				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
+			</div>
+			</div>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="{{asset_path}}images/ppscreenshot/parkingareamap.png" />
+				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
+			</div>
+			</div>
+<p>
+	The user is then routed to the <a href="/service-patterns/parking-permit/eligibility/design">eligibility section</a>.
+</p>
+
+{% endblock %}

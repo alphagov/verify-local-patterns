@@ -1,0 +1,97 @@
+{% set thisTab = 'Check' %}
+{% set pageTab = 'Design' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+<p>
+	This page should be linked to from the council's homepage and easily findable via search engines, as described in the <a href="awareness/design">awareness section</a>.
+</p>
+{% set annotationsContent = [
+	{
+		"position": "top: 8.5%; right: -4%;",
+		"content": "Include a prominent contact link throughout the journey."
+	},{
+		"position": "top: 34%; left: 71%;",
+		"content": "Copy explains the user may need a parking permit."
+	},{
+		"position": "top: 47%; left: 71%;",
+		"content": "Different types of parking permit issued by the council are referenced."
+	},{
+		"position": "top: 60%; left: 71%;",
+		"content": "Users are informed what a permit will allow them to do."
+	},{
+		"position": "bottom: 5%; left: 66%;",
+		"content": "Users are told how to get assistance if they need it."
+	}
+	] %}
+
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/parkingstart.png"/>
+		<ol class="list upload-help">
+			{% for annotation in annotationsContent %}
+			<li style="{{annotation.position}}">
+				<a href="#{{loop.index}}">
+					<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
+				</a>
+			</li>
+			{% endfor %}
+		</ol>
+	</div>
+	<a href="/service-patterns/parking-permit/example-service/start-page" target="_blank">Park your car example council page</a>
+</div>
+<ol class="list upload-help big-number-list">
+	{% for annotation in annotationsContent %}
+	<li id="{{loop.index}}">
+		<h2 class="heading-small">
+			<span class="circle circle-step-large">{{loop.index}}</span>
+		</h2>
+		<div class="circle-list-item">
+			<h3 class="heading-small">{{annotation.header}}</h3>
+			{{annotation.content | safe}}
+		</div>
+	</li>
+	{% endfor %}
+</ol>
+
+The next page in the flow asks users to enter their postcode to check if they need a permit:
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/checkpermit.png" />
+		<span><a href="/service-patterns/parking-permit/example-service/check-boundary" target="_blank">Check if you need a permit example council page</a></span>
+	</div>
+	</div>
+	<p>
+	 At this point the council service will check the user's postcode against a database of parking permit zones. If the postcode requires a parking permit to park, the screen below will show. It allows the user to choose the type of permit they need and access details about the parking zone area.
+	</p>
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/permittype.png" />
+			<ol class="list upload-help">
+				<li style="top: 51%; right: 50%;">
+					<a href="#6">
+						<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
+					</a>
+				</li>
+				<a href="/service-patterns/parking-permit/example-service/resident-choice" target="_blank">Select permit type example council page</a>
+				</div>
+			</div>
+			<p>
+			 A screen listing streets in the parking permit zone area for the user's postcode, plus a street map, displays when the user clicks the parking zone area link. They return to the the select permit type via the call to action link.
+			</p>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="{{asset_path}}images/ppscreenshot/parkingareastreets.png" />
+				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
+			</div>
+			</div>
+			<div class="annotated-image-container">
+				<div class="annotated-image">
+					<img src="{{asset_path}}images/ppscreenshot/parkingareamap.png" />
+				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
+			</div>
+			</div>
+<p>
+	The user is then routed to the <a href="/service-patterns/parking-permit/identity/design">identity section</a>.
+</p>
+
+{% endblock %}

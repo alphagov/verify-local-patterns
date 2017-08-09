@@ -1,0 +1,28 @@
+{% set thisTab = 'Permit' %}
+{% set pageTab = 'Policy' %}
+
+{% extends "pp_layout.html" %}
+
+{% block page_content %}
+
+	<p>
+		Some councils require the permit to be associated with a specific vehicle. If your service requires this for enforcement purposes, the service needs to specify that this is why you need the data.
+	</p>
+	<p>
+		In some councils, the permit price varies depending on the vehicle type, emissions, make or other conditions.
+	</p>
+	{# <p>
+		If your council requires this information, your service can look it up using DVLA's vehicle details API. In this case, the service should explain to users that their registration number will be used for this purpose as well.
+	</p> #}
+	<p>
+		Some councils require users to provide either their V5C number, or a scan or the V5C form. If your council requires this information the service should explain to users why this information is required and how it will be used.
+	</p>
+	<p>
+
+	</p>
+	<p>
+
+	</p>
+
+
+{% endblock %}

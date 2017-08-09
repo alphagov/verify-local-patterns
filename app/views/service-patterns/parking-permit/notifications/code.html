@@ -1,0 +1,20 @@
+{% set thisTab = 'Notifications' %}
+{% set pageTab = 'Code' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+<p>
+	Download the notifications markdown copy for use in Notify from Github:
+	<ul class="list">
+  <li><a href="https://github.com/alphagov/verify-local-patterns/tree/master/app/assets/notifications/ctconfirmationemail.md">Confirmation email</a></li>
+  <li><a href="https://github.com/alphagov/verify-local-patterns/blob/master/app/assets/notifications/ctconfirmationtext.md">Confirmation text</a></li>
+  <li><a href="https://github.com/alphagov/verify-local-patterns/blob/master/app/assets/notifications/ctrenewalemail.md">Renewal reminder email</a></li>
+	<li><a href="https://github.com/alphagov/verify-local-patterns/blob/master/app/assets/notifications/ctrenewaltext.md">Renewal reminder text</a></li>
+</ul>
+
+</p>
+
+	{# Ideas:
+	 - notify content
+	 - gov.uk elements for checkboxes and show/hide
+	  #}
+{% endblock %}

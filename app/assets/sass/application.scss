@@ -163,57 +163,34 @@ table + p{
   margin-top: 2em;
 }
 
-.nav-tabs {
-    zoom: 1;
-    background: #fff;
-    padding: 0;
-    position: relative;
-		display: block;
-		overflow: hidden;
-}
-.nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
-    float: left;
-		width: 100%;
-		border-bottom: 1px solid #ccc;
-}
-.nav-tabs li, .nav-tabs .tabs-nav li {
-    font-family: "nta", Arial, sans-serif;
-    font-weight: 400;
-    text-transform: none;
-    float: left;
-}
-
-.nav-tabs li.active a, .nav-tabs .tabs-nav li.active a {
-    background-color: #fff;
-    border: solid 1px #bfc1c3;
-    border-bottom: solid 1px #fff;
-    color: #0b0c0c;
-    position: relative;
-    text-decoration: none;
-    z-index: 5;
+.nav-tabs{
+	margin: 40px 0;
+  border-bottom: 4px solid #f8f8f8;
+  background: white;
+  height: 31px;
+	li{
+		float: left;
+		a {
+			padding: 10px 30px 6px;
+			color: #005ea5;
+			text-decoration: none;
+			margin: 0;
+			z-index: 999;
+			margin-bottom: -4px;
+			list-style-type: none;
+			background: white;
+			font-size: 16px;
+		}
+	}
+	.active a{
+		text-decoration: none;
+    color: #005ea5;
+    font-weight: bold;
+    background-color: hsla(0, 7%, 97%, 1);
+    border-bottom: 4px solid #005ea5;
+	}
 }
 
-.nav-tabs li a, .nav-tabs .tabs-nav li a {
-    border: solid 1px #fff;
-    border-bottom: none;
-    float: left;
-    height: 2.25em;
-    line-height: 2.25em;
-    margin-bottom: -1px;
-    padding: 0 1em 0 1em;
-    position: relative;
-    text-align: center;
-    top: 0;
-}
-
-.nav-tabs:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-		margin-bottom: 3em;
-}
 
 .page-contents > h2{
 	margin-top: 0;
@@ -232,6 +209,7 @@ table + p{
 
 .leftborder{
 	border-left: 1px solid #ddd;
+	padding-left: 23px;
 }
 
 .annotated-image-container{
@@ -280,4 +258,8 @@ table + p{
 	width: 48%;
 	height: 520px;
   overflow: scroll;
+}
+
+.pattern-lede{
+	margin: 22px 0 40px;
 }

@@ -1,0 +1,105 @@
+{% set thisTab = 'Payment' %}
+{% set pageTab = 'Design' %}
+{% extends "pp_layout.html" %}
+{% block page_content %}
+<p>
+	Linked to from <a href="/service-patterns/parking-permit/permit/design">permit section</a>.
+</p>
+	{% set annotationsContent = [
+		{
+			"position": "top: 27%; left: 75%",
+			"content": "<p>
+				Users are shown an overview of the permit(s) they are about to buy. Where councils offer free permits in certain scenarios, the details need to be adjusted accordingly.
+			</p>
+			"
+		},{
+			"position": "top: 40%; left: 75%",
+			"content": "<p>
+				copy about change links?
+			</p>"
+		}
+	]
+		%}
+	<div class="annotated-image-container">
+		<div class="annotated-image">
+			<img src="{{asset_path}}images/ppscreenshot/paying.png" />
+			<ol class="list upload-help">
+				{% for annotation in annotationsContent %}
+				<li style="{{annotation.position}}">
+					<a href="#{{loop.index}}">
+						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
+					</a>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+		<a href="/service-patterns/parking-permit/example-service/pre-payment" target="_blank">Payment overview example council page</a>
+	</div>
+	<ol class="list upload-help big-number-list">
+		{% for annotation in annotationsContent %}
+		<li id="{{loop.index}}">
+			<h2 class="heading-small">
+				<span class="circle circle-step-large">{{loop.index}}</span>
+			</h2>
+			<div class="circle-list-item">
+				<h3 class="heading-small">{{annotation.header}}</h3>
+				{{annotation.content | safe}}
+			</div>
+		</li>
+		{% endfor %}
+</ol>
+<p>
+	Next users are asked to choose a payment method, and informed there are no additional charges:
+</p>
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/howpay.png" />
+	<span><a href="/service-patterns/parking-permit/example-service/choose-payment" target="_blank">Payment method example council page</a></span>
+</div>
+</div>
+<p>
+	If the user selects credit or debit card this screen follows:
+</p>
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/entercarddetails.png" />
+	<span><a href="/service-patterns/parking-permit/example-service/enter-card" target="_blank">Payment method example council page</a></span>
+</div>
+</div>
+<p>
+	This is followed by a confirm payment screen:
+</p>
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/confirmpayment.png" />
+	<span><a href="/service-patterns/parking-permit/example-service/confirm-card-payment" target="_blank">Confirm payment example council page</a></span>
+</div>
+</div>
+<p>
+	They are then routed to the <a href="/service-patterns/parking-permit/notifications/design">Notifications section</a>.
+</p>
+<p>
+	Alternatively, if the user selects online transfer from bank account this screen follows the payment method page:
+</p>
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/banktransfer.png" />
+		<br>
+
+	<span><a href="/service-patterns/parking-permit/example-service/direct-debit-payment" target="_blank">Online transfer example council page</a></span>
+</div>
+</div>
+<p>
+	The user is then shown a payment summary screen.
+</p>
+<div class="annotated-image-container">
+	<div class="annotated-image">
+		<img src="{{asset_path}}images/ppscreenshot/confirmdebitpay.png" />
+	<span><a href="/service-patterns/parking-permit/example-service/confirm-debit-payment" target="_blank">Confirm payment example council page</a></span>
+</div>
+</div>
+<p>
+		They are then routed to the <a href="/service-patterns/parking-permit/notifications/design">notifications section</a>.
+</p>
+
+{% endblock %}

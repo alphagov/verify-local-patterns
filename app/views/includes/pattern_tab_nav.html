@@ -1,14 +1,13 @@
-{% set tabs = ["Overview", "Awareness", "Start", "Eligibility", "Photo", "Notifications", "End"] %}
 
 <div class="nav-tabs">
 	<ul class="tabs-nav">
 		{% for tab in tabs %}
 			{% set active = '' %}
-			{% if tab == thisTab %}
+			{% if tab == pageTab %}
 				{% set active = 'active' %}
 			{% endif %}
 			<li class="{{active}}">
-				<a href="../{{tab | lower}}">{{tab}}</a>
+				<a href="{{tab | lower}}">{{tab}}</a>
 			</li>
 		{% endfor %}
 	</ul>
