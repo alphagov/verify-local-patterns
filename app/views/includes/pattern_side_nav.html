@@ -6,7 +6,7 @@
 			<ul class="page-contents__list">
 				{% for section in sections %}
 					{% set active = '' %}
-					{% if section == pageTab %}
+					{% if section == thisTab %}
 						{% set active = 'active' %}
 					{% endif %}
 					<li class="{{active}}">
