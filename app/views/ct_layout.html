@@ -16,12 +16,13 @@
 
 	{% include "includes/pattern_side_nav.html" %}
 
-			<div class="column-three-quarter leftborder">
+			<div class="column-three-quarter ">
 				<h2 class="heading-large">{{pageTab}}</h2>
 
 				{% include "includes/pattern_tab_nav.html" %}
 
-				{% block page_content %}{% endblock %}
+				<div class="">
+					{% block page_content %}{% endblock %}
 
 				<hr />
 				{% if pageTab == 'Policy' %}
@@ -38,17 +39,6 @@
 					{% set commentDescription = 'Add a link to a GitHub repo or other way to download the code.' %}
 				{% endif %}
 
-
-								 {#
-								 		policy:   Does this reflect your local policy?
-															Explain any variations in your local policy to be included above
-								 		research: Add your local council's research
-															Include the date your research took place...etc
-								 		design:   Add your local council's design
-															You must reference points in the research or policy section for your design to be added to the pattern.
-										code:			Add open source code for councils to use
-
-								  #}
 				<details>
 				 <summary><span class="summary heading-small">{{commentTitle}}</span></summary>
 
@@ -76,9 +66,11 @@
 				})();
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-				                            <script id="dsq-count-scr" src="//verify-local-patterns-herokuapp-com.disqus.com/count.js" async></script>
-																	</div>
-																</details>
+	        <script id="dsq-count-scr" src="//verify-local-patterns-herokuapp-com.disqus.com/count.js" async></script>
+				</div>
+			</details>
 			</div>
+		</div>
+
 </main>
 {% endblock %}
