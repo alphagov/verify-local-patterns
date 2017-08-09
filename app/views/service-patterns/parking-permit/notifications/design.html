@@ -3,11 +3,11 @@
 {% extends "pp_layout.html" %}
 {% block page_content %}
 <p>
-	Linked to from <a href="/service-patterns/concessionary-travel/photo/design">photo section</a>.
+	Linked to from <a href="/service-patterns/parking-permit/payment/design">payment section</a>.
 </p>
 	{% set annotationsContent = [
 		{
-			"position": "top: 46%; left: 60%",
+			"position": "top: 47%; left: 60%",
 			"header": "Choice of contact preferences",
 			"content": '
 			<p>
@@ -18,7 +18,7 @@
 			</p>
 			'
 		},{
-			"position": "top: 54%; left: 23%",
+			"position": "top: 55%; left: 23%",
 			"header": "Use checkboxes for multiple selection",
 			"content": '
 			<p>
@@ -26,7 +26,7 @@
 			</p>
 			'
 		},{
-			"position": "top: 62%; left: 39%",
+			"position": "top: 63%; left: 42%",
 			"header": "Reveal text inputs only when checkboxes are checked",
 			"content": '
 			<p>
@@ -34,7 +34,7 @@
 			</p>
 			'
 		},{
-			"position": "top: 80%; left: 39%",
+			"position": "top: 80%; left: 42%",
 			"header": "Add validation messages for common input mistakes",
 			"content": '
 			<p>
@@ -42,18 +42,18 @@
 			</p>
 			'
 		},{
-			"position": "top: 86%; left: 20%",
+			"position": "top: 88%; left: 20%",
 			"header": "Renewal notifications",
 			"content": '
 			<p>
 				The next page allows users to sign up for another notification when it\'s time to renew their pass:
 			</p>
 			<div class="annotated-image-container">
-				<img src="'+asset_path+'images/ctscreenshot/renewalremind.png" />
-				<a href=\"/service-patterns/concessionary-travel/example-service/renewal-reminder\" target=\"_blank\">Renewal reminder example council page</a>
+				<img src="'+asset_path+'images/ppscreenshot/renewalreminder.png" />
+				<a href=\"/service-patterns/parking-permit/example-service/renewal-reminder\" target=\"_blank\">Renewal reminder example council page</a>
 			</div>
 			<p>
-				The user is then routed to the <a href="/service-patterns/concessionary-travel/end/design">end section</a>.
+				The user is then routed to the <a href="/service-patterns/parking-permit/end/design">end section</a>.
 			</p>
 			'
 		}
@@ -61,7 +61,7 @@
 		%}
 	<div class="annotated-image-container">
 		<div class="annotated-image">
-			<img src="{{asset_path}}images/ctscreenshot/contactpref.png" />
+			<img src="{{asset_path}}images/ppscreenshot/confmessages.png" />
 			<ol class="list upload-help">
 				{% for annotation in annotationsContent %}
 				<li style="{{annotation.position}}">
@@ -72,7 +72,7 @@
 				{% endfor %}
 			</ol>
 		</div>
-		<a href="/service-patterns/concessionary-travel/example-service/contact-preference" target="_blank">Contact preferences example council page</a>
+		<a href="/service-patterns/parking-permit/example-service/contact-preference" target="_blank">Contact preferences example council page</a>
 	</div>
 	<ol class="list upload-help big-number-list">
 		{% for annotation in annotationsContent %}
