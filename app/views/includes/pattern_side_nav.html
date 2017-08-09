@@ -6,12 +6,19 @@
 			<ul class="page-contents__list">
 				{% for section in sections %}
 					{% set active = '' %}
+					{% set sectionStripped = section | replace("1. ", "") | replace("2. ", "") |  replace("3. ", "") | replace("4. ", "") |  replace("5. ", "") | replace("6. ", "")| replace("7. ", "")| replace("8. ", "")| replace("9. ", "") %}
 					{% if section == thisTab %}
 						{% set active = 'active' %}
 					{% endif %}
+					{% if section == 'overview' %}
 					<li class="{{active}}">
 						<a href="../{{thisTab |lower}}/{{section | lower}}">{{section}}</a>
 					</li>
+					{% else %}
+					<li class="{{active}}">
+						<a href="../{{sectionStripped| lower}}/{{pageTab |lower}}">{{section}}</a>
+					</li>
+					{% endif %}
 				{% endfor %}
 			</ul>
 		</div>
