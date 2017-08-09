@@ -179,7 +179,7 @@ table + p{
 			margin-bottom: -4px;
 			list-style-type: none;
 			background: white;
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
 	.active a{
@@ -191,60 +191,6 @@ table + p{
 	}
 }
 
-
-
-//
-// .nav-tabs {
-//     zoom: 1;
-//     background: #fff;
-//     padding: 0;
-//     position: relative;
-// 		display: block;
-// 		overflow: hidden;
-// }
-// .nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
-//     float: left;
-// 		width: 100%;
-// 		border-bottom: 1px solid #ccc;
-// }
-// .nav-tabs li, .nav-tabs .tabs-nav li {
-//     font-family: "nta", Arial, sans-serif;
-//     font-weight: 400;
-//     text-transform: none;
-//     float: left;
-// }
-//
-// .nav-tabs li.active a, .nav-tabs .tabs-nav li.active a {
-//     background-color: #fff;
-//     border: solid 1px #bfc1c3;
-//     border-bottom: solid 1px #fff;
-//     color: #0b0c0c;
-//     position: relative;
-//     text-decoration: none;
-//     z-index: 5;
-// }
-//
-// .nav-tabs li a, .nav-tabs .tabs-nav li a {
-//     border: solid 1px #fff;
-//     border-bottom: none;
-//     float: left;
-//     height: 2.25em;
-//     line-height: 2.25em;
-//     margin-bottom: -1px;
-//     padding: 0 1em 0 1em;
-//     position: relative;
-//     text-align: center;
-//     top: 0;
-// }
-//
-// .nav-tabs:after {
-//     content: ".";
-//     display: block;
-//     height: 0;
-//     clear: both;
-//     visibility: hidden;
-// 		margin-bottom: 3em;
-// }
 
 .page-contents > h2{
 	margin-top: 0;
@@ -315,5 +261,5 @@ table + p{
 }
 
 .pattern-lede{
-	margin: 27px 0 40px;
+	margin: 22px 0 40px;
 }
