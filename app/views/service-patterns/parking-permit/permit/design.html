@@ -2,9 +2,6 @@
 {% set pageTab = 'Design' %}
 {% extends "pp_layout.html" %}
 {% block page_content %}
-<p>
-	This is for Permit section
-<p>
 	Linked to from <a href="/service-patterns/concessionary-travel/identity/design">identity section</a>.
 </p>
 	{% set annotationsContent = [
@@ -78,28 +75,22 @@ The next page in the flow asks users to enter their vehicle registration number(
 	<div class="annotated-image-container">
 		<div class="annotated-image">
 			<img src="{{asset_path}}images/ppscreenshot/whenstart.png" />
-			<ol class="list upload-help">
-				<li style="top: 61%; right: 60%;">
-					<a href="#6">
-						<h2 class="heading-small"><span class="circle circle-step-large">5</span></h2>
-					</a>
-				</li>
-				<a href="/service-patterns/parking-permit/example-service/resident-choice" target="_blank">Select permit type example council page</a>
+				<a href="/service-patterns/parking-permit/example-service/permit-start" target="_blank">Permit start example council page</a>
 				</div>
 			</div>
 			<p>
-			 A screen listing streets in the parking permit zone area for the user's postcode, plus a street map, displays when the user clicks the parking zone area link. They return to the the select permit type via the call to action link.
+			 If the user chooses the specific date option the following expandable text shows:
 			</p>
 			<div class="annotated-image-container">
 				<div class="annotated-image">
-					<img src="{{asset_path}}images/ppscreenshot/parkingareastreets.png" />
-				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
+					<img src="{{asset_path}}images/ppscreenshot/startdate.png" />
 			</div>
 			</div>
+			Next the user is asked to choose a permit length. If the council only offers 12 month permits this screen would not be included in the journey flow.
 			<div class="annotated-image-container">
 				<div class="annotated-image">
-					<img src="{{asset_path}}images/ppscreenshot/parkingareamap.png" />
-				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
+					<img src="{{asset_path}}images/ppscreenshot/howlong.png" />
+				<span><a href="/service-patterns/parking-permit/example-service/permit-length" target="_blank">Permit length example council page</a></span>
 			</div>
 			</div>
 
