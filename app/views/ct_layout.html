@@ -10,16 +10,16 @@
 
 	{% include "includes/pattern_header.html" %}
 
+	{% set sections = ["Overview", "1. Awareness", "2. Start", "3. Eligibility", "4. Photo", "5. Notifications", "6. End"] %}
+	{% set tabs = ['Policy', 'Research', 'Design', 'Code'] %}
 
-	{% set tabs = ["Overview", "Awareness", "Start", "Eligibility", "Photo", "Notifications", "End"] %}
-	{% include "includes/pattern_tab_nav.html" %}
 
-	{% set sections = ['Policy', 'Research', 'Design', 'Code'] %}
 	{% include "includes/pattern_side_nav.html" %}
 
 			<div class="column-three-quarter leftborder">
-
 				<h2 class="heading-large">{{pageTab}}</h2>
+
+				{% include "includes/pattern_tab_nav.html" %}
 
 				{% block page_content %}{% endblock %}
 
