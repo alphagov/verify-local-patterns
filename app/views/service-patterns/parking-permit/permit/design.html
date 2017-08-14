@@ -32,34 +32,13 @@
 		}
 		]
 		%}
-	<div class="annotated-image-container">
-		<div class="annotated-image">
-			<img src="{{asset_path}}images/ppscreenshot/howmany.png" />
-			<ol class="list upload-help">
-				{% for annotation in annotationsContent %}
-				<li style="{{annotation.position}}">
-					<a href="#{{loop.index}}">
-						<h2 class="heading-small"><span class="circle circle-step-large">{{loop.index}}</span></h2>
-					</a>
-				</li>
-				{% endfor %}
-			</ol>
-		</div>
-		<a href="/service-patterns/parking-permit/example-service/resident-count" target="_blank">How many permits example council page</a>
-	</div>
-	<ol class="list upload-help big-number-list">
-		{% for annotation in annotationsContent %}
-		<li id="{{loop.index}}">
-			<h2 class="heading-small">
-				<span class="circle circle-step-large">{{loop.index}}</span>
-			</h2>
-			<div class="circle-list-item">
-				<h3 class="heading-small">{{annotation.header}}</h3>
-				{{annotation.content | safe}}
-			</div>
-		</li>
-		{% endfor %}
-</ol>
+		{% import "includes/annotated-image-loop.html" as screenshot %}
+		{{ screenshot.image(
+			asset_path+"/images/ppscreenshot/howmany.png",
+			"/service-patterns/parking-permit/example-service/resident-count",
+			"How many permits example council page",
+		 	annotationsContent)
+		}}
 <p>
 The next page in the flow asks users to enter their vehicle registration number(s):
 </p>
