@@ -74,7 +74,7 @@
 				</details>
 		<h3 class="heading-small">Confirm address</h3>
 		<p>
-			GOV.UK Verify will send your service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, your service webpage should ask them to confirm if this is their current address. This
+			GOV.UK Verify will send the service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, the service webpage should ask them to confirm if this is their current address. This
 			is mainly done because GOV.UK Verify identity providers may not have the user\'s address if they moved house in the last 3 months.
 		</p>
 		<p>
@@ -90,11 +90,11 @@
 			<summary><span class="summary">New residents</span></summary>
 				<div class="panel">
 				<p>
-					If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. Your service should ask users to enter their current address and warn them not to enter false
+					If the user says the address returned is not correct, they are likely to be a new resident whose address has not been updated with their identity provider. The service should ask users to enter their current address and warn them not to enter false
 					information, as this is a civic offence.
 				</p>
 				<p>
-					If the travel pass is physical, your service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that your service will be using the address they\'ve given for this purpose on the service confirmation
+					If the travel pass is physical, the service will get extra confidence in the address by mailing the pass to the address the user provided. Mention that the service will be using the address they\'ve given for this purpose on the service confirmation
 					page.
 				</p>
 				<div class="annotated-image-container">
@@ -105,38 +105,109 @@
 				</div>
 			</div>
 		</details>
-		<details>
-			<summary><span class="summary">Wrong council</span></summary>
-			<div class="panel">
-				<p>
-					When the user has confirmed their address, your service should check that the address they\'ve given is in the area your council provides services for. If the address is not in the area, your service webpage should tell them they are not eligible in
-					this area.
-				</p>
-				<div class="annotated-image-container">
-					<div class="annotated-image">
-						<img src="'+asset_path+'images/ppscreenshot/noteligibleaddress.png"/>
-					</div>
-					<a href="/service-patterns/parking-permit/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
-				</div>
-			</div>
-		</details>
+
 		<p>
-			When the service has checked their address is in the council\'s area the user is moved on to the <a href="/service-patterns/parking-permit/permit/design">permit section</a>.
+			Once the user has confirmed their address, the service does <a href="#5">back office checks</a>.
 		</p>'
 		},
 		{
 			"position": "top: 65%; right: 40%;",
 			"header": "Alternative online route",
-			"content": "<p>
+			"content": '<p>
 							Councils should provide an alternative online route to access the service, as not everybody will have enough of a digital history to be able to be verified.
-						</p>"
+						</p>
+						<p>
+							If the council does not provide an alternative online route, the service describes the offline route on the second radio button, and choosing that option links to a page describing what a user needs to do to proceed offline.
+						</p>
+						<p>
+							Once the user has confirmed their address, the service does <a href="#5">back office checks</a>.
+						</p>'
 		},
 		{
 			"position": "top: 84%; left: 30%;",
 			"header": "Offline route",
 			"content": "<p>
 							Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
+						</p>
+						<p>
+							This is displayed in a progressive disclosure box.
 						</p>"
+		},
+		{
+			"header": "Back office checks",
+			"content": '<p>
+				Whether the user goes through GOV.UK Verify or an alternative online route the service must check:
+			</p>
+			<ol class="list list-number">
+				<li>
+					The user\'s address is in the same area as the postcode they entered in the <a href="../check/design">Check before you start</a> section.
+				</li>
+				<li>
+					The resident/address has not exceeded their allowed number of parking permits
+				</li>
+			</ol>
+			<details>
+				<summary><span class="summary">If the address is inside a different parking zone within the council area</span></summary>
+				<div class="panel">
+					<p>
+						The service tells the user they will be applying for the area they live in, and reiterate the costs from the start page.
+					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/pp	screenshot/newparkingzone.png" />
+						</div>
+						<a href="/service-patterns/parking-permit/example-service/different-parking-zone" target="_blank">Different parking zone example council page</a>
+					</div>
+					<p>
+						The user is then routed to the <a href="/service-patterns/parking-permit/permit/design">permit section</a> to continue their application.
+					</p>
+				</div>
+			</details>
+			<details>
+				<summary><span class="summary">If the address is outside the council area</span></summary>
+				<div class="panel">
+					<p>
+						If the address is not in the area, the service tells the user they are not eligible in this area.
+					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/ppscreenshot/noteligibleaddress.png"/>
+						</div>
+						<a href="/service-patterns/parking-permit/example-service/not-eligible-address" target="_blank">Not eligible because of address example council page</a>
+					</div>
+				</div>
+			</details>
+			<details>
+				<summary><span class="summary">If the address is within the council area, but not in an area covered by a resident\'s permits scheme</span></summary>
+				<div class="panel">
+					<p>
+						The service tells the user there is no resident\'s parking scheme for their area and routes them to information about parking in the area.
+					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/ppscreenshot/nopermitneeded.png"/>
+						</div>
+						<a href="/service-patterns/parking-permit/example-service/no-permit-needed" target="_blank">No permit needed example council page</a>
+					</div>
+				</div>
+			</details>
+			<details>
+				<summary><span class="summary">If the resident/address already has all their allowed permits</span></summary>
+				<div class="panel">
+					<p>
+						The service tells the user they have exceeded the amount of permits allowed for their address and give information for what to do if they think there\'s been a mistake.
+					</p>
+					<div class="annotated-image-container">
+						<div class="annotated-image">
+							<img src="'+asset_path+'images/ppscreenshot/permitsexceeded.png"/>
+						</div>
+						<a href="/service-patterns/parking-permit/example-service/not-eligible-permits-exceeded" target="_blank">Not eligible because of address example council page</a>
+					</div>
+			</details>
+			<p>
+				Otherwise, the user is routed to the <a href="/service-patterns/parking-permit/permit/design">permit section</a> to continue their application.
+			</p>
+			'
 		}
 	]
 		%}
