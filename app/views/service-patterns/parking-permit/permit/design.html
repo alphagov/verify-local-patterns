@@ -4,6 +4,9 @@
 {% block page_content %}
 	Linked to from <a href="/service-patterns/parking-permit/eligibility/design">eligibility section</a> – At this point the user has proven their eligibility for a resident's parking permit.
 </p>
+<p>
+	The service then asks users to say how many permits they need. If the council only allows one permit per resident (not recommended), the service skips onto the <a href="#4">next page</a>.
+</p>
 	{% set annotationsContent = [
 		{
 			"position": "top: 40%; left: 70%",
@@ -21,7 +24,7 @@
 			"position": "top: 58%; left: 40%",
 			"content":
 			"<p>
-				Radio buttons allow the user to select the number of permits they want to apply for.
+				Radio buttons are used to allow users to select the number of permits they need. If the council allows users more than 7 permits, the service should use a number input instead.
 			</p>"
 		},{
 			"position": "top: 85%; left: 40%",
