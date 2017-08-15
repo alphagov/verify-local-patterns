@@ -14,8 +14,12 @@
   <p>
     10 days before the 3 month permit expires, re-apply for your {{"6 or" if council.sixmonth}} 12 month resident’s parking permit. By then, GOV.UK Verify should be able to verify your new address.
   </p>
-
-  <a class="button" role="button" href="resident-count">Next</a>
+	{% if council.permitMax > 1 %}
+		{% set nextPage = 'resident-count' %}
+	{% else %}
+		{% set nextPage = 'enter-reg' %}
+	{% endif %}
+  <a class="button" role="button" href="{{nextPage}}">Next</a>
 
 </div>
 

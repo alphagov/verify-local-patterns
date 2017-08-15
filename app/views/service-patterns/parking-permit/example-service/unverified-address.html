@@ -52,7 +52,12 @@
 	<h2 class="heading-medium">Get a 3 month permit</h2>
 	<p>You can get a 3 month permit now. 10 days before it expires, you'll be able to apply for a full length permit with GOV.UK Verify – you'll have lived there long enough by then.
 	</p>
-  <a class="button button-start" href="resident-count">Apply for a 3 month resident's permit</a>
+	{% if council.permitMax > 1 %}
+		{% set nextPage = 'resident-count' %}
+	{% else %}
+		{% set nextPage = 'enter-reg' %}
+	{% endif %}
+  <a class="button button-start" href="{{nextPage}}">Apply for a 3 month resident's permit</a>
 
 </div>
 

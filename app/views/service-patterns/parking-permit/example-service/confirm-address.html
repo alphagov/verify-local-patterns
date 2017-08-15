@@ -28,8 +28,14 @@
 
         <legend class="visually-hidden">Is this your name and address?</legend>
 
+				{% if council.permitMax > 1 %}
+					{% set nextPage = 'resident-count' %}
+				{% else %}
+					{% set nextPage = 'enter-reg' %}
+				{% endif %}
+
         <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-group" value="resident-count">
+          <input id="radio-inline-1" type="radio" name="radio-group" value="{{nextPage}}">
           Yes
         </label>
         <label class="block-label selection-button-radio" for="radio-inline-2">

@@ -13,7 +13,12 @@
 	<p>
 		12 month resident's permits in South Argleton cost £120 for the first permit, and £160 for additional permits. 6 month permits are half the price.
 	</p>
-	<a class="button" role="button" href="resident-count">Continue</a>
+	{% if council.permitMax > 1 %}
+		{% set nextPage = 'resident-count' %}
+	{% else %}
+		{% set nextPage = 'enter-reg' %}
+	{% endif %}
+	<a class="button" role="button" href="{{nextPage}}">Continue</a>
 
 </div>
 

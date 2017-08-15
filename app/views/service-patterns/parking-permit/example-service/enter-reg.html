@@ -18,11 +18,13 @@
       1 %}
     {% set s = 's' if parkingPermitCount > 1 else
       '' %}
-    <p>
-      You've chosen
-      {{ parkingPermitCount }}
-      resident's parking permit{{s}}.
-    </p>
+
+		{% if council.permitMax > 1 %}
+	    <p>
+	      You've chosen {{ parkingPermitCount }} resident's parking permit{{s}}.
+	    </p>
+		{% endif %}
+
 		{% if council.testv5cScan %}
 			 {% set nextPage = 'v5c-upload' %}
 		{% elif council.testv5cnumber %}
