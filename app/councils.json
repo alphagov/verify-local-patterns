@@ -103,7 +103,7 @@
      "shortName": "Oxfordshire",
      "parkingBoundary": "Oxfordshire",
      "extraDetails": true,
-     "permitMax": 4,
+     "permitMax": 1,
      "limitByHousehold":true,
      "permitsCosts": [15,60,120,180],
      "sixmonth": false,
