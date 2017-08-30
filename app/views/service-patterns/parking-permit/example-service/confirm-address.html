@@ -1,15 +1,11 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Confirm address" %}
+{% set pageTitle = "Is this your current address?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
-
-  <p>
-    GOV.UK Verify has sent us your most recent verified address:
-  </p>
   <div class="panel panel-border-wide">
     <p>
       Jane Smith<br />
@@ -18,10 +14,6 @@
       ARG1 4HP<br />
     </p>
   </div>
-  <p>
-    We'll use this address to check for any existing permits you may have, and for sending your new permit(s).
-  </p>
-  <h2 class="heading-medium">Is this your current address?</h2>
   <form action="confirm-adress" method="get" class="form">
     <div class="form-group">
       <fieldset class="inline">
@@ -45,6 +37,11 @@
 
       </fieldset>
     </div>
+    <p>
+      This is the most recent address for you that GOV.UK Verify was able to verify.</p>
+    <p>
+      We'll use your address to check for any existing permits and to send out your new permit(s).
+    </p>
     <div class="form-group">
       <input class="button" type="submit" value="Next">
     </div>

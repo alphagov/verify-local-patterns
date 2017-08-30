@@ -6,7 +6,7 @@
 {% if council.makeColour == true %}
   {% set pageTitle = "Enter vehicle details" %}
 {% else %}
-  {% set pageTitle = "Enter vehicle registration number" + s %}
+  {% set pageTitle = "What are the vehicle registration number(s)?" %}
 {% endif %}
 
 {% block content %}
@@ -20,9 +20,9 @@
       '' %}
 
 		{% if council.permitMax > 1 %}
-	    <p>
-	      You've chosen {{ parkingPermitCount }} resident's parking permit{{s}}.
-	    </p>
+	    {# <p>
+	      You chose {{ parkingPermitCount }} resident's parking permit{{s}}.
+	    </p> #}
 		{% endif %}
 
 		{% if council.testv5cScan %}
@@ -86,9 +86,6 @@
     </p>
 
   {% else %}
-    <p>
-      We need your vehicle's registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
-    </p>
     <div class="form-group">
       {% if parkingPermitCount > 1 %}
         {% for i in range(0, parkingPermitCount) %}
@@ -107,6 +104,9 @@
       {% endif %}
     </div>
   {% endif %}
+  <p>
+    We need your vehicle registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
+  </p>
   <p>
     {{ council.name }}
     will store your vehicle details securely on our own systems.

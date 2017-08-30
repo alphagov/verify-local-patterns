@@ -1,41 +1,40 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Park your car or vehicle" %}
-{% set pageTitle = "Check if you need a permit" %}
+{% set pageTitle = "Where do you want to park?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
-  <p>
-    Tell us the postcode for the area you want to park in, to find out:
-  </p>
-  <ul class="list list-bullet">
-    <li>
-      if you need a permit
-    </li>
-    <li>
-      types of permit available to you
-    </li>
-  </ul>
-
-  <h2 class="heading-medium">Enter a postcode</h2>
-  <div class="postcode-search-form" data-module="track-submit" data-track-category="postcodeSearch:find_local_council" data-track-action="postcodeSearchStarted">
+  <div class="postcode-search-form form-group" data-module="track-submit" data-track-category="postcodeSearch:find_local_council" data-track-action="postcodeSearchStarted">
     <form method="post" action="resident-choice" id="local-locator-form" class="find-location-for-service">
       <fieldset>
         <legend class="visuallyhidden">Enter a postcode</legend>
         <div class="ask_location">
-          <p>For example SW1A 2AA</p>
+          <p>Enter a postcode, for example SW1A 2AA:</p>
           <input class="postcode form-control" id="postcode" name="postcode" type="text" aria-invalid="false" value="">
           <input type="submit" class="button" value="Find">
           <p>
-            <a target="_blank" id="postcode-finder-link" rel="external" href="http://www.royalmail.com/find-a-postcode">Find a postcode on Royal Mail's postcode finder</a>
+            <a target="_blank" id="postcode-finder-link" rel="external" href="http://www.royalmail.com/find-a-postcode">Find a postcode using Royal Mail</a>
           </p>
         </div>
       </fieldset>
     </form>
   </div>
-
+  <div class="panel panel-border-narrow">
+    <p>
+      We'll use your postcode to tell you:
+    </p>
+    <ul class="list list-bullet">
+      <li>
+        if you need a permit
+      </li>
+      <li>
+        types of permit available
+      </li>
+    </ul>
+  </div>
 </div>
 
 {% endblock %}

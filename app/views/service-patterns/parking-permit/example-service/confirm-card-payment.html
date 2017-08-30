@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Confirm your payment" %}
+{% set pageTitle = "Make a payment" %}
 {% set s = 's' if permitRequestData.permitRequests.length > 1 else '' %}
 
 {% block content %}
@@ -52,7 +52,7 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<div class="form-group">
-		 			<a href="contact-preference"><button class="button">Confirm payment</button></a>
+		 			<a href="contact-preference"><button class="button">Pay now</button></a>
 		 		</div>
 		 		<div class="back">
 				<a href="#">Cancel payment</a>

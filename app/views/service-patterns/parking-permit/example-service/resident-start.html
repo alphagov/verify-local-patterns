@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="column-two-thirds">
-    As a resident of {{council.parkingBoundary}} you can buy a permit to park near your home 24 hours a day, 7 days a week.
+    As an {{council.parkingBoundary}} resident you can buy a permit to park near your home 24 hours a day, 7 days a week.
   </p>
     {% if council.string == 'sunderland' %}
   <p>
@@ -14,7 +14,7 @@
   </p>
     {% endif %}
   <p>
-    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
+    You can apply for a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
   </p>
   {% if council.permitWait < 1 %}
     <li>
