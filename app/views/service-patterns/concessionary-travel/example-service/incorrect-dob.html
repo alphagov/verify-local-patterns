@@ -1,32 +1,34 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "There may have been a problem verifying your identity" %}
+{% set pageTitle = "Would you like to apply another way?" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
 
   <p>
-    As you've told us your date of birth is not correct, there may have been a problem verifying your identity with GOV.UK Verify.
+    You've told us the date of birth supplied by GOV.UK Verify isn't correct.
   </p>
-
-      <h2 class="heading-medium">Apply using a different method</h2>
-      <h3 class="heading-small">Scan and upload documents</h3>
+  {# <h2 class="heading-medium">Other ways to apply</h3> #}
+  <p>
+    We need proof of your date of birth to issue you with a bus pass. You can supply this another way.
+  </p>
+      <h2 class="heading-medium">Scan and upload documents</h3>
       <p>
       <a href="start-non-verify">Upload a document</a> to prove your age.
       </p>
-      <h3 class="heading-small">Apply by phone</h3>
+      <h2 class="heading-medium">Phone us</h3>
       <p>0300 083 0013<br>
         Monday to Friday, 8am to 7pm<br>
         Saturday, 8am to 2pm<br>
         <a href="#">Find out about call charges</a>
       </p>
 
-      <h2 class="heading-small">Apply by post</h2>
+      <h2 class="heading-medium">Send your application</h2>
       <p>
         Print, complete and send an
-        <a href="#">application form</a>, or send a letter with scanned copies of the following documents:
+        <a href="#">application form</a> or send a letter with scanned copies of the following documents:
       <li>recent council tax statement
       </li>
       <li>form of identity to prove your age</li>

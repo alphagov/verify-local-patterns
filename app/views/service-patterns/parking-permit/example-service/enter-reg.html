@@ -5,6 +5,8 @@
   '' %}
 {% if council.makeColour == true %}
   {% set pageTitle = "What are the vehicle details?" %}
+{% elif s == 's' %}
+  {% set pageTitle = "What are the vehicle registration numbers?" %}
 {% else %}
   {% set pageTitle = "What is the vehicle registration number?" %}
 {% endif %}
