@@ -1,6 +1,8 @@
 
 <div class="column-two-thirds">
-
+  <p>
+      We need to check your identity to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
+  </p>
   <form>
 
 
@@ -121,9 +123,7 @@
     </div>
   </details>
   {% endif %}
-  <p>
-      We need to check your identity to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
-  </p>
+
   <div class="form-group">
       <button class="button">Continue</button>
   </div>

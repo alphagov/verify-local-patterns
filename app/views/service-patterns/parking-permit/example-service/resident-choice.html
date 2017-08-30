@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Park your car or vehicle" %}
-{% set pageTitle = "You need a permit" %}
+{% set pageTitle = "Why do you need to park?" %}
 
 {% block content %}
 
@@ -9,17 +9,14 @@
 
 
     <p>
-      {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>.</p>
-    <h2 class="heading-medium">
-      Why do you need to park here?</h2>
-    </p>
+      You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>.</p>
     <form class="radio-nav">
   	  <div class="radio-with-bullets">
   	    <label class="block-label selection-button-radio" for="radio-1">
   	      <input id="radio-1" type="radio" name="radio-group" value="resident-start">
   				<span class="heading-small">I live here</span>
   				<p>
-  					You need a resident's permit
+  					Apply for a resident's parking permit application
   				</p>
   	    </label>
 
@@ -27,7 +24,7 @@
   	      <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
   				<span class="heading-small">I have a visitor</span>
   				<p>
-  					You need a visitor's permit
+  					Apply for a visitor's permit
   				</p>
   	    </label>
 
@@ -39,7 +36,7 @@
           <span class="heading-small">I work here</span>
           {% endif %}
   				<p>
-            You need a trade and business permit
+            Apply for a trade and business permit
   				</p>
         </label>
   		</div>
