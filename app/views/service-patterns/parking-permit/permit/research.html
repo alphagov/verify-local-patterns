@@ -2,11 +2,33 @@
 {% set pageTab = 'Research' %}
 {% extends "pp_layout.html" %}
 {% block page_content %}
-<h3 class="heading-medium">User needs identified during the Discovery phase</h3>
-<p>There are currently no research findings available related to the Permit step of this service.
-</p>
+<h2 class="heading-large">User needs observed while testing and iterating</h3>
+<h3 class="heading-medium">What we learnt</h3>
+<h4 class="heading-small">Type of permit</h4>
+  <p>
+    In some early testing of this page, some users assumed that because visitor's permits were mentioned, that it would be possible for visitors to apply for a permit. The version tested at this point did not clarify who could apply for the visitor's permit.
+  </p>
+  <h4 class="heading-small">Permit length</h4>
+  <p>
+    When deciding which permit to choose, most discussed price and convenience as the main factors in their choice.
+  </p>
+  <p>
+    Most users expected that there would be a discount available for choosing a longer permit, and some expressed dissatisfaction that this was not the case.
+  </p>
+<h3 class="heading-medium">What we changed</h3>
+<h4 class="heading-small">Type of permit</h4>
+  <p>
+    By supplementing the name of the permit with a description of who would apply for it, we have resolved the confusion seen in earlier iterations.
+  </p>
+  <p>
+    After observing users not recognising the name of the parking boundary area or associating their address with it, we supplemented this with their postcode.
+  </p>
+<h4 class="heading-small">Permit length</h4>
+  <p>
+    Prices of permits were removed from this page as users appeared to expect explanation of complex rules governing price which was felt to be distracting at this point. Though this has had the impact of reducing the number of users discussing price during testing, this did not address the underlying issue that users need to make an informed choice, and do need cost information at this point. Solutions for this will be tested in Beta.
+  </p>
 <h3 class="heading-medium">Issue history</h3>
 <div class="github-issues-list"></div>
-{% set labels = '["success-page", "success+%2F+reuse"]' %}
+{% set labels = '["Eligibility"]' %}
 
 {% endblock %}
