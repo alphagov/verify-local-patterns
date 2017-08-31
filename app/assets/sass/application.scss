@@ -263,3 +263,71 @@ table + p{
 .pattern-lede{
 	margin: 22px 0 40px;
 }
+
+.svg-container{
+	width: 100%;
+	overflow: auto;
+	svg:not(:root){
+		overflow: hidden;
+	}
+	*{
+		box-sizing: border-box;
+	}
+	svg{
+		width: auto;
+		max-width: none;
+	}
+}
+
+
+// Product page css
+
+#global-header.with-proposition .header-wrapper .header-global{
+	width: 65%;
+}
+
+#product-name {
+    font-size: 24px;
+    font-weight: 400;
+    padding-left: 5px;
+}
+
+.masthead{
+	background-color: #005ea5;
+    margin-bottom: 15px;
+		margin-top: -10px;
+		padding-top: 7px;
+		@media (min-width: 641px){
+			margin-bottom: 30px;
+		}
+}
+
+.content-section {
+    margin-top: 30px;
+}
+
+@import 'hero';
+@import 'breadcrumbs';
+@import 'related-items';
+.related-items{
+	margin-top: 35px;
+}
+.related-items__title:first-of-type{
+	margin-top: 15px;
+}
+
+.breadcrumbs--inverse {
+    border-bottom: 1px #fff solid;
+    border-bottom-color: rgba(255,255,255,0.25);
+}
+.breadcrumbs {
+	margin-bottom: 15px;
+	@media (min-width: 641px){
+		margin-bottom: 30px;
+		font-size: 16px;
+		line-height: 1.5625;
+	}
+}
+.phase-banner{
+	border-bottom: none;
+}
