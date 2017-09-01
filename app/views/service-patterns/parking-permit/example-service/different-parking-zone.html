@@ -8,10 +8,13 @@
 <div class="column-two-thirds">
 
   <p>
-		At the start of your application you entered a postcode within {{council.parkingBoundary}}, but your address is within <a href="#">South Argleton</a>.
+		At the start of your application you entered a postcode in the {{council.parkingBoundary}} parking area. However, your verified address is in <a href="#">South Argleton</a> – which is in a different parking area.
 	</p>
 	<p>
-		12 month resident's permits in South Argleton cost £120 for the first permit, and £160 for additional permits. 6 month permits are half the price.
+		12 month resident's parking permits in South Argleton cost £120 for the first permit. Additional 12 month permits cost £160.
+  </p>
+  <p>
+    6 month permits cost £60.
 	</p>
 	{% if council.permitMax > 1 %}
 		{% set nextPage = 'resident-count' %}
