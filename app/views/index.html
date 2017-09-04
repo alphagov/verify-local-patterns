@@ -5,149 +5,185 @@
 {% endblock %}
 
 {% block content %}
+<div class="masthead">
+	<nav aria-label="Breadcrumbs" class="breadcrumbs breadcrumbs--inverse">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://www.gov.uk/service-manual/design"><span itemprop="name">Design</span></a></li>
+			<li class="breadcrumbs__item breadcrumbs__item--active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#main" itemprop="item"><span itemprop="name">Local government service patterns</span></a></li>
+		</ol>
+	</nav>
+	<div class="hero hero--breaded">
+		<div class="hero__content">
+			<div class="hero__body"><h1 class="hero__title">Build best practice local government services</h1>
+				{# <div class="hero__inline-image">
+					<img role="presentation" src="/assets/registers-top-image-cb1acf18fa984d51a22976a7bfb8140abee47770a3c659243ca03f9087cc7331.png" alt="Registers top image">
+				</div> #}
+				<p class="hero__description">Use patterns to build local services that meet the government standard.</p></div>
+				{# <div class="hero__aside-image">
+					<img role="presentation" src="/assets/registers-top-image-cb1acf18fa984d51a22976a7bfb8140abee47770a3c659243ca03f9087cc7331.png" alt="Registers top image">
+				</div> #}
+			</div>
+		</div>
+	</div>
 
 <main id="content" role="main">
   <div class="grid-row">
-    <div class="column-two-thirds">
 
-      <h1 class="heading-xlarge">
-        Local government service patterns
-      </h1>
+	  <div class="column-two-thirds">
 
-      <p>
-        These guidance pages are for people who work in local government. They outline best practice for delivering digital services.
-      </p>
-      <div class="grid-row">
-        <div class="column-half">
-          <h2 class="heading-medium"><a href="service-patterns/parking-permit">Apply for a resident's parking permit</a></h2>
-        </div>
-				<div class="column-half">
-          <h2 class="heading-medium"><a href="service-patterns/concessionary-travel">Apply for an older person's concessionary travel pass</a></h2>
-        </div>
-      </div>
+			<section class="content-section">
 
-			<hr />
+			<h2 id="following-a-pattern" class="heading-medium">What local government service patterns are</h2>
 
-			<p>Local government service patterns outline best practice for delivering services that meet user needs. The two that currently exist have been created by GDS in collaboration with service teams in local councils based on extensive user research. The patterns also meet requirements for fraud risk, privacy law, and accessibility.</p>
+				<p>
+					Local government service patterns outline best practice for providing services that meet user needs. This means the design of the pages, user journeys and <a href="https://www.gov.uk/service-toolkit#components">government components</a> needed to build the service are all specified.
+				</p>
+				<p>
+					The 2 patterns that currently exist have been created by GDS in collaboration with service teams in local councils based on extensive user research. The patterns also meet requirements for fraud risk, privacy law and accessibility.
+				</p>
 
-			<h2 id="following-a-pattern" class="heading-large">Following a pattern</h2>
+				<h2 id="following-a-pattern" class="heading-medium">Following a pattern</h2>
 
+				<p>Patterns outline current best practice in service design and delivery. To follow a service pattern:</p>
 
-
-			<p>To follow a service pattern:</p>
-
-			<ul class="list list-bullet">
-				<li>
-					steps in the user journey must be in the same order as the example service, with no missing or extra pages
-				</li>
-				<li>
-					the content must match the example service exactly, with no extra or missing words, buttons, or other elements
-				</li>
-				<li>
-					form and text elements must match the example service – this includes (but is not limited to)
-				</li>
-				<li>
-					using radio buttons where there are radio buttons
-				</li>
-				<li>
-					checkboxes where there are checkboxes
-				</li>
-				<li>
-					replicating the heading and link style hierarchy
-				</li>
-				<li>
-					using sentence case at all times
-				</li>
-				<li>
-					following bullet point style
-				</li>
-			</ul>
-
-			<p>Valid reasons to deviate from a pattern include:</p>
-
-			<ul class="list list-bullet">
-				<li>
-					local information, for example parking boundary names or prices
-				</li>
-				<li>
-					local service delivery variations, for example policy about when parking permits are issued, or technical constraints meaning the recommended design can’t be implemented
-				</li>
-			</ul>
-
-
-			<h2 id="feeding-back-on-a-pattern" class="heading-large">Feeding back on a pattern</h2>
-
-			<p>
-				Before you use a pattern, you should test a prototype with your local users to make sure it works in your context.
-			</p>
-			<p>
-				If you find issues come up in this research, share your research insights via the link on the page. If the issue affects users in all areas, it will be worked on by GDS. If it is a genuine local issue, GDS and the council should co-ordinate who works on it.
-			</p>
-			<p>
-				If you have a design improvement that has tested positively with users and should be incorporated into the shared pattern, you can feed that back on the relevant page.
-			</p>
-
-			<h2 id="local-deviations-from-a-pattern" class="heading-large">Local deviations from a pattern</h2>
-
-			<p>If both GDS and the council have agreed there is a genuine need for a local variation from a pattern, a local solution can be designed. </p>
-
-			<p>Any local solutions must:</p>
-
-			<ol class="list list-number">
-				<li>
-					Be in <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk">writing for web best practice style</a>.
-				</li>
-				<li>
-					Pass an accessibility review.
-				</li>
-				<li>
-					Pass a privacy review.
-				</li>
-				<li>
-					Pass a fraud review.
-				</li>
-				<li>
-					Go through at least one round of user research with the majority of users being able to complete the service without assistance.
-				</li>
-				<li>
-					Include readily available support channels for those who need them.
-				</li>
-			</ol>
-
-			<p>
-				The local solution will then be documented in the pattern.
-			</p>
-
-			<h2 id="branding-and-style" class="heading-large">Branding and style</h2>
-			<p>
-				The common prototype uses <a href="https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk">GOV.UK styles</a> as its base, with each council’s branding applied on top of those base styles. GDS recommends you follow this principle across the whole of your council’s website, as well as following the GOV.UK <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style">content style guide</a>.</p>
-
-			<p>The GOV.UK design patterns have been extensively tested and are used in all government services, so following these will enable you to be sure that you are following current best practice, and to be consistent with other government services.</p>
-
-			<p>We understand the challenges of adapting GOV.UK patterns and styles to your council’s branding. If you’re unsure how do so, talk to us and we’ll happy to work with your team on that.</p>
-
-			<p>As a bare minimum, your website’s global styles must meet <a href="https://www.w3.org/WAI/WCAG20/quickref/">WCAG 2.0 accessibility guidance</a>. These points include having text that is big enough to read, and using colours that meet contrast minimums.</p>
-			<details>
-		     <summary><span class="summary">Common accessibility points for council websites</span></summary>
-		     <div class="panel panel-border-narrow">
-					 <ul class="list list-bullet">
+				<ul class="list list-number">
+					<li>
+						Steps in the user journey must be in the same order as the example service, with no missing or extra pages.
+					</li>
+					<li>
+						The content must match the example service exactly, with no extra or missing words, buttons or other elements.
+					</li>
+					<li>
+						Form and text elements must match the example service – this includes but is not limited to:
+					</li>
+					<ul class="list list-bullet">
 						<li>
-							<a href="http://govuk-elements.herokuapp.com/typography/#typography-body-copy">Readable text size:</a> use 19px for body copy – 16px for smaller screens
+							using radio buttons where there are radio buttons
 						</li>
 						<li>
-							<a href="http://govuk-elements.herokuapp.com/form-elements/#form-focus-states">Clear focus states:</a> users should be able to navigate the service with just their keyboard, so clear focus states are important
+							checkboxes where there are checkboxes
 						</li>
 						<li>
-							<a href="http://govuk-elements.herokuapp.com/form-elements/#radio-buttons">Large radio buttons and checkboxes:</a> research has shown that many users struggle with browser's default size radio buttons and checkboxes
+							replicating the heading and link style hierarchy
 						</li>
-					 </ul>
-					 <p>
-						This list is in progress. 
-					 </p>
-				 </div>
-			</details>
-    </div>
-  </div>
+						<li>
+							using sentence case at all times
+						</li>
+						<li>
+							following bullet point style
+						</li>
+					</ul>
+				</ul>
+
+				<p>Valid reasons to deviate from a pattern include:</p>
+
+				<ul class="list list-bullet">
+					<li>
+						local information, for example parking boundary names or prices
+					</li>
+					<li>
+						local service delivery variations, for example policy about when parking permits are issued, or technical constraints meaning the recommended design can’t be implemented
+					</li>
+				</ul>
+
+				<p>
+					Patterns are subject to change. Make sure your service is up to date with the latest version of a pattern.
+				</p>
+
+				<h2 id="feeding-back-on-a-pattern" class="heading-medium">Feeding back on a pattern</h2>
+
+				<p>
+					Before you use a pattern, you should test a prototype with your local users to make sure it works in your context.
+				</p>
+				<p>
+					If you find issues come up in this research, share your research insights via the link on the page. If the issue affects users in all areas, it will be worked on by GDS. If it is a genuine local issue, GDS and the council should co-ordinate who works on it.
+				</p>
+				<p>
+					If you have a design improvement that has tested positively with users and should be incorporated into the shared pattern, you can feed that back on the relevant page.
+				</p>
+
+				<h2 id="local-deviations-from-a-pattern" class="heading-medium">Local deviations from a pattern</h2>
+
+				<p>If both GDS and the council have agreed there is a genuine need for a local variation from a pattern, a local solution can be designed. </p>
+
+				<p>Any local solutions must:</p>
+
+				<ol class="list list-number">
+					<li>
+						Be in <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk">writing for web best practice style</a>.
+					</li>
+					<li>
+						Pass an accessibility review.
+					</li>
+					<li>
+						Pass a privacy review.
+					</li>
+					<li>
+						Pass a fraud review.
+					</li>
+					<li>
+						Go through at least one round of user research with the majority of users being able to complete the service without assistance.
+					</li>
+					<li>
+						Include readily available support channels for those who need them.
+					</li>
+				</ol>
+
+				<p>
+					The local solution will then be documented in the pattern.
+				</p>
+
+				<h2 id="branding-and-style" class="heading-medium">Branding and style</h2>
+				<p>
+					The common prototype uses <a href="https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk">GOV.UK styles</a> as its base, with each council’s branding applied on top of those base styles. GDS recommends you follow this principle across the whole of your council’s website, as well as following the GOV.UK <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style">content style guide</a>.</p>
+
+				<p>The GOV.UK design patterns have been extensively tested and are used in all government services, so following these will enable you to be sure that you are following current best practice, and to be consistent with other government services.</p>
+
+				<p>We understand the challenges of adapting GOV.UK patterns and styles to your council’s branding. If you’re unsure how do so, talk to us and we’ll happy to work with your team on that.</p>
+
+				<p>As a bare minimum, your website’s global styles must meet <a href="https://www.w3.org/WAI/WCAG20/quickref/">WCAG 2.0 accessibility guidance</a>. These points include having text that is big enough to read, and using colours that meet contrast minimums.</p>
+				<details>
+			     <summary><span class="summary">Common accessibility points for council websites</span></summary>
+			     <div class="panel panel-border-narrow">
+						 <ul class="list list-bullet">
+							<li>
+								<a href="http://govuk-elements.herokuapp.com/typography/#typography-body-copy">Readable text size:</a> use 19px for body copy – 16px for smaller screens
+							</li>
+							<li>
+								<a href="http://govuk-elements.herokuapp.com/form-elements/#form-focus-states">Clear focus states:</a> users should be able to navigate the service with just their keyboard, so clear focus states are important
+							</li>
+							<li>
+								<a href="http://govuk-elements.herokuapp.com/form-elements/#radio-buttons">Large radio buttons and checkboxes:</a> research has shown that many users struggle with browser's default size radio buttons and checkboxes
+							</li>
+						 </ul>
+						 <p>
+							This list is in progress.
+						 </p>
+					 </div>
+				</details>
+
+			</div>
+
+		</section>
+		<div class="column-one-third">
+			<aside class="related-items">
+				<h2 class="related-items__title">Patterns you can use</h2>
+				<ul class="related-items__list">
+					<li><a href="service-patterns/parking-permit">Apply for a resident's parking permit</a></li>
+					<li><a href="service-patterns/concessionary-travel">Apply for an older person's concessionary travel pass</a></li>
+				</ul>
+				<h2 class="related-items__title">Upcoming patterns</h2>
+				<ul class="related-items__list">
+					<li><a href="/#">Read about upcoming patterns</a></li>
+				</ul>
+				<h2 class="related-items__title">Suggest a pattern</h2>
+				<ul class="related-items__list">
+					<li><a href="/#">Find out more</a></li>
+				</ul>
+			</aside>
+		</div>
+	</div>
+
 </main>
 
 {% endblock %}
