@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Is your address correct?" %}
+{% set pageTitle = "Your address" %}
 
 {% block content %}
 
@@ -20,9 +20,9 @@
       ARG1 4HP<br />
     </p>
   </div>
-  <p>
-    Do you still live here?
-  </p>
+  <h3 class="heading-medium">
+    Is this your current address?
+  </h3>
   <form action="confirm-adress" method="get" class="form">
     <div class="form-group">
       <fieldset class="inline">
