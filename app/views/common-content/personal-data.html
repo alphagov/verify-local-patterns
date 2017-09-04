@@ -1,11 +1,19 @@
 <div class="column-two-thirds">
   <p>
-    This is the only personal data GOV.UK Verify will share with {{council.name}}.
+    The only personal information GOV.UK Verify will share with {{council.name}} is:
   </p>
-  <p>
-    We will only use it for your {{serviceString}} application.
-  </p>
-
+  <ul class="list list-bullet">
+   <li>
+   your name
+   </li>
+   <li>
+   your address
+   </li>
+   {{'<li>your date of birth</li>' | safe if serviceString == 'concessionary-travel'}}
+   </ul>
+   <h2 class="heading-medium">
+   Can we use this information when you {{serviceName | lower}}?
+ </h2>
   <form>
     <div class="form-group">
       <fieldset class="inline">
