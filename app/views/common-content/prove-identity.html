@@ -1,11 +1,10 @@
 
 <div class="column-two-thirds">
   <p>
-      We need to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
+      We need to check your identity to make sure you're eligible for {{ 'a parking permit' if serviceString == 'parking-permit' else 'a bus pass' }}.
   </p>
-
   <form>
-    {% set formTitle = "How do you want us to check your identity?" %}
+
 
     <h2 class="heading-medium">{{formTitle}}</h2>
     <legend class="visually-hidden">{{formTitle}}</legend>
@@ -13,7 +12,7 @@
     <div class="radio-with-bullets">
       <label class="block-label selection-button-radio" data-target="verify-consent" for="verify-option">
         <input id="verify-option" type="radio" name="radio-group" value="personal-data">
-        <span class="heading-small">Use GOV.UK Verify, the new way to prove who you are online</span>
+        <span class="heading-small">Use GOV.UK Verify – the new way to prove who you are online</span>
       </label>
 
       <div class="form-group verify">
@@ -42,11 +41,11 @@
 					{% endif %}
 					{% if serviceString == 'parking-permit' and council.sixmonth %}
             <li>
-              if you've moved in the last 3 months you could only get a 3 month permit today
+              if you've moved in the last 3 months you may only get a 3 month permit today
             </li>
 					{% endif %}
             <li>
-              creating an account takes about 5 minutes and the rest of the application is around 2 minutes
+              create an identity account in about 5 minutes, complete your application afterwards in around 2 minutes
             </li>
             </ul>
       </div>
@@ -124,6 +123,7 @@
     </div>
   </details>
   {% endif %}
+
   <div class="form-group">
       <button class="button">Continue</button>
   </div>
