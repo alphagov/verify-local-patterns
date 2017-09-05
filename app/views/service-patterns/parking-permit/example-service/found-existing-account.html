@@ -1,0 +1,54 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Identity verified" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+	<p>
+		We've found the following details on Oxfordshire's system from a previous transaction.
+	</p>
+
+	<p>
+		Jane Smith<br />
+		janesmith@gmail.com<br />
+		1 existing permit<br />
+		Living in registered HMO
+	</p>
+
+	<h2 class="heading-medium">Can we use this information to make your application easier?</h2>
+
+	<form action="{{nextPage}}" method="get" class="form">
+		<div class="form-group">
+			<fieldset class="inline">
+
+				<legend class="visually-hidden">Is this your name and address?</legend>
+
+				{% if council.permitMax > 1 %}
+					{% set nextPage = 'resident-count' %}
+				{% else %}
+					{% set nextPage = 'enter-reg' %}
+				{% endif %}
+
+				<label class="block-label selection-button-radio" for="radio-inline-1">
+					<input id="radio-inline-1" type="radio" name="radio-group" value="{{nextPage}}">
+					Yes
+				</label>
+				<label class="block-label selection-button-radio" for="radio-inline-2">
+					<input id="radio-inline-2" type="radio" name="radio-group" value="add-new-address">
+					No
+				</label>
+
+			</fieldset>
+		</div>
+		<div class="form-group">
+			<input class="button" type="submit" value="Next">
+		</div>
+	</form>
+
+
+</div>
+
+{% endblock %}
