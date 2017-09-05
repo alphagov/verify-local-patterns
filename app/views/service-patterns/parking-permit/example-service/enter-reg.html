@@ -21,6 +21,11 @@
     {% set s = 's' if parkingPermitCount > 1 else
       '' %}
 
+      <p>
+        We need your vehicle registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
+      </p>
+
+
 		{% if council.permitMax > 1 %}
 
 		{% endif %}
@@ -104,17 +109,15 @@
       {% endif %}
     </div>
   {% endif %}
-  <p>
-    We need your vehicle registration number{{s}} to link your permit{{s}} to your vehicle{{s}}.
-  </p>
-  <p>
-    {{ council.name }}
-    will store your vehicle details securely on our own systems.
-  </p>
+
 
 	<div class="form-group">
 		<input type="submit" class="button" role="button" value="Next" />
 	</div>
+  <p>
+    {{ council.name }}
+    will store your vehicle details securely on our own systems.
+  </p>
 	</form>
 </div>
 {% endblock %}
