@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Park your car or vehicle" %}
-{% set pageTitle = "Where do you want to park?" %}
+{% set pageTitle = "What's the postcode for where you want to park?" %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
       <fieldset>
         <legend class="visuallyhidden">Enter a postcode</legend>
         <div class="ask_location">
-          <p>Enter a postcode, for example SW1A 2AA:</p>
+          <p>For example SW1A 2AA</p>
           <input class="postcode form-control" id="postcode" name="postcode" type="text" aria-invalid="false" value="">
           <input type="submit" class="button" value="Find">
           <p>

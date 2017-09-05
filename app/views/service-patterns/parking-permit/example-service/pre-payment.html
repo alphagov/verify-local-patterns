@@ -7,9 +7,9 @@
 {% set s = 's' if parkingPermitCount > 1 else '' %}
 
 {% if totalSum > 1 %}
-	{% set pageTitle = "Is everything correct?"%}
+	{% set pageTitle = "Payment summary"%}
 {% else %}
-	{% set pageTitle = "Confirm your permit details" %}
+	{% set pageTitle = "Permit details" %}
 {% endif %}
 
 {% block content %}
