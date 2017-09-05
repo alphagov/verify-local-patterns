@@ -14,7 +14,7 @@
   </p>
     {% endif %}
   <p>
-    You're allowed a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
+    You can apply for a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
   </p>
   {% if council.permitWait < 1 %}
     <li>

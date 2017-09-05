@@ -1,27 +1,4 @@
 <div class="column-two-thirds">
-
-  <p>
-    We'll send you:
-  </p>
-  <ul class="list list-bullet">
-    <li>
-      1 message now with your reference number for this application
-    </li>
-    <li>
-      1 when your {{item}} is on its way, or if there's any problem with your application
-    </li>
-  </ul>
-
-  <div class="spacer">
-
-  </div>
-
-  <p>
-    <strong class="bold-medium">
-    How do you want to receive these messages?
-    </strong>
-  </p>
-
   <form action="renewal-reminder" method="POST">
     <div class="form-group">
       <fieldset>
@@ -29,6 +6,17 @@
         <legend class="visually-hidden">
           How do you want to receive your confirmation messages?
         </legend>
+        <p>
+          We'll send:
+        </p>
+        <ul class="list list-bullet">
+          <li>
+            1 message now with your application reference number
+          </li>
+          <li>
+            1 message when we've sent your {{item}}, or if there's any problem with your application
+          </li>
+        </ul>
 
         <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
           <input id="contact-by-email" type="checkbox" name="contactChoice" value="Email">
@@ -50,10 +38,12 @@
 
       </fieldset>
     </div>
-    <div class="form-group">
-      <input type="submit" class="button" role="button" value="Next" />
-    </div>
   </form>
 
+  <div class="spacer">
+
+  </div>
+
+<a href="renewal-reminder" class="button">Next</a>
 
 </div>

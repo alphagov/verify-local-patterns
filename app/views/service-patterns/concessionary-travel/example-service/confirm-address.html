@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Is this your address?" %}
+{% set pageTitle = "Your address" %}
 
 {% block content %}
 
@@ -15,9 +15,11 @@
     {% set nextPage = 'webcam-start' %}
     {% set action = 'upload' %}
   {% endif %}
-
   <p>
-    We've received these details from GOV.UK Verify:
+    We use your address to send out your bus pass and to check you're applying through the right council.
+  </p>
+  <p>
+    This is the most recent address GOV.UK Verify was able to verify:
   </p>
   <div class="panel panel-border-wide">
     <p>
@@ -27,12 +29,9 @@
       ARG1 4HP<br />
     </p>
   </div>
-  <p>
-    We'll use this address to send you your bus pass and check you're applying through the right council.
-  </p>
-  <p>
+  <h3 class="heading-medium">
     Is this your current address?
-  </p>
+  </h3>
   <form action="eligible" method="get" class="form">
     <div class="form-group">
       <fieldset class="inline">
