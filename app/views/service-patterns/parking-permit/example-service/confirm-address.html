@@ -25,6 +25,8 @@
 
 	{% if matchingInvisibleAccount %}
 		{% set nextPage = 'found-existing-details' %}
+	{% elif matchingAccount %}
+		{% set nextPage = 'found-existing-account' %}
 	{% elif council.permitMax > 1 %}
 		{% set nextPage = 'resident-count' %}
 	{% else %}
