@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Park your car or vehicle" %}
-{% set pageTitle = "Select a parking permit type" %}
+{% set pageTitle = "Why do you need to park?" %}
 
 {% block content %}
 
@@ -9,37 +9,34 @@
 
 
     <p>
-      {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>. You'll need a permit to park.</p>
-    <p>
-      Select your permit type:
-    </p>
+      You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>.</p>
     <form class="radio-nav">
   	  <div class="radio-with-bullets">
   	    <label class="block-label selection-button-radio" for="radio-1">
   	      <input id="radio-1" type="radio" name="radio-group" value="resident-start">
-  				<span class="heading-small">Resident's permit</span>
+  				<span class="heading-small">I live here</span>
   				<p>
-  					I live here.
+  					Apply for a resident's parking permit application
   				</p>
   	    </label>
 
   	    <label class="block-label selection-button-radio" for="radio-2">
   	      <input id="radio-2" type="radio" name="radio-group" value="visitor-start">
-  				<span class="heading-small">Visitor's permit</span>
+  				<span class="heading-small">I have a visitor</span>
   				<p>
-  					I live here, and have a visitor.
+  					Apply for a visitor's permit
   				</p>
   	    </label>
 
         <label class="block-label selection-button-radio" for="radio-3">
           <input id="radio-3" type="radio" name="radio-group" value="business-start">
-  				<span class="heading-small">Trade and business permit</span>
+          {% if council.string == 'sunderland' %}
+  				<span class="heading-small">I own a business here</span>
+          {% else %}
+          <span class="heading-small">I work here</span>
+          {% endif %}
   				<p>
-            {% if council.string == 'sunderland' %}
-            I own a business here.
-            {% else %}
-            I work here.
-            {% endif %}
+            Apply for a trade and business permit
   				</p>
         </label>
   		</div>
