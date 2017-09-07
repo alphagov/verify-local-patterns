@@ -23,10 +23,12 @@
   </p>
   <h2 class="heading-medium">Is this your current address?</h2>
 
-	{% if council.string == 'oxfordshire' %}
-		{% set nextPage == 'found-existing-account' %}
+	{% if matchingInvisibleAccount %}
+		{% set nextPage = 'found-existing-details' %}
+	{% elif council.permitMax > 1 %}
+		{% set nextPage = 'resident-count' %}
 	{% else %}
-		{% set nextPage == 'confirm-address' %}
+		{% set nextPage = 'enter-reg' %}
 	{% endif %}
 
   <form action="{{nextPage}}" method="get" class="form">
@@ -34,12 +36,6 @@
       <fieldset class="inline">
 
         <legend class="visually-hidden">Is this your name and address?</legend>
-
-				{% if council.permitMax > 1 %}
-					{% set nextPage = 'resident-count' %}
-				{% else %}
-					{% set nextPage = 'enter-reg' %}
-				{% endif %}
 
         <label class="block-label selection-button-radio" for="radio-inline-1">
           <input id="radio-inline-1" type="radio" name="radio-group" value="{{nextPage}}">
