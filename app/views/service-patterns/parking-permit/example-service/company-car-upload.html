@@ -1,0 +1,32 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Please upload your letter from your employer" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Upload a photo or scan of the first page of your confirmation letter. This document proves you own your vehicle.
+  </p>
+  <p>
+    Take the photo with your smartphone or digital camera, or scan using a document scanner.
+  </p>
+
+  {% set uploadIndex = v5cuploads.length if v5cuploads else 0 %}
+
+  <form>
+    <div id="file-group" class="form-group file-upload">
+      <label for="file" class="button file-upload-label" role="button">
+        <span id="file-label-text" class="">Upload document for Vehicle {{ registerNumbers[uploadIndex] }}</span>
+      </label>
+      <input type="file" id="file" class="file-choose-file" name="v5cuploads[{{ uploadIndex }}]" aria-controls="progress-container" aria-required="true" >
+    </div>
+  </form>
+  
+
+</div>
+
+{% endblock %}
+

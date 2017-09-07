@@ -91,4 +91,18 @@ $(document).ready(function() {
         }, 3000)
     }
 
+    // Company car upload
+    if (window.location.href.indexOf("company-car-upload") > -1) {
+        $('#file').change(function(e) {
+            // todo: check that file is actually chosen!!
+            window.location.href = 'loading-company-car-upload';
+        });
+    }
+    if (window.location.href.indexOf("loading-company-car-upload") > -1) {
+        setTimeout(function() {
+            window.location.href = 'company-car-upload-accepted';
+        }, 2000)
+    }
+
+
 })
