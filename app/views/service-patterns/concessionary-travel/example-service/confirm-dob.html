@@ -7,17 +7,12 @@
 
 <div class="column-two-thirds">
 
-  <p>
-    We'll use your date of birth to confirm you're eligible for a bus pass. We received this date from GOV.UK Verify:
-  </p>
   <div class="panel panel-border-wide">
     <p>
       12th March 1951
     </p>
   </div>
-  <p>
-    Is this correct?
-  </p>
+  {# <h3 class="heading-medium">Is this date correct?</h3> #}
   <form action="confirm-address" method="get" class="form">
     <div class="form-group">
       <fieldset class="inline">
@@ -35,6 +30,9 @@
 
       </fieldset>
     </div>
+    <p>
+       We received this date from GOV.UK Verify. We'll use it to confirm you're eligible for a bus pass.
+    </p>
     <div class="form-group">
       <input class="button" type="submit" value="Next">
     </div>
