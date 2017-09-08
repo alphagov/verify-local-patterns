@@ -30,7 +30,7 @@
         <legend class="visually-hidden">Is this your name and address?</legend>
 
         {% if council.string == "oxfordshire" %}
-          {% set nextPage = 'vehicle-ownership' %}		
+          {% set nextPage = 'vehicle-personal' %}		
         {% elseif council.permitMax > 1 %}
 					{% set nextPage = 'resident-count' %}
 				{% else %}

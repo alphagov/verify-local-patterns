@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
-{% set pageTitle = "Do you own the vehicle or is it a company car?" %}
+{% set pageTitle = "Vehicle ownership?" %}
 
 {% block content %}
 
@@ -11,17 +11,24 @@
     <div class="form-group">
       <fieldset class="inline">
 
-        <legend class="visually-hidden">Is this your name and address?</legend>
+        <p>
+          The vehicle is provided by:
+        </p>
 
-		{% set nextPage = 'v5c-upload' %}
+        <legend class="visually-hidden">The vehicle is provided by:</legend>
+        
 			
         <label class="block-label selection-button-radio" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-group" value="{{nextPage}}">
-          Yes
+          <input id="radio-inline-1" type="radio" name="radio-group" value="vehicle-ownership-document-upload">
+          My employer
         </label>
         <label class="block-label selection-button-radio" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="radio-group" value="company-car-upload">
-          No
+          <input id="radio-inline-2" type="radio" name="radio-group" value="rented-vehicle-document-upload">
+          A rental firm that I've hired it from
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-3">
+          <input id="radio-inline-3" type="radio" name="radio-group" value="new-vehicle-document-upload">
+          Myself but it's not yet registered
         </label>
 
       </fieldset>
