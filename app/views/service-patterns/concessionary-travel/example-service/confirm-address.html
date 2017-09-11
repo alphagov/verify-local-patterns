@@ -1,7 +1,7 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for an older person's bus pass" %}
-{% set pageTitle = "Your address" %}
+{% set pageTitle = "Your details"%}
 
 {% block content %}
 
@@ -16,19 +16,26 @@
     {% set action = 'upload' %}
   {% endif %}
   <p>
-    We use your address to send out your bus pass and to check you're applying through the right council.
-  </p>
+    We've recieved your date of birth and address from GOV.UK Verify.
   <p>
-    This is the most recent address GOV.UK Verify was able to verify:
+  <h2 class="heading-large">Date of birth</h2>
+<div class="panel panel-border-wide">
+  <p>
+    12 March 1951
   </p>
-  <div class="panel panel-border-wide">
-    <p>
-      Jane Smith<br />
-      1A {{council.shortName}} High Street<br />
-      {{council.shortName}}<br />
-      ARG1 4HP<br />
-    </p>
-  </div>
+</div>
+  <p>
+    We'll use this to confirm you're eligible for a bus pass.
+  </p>
+  <h2 class="heading-large">Address</h2>
+    <div class="panel panel-border-wide">
+      <p>
+        Jane Smith<br />
+        1A {{council.shortName}} High Street<br />
+        {{council.shortName}}<br />
+        ARG1 4HP<br />
+      </p>
+    </div>
   <h3 class="heading-medium">
     Is this your current address?
   </h3>
@@ -49,6 +56,9 @@
 
       </fieldset>
     </div>
+    <p>
+      We'll use it to check you're applying to the right council and to send your bus pass.
+    </p>
     <div class="form-group">
       <input class="button" type="submit" value="Next">
     </div>
