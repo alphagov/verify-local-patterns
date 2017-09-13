@@ -1,12 +1,45 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
+{% if council.string == 'oxfordshire' %}
+{% set pageTitle = "Renewal reminder" %}
+{% else %}
 {% set pageTitle = "How should we send your renewal reminder?" %}
+{% endif %}
 
 {% block content %}
+{% if council.string == 'oxfordshire' %}
+<div class="column-two-thirds">
+<p>We’ll send you a renewal reminder by post 30 days before your resident’s parking permit expires.</p>
+<form action="success" method="POST">
+    <div class="form-group">
+      <fieldset>
 
+        <legend class="visually-hidden">
+         Request an additional reminder by email
+        </legend>
+
+        <label class="block-label selection-button-checkbox" data-target="contact-by-email-input" for="contact-by-email">
+          <input id="contact-by-email" type="checkbox" name="contactChoice" value="Email">
+          Request an additional reminder by email
+        </label>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email-input">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contactEmail" type="text" id="contact-email">
+        </div>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Next" />
+    </div>
+  </form>
+</div>
+
+
+{% else %}
 {% set item = "resident's parking permit" %}
-
 {% include "common-content/renewal-reminder.html" %}
+{% endif %}
 
 {% endblock %}

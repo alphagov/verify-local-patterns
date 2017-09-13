@@ -1,11 +1,38 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Apply for a resident's parking permit" %}
+{% if council.string == 'oxfordshire' %}
+{% set pageTitle = "Sending your invoice" %}
+{% else %}
 {% set pageTitle = "How should we contact you for payment?" %}
+{% endif %}
 
 {% block content %}
 <div class="column-two-thirds">
+  {% if council.string == 'oxfordshire' %}
+  <p>We’ll send your invoice to you by email.</p>
+  <form action="renewal-reminder" method="POST">
+    <div class="form-group">
+      <fieldset>
 
+        <legend class="visually-hidden">
+          Enter your email address
+        </legend>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email address</label>
+          <input class="form-control" name="contactEmail" type="email" id="contact-email">
+        </div>
+
+      </fieldset>
+    </div>
+    <p>By continuing you confirm you’re happy for us to use your email address to send you your parking permit invoice.</p>
+    <div class="form-group">
+      <input type="submit" class="button" role="button" value="Continue" />
+    </div>
+  </form>
+
+  {% else %}
   <form action="renewal-reminder" method="POST">
     <div class="form-group">
       <fieldset>
@@ -38,5 +65,7 @@
       <input type="submit" class="button" role="button" value="Next" />
     </div>
   </form>
+  {% endif %}
+
 </div>
 {% endblock %}
