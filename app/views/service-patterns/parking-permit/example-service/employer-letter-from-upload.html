@@ -6,27 +6,19 @@
 {% block content %}
 
 <div class="column-two-thirds">
+<p>
+ Now upload a letter from your employer on company stationary allowing you to use the car.
+</p>
+<p>
+  Take the photo with your smartphone or digital camera, or scan using a document scanner.
+</p>
 
-
-
-    <p>
-        Now upload a letter from your employer on company stationary allowing you to use the car:
-    </p>
-
-
-  <p>
-    Upload a photo or scan of the first page of a letter from your employer.
-  </p>
-  <p>
-    Take the photo with your smartphone or digital camera, or scan using a document scanner.
-  </p>
-
-  {% set uploadIndex = v5cuploads.length if v5cuploads else 0 %}
+{% set uploadIndex = v5cuploads.length if v5cuploads else 0 %}
 
   <form>
     <div id="file-group" class="form-group file-upload">
       <label for="file" class="button file-upload-label" role="button">
-        <span id="file-label-text" class="">Upload document for Vehicle {{ registerNumbers[uploadIndex] }}</span>
+        <span id="file-label-text" class="">Upload {{ registerNumbers[uploadIndex] }}</span>
       </label>
       <input type="file" id="file" class="file-choose-file" name="v5cuploads[{{ uploadIndex }}]" aria-controls="progress-container" aria-required="true" >
     </div>
