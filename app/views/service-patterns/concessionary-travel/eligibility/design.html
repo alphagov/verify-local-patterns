@@ -7,7 +7,7 @@
 	</p>
 	{% set annotationsContent = [
 		{
-			"position": "top: 35%; right: 40%;",
+			"position": "top: 38%; right: 30%;",
 			"header": "Radio buttons",
 			"content": "<p>
 								Different methods of identity verification are presented using radio buttons.</p><p>
@@ -18,7 +18,7 @@
 							</p>"
 		},
 		{
-			"position": "top: 42%; right: 40%;",
+			"position": "top: 44%; right: 30%;",
 			"header": "GOV.UK Verify",
 			"content": '<p>
 				If the user selects the GOV.UK Verify route, the service asks the user if they can use their personal data for this application.
@@ -73,65 +73,33 @@
 						</p>
 					</div>
 				</details>
-			<h3 class="heading-small">Confirm date of birth</h3>
-				<p>
-					When the user has verified their identity, they are returned to the council website. At this point the service asks them to confirm their date of birth.
-				</p>
-				<div class="annotated-image-container">
-					<div class="annotated-image">
-						<img src="'+asset_path+'images/ctscreenshot/confirmdob_whole.png"/>
-					</div>
-					<a href="/service-patterns/concessionary-travel/example-service/confirm-dob" target="_blank">Confirm date of birth example council page</a>
-				</div>
-			</p>
-			<details>
-				<summary><span class="summary">Incorrect date of birth</span></summary>
-				<div class="panel">
-					<h3 class="heading-small">Incorrect date of birth</h3>
+				<h3 class="heading-small">Your details</h3>
 					<p>
-						If the user\'s date of birth is not correct, something has probably gone wrong in the verifying process. The service needs to advise them to continue using a different channel.
+						When the user has verified their identity, they are returned to the council website. GOV.UK Verify will have sent the service the user\'s date of birth and address, as supplied by the user\'s chosen identity provider.
+					</p>
+					<p>
+						The service should use the date of birth supplied by GOV.UK Verify to check the user is old enough to be eligible. If the user is ineligible based on their date of birth the service webpage must show them the date of birth supplied and should tell them they\'re not currently eligible and supply the
+						date when they will be eligible.
+					</p>
+					<p>
+						<div class="annotated-image-container">
+							<div class="annotated-image">
+								<img src="'+asset_path+'images/ctscreenshot/noteligibledob_whole.png"/>
+							</div>
+							<a href="/service-patterns/concessionary-travel/example-service/not-eligible-age" target="_blank">Not eligible because of age example council page</a>
+						</div>
+					</p>
+					<p>
+						If the date of birth supplied confirms eligibility, the service webpage must show the user it, plus the address supplied by their identity provider, as this is a legal requirement. It should also ask them to confirm if the address supplied is their current address. This is mainly done because GOV.UK Verify identity providers may not have the user\'s address if they moved house in the last 3 months.
+					</p>
+					<p>
+						This page also tells the user their bus pass will be sent to the address received through GOV.UK Verify.
 					</p>
 					<div class="annotated-image-container">
 						<div class="annotated-image">
-							<img src="'+asset_path+'images/ctscreenshot/unsuccessfulverifying_whole.png"/>
-						</div>
-						<a href="/service-patterns/concessionary-travel/example-service/incorrect-dob" target="_blank">Incorrect date of birth example council page</a>
-						</p>
-					</div>
-
+							<img src="'+asset_path+'images/ctscreenshot/yourdetails.png"/>
 				</div>
-			</details>
-			<details>
-				<summary><span class="summary">Not egibile because of age</span></summary>
-				<div class="panel">
-				<p>
-					If the user confirms their date of birth, the service should check the user is old enough to be eligible. If the user is not eligible based on their date of birth the service webpage should tell them they are not currently eligible and supply the
-					date when they will be eligible.
-				</p>
-				<p>
-					<div class="annotated-image-container">
-						<div class="annotated-image">
-							<img src="'+asset_path+'images/ctscreenshot/noteligibledob_whole.png"/>
-						</div>
-						<a href="/service-patterns/concessionary-travel/example-service/not-eligible-age" target="_blank">Not eligible because of age example council page</a>
-					</div>
-				</p>
-			</div>
-		</details>
-
-		<h3 class="heading-small">Confirm address</h3>
-		<p>
-			GOV.UK Verify will send the service the user\'s address, as supplied by the user\'s chosen identity provider. When the user returns from the GOV.UK Verify process, the service webpage should ask them to confirm if this is their current address. This
-			is mainly done because GOV.UK Verify identity providers may not have the user\'s address if they moved house in the last 3 months.
-		</p>
-		<p>
-			This page also tells the user their bus pass will be sent to the address received through GOV.UK Verify.
-		</p>
-			<div class="annotated-image-container">
-				<div class="annotated-image">
-					<img src="'+asset_path+'images/ctscreenshot/confirmaddress_whole.png"/>
-				</div>
-				<a href="/service-patterns/concessionary-travel/example-service/confirm-address" target="_blank">Confirm name and address example council page</a>
+				<a href="/service-patterns/concessionary-travel/example-service/confirm-dob" target="_blank">Your details example council page</a>
 			</div>
 		<details>
 			<summary><span class="summary">New residents</span></summary>
@@ -185,18 +153,18 @@
 			</div>
 		</details>
 		<p>
-			Once the service has checked their address is in the council\'s area and the service has checked they don\'t already have a pass, they move onto the <a href="/service-patterns/concessionary-travel/photo/design">photo section</a>.
+			After the service has checked their address is in the council\'s area and the service has checked they don\'t already have a pass, they move onto the <a href="/service-patterns/concessionary-travel/photo/design">photo section</a>.
 		</p>'
 		},
 		{
-			"position": "top: 65%; right: 40%;",
+			"position": "top: 65%; right: 30%;",
 			"header": "Alternative online route",
 			"content": "<p>
 							Councils should provide an alternative online route to access the service, as not everybody will have enough of a digital history to be able to be verified.
 						</p>"
 		},
 		{
-			"position": "top: 83%; left: 25%;",
+			"position": "top: 83%; left: 30%;",
 			"header": "Offline route",
 			"content": "<p>
 							Councils should provide at least one offline route to access the service. This could be via phone or by coming into a building such as a council office.
