@@ -20,16 +20,30 @@
       ARG1 4HP<br />
     </p>
   </div>
-  <h3 class="heading-medium">
-    Is this your current address?
-  </h3>
-  <form action="confirm-adress" method="get" class="form">
+  <p>
+    We'll use this address to check for any existing permits you may have, and for sending your new permit(s).
+  </p>
+  <h2 class="heading-medium">Is this your current address?</h2>
+
+	{% if matchingInvisibleAccount %}
+		{% set nextPage = 'found-existing-details' %}
+	{% elif matchingAccount %}
+		{% set nextPage = 'found-existing-account' %}
+	{% elif council.permitMax > 1 %}
+		{% set nextPage = 'resident-count' %}
+	{% else %}
+		{% set nextPage = 'enter-reg' %}
+	{% endif %}
+
+  <form action="{{nextPage}}" method="get" class="form">
     <div class="form-group">
       <fieldset class="inline">
 
         <legend class="visually-hidden">Is this your name and address?</legend>
 
-				{% if council.permitMax > 1 %}
+        {% if council.string == "oxfordshire" %}
+          {% set nextPage = 'vehicle-personal' %}		
+        {% elseif council.permitMax > 1 %}
 					{% set nextPage = 'resident-count' %}
 				{% else %}
 					{% set nextPage = 'enter-reg' %}
