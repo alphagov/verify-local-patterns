@@ -1,11 +1,14 @@
 {% extends "layout_picker.html" %}
 
 {% set serviceName = "Park your car or vehicle" %}
-{% set pageTitle = "What's the postcode for where you want to park?" %}
+{% set pageTitle = "Check if you need a permit" %}
 
 {% block content %}
 
 <div class="column-two-thirds">
+  <p>
+    What's the postcode for the area you want to park in?
+  </p>
 
   <div class="postcode-search-form form-group" data-module="track-submit" data-track-category="postcodeSearch:find_local_council" data-track-action="postcodeSearchStarted">
     <form method="post" action="resident-choice" id="local-locator-form" class="find-location-for-service">
