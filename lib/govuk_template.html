@@ -40,16 +40,16 @@
       </div>
     </div>
 
+
     {# <div id="global-cookie-message">
 
         {% block cookie_message %}{% endblock %}
 
     </div> #}
-
-
+    
     <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
       <div class="header-wrapper">
-        <div class="header-global product-header">
+        <div class="header-global">
           <div class="header-logo">
             {# <a href="{{ homepage_url|default('https://www.gov.uk') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="logo" class="content"> #}
               {# <img src="{{ asset_path }}images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> GOV.UK  #}
@@ -65,6 +65,7 @@
         {% block proposition_header %}{% endblock %}
       </div>
     </header>
+    
 
 
     {% block after_header %}{% endblock %}
@@ -84,9 +85,9 @@
 
             <div class="open-government-licence">
               <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-
+              
                 {% block licence_message %}<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>{% endblock %}
-
+              
             </div>
           </div>
 
@@ -103,7 +104,7 @@
 
     {% block body_end %}{% endblock %}
 
-
+    
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
   </body>
 </html>
