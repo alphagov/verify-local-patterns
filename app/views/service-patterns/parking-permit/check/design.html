@@ -3,7 +3,7 @@
 {% extends "pp_layout.html" %}
 {% block page_content %}
 <p>
-	This page should be linked to from the council's homepage and easily findable via search engines, as described in the <a href="awareness/design">awareness section</a>.
+	This page should be linked to from the council's homepage and easy to find using search engines, as described in the <a href="awareness/design">awareness section</a>.
 </p>
 {% set annotationsContent = [
 	{
@@ -61,22 +61,20 @@ The next page in the flow asks users to enter their postcode to check if they ne
 	</div>
 	</div>
 	<p>
-	 At this point the council service will check the user's postcode against a database of parking permit zones. If the postcode requires a parking permit to park, the screen below will show. It allows the user to choose the type of permit they need and access details about the parking zone area.
+	 At this point the council service will check the user's postcode against a database of parking permit zones. If the postcode requires a parking permit to park, the screen below will show:
 	</p>
 	<div class="annotated-image-container">
 		<div class="annotated-image">
 			<img src="{{asset_path}}images/ppscreenshot/permittype.png" />
-			<ol class="list upload-help">
-				<li style="top: 51%; right: 50%;">
-					<a href="#6">
-						<h2 class="heading-small"><span class="circle circle-step-large">6</span></h2>
-					</a>
-				</li>
+
 				<a href="/service-patterns/parking-permit/example-service/resident-choice" target="_blank">Select permit type example council page</a>
 				</div>
 			</div>
 			<p>
-			 A screen listing streets in the parking permit zone area for the user's postcode, plus a street map, displays when the user clicks the parking zone area link. They return to the the select permit type via the call to action link.
+				It allows the user to choose permit type based on their reason for parking. They can also access details about the parking zone area using the parking zone area link.
+			</p>
+			<p>
+			  When the user clicks the parking zone area link, a screen listing streets in the parking permit zone area for the user's postcode, plus a street map displays:
 			</p>
 			<div class="annotated-image-container">
 				<div class="annotated-image">
@@ -90,6 +88,9 @@ The next page in the flow asks users to enter their postcode to check if they ne
 				<span><a href="/service-patterns/parking-permit/example-service/parking-zone-map" target="_blank">Parking permit area example council page</a></span>
 			</div>
 			</div>
+<p>
+	They return to the the select permit type via the 'Select permit type' call to action link.
+</p>
 <p>
 	The user is then routed to the <a href="/service-patterns/parking-permit/start/design">start section</a>.
 </p>

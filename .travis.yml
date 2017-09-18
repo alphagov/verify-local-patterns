@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-- 4.0
-- 6.0
+- 6.11.1
 before_install:
 - npm install -g mocha
 install:
@@ -13,11 +12,15 @@ after_success:
 after_deploy:
 - "./update-release-branch.sh"
 deploy:
-  provider: heroku
-  api_key:
-    secure: h/9/Rcd41XVU4VYYeBoKKvG6uShEoDksCGGZ/2dgeY1f3tYnhGzzgL6TIkvhafwDbKk2Y4o6d/MI05K+s7lorf2uTKpr1To2o52hQqmb4YREPWruZtBqoRo5X4nCeN2oEdW+yJRH3jZDNUmwkPzjytqxkcUUUeDPHfz3+xCtSZk=
-  app: govuk-prototype-kit
-  on: master
+  provider: cloudfoundry
+  api: https://api.cloud.service.gov.uk
+  username: sanjay.poyzer@digital.cabinet-office.gov.uk
+  password:
+    secure: H4pHmG77DqNcTkDMmzjBXCZFgbN05SckcDKa6if2/GSjPvkkbssdRZD5b7ty6Woyp4oA/L4DTzx1NLX53+Sf5V3kcRlJt16AJCmRAkTvkZJi/sDJQ9cnqD/h9vIze+iZ2nOzesppsI7HbMNTWIzHQHR6KbSpUNCC58nSkaT1FAdr255ACBTfcAnfk7ewWCCoLsAAJe5nSPqSSDffTmZM4v9pP16D3kGO6wXhfgyXTZbqmlua+dgb79OMTeVTMP2OTmh0/VBxdtznVuNFrpUxlLGRwjCkyms5Fuz+vDOwKPporC8ZOUxrQLqYW9Y36UqPIauFhTrZdn4gaeJTZ3Ue18gZZrFTvw22sQIGhM0/xGGdUKkHjArFHZUX1WxQJKVIayZYqcPDmPKjjUU1MMddtDV7if33akEK3qTNZzxtfsyezh9khrLWLLQKDUDaI514aEVG1t5UqyFRp06xleArqEoWUH0WGVO3YZRKu+W3pG2q37ztBnX9cuUZKe6U/wUSQglWKE1Z/pQCfnoyxaFf9HimOOKmIAA3eQrpeS09I44l7EJw0iASymBtCQ8Ye+vYVJ4mNQw2tgu2l++zvUtBdb/M92Ds7fC/NPT5EeG2C2tofxtmIftOGwrd27bgBq4tIQMMGG2Fpa58MwLVpa0vnt0T4udv60GkhGoSxau8MkI=
+  organization: gds-design
+  space: localgov-patterns
+  on:
+    repo: alphagov/verify-local-patterns
 notifications:
   email: false
 sudo: false

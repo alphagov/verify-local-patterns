@@ -1,0 +1,40 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Vehicle ownership document" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <p>
+    Upload a photo or scan of 1 of the following:
+  </p>
+
+  <ul class="list list-bullet">
+      <li>first page of the V5C vehicle registration certificate document, also known as a logbook</li>
+      <li>lease agreement registered to your employer</li>
+  </ul>
+
+  <p>
+    Upload a photo or scan of the first page of V5C vehicle registration certificate. It's also known as a logbook.
+  </p>
+  <p>
+    Take the photo with a smartphone or digital camera or scan using a document scanner.
+  </p>
+
+  {% set uploadIndex = v5cuploads.length if v5cuploads else 0 %}
+
+  <form>
+    <div id="file-group" class="form-group file-upload">
+      <label for="file" class="button file-upload-label" role="button">
+        <span id="file-label-text" class="">Upload {{ registerNumbers[uploadIndex] }}</span>
+      </label>
+      <input type="file" id="file" class="file-choose-file" name="v5cuploads[{{ uploadIndex }}]" aria-controls="progress-container" aria-required="true" >
+    </div>
+  </form>
+
+
+</div>
+
+{% endblock %}
