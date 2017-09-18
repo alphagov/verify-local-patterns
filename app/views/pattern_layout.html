@@ -10,14 +10,16 @@
 
 	{% set tabs = ['Policy', 'Research', 'Design', 'Code'] %}
 
-	{% include "includes/pattern_side_nav.html" %}
+	<div class="grid-row pattern_content-container" data-module="highlight-active-section-heading">
 
-			<div class="column-three-quarter leftborder">
+		{% include "includes/pattern_side_nav.html" %}
+
+			<div class="column-five-sixth leftborder">
 				<h2 class="heading-large">{{thisTab}}</h2>
 
 				{% include "includes/pattern_tab_nav.html" %}
 
-				<div class="">
+				<div class="pattern_content">
 					{% block page_content %}{% endblock %}
 
 				<hr />

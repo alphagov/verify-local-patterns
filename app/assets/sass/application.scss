@@ -337,3 +337,42 @@ table + p{
 .phase-banner{
 	border-bottom: none;
 }
+
+#content{
+	max-width: none !important;
+	margin: 0 30px;
+}
+.heading-xlarge, #global-header-bar{
+	max-width: none !important;
+	margin: 0px !important;
+}
+#global-header .header-wrapper{
+    max-width: none;
+    margin: 0 0 0 30px;
+		padding: 8px 0px;
+		#logo{
+			margin: 0;
+		}
+}
+
+.pattern-header{
+  margin: 2em -15px 2em;
+	.column-one-third{
+		margin-top: 7px;
+    text-align: right;
+	}
+}
+.column-one-sixth{
+	width: 16.6%;
+	float: left;
+}
+.column-five-sixth{
+	width: 80.4%;
+	float: left;
+}
+.pattern_content-container{
+	padding: 0 10px;
+}
+.nav-tabs, .pattern_content{
+	max-width: 42em;
+}
