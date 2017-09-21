@@ -14,154 +14,157 @@
 
 {% block content %}
 
-
 {% if council.string == 'oxfordshire' %}
 
-<div class="column-two-thirds">
+	<div class="column-two-thirds">
 
- 
-    <p>
-      When we’ve processed and approved your application, we’ll email you an invoice with a link to pay online.
-    </p>
-    <p>
-      You will be invoiced for:
-    </p>
+	    <p>
+	      When we’ve processed and approved your application, we’ll email you an invoice with a link to pay online.
+	    </p>
+	    <p>
+	      You will be invoiced for:
+	    </p>
 
-  {% for permit in permitRequests %}
 
-    {% if loop.length > 1 %}
-      <h3 class="heading-medium">Vehicle {{ loop.index }}</h3>
-    {% endif %}
-    <table>
 
-      <tr>
-        <th>Permit type</th>
-        <th>Resident's parking permit</th>
-        <td>
-        </td>
-      </tr>
+	  {% for permit in permitRequests %}
 
-    <tr>
-      <th>Vehicle registration</th>
-      <th>{{ permit.registerNumber }}</th>
-      <td class="change-answer">
-        <a href="enter-reg">
-          Change <span class="visuallyhidden">vehicle registration</span>
-        </a>
-      </td>
-    </tr>
+	    {% if loop.length > 1 %}
+	      <h3 class="heading-medium">Vehicle {{ loop.index }}</h3>
+	    {% endif %}
+	    <table>
 
-    <tr>
-      <th>Permit length</th>
-      <th>
-        {% if permit.length %}
-          {{ permit.length }}
-        {% else %}
-            12 months
-			  {% endif %}
-      </th>
-      {% if council.sixmonth %}
-      <td class="change-answer">
-        <a href="permit-length">
-          Change <span class="visuallyhidden">permit length</span>
-        </a>
-      </td>
-      {% else %}
-      <td></td>
-			{% endif %}
-    </tr>
+	      <tr>
+	        <th>Permit type</th>
+	        <th>Resident's parking permit</th>
+	        <td>
+	        </td>
+	      </tr>
 
-  </table>
-  {% endfor %}
+	    <tr>
+	      <th>Vehicle registration</th>
+	      <th>{{ permit.registerNumber }}</th>
+	      <td class="change-answer">
+	        <a href="enter-reg">
+	          Change <span class="visuallyhidden">vehicle registration</span>
+	        </a>
+	      </td>
+	    </tr>
 
-  <p>We’ll calculate the cost of your permit. The invoice we send you will show the amount you need to pay.</p>
+	    <tr>
+	      <th>Permit length</th>
+	      <th>
+	        {% if permit.length %}
+	          {{ permit.length }}
+	        {% else %}
+	            12 months
+				  {% endif %}
+	      </th>
+	      {% if council.sixmonth %}
+	      <td class="change-answer">
+	        <a href="permit-length">
+	          Change <span class="visuallyhidden">permit length</span>
+	        </a>
+	      </td>
+	      {% else %}
+	      <td></td>
+				{% endif %}
+	    </tr>
 
-	{% set nextPage = 'choose-payment-contact' %}
-	<a class="button" role="button" href="{{nextPage}}">Next</a>
+	  </table>
+	  {% endfor %}
 
-</div>
-{% else %}
-<div class="column-two-thirds">
+	  <p>We’ll calculate the cost of your permit. The invoice we send you will show the amount you need to pay.</p>
 
-  {% if council.payOnline and totalSum > 1 %}
-    <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} parking permit{{s}}:</p>
-	{% elif council.payOnline == false %}
-    <p>
-      When we've processed and approved your application, we'll contact you for payment. You can pay by phone with a debit or credit card, or we can email you an invoice.
-    </p>
-    <p>
-      You will need to pay for:
-    </p>
-  {% endif %}
-
-  {% for permit in permitRequests %}
-    {% if loop.length > 1 %}
-      <h3 class="heading-medium">Vehicle {{ loop.index }}</h3>
-    {% endif %}
-    <table>
-      <tr>
-        <th>Permit type</th>
-        <th>Resident's parking permit</th>
-        <td>
-        </td>
-      </tr>
-    <tr>
-      <th>Vehicle registration</th>
-      <th>{{ permit.registerNumber }}</th>
-      <td class="change-answer">
-        <a href="enter-reg">
-          Change <span class="visuallyhidden">vehicle registration</span>
-        </a>
-      </td>
-    </tr>
-    <tr class="grouped">
-      <th>Start date</th>
-      <th>{{ permit.startDate | niceDate }}</th>
-			{% if council.userChooseStartDate %}
-      <td class="change-answer">
-        <a href="permit-start">
-          Change <span class="visuallyhidden">start date</span>
-        </a>
-      </td>
-			{% endif %}
-    </tr>
-    <tr>
-      <th>Expiry date</th>
-      <th>{{ permit.endDate | niceDate }}</th>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <th>Permit length</th>
-      <th>{{ permit.length }}</th>
-			{% if council.sixmonth %}
-      <td class="change-answer">
-        <a href="permit-length">
-          Change <span class="visuallyhidden">permit length</span>
-        </a>
-      </td>
-			{% endif %}
-    </tr>
-    <tr>
-      <th>Cost</th>
-      <th>
-        £{{ permit.cost }}
-      </th>
-      <td>
-      </td>
-    </tr>
-  </table>
-  {% endfor %}
-
-	{% if council.string == 'oxfordshire' %}
 		{% set nextPage = 'choose-payment-contact' %}
-  {% elseif council.payOnline and totalSum > 1 %}
-		{% set nextPage = 'choose-payment' %}
-  {% else %}
-		{% set nextPage = 'contact-preference' %}
-  {% endif %}
-  
-	<a class="button" role="button" href="{{nextPage}}">Next</a>
+		<a class="button" role="button" href="{{nextPage}}">Next</a>
 
-</div>
+	</div>
+
+{% else %}
+
+	<div class="column-two-thirds">
+
+	  {% if council.payOnline and totalSum > 1 %}
+	    <p>You're about to pay £{{ totalSum }} for {{ permitRequests.length }} parking permit{{s}}:</p>
+		{% elif council.payOnline == false %}
+	    <p>
+	      When we've processed and approved your application, we'll contact you for payment. You can pay by phone with a debit or credit card, or we can email you an invoice.
+	    </p>
+	    <p>
+	      You will need to pay for:
+	    </p>
+	  {% endif %}
+
+	  {% for permit in permitRequests %}
+	    {% if loop.length > 1 %}
+	      <h3 class="heading-medium">Vehicle {{ loop.index }}</h3>
+	    {% endif %}
+	    <table>
+	      <tr>
+	        <th>Permit type</th>
+	        <th>Resident's parking permit</th>
+	        <td>
+	        </td>
+	      </tr>
+	    <tr>
+	      <th>Vehicle registration</th>
+	      <th>{{ permit.registerNumber }}</th>
+	      <td class="change-answer">
+	        <a href="enter-reg">
+	          Change <span class="visuallyhidden">vehicle registration</span>
+	        </a>
+	      </td>
+	    </tr>
+	    <tr class="grouped">
+	      <th>Start date</th>
+	      <th>{{ permit.startDate | niceDate }}</th>
+				{% if council.userChooseStartDate %}
+	      <td class="change-answer">
+	        <a href="permit-start">
+	          Change <span class="visuallyhidden">start date</span>
+	        </a>
+	      </td>
+				{% endif %}
+	    </tr>
+	    <tr>
+	      <th>Expiry date</th>
+	      <th>{{ permit.endDate | niceDate }}</th>
+	      <td>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Permit length</th>
+	      <th>{{ permit.length }}</th>
+				{% if council.sixmonth %}
+	      <td class="change-answer">
+	        <a href="permit-length">
+	          Change <span class="visuallyhidden">permit length</span>
+	        </a>
+	      </td>
+				{% endif %}
+	    </tr>
+	    <tr>
+	      <th>Cost</th>
+	      <th>
+	        £{{ permit.cost }}
+	      </th>
+	      <td>
+	      </td>
+	    </tr>
+	  </table>
+	  {% endfor %}
+
+	  {% if council.payOnline and totalSum > 1 %}
+			{% set nextPage = 'choose-payment' %}
+	  {% else %}
+			{% set nextPage = 'contact-preference' %}
+	  {% endif %}
+
+		<a class="button" role="button" href="{{nextPage}}">Next</a>
+
+	</div>
+
+{% endif %}
+
 {% endblock %}
