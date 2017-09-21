@@ -1,0 +1,44 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Vehicle ownership" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+  <form action="confirm-adress" method="get" class="form">
+    <div class="form-group">
+      <fieldset class="inline">
+
+        <p>
+          The vehicle is provided by:
+        </p>
+
+        <legend class="visually-hidden">The vehicle is provided by:</legend>
+        
+			
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="radio-group" value="vehicle-ownership-document-upload">
+          My employer
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="radio-group" value="rented-vehicle-document-upload">
+          A rental firm that I've hired it from
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-3">
+          <input id="radio-inline-3" type="radio" name="radio-group" value="new-vehicle-document-upload">
+          Myself but it's not yet registered
+        </label>
+
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <input class="button" type="submit" value="Next">
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Do you own the vehicle?" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+<p>
+  We need to find out who owns the vehicle you need a permit for so that we can ask for the right documents.
+</p>
+  <form action="confirm-adress" method="get" class="form">
+    <div class="form-group">
+      <fieldset class="inline">
+
+        <legend class="visually-hidden">Do you own the vehicle?</legend>
+
+		      {% set nextPage = 'v5c-upload' %}
+
+        <label class="block-label selection-button-radio" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="radio-group" value="{{nextPage}}">
+          Yes
+        </label>
+        <label class="block-label selection-button-radio" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="radio-group" value="vehicle-ownership">
+          No
+        </label>
+
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <input class="button" type="submit" value="Next">
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

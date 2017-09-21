@@ -153,14 +153,15 @@
   </table>
   {% endfor %}
 
-  {% if council.payOnline and totalSum > 1 %}
+	{% if council.string == 'oxfordshire' %}
+		{% set nextPage = 'choose-payment-contact' %}
+  {% elseif council.payOnline and totalSum > 1 %}
 		{% set nextPage = 'choose-payment' %}
   {% else %}
 		{% set nextPage = 'contact-preference' %}
   {% endif %}
+  
 	<a class="button" role="button" href="{{nextPage}}">Next</a>
 
 </div>
-{% endif %}
-
 {% endblock %}

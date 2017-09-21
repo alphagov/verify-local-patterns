@@ -1,0 +1,74 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Vehicle details" %}
+
+
+{% block content %}
+
+  <div class="column-two-thirds">
+
+      <p>
+        Enter the following details about the vehicle. You can find this information on the vehicle registration document.
+     </p>
+
+
+		{% if council.permitMax > 1 %}
+
+		{% endif %}
+
+
+	{% set nextPage = 'personal-vehicle' %}
+	
+	<form action="{{nextPage}}" method="POST">
+      
+        <div class="form-group">
+
+          <label class="form-label vehicleMake" for="vehicleMake-0">
+            Make:
+          </label>
+          <input class="form-control" id="vehicleMake-0" name="vehicleMake-0" type="text">
+
+        </div>
+
+        <br>
+        <div class="form-group">
+
+          <label class="form-label vehicleModel" for="vehicleModel-0">
+            Model:
+          </label>
+          <input class="form-control" id="vehicleModel-0" name="vehicleModel-0" type="text">
+
+        </div>
+
+        <br>
+        <div class="form-group">
+
+          <label class="form-label vehicleColour" for="vehicleColour-0">
+            Colour:
+          </label>
+          <input class="form-control" id="vehicleColour-0" name="vehicleColour-0" type="text">
+
+      </div>
+     <div class="form-group">
+
+          <label class="form-label vehicleReg-number" for="vehicleReg-number-0">
+            Registration number:
+          </label>
+          <input class="form-control" id="vehicleReg-number-0" name="vehicleReg-number-0" type="text">
+
+      </div>
+    </p>
+
+
+
+
+	<div class="form-group">
+		<input type="submit" class="button" role="button" value="Next" />
+	</div>
+
+	</form>
+</div>
+
+
+{% endblock %}
