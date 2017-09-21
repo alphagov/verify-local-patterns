@@ -14,6 +14,73 @@
 
 {% block content %}
 
+
+{% if council.string == 'oxfordshire' %}
+
+<div class="column-two-thirds">
+
+ 
+    <p>
+      When we’ve processed and approved your application, we’ll email you an invoice with a link to pay online.
+    </p>
+    <p>
+      You will be invoiced for:
+    </p>
+
+  {% for permit in permitRequests %}
+
+    {% if loop.length > 1 %}
+      <h3 class="heading-medium">Vehicle {{ loop.index }}</h3>
+    {% endif %}
+    <table>
+
+      <tr>
+        <th>Permit type</th>
+        <th>Resident's parking permit</th>
+        <td>
+        </td>
+      </tr>
+
+    <tr>
+      <th>Vehicle registration</th>
+      <th>{{ permit.registerNumber }}</th>
+      <td class="change-answer">
+        <a href="enter-reg">
+          Change <span class="visuallyhidden">vehicle registration</span>
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Permit length</th>
+      <th>
+        {% if permit.length %}
+          {{ permit.length }}
+        {% else %}
+            12 months
+			  {% endif %}
+      </th>
+      {% if council.sixmonth %}
+      <td class="change-answer">
+        <a href="permit-length">
+          Change <span class="visuallyhidden">permit length</span>
+        </a>
+      </td>
+      {% else %}
+      <td></td>
+			{% endif %}
+    </tr>
+
+  </table>
+  {% endfor %}
+
+  <p>We’ll calculate the cost of your permit. The invoice we send you will show the amount you need to pay.</p>
+
+	{% set nextPage = 'choose-payment-contact' %}
+	<a class="button" role="button" href="{{nextPage}}">Next</a>
+
+</div>
+{% else %}
 <div class="column-two-thirds">
 
   {% if council.payOnline and totalSum > 1 %}
@@ -86,7 +153,6 @@
   </table>
   {% endfor %}
 
-
 	{% if council.string == 'oxfordshire' %}
 		{% set nextPage = 'choose-payment-contact' %}
   {% elseif council.payOnline and totalSum > 1 %}
@@ -94,9 +160,8 @@
   {% else %}
 		{% set nextPage = 'contact-preference' %}
   {% endif %}
+  
 	<a class="button" role="button" href="{{nextPage}}">Next</a>
 
 </div>
-<br>
-</br>
 {% endblock %}
