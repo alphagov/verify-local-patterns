@@ -26,6 +26,73 @@ $(document).ready(function() {
     var showHideContent = new GOVUK.ShowHideContent()
     showHideContent.init()
 
+
+    // Company car upload
+    if (window.location.href.indexOf("company-car-upload") > -1) {
+        $('#file').change(function(e) {
+            // todo: check that file is actually chosen!!
+            window.location.href = 'loading-company-car-upload';
+        });
+    }
+    if (window.location.href.indexOf("loading-company-car-upload") > -1) {
+        setTimeout(function() {
+            window.location.href = 'company-car-upload-accepted';
+        }, 2000)
+    }
+
+    // Vehicle ownership document upload
+    if (window.location.href.indexOf("vehicle-ownership-document-upload") > -1) {
+        $('#file').change(function(e) {
+            // todo: check that file is actually chosen!!
+            window.location.href = 'l-vehicle-ownership-document-upload';
+        });
+    }
+    if (window.location.href.indexOf("l-vehicle-ownership-document-upload") > -1) {
+        setTimeout(function() {
+            window.location.href = 'vehicle-ownership-document-accepted';
+        }, 2000)
+    }
+
+
+    if (window.location.href.indexOf("employer-letter-from-upload") > -1) {
+        $('#file').change(function(e) {
+            // todo: check that file is actually chosen!!
+            window.location.href = 'l-employer-letter-from-upload';
+        });
+    }
+    if (window.location.href.indexOf("l-employer-letter-from-upload") > -1) {
+        setTimeout(function() {
+            window.location.href = 'employer-letter-from-accepted';
+        }, 2000)
+    }
+
+
+    if (window.location.href.indexOf("rented-vehicle-document-upload") > -1) {
+        $('#file').change(function(e) {
+            // todo: check that file is actually chosen!!
+            window.location.href = 'l-rented-vehicle-document-upload';
+        });
+    }
+    if (window.location.href.indexOf("l-rented-vehicle-document-upload") > -1) {
+        setTimeout(function() {
+            window.location.href = 'rented-vehicle-document-accepted';
+        }, 2000)
+    }
+
+
+    if (window.location.href.indexOf("new-vehicle-document-upload") > -1) {
+        $('#file').change(function(e) {
+            // todo: check that file is actually chosen!!
+            window.location.href = 'l-new-vehicle-document-upload';
+        });
+    }
+    if (window.location.href.indexOf("l-new-vehicle-document-upload") > -1) {
+        setTimeout(function() {
+            window.location.href = 'new-vehicle-document-accepted';
+        }, 2000)
+    }
+
+
     if (window.location.href.indexOf("upload") > -1) {
         $('.in-progress').click(function(e) {
             e.preventDefault();
@@ -90,5 +157,7 @@ $(document).ready(function() {
             window.location.href = 'webcam-photo-accepted';
         }, 3000)
     }
+
+
 
 })

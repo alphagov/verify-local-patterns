@@ -6,6 +6,12 @@ $path: "/public/images/";
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
 
+*{
+	 font-family: Helvetica, Arial, sans-serif !important;
+}
+#logo{
+	background: none !important;
+}
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
 @import 'patterns/check-your-answers';
 
@@ -284,12 +290,12 @@ table + p{
 
 #global-header.with-proposition .header-wrapper .header-global{
 	width: 65%;
+	padding-bottom: 5px;
 }
 
 #product-name {
     font-size: 24px;
     font-weight: 400;
-    padding-left: 5px;
 }
 
 .masthead{
