@@ -6,7 +6,9 @@
 {% set parkingPermitCount = residentAmount * 1 if residentAmount else 1 %}
 {% set s = 's' if parkingPermitCount > 1 else '' %}
 
-{% if totalSum > 1 %}
+{% if council.string == 'oxfordshire' %}
+	{% set pageTitle = "Check your permit details"%}
+{% elif totalSum > 1 %}
 	{% set pageTitle = "Payment summary"%}
 {% else %}
 	{% set pageTitle = "Permit details" %}
@@ -18,12 +20,12 @@
 
 	<div class="column-two-thirds">
 
-	    <p>
+	    {# <p>
 	      When we’ve processed and approved your application, we’ll email you an invoice with a link to pay online.
 	    </p>
 	    <p>
 	      You will be invoiced for:
-	    </p>
+	    </p> #}
 
 
 
@@ -74,7 +76,7 @@
 	  </table>
 	  {% endfor %}
 
-	  <p>We’ll calculate the cost of your permit. The invoice we send you will show the amount you need to pay.</p>
+	  {# <p>We’ll calculate the cost of your permit. The invoice we send you will show the amount you need to pay.</p> #}
 
 		{% set nextPage = 'choose-payment-contact' %}
 		<a class="button" role="button" href="{{nextPage}}">Next</a>

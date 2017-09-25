@@ -1,0 +1,50 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Apply for a resident's parking permit" %}
+{% set pageTitle = "Your application is being processed" %}
+
+{% block content %}
+<div class="column-full">
+	<div class="govuk-box-highlight">
+		<p>
+			Your reference number is <br>
+			<strong class="heading-large">HDJ2123F</strong>
+		</p>
+	</div>
+</div>
+<div class="column-two-thirds">
+
+	<p>
+		We're processing your application.
+	</p>
+	<p>
+	We'll calculate the cost of your permit(s) and send an invoice to your email:
+</p>
+<div class="panel panel-border-wide">
+
+		<p>
+			janesmith@gmail.com
+		</p>
+	</div>
+
+	<p>
+		Your invoice will arrive in 1 to 5 working days. You’ll then be able to make a payment online.
+
+
+	</p>
+	<hr />
+<p>
+	After we’ve received your payment, we’ll issue and send your resident’s parking permit(s) to this address:
+</p>
+<div class="panel panel-border-wide">
+	<p>
+		Jane Smith<br />
+		30 Thornhill Gardens<br  />
+		{{council.shortName}}<br  />
+		SR2 7LE
+	</p>
+	<a href="#">Provide a different address</a>
+</div>
+
+</div>
+{% endblock %}
