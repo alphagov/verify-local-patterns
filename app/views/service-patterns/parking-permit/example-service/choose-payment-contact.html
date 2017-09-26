@@ -2,7 +2,7 @@
 
 {% set serviceName = "Apply for a resident's parking permit" %}
 {% if council.string == 'oxfordshire' %}
-{% set pageTitle = "Sending your invoice" %}
+{% set pageTitle = "Paying for your permit" %}
 {% else %}
 {% set pageTitle = "How should we contact you for payment?" %}
 {% endif %}
@@ -10,8 +10,10 @@
 {% block content %}
 <div class="column-two-thirds">
   {% if council.string == 'oxfordshire' %}
-  <p>We’ll send your invoice to you by email.</p>
-  <form action="renewal-reminder" method="POST">
+	<p>
+		We need to calculate the cost of your permit. We’ll then email you an invoice.
+	</p>
+  <form action="check-your-email" method="POST">
     <div class="form-group">
       <fieldset>
 
@@ -20,16 +22,25 @@
         </legend>
 
         <div class="form-group">
-          <label class="form-label" for="contact-email">Email address</label>
+          <label class="form-label" for="contact-email"><h2 class="heading-medium">What is your email address?</h2></label>
           <input class="form-control" name="contactEmail" type="email" id="contact-email">
         </div>
 
       </fieldset>
-    </div>
-    <p>By continuing you confirm you’re happy for us to use your email address to send you your parking permit invoice.</p>
-    <div class="form-group">
       <input type="submit" class="button" role="button" value="Continue" />
     </div>
+		<p>
+			We’ll only use your email address to:
+		</p>
+		<ul class="list list-bullet">
+			<li>
+				send your invoice
+			</li>
+			<li>
+				email you a renewal reminder 30 days before your permit expires
+			</li>
+		</ul>
+		{# <p>By continuing you confirm you’re happy for us to use your email address to send you your parking permit invoice and renewal reminder.</p> #}
   </form>
 
   {% else %}
