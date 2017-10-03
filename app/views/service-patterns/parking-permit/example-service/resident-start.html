@@ -6,23 +6,35 @@
 {% block content %}
 
 <div class="column-two-thirds">
-    As a resident of {{council.parkingBoundary}} you can buy a permit to park near your home 24 hours a day, 7 days a week.
+  <p>
+    As a resident of {{council.parkingBoundary}} you can apply for a permit to park near your home 24 hours a day, 7 days a week.
   </p>
     {% if council.string == 'sunderland' %}
   <p>
     Parking permits in your area are issued on 1 August every year and are valid until 31 July the following year. If you apply before 4 July, your permit will expire on 31 July.
   </p>
-    {% endif %}
-  <p>
-    You can apply for a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
-  </p>
+  {% endif %}
+  {% if council.string == 'oxfordshire' %}
+    <p>
+      You can apply for a maximum of 1 permit per person, per household.
+    </p>
+  {% else %}
+    <p>
+      You can apply for a maximum {% if council.permitMax==1 %} 1 permit {% else %} of {{council.permitMax}} permits {% endif %} per {% if council.limitByHousehold %} household.{% else %}resident.{% endif %}
+    </p>
+  {% endif %}
+
   {% if council.permitWait < 1 %}
     <li>
       you won't receive a physical permit – wardens will check your vehicle's registration number
     </li>
   {% endif %}
   <h2 class="heading-medium">Costs</h2>
-	{% if council.permitsCosts[0] > 0 %}
+  {% if council.string == 'oxfordshire' %}
+  <p>
+			The first and second permits at a property are &pound;60. Where more than two permits are permitted the third permit is &pound;120 and fourth and subsequent permits are &pound;160 each. All applications for zones around the Kassam Stadium are £15.
+	</p>
+	{% elseif council.permitsCosts[0] > 0 %}
 		{% set halfCost = council.permitsCosts[0] / 2%}
 			<p>
 				Your first permit costs {{"£"+council.permitsCosts[0]+" for 12 months, or £"+halfCost.toFixed(2)+" for 6 months."if council.sixmonth else "£"+council.permitsCosts[0]+" for 12 months"}} The cost of additional permits is higher.
@@ -38,9 +50,15 @@
   <p>
     <a href="#">Blue Badge holders</a> do not need a resident's parking permit.
   </p>
+  {% if council.string == 'oxfordshire' %}
+    <p>
+      People living in a <a href="hmo-info">licensed house in multiple occupation</a>.
+    </p>
+  {% else %}
   <p>
     People living in a <a href="hmo-info">licensed house in multiple occupation</a> <!-- [or drive a low emissions 'eco' vehicle] if council offers this -->  aren't charged for parking permits.
   </p>
+  {% endif %}
   <h2 class="heading-medium">How to apply</h2>
   <ol class="list list-number">
     <li>
@@ -62,9 +80,11 @@
     Upload your V5C registration document.
     </li>
     {% endif %}
+    {% if council.string != 'oxfordshire' %}
     <li>
-    Pay online if applicable.
-  </li>
+      Pay online if applicable.
+    </li>
+    {% endif %}
   </ol>
 
   <a class="button button-start" href="prove-identity" role="button">Apply for a resident's parking permit</a>
