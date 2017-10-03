@@ -50,11 +50,7 @@
   <p>
     <a href="#">Blue Badge holders</a> do not need a resident's parking permit.
   </p>
-  {% if council.string == 'oxfordshire' %}
-    <p>
-      People living in a <a href="hmo-info">licensed house in multiple occupation</a>.
-    </p>
-  {% else %}
+  {% if council.string != 'oxfordshire' %}
   <p>
     People living in a <a href="hmo-info">licensed house in multiple occupation</a> <!-- [or drive a low emissions 'eco' vehicle] if council offers this -->  aren't charged for parking permits.
   </p>
