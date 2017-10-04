@@ -7,14 +7,20 @@
 
 <div class="column-two-thirds">
 
-
+		{% if council.string == 'oxfordshire' %}
     <p>
+      You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">East Oxford parking zone</a>.
+		</p>
+		{% else %}
+		<p>
       You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>.
 		</p>
+		{% endif %}
+
 		{% if council.string == 'oxfordshire' %}
 		<h2 class="heading-medium">Details of excluded properties</h2>
 		<p>
-			For details of exclusions and places not eligible for a permit read our <a href="{{asset_path}}doc/Oxfordshire-ExclusionsEO.pdf" target="_blank">EO exclusions list (pdf format, 456Kb).</a>
+			For details of exclusions and places not eligible for a permit read our <a href="{{asset_path}}doc/Oxfordshire-ExclusionsEO.pdf" target="_blank">East Oxford exclusions list (pdf format, 456Kb).</a>
 		</p>
 		{% endif %}
     
