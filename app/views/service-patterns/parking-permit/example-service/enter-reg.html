@@ -30,8 +30,8 @@
 
 		{% endif %}
 
-		{% if council.string == 'oxfordshire'}
-			{% set nextPage = 'found-existing-details' %}
+		{% if council.string == 'oxfordshire' %}
+			{% set nextPage = 'vehicle-personal' %}
 		{% elif council.testv5cScan %}
 			 {% set nextPage = 'v5c-upload' %}
 		{% elif council.testv5cnumber %}
