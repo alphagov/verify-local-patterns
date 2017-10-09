@@ -32,8 +32,8 @@
   <h2 class="heading-medium">Costs</h2>
   {% if council.string == 'oxfordshire' %}
   <p>
-			The first and second permits at a property are &pound;60. Where more than two permits are permitted the third permit is &pound;120 and fourth and subsequent permits are &pound;160 each. All applications for zones around the Kassam Stadium are £15.
-	</p>
+      First and second permits at a property cost &pound;60. Depending what parking zone you’re in, you may be able to get more than 2 permits. The third would cost &pound;120, any more permits would be &pound;160 each. Permits around Kassam Stadium cost &pound;15.
+  </p>
 	{% elseif council.permitsCosts[0] > 0 %}
 		{% set halfCost = council.permitsCosts[0] / 2%}
 			<p>
