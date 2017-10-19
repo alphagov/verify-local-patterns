@@ -176,6 +176,11 @@
       th:first-of-type{
         font-weight: normal;
       }
+      td {
+        strong {
+          font-weight: 700;
+        }
+      }
     }
 
     .payment-summary {
