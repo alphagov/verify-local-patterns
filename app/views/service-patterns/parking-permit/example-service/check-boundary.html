@@ -3,6 +3,12 @@
 {% set serviceName = "Park your car or vehicle" %}
 {% set pageTitle = "Check if you need a permit" %}
 
+  {% if council.string == 'oxfordshire' %}
+    {% set nextPage = 'excluded-properties' %}
+  {% else %}
+    {% set nextPage = 'resident-choice' %} 
+  {% endif %}
+
 {% block content %}
 
 <div class="column-two-thirds">
@@ -11,7 +17,7 @@
   </p>
 
   <div class="postcode-search-form form-group" data-module="track-submit" data-track-category="postcodeSearch:find_local_council" data-track-action="postcodeSearchStarted">
-    <form method="post" action="resident-choice" id="local-locator-form" class="find-location-for-service">
+    <form method="post" action="{{ nextPage }}" id="local-locator-form" class="find-location-for-service">
       <fieldset>
         <legend class="visuallyhidden">Enter a postcode</legend>
         <div class="ask_location">

@@ -1,0 +1,54 @@
+{% extends "layout_picker.html" %}
+
+{% set serviceName = "Park your car or vehicle" %}
+{% set pageTitle = "Excluded properties" %}
+
+{% block content %}
+
+<div class="column-two-thirds">
+
+        <p>
+            You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">East Oxford parking zone</a>.
+		</p>
+
+
+		<p>
+		  The following properties aren’t eligible for a permit or have a limit on the number of permits allowed. Check your address. If it is not listed, continue with your application.
+		</p>
+
+        
+		<table>
+			<tbody>
+				<tr>
+					<td><strong>House / Flat number</strong></td>
+					<td><strong>Street name</strong></td>
+					<td><strong>Details of the exclusion</strong></td>
+					<td><strong>Parking zone</strong></td>
+				</tr>
+				<tr>
+					<td class="text-align-centre">1</td>
+					<td>Circus Street</td>
+					<td>No permits allowed</td>
+					<td>EO</td>
+				</tr>
+				<tr>
+					<td class="text-align-centre">3</td>
+					<td>Circus Street</td>
+					<td>Only 1 residential parking permit allowed</td>
+					<td>EO</td>
+				</tr>
+				<tr>
+					<td class="text-align-centre">12</td>
+					<td>Circus Street</td>
+					<td>Only the ground floor flat is eligible for 1 residential parking permit</td>
+					<td>EO</td>
+				</tr>
+			</tbody>
+		</table>
+        <div class="form-group">
+		    {% set nextPage = 'resident-choice' %}
+		<a class="button" role="button" href="{{nextPage}}">Continue</a>
+        </div>
+</div>
+
+{% endblock %}

@@ -8,52 +8,12 @@
 <div class="column-two-thirds">
 
 		{% if council.string == 'oxfordshire' %}
-    <p>
-      You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">East Oxford parking zone</a>.
-		</p>
 		{% else %}
 		<p>
       You need a permit to park here because {{postcode}} is in the <a href="parking-zone-map">{{council.parkingBoundary}} parking zone</a>.
 		</p>
 		{% endif %}
 
-		{% if council.string == 'oxfordshire' %}
-		<h2 class="heading-medium">Details of excluded properties</h2>
-		<p>
-		  The following properties are not eligible for a permit
-		</p>
-
-
-		<table>
-			<tbody>
-				<tr>
-					<td><strong>House / Flat number</strong></td>
-					<td><strong>Street name</strong></td>
-					<td><strong>Details of the exclusion</strong></td>
-					<td><strong>Parking zone</strong></td>
-				</tr>
-				<tr>
-					<td class="text-align-centre">1</td>
-					<td>Circus Street</td>
-					<td>No permits allowed</td>
-					<td>EO</td>
-				</tr>
-				<tr>
-					<td class="text-align-centre">3</td>
-					<td>Circus Street</td>
-					<td>Only 1 residential parking permit allowed</td>
-					<td>EO</td>
-				</tr>
-				<tr>
-					<td class="text-align-centre">12</td>
-					<td>Circus Street</td>
-					<td>Only the ground floor flat is eligible for 1 residential parking permit</td>
-					<td>EO</td>
-				</tr>
-			</tbody>
-		</table>
-
-		{% endif %}
     
 		<form class="radio-nav">
   	  <div class="radio-with-bullets">
