@@ -180,8 +180,13 @@
         strong {
           font-weight: 700;
         }
+        &.text-align-centre {
+          text-align: center;
+        }
       }
     }
+
+
 
     .payment-summary {
       display: inline-block;
